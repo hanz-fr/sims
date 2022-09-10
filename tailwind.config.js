@@ -6,7 +6,15 @@ module.exports = {
     "./resources/**/*.vue",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        pop : ['Poppins'],
+        ubuntu : ['Ubuntu'],
+      },
+      colors : {
+        sims : '#4D9E9E',
+      },
+    },
   },
   plugins: [],
 }
