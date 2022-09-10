@@ -7,7 +7,7 @@
 </head>
 <body>
   <h1 class="text-3xl font-bold">
-    pagi yonko
+    pagi lort
   </h1>
 </body>
 </html>
