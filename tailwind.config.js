@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        pop : ['Poppins'],
+        pop : ['Poppins','sans-serif'],
         ubuntu : ['Ubuntu'],
       },
       colors : {
