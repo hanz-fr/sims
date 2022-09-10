@@ -6,9 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Registration</title>
   {{-- font --}}
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+  @googlefonts('code')
   {{-- css --}}
   <link rel="stylesheet" href="assets/output.css">
 </head>
@@ -21,7 +19,7 @@
         <div class="input-area w-3/5">
           <div class="text-3xl text-sims font-pop font-bold">Register</div>
           <div class="text-sm mt-2 text-slate-400 font-pop">Create a new account</div>
-          <form action="regist-sc.html" class="mt-10 pr-8">
+          <form action="" class="mt-10 pr-8">
             <ul>
               <li>
                 <input type="text" id="nama" placeholder="Nama" class="font-ubuntu font-medium mb-5 px-4 py-3 border-2 text-gray-500 border-gray-300 w-full block text-sm placeholder:text-gray-400 focus:placeholder:invisible focus:outline-none focus:ring-1 focus:ring-sims focus:border-sims invalid:text-pink-700 peer invalid:focus:ring-pink-700 invalid:focus:border-pink-700">

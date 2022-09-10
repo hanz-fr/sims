@@ -12,4 +12,7 @@ class UserController extends Controller
     public function login(){
         return view('login-main');
     }
+    public function registeruser(Request $request){
+        dd($request->all());
+    }
 }
