@@ -13,6 +13,8 @@ module.exports = {
       },
       colors : {
         sims : '#4D9E9E',
+        basic : '#3E3E3E',
+        back : '#F4F4F4',
       },
     },
   },
