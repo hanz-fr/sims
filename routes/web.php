@@ -22,8 +22,8 @@ Route::get('/detail', function () {
     return view('di-detail');
 });
 
-Route::get('/asal', function () {
-    return view('ini-asal-asalan');
+Route::get('/bukuinduk-j', function () {
+    return view('pilih-jurusan');
 });
 
 Route::get('/register', [UserController::class, 'register'])->name('register');
