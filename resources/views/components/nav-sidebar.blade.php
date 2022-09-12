@@ -1,38 +1,38 @@
  <!-- navbar -->
-  <nav class="bg-white border-gray-200 px-2 sm:px-4 py-5 rounded font-pop shadow-lg">
-    <div class="container flex flex-wrap justify-between items-center mx-auto">
-      <a href="#" class="flex items-center">
-        <i class="fa-duotone fa-graduation-cap text-sims text-3xl -ml-24 pl-1"></i>
-        <span class="self-center text-xl font-bold whitespace-nowrap pl-20 text-sims">SIMS</span>
-      </a>
-      <div class="flex items-center md:order-2">
-        <div class="dropdown inline-block relative">
-          <button class="text-sims font-semibold py-2 px-4 inline-flex items-center">
-            <span class="mr-1">Ibnu Asep bin Budi</span>
-            <i class="fa-solid fa-caret-down ml-2 pb-1"></i>
-          </button>
-          <ul class="dropdown-menu absolute hidden text-sims pt-1 pl-5">
-            <!-- <li class=""><a class="rounded-t-md font-medium border-gray-300 bg-white hover:bg-sims hover:text-white py-3 px-4 block whitespace-no-wrap" href="#">Profil</a></li> -->
-            <!-- <li class=""><a class="bg-white hover:bg-sims py-3 px-4 hover:text-white block whitespace-no-wrap" href="#">Two</a></li> -->
-            <li class=""><a class="rounded-md font-medium shadow-md border-gray-500 bg-white hover:bg-sims hover:text-white py-3 px-4 block whitespace-no-wrap text-md" href="#">Logout  &nbsp;<i class="fa-solid fa-right-from-bracket"></i></a></li>
-          </ul>
-        </div>
-        <i class="fa-solid fa-user w-10 text-sims ml-6 text-xl sm:-mr-5"></i>
+ <nav class="tw-relative tw-bg-white tw-border-gray-200 tw-px-2 sm:tw-px-4 tw-py-5 tw-rounded tw-font-pop tw-shadow-lg">
+  <div class="tw-container tw-flex tw-flex-wrap tw-justify-between tw-items-center tw-mx-auto">
+    <a href="#" class="tw-flex tw-items-center">
+      <i class="fa-duotone fa-graduation-cap tw-text-sims tw-text-3xl tw--ml-24 tw-pl-1"></i>
+      <span class="tw-self-center tw-text-xl tw-font-bold tw-whitespace-nowrap tw-pl-20 tw-text-sims">SIMS</span>
+    </a>
+    <div class="tw-flex tw-items-center md:tw-order-2">
+      <div class="dropdown tw-inline-block tw-relative">
+        <button class="tw-text-sims tw-font-semibold tw-py-2 tw-px-4 tw-inline-flex tw-items-center">
+          <span class="tw-mr-1">Ibnu Asep bin Budi</span>
+          <i class="fa-solid fa-caret-down tw-ml-2 tw-pb-1"></i>
+        </button>
+        <ul class="dropdown-menu tw-absolute tw-hidden text-sims tw-pt-1 tw-pl-5">
+          <!-- <li class=""><a class="tw-rounded-t-md tw-font-medium tw-border-gray-300 tw-bg-white hover:bg-sims hover:tw-text-white tw-py-3 tw-px-4 tw-block tw-whitespace-no-wrap" href="#">Profil</a></li> -->
+          <!-- <li class=""><a class="tw-bg-white hover:bg-sims tw-py-3 tw-px-4 hover:tw-text-white tw-block tw-whitespace-no-wrap" href="#">Two</a></li> -->
+          <li><a class="tw-rounded-md tw-font-medium tw-shadow-md tw-text-sims tw-border-gray-500 tw-bg-white hover:tw-bg-sims hover:tw-text-white tw-py-3 tw-px-4 tw-block tw-whitespace-no-wrap tw-text-md" href="#">Logout  &nbsp;<i class="fa-solid fa-right-from-bracket"></i></a></li>
+        </ul>
       </div>
+      <i class="fa-solid fa-user tw-w-10 tw-text-sims tw-ml-6 tw-text-xl sm:tw--mr-5"></i>
     </div>
-  </nav>
+  </div>
+</nav>
 
 <!-- sidebar -->
-<div class="absolute flex flex-col items-center w-16 h-screen overflow-hidden text-sims bg-white shadow-xl">
-  <div class="flex flex-col items-center mt-3">
-    <a class="flex items-center justify-center w-16 h-14 mt-2 transition-colors hover:bg-sims hover:text-white" href="#">
-      <i class="fa-solid fa-house text-xl"></i>
-    </a>
-    <a class="flex items-center justify-center w-16 h-14 mt-2 transition-colors hover:bg-sims hover:text-white" href="#">
-      <i class="fa-regular fa-book-open text-xl"></i>
-    </a>
-    <a class="flex items-center justify-center w-16 h-14 mt-2 transition-colors hover:bg-sims hover:text-white" href="#">
-      <i class="fa-solid fa-users text-xl"></i>
-    </a>
-  </div>
+<div class="tw-absolute tw-flex tw-flex-col tw-items-center tw-w-16 tw-h-screen tw-overflow-hidden tw-text-sims tw-bg-white tw-shadow-xl">
+<div class="tw-flex tw-flex-col tw-items-center tw-mt-3">
+  <a class="tw-flex tw-items-center tw-justify-center tw-w-16 tw-h-14 tw-mt-2 tw-transition-colors hover:tw-bg-sims hover:tw-text-white" href="#">
+    <i class="fa-solid fa-house tw-text-xl"></i>
+  </a>
+  <a class="tw-flex tw-items-center tw-justify-center tw-w-16 tw-h-14 tw-mt-2 tw-transition-colors hover:tw-bg-sims hover:tw-text-white" href="#">
+    <i class="fa-regular fa-book-open tw-text-xl"></i>
+  </a>
+  <a class="tw-flex tw-items-center tw-justify-center tw-w-16 tw-h-14 tw-mt-2 tw-transition-colors hover:tw-bg-sims hover:tw-text-white" href="#">
+    <i class="fa-solid fa-users tw-text-xl"></i>
+  </a>
+</div>
 </div>

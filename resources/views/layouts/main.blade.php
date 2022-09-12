@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="font-awesome/css/all.min.css">
   <title>Student Information Management System</title>
 </head>
-<body style="bg-back">
+<body style="tw-bg-back">
   @include('components.nav-sidebar')
   @yield('content')
 </body>

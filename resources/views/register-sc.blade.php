@@ -15,12 +15,12 @@
   <link rel="stylesheet" href="font-awesome/css/all.min.css">
 </head>
 <body style="background-image: url('assets/img/bg-login.svg');">
-  <div class="mx-auto container">
-    <div class="bg-white rounded-[50px] flex flex-col mx-auto my-28 px-20 py-11 top-1/2 w-3/5 h-3/5 border border-slate-200 shadow-xl text-center">
-        <img class="w-1/2 mx-auto" src="assets/img/regist-sc.svg" alt="" srcset="">
-          <div class="text-3xl font-bold text-sims font-pop mt-5">Registration Success</div>
-          <div class="text-sm text-[#B8B8B8] font-medium font-pop mt-3">Please login using your newly created account.</div>
-        <button class="font-ubuntu bg-[#90C2C2] py-3 text-md mx-auto font-medium text-white mt-9 hover:bg-[#5B9C9C] w-2/4">
+  <div class="tw-mx-auto tw-container">
+    <div class="tw-bg-white tw-rounded-[50px] tw-flex tw-flex-col tw-mx-auto tw-my-28 tw-px-20 tw-py-11 tw-top-1/2 tw-w-3/5 tw-h-3/5 tw-border tw-border-slate-200 tw-shadow-xl tw-text-center">
+        <img class="tw-w-1/2 tw-mx-auto" src="assets/img/regist-sc.svg" alt="" srcset="">
+          <div class="tw-text-3xl tw-font-bold tw-text-sims tw-font-pop tw-mt-5">Registration Success</div>
+          <div class="tw-text-sm tw-text-[#B8B8B8] tw-font-medium tw-font-pop tw-mt-3">Please login using your newly created account.</div>
+        <button class="tw-font-ubuntu tw-bg-[#90C2C2] tw-py-3 text-md tw-mx-auto tw-font-medium tw-text-white tw-mt-9 hover:tw-bg-[#5B9C9C] tw-w-2/4">
           <a href="/login">Okay</a>
         </button>
     </div> <!-- card -->
