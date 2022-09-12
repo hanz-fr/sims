@@ -22,6 +22,10 @@ Route::get('/detail', function () {
     return view('di-detail');
 });
 
+Route::get('/asal', function () {
+    return view('ini-asal-asalan');
+});
+
 Route::get('/register', [UserController::class, 'register'])->name('register');
 
 Route::get('/login', [UserController::class, 'login'])->name('login');
