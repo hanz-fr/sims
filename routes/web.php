@@ -25,8 +25,10 @@ Route::get('/detail', function () {
     return view('di-detail');
 });
 
-Route::get('/bukuinduk-j', function () {
-    return view('pilih-jurusan');
+Route::get('/di-jurusan', function () {
+    return view('pilih-jurusan', [
+        'title' => 'Pilih Jurusan',
+    ]);
 });
 
 Route::get('/register', [UserController::class, 'register'])->name('register');
