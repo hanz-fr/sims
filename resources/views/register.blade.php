@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Registration</title>
+  <title>SIMS || {{ $title }}</title>
   {{-- font --}}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,19 +23,29 @@
         <div class="input-area tw-w-3/5">
           <div class="tw-text-3xl tw-text-sims tw-font-pop tw-font-bold">Register</div>
           <div class="tw-text-sm tw-mt-2 tw-text-slate-400 tw-font-pop">Create a new account</div>
-          <form action="" class="tw-mt-10 tw-pr-8">
+          <form action="/registeruser" method="post" class="tw-mt-10 tw-pr-8">
+            @csrf
             <ul>
               <li>
-                <input type="text" id="nama" placeholder="Nama" class="tw-font-ubuntu tw-font-medium tw-mb-5 tw-px-4 tw-py-3 tw-border-2 tw-text-gray-500 tw-border-gray-300 tw-w-full tw-block tw-text-sm placeholder:tw-text-gray-400 focus:placeholder:tw-invisible focus:tw-outline-none focus:tw-ring-1 focus:tw-ring-sims focus:tw-border-sims invalid:tw-text-pink-700 tw-peer invalid:focus:tw-ring-pink-700 invalid:focus:tw-border-pink-700">
+                <input type="text" name="nama" id="nama" placeholder="Nama" class="tw-font-ubuntu tw-font-medium tw-mb-5 tw-px-4 tw-py-3 tw-border-2 tw-text-gray-500 tw-border-gray-300 tw-w-full tw-block tw-text-sm placeholder:tw-text-gray-400 focus:placeholder:tw-invisible focus:tw-outline-none focus:tw-ring-1 focus:tw-ring-sims focus:tw-border-sims invalid:tw-text-pink-700 tw-peer invalid:focus:tw-ring-pink-700 invalid:focus:tw-border-pink-700">
               </li>
               <li>
-                <input type="number" id="nip" placeholder="NIP" class="tw-font-ubuntu tw-font-medium tw-mb-5 tw-px-4 tw-py-3 tw-border-2 tw-text-gray-500 tw-border-gray-300 tw-w-full tw-block tw-text-sm placeholder:tw-text-gray-400 focus:placeholder:tw-invisible focus:tw-outline-none focus:tw-ring-1 focus:tw-ring-sims focus:tw-border-sims invalid:tw-text-pink-700 tw-peer invalid:focus:tw-ring-pink-700 invalid:focus:tw-border-pink-700">
+                <input type="number" name="nip" id="nip" placeholder="NIP" class="tw-font-ubuntu tw-font-medium tw-mb-5 tw-px-4 tw-py-3 tw-border-2 tw-text-gray-500 tw-border-gray-300 tw-w-full tw-block tw-text-sm placeholder:tw-text-gray-400 focus:placeholder:tw-invisible focus:tw-outline-none focus:tw-ring-1 focus:tw-ring-sims focus:tw-border-sims invalid:tw-text-pink-700 tw-peer invalid:focus:tw-ring-pink-700 invalid:focus:tw-border-pink-700">
               </li>
               <li>
-                <input type="email" id="email" placeholder="Email" class="tw-font-ubuntu tw-font-medium tw-mb-5 tw-px-4 tw-py-3 tw-border-2 tw-text-gray-500 tw-border-gray-300 tw-w-full tw-block tw-text-sm placeholder:tw-text-gray-400 focus:placeholder:tw-invisible focus:tw-outline-none focus:tw-ring-1 focus:tw-ring-sims focus:tw-border-sims invalid:tw-text-pink-700 tw-peer invalid:focus:tw-ring-pink-700 invalid:focus:tw-border-pink-700">
+                <input type="email" name="email" id="email" placeholder="Email" class="tw-font-ubuntu tw-font-medium tw-mb-5 tw-px-4 tw-py-3 tw-border-2 tw-text-gray-500 tw-border-gray-300 tw-w-full tw-block tw-text-sm placeholder:tw-text-gray-400 focus:placeholder:tw-invisible focus:tw-outline-none focus:tw-ring-1 focus:tw-ring-sims focus:tw-border-sims invalid:tw-text-pink-700 tw-peer invalid:focus:tw-ring-pink-700 invalid:focus:tw-border-pink-700">
               </li>
               <li>
-                <input type="password" id="password" placeholder="Password" class="tw-font-ubuntu tw-font-medium tw-px-4 tw-py-3 tw-border-2 tw-text-gray-500 tw-border-gray-300 tw-w-full tw-block tw-text-sm placeholder:tw-text-gray-400 focus:placeholder:tw-invisible focus:tw-outline-none focus:tw-ring-1 focus:tw-ring-sims focus:tw-border-sims invalid:tw-text-pink-700 tw-peer invalid:focus:tw-ring-pink-700 invalid:focus:tw-border-pink-700">
+                <input type="password" name="password" id="password" placeholder="Password" class="tw-font-ubuntu tw-font-medium tw-px-4 tw-py-3 tw-border-2 tw-text-gray-500 tw-border-gray-300 tw-w-full tw-block tw-text-sm placeholder:tw-text-gray-400 focus:placeholder:tw-invisible focus:tw-outline-none focus:tw-ring-1 focus:tw-ring-sims focus:tw-border-sims invalid:tw-text-pink-700 tw-peer invalid:focus:tw-ring-pink-700 invalid:focus:tw-border-pink-700">
+              </li>
+              <li>
+                <select name="roles" class="tw-my-5 dropdown-toggle tw-font-ubuntu tw-font-medium tw-px-4 tw-py-4 tw-border-2 tw-text-gray-400 tw-border-gray-300 tw-w-full tw-block tw-text-sm placeholder:tw-text-gray-400 focus:placeholder:tw-invisible focus:tw-outline-none focus:tw-ring-1 focus:tw-ring-sims focus:tw-border-sims">
+                  <option selected>Bagian</option>
+                  <option value="1">Tata Usaha</option>
+                  <option value="2">Kesiswaan</option>
+                  <option value="3">Kurikulum</option>
+                  <option value="4">Wali Kelas</option>
+              </select>
               </li>
               <li>
                 <button type="submit" class="tw-font-ubuntu tw-bg-[#90C2C2] tw-w-full tw-py-4 tw-text-sm tw-font-medium tw-text-white tw-mt-5 hover:tw-bg-[#5B9C9C]">Register</button>

@@ -1,38 +1,52 @@
- <!-- navbar -->
- <nav class="tw-relative tw-bg-white tw-border-gray-200 tw-px-2 sm:tw-px-4 tw-py-5 tw-rounded tw-font-pop tw-shadow-lg">
-  <div class="tw-container tw-flex tw-flex-wrap tw-justify-between tw-items-center tw-mx-auto">
-    <a href="#" class="tw-flex tw-items-center">
-      <i class="fa-duotone fa-graduation-cap tw-text-sims tw-text-3xl tw--ml-24 tw-pl-1"></i>
-      <span class="tw-self-center tw-text-xl tw-font-bold tw-whitespace-nowrap tw-pl-20 tw-text-sims">SIMS</span>
-    </a>
-    <div class="tw-flex tw-items-center md:tw-order-2">
-      <div class="dropdown tw-inline-block tw-relative">
-        <button class="tw-text-sims tw-font-semibold tw-py-2 tw-px-4 tw-inline-flex tw-items-center">
-          <span class="tw-mr-1">Ibnu Asep bin Budi</span>
-          <i class="fa-solid fa-caret-down tw-ml-2 tw-pb-1"></i>
-        </button>
-        <ul class="dropdown-menu tw-absolute tw-hidden text-sims tw-pt-1 tw-pl-5">
-          <!-- <li class=""><a class="tw-rounded-t-md tw-font-medium tw-border-gray-300 tw-bg-white hover:bg-sims hover:tw-text-white tw-py-3 tw-px-4 tw-block tw-whitespace-no-wrap" href="#">Profil</a></li> -->
-          <!-- <li class=""><a class="tw-bg-white hover:bg-sims tw-py-3 tw-px-4 hover:tw-text-white tw-block tw-whitespace-no-wrap" href="#">Two</a></li> -->
-          <li><a class="tw-rounded-md tw-font-medium tw-shadow-md tw-text-sims tw-border-gray-500 tw-bg-white hover:tw-bg-sims hover:tw-text-white tw-py-3 tw-px-4 tw-block tw-whitespace-no-wrap tw-text-md" href="#">Logout  &nbsp;<i class="fa-solid fa-right-from-bracket"></i></a></li>
-        </ul>
+{{-- <div class="tw-flex tw-overflow-x-hidden tw-h-screen" x-data="{ open: false }">
+  <!-- side bar -->
+  <aside x-bind:class="open? 'tw-absolute tw-left-0 tw-w-16 tw-bg-white tw-shadow-lg tw-flex tw-flex-col tw-h-screen' :'tw-absolute tw-left-0 tw-w-60 tw-bg-white tw-flex tw-flex-col tw-h-screen'">
+      <!-- logo section -->
+      <div class="tw-flex tw-flex-row tw-items-center tw-h-10 tw-w-full tw-p-4 tw-mt-4">
+          <!-- circle logo -->
+          <div class="tw-h-10 tw-w-10 tw-overflow-hidden tw-mr-2 tw-grid tw-place-items-center tw-text-sims tw-font-bold">
+          <i class="fa-duotone fa-graduation-cap tw-text-sims tw-text-3xl tw--ml-24 tw-pl-1"></i>
+          </div>
+          <!-- logo text -->
+          <h3 x-show="!open" class="tw-text-2xl tw-text-sims tw-font-semibold tw-font-pop tw-ml-5">SIMS</h3>
       </div>
-      <i class="fa-solid fa-user tw-w-10 tw-text-sims tw-ml-6 tw-text-xl sm:tw--mr-5"></i>
-    </div>
-  </div>
-</nav>
+      <!-- Sidebar Menu -->
+      <div class="tw-mt-10">
+          <ul class="list-unstyled">
+              <!-- home -->
+              <li class="tw-h-10 tw-w-full tw-flex tw-items-center tw-my-2 tw-text-sims tw-cursor-pointer hover:tw-bg-sims hover:tw-text-white">
+                  <a href="#" class="tw-flex tw-flex-row tw-ml-5 tw-text-md">
+                    <i class="fa-solid fa-house tw-text-xl"></i>
+                      <h3 x-show="!open" class="tw-ml-5 tw-text-sm tw-font-semibold tw-font-pop">Dashboard</h3>
+                  </a>
+              </li>
+              <li class="tw-h-10 tw-w-full tw-flex tw-items-center tw-my-2 tw-text-sims tw-cursor-pointer hover:tw-bg-sims hover:tw-text-white">
+                  <a href="#" class="tw-flex tw-flex-row tw-ml-5 tw-text-md">
+                    <i class="fa-regular fa-book-open tw-text-xl"></i>
+                      <h3 x-show="!open" class="tw-ml-5 tw-text-sm tw-font-semibold tw-font-pop">Buku Induk</h3>
+                  </a>
+              </li>
 
-<!-- sidebar -->
-<div class="tw-absolute tw-flex tw-flex-col tw-items-center tw-w-16 tw-h-screen tw-overflow-hidden tw-text-sims tw-bg-white tw-shadow-xl">
-<div class="tw-flex tw-flex-col tw-items-center tw-mt-3">
-  <a class="tw-flex tw-items-center tw-justify-center tw-w-16 tw-h-14 tw-mt-2 tw-transition-colors hover:tw-bg-sims hover:tw-text-white" href="#">
-    <i class="fa-solid fa-house tw-text-xl"></i>
-  </a>
-  <a class="tw-flex tw-items-center tw-justify-center tw-w-16 tw-h-14 tw-mt-2 tw-transition-colors hover:tw-bg-sims hover:tw-text-white" href="#">
-    <i class="fa-regular fa-book-open tw-text-xl"></i>
-  </a>
-  <a class="tw-flex tw-items-center tw-justify-center tw-w-16 tw-h-14 tw-mt-2 tw-transition-colors hover:tw-bg-sims hover:tw-text-white" href="#">
-    <i class="fa-solid fa-users tw-text-xl"></i>
-  </a>
-</div>
-</div>
+              <li class="tw-h-10 tw-w-full tw-flex tw-items-center tw-my-2 tw-text-sims tw-cursor-pointer hover:tw-bg-sims hover:tw-text-white">
+                  <a href="#" class="tw-flex tw-flex-row tw-ml-5 text-md">
+                    <i class="fa-solid fa-users tw-text-xl"></i>
+                      <h3 x-show="!open" class="tw-ml-5 tw-text-sm tw-font-semibold tw-font-pop">Rekap Siswa</h3>
+                  </a>
+              </li>
+          </ul>
+      </div>
+  </aside>
+      <div class="tw-flex-1 tw-relative">
+        <div class="tw-flex tw-bg-white tw-shadow-lg tw-justify-between tw-p-4 tw-text-semibold tw-text-white">
+          <button class="tw-my-auto tw-transition-all tw-rounded-md hover:tw-text-teal-300 tw-text-slate-500 hover:tw-border-slate-300 hover:tw-bg-slate-600">
+            <div x-on:click="open = !open" class="tw-h-10 tw-w-10 tw-overflow-hidden tw-place-items-center tw-cursor-pointer">
+              <div x-show="!open" class="tw-text-sims tw-font-semibold tw-font-pop tw-text-2xl" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">SIMS</div>
+              <div x-show="!open" class="tw-text-sims tw-font-semibold tw-font-pop tw-text-2xl" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">SIMS</div>
+          </div>
+          </button>
+        </div>
+        <main class="content-wrapper tw-p-4">
+          Main Content
+        </main>
+      </div>
+</div> --}}

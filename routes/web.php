@@ -15,7 +15,10 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', function () {
-    return view('dashboard-main');
+    return view('dashboard-main', [
+        'title' => 'Dashboard',
+        'active' => 'dashboard-main'
+    ]);
 });
 
 Route::get('/detail', function () {
@@ -29,5 +32,7 @@ Route::get('/asal', function () {
 Route::get('/register', [UserController::class, 'register'])->name('register');
 
 Route::get('/login', [UserController::class, 'login'])->name('login');
+
+Route::get('/rgsuccess', [UserController::class, 'rgsuccess'])->name('rgsuccess');
 
 Route::post('/registeruser', [UserController::class, 'registeruser'])->name('registeruser');
