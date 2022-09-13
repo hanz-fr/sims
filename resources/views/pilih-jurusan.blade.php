@@ -1,115 +1,76 @@
     @extends('layouts.main')
     @section('content')
-    <div class="row" id="myProducts">
-                <div class="content-panel cate-api">
-                    <div class="col-lg-4 col-md-2 card">
-                        <a href="#">
-                        <div class="product-pnl panel panel-default">
-                            <div class="panel-body">
-                                <img src="assets/img/computer-card.svg">
-                                <h5>Kategori</h5>
-                                <h4 class="card-title">One Gate Payment</h4>
-                                <p class="h6">Solusi bagi perusahaan untuk mengintegrasikan aplikasi/sistemnya dengan layanan transaksi perbankan</p>
-                            </div>
-                        </div>
-                        </a>
+    <div class="container">
+        <h1 class="tw-text-sims my-5">Buku Induk Siswa</h1>
+
+        <div class="row my-5">
+            <div class="col">
+                <div class="tw-text-white tw-bg-[#1b4cff] tw-rounded-xl tw-p-5 tw-drop-shadow-md hover:tw-bg-blue-700">
+                    <div class="tw-flex">
+                        <i class="fa-solid fa-money-bills tw-text-6xl tw-text tw-py-5"></i>
+                        <p class="tw-text-lg tw-pl-5 fw-bolder">AKUTANSI DAN KEUANGAN LEMBAGA</p>
                     </div>
-                    <div class="col-lg-4 col-md-2 card">
-                        <a href="#">
-                        <div class="product-pnl panel panel-default">
-                            <div class="panel-body">
-                                <img src="assets/img/bill.svg">
-                                <h5>Kategori</h5>
-                                <h4 class="card-title">Sharing Billers</h4>
-                                <p class="h6">Sharing Biller menambahkan kemampuan pembayaran dan pembelian terhadap aplikasi kemitraan ...</p>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-2">
-                        <a href="#">                             
-                            <div class="product-pnl panel panel-default">
-                                <div class="panel-body">
-                                    <img src="assets/img/remittance.svg">
-                                    <h5>Kategori</h5>
-                                    <h4 class="card-title">Remittance</h4>
-                                    <p class="h6">API Management adalah salah satu channel yang memungkinkan Anda untuk mengakses langsung ke BNI Server ...</p>
-                                </div>
-                           </div>
-                            </a>
-                    </div>
-                    <div class="col-lg-4 col-md-2">
-                        <a href="#">
-                        <div class="product-pnl panel panel-default">
-                            <div class="panel-body">
-                                <img src="assets/img/debitonline.svg">
-                                <h5>Kategori</h5>
-                                <h4 class="card-title">Debit Online</h4>
-                                <p class="h6">Fasilitas pembayaran belanja online BDO yang terhubung dengan Mastercard, dengan memasukkan Virtual Card Number (VCN)...</p>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-2">
-                        <a href="#">
-                        <div class="product-pnl panel panel-default">
-                            <div class="panel-body">
-                                <img src="assets/img/p2p.svg">
-                                <h5>Kategori</h5>
-                                <h4 class="card-title">P2P Lending</h4>
-                                <p class="h6">Solusi bagi perusahaan untuk mengintegrasikan aplikasi/sistemnya dengan layanan transaksi perbankan</p>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-2">
-                        <a href="#">
-                            <div class="product-pnl panel panel-default">
-                                <div class="panel-body">
-                                    <img src="assets/img/utility.svg">
-                                    <h5>Kategori</h5>
-                                    <h4 class="card-title">Utility</h4>
-                                    <p class="h6">Solusi bagi perusahaan untuk mengintegrasikan aplikasi/sistemnya dengan layanan transaksi perbankan</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 col-md-2">
-                        <a href="#">
-                            <div class="product-pnl panel panel-default">
-                                <div class="panel-body">
-                                    <img src="assets/img/calculator.svg">
-                                    <h5>Kategori</h5>
-                                    <h4 class="card-title">Lorem, ipsum dolor.</h4>
-                                    <p class="h6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum mollitia aperiam placeat asperiores dicta alias.</p>
-                                </div>
-                            </div>
-                            </a>
-                    </div>
-                    <div class="col-lg-4 col-md-2">
-                        <a href="#">
-                            <div class="product-pnl panel panel-default">
-                                <div class="panel-body">
-                                    <img src="assets/img/calculator.svg">
-                                    <h5>Kategori</h5>
-                                    <h4 class="card-title">Lorem, ipsum dolor.</h4>
-                                    <p class="h6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab provident officia, dicta laborum sint modi!</p>
-                                </div>
-                            </div>
-                            </a>
-                    </div>
-                    <div class="col-lg-4 col-md-2">
-                        <a href="#">
-                            <div class="product-pnl panel panel-default">
-                                <div class="panel-body">
-                                    <img src="assets/img/calculator.svg">
-                                    <h5>Kategori</h5>
-                                    <h4 class="card-title">Lorem, ipsum dolor.</h4>
-                                    <p class="h6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab provident officia, dicta laborum sint modi!</p>
-                                </div>
-                            </div>
-                            </a>
-                    </div>
-                    </div>
+                </div>
             </div>
+            <div class="col">
+                <div class="tw-text-white tw-bg-[#ff2462] tw-rounded-xl tw-p-5 tw-drop-shadow-md hover:tw-bg-[#e10040]">
+                    <div class="tw-flex">
+                        <i class="fa-solid fa-cart-shopping tw-text-6xl tw-text tw-py-5"></i>
+                        <p class="tw-text-lg tw-pl-5 tw-py-7 fw-bolder">PEMASARAN</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="tw-text-white tw-bg-[#527DB9] tw-rounded-xl tw-pl-5 tw-drop-shadow-md hover:tw-bg-[#3c5d89]">
+                    <div class="tw-flex">
+                        <i class="fa-solid fa-book-bookmark tw-text-6xl tw-text tw-pt-10"></i>
+                        <p class="tw-text-lg tw-pt-7 tw-pb-3 tw-pl-5 fw-bolder">MANAJEMEN PERKANTORAN DAN LAYANAN BISNIS</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="tw-text-white tw-bg-[#FF5C5C] tw-rounded-xl tw-p-5 tw-drop-shadow-md hover:tw-bg-[#c74848]">
+                    <div class="tw-flex">
+                        <i class="fa-solid fa-box tw-text-6xl tw-text tw-py-5"></i>
+                        <p class="tw-text-lg tw-pl-5 tw-pt-5 tw-pb-2 fw-bolder">MANAJEMEN LOGISTIK</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row my-5">
+            <div class="col">
+                <div class="tw-text-white tw-bg-[#BF32FC] tw-rounded-xl tw-p-5 tw-drop-shadow-md hover:tw-bg-[#9727c6]">
+                    <div class="tw-flex">
+                        <i class="fa-solid fa-camera tw-text-6xl tw-text tw-py-5"></i>
+                        <p class="tw-text-lg tw-pl-5 tw-pt-5 tw-pb-2 fw-bolder">DESAIN KOMUNIKASI VISUAL</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="tw-text-white tw-bg-[#6F6D6D] tw-rounded-xl tw-pl-5 tw-drop-shadow-md hover:tw-bg-[#585656]">
+                    <div class="tw-flex">
+                        <i class="fa-solid fa-desktop tw-text-6xl tw-text tw-pt-10"></i>
+                        <p class="tw-text-lg tw-pt-7 tw-pb-3 tw-pl-5 fw-bolder">TEKNIK KOMPUTER JARINGAN DAN TELEKOMUNIKASI</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="tw-text-white tw-bg-[#2CC06F] tw-rounded-xl tw-pl-5 tw-drop-shadow-md hover:tw-bg-[#249f5b]">
+                    <div class="tw-flex">
+                        <i class="fa-solid fa-code tw-text-6xl tw-text tw-pt-10"></i>
+                        <p class="tw-text-lg tw-pt-7 tw-pb-3 tw-pl-5 fw-bolder">PENGEMBANGAN PERANGKAT LUNAK DAN GIM</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="tw-text-white tw-bg-[#4D9E9E] tw-rounded-xl tw-p-5 tw-drop-shadow-md hover:tw-bg-[#3f7f7f]">
+                    <div class="tw-flex">
+                        <i class="fa-solid fa-user-graduate tw-text-6xl tw-text tw-py-5"></i>
+                        <p class="tw-text-lg tw-pl-5 tw-pt-8 fw-bolder">ALUMNI</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
     @endsection
