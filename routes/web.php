@@ -33,6 +33,12 @@ Route::get('/di-jurusan', function () {
     ]);
 });
 
+Route::get('/di-main', function () {
+    return view('di-maintable', [
+        'title' => 'Data Induk Siswa',
+    ]);
+});
+
 Route::get('/register', [UserController::class, 'register'])->name('register');
 
 Route::get('/login', [UserController::class, 'login'])->name('login');
