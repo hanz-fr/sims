@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -18,11 +19,12 @@ class UserController extends Controller
             'title' => 'Login'
         ]);
     }
-    public function rgsuccess(){
+    public function registersc(){
         return view('register-sc', [
             'title' => 'Registration Success'
         ]);
     }
+
     public function registeruser(Request $request){
         User::create([ 
             'nip' => $request->nip,
@@ -34,7 +36,15 @@ class UserController extends Controller
             'remember_token' => Str::random(60)
         ]);
 
-        return redirect('rgsuccess');
+        return redirect('/register-success');
+    }
+
+    public function loginuser(Request $request){
+        if(Auth::attempt($request->only('nip','password'))){
+            return redirect('/');
+        }
+
+        return redirect('/login');
     }
 }
 
