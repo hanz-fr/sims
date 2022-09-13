@@ -1,16 +1,16 @@
 @extends('layouts.main')
 
 @section('content')
-<div class="container mx-auto">
-  <div class="text-3xl text-sims font-pop font-semibold flex flex-row my-9 mx-9">Data Siswa</div>
+<div class="container tw-mx-auto">
+  <div class="tw-text-3xl tw-text-sims tw-font-pop tw-font-semibold tw-flex tw-flex-row tw-my-9 tw-mx-9">Data Siswa</div>
   {{-- foto profil --}}
-  <div class="flex-column w-1/5 text-center font-pop my-10 mx-9 md:mt-16">
-    <img src="" alt="" srcset="" class="rounded-xl mb-10 w-40 h-52 border-1 mx-auto">
-    <div class="text-xl text-basic font-semibold">Mudashir Alhamdulillah</div>
-    <div class="text-xl text-basic font-semibold">NIS/NISN</div>
-    <div class="text-xl text-basic font-semibold">Kelas/Jurusan</div>
+  <div class="tw-flex-column tw-w-1/5 tw-text-center tw-text-basic tw-text-xl tw-font-pop tw-font-semibold tw-my-10 tw-mx-9 md:tw-mt-16">
+    <img src="" alt="Pas Foto" srcset="" class="tw-rounded-xl tw-mb-10 tw-w-40 tw-h-52 tw-border-1 tw-border-gray-200 tw-mx-auto">
+    <div>Mudashir Alhamdulillah</div>
+    <div>NIS/NISN</div>
+    <div>Kelas/Jurusan</div>
   </div>
-  <div class="w-3/5">
+  <div class="tw-w-3/5">
     
   </div>
 </div>
