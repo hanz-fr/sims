@@ -23,7 +23,7 @@
         <div class="input-area tw-w-2/5">
           <div class="tw-text-3xl tw-text-sims tw-font-pop tw-font-bold">Welcome</div>
           <div class="tw-text-sm tw-mt-2 tw-text-slate-400 tw-font-pop">Please login to access the website</div>
-          <form action="/loginuser" method="post" class="tw-mt-12">
+          <form action="/loginuser" method="post" class="tw-mt-1">
             @csrf
             <ul>
               <li>

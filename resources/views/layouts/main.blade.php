@@ -15,11 +15,11 @@
   <link rel="stylesheet" href="font-awesome/css/all.min.css">
   <title>SIMS || {{ $title }}</title>
 </head>
-<body style="tw-bg-back">
-  @include('components.nav-sidebar')
-  @yield('content')
+<body class="tw-bg-back">
 
+  @include('components.nav-sidebar')
+  
   {{-- alpine js --}}
-  <script defer src="https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.3/cdn.js" integrity="sha512-KnYVZoWDMDmJwjmoUEcEd//9bap1dhg0ltiMWtdoKwvVdmEFZGoKsFhYBzuwP2v2iHGnstBor8tjPcFQNgI5cA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>
