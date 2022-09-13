@@ -35,6 +35,8 @@ Route::get('/register', [UserController::class, 'register'])->name('register');
 
 Route::get('/login', [UserController::class, 'login'])->name('login');
 
-Route::get('/rgsuccess', [UserController::class, 'rgsuccess'])->name('rgsuccess');
+Route::get('/register-success', [UserController::class, 'registersc'])->name('register-success');
 
 Route::post('/registeruser', [UserController::class, 'registeruser'])->name('registeruser');
+
+Route::post('/loginuser', [UserController::class, 'loginuser'])->name('loginuser');
