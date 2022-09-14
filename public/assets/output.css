@@ -626,6 +626,16 @@ video {
   margin-right: auto;
 }
 
+.tw-mx-6 {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.tw-my-6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
 .tw-my-28 {
   margin-top: 7rem;
   margin-bottom: 7rem;
@@ -654,31 +664,6 @@ video {
 .tw-my-auto {
   margin-top: auto;
   margin-bottom: auto;
-}
-
-.tw-my-7 {
-  margin-top: 1.75rem;
-  margin-bottom: 1.75rem;
-}
-
-.tw-mx-7 {
-  margin-left: 1.75rem;
-  margin-right: 1.75rem;
-}
-
-.tw-mx-4 {
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
-
-.tw-mx-6 {
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
-}
-
-.tw-my-6 {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
 }
 
 .tw-mt-9 {
@@ -779,10 +764,6 @@ video {
 
 .tw-flex {
   display: flex;
-}
-
-.tw-table-column {
-  display: table-column;
 }
 
 .tw-grid {
@@ -960,11 +941,6 @@ video {
 .tw-bg-back {
   --tw-bg-opacity: 1;
   background-color: rgb(244 244 244 / var(--tw-bg-opacity));
-}
-
-.tw-bg-sims {
-  --tw-bg-opacity: 1;
-  background-color: rgb(77 158 158 / var(--tw-bg-opacity));
 }
 
 .tw-p-6 {

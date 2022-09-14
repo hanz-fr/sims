@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+
 
 <h4 class="tw-font-pop tw-font-bold tw-mx-6 tw-my-6">DATA INDUK SISWA</h4>
 
@@ -41,8 +41,13 @@
             <td>MUBASHIR ALHAMDULILLAH</td>
             <td>L</td>
             <td>12 RPL 2</td>
-            <td>Row 1 Data 2
-
+            <td>
+                <button class="btn btn-primary">
+                    <i class="fa-solid fa-file-pen"></i>
+                </button>
+                <button class="btn btn-primary">
+                    <i class="fa-solid fa-eye"></i>
+                </button>
             </td>
         </tr>
     </tbody>
