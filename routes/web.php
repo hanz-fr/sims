@@ -22,7 +22,9 @@ Route::get('/', function () {
 });
 
 Route::get('/detail', function () {
-    return view('di-detail');
+    return view('di-detail', [
+        'title' => 'Data Siswa',
+    ]);
 });
 
 Route::get('/di-jurusan', function () {
