@@ -31,72 +31,56 @@
             <a href=""><i class="fa-solid fa-file-pdf tw-text-xl tw-px-3 tw-py-1 tw-mb-3 tw-mx-2 tw-text-white tw-bg-sims hover:tw-bg-[#3b7a7a] tw-border tw-rounded-lg"></i></a>
         </div>
     </div>
-    <div class="tw-shadow-md sm:tw-rounded-xl">
-        
+
+    <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
+        <table class="tw-w-full tw-text-sm tw-text-center">
+            <thead class="tw-text-md tw-bg-gray-100 tw-text-basic tw-border tw-font-pop">
+                <tr>
+                    <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">NO</th>
+                    <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">NIS</th>
+                    <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">NISN</th>
+                    <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">NAMA PESERTA DIDIK</th>
+                    <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">GENDER</th>
+                    <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">KELAS</th>
+                    <th scope="col" class="tw-py-3 tw-px-6">ACTION</th>
+                </tr>
+            </thead>
+            <tbody class="tw-text-base">
+                <tr class="tw-bg-white tw-border">
+                    <td class="tw-py-4 tw-px-6 tw-border">01</td>
+                    <td class="tw-py-4 tw-px-6 tw-border">-</td>
+                    <td class="tw-py-4 tw-px-6 tw-border">-</td>
+                    <td class="tw-py-4 tw-px-6 tw-border">-</td>
+                    <td class="tw-py-4 tw-px-6 tw-border">-</td>
+                    <td class="tw-py-4 tw-px-6 tw-border">-</td>
+                    <td>
+                        <button class="tw-border tw-rounded-lg text-white tw-py-2 tw-px-5 tw-bg-sims hover:tw-bg-[#3b7a7a]">
+                            <i class="fa-solid fa-file-pen"></i>
+                        </button>
+                        <button class="tw-border tw-rounded-lg text-white tw-py-2 tw-px-4 tw-bg-[#949494] hover:tw-bg-[#717171]">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr class="tw-bg-white tw-border">
+                    <td class="tw-py-4 tw-px-6 tw-border">01</td>
+                    <td class="tw-py-4 tw-px-6 tw-border">-</td>
+                    <td class="tw-py-4 tw-px-6 tw-border">-</td>
+                    <td class="tw-py-4 tw-px-6 tw-border">-</td>
+                    <td class="tw-py-4 tw-px-6 tw-border">-</td>
+                    <td class="tw-py-4 tw-px-6 tw-border">-</td>
+                    <td>
+                        <button class="tw-border tw-rounded-lg text-white tw-py-2 tw-px-5 tw-bg-sims hover:tw-bg-[#3b7a7a]">
+                            <i class="fa-solid fa-file-pen"></i>
+                        </button>
+                        <button class="tw-border tw-rounded-lg text-white tw-py-2 tw-px-4 tw-bg-[#949494] hover:tw-bg-[#717171]">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-    <table id="example" class="tw-w-full tw-whitespace-nowrap">
-        <thead>
-            <tr>
-                <th class="tw-border tw-border-slate-300 px-3 py-2 tw-text-center tw-rounded-tl-lg">NO</th>
-                <th class="tw-border tw-border-slate-300 px-3 py-2 tw-text-center">NIS</th>
-                <th class="tw-border tw-border-slate-300 px-3 py-2 tw-text-center">NISN</th>
-                <th class="tw-border tw-border-slate-300 px-3 py-2 tw-text-center">NAMA PESERTA DIDIK</th>
-                <th class="tw-border tw-border-slate-300 px-3 py-2 tw-text-center">GENDER</th>
-                <th class="tw-border tw-border-slate-300 px-3 py-2 tw-text-center">KELAS</th>
-                <th class="tw-border tw-border-slate-300 px-3 py-2 tw-text-center">ACTION</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td class="tw-border tw-border-slate-300 px-3 py-2 tw-text-center">01</td>
-                <td class="tw-border tw-border-slate-300 px-3 py-2 tw-text-center">238113011</td>
-                <td class="tw-border tw-border-slate-300 px-3 py-2 tw-text-center">2381130118811</td>
-                <td class="tw-border tw-border-slate-300 px-3 py-2 tw-text-center">AGUS LOREM IPSUM</td>
-                <td class="tw-border tw-border-slate-300 px-3 py-2 tw-text-center">L</td>
-                <td class="tw-border tw-border-slate-300 px-3 py-2 tw-text-center">10 PPLG 1</td>
-                <td class="tw-border tw-border-slate-300 px-3 py-2 tw-text-center">
-                    <button class="tw-border tw-rounded-lg text-white tw-py-2 tw-px-5 tw-bg-sims hover:tw-bg-[#3b7a7a]">
-                        <i class="fa-solid fa-file-pen"></i>
-                    </button>
-                    <button class="tw-border tw-rounded-lg text-white tw-py-2 tw-px-4 tw-bg-[#949494] hover:tw-bg-[#717171]">
-                        <i class="fa-solid fa-eye"></i>
-                    </button>
-                </td>
-            </tr>
-            <tr>
-                <td class="tw-border tw-border-slate-300 px-3 py-2 tw-text-center">02</td>
-                <td class="tw-border tw-border-slate-300 px-3 py-2 tw-text-center">200654845</td>
-                <td class="tw-border tw-border-slate-300 px-3 py-2 tw-text-center">0178577600562</td>
-                <td class="tw-border tw-border-slate-300 px-3 py-2 tw-text-center">MUBASHIR ALHAMDULILLAH</td>
-                <td class="tw-border tw-border-slate-300 px-3 py-2 tw-text-center">L</td>
-                <td class="tw-border tw-border-slate-300 px-3 py-2 tw-text-center">12 RPL 2</td>
-                <td class="tw-border tw-border-slate-300 px-3 py-2 tw-text-center">
-                    <button class="tw-border tw-rounded-lg text-white tw-py-2 tw-px-5 tw-bg-sims hover:tw-bg-[#3b7a7a]">
-                        <i class="fa-solid fa-file-pen"></i>
-                    </button>
-                    <button class="tw-border tw-rounded-lg text-white tw-py-2 tw-px-4 tw-bg-[#949494] hover:tw-bg-[#717171]">
-                        <i class="fa-solid fa-eye"></i>
-                    </button>
-                </td>
-            </tr>
-            <tr>
-                <td class="tw-border tw-border-slate-300 px-3 py-2 tw-text-center">03</td>
-                <td class="tw-border tw-border-slate-300 px-3 py-2 tw-text-center">2001593482</td>
-                <td class="tw-border tw-border-slate-300 px-3 py-2 tw-text-center">0178577600777</td>
-                <td class="tw-border tw-border-slate-300 px-3 py-2 tw-text-center">SUKMA DIKA</td>
-                <td class="tw-border tw-border-slate-300 px-3 py-2 tw-text-center">L</td>
-                <td class="tw-border tw-border-slate-300 px-3 py-2 tw-text-center">11 PPLG 2</td>
-                <td class="tw-border tw-border-slate-300 px-3 py-2 tw-text-center">
-                    <button class="tw-border tw-rounded-lg text-white tw-py-2 tw-px-5 tw-bg-sims hover:tw-bg-[#3b7a7a]">
-                        <i class="fa-solid fa-file-pen"></i>
-                    </button>
-                    <button class="tw-border tw-rounded-lg text-white tw-py-2 tw-px-4 tw-bg-[#949494] hover:tw-bg-[#717171]">
-                        <i class="fa-solid fa-eye"></i>
-                    </button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
 </div>
 
 @endsection
