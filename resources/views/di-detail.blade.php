@@ -14,17 +14,20 @@
       
       {{-- data siswa n rekap nilai --}}
       <div x-data="{ openTab: 1,
-        activeClasses: 'tw-bg-gray-200',
-        inactiveClasses: 'tw-bg-white '
-      }"  class="tw-w-3/5 tw-p-6">
-        <ul class="tw-flex mb-0 tw--ml-5">
+        activeClasses: 'tw-bg-gray-200 tw-border',
+        inactiveClasses: 'tw-bg-white tw-border-t tw-border-x'
+      }"  class="tw-w-3/5">
+      <div class="tw-float-right">
+        <a href="#" class="tw-text-white tw-bg-kuning hover:tw-bg-[#D3A007] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-solid fa-pen-to-square"></i></a>
+      </div>
+        <ul class="tw-flex mb-0 mt-3 tw--ml-6">
           <li @click="openTab = 1" :class="{ 'tw--mb-px': openTab === 1 }" class="tw--mb-px tw-mr-1">
-            <button :class="openTab === 1 ? activeClasses : inactiveClasses" class="tw-rounded-t-2xl tw-text-basic tw-border hover:tw-text-sims tw-inline-block tw-py-2 tw-px-4 tw-font-semibold" href="#">
+            <button :class="openTab === 1 ? activeClasses : inactiveClasses" class="tw-rounded-t-2xl tw-text-basic hover:tw-text-sims tw-inline-block tw-py-2 tw-px-4 tw-font-semibold" href="#">
               Data Diri
             </button>
           </li>
           <li @click="openTab = 2" :class="{ 'tw--mb-px': openTab === 2 }">
-            <button :class="openTab === 2 ? activeClasses : inactiveClasses" class="tw-rounded-t-2xl tw-text-basic tw-border hover:tw-text-sims tw-inline-block tw-py-2 tw-px-4 tw-font-semibold" href="#">
+            <button :class="openTab === 2 ? activeClasses : inactiveClasses" class="tw-rounded-t-2xl tw-text-basic hover:tw-text-sims tw-inline-block tw-py-2 tw-px-4 tw-font-semibold" href="#">
               Rekap Nilai
             </button>
           </li>
@@ -189,7 +192,7 @@
                       </tr>
                       <tr class="tw-bg-gray-100 tw-border">
                         <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic tw-whitespace-nowrap">
-                          87
+                          Bahasa Jepang
                         </th>
                         <td class="tw-py-4 tw-px-6">
                           72
