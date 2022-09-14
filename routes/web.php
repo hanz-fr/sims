@@ -24,30 +24,49 @@ Route::get('/', function () {
 Route::get('/detail', function () {
     return view('di-detail', [
         'title' => 'Data Siswa',
+        'active' => 'data-induk'
     ]);
 });
 
-Route::get('/di-jurusan', function () {
+Route::get('/jurusan', function () {
     return view('pilih-jurusan', [
         'title' => 'Pilih Jurusan',
+        'active' => 'data-induk'
     ]);
 });
 
-Route::get('/di-main', function () {
-    return view('di-maintable', [
+Route::get('/tambah-data', function () {
+    return view('input-di', [
+        'title' => 'Tambah Data Induk Siswa',
+        'active' => 'data-induk'
+    ]);
+});
+
+Route::get('/update-data', function () {
+    return view('update-di', [
+        'title' => 'Update Data Induk Siswa',
+        'active' => 'data-induk'
+    ]);
+});
+
+Route::get('/data-induk-siswa', function () {
+    return view('data-induk', [
         'title' => 'Data Induk Siswa',
+        'active' => 'data-induk'
     ]);
 });
 
-Route::get('/di-angkatan', function () {
+Route::get('/angkatan', function () {
     return view('pilih-angkatan', [
         'title' => 'Pilih Angkatan',
+        'active' => 'data-induk'
     ]);
 });
 
-Route::get('/di-alumni', function () {
+Route::get('/data-alumni', function () {
     return view('di-alumnitable', [
         'title' => 'Data Alumni',
+        'active' => 'data-induk'
     ]);
 });
 
