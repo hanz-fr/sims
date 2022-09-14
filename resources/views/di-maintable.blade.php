@@ -31,7 +31,9 @@
             <a href=""><i class="fa-solid fa-file-pdf tw-text-xl tw-px-3 tw-py-1 tw-mb-3 tw-mx-2 tw-text-white tw-bg-sims hover:tw-bg-[#3b7a7a] tw-border tw-rounded-lg"></i></a>
         </div>
     </div>
-    
+    <div class="tw-shadow-md sm:tw-rounded-xl">
+        
+    </div>
     <table id="example" class="tw-w-full tw-whitespace-nowrap">
         <thead>
             <tr>
