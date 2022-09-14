@@ -815,6 +815,10 @@ video {
   margin-left: -1.25rem;
 }
 
+.tw-mt-8 {
+  margin-top: 2rem;
+}
+
 .tw-block {
   display: block;
 }
@@ -1043,6 +1047,11 @@ video {
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
 
+.tw-border-slate-300 {
+  --tw-border-opacity: 1;
+  border-color: rgb(203 213 225 / var(--tw-border-opacity));
+}
+
 .tw-bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -1131,6 +1140,11 @@ video {
 .tw-bg-gray-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+
+.tw-bg-\[\#EF5C76\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 92 118 / var(--tw-bg-opacity));
 }
 
 .tw-p-6 {
@@ -1239,6 +1253,10 @@ video {
 
 .tw-pl-4 {
   padding-left: 1rem;
+}
+
+.tw-pl-3 {
+  padding-left: 0.75rem;
 }
 
 .tw-text-left {
@@ -1511,6 +1529,21 @@ a {
 .hover\:tw-bg-\[\#3f7f7f\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(63 127 127 / var(--tw-bg-opacity));
+}
+
+.hover\:tw-bg-\[\#0c7192\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(12 113 146 / var(--tw-bg-opacity));
+}
+
+.hover\:tw-bg-\[\#c14a60\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(193 74 96 / var(--tw-bg-opacity));
+}
+
+.hover\:tw-bg-\[\#44689b\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(68 104 155 / var(--tw-bg-opacity));
 }
 
 .hover\:tw-text-sims:hover {
