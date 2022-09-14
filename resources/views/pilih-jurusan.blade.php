@@ -1,6 +1,7 @@
 @extends('layouts.main')
 @section('content')
 
+<div class="">
     <h1 class="tw-text-sims my-5 tw-ml-36">Buku Induk Siswa</h1>
     
     <div class="tw-justify-center tw-mx-auto tw-flex tw-flex-wrap tw-gap-5">
@@ -53,4 +54,5 @@
             </div>
         </div>
     </div>
+</div>
 @endsection
