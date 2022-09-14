@@ -37,6 +37,12 @@ Route::get('/di-main', function () {
     ]);
 });
 
+Route::get('/di-angkatan', function () {
+    return view('pilih-angkatan', [
+        'title' => 'Pilih Angkatan',
+    ]);
+});
+
 Route::get('/register', [UserController::class, 'register'])->name('register');
 
 Route::get('/login', [UserController::class, 'login'])->name('login');
