@@ -673,6 +673,16 @@ video {
   margin-bottom: auto;
 }
 
+.tw-mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.tw-my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .tw-mt-7 {
   margin-top: 1.75rem;
 }
@@ -779,6 +789,14 @@ video {
 
 .tw-ml-8 {
   margin-left: 2rem;
+}
+
+.tw-mt-6 {
+  margin-top: 1.5rem;
+}
+
+.tw-mb-3 {
+  margin-bottom: 0.75rem;
 }
 
 .tw-block {
@@ -930,6 +948,10 @@ video {
   align-items: center;
 }
 
+.tw-justify-end {
+  justify-content: flex-end;
+}
+
 .tw-justify-center {
   justify-content: center;
 }
@@ -987,6 +1009,10 @@ video {
   border-top-right-radius: 1rem;
 }
 
+.tw-rounded-tl-lg {
+  border-top-left-radius: 0.5rem;
+}
+
 .tw-border {
   border-width: 1px;
 }
@@ -1010,6 +1036,10 @@ video {
 
 .tw-border-b {
   border-bottom-width: 1px;
+}
+
+.tw-border-none {
+  border-style: none;
 }
 
 .tw-border-sims {
@@ -1112,6 +1142,21 @@ video {
   background-color: rgb(244 244 244 / var(--tw-bg-opacity));
 }
 
+.tw-bg-sims {
+  --tw-bg-opacity: 1;
+  background-color: rgb(77 158 158 / var(--tw-bg-opacity));
+}
+
+.tw-bg-gray-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+}
+
+.tw-bg-\[\#949494\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(148 148 148 / var(--tw-bg-opacity));
+}
+
 .tw-p-5 {
   padding: 1.25rem;
 }
@@ -1122,6 +1167,10 @@ video {
 
 .tw-p-3 {
   padding: 0.75rem;
+}
+
+.tw-p-2 {
+  padding: 0.5rem;
 }
 
 .tw-px-9 {
@@ -1214,6 +1263,11 @@ video {
   padding-right: 3rem;
 }
 
+.tw-py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
 .tw-pr-2 {
   padding-right: 0.5rem;
 }
@@ -1240,6 +1294,10 @@ video {
 
 .tw-pr-8 {
   padding-right: 2rem;
+}
+
+.tw-pr-5 {
+  padding-right: 1.25rem;
 }
 
 .tw-text-left {
@@ -1358,6 +1416,16 @@ video {
 .tw-text-red-600 {
   --tw-text-opacity: 1;
   color: rgb(220 38 38 / var(--tw-text-opacity));
+}
+
+.tw-text-slate-500 {
+  --tw-text-opacity: 1;
+  color: rgb(100 116 139 / var(--tw-text-opacity));
+}
+
+.tw-text-slate-600 {
+  --tw-text-opacity: 1;
+  color: rgb(71 85 105 / var(--tw-text-opacity));
 }
 
 .tw-underline {
@@ -1504,6 +1572,16 @@ a {
 
 .hover\:tw-bg-sims\/\[0\.6\]:hover {
   background-color: rgb(77 158 158 / 0.6);
+}
+
+.hover\:tw-bg-\[\#3b7a7a\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 122 122 / var(--tw-bg-opacity));
+}
+
+.hover\:tw-bg-\[\#717171\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(113 113 113 / var(--tw-bg-opacity));
 }
 
 .hover\:tw-text-white:hover {
