@@ -1,8 +1,8 @@
 @extends('layouts.main')
-@section('content')
 
-<div class="">
-    <h1 class="tw-text-sims my-5 tw-ml-36">Buku Induk Siswa</h1>
+@section('content')
+<div class="tw-container">
+    <h1 class="tw-text-sims tw-ml-36 tw-font-pop tw-text-2xl tw-mt-9 tw-mx-9">Buku Induk Siswa</h1>
     
     <div class="tw-justify-center tw-mx-auto tw-flex tw-flex-wrap tw-gap-5">
         <div class="tw-text-white tw-bg-[#1b4cff] tw-w-1/5 tw-rounded-xl tw-p-5 tw-drop-shadow-md hover:tw-bg-blue-700">
