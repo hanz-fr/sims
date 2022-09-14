@@ -1,6 +1,6 @@
 <div class="tw-flex" x-data="{ open: false }">
     {{-- sidebar --}}
-    <aside x-bind:class="open?'tw-relative tw-left-0 tw-w-60 tw-bg-white tw-flex tw-flex-col tw-top-0 tw-bottom-0 tw-shadow-md' : 'tw-relative tw-inset-0 tw-w-16 tw-bg-white tw-shadow-lg tw-flex tw-flex-col tw-top-0 tw-bottom-0'" class="tw-transition-all tw-duration-300">
+    <aside x-bind:class="open?'tw-relative tw-left-0 tw-w-60 tw-bg-white tw-flex tw-flex-col tw-top-0 tw-bottom-0' : 'tw-relative tw-inset-0 tw-w-16 tw-bg-white tw-flex tw-flex-col tw-top-0 tw-bottom-0'" class="tw-transition-all tw-duration-300">
         <div class="tw-flex tw-flex-row tw-items-center tw-h-10 tw-w-full tw-p-4 tw-mt-4">
             <div class="tw-h-10 tw-w-10 tw-mr-2 tw-grid tw-place-items-center tw-text-sims tw-font-bold tw-text-2xl"><i class="fa-duotone fa-graduation-cap"></i></div>
             <h3 x-show="open" class="tw-text-xl tw-text-sims tw-font-semibold tw-font-pop tw-pt-2">SIMS</h3>
@@ -31,7 +31,7 @@
     
     {{-- navbar --}}
         <div class="tw-flex-1">
-          <div class="tw-flex tw-bg-white tw-shadow-lg tw-h-16 tw-justify-between tw-p-3 text-semibold tw-text-white">
+          <div class="tw-flex tw-bg-white tw-shadow-md tw-h-16 tw-justify-between tw-p-3 text-semibold tw-text-white">
             <button class="tw-my-auto tw-transition-all tw-rounded-md  tw-text-gray-500" @click="sidebarOpen = !sidebarOpen">
               <div x-on:click="open = !open" class="tw-overflow-hidden tw-place-items-center tw-cursor-pointer">
                 <div x-show="!open" class="tw-text-sims tw-font-semibold tw-font-pop tw-text-xl tw-ml-7">SIMS</div>
