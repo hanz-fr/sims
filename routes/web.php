@@ -43,6 +43,12 @@ Route::get('/di-angkatan', function () {
     ]);
 });
 
+Route::get('/di-alumni', function () {
+    return view('di-alumnitable', [
+        'title' => 'Data Alumni',
+    ]);
+});
+
 Route::get('/register', [UserController::class, 'register'])->name('register');
 
 Route::get('/login', [UserController::class, 'login'])->name('login');
