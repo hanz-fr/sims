@@ -1,10 +1,10 @@
 @extends('layouts.main')
 
 @section('content')
-<div class="tw-container">
+<div class="tw-mx-8">
   <div class="tw-flex">
     {{-- card jumlah --}}
-    <div class="tw-flex tw-flex-col tw-ml-8">
+    <div class="tw-flex tw-flex-col">
       <ul class="list-unstyled grid-rows-3 tw-grid-flow-col tw-gap-4 tw-flex tw-mt-7">
         <li>
           <div class="tw-columns-2 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-border-sims tw-bg-white">
@@ -57,12 +57,16 @@
       </ul>
       <div class="tw-bg-white tw-shadow-md tw-h-96 tw-w-full">
       </div>
-      <div class="tw-bg-white tw-shadow-md tw-w-full tw-flex tw-h-52 tw-mt-5 tw-flex-col ">
+      <div class="tw-bg-white tw-shadow-md tw-w-full tw-flex tw-h-52 tw-mt-5 tw-flex-col tw-mb-7">
 
       </div>
     </div>
-    <div class="tw-w-1/2">
-    
+    <div class="tw-w-1/2 tw-ml-8 tw-mt-7">
+      <div class="tw-bg-white tw-shadow-md tw-h-96 tw-w-full">
+      </div>
+      <div class="tw-bg-white tw-shadow-md tw-border tw-w-full tw-flex tw-h-96 tw-flex-col tw-mb-7">
+
+      </div>
     </div>
   </div>
 </div>
