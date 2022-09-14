@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="font-awesome/css/all.min.css">
   <title>SIMS || {{ $title }}</title>
 </head>
-<body style="tw-bg-back">
+<body class="tw-bg-back">
   @include('components.nav-sidebar')
 
   {{-- alpine js --}}

@@ -1,6 +1,6 @@
 <div class="tw-flex" x-data="{ open: false }">
     {{-- sidebar --}}
-    <aside x-bind:class="open?'tw-relative tw-left-0 tw-w-60 tw-bg-white tw-flex tw-flex-col tw-h-screen tw-shadow-md' : 'tw-relative tw-inset-0 tw-w-16 tw-bg-white tw-shadow-lg tw-flex tw-flex-col tw-h-screen'" class="tw-transition-all tw-duration-300">
+    <aside x-bind:class="open?'tw-relative tw-left-0 tw-w-60 tw-bg-white tw-flex tw-flex-col tw-top-0 tw-bottom-0 tw-shadow-md' : 'tw-relative tw-inset-0 tw-w-16 tw-bg-white tw-shadow-lg tw-flex tw-flex-col tw-top-0 tw-bottom-0'" class="tw-transition-all tw-duration-300">
         <div class="tw-flex tw-flex-row tw-items-center tw-h-10 tw-w-full tw-p-4 tw-mt-4">
             <div class="tw-h-10 tw-w-10 tw-mr-2 tw-grid tw-place-items-center tw-text-sims tw-font-bold tw-text-2xl"><i class="fa-duotone fa-graduation-cap"></i></div>
             <h3 x-show="open" class="tw-text-xl tw-text-sims tw-font-semibold tw-font-pop tw-pt-2">SIMS</h3>
