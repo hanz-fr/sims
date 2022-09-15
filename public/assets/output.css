@@ -1788,6 +1788,10 @@ a {
     flex-wrap: wrap;
   }
 
+  .sm\:tw-justify-start {
+    justify-content: flex-start;
+  }
+
   .sm\:tw-gap-5 {
     gap: 1.25rem;
   }
@@ -1822,5 +1826,9 @@ a {
 
   .lg\:tw-grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .lg\:tw-justify-end {
+    justify-content: flex-end;
   }
 }
