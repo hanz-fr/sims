@@ -64,7 +64,7 @@
         <div class="tw-px-10 tw-font-pop tw-pt-7">
           <div class="tw-text-sm tw-text-gray-400 tw-font-bold">Data Jumlah Siswa SMKN 11</div>
           <div>
-            <canvas id="lineChart" height="300" width="500"></canvas>
+            <canvas id="myChart" class="tw-mt-4"></canvas>          
           </div>          
         </div>
       </div>
@@ -136,3 +136,37 @@
   </div>
 </div>
 @endsection
+
+@push('scripts')
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  // chart view dasbrot
+const labels = [
+  'Jan',
+  'Feb',
+  'Mar',
+  'Apr',
+  'May',
+];
+const data = {
+  labels: labels,
+  datasets: [{
+    label: 'Rekap Jumlah Siswa',
+    backgroundColor: '#4D9E9E',
+    borderColor: '#4D9E9E',
+    data: [800, 450, 500, 300, 200],
+  }]
+};
+
+const config = {
+  type: 'line',
+  data: data,
+  options: {}
+};
+
+const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
+</script>
+@endpush
