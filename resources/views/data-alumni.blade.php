@@ -71,7 +71,7 @@
             <td class="tw-border-2 tw-border-slate-300">TKJ</td>
             <td class="tw-border-2 tw-border-slate-300">
                 <button class="btn text-white" style="background-color: #4D9E9E;">
-                    <i class="fa-solid fa-file-pen"></i>
+                    <i class="fa-solid fa-clipboard-list"></i>
                 </button>
                 <a href="#" class="tw-text-white tw-bg-kuning hover:tw-bg-[#D3A007] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                     <i class="fa-solid fa-pen-to-square"></i></a>
@@ -91,11 +91,11 @@
             <td class="tw-border-2 tw-border-slate-300">MM 2</td>
             <td class="tw-border-2 tw-border-slate-300">
                 <button class="btn text-white" style="background-color: #4D9E9E;">
-                    <i class="fa-solid fa-file-pen"></i>
+                    <i class="fa-solid fa-clipboard-list"></i>
                 </button>
-                <a href="#" class="tw-text-white tw-bg-kuning hover:tw-bg-[#D3A007] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
+                <button class="btn text-white" style="background-color: #FFC107;">
                     <i class="fa-solid fa-pen-to-square"></i></a>
-                </a>
+                </button>
                 <button class="btn text-white" style="background-color: #949494;">
                     <i class="fa-solid fa-eye"></i>
                 </button>
@@ -111,7 +111,7 @@
             <td class="tw-border-2 tw-border-slate-300">MLOG 2</td>
             <td class="tw-border-2 tw-border-slate-300">
                 <button class="btn text-white" style="background-color: #4D9E9E;">
-                    <i class="fa-solid fa-file-pen"></i>
+                    <i class="fa-solid fa-clipboard-list"></i>
                 </button>
                 <a href="#" class="tw-text-white tw-bg-kuning hover:tw-bg-[#D3A007] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                     <i class="fa-solid fa-pen-to-square"></i></a>
