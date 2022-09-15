@@ -1816,8 +1816,20 @@ a {
 }
 
 @media (min-width: 640px) {
+  .sm\:tw-flex {
+    display: flex;
+  }
+
   .sm\:tw-grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .sm\:tw-flex-wrap {
+    flex-wrap: wrap;
+  }
+
+  .sm\:tw-gap-5 {
+    gap: 1.25rem;
   }
 
   .sm\:tw-rounded-xl {

@@ -4,9 +4,9 @@
     <div class="container">
         <h4 class="tw-font-pop tw-font-bold tw-mt-6 tw-text-sims">Data Induk Siswa</h4>
         <h6 class="tw-mb-6 tw-text-gray-400 tw-font-semibold">X PENGEMBANGAN PERANGKAT LUNAK DAN GIM</h6>
-        <div class="tw-flex tw-justify-between">
+        <div class="tw-flex tw-justify-between sm:tw-flex-wrap sm:tw-gap-5">
             <div class="tw-flex">
-                <form action=""> 
+                <form action="" class="tw-flex sm:tw-flex"> 
                     <div class="relative tw-border-2 tw-rounded-lg focus:tw-ring-sims">
                     <input type="text" class="tw-py-1 tw-px-5 tw-border-none tw-rounded-md">
                     <i class="fa-solid fa-magnifying-glass tw-pr-5 tw-pl-3 tw-text-slate-600"></i>
@@ -26,7 +26,7 @@
                 <div class="tw-text-base pt-1 tw-mx-2 tw-font-pop tw-font-normal tw-text-basic">Entries</div>
 
             </div>
-            <div class="">
+            <div class="tw-flex sm:tw-flex">
                 <a href=""><i class="fa-solid fa-print tw-text-xl tw-px-3 tw-py-1 tw-mb-3 tw-mx-2 tw-text-white tw-bg-sims hover:tw-bg-[#3b7a7a] tw-border tw-rounded-lg"></i></a>
                 <a href=""><i class="fa-solid fa-copy tw-text-xl tw-px-3 tw-py-1 tw-mb-3 tw-mx-2 tw-text-white tw-bg-sims hover:tw-bg-[#3b7a7a] tw-border tw-rounded-lg"></i></a>
                 <a href=""><i class="fa-solid fa-file-excel tw-text-xl tw-px-3 tw-py-1 tw-mb-3 tw-mx-2 tw-text-white tw-bg-sims hover:tw-bg-[#3b7a7a] tw-border tw-rounded-lg"></i></a>
