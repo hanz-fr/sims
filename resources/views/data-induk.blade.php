@@ -6,10 +6,10 @@
         <h6 class="tw-mb-6 tw-text-gray-400 tw-font-semibold">X PENGEMBANGAN PERANGKAT LUNAK DAN GIM</h6>
         <div class="tw-flex tw-justify-between sm:tw-flex-wrap sm:tw-gap-5">
             <div class="tw-flex">
-                <form action="" class="tw-flex sm:tw-flex"> 
+                <form action=""> 
                     <div class="relative tw-border-2 tw-rounded-lg focus:tw-ring-sims">
-                    <input type="text" class="tw-py-1 tw-px-5 tw-border-none tw-rounded-md">
-                    <i class="fa-solid fa-magnifying-glass tw-pr-5 tw-pl-3 tw-text-slate-600"></i>
+                        <input type="text" class="tw-py-1 tw-px-5 tw-border-none tw-rounded-md">
+                        <i class="fa-solid fa-magnifying-glass tw-pr-5 tw-pl-3 tw-text-slate-600"></i>
                     </div>
                 </form>
                 <div class="tw-text-base pt-1 tw-text-basic tw-ml-4 tw-mr-2 tw-font-normal tw-font-pop">Show</div>
