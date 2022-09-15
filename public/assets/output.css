@@ -1429,6 +1429,10 @@ video {
   padding-right: 2rem;
 }
 
+.tw-pt-5 {
+  padding-top: 1.25rem;
+}
+
 .tw-text-left {
   text-align: left;
 }
@@ -1493,6 +1497,11 @@ video {
 .tw-text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
+}
+
+.tw-text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 
 .tw-font-bold {
