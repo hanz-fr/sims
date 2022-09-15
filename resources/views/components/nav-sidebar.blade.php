@@ -1,26 +1,28 @@
 <div class="tw-flex" x-data="{ open: false }">
     {{-- sidebar --}}
-    <aside x-bind:class="open?'tw-relative tw-left-0 tw-w-60 tw-bg-white tw-flex tw-flex-col tw-top-0 tw-bottom-0' : 'tw-relative tw-inset-0 tw-w-16 tw-bg-white tw-flex tw-flex-col tw-top-0 tw-bottom-0'" class="tw-transition-all tw-duration-300">
+    <aside x-bind:class="open?'tw-relative tw-left-0 tw-h-screen tw-w-60 tw-bg-white tw-flex tw-flex-col tw-top-0 tw-bottom-0' : 'tw-relative tw-inset-0 tw-w-16 tw-bg-white tw-flex tw-flex-col tw-top-0 tw-bottom-0 tw-h-screen'" class="tw-transition-all tw-duration-300">
         <div class="tw-flex tw-flex-row tw-items-center tw-h-10 tw-w-full tw-p-4 tw-mt-4">
-            <div class="tw-h-10 tw-w-10 tw-mr-2 tw-grid tw-place-items-center tw-text-sims tw-font-bold tw-text-2xl"><i class="fa-duotone fa-graduation-cap"></i></div>
+            <div x-on:click="open = !open" class="tw-overflow-hidden tw-place-items-center tw-cursor-pointer">
+                <div x-show="!open open" class="tw-h-10 tw-w-10 tw-mr-2 tw-grid tw-place-items-center tw-text-sims tw-font-bold tw-text-2xl"><i class="fa-duotone fa-graduation-cap"></i></div>
+              </div>
             <h3 x-show="open" class="tw-text-xl tw-text-sims tw-font-semibold tw-font-pop tw-pt-2">SIMS</h3>
         </div>
         <div class="tw-mt-10">
             <ul class="list-unstyled">
-                <li class="tw-h-16 tw-w-full tw-flex tw-items-center tw-my-2 tw-py-3 tw-text-sims tw-cursor-pointer hover:tw-bg-sims hover:tw-text-white">
-                    <a href="#" class="tw-flex tw-flex-row tw-ml-5 tw-text-lg hover:tw-text-white">
+                <li class="tw-flex tw-mt-2 tw-text-sims tw-cursor-pointer">
+                    <a href="/" class="{{ ($active === "dashboard-main") ? 'tw-bg-sims tw-text-white' : '' }} tw-p-5 hover:tw-bg-sims hover:tw-text-white tw-h-16 tw-w-full tw-flex tw-flex-row">
                         <i class="fa-solid fa-house tw-text-xl"></i>
                         <div x-show="open" class="tw-ml-5 tw-text-lg tw-font-medium tw-font-pop">Dashboard</div>
                     </a>
                 </li>
-                <li class="tw-h-16 tw-w-full tw-flex tw-items-center tw-my-2 tw-text-sims tw-cursor-pointer hover:tw-bg-sims hover:tw-text-white">
-                    <a href="#" class="tw-flex tw-flex-row tw-ml-5 tw-text-lg hover:tw-text-white">
+                <li class="tw-flex tw-text-sims tw-cursor-pointer">
+                    <a href="/data-induk-siswa" class="{{ ($active === "data-induk") ? 'tw-bg-sims tw-text-white' : '' }} tw-p-5 hover:tw-bg-sims hover:tw-text-white tw-h-16 tw-w-full tw-flex tw-flex-row">
                         <i class="fa-regular fa-book-open tw-text-xl"></i>
                         <div x-show="open" class="tw-ml-5 tw-text-lg tw-font-medium tw-font-pop">Buku Induk</div>
                     </a>
                 </li>
-                <li class="tw-h-16 tw-w-full tw-flex tw-items-center tw-my-2 tw-text-sims tw-cursor-pointer hover:tw-bg-sims hover:tw-text-white">
-                    <a href="#" class="tw-flex tw-flex-row tw-ml-5 tw-text-lg hover:tw-text-white">
+                <li class="tw-flex tw-text-sims tw-cursor-pointer">
+                    <a href="#" class="{{ ($active === "rekap-siswa") ? 'tw-bg-sims tw-text-white' : '' }} tw-p-5 hover:tw-bg-sims hover:tw-text-white tw-h-16 tw-w-full tw-flex tw-flex-row">
                         <i class="fa-solid fa-users tw-text-xl"></i>
                         <div x-show="open" class="tw-ml-5 tw-text-lg tw-font-medium tw-font-pop">Rekap Siswa</div>
                     </a>
@@ -32,9 +34,9 @@
     {{-- navbar --}}
         <div class="tw-flex-1">
           <div class="tw-flex tw-bg-white tw-shadow-md tw-h-16 tw-justify-between tw-p-3 text-semibold tw-text-white">
+            <div x-show="!open" class="tw-text-sims tw-font-semibold tw-font-pop tw-text-xl tw-ml-7 tw-py-2">SIMS</div>
             <button class="tw-my-auto tw-transition-all tw-rounded-md  tw-text-gray-500" @click="sidebarOpen = !sidebarOpen">
               <div x-on:click="open = !open" class="tw-overflow-hidden tw-place-items-center tw-cursor-pointer">
-                <div x-show="!open" class="tw-text-sims tw-font-semibold tw-font-pop tw-text-xl tw-ml-7">SIMS</div>
                 <div x-show="open" class="tw-text-sims tw-transition-all tw-duration-300 tw-font-semibold tw-font-pop tw-text-xl hover:tw-bg-sims/[0.6] hover:tw-text-white tw-rounded-full tw-w-10 tw-h-10 tw-flex tw-items-center tw-justify-center"><i class="fa-solid fa-bars"></i></div>
               </div>
             </button>
