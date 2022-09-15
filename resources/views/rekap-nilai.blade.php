@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-    <div class="tw-container tw-mx-10">
+    <div class="container">
 
         <a href="/detail" class=" tw-text-sims tw-text-5xl hover:tw-text-[#428888]"><i class="fa-regular fa-chevron-left tw-mt-5"></i></a>
 
