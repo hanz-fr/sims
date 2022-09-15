@@ -966,6 +966,18 @@ video {
   width: 1rem;
 }
 
+.tw-w-96 {
+  width: 24rem;
+}
+
+.tw-w-80 {
+  width: 20rem;
+}
+
+.tw-w-auto {
+  width: auto;
+}
+
 .tw-max-w-3xl {
   max-width: 48rem;
 }
@@ -1005,6 +1017,10 @@ video {
 
 .tw-grid-flow-col {
   grid-auto-flow: column;
+}
+
+.tw-grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .tw-flex-row {
@@ -1821,5 +1837,9 @@ a {
 @media (min-width: 1024px) {
   .lg\:tw-grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .lg\:tw-grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
