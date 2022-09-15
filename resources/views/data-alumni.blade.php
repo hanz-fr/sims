@@ -73,6 +73,9 @@
                 <button class="btn text-white" style="background-color: #4D9E9E;">
                     <i class="fa-solid fa-file-pen"></i>
                 </button>
+                <a href="#" class="tw-text-white tw-bg-kuning hover:tw-bg-[#D3A007] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
+                    <i class="fa-solid fa-pen-to-square"></i></a>
+                </a>
                 <button class="btn text-white" style="background-color: #949494;">
                     <i class="fa-solid fa-eye"></i>
                 </button>
@@ -90,6 +93,9 @@
                 <button class="btn text-white" style="background-color: #4D9E9E;">
                     <i class="fa-solid fa-file-pen"></i>
                 </button>
+                <a href="#" class="tw-text-white tw-bg-kuning hover:tw-bg-[#D3A007] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
+                    <i class="fa-solid fa-pen-to-square"></i></a>
+                </a>
                 <button class="btn text-white" style="background-color: #949494;">
                     <i class="fa-solid fa-eye"></i>
                 </button>
@@ -107,6 +113,9 @@
                 <button class="btn text-white" style="background-color: #4D9E9E;">
                     <i class="fa-solid fa-file-pen"></i>
                 </button>
+                <a href="#" class="tw-text-white tw-bg-kuning hover:tw-bg-[#D3A007] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
+                    <i class="fa-solid fa-pen-to-square"></i></a>
+                </a>
                 <button class="btn text-white" style="background-color: #949494;">
                     <i class="fa-solid fa-eye"></i>
                 </button>
