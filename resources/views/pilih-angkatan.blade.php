@@ -1,8 +1,8 @@
 @extends('layouts.main')
 
 @section('content')
-<div class="container tw-ml-10">
-    <h2 class="tw-text-sims tw-mt-10">Angkatan Kelas</h2>
+<div class="container">
+    <h1 class="tw-text-sims tw-font-pop tw-text-2xl tw-my-9">Angkatan Kelas</h1>
     <div class="tw-grid lg:tw-grid-cols-3 md:tw-grid-cols-2 tw-gap-5 tw-mt-8 sm:tw-grid-cols-1">
         <a href="">
             <div class="tw-bg-[#1096C2] hover:tw-bg-[#0c7192] tw-text-white tw-p-5 tw-rounded-xl">

@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
 
-        <a href="/detail" class=" tw-text-sims tw-text-5xl hover:tw-text-[#428888]"><i class="fa-regular fa-chevron-left tw-mt-5"></i></a>
+        <a href="/detail" class=" tw-text-sims tw-text-3xl hover:tw-text-[#428888]"><i class="fa-regular fa-chevron-left tw-mt-5"></i></a>
 
         <div class="tw-text-3xl tw-text-sims tw-font-pop tw-font-semibold tw-flex tw-flex-row tw-mt-9">Data Raport</div>
         <div class="tw-flex tw-justify-end tw-mb-5">

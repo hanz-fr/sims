@@ -63,6 +63,9 @@
       <div class="tw-bg-white tw-shadow-md tw-h-96 tw-w-full">
         <div class="tw-px-10 tw-font-pop tw-pt-7">
           <div class="tw-text-sm tw-text-gray-400 tw-font-bold">Data Jumlah Siswa SMKN 11</div>
+          <div>
+            <canvas id="lineChart" height="300" width="500"></canvas>
+          </div>          
         </div>
       </div>
     </div>
@@ -115,7 +118,7 @@
                 <div class="tw-text-sm tw-text-gray-500 tw-font-normal tw-mt-3 group-hover:tw-text-white">Data Jumlah Siswa</div>
               </li>
             </a>
-            <a href="#" class="tw-group">
+            <a href="/data-induk-siswa" class="tw-group">
               <li class="tw-flex tw-flex-col tw-justify-center tw-text-center tw-border-2 tw-py-4 tw-px-4 tw-bg-white tw-rounded-lg group-hover:tw-bg-sims group-hover:tw-text-white">
                 <div class="tw-text-4xl tw-text-sims group-hover:tw-text-white"><i class="fa-regular fa-book-open"></i></div>
                 <div class="tw-text-sm tw-text-gray-500 tw-font-normal tw-mt-3 group-hover:tw-text-white">Data Induk Siswa</div>

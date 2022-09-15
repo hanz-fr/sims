@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-  <div class="tw-container">
+  <div class="container">
     <div class="tw-text-3xl tw-text-sims tw-font-pop tw-font-semibold tw-flex tw-flex-row tw-mt-9 tw-mx-9">Data Siswa</div>
     {{-- foto profil --}}
     <div class="tw-flex tw-font-pop">

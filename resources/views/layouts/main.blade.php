@@ -18,7 +18,10 @@
 <body class="tw-bg-back">
   @include('components.nav-sidebar')
 
+  <script src=""></script>
   {{-- alpine js --}}
   <script defer src="https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"></script>
+  {{-- chart js --}}
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></scr>
 </body>
 </html>
