@@ -14,8 +14,8 @@
       
       {{-- data siswa n rekap nilai --}}
       <div x-data="{ openTab: 1,
-        activeClasses: 'tw-bg-gray-200 tw-border',
-        inactiveClasses: 'tw-bg-white tw-border-t tw-border-x'
+        activeClasses: 'tw-bg-white tw-border',
+        inactiveClasses: 'tw-bg-gray-200 tw-border-t tw-border-x'
       }"  class="tw-w-3/5">
       <div class="tw-float-right">
         <a href="#" class="tw-text-white tw-bg-kuning hover:tw-bg-[#D3A007] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-solid fa-pen-to-square"></i></a>
