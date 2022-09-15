@@ -16,7 +16,7 @@
                     </a>
                 </li>
                 <li class="tw-flex tw-text-sims tw-cursor-pointer">
-                    <a href="/data-induk-siswa" class="{{ ($active === "data-induk") ? 'tw-bg-sims tw-text-white' : '' }} tw-p-5 hover:tw-bg-sims hover:tw-text-white tw-h-16 tw-w-full tw-flex tw-flex-row">
+                    <a href="/jurusan" class="{{ ($active === "data-induk") ? 'tw-bg-sims tw-text-white' : '' }} tw-p-5 hover:tw-bg-sims hover:tw-text-white tw-h-16 tw-w-full tw-flex tw-flex-row">
                         <i class="fa-regular fa-book-open tw-text-xl"></i>
                         <div x-show="open" class="tw-ml-5 tw-text-lg tw-font-medium tw-font-pop">Buku Induk</div>
                     </a>
