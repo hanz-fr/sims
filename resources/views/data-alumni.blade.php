@@ -1,32 +1,53 @@
 @extends('layouts.main')
 
 @section('content')
-<meta name="_token" content="{{ csrf_token() }}">
-<h4 class="tw-font-pop tw-font-bold tw-mx-6 tw-mt-6">Data Alumni</h4>
-<h6 class="tw-font-pop tw-font-bold tw-mx-6 tw-text-slate-500">PENGEMBANGAN PERANGKAT LUNAK DAN GIM</h6>
+<div class="container">
+<h4 class="tw-font-pop tw-font-bold tw-mx-6 tw-mt-6 tw-text-sims">Data Alumni</h4>
+<h6 class="tw-font-pop tw-mx-6 tw-text-slate-400">PENGEMBANGAN PERANGKAT LUNAK DAN GIM</h6>
 
-<div class="container tw-flex tw-justify-end">
+<div class="tw-flex tw-mb-2 tw-justify-end container">
 <a href="">
-    <i class="fa-solid fa-print tw-bg-sims tw-text-white tw-text-xl tw-p-2 tw-rounded-lg tw-mx-2"></i>
+    <i class="fa-solid fa-print tw-bg-sims tw-text-white tw-text-lg tw-p-2 tw-rounded-lg tw-mx-2"></i>
 </a>
 <a href="">
-    <i class="fa-regular fa-copy tw-bg-sims tw-text-white tw-text-xl tw-p-2 tw-rounded-lg"></i>
+    <i class="fa-regular fa-copy tw-bg-sims tw-text-white tw-text-lg tw-p-2 tw-rounded-lg"></i>
 </a>
 <a href="">
-    <i class="fa-solid fa-file-excel tw-bg-sims tw-text-white tw-text-xl tw-p-2 tw-rounded-lg tw-mx-2"></i>
+    <i class="fa-solid fa-file-excel tw-bg-sims tw-text-white tw-text-lg tw-p-2 tw-rounded-lg tw-mx-2"></i>
 </a>
 <a href="">
-    <i class="fa-solid fa-file-pdf tw-bg-sims tw-text-white tw-text-xl tw-p-2 tw-rounded-lg"></i>
+    <i class="fa-solid fa-file-pdf tw-bg-sims tw-text-white tw-text-lg tw-p-2 tw-rounded-lg"></i>
 </a>
 </div>
 
-<div class="container tw-flex tw-justify-end tw-my-4">
+        <div class="container tw-flex tw-justify-between">
+            <div class="tw-flex">
+                <form action=""> 
+                    <div class="relative tw-border-2 tw-rounded-lg focus:tw-ring-sims">
+                    <input type="text" class="tw-py-1 tw-px-5 tw-border-none tw-rounded-md">
+                    <i class="fa-solid fa-magnifying-glass tw-pr-5 tw-pl-3 tw-text-slate-600"></i>
+                    </div>
+                </form>
+                <div class="tw-text-base pt-1 tw-text-basic tw-ml-4 tw-mr-2 tw-font-normal tw-font-pop">Show</div>
+                <div class="dropdown">
+                    <button class="dropdown-toggle tw-bg-gray-300 tw-font-bold tw-py-1 tw-px-3 tw-rounded-xl tw-text" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    10
+                    </button>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">25</a></li>
+                    <li><a class="dropdown-item" href="#">50</a></li>
+                    <li><a class="dropdown-item" href="#">100</a></li>
+                    </ul>
+                </div>
+                <div class="tw-text-base pt-1 tw-mx-2 tw-font-pop tw-font-normal tw-text-basic">Entries</div>
+            </div>
+
     <button class="btn text-white tw-font-pop" style="background-color: #28A745;">
         <i class="fa-solid fa-circle-plus"></i>
         Tambah Data
     </button>
-</div>
 
+</div>
 <div class="container">
 <table id="example" class="table table-striped tw-border-2 tw-border-slate-300">
     <thead>
@@ -91,9 +112,9 @@
                 </button>
             </td>
         </tr>
-
     </tbody>
 </table>
+</div>
 </div>
 
 @endsection

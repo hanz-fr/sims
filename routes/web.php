@@ -64,7 +64,7 @@ Route::get('/angkatan', function () {
 });
 
 Route::get('/data-alumni', function () {
-    return view('di-alumnitable', [
+    return view('data-alumni', [
         'title' => 'Data Alumni',
         'active' => 'data-induk'
     ]);
