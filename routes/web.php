@@ -70,6 +70,13 @@ Route::get('/data-alumni', function () {
     ]);
 });
 
+Route::get('/rekap-nilai', function () {
+    return view('rekap-nilai', [
+        'title' => 'Rekap Nilai',
+        'active' => 'data-induk'
+    ]);
+});
+
 Route::get('/register', [UserController::class, 'register'])->name('register');
 
 Route::get('/login', [UserController::class, 'login'])->name('login');

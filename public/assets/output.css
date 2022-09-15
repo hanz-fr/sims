@@ -726,6 +726,31 @@ video {
   margin-right: -0.75rem;
 }
 
+.tw-mx-3 {
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+}
+
+.tw-mx-5 {
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+}
+
+.tw-mx-10 {
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+}
+
+.tw-mx-20 {
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+
+.tw-my-20 {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
 .tw-mt-3 {
   margin-top: 0.75rem;
 }
@@ -852,6 +877,10 @@ video {
 
 .tw-ml-4 {
   margin-left: 1rem;
+}
+
+.tw-mr-5 {
+  margin-right: 1.25rem;
 }
 
 .tw-block {
@@ -1303,6 +1332,10 @@ video {
   padding: 2rem;
 }
 
+.tw-p-10 {
+  padding: 2.5rem;
+}
+
 .tw-px-12 {
   padding-left: 3rem;
   padding-right: 3rem;
@@ -1502,6 +1535,11 @@ video {
 .tw-text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.tw-text-9xl {
+  font-size: 8rem;
+  line-height: 1;
 }
 
 .tw-font-bold {
@@ -1736,6 +1774,11 @@ a {
   background-color: rgb(75 85 99 / var(--tw-bg-opacity));
 }
 
+.hover\:tw-bg-\[\#428888\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(66 136 136 / var(--tw-bg-opacity));
+}
+
 .hover\:tw-text-\[\#428787\]:hover {
   --tw-text-opacity: 1;
   color: rgb(66 135 135 / var(--tw-text-opacity));
@@ -1754,6 +1797,41 @@ a {
 .hover\:tw-text-sims:hover {
   --tw-text-opacity: 1;
   color: rgb(77 158 158 / var(--tw-text-opacity));
+}
+
+.hover\:tw-text-slate-400:hover {
+  --tw-text-opacity: 1;
+  color: rgb(148 163 184 / var(--tw-text-opacity));
+}
+
+.hover\:tw-text-slate-100:hover {
+  --tw-text-opacity: 1;
+  color: rgb(241 245 249 / var(--tw-text-opacity));
+}
+
+.hover\:tw-text-slate-200:hover {
+  --tw-text-opacity: 1;
+  color: rgb(226 232 240 / var(--tw-text-opacity));
+}
+
+.hover\:tw-text-slate-300:hover {
+  --tw-text-opacity: 1;
+  color: rgb(203 213 225 / var(--tw-text-opacity));
+}
+
+.hover\:tw-text-gray-50:hover {
+  --tw-text-opacity: 1;
+  color: rgb(249 250 251 / var(--tw-text-opacity));
+}
+
+.hover\:tw-text-gray-300:hover {
+  --tw-text-opacity: 1;
+  color: rgb(209 213 219 / var(--tw-text-opacity));
+}
+
+.hover\:tw-text-\[\#428888\]:hover {
+  --tw-text-opacity: 1;
+  color: rgb(66 136 136 / var(--tw-text-opacity));
 }
 
 .focus\:tw-border-sims:focus {
