@@ -6,320 +6,341 @@
     <a href="/detail" class="tw-text-sims tw-text-3xl"><i class="fa-solid fa-chevron-left"></i></a>
     <h3 class="tw-font-pop tw-font-semibold tw-mt-6 tw-text-sims tw-text-center">Update Data Siswa</h3>
     
-    <form class="tw-w-full tw-mx-24 tw-my-10 tw-max-w-3xl tw-font-pop">
+    <form class="tw-w-full lg:tw-mx-auto sm:tw-mx-10 tw-my-10 tw-max-w-3xl tw-font-pop">
       {{-- biodata --}}
-      <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-7 tw-text-sims">A.  Biodata Peserta Didik</div>
+      <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims">A.  Biodata Peserta Didik</div>
       <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
-        <div class="tw-w-full md:tw-w-1/2 tw-px-3 tw-mb-6 md:tw-mb-0">
-          <label class="tw-block tw-uppercase tw-tracking-wide tw-text-gray-500 tw-text-sm tw-font-bold tw-mb-2" for="nis">
+        <div class="tw-w-max md:tw-w-1/2 tw-px-3 tw-mb-6 md:tw-mb-0">
+          <label class="label-input" for="nis">
             NIS
           </label>
-          <input class="tw-appearance-none tw-block tw-w-full tw-bg-gray-200 tw-text-gray-500 tw-border tw-border-gray-200 tw-rounded-xl tw-py-3 tw-px-4 tw-leading-tight focus:tw-outline-none focus:tw-bg-white focus:tw-border-gray-500" id="nis" name="nis" type="number">
+          <input class="input-data tw-w-full" id="nis" name="nis" type="number">
         </div>
-        <div class="tw-w-full md:tw-w-1/2 tw-px-3">
-          <label class="tw-block tw-uppercase tw-tracking-wide tw-text-gray-500 tw-text-sm tw-font-bold tw-mb-2" for="nisn">
+        <div class="tw-w-fit md:tw-w-1/2 tw-px-3">
+          <label class="label-input" for="nisn">
             NISN
           </label>
-          <input class="tw-appearance-none tw-block tw-w-full tw-bg-gray-200 tw-text-gray-500 tw-border tw-border-gray-200 tw-rounded-xl tw-py-3 tw-px-4 tw-leading-tight focus:tw-outline-none focus:tw-bg-white focus:tw-border-gray-500" id="nisn" name="nisn" type="number">
+          <input class="input-data tw-w-full" id="nisn" name="nisn" type="number">
         </div>
       </div>
       <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
         <div class="tw-w-full tw-px-3">
-          <label class="tw-block tw-uppercase tw-tracking-wide tw-text-gray-500 tw-text-sm tw-font-bold tw-mb-2" for="nama">
+          <label class="label-input" for="nama">
             Nama Peserta Didik
           </label>
-          <input class="tw-appearance-none tw-block tw-w-full tw-bg-gray-200 tw-text-gray-500 tw-border tw-border-gray-200 tw-rounded-xl tw-py-3 tw-px-4 tw-mb-3 tw-leading-tight focus:tw-outline-none focus:tw-bg-white focus:tw-border-gray-500" id="nama" type="text" name="nama">
+          <input class="input-data" id="nama" type="text" name="nama">
         </div>
       </div>
       <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
         <div class="tw-w-full md:tw-w-1/2 tw-px-3 tw-mb-6 md:tw-mb-0">
-          <label class="tw-block tw-uppercase tw-tracking-wide tw-text-gray-500 tw-text-sm tw-font-bold tw-mb-2" for="tmplahir">
+          <label class="label-input" for="tmp_lahir">
             Tempat Lahir
           </label>
-          <input class="tw-appearance-none tw-block tw-w-full tw-bg-gray-200 tw-text-gray-500 tw-border tw-border-gray-200 tw-rounded-xl tw-py-3 tw-px-4 tw-leading-tight focus:tw-outline-none focus:tw-bg-white focus:tw-border-gray-500" id="tmplahir" type="text">
+          <input class="input-data" id="tmp_lahir" type="text">
         </div>
         <div class="tw-w-full md:tw-w-1/2 tw-px-3">
-          <label class="tw-block tw-uppercase tw-tracking-wide tw-text-gray-500 tw-text-sm tw-font-bold tw-mb-2" for="tgllahir">
+          <label class="label-input" for="tgl_lahir">
             Tanggal Lahir
           </label>
-          <input class="tw-appearance-none tw-block tw-w-full tw-bg-gray-200 tw-text-gray-500 tw-border tw-border-gray-200 tw-rounded-xl tw-py-3 tw-px-4 tw-leading-tight focus:tw-outline-none focus:tw-bg-white focus:tw-border-gray-500" id="tgllahir" type="date" placeholder="dd/mm/yyyy">
+          <input class="input-data" id="tgl_lahir" name="tgl_lahir" type="date" placeholder="dd/mm/yyyy">
         </div>
       </div>
       <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
         <div class="tw-w-full tw-px-3">
-          <label class="tw-block tw-uppercase tw-tracking-wide tw-text-gray-500 tw-text-sm tw-font-bold tw-mb-2" for="nama">
+          <label class="label-input" for="agama">
             Agama
           </label>
-          <input class="tw-appearance-none tw-block tw-w-full tw-bg-gray-200 tw-text-gray-500 tw-border tw-border-gray-200 tw-rounded-xl tw-py-3 tw-px-4 tw-mb-3 tw-leading-tight focus:tw-outline-none focus:tw-bg-white focus:tw-border-gray-500" id="nama" type="text" name="nama">
+          <input class="input-data" id="agama" type="text" name="agama">
         </div>
       </div>
       <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
         <div class="tw-w-full md:tw-w-1/2 tw-px-3 tw-mb-6 md:tw-mb-0">
-          <label class="tw-block tw-uppercase tw-tracking-wide tw-text-gray-500 tw-text-sm tw-font-bold tw-mb-2" for="grid-last-name">
+          <label class="label-input" for="anak_ke">
             Anak-Ke
           </label>
-          <input class="tw-appearance-none tw-block tw-w-full tw-bg-gray-200 tw-text-gray-500 tw-border tw-border-gray-200 tw-rounded-xl tw-py-3 tw-px-4 tw-leading-tight focus:tw-outline-none focus:tw-bg-white focus:tw-border-gray-500" id="grid-last-name" type="number" placeholder="Doe">
+          <input class="input-data" id="anak_ke" name="anak_ke" type="number">
         </div>
         <div class="tw-w-full md:tw-w-1/2 tw-px-3">
-          <label class="tw-block tw-uppercase tw-tracking-wide tw-text-gray-500 tw-text-sm tw-font-bold tw-mb-2" for="grid-last-name">
+          <label class="label-input" for="jenis_kelamin">
             Jenis Kelamin
           </label>
-          <select class="tw-block tw-appearance-none tw-w-full tw-bg-gray-200 tw-border tw-border-gray-200 tw-text-gray-500 tw-py-3 tw-px-4 tw-pr-8 tw-rounded-xl tw-leading-tight focus:tw-outline-none focus:tw-bg-white focus:tw-border-gray-500" id="grid-state">
-            <option>Pilih</option>
-            <option value="">Missouri</option>
-            <option value="">Missouri</option>
+          <select class="input-data" id="jenis_kelamin" name="jenis_kelamin">
+            <option selected>Pilih</option>
+            <option value="">Laki-laki</option>
+            <option value="">Perempuan</option>
           </select>
-          <div class="tw-pointer-events-none tw-absolute tw-inset-y-0 tw-right-0 tw-flex tw-items-center tw-px-2 tw-text-gray-500">
-            <svg class="tw-fill-current tw-h-4 tw-w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
-          </div>
         </div>
       </div>
       <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
         <div class="tw-w-full tw-px-3">
-          <label class="tw-block tw-uppercase tw-tracking-wide tw-text-gray-500 tw-text-sm tw-font-bold tw-mb-2" for="nama">
+          <label class="label-input" for="status">
             Status dalam keluarga
           </label>
-          <select class="tw-block tw-appearance-none tw-w-full tw-bg-gray-200 tw-border tw-border-gray-200 tw-text-gray-500 tw-py-3 tw-px-4 tw-pr-8 tw-rounded-xl tw-leading-tight focus:tw-outline-none focus:tw-bg-white focus:tw-border-gray-500" id="grid-state">
-            <option>Pilih</option>
-            <option value="">Missouri</option>
-            <option value="">Missouri</option>
+          <select class="input-data" id="status" name="status">
+            <option selected>Pilih</option>
+            <option value="">Anak Kandung</option>
+            <option value="">Anak Angkat</option>
+            <option value="">Anak Tiri</option>
           </select>
-          <div class="tw-pointer-events-none tw-absolute tw-inset-y-0 tw-right-0 tw-flex tw-items-center tw-px-2 tw-text-gray-500">
-            <svg class="tw-fill-current tw-h-4 tw-w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
-          </div>
         </div>
       </div>
       <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
         <div class="tw-w-full tw-px-3">
-          <label class="tw-block tw-uppercase tw-tracking-wide tw-text-gray-500 tw-text-sm tw-font-bold tw-mb-2" for="nama">
+          <label class="label-input" for="alamat">
             Alamat Peserta Didik
           </label>
-          <textarea class="tw-appearance-none tw-block tw-w-full tw-bg-gray-200 tw-text-gray-500 tw-border tw-border-gray-200 tw-rounded-xl tw-py-3 tw-px-4 tw-mb-3 tw-leading-tight focus:tw-outline-none focus:tw-bg-white focus:tw-border-gray-500" id="nama" type="text" name="nama"></textarea>
+          <textarea class="input-data" id="alamat" type="text" name="alamat"></textarea>
         </div>
       </div>
       <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
         <div class="tw-w-full md:tw-w-1/2 tw-px-3 tw-mb-6 md:tw-mb-0">
-          <label class="tw-block tw-uppercase tw-tracking-wide tw-text-gray-500 tw-text-sm tw-font-bold tw-mb-2" for="grid-last-name">
+          <label class="label-input" for="no_telp">
             No. HP
           </label>
-          <input class="tw-appearance-none tw-block tw-w-full tw-bg-gray-200 tw-text-gray-500 tw-border tw-border-gray-200 tw-rounded-xl tw-py-3 tw-px-4 tw-leading-tight focus:tw-outline-none focus:tw-bg-white focus:tw-border-gray-500" id="grid-last-name" type="number">
+          <input class="input-data" id="no_telp" type="number" name="no_telp">
         </div>
         <div class="tw-w-full md:tw-w-1/2 tw-px-3">
-          <label class="tw-block tw-uppercase tw-tracking-wide tw-text-gray-500 tw-text-sm tw-font-bold tw-mb-2" for="grid-last-name">
+          <label class="label-input" for="email">
             Alamat Email
           </label>
-          <input class="tw-appearance-none tw-block tw-w-full tw-bg-gray-200 tw-text-gray-500 tw-border tw-border-gray-200 tw-rounded-xl tw-py-3 tw-px-4 tw-leading-tight focus:tw-outline-none focus:tw-bg-white focus:tw-border-gray-500" id="grid-last-name" type="email">
+          <input class="input-data" id="email" type="email" name="email">
         </div>
       </div>
 
       {{-- section B, Diterima di sekolah ini --}}
-    <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-7 tw-text-sims">B.  Diterima di sekolah ini</div>
+    <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims">B.  Diterima di sekolah ini</div>
     <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
       <div class="tw-w-full tw-px-3">
-        <label class="tw-block tw-uppercase tw-tracking-wide tw-text-gray-500 tw-text-sm tw-font-bold tw-mb-2" for="nama">
+        <label class="label-input" for="kelas">
           Di kelas
         </label>
-        <input class="tw-appearance-none tw-block tw-w-full tw-bg-gray-200 tw-text-gray-500 tw-border tw-border-gray-200 tw-rounded-xl tw-py-3 tw-px-4 tw-mb-3 tw-leading-tight focus:tw-outline-none focus:tw-bg-white focus:tw-border-gray-500" id="nama" type="text" name="nama">
+        <input class="input-data" id="kelas" type="text" name="kelas">
       </div>
     </div>
     <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
       <div class="tw-w-full tw-px-3">
-        <label class="tw-block tw-uppercase tw-tracking-wide tw-text-gray-500 tw-text-sm tw-font-bold tw-mb-2" for="nama">
+        <label class="label-input" for="tgl-masuk">
           Pada Tanggal
         </label>
-        <input class="tw-appearance-none tw-block tw-w-full tw-bg-gray-200 tw-text-gray-500 tw-border tw-border-gray-200 tw-rounded-xl tw-py-3 tw-px-4 tw-mb-3 tw-leading-tight focus:tw-outline-none focus:tw-bg-white focus:tw-border-gray-500" id="nama" type="date" name="nama">
+        <input class="input-data" id="tgl-masuk" type="date" name="tgl-masuk">
       </div>
     </div>
     <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
       <div class="tw-w-full tw-px-3">
-        <label class="tw-block tw-uppercase tw-tracking-wide tw-text-gray-500 tw-text-sm tw-font-bold tw-mb-2" for="nama">
+        <label class="label-input" for="semester">
           Semester
         </label>
-        <input class="tw-appearance-none tw-block tw-w-full tw-bg-gray-200 tw-text-gray-500 tw-border tw-border-gray-200 tw-rounded-xl tw-py-3 tw-px-4 tw-mb-3 tw-leading-tight focus:tw-outline-none focus:tw-bg-white focus:tw-border-gray-500" id="nama" type="text" name="nama">
+        <input class="input-data" id="semester" type="number" name="semester">
       </div>
     </div>
 
     {{-- sekolah asal --}}
-    <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-7 tw-text-sims">C.  Sekolah Asal</div>
+    <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims">C.  Sekolah Asal</div>
     <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
       <div class="tw-w-full tw-px-3">
-        <label class="tw-block tw-uppercase tw-tracking-wide tw-text-gray-500 tw-text-sm tw-font-bold tw-mb-2" for="nama">
+        <label class="label-input" for="nama_sekolah_asal">
           Nama
         </label>
-        <textarea class="tw-appearance-none tw-block tw-w-full tw-bg-gray-200 tw-text-gray-500 tw-border tw-border-gray-200 tw-rounded-xl tw-py-3 tw-px-4 tw-mb-3 tw-leading-tight focus:tw-outline-none focus:tw-bg-white focus:tw-border-gray-500" id="nama" type="text" name="nama"></textarea>
+        <textarea class="input-data" id="nama_sekolah_asal" type="text" name="nama_sekolah_asal"></textarea>
       </div>
     </div>
     <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
       <div class="tw-w-full tw-px-3">
-        <label class="tw-block tw-uppercase tw-tracking-wide tw-text-gray-500 tw-text-sm tw-font-bold tw-mb-2" for="nama">
+        <label class="label-input" for="alamat">
           Alamat
         </label>
-        <input class="tw-appearance-none tw-block tw-w-full tw-bg-gray-200 tw-text-gray-500 tw-border tw-border-gray-200 tw-rounded-xl tw-py-3 tw-px-4 tw-mb-3 tw-leading-tight focus:tw-outline-none focus:tw-bg-white focus:tw-border-gray-500" id="nama" type="text" name="nama">
+        <input class="input-data" id="alamat" type="text" name="alamat">
       </div>
     </div>
 
     {{-- ijazah smp --}}
-    <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-7 tw-text-sims">D.  Ijazah SMP/MTs</div>
+    <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims">D.  Ijazah SMP/MTs</div>
     <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
-      <div class="tw-w-full md:tw-w-1/2 tw-px-3 tw-mb-6 md:tw-mb-0">
-        <label class="tw-block tw-uppercase tw-tracking-wide tw-text-gray-500 tw-text-sm tw-font-bold tw-mb-2" for="grid-last-name">
+      <div class="tw-w-full tw-px-3">
+        <label class="label-input" for="nomor_ijazah_smp">
+          Nomor Ijazah
+        </label>
+        <input class="input-data" id="nomor_ijazah_smp" type="number" name="nomor_ijazah_smp">
+      </div>
+    </div>
+    <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
+      <div class="tw-w-full tw-px-3">
+        <label class="label-input" for="nomor_skhun">
+          Nomor SKHUN
+        </label>
+        <input class="input-data" id="nomor_skhun" type="text" name="nomor_skhun">
+      </div>
+    </div>
+    <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
+      <div class="tw-w-full tw-px-3">
+        <label class="label-input" for="tahun_ijazah_smp">
           Tahun
         </label>
-        <input class="tw-appearance-none tw-block tw-w-full tw-bg-gray-200 tw-text-gray-500 tw-border tw-border-gray-200 tw-rounded-xl tw-py-3 tw-px-4 tw-leading-tight focus:tw-outline-none focus:tw-bg-white focus:tw-border-gray-500" id="grid-last-name" type="date">
-      </div>
-      <div class="tw-w-full md:tw-w-1/2 tw-px-3">
-        <label class="tw-block tw-uppercase tw-tracking-wide tw-text-gray-500 tw-text-sm tw-font-bold tw-mb-2" for="grid-last-name">
-          Nomor
-        </label>
-        <input class="tw-appearance-none tw-block tw-w-full tw-bg-gray-200 tw-text-gray-500 tw-border tw-border-gray-200 tw-rounded-xl tw-py-3 tw-px-4 tw-leading-tight focus:tw-outline-none focus:tw-bg-white focus:tw-border-gray-500" id="grid-last-name" type="number">
+        <input class="input-data" id="tahun_ijazah_smp" type="date" name="tahun_ijazah_smp">
       </div>
     </div>
 
-    {{-- skhun smp --}}
-    <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-7 tw-text-sims">E.  SKHUN SMP/MTs</div>
-    <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
-      <div class="tw-w-full md:tw-w-1/2 tw-px-3 tw-mb-6 md:tw-mb-0">
-        <label class="tw-block tw-uppercase tw-tracking-wide tw-text-gray-500 tw-text-sm tw-font-bold tw-mb-2" for="grid-last-name">
-          Tahun
-        </label>
-        <input class="tw-appearance-none tw-block tw-w-full tw-bg-gray-200 tw-text-gray-500 tw-border tw-border-gray-200 tw-rounded-xl tw-py-3 tw-px-4 tw-leading-tight focus:tw-outline-none focus:tw-bg-white focus:tw-border-gray-500" id="grid-last-name" type="date">
+    <div x-data="{ openTab: 0}" class="tw-my-8">
+      <label class="label-input tw-text-xl">
+        Apakah Siswa memiliki orang tua?
+      </label>
+      <div class="tw-flex tw-flex-row tw-gap-3">
+        <div @click="openTab = 1" class="tw-flex tw-items-center">
+          <input id="default-radio-1" type="radio" value="" name="default-radio" class="tw-w-4 tw-h-4 tw-bg-gray-100 tw-border-gray-300 focus:tw-ring-2">
+          <label for="default-radio-1" class="tw-ml-2 tw-text-sm tw-font-medium tw-text-basic">Ya</label>
+        </div>
+        <div @click="openTab = 2" class="tw-flex tw-items-center">
+            <input id="default-radio-2" type="radio" value="" name="default-radio" class="tw-w-4 tw-h-4 tw-text-blue-600 tw-bg-gray-100 tw-border-gray-300 focus:tw-ring-blue-500 dark:focus:tw-ring-blue-600 dark:tw-ring-offset-gray-800 focus:tw-ring-2 dark:tw-bg-gray-700 dark:tw-border-gray-600">
+            <label for="default-radio-2" class="tw-ml-2 tw-text-sm tw-font-medium tw-text-basic">Tidak</label>
+        </div>
       </div>
-      <div class="tw-w-full md:tw-w-1/2 tw-px-3">
-        <label class="tw-block tw-uppercase tw-tracking-wide tw-text-gray-500 tw-text-sm tw-font-bold tw-mb-2" for="grid-last-name">
-          Nomor
-        </label>
-        <input class="tw-appearance-none tw-block tw-w-full tw-bg-gray-200 tw-text-gray-500 tw-border tw-border-gray-200 tw-rounded-xl tw-py-3 tw-px-4 tw-leading-tight focus:tw-outline-none focus:tw-bg-white focus:tw-border-gray-500" id="grid-last-name" type="number">
+  
+      {{-- data orang tua --}}
+      <div x-show="openTab === 1">
+        <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims">E.  Data Orang Tua</div>
+        <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
+          <div class="tw-w-full tw-px-3">
+            <label class="label-input" for="nama">
+              Nama Ayah
+            </label>
+            <input class="input-data" id="nama" type="text" name="nama">
+          </div>
+        </div>
+        <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
+          <div class="tw-w-full tw-px-3">
+            <label class="label-input" for="nama">
+              Nama Ibu
+            </label>
+            <input class="input-data" id="nama" type="text" name="nama">
+          </div>
+        </div>
+        <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
+          <div class="tw-w-full tw-px-3">
+            <label class="label-input" for="alamat">
+              Alamat
+            </label>
+            <textarea class="input-data" id="alamat" name="alamat"></textarea>
+          </div>
+        </div>
+        <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
+          <div class="tw-w-full md:tw-w-1/2 tw-px-3 tw-mb-6 md:tw-mb-0">
+            <label class="label-input" for="no_telp">
+              No.Telp/HP
+            </label>
+            <input class="input-data" id="no_telp" type="number" name="no_telp">
+          </div>
+          <div class="tw-w-full md:tw-w-1/2 tw-px-3">
+            <label class="label-input" for="email">
+              Email
+            </label>
+            <input class="input-data" id="email" type="email" name="email">
+          </div>
+        </div>
+        <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
+          <div class="tw-w-full tw-px-3">
+            <label class="label-input" for="nama">
+              Pekerjaan Wali
+            </label>
+            <input class="input-data" id="nama" type="text" name="nama">
+          </div>
+        </div>
+      </div>
+  
+  
+      {{-- data wali --}}
+      <div x-show="openTab === 2">
+        <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims">E.  Data Wali</div>
+        <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
+          <div class="tw-w-full tw-px-3">
+            <label class="label-input" for="nama">
+              Nama Wali
+            </label>
+            <input class="input-data" id="nama" type="text" name="nama">
+          </div>
+        </div>
+        <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
+          <div class="tw-w-full tw-px-3">
+            <label class="label-input" for="nama">
+              Alamat
+            </label>
+            <textarea class="input-data" id="nama" type="text" name="nama"></textarea>
+          </div>
+        </div>
+        <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
+          <div class="tw-w-full tw-px-3">
+            <label class="label-input" for="nama">
+              No. Telp/HP
+            </label>
+            <input class="input-data" id="nama" type="number" name="nama">
+          </div>
+        </div>
+        <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
+          <div class="tw-w-full tw-px-3">
+            <label class="label-input" for="nama">
+              Pekerjaan Wali
+            </label>
+            <input class="input-data" id="nama" type="text" name="nama">
+          </div>
+        </div>
       </div>
     </div>
 
-    {{-- data orang tua --}}
-    <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-7 tw-text-sims">F.  Data Orang Tua</div>
-    <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
-      <div class="tw-w-full tw-px-3">
-        <label class="tw-block tw-uppercase tw-tracking-wide tw-text-gray-500 tw-text-sm tw-font-bold tw-mb-2" for="nama">
-          Ayah
-        </label>
-        <input class="tw-appearance-none tw-block tw-w-full tw-bg-gray-200 tw-text-gray-500 tw-border tw-border-gray-200 tw-rounded-xl tw-py-3 tw-px-4 tw-mb-3 tw-leading-tight focus:tw-outline-none focus:tw-bg-white focus:tw-border-gray-500" id="nama" type="text" name="nama">
-      </div>
-    </div>
-    <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
-      <div class="tw-w-full tw-px-3">
-        <label class="tw-block tw-uppercase tw-tracking-wide tw-text-gray-500 tw-text-sm tw-font-bold tw-mb-2" for="nama">
-          Ibu
-        </label>
-        <input class="tw-appearance-none tw-block tw-w-full tw-bg-gray-200 tw-text-gray-500 tw-border tw-border-gray-200 tw-rounded-xl tw-py-3 tw-px-4 tw-mb-3 tw-leading-tight focus:tw-outline-none focus:tw-bg-white focus:tw-border-gray-500" id="nama" type="text" name="nama">
-      </div>
-    </div>
-    <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
-      <div class="tw-w-full tw-px-3">
-        <label class="tw-block tw-uppercase tw-tracking-wide tw-text-gray-500 tw-text-sm tw-font-bold tw-mb-2" for="nama">
-          Alamat Orang Tua
-        </label>
-        <textarea class="tw-appearance-none tw-block tw-w-full tw-bg-gray-200 tw-text-gray-500 tw-border tw-border-gray-200 tw-rounded-xl tw-py-3 tw-px-4 tw-mb-3 tw-leading-tight focus:tw-outline-none focus:tw-bg-white focus:tw-border-gray-500" id="nama" type="text" name="nama"></textarea>
-      </div>
-    </div>
-    <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
-      <div class="tw-w-full md:tw-w-1/2 tw-px-3 tw-mb-6 md:tw-mb-0">
-        <label class="tw-block tw-uppercase tw-tracking-wide tw-text-gray-500 tw-text-sm tw-font-bold tw-mb-2" for="grid-last-name">
-          No.Telp/HP
-        </label>
-        <input class="tw-appearance-none tw-block tw-w-full tw-bg-gray-200 tw-text-gray-500 tw-border tw-border-gray-200 tw-rounded-xl tw-py-3 tw-px-4 tw-leading-tight focus:tw-outline-none focus:tw-bg-white focus:tw-border-gray-500" id="grid-last-name" type="number">
-      </div>
-      <div class="tw-w-full md:tw-w-1/2 tw-px-3">
-        <label class="tw-block tw-uppercase tw-tracking-wide tw-text-gray-500 tw-text-sm tw-font-bold tw-mb-2" for="grid-last-name">
-          Email
-        </label>
-        <input class="tw-appearance-none tw-block tw-w-full tw-bg-gray-200 tw-text-gray-500 tw-border tw-border-gray-200 tw-rounded-xl tw-py-3 tw-px-4 tw-leading-tight focus:tw-outline-none focus:tw-bg-white focus:tw-border-gray-500" id="grid-last-name" type="email">
-      </div>
-    </div>
-
-    {{-- data wali --}}
-    <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-7 tw-text-sims">G.  Data Wali</div>
-    <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
-      <div class="tw-w-full tw-px-3">
-        <label class="tw-block tw-uppercase tw-tracking-wide tw-text-gray-500 tw-text-sm tw-font-bold tw-mb-2" for="nama">
-          Nama Wali
-        </label>
-        <input class="tw-appearance-none tw-block tw-w-full tw-bg-gray-200 tw-text-gray-500 tw-border tw-border-gray-200 tw-rounded-xl tw-py-3 tw-px-4 tw-mb-3 tw-leading-tight focus:tw-outline-none focus:tw-bg-white focus:tw-border-gray-500" id="nama" type="text" name="nama">
-      </div>
-    </div>
-    <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
-      <div class="tw-w-full tw-px-3">
-        <label class="tw-block tw-uppercase tw-tracking-wide tw-text-gray-500 tw-text-sm tw-font-bold tw-mb-2" for="nama">
-          Alamat
-        </label>
-        <textarea class="tw-appearance-none tw-block tw-w-full tw-bg-gray-200 tw-text-gray-500 tw-border tw-border-gray-200 tw-rounded-xl tw-py-3 tw-px-4 tw-mb-3 tw-leading-tight focus:tw-outline-none focus:tw-bg-white focus:tw-border-gray-500" id="nama" type="text" name="nama"></textarea>
-      </div>
-    </div>
-    <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
-      <div class="tw-w-full tw-px-3">
-        <label class="tw-block tw-uppercase tw-tracking-wide tw-text-gray-500 tw-text-sm tw-font-bold tw-mb-2" for="nama">
-          No. Telp/HP
-        </label>
-        <input class="tw-appearance-none tw-block tw-w-full tw-bg-gray-200 tw-text-gray-500 tw-border tw-border-gray-200 tw-rounded-xl tw-py-3 tw-px-4 tw-mb-3 tw-leading-tight focus:tw-outline-none focus:tw-bg-white focus:tw-border-gray-500" id="nama" type="number" name="nama">
-      </div>
-    </div>
-    <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
-      <div class="tw-w-full tw-px-3">
-        <label class="tw-block tw-uppercase tw-tracking-wide tw-text-gray-500 tw-text-sm tw-font-bold tw-mb-2" for="nama">
-          Pekerjaan Wali
-        </label>
-        <input class="tw-appearance-none tw-block tw-w-full tw-bg-gray-200 tw-text-gray-500 tw-border tw-border-gray-200 tw-rounded-xl tw-py-3 tw-px-4 tw-mb-3 tw-leading-tight focus:tw-outline-none focus:tw-bg-white focus:tw-border-gray-500" id="nama" type="text" name="nama">
-      </div>
-    </div>
 
     {{-- meninggalkan sekolah --}}
-    <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-7 tw-text-sims">H.  Meninggalkan Sekolah</div>
+    <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims">F.  Meninggalkan Sekolah</div>
     <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
       <div class="tw-w-full tw-px-3">
-        <label class="tw-block tw-uppercase tw-tracking-wide tw-text-gray-500 tw-text-sm tw-font-bold tw-mb-2" for="nama">
+        <label class="label-input" for="nama">
           Tanggal
         </label>
-        <input class="tw-appearance-none tw-block tw-w-full tw-bg-gray-200 tw-text-gray-500 tw-border tw-border-gray-200 tw-rounded-xl tw-py-3 tw-px-4 tw-mb-3 tw-leading-tight focus:tw-outline-none focus:tw-bg-white focus:tw-border-gray-500" id="nama" type="date" name="nama">
+        <input class="input-data" id="nama" type="date" name="nama">
       </div>
     </div>
     <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
       <div class="tw-w-full tw-px-3">
-        <label class="tw-block tw-uppercase tw-tracking-wide tw-text-gray-500 tw-text-sm tw-font-bold tw-mb-2" for="nama">
+        <label class="label-input" for="nama">
           Alasan
         </label>
-        <input class="tw-appearance-none tw-block tw-w-full tw-bg-gray-200 tw-text-gray-500 tw-border tw-border-gray-200 tw-rounded-xl tw-py-3 tw-px-4 tw-mb-3 tw-leading-tight focus:tw-outline-none focus:tw-bg-white focus:tw-border-gray-500" id="nama" type="text" name="nama">
+        <input class="input-data" id="nama" type="text" name="nama">
       </div>
     </div>
 
         {{-- tamat di sekolah ini --}}
-        <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-7 tw-text-sims">I.  Tamat di Sekolah ini</div>
+        <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims">G.  Tamat di Sekolah ini</div>
         <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
           <div class="tw-w-full tw-px-3">
-            <label class="tw-block tw-uppercase tw-tracking-wide tw-text-gray-500 tw-text-sm tw-font-bold tw-mb-2" for="nama">
+            <label class="label-input" for="nama">
               Nomor Ijazah
             </label>
-            <input class="tw-appearance-none tw-block tw-w-full tw-bg-gray-200 tw-text-gray-500 tw-border tw-border-gray-200 tw-rounded-xl tw-py-3 tw-px-4 tw-mb-3 tw-leading-tight focus:tw-outline-none focus:tw-bg-white focus:tw-border-gray-500" id="nama" type="number" name="nama">
+            <input class="input-data" id="nama" type="number" name="nama">
           </div>
         </div>
         <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
           <div class="tw-w-full tw-px-3">
-            <label class="tw-block tw-uppercase tw-tracking-wide tw-text-gray-500 tw-text-sm tw-font-bold tw-mb-2" for="nama">
+            <label class="label-input" for="nama">
               Tanggal Ijazah
             </label>
-            <input class="tw-appearance-none tw-block tw-w-full tw-bg-gray-200 tw-text-gray-500 tw-border tw-border-gray-200 tw-rounded-xl tw-py-3 tw-px-4 tw-mb-3 tw-leading-tight focus:tw-outline-none focus:tw-bg-white focus:tw-border-gray-500" id="nama" type="date" name="nama">
+            <input class="input-data" id="nama" type="date" name="nama">
           </div>
         </div>
 
         {{-- keterangan lain2 --}}
-        <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-7 tw-text-sims">J.  Keterangan Lain-lain</div>
+        <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims">H.  Keterangan Lain-lain</div>
         <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
           <div class="tw-w-full tw-px-3">
-            <textarea class="tw-appearance-none tw-block tw-w-full tw-bg-gray-200 tw-text-gray-500 tw-border tw-border-gray-200 tw-rounded-xl tw-py-3 tw-px-4 tw-mb-3 tw-leading-tight focus:tw-outline-none focus:tw-bg-white focus:tw-border-gray-500" id="nama" type="text" name="nama"></textarea>
+            <textarea class="input-data" id="nama" type="text" name="nama"></textarea>
           </div>
         </div>
 
         {{-- rekap nilai --}}
-        <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-7 tw-text-sims">Rekap Nilai</div>
-        <button type="submit" class="tw-bg-[#1D6F42] tw-font-medium tw-text-white tw-py-3 tw-px-5 tw-rounded-lg">Upload dari excel</button>
+        <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims">I. Rekap Nilai</div>
+        <div class="tw-flex tw-flex-col">
+          <a href="/rekap-nilai" class="tw-py-2 tw-border tw-w-fit tw-border-gray-600 tw-px-6 hover:tw-text-sims tw-text-gray-600 tw-rounded-md tw-bg-white tw-font-medium">View & Edit</a>
+          <button type="submit" class="tw-bg-[#1D6F42] tw-w-fit tw-mt-4 tw-font-medium tw-text-white tw-py-3 tw-px-5 tw-rounded-lg">Upload dari excel</button>
+        </div>
 
         <div class="tw-mx-auto tw-text-center tw-mt-10">
-        <button type="submit" class="tw-bg-sims tw-font-medium tw-text-white tw-py-3 tw-px-6 tw-rounded-lg">Upload Data</button>
+          <button type="submit" class="tw-bg-sims tw-font-medium tw-text-white tw-py-3 tw-px-6 tw-rounded-lg">Upload Data</button>
         </div>
     </form>
   </div>

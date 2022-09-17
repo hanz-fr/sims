@@ -34,7 +34,7 @@
     {{-- navbar --}}
         <div class="tw-flex-1">
           <div class="tw-flex tw-bg-white tw-shadow-md tw-h-16 tw-justify-between tw-p-3 text-semibold tw-text-white">
-            <div x-show="!open" class="tw-text-sims tw-font-semibold tw-font-pop tw-text-xl tw-ml-7 tw-py-2">SIMS</div>
+            <div x-show="!open" class="tw-text-sims tw-font-semibold tw-font-pop tw-text-xl tw-ml-7 tw-py-2 tw-animate-pulse">SIMS</div>
             <button class="tw-my-auto tw-transition-all tw-rounded-md  tw-text-gray-500" @click="sidebarOpen = !sidebarOpen">
               <div x-on:click="open = !open" class="tw-overflow-hidden tw-place-items-center tw-cursor-pointer">
                 <div x-show="open" class="tw-text-sims tw-transition-all tw-duration-300 tw-font-semibold tw-font-pop tw-text-xl hover:tw-bg-sims/[0.6] hover:tw-text-white tw-rounded-full tw-w-10 tw-h-10 tw-flex tw-items-center tw-justify-center"><i class="fa-solid fa-bars"></i></div>
