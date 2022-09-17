@@ -4,63 +4,63 @@
 <div class="container">
   <div class="tw-flex sm:tw-flex-col md:tw-flex-col lg:tw-flex-row tw-gap-8">
     {{-- card jumlah --}}
-    <div class="tw-flex tw-flex-col">
+    <div class="tw-flex tw-flex-col tw-w-1/2">
       <div class="tw-float-right tw-mt-3">
         <a href="#" class="tw-text-sims hover:tw-text-[#428787] tw-pr-2 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-chevron-right"></i></a>
         <a href="#" class="tw-text-sims hover:tw-text-[#428787] tw-pr-2 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-chevron-left"></i></a>
       </div>
-      <ul class="list-unstyled tw-grid-rows-3 tw-gap-4 tw-flex tw-mt-3">
+      <ul class="list-unstyled tw-grid-rows-3 tw-justify-between tw-flex tw-mt-3">
         <li>
-          <div class="tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-border-sims tw-bg-white">
+          <div class="tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-border-sims tw-bg-white">
             <div class="tw-float-right">
               <a href="#" class="tw-text-sims hover:tw-text-[#428787] tw-pr-2 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
             </div>
-            <div class="tw-px-12">
+            <div class="sm:tw-px-12 md:tw-px-8">
               <div class="tw-flex tw-flex-row">
                 <div class="tw-text-5xl tw-text-sims"><i class="fa-solid fa-user"></i></div>
                 <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">659</div>
               </div>
             </div>
-            <div class="tw-pb-6"> 
+            <div class=""> 
               <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Siswa yang keluar</div>
             </div>
           </div>
         </li>
         <li>
-          <div class="tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-border-sims tw-bg-white">
+          <div class="tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-border-sims tw-bg-white">
             <div class="tw-float-right">
               <a href="#" class="tw-text-sims hover:tw-text-[#428787] tw-pr-2 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
             </div>
-            <div class="tw-px-12">
+            <div class="sm:tw-px-12 md:tw-px-8">
               <div class="tw-flex tw-flex-row">
                 <div class="tw-text-5xl tw-text-sims"><i class="fa-solid fa-user"></i></div>
                 <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">659</div>
               </div>
             </div>
-            <div class="tw-pb-6">
-              <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Jumlah Siswa</div>
+            <div class=""> 
+              <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Siswa yang keluar</div>
             </div>
           </div>
         </li>
         <li>
-          <div class="tw-columns-3 tw-flex-grow-0 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-border-sims tw-bg-white">
+          <div class="tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-border-sims tw-bg-white">
             <div class="tw-float-right">
               <a href="#" class="tw-text-sims hover:tw-text-[#428787] tw-pr-2 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
             </div>
-            <div class="tw-px-12">
+            <div class="sm:tw-px-12 md:tw-px-8">
               <div class="tw-flex tw-flex-row">
                 <div class="tw-text-5xl tw-text-sims"><i class="fa-solid fa-user"></i></div>
                 <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">659</div>
               </div>
             </div>
-            <div class="tw-pb-6">
-              <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Siswa yang masuk</div>
+            <div class=""> 
+              <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Siswa yang keluar</div>
             </div>
           </div>
         </li>
       </ul>
       {{-- chart view --}}
-      <div class="tw-bg-white tw-shadow-md tw-h-96 tw-w-full">
+      <div class="tw-bg-white tw-shadow-md tw-h-fit tw-py-10 tw-w-full">
         <div class="tw-px-10 tw-font-pop tw-pt-7">
           <div class="tw-text-sm tw-text-gray-400 tw-font-bold">Data Jumlah Siswa SMKN 11</div>
           <div>
@@ -72,7 +72,7 @@
 
     {{-- kuota pendaftar --}}
     <div class="tw-w-1/2 tw-mt-7">
-      <div class="tw-bg-white tw-font-pop tw-shadow-md tw-w-full sm:tw-w-fit tw-flex tw-h-56 tw-flex-col">
+      <div class="tw-bg-white tw-font-pop tw-shadow-md tw-flex tw-h-56 tw-flex-col">
         <div class="tw-float-right">
           <a href="#" class="tw-text-gray-500 tw-mr-4 hover:tw-text-gray-600 tw-pr-2 tw-mt-2 tw-text-lg tw-float-right"><i class="fa-solid fa-sliders-simple"></i></a>
         </div>
@@ -109,7 +109,7 @@
       {{-- <div class="tw-bg-white tw-shadow-md tw-h-96 tw-w-full">
       </div> --}}
       {{-- quick access --}}
-      <div class="tw-bg-white tw-items-center tw-justify-center tw-shadow-md tw-font-pop tw-border tw-mt-6 tw-w-fit sm:tw-px-14 tw-flex tw-h-fit tw-py-12 tw-flex-col">
+      <div class="tw-bg-white tw-items-center tw-justify-center tw-shadow-md tw-font-pop tw-border tw-mt-6  sm:tw-px-14 tw-flex tw-h-fit tw-py-12 tw-flex-col">
         <div class="tw-text-xl tw-text-gray-400 tw-font-bold tw-mb-10">Quick Access</div>
           <ul class="tw-flex tw-flex-row grid-rows-3 tw-justify-between tw-gap-3 tw-p-2 list-unstyled">
             <a href="#" class="tw-group">
