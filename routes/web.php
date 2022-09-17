@@ -98,6 +98,13 @@ Route::get('/data-tidak-naik', function () {
     ]);
 });
 
+Route::get('/rekap-siswa', function () {
+    return view('data-rekap-siswa', [
+        'title' => 'Data Rekap Siswa',
+        'active' => 'rekap-siswa'
+    ]);
+});
+
 Route::get('/register', [UserController::class, 'register'])->name('register');
 
 Route::get('/login', [UserController::class, 'login'])->name('login');
