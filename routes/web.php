@@ -77,6 +77,13 @@ Route::get('/rekap-nilai', function () {
     ]);
 });
 
+Route::get('/siswa-masuk', function () {
+    return view('siswa-masuk', [
+        'title' => 'Data Siswa Masuk',
+        'active' => 'data-induk'
+    ]);
+});
+
 Route::get('/siswa-keluar', function () {
     return view('siswa-keluar', [
         'title' => 'Data Siswa Keluar',
