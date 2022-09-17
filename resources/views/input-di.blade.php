@@ -66,8 +66,8 @@
           </label>
           <select class="tw-block tw-appearance-none tw-w-full tw-bg-gray-200 tw-border tw-border-gray-200 tw-text-gray-500 tw-py-3 tw-px-4 tw-pr-8 tw-rounded-xl tw-leading-tight focus:tw-outline-none focus:tw-bg-white focus:tw-border-gray-500" id="grid-state">
             <option>Pilih</option>
-            <option value="">Missouri</option>
-            <option value="">Missouri</option>
+            <option value="">Laki-laki</option>
+            <option value="">Perempuan</option>
           </select>
           <div class="tw-pointer-events-none tw-absolute tw-inset-y-0 tw-right-0 tw-flex tw-items-center tw-px-2 tw-text-gray-500">
             <svg class="tw-fill-current tw-h-4 tw-w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
@@ -81,8 +81,9 @@
           </label>
           <select class="tw-block tw-appearance-none tw-w-full tw-bg-gray-200 tw-border tw-border-gray-200 tw-text-gray-500 tw-py-3 tw-px-4 tw-pr-8 tw-rounded-xl tw-leading-tight focus:tw-outline-none focus:tw-bg-white focus:tw-border-gray-500" id="grid-state">
             <option>Pilih</option>
-            <option value="">Missouri</option>
-            <option value="">Missouri</option>
+            <option value="">Anak Kandung</option>
+            <option value="">Anak Angkat</option>
+            <option value="">Anak Tiri</option>
           </select>
           <div class="tw-pointer-events-none tw-absolute tw-inset-y-0 tw-right-0 tw-flex tw-items-center tw-px-2 tw-text-gray-500">
             <svg class="tw-fill-current tw-h-4 tw-w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>

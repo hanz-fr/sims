@@ -18,9 +18,9 @@
 
   <div class="tw-mx-auto tw-my-28 tw-container">
     <!-- card -->
-    <div class="tw-flex tw-bg-white tw-px-20 tw-py-16 tw-mx-auto tw-w-2/3 tw-h-3/5 tw-border tw-border-slate-200 tw-shadow-xl">
+    <div class="tw-flex lg:tw-flex-row sm:tw-flex-col-reverse tw-bg-white tw-px-20 tw-py-16 tw-mx-auto tw-w-2/3 tw-h-3/5 tw-border tw-border-slate-200 tw-shadow-xl">
         <!-- form section -->
-        <div class="input-area tw-w-2/5">
+        <div class="input-area lg:tw-w-3/5 sm:tw-w-full">
           <div class="tw-text-3xl tw-text-sims tw-font-pop tw-font-bold">Welcome</div>
           <div class="tw-text-sm tw-mt-2 tw-text-slate-400 tw-font-pop">Please login to access the website</div>
           <form action="/loginuser" method="post" class="tw-mt-12">
@@ -42,7 +42,7 @@
           </form>
         </div>
         <!-- image -->
-        <img class="tw-w-1/2 tw-items-center tw-m-auto tw-mr-0" src="assets/img/regist.svg" alt="" srcset="">
+        <img class="lg:tw-w-1/2 sm:tw-mb-4 sm:tw-w-full tw-items-center md:tw-m-auto tw-mr-0" src="assets/img/regist.svg" alt="" srcset="">
       </div>
     </div>
   </div> <!-- container -->

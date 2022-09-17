@@ -2,27 +2,27 @@
     {{-- sidebar --}}
     <aside x-bind:class="open?'tw-relative tw-left-0 tw-h-screen tw-w-60 tw-bg-white tw-flex tw-flex-col tw-top-0 tw-bottom-0' : 'tw-relative tw-inset-0 tw-w-16 tw-bg-white tw-flex tw-flex-col tw-top-0 tw-bottom-0 tw-h-screen'" class="tw-transition-all tw-duration-300">
         <div class="tw-flex tw-flex-row tw-items-center tw-h-10 tw-w-full tw-p-4 tw-mt-4">
-            <div x-on:click="open = !open" class="tw-overflow-hidden tw-place-items-center tw-cursor-pointer">
-                <div class="tw-h-10 tw-w-10 tw-mr-2 tw-grid tw-place-items-center tw-text-sims tw-font-bold tw-text-2xl"><i class="fa-duotone fa-graduation-cap"></i></div>
+            <div x-on:click="open = !open" class="tw-overflow-hidden tw-cursor-pointer">
+                <div class="tw-h-10 tw-w-10 tw-grid tw-text-sims tw-font-bold tw-text-2xl"><i class="fa-duotone fa-graduation-cap"></i></div>
               </div>
-            <h3 x-show="open" class="tw-text-xl tw-text-sims tw-font-semibold tw-font-pop tw-pt-2">SIMS</h3>
+            <h3 x-show="open" class="tw-text-xl tw-text-sims tw-font-semibold tw-font-pop tw-pt-2 tw-pb-2 tw-ml-1">SIMS</h3>
         </div>
         <div class="tw-mt-10">
             <ul class="list-unstyled">
                 <li class="tw-flex tw-mt-2 tw-text-sims tw-cursor-pointer">
-                    <a href="/" class="{{ ($active === "dashboard-main") ? 'tw-bg-sims tw-text-white' : '' }} tw-p-5 hover:tw-bg-sims hover:tw-text-white tw-h-16 tw-w-full tw-flex tw-flex-row">
+                    <a href="/" class="{{ ($active === "dashboard-main") ? 'tw-bg-sims tw-text-white' : '' }} tw-p-5 hover:tw-bg-sims hover:tw-text-white tw-h-16 tw-w-full tw-flex tw-flex-row tw-transition-colors tw-duration-300">
                         <i class="fa-solid fa-house tw-text-xl"></i>
                         <div x-show="open" class="tw-ml-5 tw-text-lg tw-font-medium tw-font-pop">Dashboard</div>
                     </a>
                 </li>
                 <li class="tw-flex tw-text-sims tw-cursor-pointer">
-                    <a href="/jurusan" class="{{ ($active === "data-induk") ? 'tw-bg-sims tw-text-white' : '' }} tw-p-5 hover:tw-bg-sims hover:tw-text-white tw-h-16 tw-w-full tw-flex tw-flex-row">
+                    <a href="/jurusan" class="{{ ($active === "data-induk") ? 'tw-bg-sims tw-text-white' : '' }} tw-p-5 hover:tw-bg-sims hover:tw-text-white tw-h-16 tw-w-full tw-flex tw-flex-row tw-transition-colors tw-duration-300">
                         <i class="fa-regular fa-book-open tw-text-xl"></i>
                         <div x-show="open" class="tw-ml-5 tw-text-lg tw-font-medium tw-font-pop">Buku Induk</div>
                     </a>
                 </li>
                 <li class="tw-flex tw-text-sims tw-cursor-pointer">
-                    <a href="#" class="{{ ($active === "rekap-siswa") ? 'tw-bg-sims tw-text-white' : '' }} tw-p-5 hover:tw-bg-sims hover:tw-text-white tw-h-16 tw-w-full tw-flex tw-flex-row">
+                    <a href="#" class="{{ ($active === "rekap-siswa") ? 'tw-bg-sims tw-text-white' : '' }} tw-p-5 hover:tw-bg-sims hover:tw-text-white tw-h-16 tw-w-full tw-flex tw-flex-row tw-transition-colors tw-duration-300">
                         <i class="fa-solid fa-users tw-text-xl"></i>
                         <div x-show="open" class="tw-ml-5 tw-text-lg tw-font-medium tw-font-pop">Rekap Siswa</div>
                     </a>

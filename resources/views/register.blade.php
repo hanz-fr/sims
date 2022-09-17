@@ -18,9 +18,9 @@
 
   <div class="tw-mx-auto tw-my-14 tw-container">
     <!-- card -->
-    <div class="tw-bg-white tw-flex tw-mx-auto tw-px-20 tw-py-12 tw-w-2/3 tw-h-3/5 tw-border tw-border-slate-200 tw-shadow-xl tw-p-5">
+    <div class="tw-bg-white tw-flex lg:tw-flex-row sm:tw-flex-col-reverse tw-mx-auto tw-px-20 tw-py-12 tw-w-2/3 tw-h-3/5 tw-border tw-border-slate-200 tw-shadow-xl tw-p-5">
         <!-- form section -->
-        <div class="input-area tw-w-3/5">
+        <div class="input-area lg:tw-w-3/5 sm:tw-w-full">
           <div class="tw-text-3xl tw-text-sims tw-font-pop tw-font-bold">Register</div>
           <div class="tw-text-sm tw-mt-2 tw-text-slate-400 tw-font-pop">Create a new account</div>
           <form action="/registeruser" method="post" class="tw-mt-10 tw-pr-8">
@@ -57,7 +57,7 @@
           </form>
         </div>
         <!-- image -->
-        <img class="tw-w-2/4 tw--mr-2" src="assets/img/regist.svg" alt="" srcset="">
+        <img class="lg:tw-w-1/2 sm:tw-mb-4 sm:tw-w-full tw-items-center md:tw-m-auto" src="assets/img/regist.svg" alt="" srcset="">
     </div>
   </div> <!-- container -->
 </body>

@@ -2,123 +2,106 @@
 
 @section('content')
 <div class="container">
-    <h4 class="tw-font-pop tw-font-bold tw-mx-6 tw-mt-6 tw-text-sims">Data Alumni</h4>
-    <h6 class="tw-font-pop tw-mx-6 tw-text-slate-400">PENGEMBANGAN PERANGKAT LUNAK DAN GIM</h6>
+    <div class="tw-flex tw-justify-between tw-gap-5 tw-mt-8">
+        <div class="tw-flex tw-flex-col">
+            <h4 class="tw-font-pop tw-font-bold tw-mt-6 tw-text-sims">Data Alumni</h4>
+            <h6 class="tw-mb-5 tw-text-gray-400 tw-font-semibold">X PENGEMBANGAN PERANGKAT LUNAK DAN GIM</h6>
+        </div>
 
-    <div class="tw-flex tw-mb-2 tw-justify-end container">
-    <a href="">
-        <i class="fa-solid fa-print tw-bg-sims tw-text-white tw-text-lg tw-p-2 tw-rounded-lg tw-mx-2"></i>
-    </a>
-    <a href="">
-        <i class="fa-regular fa-copy tw-bg-sims tw-text-white tw-text-lg tw-p-2 tw-rounded-lg"></i>
-    </a>
-    <a href="">
-        <i class="fa-solid fa-file-excel tw-bg-sims tw-text-white tw-text-lg tw-p-2 tw-rounded-lg tw-mx-2"></i>
-    </a>
-    <a href="">
-        <i class="fa-solid fa-file-pdf tw-bg-sims tw-text-white tw-text-lg tw-p-2 tw-rounded-lg"></i>
-    </a>
+
     </div>
 
-            <div class="container tw-flex tw-justify-between">
-                <div class="tw-flex">
-                    <form action=""> 
-                        <div class="relative tw-border-2 tw-rounded-lg focus:tw-ring-sims">
+        <div class="tw-flex tw-justify-between sm:tw-flex-wrap sm:tw-gap-5">
+            <div class="tw-flex">
+                <form action=""> 
+                    <div class="relative tw-border-2 tw-rounded-lg focus:tw-ring-sims">
                         <input type="text" class="tw-py-1 tw-px-5 tw-border-none tw-rounded-md">
                         <i class="fa-solid fa-magnifying-glass tw-pr-5 tw-pl-3 tw-text-slate-600"></i>
-                        </div>
-                    </form>
-                    <div class="tw-text-base pt-1 tw-text-basic tw-ml-4 tw-mr-2 tw-font-normal tw-font-pop">Show</div>
-                    <div class="dropdown">
-                        <button class="dropdown-toggle tw-bg-gray-300 tw-font-bold tw-py-1 tw-px-3 tw-rounded-xl tw-text" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        10
-                        </button>
-                        <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">25</a></li>
-                        <li><a class="dropdown-item" href="#">50</a></li>
-                        <li><a class="dropdown-item" href="#">100</a></li>
-                        </ul>
                     </div>
-                    <div class="tw-text-base pt-1 tw-mx-2 tw-font-pop tw-font-normal tw-text-basic">Entries</div>
+                </form>
+                <div class="tw-text-base pt-1 tw-text-basic tw-ml-4 tw-mr-2 tw-font-normal tw-font-pop">Show</div>
+                <div class="dropdown">
+                    <button class="dropdown-toggle tw-bg-gray-300 tw-font-bold tw-py-1 tw-px-3 tw-rounded-xl tw-text" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    10
+                    </button>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">25</a></li>
+                    <li><a class="dropdown-item" href="#">50</a></li>
+                    <li><a class="dropdown-item" href="#">100</a></li>
+                    </ul>
                 </div>
+                <div class="tw-text-base pt-1 tw-mx-2 tw-font-pop tw-font-normal tw-text-basic">Entries</div>
 
+            </div>
+            {{-- <div class="tw-flex">
+                <a href="" class="tw-bg-[#28A745] tw-text-white hover:tw-text-white hover:tw-bg-green-700 tw-font-pop tw-rounded-lg tw-px-5 tw-py-2">
+                    <i class="fa-solid fa-circle-plus tw-pr-3"></i>
+                    Tambah Data
+                </a>
+            </div> --}}
+            <div class="tw-flex tw-justify-center tw-items-center">
+                <a href=""><i class="fa-solid fa-print tw-text-xl tw-px-3 tw-py-1 tw-mb-3 tw-mx-2 tw-text-white tw-bg-sims hover:tw-bg-[#3b7a7a] tw-border tw-rounded-lg"></i></a>
+                <a href=""><i class="fa-solid fa-copy tw-text-xl tw-px-3 tw-py-1 tw-mb-3 tw-mx-2 tw-text-white tw-bg-sims hover:tw-bg-[#3b7a7a] tw-border tw-rounded-lg"></i></a>
+                <a href=""><i class="fa-solid fa-file-excel tw-text-xl tw-px-3 tw-py-1 tw-mb-3 tw-mx-2 tw-text-white tw-bg-sims hover:tw-bg-[#3b7a7a] tw-border tw-rounded-lg"></i></a>
+                <a href=""><i class="fa-solid fa-file-pdf tw-text-xl tw-px-3 tw-py-1 tw-mb-3 tw-mx-2 tw-text-white tw-bg-sims hover:tw-bg-[#3b7a7a] tw-border tw-rounded-lg"></i></a>
+            </div>
+        </div>
+
+        <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl tw-mt-5">
+            <table class="tw-w-full tw-text-sm tw-text-center">
+                <thead class="tw-text-md tw-bg-gray-100 tw-text-basic tw-border tw-font-pop">
+                    <tr>
+                        <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">NO</th>
+                        <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">NIS</th>
+                        <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">NISN</th>
+                        <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">NAMA PESERTA DIDIK</th>
+                        <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">GENDER</th>
+                        <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">KELAS</th>
+                        <th scope="col" class="tw-py-3 tw-px-6">ACTION</th>
+                    </tr>
+                </thead>
+                <tbody class="tw-text-base">
+                    <tr class="tw-bg-white tw-border">
+                        <td class="tw-py-4 tw-px-6 tw-border">01</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
+                        <td>
+                            <a href="" class="tw-text-white tw-bg-sims hover:tw-bg-[#428888] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-mr-1">
+                                <i class="fa-light fa-clipboard-list"></i>
+                            </a>
+                            <a href="#" class="tw-text-white tw-bg-kuning hover:tw-bg-[#D3A007] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
+                                <i class="fa-solid fa-pen-to-square"></i></a>
+                            </a>
+                            <a href="#" class="tw-text-white tw-bg-gray-500 hover:tw-bg-gray-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
+                                <i class="fa-solid fa-eye"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="tw-bg-white tw-border">
+                        <td class="tw-py-4 tw-px-6 tw-border">01</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
+                        <td>
+                            <a href="" class="tw-text-white tw-bg-sims hover:tw-bg-[#428888] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-mr-1">
+                                <i class="fa-light fa-clipboard-list"></i>
+                            </a>
+                            <a href="#" class="tw-text-white tw-bg-kuning hover:tw-bg-[#D3A007] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
+                                <i class="fa-solid fa-pen-to-square"></i></a>
+                            </a>
+                            <a href="#" class="tw-text-white tw-bg-gray-500 hover:tw-bg-gray-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
+                                <i class="fa-solid fa-eye"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-    <div class="container">
-    <table id="example" class="table table-striped tw-border-2 tw-border-slate-300">
-        <thead>
-            <tr>
-                <th class="tw-border-2 tw-border-slate-300">NO</th>
-                <th class="tw-border-2 tw-border-slate-300">NIS</th>
-                <th class="tw-border-2 tw-border-slate-300">NISN</th>
-                <th class="tw-border-2 tw-border-slate-300">NAMA PESERTA DIDIK</th>
-                <th class="tw-border-2 tw-border-slate-300">GENDER</th>
-                <th class="tw-border-2 tw-border-slate-300">KELAS</th>
-                <th class="tw-border-2 tw-border-slate-300">ACTION</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td class="tw-border-2 tw-border-slate-300">01</td>
-                <td class="tw-border-2 tw-border-slate-300">238114022</td>
-                <td class="tw-border-2 tw-border-slate-300">2381130119955</td>
-                <td class="tw-border-2 tw-border-slate-300">AGUNG SAKENIGEDIK</td>
-                <td class="tw-border-2 tw-border-slate-300">L</td>
-                <td class="tw-border-2 tw-border-slate-300">TKJ</td>
-                <td class="tw-border-2 tw-border-slate-300">
-                    <button class="btn text-white" style="background-color: #4D9E9E;">
-                        <i class="fa-solid fa-clipboard-list"></i>
-                    </button>
-                    <a href="#" class="tw-text-white tw-bg-kuning hover:tw-bg-[#D3A007] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
-                        <i class="fa-solid fa-pen-to-square"></i></a>
-                    </a>
-                    <button class="btn text-white" style="background-color: #949494;">
-                        <i class="fa-solid fa-eye"></i>
-                    </button>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="tw-border-2 tw-border-slate-300">02</td>
-                <td class="tw-border-2 tw-border-slate-300">200758845</td>
-                <td class="tw-border-2 tw-border-slate-300">0178956600562</td>
-                <td class="tw-border-2 tw-border-slate-300">ASEP HACHIMAN KITAGAWA</td>
-                <td class="tw-border-2 tw-border-slate-300">L</td>
-                <td class="tw-border-2 tw-border-slate-300">MM 2</td>
-                <td class="tw-border-2 tw-border-slate-300">
-                    <button class="btn text-white" style="background-color: #4D9E9E;">
-                        <i class="fa-solid fa-clipboard-list"></i>
-                    </button>
-                    <button class="btn text-white" style="background-color: #FFC107;">
-                        <i class="fa-solid fa-pen-to-square"></i></a>
-                    </button>
-                    <button class="btn text-white" style="background-color: #949494;">
-                        <i class="fa-solid fa-eye"></i>
-                    </button>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="tw-border-2 tw-border-slate-300">03</td>
-                <td class="tw-border-2 tw-border-slate-300">2001511111</td>
-                <td class="tw-border-2 tw-border-slate-300">0166558605007</td>
-                <td class="tw-border-2 tw-border-slate-300">AOI YUKI CIBADUYUT</td>
-                <td class="tw-border-2 tw-border-slate-300">P</td>
-                <td class="tw-border-2 tw-border-slate-300">MLOG 2</td>
-                <td class="tw-border-2 tw-border-slate-300">
-                    <button class="btn text-white" style="background-color: #4D9E9E;">
-                        <i class="fa-solid fa-clipboard-list"></i>
-                    </button>
-                    <a href="#" class="tw-text-white tw-bg-kuning hover:tw-bg-[#D3A007] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
-                        <i class="fa-solid fa-pen-to-square"></i></a>
-                    </a>
-                    <button class="btn text-white" style="background-color: #949494;">
-                        <i class="fa-solid fa-eye"></i>
-                    </button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    </div>
-</div>
 
 @endsection

@@ -4,9 +4,9 @@
   <div class="container">
     <div class="tw-text-3xl tw-text-sims tw-font-pop tw-font-semibold tw-flex tw-flex-row tw-mt-9 tw-mx-9">Data Siswa</div>
     {{-- foto profil --}}
-    <div class="tw-flex tw-font-pop">
-      <div class="tw-w-[30%] tw-text-center tw-text-basic tw-text-xl tw-font-pop tw-font-semibold tw-m-9">
-        <img src="" alt="Pas Foto" srcset="" class="tw-rounded-xl tw-mb-10 tw-w-40 tw-h-52 tw-border tw-border-slate-400 tw-mx-auto tw-mt-20">
+    <div class="tw-flex sm:tw-flex-col md:tw-flex-row tw-font-pop">
+      <div class="md:tw-w-[30%] sm:tw-w-full tw-text-center tw-text-basic tw-text-xl tw-font-pop tw-font-semibold tw-m-9">
+        <img src="" alt="Pas Foto" srcset="" class="tw-rounded-xl tw-mb-10 tw-w-40 tw-h-52 tw-border tw-border-slate-400 tw-mx-auto md:tw-mt-20 sm:tw-mt-10">
         <div>Mudashir Alhamdulillah</div>
         <div>200654845 / 0178577600562</div>
         <div>Kelas/Jurusan</div>
@@ -16,7 +16,7 @@
       <div x-data="{ openTab: 1,
         activeClasses: 'tw-bg-white tw-border',
         inactiveClasses: 'tw-bg-gray-200 tw-border-t tw-border-x'
-      }"  class="tw-w-3/5">
+      }"  class="md:tw-w-3/5 sm:tw-w-full">
       <div class="tw-float-right">
         <a href="#" class="tw-text-white tw-bg-kuning hover:tw-bg-[#D3A007] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-solid fa-pen-to-square"></i></a>
       </div>
