@@ -77,6 +77,13 @@ Route::get('/rekap-nilai', function () {
     ]);
 });
 
+Route::get('/siswa-keluar', function () {
+    return view('siswa-keluar', [
+        'title' => 'Data Siswa Keluar',
+        'active' => 'data-induk'
+    ]);
+});
+
 Route::get('/register', [UserController::class, 'register'])->name('register');
 
 Route::get('/login', [UserController::class, 'login'])->name('login');
