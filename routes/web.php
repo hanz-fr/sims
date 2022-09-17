@@ -77,6 +77,13 @@ Route::get('/rekap-nilai', function () {
     ]);
 });
 
+Route::get('/data-tidak-naik', function () {
+    return view('data-tidak-naik', [
+        'title' => 'Data Tidak Naik Kelas',
+        'active' => 'data-induk'
+    ]);
+});
+
 Route::get('/register', [UserController::class, 'register'])->name('register');
 
 Route::get('/login', [UserController::class, 'login'])->name('login');
