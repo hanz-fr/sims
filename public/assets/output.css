@@ -859,12 +859,8 @@ video {
   margin-right: 1.75rem;
 }
 
-.tw-ml-3 {
-  margin-left: 0.75rem;
-}
-
-.tw-ml-10 {
-  margin-left: 2.5rem;
+.tw-mb-12 {
+  margin-bottom: 3rem;
 }
 
 .tw-block {
@@ -1291,14 +1287,6 @@ video {
 
 .tw-p-3 {
   padding: 0.75rem;
-}
-
-.tw-p-14 {
-  padding: 3.5rem;
-}
-
-.tw-p-10 {
-  padding: 2.5rem;
 }
 
 .tw-py-3 {
