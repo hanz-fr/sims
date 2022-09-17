@@ -98,6 +98,13 @@ Route::get('/data-tidak-naik', function () {
     ]);
 });
 
+Route::get('/edit-profile', function () {
+    return view('edit-profiluser', [
+        'title' => 'Edit Profil User',
+        'active' => 'data-induk'
+    ]);
+});
+
 Route::get('/register', [UserController::class, 'register'])->name('register');
 
 Route::get('/login', [UserController::class, 'login'])->name('login');
