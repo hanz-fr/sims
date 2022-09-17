@@ -98,10 +98,17 @@ Route::get('/data-tidak-naik', function () {
     ]);
 });
 
+<<<<<<< HEAD
 Route::get('/rekap-siswa', function () {
     return view('data-rekap-siswa', [
         'title' => 'Data Rekap Siswa',
         'active' => 'rekap-siswa'
+=======
+Route::get('/edit-profile', function () {
+    return view('edit-profiluser', [
+        'title' => 'Edit Profil User',
+        'active' => 'data-induk'
+>>>>>>> 77f9de9a462fd47a3d0da438e3faf6eaf98c0057
     ]);
 });
 
