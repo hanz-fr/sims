@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\ApiController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Http;
 
 /*
 |--------------------------------------------------------------------------
@@ -97,6 +99,10 @@ Route::get('/data-tidak-naik', function () {
         'active' => 'data-induk'
     ]);
 });
+
+
+Route::get('/backend-test', [ApiController::class, 'index']);
+Route::get('/backend-test/0', [ApiController::class, 'index2']);
 
 Route::get('/register', [UserController::class, 'register'])->name('register');
 

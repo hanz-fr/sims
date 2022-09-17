@@ -794,6 +794,10 @@ video {
   margin-bottom: -2rem;
 }
 
+.tw-mb-12 {
+  margin-bottom: 3rem;
+}
+
 .tw-mt-9 {
   margin-top: 2.25rem;
 }
@@ -848,10 +852,6 @@ video {
 
 .tw-mr-7 {
   margin-right: 1.75rem;
-}
-
-.tw-mb-12 {
-  margin-bottom: 3rem;
 }
 
 .tw-block {
@@ -1331,6 +1331,11 @@ video {
   padding-right: 1.5rem;
 }
 
+.tw-py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
 .tw-px-20 {
   padding-left: 5rem;
   padding-right: 5rem;
@@ -1339,11 +1344,6 @@ video {
 .tw-py-16 {
   padding-top: 4rem;
   padding-bottom: 4rem;
-}
-
-.tw-py-5 {
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
 }
 
 .tw-py-11 {
@@ -1640,6 +1640,11 @@ a {
   background-color: rgb(75 85 99 / var(--tw-bg-opacity));
 }
 
+.hover\:tw-bg-\[\#3F7373\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(63 115 115 / var(--tw-bg-opacity));
+}
+
 .hover\:tw-bg-\[\#5B9C9C\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(91 156 156 / var(--tw-bg-opacity));
@@ -1702,11 +1707,6 @@ a {
 
 .hover\:tw-bg-sims\/\[0\.6\]:hover {
   background-color: rgb(77 158 158 / 0.6);
-}
-
-.hover\:tw-bg-\[\#3F7373\]:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(63 115 115 / var(--tw-bg-opacity));
 }
 
 .hover\:tw-text-\[\#428787\]:hover {
@@ -1865,11 +1865,6 @@ a {
   .sm\:tw-px-14 {
     padding-left: 3.5rem;
     padding-right: 3.5rem;
-  }
-
-  .sm\:tw-px-16 {
-    padding-left: 4rem;
-    padding-right: 4rem;
   }
 }
 
