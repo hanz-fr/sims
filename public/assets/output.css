@@ -822,6 +822,10 @@ video {
   margin-right: 1.75rem;
 }
 
+.tw-mb-12 {
+  margin-bottom: 3rem;
+}
+
 .tw-block {
   display: block;
 }
