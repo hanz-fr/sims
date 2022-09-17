@@ -77,15 +77,16 @@ Route::get('/rekap-nilai', function () {
     ]);
 });
 
-<<<<<<< HEAD
 Route::get('/siswa-keluar', function () {
     return view('siswa-keluar', [
         'title' => 'Data Siswa Keluar',
-=======
+        'active' => 'data-induk'
+    ]);
+});
+ 
 Route::get('/data-tidak-naik', function () {
     return view('data-tidak-naik', [
         'title' => 'Data Tidak Naik Kelas',
->>>>>>> efb82f50f8a2bfd3ade6344c6092108fe649d844
         'active' => 'data-induk'
     ]);
 });
