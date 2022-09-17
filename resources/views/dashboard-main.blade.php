@@ -18,7 +18,7 @@
             <div class="sm:tw-px-12 md:tw-px-8">
               <div class="tw-flex tw-flex-row">
                 <div class="tw-text-5xl tw-text-sims"><i class="fa-solid fa-user"></i></div>
-                <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">659</div>
+                <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">658</div>
               </div>
             </div>
             <div class=""> 

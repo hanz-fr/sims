@@ -100,10 +100,6 @@ Route::get('/data-tidak-naik', function () {
     ]);
 });
 
-
-Route::get('/backend-test', [ApiController::class, 'index']);
-Route::get('/backend-test/0', [ApiController::class, 'index2']);
-
 Route::get('/register', [UserController::class, 'register'])->name('register');
 
 Route::get('/login', [UserController::class, 'login'])->name('login');
