@@ -850,6 +850,10 @@ video {
   margin-right: 1.75rem;
 }
 
+.tw-mb-12 {
+  margin-bottom: 3rem;
+}
+
 .tw-block {
   display: block;
 }
@@ -1698,6 +1702,11 @@ a {
 
 .hover\:tw-bg-sims\/\[0\.6\]:hover {
   background-color: rgb(77 158 158 / 0.6);
+}
+
+.hover\:tw-bg-\[\#3F7373\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(63 115 115 / var(--tw-bg-opacity));
 }
 
 .hover\:tw-text-\[\#428787\]:hover {

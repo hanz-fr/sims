@@ -77,6 +77,27 @@ Route::get('/rekap-nilai', function () {
     ]);
 });
 
+Route::get('/siswa-masuk', function () {
+    return view('siswa-masuk', [
+        'title' => 'Data Siswa Masuk',
+        'active' => 'data-induk'
+    ]);
+});
+
+Route::get('/siswa-keluar', function () {
+    return view('siswa-keluar', [
+        'title' => 'Data Siswa Keluar',
+        'active' => 'data-induk'
+    ]);
+});
+ 
+Route::get('/data-tidak-naik', function () {
+    return view('data-tidak-naik', [
+        'title' => 'Data Tidak Naik Kelas',
+        'active' => 'data-induk'
+    ]);
+});
+
 Route::get('/register', [UserController::class, 'register'])->name('register');
 
 Route::get('/login', [UserController::class, 'login'])->name('login');

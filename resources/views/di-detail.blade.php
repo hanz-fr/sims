@@ -98,7 +98,13 @@
                       </tr>
                   </tbody>
               </table>
-          </div>          
+          </div> 
+          <div class="tw-float-right tw-py-5 tw-px-3">
+            <a href="#" class="tw-text-white tw-bg-sims hover:tw-bg-[#3F7373] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-regular fa-arrow-right"></i></a>
+          </div>
+          <div class="tw-float-right tw-py-5">
+            <a href="#" class="tw-text-white tw-bg-sims hover:tw-bg-[#3F7373] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-regular fa-arrow-left"></i></a>
+          </div>           
           </div>
           <div x-show="openTab === 2">
             <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
@@ -206,7 +212,13 @@
                       </tr>
                   </tbody>
               </table>
-          </div>    
+          </div> 
+          <div class="tw-float-right tw-py-5 tw-px-3">
+            <a href="#" class="tw-text-white tw-bg-sims hover:tw-bg-[#3F7373] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-regular fa-arrow-right"></i></a>
+          </div>
+          <div class="tw-float-right tw-py-5">
+            <a href="#" class="tw-text-white tw-bg-sims hover:tw-bg-[#3F7373] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-regular fa-arrow-left"></i></a>
+          </div>   
           </div>
         </div>
       </div>
