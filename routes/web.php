@@ -107,9 +107,9 @@ Route::get('/data-tidak-naik', function () {
     ]);
 });
 
-Route::get('/backend-test/siswa', [ApiController::class, 'index']);
-Route::get('/backend-test/siswa/create', [ApiController::class, 'create']);
-Route::post('/backend-test/siswa', [ApiController::class, 'store']);
+Route::get('/api/siswa', [ApiController::class, 'index']);
+Route::get('/api/siswa/create', [ApiController::class, 'create']);
+Route::post('/api/siswa', [ApiController::class, 'store']);
 
 Route::get('/register', [UserController::class, 'register'])->name('register');
 

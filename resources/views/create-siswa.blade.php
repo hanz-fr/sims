@@ -6,7 +6,7 @@
     <a href="/detail" class="tw-text-sims tw-text-3xl"><i class="fa-solid fa-chevron-left"></i></a>
     <h3 class="tw-font-pop tw-font-semibold tw-mt-6 tw-text-sims tw-text-center">Tambah Data Siswa</h3>
     
-    <form method="POST" action="/api/siswa"  class="tw-w-full lg:tw-mx-auto sm:tw-mx-10 tw-my-10 tw-max-w-3xl tw-font-pop">
+    <form method="POST" action="/backend-test/siswa"  class="tw-w-full lg:tw-mx-auto sm:tw-mx-10 tw-my-10 tw-max-w-3xl tw-font-pop">
       
       @csrf
       @method('POST')

@@ -19,7 +19,7 @@ class ApiController extends Controller
     }
 
     public function create() {
-        return view('be-test-add', [
+        return view('create-siswa', [
             'title' => 'backend-test',
             'active' => 'backend-test'
         ]);
@@ -32,3 +32,4 @@ class ApiController extends Controller
 
     }
 }
+
