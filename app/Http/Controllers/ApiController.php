@@ -18,9 +18,17 @@ class ApiController extends Controller
         ]);
     }
 
-    public function index2() {
-        $siswa = Http::get('localhost:3000/siswa');
+    public function create() {
+        return view('be-test-add', [
+            'title' => 'backend-test',
+            'active' => 'backend-test'
+        ]);
+    }
 
-        return json_decode($siswa);
+
+    public function store(Request $request) {
+
+        return $request;
+
     }
 }
