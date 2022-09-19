@@ -61,7 +61,7 @@
       </ul>
       {{-- chart view --}}
       <div class="tw-bg-white tw-shadow-md tw-h-fit tw-py-10 tw-w-full">
-        <div class="tw-px-10 tw-font-pop tw-pt-7">
+        <div class="tw-px-10 tw-font-pop">
           <div class="tw-text-sm tw-text-gray-400 tw-font-bold">Data Jumlah Siswa SMKN 11</div>
           <div>
             <canvas id="myChart" class="tw-mt-4"></canvas>          
@@ -109,8 +109,8 @@
       {{-- <div class="tw-bg-white tw-shadow-md tw-h-96 tw-w-full">
       </div> --}}
       {{-- quick access --}}
-      <div class="tw-bg-white tw-items-center tw-justify-center tw-shadow-md tw-font-pop tw-border tw-mt-6  sm:tw-px-14 tw-flex tw-h-fit tw-py-12 tw-flex-col">
-        <div class="tw-text-xl tw-text-gray-400 tw-font-bold tw-mb-10">Quick Access</div>
+      <div class="tw-bg-white tw-items-center tw-justify-center tw-shadow-md tw-font-pop tw-border tw-mt-6 sm:tw-px-14 tw-flex tw-h-fit tw-py-6 tw-flex-col">
+        <div class="tw-text-lg tw-text-gray-400 tw-font-bold tw-mb-10">Quick Access</div>
           <ul class="tw-flex tw-flex-row grid-rows-3 tw-justify-between tw-gap-3 tw-p-2 list-unstyled">
             <a href="/rekap-siswa" class="tw-group">
               <li class="tw-flex tw-flex-col tw-justify-center tw-text-center tw-border-2 tw-py-4 tw-px-4 tw-bg-white tw-rounded-lg group-hover:tw-text-white group-hover:tw-bg-sims tw-transition-all tw-duration-300">
