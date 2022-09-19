@@ -9,13 +9,15 @@ class ApiController extends Controller
 {
     public function index() {
 
-        $siswa = Http::get('https://ece5-114-79-49-66.ap.ngrok.io/siswa');
+        $siswa = Http::get('https://0afd-103-139-10-202.ngrok.io/siswa');
 
-        return view('be-test',[
+        /* return view('be-test',[
             'siswa' => json_decode($siswa),
             'title' => 'backend-test',
             'active' => 'backend-test'
-        ]);
+        ]); */
+
+        return json_decode($siswa);
     }
 
     public function create() {
@@ -27,17 +29,15 @@ class ApiController extends Controller
 
     public function store(Request $request) {
 
-        Http::post('https://ece5-114-79-49-66.ap.ngrok.io/ortu', [
-            'nik_ortu' => null,
+        Http::post('https://0afd-103-139-10-202.ngrok.io/ortu', [
             'nama' => $request->nama_ibu,
             'hubungan' => 'Ibu',
             'alamat' => $request->alamat_ortu,
             'no_telp' => $request->no_telp_ortu,
-            'pekerjaan' => null,
             'email' => $request->email_ortu,
         ]);
 
-        Http::post('https://ece5-114-79-49-66.ap.ngrok.io/siswa',[
+        Http::post('https://0afd-103-139-10-202.ngrok.io/siswa',[
             'nis' => $request->nis,
             'nisn' => $request->nisn,
             'nama' => $request->nama,
