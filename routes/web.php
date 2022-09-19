@@ -107,6 +107,13 @@ Route::get('/data-tidak-naik', function () {
     ]);
 });
 
+Route::get('/testurl', function() {
+    return view('plswork', [
+        'title' => 'Data Tidak Naik Kelas',
+        'active' => 'data-induk'
+    ]);
+});
+
 Route::get('/api/siswa', [ApiController::class, 'index']);
 Route::get('/api/siswa/create', [ApiController::class, 'create']);
 Route::post('/api/siswa', [ApiController::class, 'store']);
