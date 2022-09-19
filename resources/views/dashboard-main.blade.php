@@ -3,15 +3,15 @@
 @section('content')
 <div class="container">
   <div class="tw-flex sm:tw-flex-col md:tw-flex-col lg:tw-flex-row tw-gap-8">
-    {{-- card jumlah --}}
-    <div class="tw-flex tw-flex-col tw-w-1/2">
-      <div class="tw-float-right tw-mt-3">
+    <div class="owl-two tw-flex tw-flex-col tw-w-1/2">
+          {{-- card jumlah --}}
+      {{-- <div class="tw-float-right tw-mt-3">
         <a href="#" class="tw-text-sims hover:tw-text-[#428787] tw-pr-2 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-chevron-right"></i></a>
         <a href="#" class="tw-text-sims hover:tw-text-[#428787] tw-pr-2 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-chevron-left"></i></a>
-      </div>
-      <ul class="list-unstyled tw-grid-rows-3 tw-justify-between tw-flex tw-mt-3">
-        <li>
-          <div class="tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-border-sims tw-bg-white">
+      </div> --}}
+      <ul class=" list-unstyled tw-grid-rows-3 tw-justify-between tw-flex tw-mt-3">
+        <li class="item carousel-shadow">
+          <div class=" tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-border-sims tw-bg-white">
             <div class="tw-float-right">
               <a href="#" class="tw-text-sims hover:tw-text-[#428787] tw-pr-2 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
             </div>
@@ -26,8 +26,8 @@
             </div>
           </div>
         </li>
-        <li>
-          <div class="tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-border-sims tw-bg-white">
+        <li class="item carousel-shadow">
+          <div class=" tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-border-sims tw-bg-white">
             <div class="tw-float-right">
               <a href="#" class="tw-text-sims hover:tw-text-[#428787] tw-pr-2 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
             </div>
@@ -42,8 +42,8 @@
             </div>
           </div>
         </li>
-        <li>
-          <div class="tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-border-sims tw-bg-white">
+        <li class="item carousel-shadow">
+          <div class=" tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-border-sims tw-bg-white">
             <div class="tw-float-right">
               <a href="#" class="tw-text-sims hover:tw-text-[#428787] tw-pr-2 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
             </div>
@@ -168,5 +168,7 @@ const myChart = new Chart(
     document.getElementById('myChart'),
     config
   );
+
+  
 </script>
 @endpush
