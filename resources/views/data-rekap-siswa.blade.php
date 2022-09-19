@@ -9,7 +9,7 @@
           <div class="tw-text-xl my-auto tw-ml-3 tw-font-bold">Siswa</div>
         </div>
         <div class="tw-flex tw-flex-row tw-mt-10">
-          <div class="tw-flex tw-flex-col tw-text-sims tw-gap-3 tw-mt-8 tw-w-2/3">
+          <div class="tw-flex tw-flex-col tw-text-sims tw-gap-3 tw-mt-8">
             <div class="tw-text-base my-auto tw-font-normal tw-text-gray-500">Masuk Sekolah (Pindahan)</div>
             <div class="tw-text-base my-auto tw-font-normal tw-text-gray-500">Keluar Sekolah</div>
             <div class="tw-text-base my-auto tw-font-normal tw-text-gray-500">Siswa Tidak Naik Kelas</div>
@@ -23,7 +23,7 @@
           </div>
         </div>
       </div>
-      <div class="tw-bg-white tw-grow tw-rounded-xl tw-p-10 tw-shadow-lg tw-font-pop tw-w-full">
+      <div class="tw-bg-white tw-grow tw-rounded-xl tw-p-10 tw-shadow-lg tw-font-pop">
         <div class="tw-text-base tw-text-gray-400 tw-font-bold tw-mb-7 tw-text-center">Grafik Perpindahan Siswa</div>
         <div class="tw-border tw-p-2">
           <canvas id="myChart" class="tw-mt-4"></canvas>          
