@@ -22,7 +22,7 @@
                     </a>
                 </li>
                 <li class="tw-flex tw-text-sims tw-cursor-pointer">
-                    <a href="#" class="{{ ($active === "rekap-siswa") ? 'tw-bg-sims tw-text-white' : '' }} tw-p-5 hover:tw-bg-sims hover:tw-text-white tw-h-16 tw-w-full tw-flex tw-flex-row tw-transition-colors tw-duration-300">
+                    <a href="/rekap-siswa" class="{{ ($active === "rekap-siswa") ? 'tw-bg-sims tw-text-white' : '' }} tw-p-5 hover:tw-bg-sims hover:tw-text-white tw-h-16 tw-w-full tw-flex tw-flex-row tw-transition-colors tw-duration-300">
                         <i class="fa-solid fa-users tw-text-xl"></i>
                         <div x-show="open" class="tw-ml-5 tw-text-lg tw-font-medium tw-font-pop">Rekap Siswa</div>
                     </a>
