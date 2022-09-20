@@ -247,7 +247,7 @@
             <label class="label-input" for="email_ortu">
               Email
             </label>
-            <input class="input-data" id="email_ortu" type="email_ortu" name="email">
+            <input class="input-data" id="email_ortu" type="email_ortu" name="email_ortu">
           </div>
         </div>
       </div>
