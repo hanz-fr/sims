@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
+    public function index()
+    {
+        $user = User::findOrFail(Auth::id());
+        return view('profil-user', compact('user'));
+    }
     public function register(){
         return view('register', [
             'title' => 'Registration'
@@ -18,6 +23,10 @@ class UserController extends Controller
         return view('login-main', [
             'title' => 'Login'
         ]);
+    }
+    public function logout(){
+        Auth::logout();
+        return redirect('/login');
     }
     public function registersc(){
         return view('register-sc', [
@@ -46,5 +55,7 @@ class UserController extends Controller
 
         return redirect('/login');
     }
+
+    
 }
 

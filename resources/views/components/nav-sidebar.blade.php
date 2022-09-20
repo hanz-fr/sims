@@ -33,8 +33,8 @@
     
     {{-- navbar --}}
         <div class="tw-flex-1">
-          <div class="tw-flex tw-bg-white tw-shadow-md tw-h-16 tw-justify-between tw-p-3 text-semibold tw-text-white">
-            <div x-show="!open" class="tw-text-sims tw-font-semibold tw-font-pop tw-text-xl tw-ml-7 tw-py-2 tw-animate-pulse">SIMS</div>
+          <div class="tw-flex tw-bg-white tw-shadow-md tw-h-16 tw-justify-between tw-p-3 text-semibold tw-text-white">        
+            <div x-show="!open" class="tw-text-sims tw-font-semibold tw-font-pop tw-text-xl tw-ml-7 tw-py-2 tw-animate-pulse"><a href="/" class="hover:tw-text-sims">SIMS</a></div>
             <button class="tw-my-auto tw-transition-all tw-rounded-md  tw-text-gray-500" @click="sidebarOpen = !sidebarOpen">
               <div x-on:click="open = !open" class="tw-overflow-hidden tw-place-items-center tw-cursor-pointer">
                 <div x-show="open" class="tw-text-sims tw-transition-all tw-duration-300 tw-font-semibold tw-font-pop tw-text-xl hover:tw-bg-sims/[0.6] hover:tw-text-white tw-rounded-full tw-w-10 tw-h-10 tw-flex tw-items-center tw-justify-center"><i class="fa-solid fa-bars"></i></div>
@@ -74,10 +74,10 @@
               
                       <div x-ref="panel" x-show="open" x-transition.origin.top.left x-on:click.outside="close($refs.button)" :id="$id('dropdown-button')" style="display: none;"
                           class="tw-absolute tw-left-0 tw-mt-2 tw-w-40 tw-rounded-md tw-bg-white tw-shadow-md tw-font-pop">
-                          <a href="#" class="tw-flex tw-items-center tw-gap-2 tw-w-full tw-font-medium tw-text-basic first-of-type:tw-rounded-t-md last-of-type:tw-rounded-b-md tw-px-4 tw-py-2.5 tw-text-left tw-text-sm hover:tw-bg-sims hover:tw-text-white">
-                              Another Menu
+                          <a href="/profile" class="tw-flex tw-items-center tw-gap-2 tw-w-full tw-font-medium tw-text-basic first-of-type:tw-rounded-t-md last-of-type:tw-rounded-b-md tw-px-4 tw-py-2.5 tw-text-left tw-text-sm hover:tw-bg-sims hover:tw-text-white">
+                              Profil
                           </a>
-                          <a href="#" class="tw-flex tw-items-center tw-text-red-600 tw-gap-2 tw-w-full first-of-type:tw-rounded-t-md last-of-type:tw-rounded-b-md tw-px-4 tw-py-2.5 tw-text-left tw-text-sm hover:tw-bg-sims hover:tw-text-white">
+                          <a href="/logout" class="tw-flex tw-items-center tw-text-red-600 tw-gap-2 tw-w-full first-of-type:tw-rounded-t-md last-of-type:tw-rounded-b-md tw-px-4 tw-py-2.5 tw-text-left tw-text-sm hover:tw-bg-sims hover:tw-text-white">
                               <span class="tw-font-medium">Logout &nbsp;<i class="fa-solid fa-right-from-bracket"></i></span>
                           </a>
                       </div>

@@ -114,6 +114,8 @@ Route::get('/profile', function () {
     ]);
 });
 
+Route::get('/profile', [UserController::class, 'show']);
+
 Route::get('/testurl', function() {
     return view('plswork', [
         'title' => 'Data Tidak Naik Kelas',
@@ -128,6 +130,8 @@ Route::post('/api/siswa', [ApiController::class, 'store']);
 Route::get('/register', [UserController::class, 'register']);
 
 Route::get('/login', [UserController::class, 'login']);
+
+Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 
 Route::get('/register-success', [UserController::class, 'registersc']);
 

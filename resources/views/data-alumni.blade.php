@@ -1,14 +1,12 @@
 @extends('layouts.main')
 
 @section('content')
-<div class="container">
+<div class="tw-mx-10">
     <div class="tw-flex tw-justify-between tw-gap-5 tw-mt-8">
         <div class="tw-flex tw-flex-col">
             <h4 class="tw-font-pop tw-font-bold tw-mt-6 tw-text-sims">Data Alumni</h4>
             <h6 class="tw-mb-5 tw-text-gray-400 tw-font-semibold">X PENGEMBANGAN PERANGKAT LUNAK DAN GIM</h6>
         </div>
-
-
     </div>
 
         <div class="tw-flex tw-justify-between sm:tw-flex-wrap sm:tw-gap-5">
@@ -103,5 +101,4 @@
             </table>
         </div>
     </div>
-
 @endsection
