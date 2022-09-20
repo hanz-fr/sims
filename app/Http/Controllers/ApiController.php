@@ -7,9 +7,13 @@ use Illuminate\Support\Facades\Http;
 
 class ApiController extends Controller
 {
-    public function index() {
+    public function index(Request $request) { 
 
-        $siswa = Http::get('https://0afd-103-139-10-202.ngrok.io/siswa');
+        if ($request->has('page') || $request->has('perPage')) {
+            $url = $request->fullUrlWithQuery(['page' => $request->page, 'perPage' => $request->perPage]);
+        }
+
+        
 
         /* return view('be-test',[
             'siswa' => json_decode($siswa),
@@ -17,7 +21,7 @@ class ApiController extends Controller
             'active' => 'backend-test'
         ]); */
 
-        return json_decode($siswa);
+        return $url;
     }
 
     public function create() {
@@ -29,16 +33,8 @@ class ApiController extends Controller
 
     public function store(Request $request) {
 
-        Http::post('https://0afd-103-139-10-202.ngrok.io/ortu', [
-            'nama' => $request->nama_ibu,
-            'hubungan' => 'Ibu',
-            'alamat' => $request->alamat_ortu,
-            'no_telp' => $request->no_telp_ortu,
-            'email' => $request->email_ortu,
-        ]);
-
-        Http::post('https://0afd-103-139-10-202.ngrok.io/siswa',[
-            'nis' => $request->nis,
+        Http::post('https://8630-103-148-113-86.ap.ngrok.io//siswa',[
+            'nis_siswa' => $request->nis,
             'nisn' => $request->nisn,
             'nama' => $request->nama,
             'KelasId' =>  1,
