@@ -4,12 +4,13 @@
   <div class="container">
     <div class="tw-text-3xl tw-text-sims tw-font-pop tw-font-semibold tw-flex tw-flex-row tw-mt-9 tw-mx-9">Data Siswa</div>
     {{-- foto profil --}}
+    @foreach($siswa as $s)
     <div class="tw-flex sm:tw-flex-col md:tw-flex-row tw-font-pop">
       <div class="md:tw-w-[30%] sm:tw-w-full tw-text-center tw-text-basic tw-text-xl tw-font-pop tw-font-semibold tw-m-9">
         <img src="" alt="Pas Foto" srcset="" class="tw-rounded-xl tw-mb-10 tw-w-40 tw-h-52 tw-border tw-border-slate-400 tw-mx-auto md:tw-mt-20 sm:tw-mt-10">
-        <div>Mudashir Alhamdulillah</div>
-        <div>200654845 / 0178577600562</div>
-        <div>Kelas/Jurusan</div>
+        <div>{{ $s->nama_siswa }}</div>
+        <div>{{ $s->nis_siswa }} / {{ $s->nisn_siswa }}</div>
+        <div>{{ $s->KelasId }} / Jurusan</div>
       </div>
       
       {{-- data siswa n rekap nilai --}}
@@ -52,7 +53,7 @@
                               Tempat, Tanggal Lahir
                           </th>
                           <td class="tw-py-4 tw-px-6">
-                            Cigugur Utara, 14-02-2006
+                            {{ $s->tmp_lahir }}, {{ $s->tgl_lahir }}
                           </td>
                       </tr>
                       <tr class="tw-border tw-bg-gray-100">
@@ -60,7 +61,13 @@
                             Jenis Kelamin
                           </th>
                           <td class="tw-py-4 tw-px-6">
-                            Laki-Laki
+                            @if($s->jenis_kelamin == 'L')
+                            Laki-laki
+                            @elseif($s->jenis_kelamin == 'P')
+                            Perempuan
+                            @else
+                            -
+                            @endif
                           </td>
                       </tr>
                       <tr class="tw-bg-white tw-border">
@@ -68,7 +75,7 @@
                             Anak Ke-
                           </th>
                           <td class="tw-py-4 tw-px-6">
-                            10
+                            {{ $s->anak_ke }}
                           </td>
                       </tr>
                       <tr class="tw-bg-gray-100 tw-border">
@@ -76,7 +83,13 @@
                           Status dalam Keluarga
                         </th>
                         <td class="tw-py-4 tw-px-6">
+                          @if($s->status == 'AK')
                           Anak Kandung
+                          @elseif($s->status == 'AT')
+                          Anak Tiri
+                          @elseif($s->status == 'AA')
+                          Anak Angkat
+                          @endif
                         </td>
                       </tr>
                       <tr class="tw-bg-white tw-border">
@@ -84,7 +97,7 @@
                           Agama
                         </th>
                         <td class="tw-py-4 tw-px-6">
-                          Islam Ortodoks
+                          {{ $s->agama }}
                         </td>
                       </tr>
                       <tr class="tw-bg-gray-100 tw-border">
@@ -92,19 +105,28 @@
                           Alamat
                         </th>
                         <td class="tw-py-4 tw-px-6">
-                          RT01/RW03, No.111, Jl. Cigugur, Kel. Cigugur Utara, 
-                          Kec. Cimahi Tengah, Kota Cimahi
+                          {{ $s->alamat_siswa }}
                         </td>
                       </tr>
                   </tbody>
               </table>
           </div> 
           <div class="tw-float-right tw-py-5 tw-px-3">
-            <a href="#" class="tw-text-white tw-bg-sims hover:tw-bg-[#3F7373] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-regular fa-arrow-right"></i></a>
+            @if($total == $response->to)
+            <a class="tw-text-gray-300 tw-bg-[#2f5555] hover:tw-text-gray-300 tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-regular fa-arrow-right"></i></a>
+            @else
+            <a href="{{ $response->next_page_url }}" class="tw-text-white tw-bg-sims hover:tw-bg-[#3F7373] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-regular fa-arrow-right"></i></a>
+            @endif
           </div>
+          @if($response->prev_page_url)
           <div class="tw-float-right tw-py-5">
-            <a href="#" class="tw-text-white tw-bg-sims hover:tw-bg-[#3F7373] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-regular fa-arrow-left"></i></a>
-          </div>           
+            <a href="{{ $response->prev_page_url }}" class="tw-text-white tw-bg-sims hover:tw-bg-[#3F7373] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-regular fa-arrow-left"></i></a>
+          </div>
+          @else
+          <div class="tw-float-right tw-py-5">
+            <a class="tw-text-gray-300 tw-bg-[#2f5555] hover:tw-text-gray-300 tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-regular fa-arrow-left"></i></a>
+          </div>
+          @endif         
           </div>
           <div x-show="openTab === 2">
             <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
@@ -222,6 +244,7 @@
           </div>
         </div>
       </div>
+    @endforeach
     </div>
   </div>
 @endsection

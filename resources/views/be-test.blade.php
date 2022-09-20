@@ -16,12 +16,28 @@
                     </tr>
                 </thead>
                 <tbody class="tw-text-base">
-                    @foreach ($siswa as $s)
+
+                    <a href="https://ccea-103-139-10-202.ngrok.io/siswa?page=0&perPage=3">Paginate 3</a>
+
+                    <form method="get" action="https://ccea-103-139-10-202.ngrok.io/siswa">
+                        <input name="param2">
+                        <input name="param3">
+                        <input type="hidden" name="param1" value="foo" />
+                        <input type="hidden" name="param2" value="foo" />
+                        <button type="submit">paginate</button>
+                    </form>
+
+                    {{ $url }}
+
+                    @foreach($siswa as $s)
+                    <h1>{{ $s->nama_siswa }}</h1>
+                    @endforeach
+                    {{-- @foreach ($siswa as $s)
                         <tr class="tw-bg-white tw-border">
                             <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                            <td class="tw-py-4 tw-px-6 tw-border">{{ $s->nis }}</td>
-                            <td class="tw-py-4 tw-px-6 tw-border">{{ $s->nisn }}</td>
-                            <td class="tw-py-4 tw-px-6 tw-border">{{ $s->nama }}</td>
+                            <td class="tw-py-4 tw-px-6 tw-border">{{ $s->nis_siswa }}</td>
+                            <td class="tw-py-4 tw-px-6 tw-border">{{ $s->nisn_siswa }}</td>
+                            <td class="tw-py-4 tw-px-6 tw-border">{{ $s->nama_siswa }}</td>
                             <td class="tw-py-4 tw-px-6 tw-border">{{ $s->jenis_kelamin }}</td>
                             <td class="tw-py-4 tw-px-6 tw-border">{{ $s->KelasId }}</td>
                             <td>
@@ -39,7 +55,7 @@
                                 </a>
                             </td>
                         </tr>
-                    @endforeach
+                    @endforeach --}}
                 </tbody>
             </table>
         </div>

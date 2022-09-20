@@ -9,19 +9,21 @@ class ApiController extends Controller
 {
     public function index(Request $request) { 
 
-        if ($request->has('page') || $request->has('perPage')) {
-            $url = $request->fullUrlWithQuery(['page' => $request->page, 'perPage' => $request->perPage]);
-        }
+        $page = $request->page;
+        $perPage = $request->perPage;
 
-        
+        $response = Http::get("https://ccea-103-139-10-202.ngrok.io/siswa?page={$page}&perPage={$perPage}");
 
-        /* return view('be-test',[
-            'siswa' => json_decode($siswa),
+        $response->throw();
+
+
+        return view('di-detail',[
+            'siswa' => json_decode($response)->data->rows,
+            'response' => json_decode($response),
+            'total' => json_decode($response)->data->count,
             'title' => 'backend-test',
-            'active' => 'backend-test'
-        ]); */
-
-        return $url;
+            'active' => 'backend-test',
+        ]);
     }
 
     public function create() {
