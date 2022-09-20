@@ -1,26 +1,32 @@
 @extends('layouts.main')
 
 @section('content')
-<div class="container">
+<div class="tw-mx-10">
     <div class="tw-flex tw-flex-row tw-gap-8 tw-mt-8">
       <div class="tw-bg-white tw-rounded-xl tw-flex tw-flex-col tw-p-14 tw-shadow-lg tw-font-pop tw-w-1/4">
         <div class="tw-flex tw-flex-row tw-mx-auto tw-text-sims">
           <div class="tw-text-4xl"><i class="fa-solid fa-user-group"></i></div>
           <div class="tw-text-xl my-auto tw-ml-3 tw-font-bold">Siswa</div>
         </div>
-        <div class="tw-flex tw-flex-row tw-mt-10">
-          <div class="tw-flex tw-flex-col tw-text-sims tw-gap-3 tw-mt-8">
+        <div class="tw-flex tw-flex-col tw-my-auto">
+          <div class="tw-flex tw-flex-row tw-justify-between">
             <div class="tw-text-base my-auto tw-font-normal tw-text-gray-500">Masuk Sekolah (Pindahan)</div>
-            <div class="tw-text-base my-auto tw-font-normal tw-text-gray-500">Keluar Sekolah</div>
-            <div class="tw-text-base my-auto tw-font-normal tw-text-gray-500">Siswa Tidak Naik Kelas</div>
-            <div class="tw-text-base my-auto tw-font-normal tw-text-gray-500">Jumlah Siswa</div>
+            <div class="tw-text-base my-auto tw-font-bold tw-text-sims">16</div>
           </div>
-          <div class="tw-flex tw-flex-col tw-text-sims tw-gap-3 tw-mt-8 tw-w-1/2 tw-ml-10">
-            <div class="tw-text-base my-auto tw-font-bold">16</div>
+          <div class="tw-flex tw-flex-row tw-justify-between tw-mt-10">
+            <div class="tw-text-base my-auto tw-font-normal tw-text-gray-500">Keluar Sekolah</div>
             <div class="tw-text-base my-auto tw-font-bold tw-text-sims">5</div>
+          </div>
+          <div class="tw-flex tw-flex-row tw-justify-between tw-mt-10">
+            <div class="tw-text-base my-auto tw-font-normal tw-text-gray-500">Siswa Tidak Naik Kelas</div>
             <div class="tw-text-base my-auto tw-font-bold tw-text-sims">2</div>
+          </div>
+          <div class="tw-flex tw-flex-row tw-justify-between tw-mt-10">
+            <div class="tw-text-base my-auto tw-font-normal tw-text-gray-500">Jumlah Siswa</div>
             <div class="tw-text-base my-auto tw-font-bold tw-text-sims">1523</div>
           </div>
+          {{-- <div class="tw-flex tw-flex-col tw-text-sims tw-gap-3 tw-mt-8 tw-w-1/2 tw-ml-10">
+          </div> --}}
         </div>
       </div>
       <div class="tw-bg-white tw-grow tw-rounded-xl tw-p-10 tw-shadow-lg tw-font-pop">
@@ -41,7 +47,7 @@
         
         <div class="tw-flex tw-justify-between tw-mb-5 tw-mt-7">
           <div class="">
-            <a href="#" class="tw-text-sims hover:tw-text-[#428787] tw-pr-2 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-sliders-simple"></i></a>
+            <a href="/siswa-masuk" class="tw-text-sims hover:tw-text-[#428787] tw-pr-2 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-sliders-simple"></i></a>
           </div>
           <div class="tw-relative tw-text-gray-600">
             <input class="tw-bg-gray-100 tw-h-8 tw-px-5 tw-pr-16 tw-rounded-lg tw-text-sm focus:tw-outline-sims focus:tw-bg-white"
@@ -199,7 +205,7 @@
         <div class="tw-text-sm tw-text-gray-400 tw-text-center tw-font-normal">Data Juli 2021</div>
         <div class="tw-flex tw-justify-between tw-mb-5 tw-mt-7">
           <div class="">
-            <a href="#" class="tw-text-sims hover:tw-text-[#428787] tw-pr-2 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-sliders-simple"></i></a>
+            <a href="/siswa-keluar" class="tw-text-sims hover:tw-text-[#428787] tw-pr-2 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-sliders-simple"></i></a>
           </div>
           <div class="tw-relative tw-text-gray-600">
             <input class="tw-bg-gray-100 tw-h-8 tw-px-5 tw-pr-16 tw-rounded-lg tw-text-sm focus:tw-outline-sims focus:tw-bg-white"

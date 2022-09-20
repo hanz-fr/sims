@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-<div class="container">
+<div class="tw-mx-10">
     <h1 class="tw-text-sims tw-font-pop tw-text-2xl tw-my-9">Buku Induk Siswa</h1>
     
     <div class="tw-grid lg:tw-grid-cols-4 md:tw-grid-cols-2 tw-gap-4 sm:tw-grid-cols-1">

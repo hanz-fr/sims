@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-<div class="container">
+<div class="tw-mx-10">
     <div class="tw-flex tw-justify-between tw-gap-5 tw-mt-8">
         <div class="tw-flex tw-flex-col">
             <h4 class="tw-font-pop tw-font-bold tw-mt-6 tw-text-sims">Data Induk Siswa</h4>
