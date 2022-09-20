@@ -674,6 +674,10 @@ video {
   float: right;
 }
 
+.tw-float-left {
+  float: left;
+}
+
 .tw-m-9 {
   margin: 2.25rem;
 }
@@ -703,11 +707,6 @@ video {
   margin-right: 2.25rem;
 }
 
-.tw-mx-20 {
-  margin-left: 5rem;
-  margin-right: 5rem;
-}
-
 .tw-my-14 {
   margin-top: 3.5rem;
   margin-bottom: 3.5rem;
@@ -731,6 +730,11 @@ video {
 .tw-my-9 {
   margin-top: 2.25rem;
   margin-bottom: 2.25rem;
+}
+
+.tw-mx-20 {
+  margin-left: 5rem;
+  margin-right: 5rem;
 }
 
 .tw-my-5 {
@@ -819,6 +823,10 @@ video {
   margin-bottom: 1.75rem;
 }
 
+.-tw-mr-6 {
+  margin-right: -1.5rem;
+}
+
 .tw-mb-1 {
   margin-bottom: 0.25rem;
 }
@@ -891,14 +899,6 @@ video {
   margin-right: 1.75rem;
 }
 
-.-tw-mr-6 {
-  margin-right: -1.5rem;
-}
-
-.-tw-mr-2 {
-  margin-right: -0.5rem;
-}
-
 .tw-block {
   display: block;
 }
@@ -941,10 +941,6 @@ video {
   height: 13rem;
 }
 
-.tw-h-40 {
-  height: 10rem;
-}
-
 .tw-h-full {
   height: 100%;
 }
@@ -957,6 +953,10 @@ video {
   height: 9rem;
 }
 
+.tw-h-40 {
+  height: 10rem;
+}
+
 .tw-h-screen {
   height: 100vh;
 }
@@ -967,10 +967,6 @@ video {
 
 .tw-h-16 {
   height: 4rem;
-}
-
-.tw-max-h-screen {
-  max-height: 100vh;
 }
 
 .tw-w-full {
@@ -1397,9 +1393,9 @@ video {
   padding-right: 2.5rem;
 }
 
-.tw-py-12 {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+.tw-py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .tw-px-4 {
@@ -1442,19 +1438,14 @@ video {
   padding-bottom: 2.75rem;
 }
 
+.tw-py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
 .tw-py-2\.5 {
   padding-top: 0.625rem;
   padding-bottom: 0.625rem;
-}
-
-.tw-py-7 {
-  padding-top: 1.75rem;
-  padding-bottom: 1.75rem;
-}
-
-.tw-py-6 {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
 }
 
 .tw-pr-2 {
@@ -1467,10 +1458,6 @@ video {
 
 .tw-pl-3 {
   padding-left: 0.75rem;
-}
-
-.tw-pt-7 {
-  padding-top: 1.75rem;
 }
 
 .tw-pr-5 {
@@ -1487,6 +1474,18 @@ video {
 
 .tw-pr-7 {
   padding-right: 1.75rem;
+}
+
+.tw-pl-5 {
+  padding-left: 1.25rem;
+}
+
+.tw-pt-8 {
+  padding-top: 2rem;
+}
+
+.tw-pt-2 {
+  padding-top: 0.5rem;
 }
 
 .tw-pt-20 {
@@ -1513,18 +1512,6 @@ video {
   padding-left: 15rem;
 }
 
-.tw-pl-5 {
-  padding-left: 1.25rem;
-}
-
-.tw-pt-8 {
-  padding-top: 2rem;
-}
-
-.tw-pt-2 {
-  padding-top: 0.5rem;
-}
-
 .tw-pr-8 {
   padding-right: 2rem;
 }
@@ -1539,6 +1526,10 @@ video {
 
 .tw-text-center {
   text-align: center;
+}
+
+.tw-text-right {
+  text-align: right;
 }
 
 .tw-font-pop {
