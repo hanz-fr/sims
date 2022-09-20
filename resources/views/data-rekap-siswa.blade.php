@@ -31,7 +31,7 @@
       </div>
     </div>
     {{-- Data Siswa Masuk --}}
-    <div class="tw-gap-8 tw-flex tw-flex-row tw-mt-8">
+    <div class="tw-gap-4 tw-flex tw-flex-row tw-mt-8">
       <div class="tw-bg-white tw-flex tw-flex-col tw-grow tw-rounded-xl tw-py-3 tw-px-7 tw-shadow-lg tw-font-pop tw-w-1/2">
         <div class="-tw-mr-6">
           <a href="#" class="tw-text-sims hover:tw-text-[#428787] tw-pr-2 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>

@@ -107,6 +107,13 @@ Route::get('/data-tidak-naik', function () {
     ]);
 });
 
+Route::get('/profile', function () {
+    return view('profil-user', [
+        'title' => 'Profile',
+        'active' => ' '
+    ]);
+});
+
 Route::get('/testurl', function() {
     return view('plswork', [
         'title' => 'Data Tidak Naik Kelas',
@@ -118,12 +125,12 @@ Route::get('/api/siswa', [ApiController::class, 'index']);
 Route::get('/api/siswa/create', [ApiController::class, 'create']);
 Route::post('/api/siswa', [ApiController::class, 'store']);
 
-Route::get('/register', [UserController::class, 'register'])->name('register');
+Route::get('/register', [UserController::class, 'register']);
 
-Route::get('/login', [UserController::class, 'login'])->name('login');
+Route::get('/login', [UserController::class, 'login']);
 
-Route::get('/register-success', [UserController::class, 'registersc'])->name('register-success');
+Route::get('/register-success', [UserController::class, 'registersc']);
 
-Route::post('/registeruser', [UserController::class, 'registeruser'])->name('registeruser');
+Route::post('/registeruser', [UserController::class, 'registeruser']);
 
-Route::post('/loginuser', [UserController::class, 'loginuser'])->name('loginuser');
+Route::post('/loginuser', [UserController::class, 'loginuser']);
