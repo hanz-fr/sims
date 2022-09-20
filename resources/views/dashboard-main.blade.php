@@ -1,14 +1,14 @@
 @extends('layouts.main')
 
 @section('content')
-<div class="container">
+<div class="tw-mx-10">
   <div class="tw-flex sm:tw-flex-col md:tw-flex-col lg:tw-flex-row tw-gap-8">
     <div class="owl-two tw-flex tw-flex-col tw-w-1/2">
           {{-- card jumlah --}}
-      {{-- <div class="tw-float-right tw-mt-3">
+      <div class="tw-float-right tw-mt-3">
         <a href="#" class="tw-text-sims hover:tw-text-[#428787] tw-pr-2 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-chevron-right"></i></a>
         <a href="#" class="tw-text-sims hover:tw-text-[#428787] tw-pr-2 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-chevron-left"></i></a>
-      </div> --}}
+      </div>
       <ul class=" list-unstyled tw-grid-rows-3 tw-justify-between tw-flex tw-mt-3">
         <li class="item carousel-shadow">
           <div class=" tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-border-sims tw-bg-white">
@@ -78,7 +78,7 @@
         </div>
         <div class="tw-px-10">
         <div class="tw-text-sm tw-text-gray-400 tw-font-bold">Kuota Pendaftaran SMKN 11</div>
-          <ul class="tw-flex tw-flex-row tw-gap-10 list-unstyled tw-mx-11 tw-mt-10">
+          <ul class="tw-flex tw-justify-center tw-flex-row tw-gap-10 list-unstyled tw-mx-11 tw-mt-10">
             <li class="tw-flex-row tw-text-center">
               <div class="tw-text-2xl tw-text-sims tw-font-bold">18</div>
               <div class="tw-text-base tw-font-light tw-text-gray-400">AKL</div>

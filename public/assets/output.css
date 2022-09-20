@@ -743,6 +743,11 @@ video {
   margin-bottom: auto;
 }
 
+.tw-mx-10 {
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+}
+
 .tw-mt-5 {
   margin-top: 1.25rem;
 }
