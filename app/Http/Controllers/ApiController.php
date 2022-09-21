@@ -14,15 +14,25 @@ class ApiController extends Controller
 
         $response = Http::get("https://da1d-103-139-10-189.ngrok.io/siswa?page={$page}&perPage={$perPage}");
 
-        $response->throw();
-
-        return view('data-induk',[
-            'siswa' => json_decode($response)->data->rows,
-            'response' => json_decode($response),
-            'total' => json_decode($response)->data->count,
-            'title' => 'backend-test',
-            'active' => 'backend-test',
-        ]);
+        if ($response->successful()){
+            return view('data-induk',[
+                'siswa' => json_decode($response)->data->rows,
+                'status' => 'success',
+                'response' => json_decode($response),
+                'total' => json_decode($response)->data->count,
+                'title' => 'data-induk',
+                'active' => 'data-induk',
+            ]);
+        } else {
+            return view('data-induk',[
+                'response' => $response,
+                'status' => 'error',
+                'title' => 'data-induk',
+                'active' => 'data-induk',
+                'message' => 'Sori dek, halaman nya ga ada :"('
+            ]);
+            
+        }
     }
 
 
@@ -32,11 +42,22 @@ class ApiController extends Controller
 
         $response = Http::get("https://da1d-103-139-10-189.ngrok.io/siswa/{$nis}");
 
-        return view('di-detail', [
-            'title' => 'Data Siswa',
-            'siswa' => json_decode($response)->result,
-            'active' => 'data-induk'
-        ]);
+        if ($response->successful()){
+            return view('di-detail', [
+                'title' => 'Data Siswa',
+                'active' => 'detail-siswa',
+                'status' => 'success',
+                'siswa' => json_decode($response)->result,
+            ]);
+        } else {
+            return view('di-detail', [
+                'title' => 'Data Siswa',
+                'active' => 'detail-siswa',
+                'status' => 'error',
+                'message' => 'Sori dek, halaman nya ga ada :"('
+            ]);
+        }
+
     }
 
     public function create() {

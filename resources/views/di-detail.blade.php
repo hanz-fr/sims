@@ -1,12 +1,23 @@
 @extends('layouts.main')
 
 @section('content')
+
+@if($status == 'error')
+<div class="tw-flex tw-justify-center">
+    <div class="tw-block tw-my-32">
+        <img src="{{asset('assets/img/error_img.svg')}}" alt="error_img">
+        <h1 class="tw-flex tw-justify-center tw-font-pop tw-font-bold tw-mt-6 tw-text-sims">404 Not Found</h1>
+        <p class="tw-flex tw-justify-center tw-font-pop tw-text-md tw-font-semibold tw-text-gray-400 tw-mt-5">{{ $message }}</p>
+        <p class="tw-flex tw-justify-center tw-font-pop tw-text-gray-400 tw-text-sm">Jangan nangis dek, coba tanya admin. Siapa tau dibenerin ;)</p>
+    </div>
+</div>
+@else
   <div class="tw-mx-10">
     <div class="tw-text-3xl tw-text-sims tw-font-pop tw-font-semibold tw-flex tw-flex-row tw-mt-9 tw-mx-9">Data Siswa</div>
     {{-- foto profil --}}
     <div class="tw-flex sm:tw-flex-col md:tw-flex-row tw-font-pop">
       <div class="md:tw-w-[30%] sm:tw-w-full tw-text-center tw-text-basic tw-text-xl tw-font-pop tw-font-semibold tw-m-9">
-        <img src="" alt="Pas Foto" srcset="" class="tw-rounded-xl tw-mb-10 tw-w-40 tw-h-52 tw-border tw-border-slate-400 tw-mx-auto md:tw-mt-20 sm:tw-mt-10">
+        <img src="https://cdn.nerdschalk.com/wp-content/uploads/2020/09/how-to-remove-profile-picture-on-zoom-12.png?width=1000?height=100" alt="Pas Foto" srcset="" class="tw-rounded-xl tw-mb-10 tw-w-48 tw-h-52 tw-border tw-border-slate-400 tw-mx-auto md:tw-mt-20 sm:tw-mt-10">
         <div>{{ $siswa->nama_siswa }}</div>
         <div>{{ $siswa->nis_siswa }} / {{ $siswa->nisn_siswa }}</div>
         <div>{{ $siswa->KelasId }} / Jurusan</div>
@@ -125,7 +136,7 @@
           <div class="tw-float-right tw-py-5">
             <a class="tw-text-gray-300 tw-bg-[#2f5555] hover:tw-text-gray-300 tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-regular fa-arrow-left"></i></a>
           </div>
-          @endif  --}}        
+          @endif --}}         
           </div>
           <div x-show="openTab === 2">
             <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
@@ -245,4 +256,5 @@
       </div>
     </div>
   </div>
+@endif
 @endsection
