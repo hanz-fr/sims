@@ -57,7 +57,7 @@
           </form>
         </div>
         <!-- image -->
-        <img class="lg:tw-w-1/2 sm:tw-mb-4 sm:tw-w-full tw-items-center md:tw-m-auto" src="assets/img/regist.svg" alt="" srcset="">
+        <img class="lg:tw-w-1/2 sm:tw-mb-4 sm:tw-w-full tw-items-center md:tw-m-auto" src="assets/img/sims-login.svg" alt="" srcset="">
     </div>
   </div> <!-- container -->
 </body>
