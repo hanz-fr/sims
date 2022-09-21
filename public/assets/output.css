@@ -693,11 +693,6 @@ video {
   margin-right: 0.5rem;
 }
 
-.tw-my-5 {
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
-}
-
 .tw-mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -741,6 +736,11 @@ video {
 .tw-my-9 {
   margin-top: 2.25rem;
   margin-bottom: 2.25rem;
+}
+
+.tw-my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
 }
 
 .tw-mx-20 {
@@ -821,6 +821,18 @@ video {
   margin-bottom: -2rem;
 }
 
+.tw-mr-5 {
+  margin-right: 1.25rem;
+}
+
+.tw--ml-6 {
+  margin-left: -1.5rem;
+}
+
+.tw--mb-px {
+  margin-bottom: -1px;
+}
+
 .tw-ml-3 {
   margin-left: 0.75rem;
 }
@@ -861,14 +873,6 @@ video {
   margin-top: 2.25rem;
 }
 
-.tw--ml-6 {
-  margin-left: -1.5rem;
-}
-
-.tw--mb-px {
-  margin-bottom: -1px;
-}
-
 .tw-mb-6 {
   margin-bottom: 1.5rem;
 }
@@ -887,10 +891,6 @@ video {
 
 .tw-mr-0 {
   margin-right: 0px;
-}
-
-.tw-mr-5 {
-  margin-right: 1.25rem;
 }
 
 .-tw-mt-10 {
@@ -919,14 +919,6 @@ video {
 
 .tw-mr-7 {
   margin-right: 1.75rem;
-}
-
-.-tw-mt-5 {
-  margin-top: -1.25rem;
-}
-
-.tw-ml-1 {
-  margin-left: 0.25rem;
 }
 
 .tw-block {
@@ -1055,12 +1047,52 @@ video {
   width: 2.5rem;
 }
 
+.tw-w-96 {
+  width: 24rem;
+}
+
+.tw-w-\[\] {
+  width: ;
+}
+
+.tw-w-\[400px\] {
+  width: 400px;
+}
+
+.tw-w-\[500px\] {
+  width: 500px;
+}
+
+.tw-w-\[600px\] {
+  width: 600px;
+}
+
+.tw-w-\[800px\] {
+  width: 800px;
+}
+
+.tw-w-\[850px\] {
+  width: 850px;
+}
+
 .tw-max-w-3xl {
   max-width: 48rem;
 }
 
+.tw-max-w-lg {
+  max-width: 32rem;
+}
+
+.tw-max-w-xl {
+  max-width: 36rem;
+}
+
 .tw-flex-1 {
   flex: 1 1 0%;
+}
+
+.tw-flex-shrink-0 {
+  flex-shrink: 0;
 }
 
 .tw-grow {
@@ -1128,6 +1160,10 @@ video {
   justify-content: space-between;
 }
 
+.tw-justify-items-end {
+  justify-items: end;
+}
+
 .tw-gap-8 {
   gap: 2rem;
 }
@@ -1152,12 +1188,28 @@ video {
   gap: 0.5rem;
 }
 
+.tw-gap-20 {
+  gap: 5rem;
+}
+
+.tw-gap-24 {
+  gap: 6rem;
+}
+
+.tw-gap-9 {
+  gap: 2.25rem;
+}
+
 .tw-overflow-hidden {
   overflow: hidden;
 }
 
 .tw-overflow-x-auto {
   overflow-x: auto;
+}
+
+.tw-overflow-x-scroll {
+  overflow-x: scroll;
 }
 
 .tw-whitespace-nowrap {
@@ -1484,11 +1536,6 @@ video {
   padding-bottom: 0.625rem;
 }
 
-.tw-px-8 {
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
 .tw-pr-2 {
   padding-right: 0.5rem;
 }
@@ -1735,6 +1782,21 @@ video {
 
 a {
   text-decoration: none;
+}
+
+.snap {
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none
+}
+
+.snap::-webkit-scrollbar {
+  display: none;
+}
+
+.snap>div {
+  scroll-snap-align: start;
 }
 
 .placeholder\:tw-text-gray-400::-moz-placeholder {

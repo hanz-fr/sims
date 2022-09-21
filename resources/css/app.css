@@ -19,3 +19,18 @@ a {
     @apply tw-block tw-w-full tw-bg-gray-200 tw-text-gray-500 tw-border tw-border-gray-200 tw-rounded-xl tw-py-3 tw-px-4 tw-leading-tight focus:tw-outline-sims focus:tw-bg-white focus:tw-border-sims focus:placeholder:tw-invisible;
   }
 }
+
+.snap {
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none
+}
+
+.snap::-webkit-scrollbar {
+   display: none;
+}
+
+.snap>div {
+   scroll-snap-align: start;
+}
