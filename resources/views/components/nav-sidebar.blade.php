@@ -3,9 +3,9 @@
     <aside x-bind:class="open?' tw-left-0 tw-h-screen tw-sticky tw-w-60 tw-bg-white tw-flex tw-flex-col tw-top-0 tw-bottom-0' : 'tw-sticky tw-inset-0 tw-w-16 tw-bg-white tw-flex tw-flex-col tw-top-0 tw-bottom-0 tw-h-screen'" class="tw-transition-all tw-duration-300">
         <div class="tw-flex tw-flex-row tw-items-center tw-h-10 tw-w-full tw-p-4 tw-mt-4">
             <div x-on:click="open = !open" class="tw-overflow-hidden tw-cursor-pointer">
-                <div class="tw-h-10 tw-w-10 tw-grid tw-text-sims tw-font-bold tw-text-2xl"><i class="fa-duotone fa-graduation-cap"></i></div>
+                <div class="tw-h-10 tw-w-10 tw-grid tw-text-sims tw-font-bold tw-text-2xl"><img src="{{ URL::asset('assets/img/sims-logo.png') }}" alt="" srcset=""></div>
               </div>
-            <h3 x-show="open" class="tw-text-xl tw-text-sims tw-font-semibold tw-font-pop tw-pt-2 tw-pb-2 tw-ml-1">SIMS</h3>
+            <h3 x-show="open" class="tw-text-xl tw-text-sims tw-font-semibold tw-font-pop tw-pt-2 tw-pb-2 tw-mt-3">SIMS</h3>
         </div>
         <div class="tw-mt-10">
             <ul class="list-unstyled">
