@@ -926,6 +926,10 @@ video {
   margin-right: 1.75rem;
 }
 
+.tw-mr-6 {
+  margin-right: 1.5rem;
+}
+
 .tw-block {
   display: block;
 }

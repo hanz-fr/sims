@@ -12,7 +12,7 @@ class ApiController extends Controller
         $page = $request->page;
         $perPage = $request->perPage;
 
-        $response = Http::get("https://da1d-103-139-10-189.ngrok.io/siswa?page={$page}&perPage={$perPage}");
+        $response = Http::get("https://a989-103-139-10-189.ngrok.io/siswa?page={$page}&perPage={$perPage}");
 
         if ($response->successful()){
             return view('data-induk',[
@@ -40,7 +40,7 @@ class ApiController extends Controller
 
         $nis = $request->nis;
 
-        $response = Http::get("https://da1d-103-139-10-189.ngrok.io/siswa/{$nis}");
+        $response = Http::get("https://a989-103-139-10-189.ngrok.io/siswa/{$nis}");
 
         if ($response->successful()){
             return view('di-detail', [

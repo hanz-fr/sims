@@ -44,7 +44,9 @@
         </ul>
         <div class="tw-w-full">
           <div x-show="openTab === 1">
-            <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
+            <div x-data="{ tab: window.location.hash ? window.location.hash.substring(1) : 'kesatu' }" id="tab_wrapper">
+            <div x-show="tab === 'kesatu'">
+              <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
               <table class="tw-w-full tw-text-sm tw-text-left">
                   <thead class="tw-text-lg tw-bg-gray-100 tw-text-basic tw-border tw-font-pop">
                       <tr>
@@ -119,7 +121,92 @@
                       </tr>
                   </tbody>
               </table>
-          </div> 
+              </div>
+          </div>
+          <div x-show="tab === 'kedua'">
+            <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
+            <table class="tw-w-full tw-text-sm tw-text-left">
+                <thead class="tw-text-lg tw-bg-gray-100 tw-text-basic tw-border tw-font-pop">
+                    <tr>
+                        <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">
+                            Ingfo Diri
+                        </th>
+                        <th scope="col" class="tw-py-3 tw-px-6">
+                            Keterangan
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="tw-text-base">
+                    <tr class="tw-bg-white tw-border">
+                        <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                            Tempat, Tanggal Lahir
+                        </th>
+                        <td class="tw-py-4 tw-px-6">
+                          {{ $siswa->tmp_lahir }}, {{ $siswa->tgl_lahir }}
+                        </td>
+                    </tr>
+                    <tr class="tw-border tw-bg-gray-100">
+                        <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                          Jenis Kelamin
+                        </th>
+                        <td class="tw-py-4 tw-px-6">
+                          @if($siswa->jenis_kelamin == 'L')
+                          Laki-laki
+                          @elseif($siswa->jenis_kelamin == 'P')
+                          Perempuan
+                          @else
+                          -
+                          @endif
+                        </td>
+                    </tr>
+                    <tr class="tw-bg-white tw-border">
+                        <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                          Anak Ke-
+                        </th>
+                        <td class="tw-py-4 tw-px-6">
+                          {{ $siswa->anak_ke }}
+                        </td>
+                    </tr>
+                    <tr class="tw-bg-gray-100 tw-border">
+                      <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                        Status dalam Keluarga
+                      </th>
+                      <td class="tw-py-4 tw-px-6">
+                        @if($siswa->status == 'AK')
+                        Anak Kandung
+                        @elseif($siswa->status == 'AT')
+                        Anak Tiri
+                        @elseif($siswa->status == 'AA')
+                        Anak Angkat
+                        @endif
+                      </td>
+                    </tr>
+                    <tr class="tw-bg-white tw-border">
+                      <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                        Agama
+                      </th>
+                      <td class="tw-py-4 tw-px-6">
+                        {{ $siswa->agama }}
+                      </td>
+                    </tr>
+                    <tr class="tw-bg-gray-100 tw-border">
+                      <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                        Alamat
+                      </th>
+                      <td class="tw-py-4 tw-px-6">
+                        {{ $siswa->alamat_siswa }}
+                      </td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+        {{-- btn paginate --}}
+        <div class="tw-flex tw-flex-row tw-float-right">
+          <a :class="{ 'active': tab === 'kesatu' }" @click.prevent="tab = 'kesatu'; window.location.hash = 'kesatu'" href="#" class="tw-text-white tw-bg-sims hover:tw-bg-[#3F7373] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-mt-5"><i class="fa-regular fa-arrow-left"></i></a>
+          <a :class="{ 'active': tab === 'kedua' }" @click.prevent="tab = 'kedua'; window.location.hash = 'kedua'" href="#" class="tw-text-white tw-bg-sims hover:tw-bg-[#3F7373] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-mt-5 tw-ml-3"><i class="fa-regular fa-arrow-right"></i></a>
+        </div>
+        </div>
           {{-- <div class="tw-float-right tw-py-5 tw-px-3">
             @if($total == $response->to)
             <a class="tw-text-gray-300 tw-bg-[#2f5555] hover:tw-text-gray-300 tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-regular fa-arrow-right"></i></a>
