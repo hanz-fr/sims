@@ -12,7 +12,7 @@ class ApiController extends Controller
         $page = $request->page;
         $perPage = $request->perPage;
 
-        $response = Http::get("https://d81c-103-148-113-86.ap.ngrok.io/siswa?page={$page}&perPage={$perPage}");
+        $response = Http::get("https://da1d-103-139-10-189.ngrok.io/siswa?page={$page}&perPage={$perPage}");
 
         $response->throw();
 
@@ -25,6 +25,20 @@ class ApiController extends Controller
         ]);
     }
 
+
+    public function show(Request $request) {
+
+        $nis = $request->nis;
+
+        $response = Http::get("https://da1d-103-139-10-189.ngrok.io/siswa/{$nis}");
+
+        return view('di-detail', [
+            'title' => 'Data Siswa',
+            'siswa' => json_decode($response)->result,
+            'active' => 'data-induk'
+        ]);
+    }
+
     public function create() {
         return view('create-siswa', [
             'title' => 'backend-test',
@@ -34,7 +48,7 @@ class ApiController extends Controller
 
     public function store(Request $request) {
 
-        Http::post('https://d81c-103-148-113-86.ap.ngrok.io/siswa',[
+        $response = Http::post('https://da1d-103-139-10-189.ngrok.io/siswa',[
             'nis_siswa' => $request->nis,
             'nisn_siswa' => $request->nisn,
             'nama_siswa' => $request->nama,
@@ -76,6 +90,8 @@ class ApiController extends Controller
             'tgl_masuk' => null,
             'isAlumni' => false,
         ]);
+
+        $response->throw();
 
         return redirect('/data-induk-siswa?perPage=10');
     }
