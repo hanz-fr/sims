@@ -29,7 +29,7 @@ class ApiController extends Controller
                 'status' => 'error',
                 'title' => 'data-induk',
                 'active' => 'data-induk',
-                'message' => 'Aduh, halaman yang kamu cari tidak dapat ditemukan :('
+                'message' => 'Sori dek, halaman nya ga ada :"('
             ]);
             
         }
@@ -54,7 +54,7 @@ class ApiController extends Controller
                 'title' => 'Data Siswa',
                 'active' => 'detail-siswa',
                 'status' => 'error',
-                'message' => 'Aduh, halaman yang kamu cari tidak dapat ditemukan :('
+                'message' => 'Sori dek, halaman nya ga ada :"('
             ]);
         }
 
