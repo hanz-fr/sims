@@ -4,7 +4,7 @@
     <div class="tw-mx-10">
         <div class="tw-flex tw-justify-between tw-gap-5 tw-mt-8">
             <div class="tw-flex tw-flex-col">
-                <h4 class="tw-font-pop tw-font-bold tw-mt-6 tw-text-sims">Rekap Jumlah Siswa</h4>
+                <h4 class="tw-font-pop tw-font-bold tw-mt-6 tw-text-sims">Rekap Jumlah Siswa (12th grade only as of now)</h4>
             </div>
 
 
@@ -38,14 +38,13 @@
             <table class="tw-w-full tw-text-sm tw-text-center">
                 <thead class="tw-text-md tw-bg-gray-100 tw-text-basic tw-border tw-font-pop">
                     <tr>
-                        <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">KELAS</th>
+                        <th scope="col" rowspan="2" class="tw-py-3 tw-px-6 tw-border-r">KELAS</th>
                         <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border-r">JUMLAH SISWA AWAL BULAN</th>
                         <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border-r">JUMLAH SISWA KELUAR</th>
                         <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border-r">JUMLAH SISWA MASUK</th>
                         <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border-r">JUMLAH SISWA AKHIR BULAN</th>
                     </tr>
                     <tr>
-                        <th></th>
                         <th class="tw-border tw-py-3 tw-px-6">P</th>
                         <th class="tw-border tw-py-3 tw-px-6">L</th>
                         <th class="tw-border tw-py-3 tw-px-6">JML</th>
