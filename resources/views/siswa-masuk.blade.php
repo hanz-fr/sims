@@ -4,7 +4,7 @@
 <div class="tw-mx-10">
     <div class="tw-flex tw-justify-between tw-gap-5 tw-mt-8">
         <div class="tw-flex tw-flex-col">
-            <h4 class="tw-font-pop tw-font-bold tw-mt-6 tw-text-sims">Data Siswa Keluar</h4>
+            <h4 class="tw-font-pop tw-font-bold tw-mt-6 tw-text-sims">Data Siswa Masuk</h4>
         </div>
 
 

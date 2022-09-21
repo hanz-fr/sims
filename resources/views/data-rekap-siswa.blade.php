@@ -360,7 +360,7 @@
     <div class="tw-flex tw-flex-row tw-gap-8 tw-my-8">
       <div class="tw-bg-white tw-grow tw-flex tw-flex-col tw-rounded-xl tw-py-3 tw-px-10 tw-shadow-lg tw-font-pop tw-w-full">
         <div class="tw-float-right -tw-mr-8">
-          <a href="#" class="tw-text-sims hover:tw-text-[#428787] tw-pr-2 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          <a href="/rekap-jumlah-siswa" class="tw-text-sims hover:tw-text-[#428787] tw-pr-2 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
         <div class="tw-text-lg tw-text-sims tw-font-bold tw-mb-1 tw-text-center">Rekap Data Jumlah Siswa</div>
         <div class="tw-text-sm tw-text-gray-400 tw-text-center tw-font-normal">Data Juli 2021</div>

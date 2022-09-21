@@ -15,7 +15,7 @@
                         <th scope="col" class="tw-py-3 tw-px-6">ACTION</th>
                     </tr>
                 </thead>
-                <tbody class="tw-text-base">
+            <tbody class="tw-text-base">
 
                     <a href="https://ccea-103-139-10-202.ngrok.io/siswa?page=0&perPage=3">Paginate 3</a>
 

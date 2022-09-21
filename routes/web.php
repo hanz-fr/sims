@@ -51,12 +51,7 @@ Route::get('/update-data', function () {
     ]);
 });
 
-Route::get('/data-induk-siswa', function () {
-    return view('data-induk', [
-        'title' => 'Data Induk Siswa',
-        'active' => 'data-induk'
-    ]);
-});
+Route::get('/data-induk-siswa', [ApiController::class, 'index']);
 
 Route::get('/angkatan', function () {
     return view('pilih-angkatan', [
@@ -93,6 +88,14 @@ Route::get('/rekap-siswa', function () {
     ]);
 });
 
+Route::get('/rekap-jumlah-siswa', function () {
+    return view('data-rekap-jumlah-siswa', [
+        'title' => 'Data Rekap Siswa',
+        'active' => 'rekap-siswa'
+    ]);
+});
+
+
 Route::get('/siswa-keluar', function () {
     return view('siswa-keluar', [
         'title' => 'Data Siswa Keluar',
@@ -123,7 +126,7 @@ Route::get('/testurl', function() {
     ]);
 });
 
-Route::get('/api/siswa', [ApiController::class, 'index']);
+// Route::get('/api/siswa', [ApiController::class, 'index']);
 Route::get('/api/siswa/create', [ApiController::class, 'create']);
 Route::post('/api/siswa', [ApiController::class, 'store']);
 
