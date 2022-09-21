@@ -39,7 +39,7 @@ class UserController extends Controller
             'nip' => $request->nip,
             'nama' => $request->nama,
             'email' => $request->email,
-            'nip' => $request->nip,
+            'foto' => $request->foto,
             'roles' => $request->roles,
             'password' => bcrypt($request->password),
             'remember_token' => Str::random(60)

@@ -39,7 +39,7 @@
 
             </div>
             <div class="tw-flex">
-                <a href="" class="tw-bg-[#28A745] tw-text-white hover:tw-text-white hover:tw-bg-green-700 tw-font-pop tw-rounded-lg tw-px-5 tw-py-2">
+                <a href="/tambah-data" class="tw-bg-[#28A745] tw-text-white hover:tw-text-white hover:tw-bg-green-700 tw-font-pop tw-rounded-lg tw-px-5 tw-py-2">
                     <i class="fa-solid fa-circle-plus tw-pr-3"></i>
                     Tambah Data
                 </a>
@@ -60,13 +60,15 @@
                     </tr>
                 </thead>
                 <tbody class="tw-text-base">
+                    @foreach ($siswa as $s)
+                        
                     <tr class="tw-bg-white tw-border">
-                        <td class="tw-py-4 tw-px-6 tw-border">01</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">#</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">{{ $s->nis_siswa }}</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">{{ $s->nisn_siswa }}</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">{{ $s->nama_siswa }}</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">{{ $s->jenis_kelamin }}</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">{{ $s->KelasId }}</td>
                         <td>
                             <a href="" class="tw-text-white tw-bg-sims hover:tw-bg-[#428888] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-mr-1">
                                 <i class="fa-light fa-clipboard-list"></i>
@@ -79,25 +81,7 @@
                             </a>
                         </td>
                     </tr>
-                    <tr class="tw-bg-white tw-border">
-                        <td class="tw-py-4 tw-px-6 tw-border">01</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td>
-                            <a href="" class="tw-text-white tw-bg-sims hover:tw-bg-[#428888] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-mr-1">
-                                <i class="fa-light fa-clipboard-list"></i>
-                            </a>
-                            <a href="#" class="tw-text-white tw-bg-kuning hover:tw-bg-[#D3A007] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
-                                <i class="fa-solid fa-pen-to-square"></i></a>
-                            </a>
-                            <a href="#" class="tw-text-white tw-bg-gray-500 hover:tw-bg-gray-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
-                                <i class="fa-solid fa-eye"></i>
-                            </a>
-                        </td>
-                    </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
