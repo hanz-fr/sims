@@ -93,6 +93,14 @@ Route::get('/rekap-siswa', function () {
     ]);
 });
 
+Route::get('/rekap-jumlah-siswa', function () {
+    return view('data-rekap-jumlah-siswa', [
+        'title' => 'Data Rekap Siswa',
+        'active' => 'rekap-siswa'
+    ]);
+});
+
+
 Route::get('/siswa-keluar', function () {
     return view('siswa-keluar', [
         'title' => 'Data Siswa Keluar',
