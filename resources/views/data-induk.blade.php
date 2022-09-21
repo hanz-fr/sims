@@ -1,11 +1,22 @@
 @extends('layouts.main')
 
 @section('content')
+
+@if($status == 'error')
+<div class="tw-flex tw-justify-center">
+    <div class="tw-block tw-my-32">
+        <img src="{{asset('assets/img/error_img.svg')}}" alt="error_img">
+        <h1 class="tw-flex tw-justify-center tw-font-pop tw-font-bold tw-mt-6 tw-text-sims">404 Not Found</h1>
+        <p class="tw-flex tw-justify-center tw-font-pop tw-text-md tw-font-semibold tw-text-gray-400 tw-mt-5">{{ $message }}</p>
+        <p class="tw-flex tw-justify-center tw-font-pop tw-text-gray-400 tw-text-sm">Hubungi admin untuk permasalahan lebih lanjut.</p>
+    </div>
+</div>
+@else
 <div class="tw-mx-10">
     <div class="tw-flex tw-justify-between tw-gap-5 tw-mt-8">
         <div class="tw-flex tw-flex-col">
             <h4 class="tw-font-pop tw-font-bold tw-mt-6 tw-text-sims">Data Induk Siswa</h4>
-            <h6 class="tw-mb-5 tw-text-gray-400 tw-font-semibold">X PENGEMBANGAN PERANGKAT LUNAK DAN GIM</h6>
+            <h6 class="tw-mb-5 tw-text-gray-400 tw-font-semibold">SELURUH KELAS</h6>
         </div>
 
         <div class="tw-flex tw-justify-center tw-items-center -tw-mb-8">
@@ -85,5 +96,24 @@
                 </tbody>
             </table>
         </div>
+
+        <div class="tw-float-right tw-py-5 tw-px-3">
+            @if($total == $response->to)
+            <a class="tw-text-gray-300 tw-bg-[#2f5555] hover:tw-text-gray-300 tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-regular fa-arrow-right"></i></a>
+            @else
+            <a href="{{ $response->next_page_url }}" class="tw-text-white tw-bg-sims hover:tw-bg-[#3F7373] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-regular fa-arrow-right"></i></a>
+            @endif
+          </div>
+
+          @if($response->prev_page_url)
+          <div class="tw-float-right tw-py-5">
+            <a href="{{ $response->prev_page_url }}" class="tw-text-white tw-bg-sims hover:tw-bg-[#3F7373] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-regular fa-arrow-left"></i></a>
+          </div>
+          @else
+          <div class="tw-float-right tw-py-5">
+            <a class="tw-text-gray-300 tw-bg-[#2f5555] hover:tw-text-gray-300 tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-regular fa-arrow-left"></i></a>
+          </div>
+          @endif
     </div>
+@endif
 @endsection

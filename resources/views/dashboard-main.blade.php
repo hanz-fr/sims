@@ -118,7 +118,7 @@
                 <div class="tw-text-sm tw-text-gray-500 tw-font-normal tw-mt-3 group-hover:tw-text-white">Data Jumlah Siswa</div>
               </li>
             </a>
-            <a href="/data-induk-siswa" class="tw-group">
+            <a href="/data-induk-siswa?perPage=10" class="tw-group">
               <li class="tw-flex tw-flex-col tw-justify-center tw-text-center tw-border-2 tw-py-4 tw-px-4 tw-bg-white tw-rounded-lg group-hover:tw-bg-sims group-hover:tw-text-white tw-transition-all tw-duration-300">
                 <div class="tw-text-4xl tw-text-sims group-hover:tw-text-white"><i class="fa-regular fa-book-open"></i></div>
                 <div class="tw-text-sm tw-text-gray-500 tw-font-normal tw-mt-3 group-hover:tw-text-white">Data Induk Siswa</div>
