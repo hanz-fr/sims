@@ -4,20 +4,18 @@
   <div class="tw-mx-10">
     <div class="tw-text-3xl tw-text-sims tw-font-pop tw-font-semibold tw-flex tw-flex-row tw-mt-9 tw-mx-9">Data Siswa</div>
     {{-- foto profil --}}
-    @foreach($siswa as $s)
     <div class="tw-flex sm:tw-flex-col md:tw-flex-row tw-font-pop">
       <div class="md:tw-w-[30%] sm:tw-w-full tw-text-center tw-text-basic tw-text-xl tw-font-pop tw-font-semibold tw-m-9">
         <img src="" alt="Pas Foto" srcset="" class="tw-rounded-xl tw-mb-10 tw-w-40 tw-h-52 tw-border tw-border-slate-400 tw-mx-auto md:tw-mt-20 sm:tw-mt-10">
-        <div>{{ $s->nama_siswa }}</div>
-        <div>{{ $s->nis_siswa }} / {{ $s->nisn_siswa }}</div>
-        <div>{{ $s->KelasId }} / Jurusan</div>
+        <div>{{ $siswa->nama_siswa }}</div>
+        <div>{{ $siswa->nis_siswa }} / {{ $siswa->nisn_siswa }}</div>
+        <div>{{ $siswa->KelasId }} / Jurusan</div>
       </div>
       
       {{-- data siswa n rekap nilai --}}
       <div x-data="{ openTab: 1,
         activeClasses: 'tw-bg-white tw-border',
-        inactiveClasses: 'tw-bg-gray-200 tw-border-t tw-border-x'
-      }"  class="md:tw-w-3/5 sm:tw-w-full">
+        inactiveClasses: 'tw-bg-gray-200 tw-border-t tw-border-x'}"  class="md:tw-w-3/5 sm:tw-w-full">
       <div class="tw-float-right">
         <a href="#" class="tw-text-white tw-bg-kuning hover:tw-bg-[#D3A007] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-solid fa-pen-to-square"></i></a>
       </div>
@@ -53,7 +51,7 @@
                               Tempat, Tanggal Lahir
                           </th>
                           <td class="tw-py-4 tw-px-6">
-                            {{ $s->tmp_lahir }}, {{ $s->tgl_lahir }}
+                            {{ $siswa->tmp_lahir }}, {{ $siswa->tgl_lahir }}
                           </td>
                       </tr>
                       <tr class="tw-border tw-bg-gray-100">
@@ -61,9 +59,9 @@
                             Jenis Kelamin
                           </th>
                           <td class="tw-py-4 tw-px-6">
-                            @if($s->jenis_kelamin == 'L')
+                            @if($siswa->jenis_kelamin == 'L')
                             Laki-laki
-                            @elseif($s->jenis_kelamin == 'P')
+                            @elseif($siswa->jenis_kelamin == 'P')
                             Perempuan
                             @else
                             -
@@ -75,7 +73,7 @@
                             Anak Ke-
                           </th>
                           <td class="tw-py-4 tw-px-6">
-                            {{ $s->anak_ke }}
+                            {{ $siswa->anak_ke }}
                           </td>
                       </tr>
                       <tr class="tw-bg-gray-100 tw-border">
@@ -83,11 +81,11 @@
                           Status dalam Keluarga
                         </th>
                         <td class="tw-py-4 tw-px-6">
-                          @if($s->status == 'AK')
+                          @if($siswa->status == 'AK')
                           Anak Kandung
-                          @elseif($s->status == 'AT')
+                          @elseif($siswa->status == 'AT')
                           Anak Tiri
-                          @elseif($s->status == 'AA')
+                          @elseif($siswa->status == 'AA')
                           Anak Angkat
                           @endif
                         </td>
@@ -97,7 +95,7 @@
                           Agama
                         </th>
                         <td class="tw-py-4 tw-px-6">
-                          {{ $s->agama }}
+                          {{ $siswa->agama }}
                         </td>
                       </tr>
                       <tr class="tw-bg-gray-100 tw-border">
@@ -105,20 +103,21 @@
                           Alamat
                         </th>
                         <td class="tw-py-4 tw-px-6">
-                          {{ $s->alamat_siswa }}
+                          {{ $siswa->alamat_siswa }}
                         </td>
                       </tr>
                   </tbody>
               </table>
           </div> 
-          <div class="tw-float-right tw-py-5 tw-px-3">
+          {{-- <div class="tw-float-right tw-py-5 tw-px-3">
             @if($total == $response->to)
             <a class="tw-text-gray-300 tw-bg-[#2f5555] hover:tw-text-gray-300 tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-regular fa-arrow-right"></i></a>
             @else
             <a href="{{ $response->next_page_url }}" class="tw-text-white tw-bg-sims hover:tw-bg-[#3F7373] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-regular fa-arrow-right"></i></a>
             @endif
-          </div>
-          @if($response->prev_page_url)
+          </div> --}}
+
+          {{-- @if($response->prev_page_url)
           <div class="tw-float-right tw-py-5">
             <a href="{{ $response->prev_page_url }}" class="tw-text-white tw-bg-sims hover:tw-bg-[#3F7373] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-regular fa-arrow-left"></i></a>
           </div>
@@ -126,7 +125,7 @@
           <div class="tw-float-right tw-py-5">
             <a class="tw-text-gray-300 tw-bg-[#2f5555] hover:tw-text-gray-300 tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-regular fa-arrow-left"></i></a>
           </div>
-          @endif         
+          @endif  --}}        
           </div>
           <div x-show="openTab === 2">
             <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
@@ -244,7 +243,6 @@
           </div>
         </div>
       </div>
-    @endforeach
     </div>
   </div>
 @endsection

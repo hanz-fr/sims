@@ -693,6 +693,11 @@ video {
   margin-right: 0.5rem;
 }
 
+.tw-my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
 .tw-mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -736,11 +741,6 @@ video {
 .tw-my-9 {
   margin-top: 2.25rem;
   margin-bottom: 2.25rem;
-}
-
-.tw-my-5 {
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
 }
 
 .tw-mx-20 {

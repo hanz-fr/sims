@@ -23,12 +23,7 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/detail', function () {
-    return view('di-detail', [
-        'title' => 'Data Siswa',
-        'active' => 'data-induk'
-    ]);
-});
+Route::get('/detail/{nis}', [ApiController::class, 'show']);
 
 Route::get('/jurusan', function () {
     return view('pilih-jurusan', [
