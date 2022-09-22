@@ -12,7 +12,7 @@ class ApiController extends Controller
         $page = $request->page;
         $perPage = $request->perPage;
 
-        $response = Http::get("https://a989-103-139-10-189.ngrok.io/siswa?page={$page}&perPage={$perPage}");
+        $response = Http::get("https://a86b-103-148-113-86.ap.ngrok.io/siswa?page={$page}&perPage={$perPage}");
 
         if ($response->successful()){
             return view('data-induk',[
@@ -40,7 +40,7 @@ class ApiController extends Controller
 
         $nis = $request->nis;
 
-        $response = Http::get("https://a989-103-139-10-189.ngrok.io/siswa/{$nis}");
+        $response = Http::get("https://a86b-103-148-113-86.ap.ngrok.io/siswa/{$nis}");
 
         if ($response->successful()){
             return view('di-detail', [
@@ -69,7 +69,7 @@ class ApiController extends Controller
 
     public function store(Request $request) {
 
-        $response = Http::post('https://da1d-103-139-10-189.ngrok.io/siswa',[
+        $response = Http::post('https://a86b-103-148-113-86.ap.ngrok.io/siswa',[
             'nis_siswa' => $request->nis,
             'nisn_siswa' => $request->nisn,
             'nama_siswa' => $request->nama,
@@ -104,7 +104,7 @@ class ApiController extends Controller
             'pekerjaan_wali' => $request->pekerjaan_wali,
             'tgl_meninggalkan_sekolah' => $request->tgl_meninggalkan_sekolah, 
             'alasan_meninggalkan_sekolah' => $request->alasan_meninggalkan_sekolah,
-            'foto' => null,
+            'foto' => $request->foto,
             'berat_badan' => null,
             'tinggi_badan' => null,
             'lingkar_kepala' => null,
