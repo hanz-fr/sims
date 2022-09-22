@@ -1004,6 +1004,10 @@ video {
   height: 4rem;
 }
 
+.tw-h-1\/2 {
+  height: 50%;
+}
+
 .tw-w-full {
   width: 100%;
 }
@@ -1421,6 +1425,10 @@ video {
 
 .tw-p-4 {
   padding: 1rem;
+}
+
+.tw-p-6 {
+  padding: 1.5rem;
 }
 
 .tw-py-3 {
@@ -1843,6 +1851,58 @@ a {
 .invalid\:tw-text-pink-700:invalid {
   --tw-text-opacity: 1;
   color: rgb(190 24 93 / var(--tw-text-opacity));
+}
+
+@-webkit-keyframes tw-ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes tw-ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.hover\:tw-animate-ping:hover {
+  -webkit-animation: tw-ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+          animation: tw-ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@-webkit-keyframes tw-bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    -webkit-animation-timing-function: cubic-bezier(0.8,0,1,1);
+            animation-timing-function: cubic-bezier(0.8,0,1,1);
+  }
+
+  50% {
+    transform: none;
+    -webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
+            animation-timing-function: cubic-bezier(0,0,0.2,1);
+  }
+}
+
+@keyframes tw-bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    -webkit-animation-timing-function: cubic-bezier(0.8,0,1,1);
+            animation-timing-function: cubic-bezier(0.8,0,1,1);
+  }
+
+  50% {
+    transform: none;
+    -webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
+            animation-timing-function: cubic-bezier(0,0,0.2,1);
+  }
+}
+
+.hover\:tw-animate-bounce:hover {
+  -webkit-animation: tw-bounce 1s infinite;
+          animation: tw-bounce 1s infinite;
 }
 
 .hover\:tw-bg-\[\#428888\]:hover {
