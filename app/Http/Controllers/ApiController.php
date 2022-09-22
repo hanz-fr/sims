@@ -68,7 +68,6 @@ class ApiController extends Controller
     }
 
     public function store(Request $request) {
-
         $response = Http::post('https://a86b-103-148-113-86.ap.ngrok.io/siswa',[
             'nis_siswa' => $request->nis,
             'nisn_siswa' => $request->nisn,
@@ -104,7 +103,7 @@ class ApiController extends Controller
             'pekerjaan_wali' => $request->pekerjaan_wali,
             'tgl_meninggalkan_sekolah' => $request->tgl_meninggalkan_sekolah, 
             'alasan_meninggalkan_sekolah' => $request->alasan_meninggalkan_sekolah,
-            'foto' => $request->foto,
+            'foto' => $request->file('foto')->store('foto'),
             'berat_badan' => null,
             'tinggi_badan' => null,
             'lingkar_kepala' => null,

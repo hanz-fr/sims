@@ -34,7 +34,7 @@
           </label>
             <label class="">
               <span class="tw-sr-only">Choose profile photo</span>
-              <input type="file" class=" t  w-w-full tw-text-sm text-slate-500
+              <input type="file" class=" tw-w-full tw-text-sm text-slate-500
                 file:tw-mr-4 file:tw-py-2 file:tw-px-4
                 file:tw-rounded-full file:tw-border-0
                 file:tw-text-lg file:tw-text-gray-500 file:hover:tw-text-sims file:tw-cursor-pointer file:tw-font-semibold
