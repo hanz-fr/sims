@@ -1564,10 +1564,6 @@ video {
   padding-right: 1.75rem;
 }
 
-.tw-pb-10 {
-  padding-bottom: 2.5rem;
-}
-
 .tw-pl-5 {
   padding-left: 1.25rem;
 }
@@ -1586,6 +1582,10 @@ video {
 
 .tw-pb-2 {
   padding-bottom: 0.5rem;
+}
+
+.tw-pb-10 {
+  padding-bottom: 2.5rem;
 }
 
 .tw-text-left {
