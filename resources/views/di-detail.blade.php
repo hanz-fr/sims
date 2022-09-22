@@ -129,7 +129,7 @@
                 <thead class="tw-text-lg tw-bg-gray-100 tw-text-basic tw-border tw-font-pop">
                     <tr>
                         <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">
-                            Ingfo Diri
+                            Data Diri
                         </th>
                         <th scope="col" class="tw-py-3 tw-px-6">
                             Keterangan
@@ -139,68 +139,82 @@
                 <tbody class="tw-text-base">
                     <tr class="tw-bg-white tw-border">
                         <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
-                            Tempat, Tanggal Lahir
+                            Email Siswa
                         </th>
                         <td class="tw-py-4 tw-px-6">
-                          {{ $siswa->tmp_lahir }}, {{ $siswa->tgl_lahir }}
+                          {{ $siswa->email_siswa }}
                         </td>
                     </tr>
                     <tr class="tw-border tw-bg-gray-100">
                         <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
-                          Jenis Kelamin
+                          Nomor HP
                         </th>
                         <td class="tw-py-4 tw-px-6">
-                          @if($siswa->jenis_kelamin == 'L')
-                          Laki-laki
-                          @elseif($siswa->jenis_kelamin == 'P')
-                          Perempuan
-                          @else
-                          -
-                          @endif
+                          {{ $siswa->no_telp_siswa }}
                         </td>
                     </tr>
                     <tr class="tw-bg-white tw-border">
                         <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
-                          Anak Ke-
+                          Tanggal diterima
                         </th>
                         <td class="tw-py-4 tw-px-6">
-                          {{ $siswa->anak_ke }}
+                          {{ $siswa->tgl_diterima }}
                         </td>
                     </tr>
                     <tr class="tw-bg-gray-100 tw-border">
                       <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
-                        Status dalam Keluarga
+                        Semester diterima
                       </th>
                       <td class="tw-py-4 tw-px-6">
-                        @if($siswa->status == 'AK')
-                        Anak Kandung
-                        @elseif($siswa->status == 'AT')
-                        Anak Tiri
-                        @elseif($siswa->status == 'AA')
-                        Anak Angkat
-                        @endif
+                        {{ $siswa->semester_diterima }}
                       </td>
                     </tr>
                     <tr class="tw-bg-white tw-border">
                       <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
-                        Agama
+                        Sekolah asal
                       </th>
                       <td class="tw-py-4 tw-px-6">
-                        {{ $siswa->agama }}
+                        {{ $siswa->sekolah_asal }}
                       </td>
                     </tr>
                     <tr class="tw-bg-gray-100 tw-border">
                       <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
-                        Alamat
+                        Alamat sekolah asal
                       </th>
                       <td class="tw-py-4 tw-px-6">
-                        {{ $siswa->alamat_siswa }}
+                        {{ $siswa->alamat_sekolah_asal }}
                       </td>
                     </tr>
                 </tbody>
             </table>
             </div>
-        </div>
+            
+          </div>
+          {{-- <div x-show="tab === 'ketiga'">
+            <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
+              <table class="tw-w-full tw-text-sm tw-text-left">
+                  <thead class="tw-text-lg tw-bg-gray-100 tw-text-basic tw-border tw-font-pop">
+                      <tr>
+                          <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">
+                              Data Diri
+                          </th>
+                          <th scope="col" class="tw-py-3 tw-px-6">
+                              Keterangan
+                          </th>
+                      </tr>
+                  </thead>
+                  <tbody class="tw-text-base">
+                      <tr class="tw-bg-white tw-border">
+                          <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                              Email Siswa
+                          </th>
+                          <td class="tw-py-4 tw-px-6">
+                            {{ $siswa->email_siswa }}
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div> --}}
         {{-- btn paginate --}}
         <div class="tw-flex tw-flex-row tw-float-right">
           <a :class="{ 'active': tab === 'kesatu' }" @click.prevent="tab = 'kesatu'; window.location.hash = 'kesatu'" href="#" class="tw-text-white tw-bg-sims hover:tw-bg-[#3F7373] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-mt-5"><i class="fa-regular fa-arrow-left"></i></a>
