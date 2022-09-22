@@ -18,13 +18,13 @@
           <label class="label-input" for="nis">
             NIS
           </label>
-          <input class="input-data tw-w-full" id="nis" name="nis" type="number">
+          <input class="input-data tw-w-full" id="nis" name="nis" type="number" required>
         </div>
         <div class="tw-w-fit md:tw-w-1/2 tw-px-3">
           <label class="label-input" for="nisn">
             NISN
           </label>
-          <input class="input-data tw-w-full" id="nisn" name="nisn" type="number">
+          <input class="input-data tw-w-full" id="nisn" name="nisn" type="number" required>
         </div>
       </div>
       <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
@@ -49,7 +49,7 @@
           <label class="label-input" for="nama">
             Nama Peserta Didik
           </label>
-          <input class="input-data" id="nama" type="text" name="nama">
+          <input class="input-data" id="nama" type="text" name="nama" required>
         </div>
       </div>
       <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
@@ -57,13 +57,13 @@
           <label class="label-input" for="tmp_lahir">
             Tempat Lahir
           </label>
-          <input class="input-data" id="tmp_lahir" name="tmp_lahir" type="text">
+          <input class="input-data" id="tmp_lahir" name="tmp_lahir" type="text" required>
         </div>
         <div class="tw-w-full md:tw-w-1/2 tw-px-3">
           <label class="label-input" for="tgl_lahir">
             Tanggal Lahir
           </label>
-          <input class="input-data" id="tgl_lahir" name="tgl_lahir" type="date" placeholder="dd/mm/yyyy">
+          <input class="input-data" id="tgl_lahir" name="tgl_lahir" type="date" placeholder="dd/mm/yyyy" required>
         </div>
       </div>
       <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
@@ -71,7 +71,7 @@
           <label class="label-input" for="agama">
             Agama
           </label>
-          <input class="input-data" id="agama" type="text" name="agama">
+          <input class="input-data" id="agama" type="text" name="agama" required>
         </div>
       </div>
       <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
@@ -85,7 +85,7 @@
           <label class="label-input" for="jenis_kelamin">
             Jenis Kelamin
           </label>
-          <select class="input-data" id="jenis_kelamin" name="jenis_kelamin">
+          <select class="input-data" id="jenis_kelamin" name="jenis_kelamin" required>
             <option selected>Pilih</option>
             <option value="L">Laki-laki</option>
             <option value="P">Perempuan</option>

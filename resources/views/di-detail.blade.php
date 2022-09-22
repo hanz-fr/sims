@@ -240,8 +240,10 @@
           @endif --}}         
           </div>
           <div x-show="openTab === 2">
-            <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
-              <table class="tw-w-full tw-text-sm tw-text-center">
+            <div x-data="{ selected: 'semester-1' }">
+              <div x-show="selected === 'semester-1'">
+              <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
+                <table class="tw-w-full tw-text-sm tw-text-center">
                   <thead class="tw-text-lg tw-bg-gray-100 tw-text-basic tw-border-b tw-font-pop">
                       <tr class="tw-border">
                           <th scope="col" class="tw-py-3 tw-px-6">
@@ -344,15 +346,455 @@
                         </td>
                       </tr>
                   </tbody>
-              </table>
-          </div> 
-          <div class="tw-float-right tw-py-5 tw-px-3">
+                </table>
+              </div>
+            </div>
+            <div x-show="selected === 'semester-2">
+              <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
+                <table class="tw-w-full tw-text-sm tw-text-center">
+                    <thead class="tw-text-lg tw-bg-gray-100 tw-text-basic tw-border-b tw-font-pop">
+                        <tr class="tw-border">
+                            <th scope="col" class="tw-py-3 tw-px-6">
+                                Nama Mapel Sem2
+                            </th>
+                            <th scope="col" class="tw-py-3 tw-px-6">
+                              KBM
+                            </th>
+                            <th scope="col" class="tw-py-3 tw-px-6">
+                              Pengetahuan
+                            </th>
+                            <th scope="col" class="tw-py-3 tw-px-6">
+                              Keterampilan
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="tw-text-base text-center">
+                        <tr class="tw-bg-white tw-border">
+                            <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                              Bahasa Inggris
+                            </th>
+                            <td class="tw-py-4 tw-px-6">
+                              70
+                            </td>
+                            <td class="tw-py-4 tw-px-6">
+                              72
+                            </td>
+                            <td class="tw-py-4 tw-px-6">
+                              75
+                            </td>
+                        </tr>
+                        <tr class="tw-border tw-bg-gray-100">
+                            <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                              Bahasa Indonesia
+                            </th>
+                            <td class="tw-py-4 tw-px-6">
+                              81
+                            </td>
+                            <td class="tw-py-4 tw-px-6">
+                              88
+                            </td>
+                            <td class="tw-py-4 tw-px-6">
+                              75
+                            </td>
+                        </tr>
+                        <tr class="tw-bg-white tw-border">
+                            <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                              Agama
+                            </th>
+                            <td class="tw-py-4 tw-px-6">
+                              95
+                            </td>
+                            <td class="tw-py-4 tw-px-6">
+                              98
+                            </td>
+                            <td class="tw-py-4 tw-px-6">
+                              72
+                            </td>
+                        </tr>
+                        <tr class="tw-bg-gray-100 tw-border">
+                          <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                            PPKN 
+                          </th>
+                          <td class="tw-py-4 tw-px-6">
+                            77
+                          </td>
+                          <td class="tw-py-4 tw-px-6">
+                            77
+                          </td>
+                          <td class="tw-py-4 tw-px-6">
+                            75
+                          </td>
+                        </tr>
+                        <tr class="tw-bg-white tw-border">
+                          <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                            Matematika
+                          </th>
+                          <td class="tw-py-4 tw-px-6">
+                             76
+                          </td>
+                          <td class="tw-py-4 tw-px-6">
+                            72
+                          </td>
+                          <td class="tw-py-4 tw-px-6">
+                            72
+                          </td>
+                        </tr>
+                        <tr class="tw-bg-gray-100 tw-border">
+                          <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                            Bahasa Jepang
+                          </th>
+                          <td class="tw-py-4 tw-px-6">
+                            72
+                          </td>
+                          <td class="tw-py-4 tw-px-6">
+                            87
+                          </td>
+                          <td class="tw-py-4 tw-px-6">
+                            75
+                          </td>
+                        </tr>
+                    </tbody>
+                </table>
+              </div> 
+              </div>
+            <div x-show="selected === 'semester-3'">
+              <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
+                <table class="tw-w-full tw-text-sm tw-text-center">
+                    <thead class="tw-text-lg tw-bg-gray-100 tw-text-basic tw-border-b tw-font-pop">
+                        <tr class="tw-border">
+                            <th scope="col" class="tw-py-3 tw-px-6">
+                                Nama Mapel
+                            </th>
+                            <th scope="col" class="tw-py-3 tw-px-6">
+                              KBM
+                            </th>
+                            <th scope="col" class="tw-py-3 tw-px-6">
+                              Pengetahuan
+                            </th>
+                            <th scope="col" class="tw-py-3 tw-px-6">
+                              Keterampilan
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="tw-text-base text-center">
+                        <tr class="tw-bg-white tw-border">
+                            <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                              Bahasa Inggris
+                            </th>
+                            <td class="tw-py-4 tw-px-6">
+                              70
+                            </td>
+                            <td class="tw-py-4 tw-px-6">
+                              72
+                            </td>
+                            <td class="tw-py-4 tw-px-6">
+                              75
+                            </td>
+                        </tr>
+                        <tr class="tw-border tw-bg-gray-100">
+                            <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                              Bahasa Indonesia
+                            </th>
+                            <td class="tw-py-4 tw-px-6">
+                              81
+                            </td>
+                            <td class="tw-py-4 tw-px-6">
+                              88
+                            </td>
+                            <td class="tw-py-4 tw-px-6">
+                              75
+                            </td>
+                        </tr>
+                        <tr class="tw-bg-white tw-border">
+                            <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                              Agama
+                            </th>
+                            <td class="tw-py-4 tw-px-6">
+                              95
+                            </td>
+                            <td class="tw-py-4 tw-px-6">
+                              98
+                            </td>
+                            <td class="tw-py-4 tw-px-6">
+                              72
+                            </td>
+                        </tr>
+                        <tr class="tw-bg-gray-100 tw-border">
+                          <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                            PPKN 
+                          </th>
+                          <td class="tw-py-4 tw-px-6">
+                            77
+                          </td>
+                          <td class="tw-py-4 tw-px-6">
+                            77
+                          </td>
+                          <td class="tw-py-4 tw-px-6">
+                            75
+                          </td>
+                        </tr>
+                        <tr class="tw-bg-white tw-border">
+                          <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                            Matematika
+                          </th>
+                          <td class="tw-py-4 tw-px-6">
+                             76
+                          </td>
+                          <td class="tw-py-4 tw-px-6">
+                            72
+                          </td>
+                          <td class="tw-py-4 tw-px-6">
+                            72
+                          </td>
+                        </tr>
+                        <tr class="tw-bg-gray-100 tw-border">
+                          <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                            Bahasa Jepang
+                          </th>
+                          <td class="tw-py-4 tw-px-6">
+                            72
+                          </td>
+                          <td class="tw-py-4 tw-px-6">
+                            87
+                          </td>
+                          <td class="tw-py-4 tw-px-6">
+                            75
+                          </td>
+                        </tr>
+                    </tbody>
+                </table>
+              </div> 
+              </div>
+              <div x-show="selected === 'semester-4'">
+                <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
+                  <table class="tw-w-full tw-text-sm tw-text-center">
+                      <thead class="tw-text-lg tw-bg-gray-100 tw-text-basic tw-border-b tw-font-pop">
+                          <tr class="tw-border">
+                              <th scope="col" class="tw-py-3 tw-px-6">
+                                  Nama Mapel
+                              </th>
+                              <th scope="col" class="tw-py-3 tw-px-6">
+                                KBM
+                              </th>
+                              <th scope="col" class="tw-py-3 tw-px-6">
+                                Pengetahuan
+                              </th>
+                              <th scope="col" class="tw-py-3 tw-px-6">
+                                Keterampilan
+                              </th>
+                          </tr>
+                      </thead>
+                      <tbody class="tw-text-base text-center">
+                          <tr class="tw-bg-white tw-border">
+                              <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                                Bahasa Inggris
+                              </th>
+                              <td class="tw-py-4 tw-px-6">
+                                70
+                              </td>
+                              <td class="tw-py-4 tw-px-6">
+                                72
+                              </td>
+                              <td class="tw-py-4 tw-px-6">
+                                75
+                              </td>
+                          </tr>
+                          <tr class="tw-border tw-bg-gray-100">
+                              <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                                Bahasa Indonesia
+                              </th>
+                              <td class="tw-py-4 tw-px-6">
+                                81
+                              </td>
+                              <td class="tw-py-4 tw-px-6">
+                                88
+                              </td>
+                              <td class="tw-py-4 tw-px-6">
+                                75
+                              </td>
+                          </tr>
+                          <tr class="tw-bg-white tw-border">
+                              <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                                Agama
+                              </th>
+                              <td class="tw-py-4 tw-px-6">
+                                95
+                              </td>
+                              <td class="tw-py-4 tw-px-6">
+                                98
+                              </td>
+                              <td class="tw-py-4 tw-px-6">
+                                72
+                              </td>
+                          </tr>
+                          <tr class="tw-bg-gray-100 tw-border">
+                            <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                              PPKN 
+                            </th>
+                            <td class="tw-py-4 tw-px-6">
+                              77
+                            </td>
+                            <td class="tw-py-4 tw-px-6">
+                              77
+                            </td>
+                            <td class="tw-py-4 tw-px-6">
+                              75
+                            </td>
+                          </tr>
+                          <tr class="tw-bg-white tw-border">
+                            <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                              Matematika
+                            </th>
+                            <td class="tw-py-4 tw-px-6">
+                               76
+                            </td>
+                            <td class="tw-py-4 tw-px-6">
+                              72
+                            </td>
+                            <td class="tw-py-4 tw-px-6">
+                              72
+                            </td>
+                          </tr>
+                          <tr class="tw-bg-gray-100 tw-border">
+                            <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                              Bahasa Jepang
+                            </th>
+                            <td class="tw-py-4 tw-px-6">
+                              72
+                            </td>
+                            <td class="tw-py-4 tw-px-6">
+                              87
+                            </td>
+                            <td class="tw-py-4 tw-px-6">
+                              75
+                            </td>
+                          </tr>
+                      </tbody>
+                  </table>
+                </div> 
+                </div>
+                <div x-show="selected === 'semester-5'">
+                  <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
+                    <table class="tw-w-full tw-text-sm tw-text-center">
+                        <thead class="tw-text-lg tw-bg-gray-100 tw-text-basic tw-border-b tw-font-pop">
+                            <tr class="tw-border">
+                                <th scope="col" class="tw-py-3 tw-px-6">
+                                    Nama Mapel
+                                </th>
+                                <th scope="col" class="tw-py-3 tw-px-6">
+                                  KBM
+                                </th>
+                                <th scope="col" class="tw-py-3 tw-px-6">
+                                  Pengetahuan
+                                </th>
+                                <th scope="col" class="tw-py-3 tw-px-6">
+                                  Keterampilan
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="tw-text-base text-center">
+                            <tr class="tw-bg-white tw-border">
+                                <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                                  Bahasa Inggris
+                                </th>
+                                <td class="tw-py-4 tw-px-6">
+                                  70
+                                </td>
+                                <td class="tw-py-4 tw-px-6">
+                                  72
+                                </td>
+                                <td class="tw-py-4 tw-px-6">
+                                  75
+                                </td>
+                            </tr>
+                            <tr class="tw-border tw-bg-gray-100">
+                                <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                                  Bahasa Indonesia
+                                </th>
+                                <td class="tw-py-4 tw-px-6">
+                                  81
+                                </td>
+                                <td class="tw-py-4 tw-px-6">
+                                  88
+                                </td>
+                                <td class="tw-py-4 tw-px-6">
+                                  75
+                                </td>
+                            </tr>
+                            <tr class="tw-bg-white tw-border">
+                                <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                                  Agama
+                                </th>
+                                <td class="tw-py-4 tw-px-6">
+                                  95
+                                </td>
+                                <td class="tw-py-4 tw-px-6">
+                                  98
+                                </td>
+                                <td class="tw-py-4 tw-px-6">
+                                  72
+                                </td>
+                            </tr>
+                            <tr class="tw-bg-gray-100 tw-border">
+                              <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                                PPKN 
+                              </th>
+                              <td class="tw-py-4 tw-px-6">
+                                77
+                              </td>
+                              <td class="tw-py-4 tw-px-6">
+                                77
+                              </td>
+                              <td class="tw-py-4 tw-px-6">
+                                75
+                              </td>
+                            </tr>
+                            <tr class="tw-bg-white tw-border">
+                              <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                                Matematika
+                              </th>
+                              <td class="tw-py-4 tw-px-6">
+                                 76
+                              </td>
+                              <td class="tw-py-4 tw-px-6">
+                                72
+                              </td>
+                              <td class="tw-py-4 tw-px-6">
+                                72
+                              </td>
+                            </tr>
+                            <tr class="tw-bg-gray-100 tw-border">
+                              <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                                Bahasa Jepang
+                              </th>
+                              <td class="tw-py-4 tw-px-6">
+                                72
+                              </td>
+                              <td class="tw-py-4 tw-px-6">
+                                87
+                              </td>
+                              <td class="tw-py-4 tw-px-6">
+                                75
+                              </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                  </div> 
+                  </div>
+            <a x-on:click="selected = 'semester-1'" href="#" class="tw-bg-white tw-border tw-border-gray-500 tw-p-3">1</a>
+            <a x-on:click="selected = 'semester-2'" href="#" class="tw-bg-white tw-border tw-border-gray-500 tw-p-3">2</a>
+            <a x-on:click="selected = 'semester-3'" href="#" class="tw-bg-white tw-border tw-border-gray-500 tw-p-3">3</a>
+            <a x-on:click="selected = 'semester-4'" href="#" class="tw-bg-white tw-border tw-border-gray-500 tw-p-3">4</a>
+            <a x-on:click="selected = 'semester-5'" href="#" class="tw-bg-white tw-border tw-border-gray-500 tw-p-3">5</a>
+          </div>
+          {{-- <div class="tw-float-right tw-py-5 tw-px-3">
             <a href="#" class="tw-text-white tw-bg-sims hover:tw-bg-[#3F7373] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-regular fa-arrow-right"></i></a>
           </div>
           <div class="tw-float-right tw-py-5">
             <a href="#" class="tw-text-white tw-bg-sims hover:tw-bg-[#3F7373] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-regular fa-arrow-left"></i></a>
-          </div>   
+          </div>    --}}
           </div>
+            </div>
         </div>
       </div>
     </div>
