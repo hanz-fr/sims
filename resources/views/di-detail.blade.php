@@ -49,8 +49,10 @@
         </ul>
         <div class="tw-w-full">
           <div x-show="openTab === 1">
-            <div x-data="{ tab: window.location.hash ? window.location.hash.substring(1) : 'kesatu' }" id="tab_wrapper">
-            <div x-show="tab === 'kesatu'">
+            <div x-data="{ selected: '1',
+            activeClasses: 'tw-bg-sims tw-text-white',
+            inactiveClasses: 'tw-bg-white tw-text-sims' }">
+            <div x-show="selected === '1'">
               <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
               <table class="tw-w-full tw-text-sm tw-text-left">
                   <thead class="tw-text-lg tw-bg-gray-100 tw-text-basic tw-border tw-font-pop">
@@ -124,11 +126,93 @@
                           {{ $siswa->alamat_siswa }}
                         </td>
                       </tr>
+                      <tr class="tw-bg-white tw-border">
+                        <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                            Email Siswa
+                        </th>
+                        <td class="tw-py-4 tw-px-6">
+                          {{ $siswa->email_siswa }}
+                        </td>
+                    </tr>
                   </tbody>
               </table>
               </div>
           </div>
-          <div x-show="tab === 'kedua'">
+          <div x-show="selected === '2'">
+            <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
+            <table class="tw-w-full tw-text-sm tw-text-left">
+                <thead class="tw-text-lg tw-bg-gray-100 tw-text-basic tw-border tw-font-pop">
+                    <tr>
+                        <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">
+                            Data Diri
+                        </th>
+                        <th scope="col" class="tw-py-3 tw-px-6">
+                            Keterangan
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="tw-text-base">
+                  <tr class="tw-border tw-bg-white">
+                    <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                      Nomor HP
+                    </th>
+                    <td class="tw-py-4 tw-px-6">
+                      {{ $siswa->no_telp_siswa }}
+                    </td>
+                </tr>
+                    <tr class="tw-bg-gray-100 tw-border">
+                        <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                          Tanggal diterima
+                        </th>
+                        <td class="tw-py-4 tw-px-6">
+                          {{ $siswa->tgl_diterima }}
+                        </td>
+                    </tr>
+                    <tr class="tw-bg-white tw-border">
+                      <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                        Semester diterima
+                      </th>
+                      <td class="tw-py-4 tw-px-6">
+                        {{ $siswa->semester_diterima }}
+                      </td>
+                    </tr>
+                    <tr class="tw-bg-gray-100 tw-border">
+                      <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                        Sekolah asal
+                      </th>
+                      <td class="tw-py-4 tw-px-6">
+                        {{ $siswa->sekolah_asal }}
+                      </td>
+                    </tr>
+                    <tr class="tw-bg-white tw-border">
+                      <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                        Alamat sekolah asal
+                      </th>
+                      <td class="tw-py-4 tw-px-6">
+                        {{ $siswa->alamat_sekolah_asal }}
+                      </td>
+                    </tr>
+                    <tr class="tw-bg-gray-100 tw-border">
+                      <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                        Nomor Ijazah SMP 
+                      </th>
+                      <td class="tw-py-4 tw-px-6">
+                        {{ $siswa->no_ijazah_smp }}
+                      </td>
+                    </tr>
+                    <tr class="tw-bg-white tw-border">
+                      <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                        Tahun Ijazah SMP 
+                      </th>
+                      <td class="tw-py-4 tw-px-6">
+                        {{ $siswa->thn_ijazah_smp }}
+                      </td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+          </div>
+          <div x-show="selected === '3'">
             <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
             <table class="tw-w-full tw-text-sm tw-text-left">
                 <thead class="tw-text-lg tw-bg-gray-100 tw-text-basic tw-border tw-font-pop">
@@ -144,60 +228,172 @@
                 <tbody class="tw-text-base">
                     <tr class="tw-bg-white tw-border">
                         <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
-                            Email Siswa
+                          Tahun SKHUN SMP
                         </th>
                         <td class="tw-py-4 tw-px-6">
-                          {{ $siswa->email_siswa }}
-                        </td>
-                    </tr>
-                    <tr class="tw-border tw-bg-gray-100">
-                        <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
-                          Nomor HP
-                        </th>
-                        <td class="tw-py-4 tw-px-6">
-                          {{ $siswa->no_telp_siswa }}
-                        </td>
-                    </tr>
-                    <tr class="tw-bg-white tw-border">
-                        <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
-                          Tanggal diterima
-                        </th>
-                        <td class="tw-py-4 tw-px-6">
-                          {{ $siswa->tgl_diterima }}
+                          {{ $siswa->thn_ijazah_smp }}
                         </td>
                     </tr>
                     <tr class="tw-bg-gray-100 tw-border">
                       <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
-                        Semester diterima
+                        Nama Ayah
                       </th>
                       <td class="tw-py-4 tw-px-6">
-                        {{ $siswa->semester_diterima }}
+                        {{ $siswa->nama_ayah }}
                       </td>
                     </tr>
                     <tr class="tw-bg-white tw-border">
                       <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
-                        Sekolah asal
+                        Nama Ibu
                       </th>
                       <td class="tw-py-4 tw-px-6">
-                        {{ $siswa->sekolah_asal }}
+                        {{ $siswa->nama_ibu }}
                       </td>
                     </tr>
                     <tr class="tw-bg-gray-100 tw-border">
                       <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
-                        Alamat sekolah asal
+                        Alamat Orang Tua
                       </th>
                       <td class="tw-py-4 tw-px-6">
-                        {{ $siswa->alamat_sekolah_asal }}
+                        {{ $siswa->alamat_ortu }}
+                      </td>
+                    </tr>
+                    <tr class="tw-bg-white tw-border">
+                      <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                        Nomor Telepon Orang Tua
+                      </th>
+                      <td class="tw-py-4 tw-px-6">
+                        {{ $siswa->no_telp_ortu }}
+                      </td>
+                    </tr>
+                    <tr class="tw-bg-gray-100 tw-border">
+                      <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                        Email Orang Tua
+                      </th>
+                      <td class="tw-py-4 tw-px-6">
+                        {{ $siswa->email_ortu }}
+                      </td>
+                    </tr>
+                    <tr class="tw-border tw-bg-white">
+                      <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                        Nama Wali
+                      </th>
+                      <td class="tw-py-4 tw-px-6">
+                        {{ $siswa->nama_wali }}
+                      </td>
+                  </tr>
+                </tbody>
+            </table>
+            </div>
+          </div>
+          <div x-show="selected === '4'">
+            <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
+            <table class="tw-w-full tw-text-sm tw-text-left">
+                <thead class="tw-text-lg tw-bg-gray-100 tw-text-basic tw-border tw-font-pop">
+                    <tr>
+                        <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">
+                            Data Diri
+                        </th>
+                        <th scope="col" class="tw-py-3 tw-px-6">
+                            Keterangan
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="tw-text-base">
+                    <tr class="tw-bg-white tw-border">
+                        <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                          Alamat Wali
+                        </th>
+                        <td class="tw-py-4 tw-px-6">
+                          {{ $siswa->alamat_wali }}
+                        </td>
+                    </tr>
+                    <tr class="tw-bg-gray-100 tw-border">
+                      <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                        Nomor Telepon Wali
+                      </th>
+                      <td class="tw-py-4 tw-px-6">
+                        {{ $siswa->no_telp_wali }}
+                      </td>
+                    </tr>
+                    <tr class="tw-bg-white tw-border">
+                      <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                        Pekerjaan Wali
+                      </th>
+                      <td class="tw-py-4 tw-px-6">
+                        {{ $siswa->pekerjaan_wali }}
+                      </td>
+                    </tr>
+                    <tr class="tw-bg-gray-100 tw-border">
+                      <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                        Tanggal Meninggalkan Sekolah
+                      </th>
+                      <td class="tw-py-4 tw-px-6">
+                        {{ $siswa->tgl_meninggalkan_sekolah }}
+                      </td>
+                    </tr>
+                    <tr class="tw-bg-white tw-border">
+                      <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                        Alasan Meninggalkan Sekolah
+                      </th>
+                      <td class="tw-py-4 tw-px-6">
+                        {{ $siswa->alasan_meninggalkan_sekolah }}
+                      </td>
+                    </tr>
+                    <tr class="tw-bg-gray-100 tw-border">
+                      <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                        Nomor Ijazah SMK
+                      </th>
+                      <td class="tw-py-4 tw-px-6">
+                        {{ $siswa->no_ijazah_smk }}
+                      </td>
+                    </tr>
+                    <tr class="tw-bg-white tw-border">
+                      <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                        Tanggal Ijazah SMK
+                      </th>
+                      <td class="tw-py-4 tw-px-6">
+                        {{ $siswa->tgl_ijazah_smk }}
                       </td>
                     </tr>
                 </tbody>
             </table>
             </div>
           </div>
+          <div x-show="selected === '5'">
+            <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
+            <table class="tw-w-full tw-text-sm tw-text-left">
+                <thead class="tw-text-lg tw-bg-gray-100 tw-text-basic tw-border tw-font-pop">
+                    <tr>
+                        <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">
+                            Data Diri
+                        </th>
+                        <th scope="col" class="tw-py-3 tw-px-6">
+                            Keterangan
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="tw-text-base">
+                    <tr class="tw-bg-white tw-border">
+                      <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                        Keterangan Lain-lain
+                      </th>
+                      <td class="tw-py-4 tw-px-6">
+                        {{ $siswa->keterangan_lain }}
+                      </td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+          </div>
+
         {{-- btn paginate --}}
-        <div class="tw-flex tw-flex-row tw-float-right">
-          <a :class="{ 'active': tab === 'kesatu' }" @click.prevent="tab = 'kesatu'; window.location.hash = 'kesatu'" href="#" class="tw-text-white tw-bg-sims hover:tw-bg-[#3F7373] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-mt-5"><i class="fa-regular fa-arrow-left"></i></a>
-          <a :class="{ 'active': tab === 'kedua' }" @click.prevent="tab = 'kedua'; window.location.hash = 'kedua'" href="#" class="tw-text-white tw-bg-sims hover:tw-bg-[#3F7373] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-mt-5 tw-ml-3"><i class="fa-regular fa-arrow-right"></i></a>
+        <div class="tw-flex tw-flex-row tw-justify-center tw-mt-8 tw-gap-4">
+          <a x-on:click="selected = '1'" :class="selected === '1' ? activeClasses : inactiveClasses" href="#" class="tw-rounded-lg tw-text-lg tw-py-2 tw-px-5 tw-shadow-md tw-font-semibold hover:tw-bg-sims hover:tw-text-white">1</a>
+          <a x-on:click="selected = '2'" :class="selected === '2' ? activeClasses : inactiveClasses" href="#" class="tw-rounded-lg tw-text-lg tw-py-2 tw-px-5 tw-shadow-md tw-font-semibold hover:tw-bg-sims hover:tw-text-white">2</a>
+          <a x-on:click="selected = '3'" :class="selected === '3' ? activeClasses : inactiveClasses" href="#" class="tw-rounded-lg tw-text-lg tw-py-2 tw-px-5 tw-shadow-md tw-font-semibold hover:tw-bg-sims hover:tw-text-white">3</a>
+          <a x-on:click="selected = '4'" :class="selected === '4' ? activeClasses : inactiveClasses" href="#" class="tw-rounded-lg tw-text-lg tw-py-2 tw-px-5 tw-shadow-md tw-font-semibold hover:tw-bg-sims hover:tw-text-white">4</a>
+          <a x-on:click="selected = '5'" :class="selected === '5' ? activeClasses : inactiveClasses" href="#" class="tw-rounded-lg tw-text-lg tw-py-2 tw-px-5 tw-shadow-md tw-font-semibold hover:tw-bg-sims hover:tw-text-white">5</a>        
         </div>
         </div>
           {{-- <div class="tw-float-right tw-py-5 tw-px-3">
@@ -219,8 +415,10 @@
           @endif --}}         
           </div>
           <div x-show="openTab === 2">
-            <div x-data="{ selected: 'semester-1' }">
-              <div x-show="selected === 'semester-1'">
+            <div x-data="{ selected: 'semester-1',
+            activeClasses: 'tw-bg-sims tw-text-white',
+            inactiveClasses: 'tw-bg-white tw-text-sims' }">
+            <div x-show="selected === 'semester-1'">
               <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
                 <table class="tw-w-full tw-text-sm tw-text-center">
                   <thead class="tw-text-lg tw-bg-gray-100 tw-text-basic tw-border-b tw-font-pop">
@@ -324,17 +522,31 @@
                           75
                         </td>
                       </tr>
+                      <tr class="tw-bg-white tw-border">
+                        <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                          Matematika
+                        </th>
+                        <td class="tw-py-4 tw-px-6">
+                           76
+                        </td>
+                        <td class="tw-py-4 tw-px-6">
+                          72
+                        </td>
+                        <td class="tw-py-4 tw-px-6">
+                          72
+                        </td>
+                      </tr>
                   </tbody>
                 </table>
               </div>
             </div>
-            <div x-show="selected === 'semester-2">
+            <div x-show="selected === 'semester-2'">
               <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
                 <table class="tw-w-full tw-text-sm tw-text-center">
                     <thead class="tw-text-lg tw-bg-gray-100 tw-text-basic tw-border-b tw-font-pop">
                         <tr class="tw-border">
                             <th scope="col" class="tw-py-3 tw-px-6">
-                                Nama Mapel Sem2
+                                Second Page
                             </th>
                             <th scope="col" class="tw-py-3 tw-px-6">
                               KBM
@@ -430,6 +642,20 @@
                           </td>
                           <td class="tw-py-4 tw-px-6">
                             75
+                          </td>
+                        </tr>
+                        <tr class="tw-bg-white tw-border">
+                          <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                            Matematika
+                          </th>
+                          <td class="tw-py-4 tw-px-6">
+                             76
+                          </td>
+                          <td class="tw-py-4 tw-px-6">
+                            72
+                          </td>
+                          <td class="tw-py-4 tw-px-6">
+                            72
                           </td>
                         </tr>
                     </tbody>
@@ -540,6 +766,20 @@
                             75
                           </td>
                         </tr>
+                        <tr class="tw-bg-white tw-border">
+                          <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                            Matematika
+                          </th>
+                          <td class="tw-py-4 tw-px-6">
+                             76
+                          </td>
+                          <td class="tw-py-4 tw-px-6">
+                            72
+                          </td>
+                          <td class="tw-py-4 tw-px-6">
+                            72
+                          </td>
+                        </tr>
                     </tbody>
                 </table>
               </div> 
@@ -646,6 +886,20 @@
                             </td>
                             <td class="tw-py-4 tw-px-6">
                               75
+                            </td>
+                          </tr>
+                          <tr class="tw-bg-white tw-border">
+                            <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                              Matematika
+                            </th>
+                            <td class="tw-py-4 tw-px-6">
+                               76
+                            </td>
+                            <td class="tw-py-4 tw-px-6">
+                              72
+                            </td>
+                            <td class="tw-py-4 tw-px-6">
+                              72
                             </td>
                           </tr>
                       </tbody>
@@ -756,15 +1010,32 @@
                                 75
                               </td>
                             </tr>
+                            <tr class="tw-bg-white tw-border">
+                              <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                                Matematika
+                              </th>
+                              <td class="tw-py-4 tw-px-6">
+                                 76
+                              </td>
+                              <td class="tw-py-4 tw-px-6">
+                                72
+                              </td>
+                              <td class="tw-py-4 tw-px-6">
+                                72
+                              </td>
+                            </tr>
                         </tbody>
                     </table>
                   </div> 
-                  </div>
-            <a x-on:click="selected = 'semester-1'" href="#" class="tw-bg-white tw-border tw-border-gray-500 tw-p-3">1</a>
-            <a x-on:click="selected = 'semester-2'" href="#" class="tw-bg-white tw-border tw-border-gray-500 tw-p-3">2</a>
-            <a x-on:click="selected = 'semester-3'" href="#" class="tw-bg-white tw-border tw-border-gray-500 tw-p-3">3</a>
-            <a x-on:click="selected = 'semester-4'" href="#" class="tw-bg-white tw-border tw-border-gray-500 tw-p-3">4</a>
-            <a x-on:click="selected = 'semester-5'" href="#" class="tw-bg-white tw-border tw-border-gray-500 tw-p-3">5</a>
+                </div>
+                <div class="tw-text-center tw-font-medium tw-mt-8 tw-mb-3 tw-text-gray-500 tw-font-pop tw-text-xl">SEMESTER</div>
+                <div class="tw-flex tw-flex-row tw-justify-center tw-gap-4">
+                  <a x-on:click="selected = 'semester-1'" :class="selected === 'semester-1' ? activeClasses : inactiveClasses" href="#" class="tw-rounded-lg tw-font-semibold tw-text-lg tw-py-2 tw-px-5 tw-shadow-md hover:tw-bg-sims hover:tw-text-white">1</a>
+                  <a x-on:click="selected = 'semester-2'" :class="selected === 'semester-2' ? activeClasses : inactiveClasses" href="#" class="tw-rounded-lg tw-font-semibold tw-text-lg tw-py-2 tw-px-5 tw-shadow-md hover:tw-bg-sims hover:tw-text-white">2</a>
+                  <a x-on:click="selected = 'semester-3'" :class="selected === 'semester-3' ? activeClasses : inactiveClasses" href="#" class="tw-rounded-lg tw-font-semibold tw-text-lg tw-py-2 tw-px-5 tw-shadow-md hover:tw-bg-sims hover:tw-text-white">3</a>
+                  <a x-on:click="selected = 'semester-4'" :class="selected === 'semester-4' ? activeClasses : inactiveClasses" href="#" class="tw-rounded-lg tw-font-semibold tw-text-lg tw-py-2 tw-px-5 tw-shadow-md hover:tw-bg-sims hover:tw-text-white">4</a>
+                  <a x-on:click="selected = 'semester-5'" :class="selected === 'semester-5' ? activeClasses : inactiveClasses" href="#" class="tw-rounded-lg tw-font-semibold tw-text-lg tw-py-2 tw-px-5 tw-shadow-md hover:tw-bg-sims hover:tw-text-white">5</a>        
+                </div>
           </div>
           {{-- <div class="tw-float-right tw-py-5 tw-px-3">
             <a href="#" class="tw-text-white tw-bg-sims hover:tw-bg-[#3F7373] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-regular fa-arrow-right"></i></a>
