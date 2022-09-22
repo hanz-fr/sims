@@ -68,6 +68,14 @@ class ApiController extends Controller
     }
 
     public function store(Request $request) {
+
+        if ($file = $request->hasFile('foto')) {
+            $file = $request->file('foto') ;
+            $fileName = uniqid().$file->getClientOriginalName() ;
+            $destinationPath = public_path().'/foto' ;
+            $file->move($destinationPath,$fileName);
+        }
+
         $response = Http::post('https://a86b-103-148-113-86.ap.ngrok.io/siswa',[
             'nis_siswa' => $request->nis,
             'nisn_siswa' => $request->nisn,
@@ -103,7 +111,7 @@ class ApiController extends Controller
             'pekerjaan_wali' => $request->pekerjaan_wali,
             'tgl_meninggalkan_sekolah' => $request->tgl_meninggalkan_sekolah, 
             'alasan_meninggalkan_sekolah' => $request->alasan_meninggalkan_sekolah,
-            'foto' => $request->file('foto')->store('foto'),
+            'foto' => $fileName,
             'berat_badan' => null,
             'tinggi_badan' => null,
             'lingkar_kepala' => null,
