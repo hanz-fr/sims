@@ -6,7 +6,8 @@
     <a href="/detail" class="tw-text-sims tw-text-3xl"><i class="fa-solid fa-chevron-left"></i></a>
     <h3 class="tw-font-pop tw-font-semibold tw-mt-6 tw-text-sims tw-text-center">Tambah Data Siswa</h3>
     
-    <form method="POST" action="/api/siswa"  class="tw-w-full lg:tw-mx-auto sm:tw-mx-10 tw-my-10 tw-max-w-3xl tw-font-pop">
+    <form method="POST" action="/api/siswa" enctype="multipart/form-data"  
+    class="tw-w-full lg:tw-mx-auto sm:tw-mx-10 tw-my-10 tw-max-w-3xl tw-font-pop">
       
       @csrf
       @method('POST')
@@ -24,6 +25,23 @@
             NISN
           </label>
           <input class="input-data tw-w-full" id="nisn" name="nisn" type="number">
+        </div>
+      </div>
+      <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
+        <div class="tw-w-full tw-px-3">
+          <label class="label-input" for="nama">
+            Pas Foto
+          </label>
+            <label class="">
+              <span class="tw-sr-only">Choose profile photo</span>
+              <input type="file" class=" t  w-w-full tw-text-sm text-slate-500
+                file:tw-mr-4 file:tw-py-2 file:tw-px-4
+                file:tw-rounded-full file:tw-border-0
+                file:tw-text-lg file:tw-text-gray-500 file:hover:tw-text-sims file:tw-cursor-pointer file:tw-font-semibold
+                file:bg-violet-50 file:text-sims
+                hover:file:bg-violet-100
+              " id="foto" name="foto"/>
+            </label>
         </div>
       </div>
       <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
@@ -163,7 +181,7 @@
         <label class="label-input" for="nomor_ijazah_smp">
           Nomor Ijazah SMP
         </label>
-        <input class="input-data" id="nomor_ijazah_smp" type="number" name="nomor_ijazah_smp">
+        <input class="input-data" id="nomor_ijazah_smp" type="text" name="nomor_ijazah_smp">
       </div>
     </div>
     <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
@@ -318,7 +336,7 @@
             <label class="label-input" for="nomor_ijazah_smk">
               Nomor Ijazah
             </label>
-            <input class="input-data" id="nomor_ijazah_smk" type="number" name="nomor_ijazah_smk">
+            <input class="input-data" id="nomor_ijazah_smk" type="text" name="nomor_ijazah_smk">
           </div>
         </div>
         <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">

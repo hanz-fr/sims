@@ -104,7 +104,7 @@ class ApiController extends Controller
             'pekerjaan_wali' => $request->pekerjaan_wali,
             'tgl_meninggalkan_sekolah' => $request->tgl_meninggalkan_sekolah, 
             'alasan_meninggalkan_sekolah' => $request->alasan_meninggalkan_sekolah,
-            'foto' => null,
+            'foto' => $request->foto,
             'berat_badan' => null,
             'tinggi_badan' => null,
             'lingkar_kepala' => null,

@@ -631,6 +631,18 @@ video {
   visibility: hidden;
 }
 
+.tw-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 .tw-absolute {
   position: absolute;
 }
@@ -1549,6 +1561,10 @@ video {
   padding-bottom: 0.5rem;
 }
 
+.tw-pb-10 {
+  padding-bottom: 2.5rem;
+}
+
 .tw-text-left {
   text-align: left;
 }
@@ -1764,6 +1780,46 @@ a {
   scroll-snap-align: start;
 }
 
+.file\:tw-mr-4::file-selector-button {
+  margin-right: 1rem;
+}
+
+.file\:tw-cursor-pointer::file-selector-button {
+  cursor: pointer;
+}
+
+.file\:tw-rounded-full::file-selector-button {
+  border-radius: 9999px;
+}
+
+.file\:tw-border-0::file-selector-button {
+  border-width: 0px;
+}
+
+.file\:tw-py-2::file-selector-button {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.file\:tw-px-4::file-selector-button {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.file\:tw-text-lg::file-selector-button {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.file\:tw-font-semibold::file-selector-button {
+  font-weight: 600;
+}
+
+.file\:tw-text-gray-500::file-selector-button {
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+
 .placeholder\:tw-text-gray-400::-moz-placeholder {
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
@@ -1911,6 +1967,11 @@ a {
 .hover\:tw-text-\[\#428888\]:hover {
   --tw-text-opacity: 1;
   color: rgb(66 136 136 / var(--tw-text-opacity));
+}
+
+.file\:hover\:tw-text-sims:hover::file-selector-button {
+  --tw-text-opacity: 1;
+  color: rgb(77 158 158 / var(--tw-text-opacity));
 }
 
 .focus\:tw-border-sims:focus {
