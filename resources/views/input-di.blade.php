@@ -79,7 +79,7 @@
           <label class="label-input" for="anak_ke">
             Anak-Ke
           </label>
-          <input class="input-data" id="anak_ke" name="anak_ke" type="number">
+          <input class="input-data" id="anak_ke" name="anak_ke" type="number" required>
         </div>
         <div class="tw-w-full md:tw-w-1/2 tw-px-3">
           <label class="label-input" for="jenis_kelamin">
@@ -110,7 +110,7 @@
           <label class="label-input" for="alamat_siswa">
             Alamat Peserta Didik
           </label>
-          <textarea class="input-data" id="alamat_siswa" type="text" name="alamat_siswa"></textarea>
+          <textarea class="input-data" id="alamat_siswa" type="text" name="alamat_siswa" required></textarea>
         </div>
       </div>
       <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
@@ -118,7 +118,7 @@
           <label class="label-input" for="no_telp">
             No. HP
           </label>
-          <input class="input-data" id="no_telp" type="number" name="no_telp">
+          <input class="input-data" id="no_telp" type="number" name="no_telp" required>
         </div>
         <div class="tw-w-full md:tw-w-1/2 tw-px-3">
           <label class="label-input" for="email">
@@ -162,7 +162,7 @@
         <label class="label-input" for="nama_sekolah_asal">
           Nama Sekolah
         </label>
-        <input class="input-data" id="nama_sekolah_asal" type="text" name="nama_sekolah_asal">
+        <input class="input-data" id="nama_sekolah_asal" type="text" name="nama_sekolah_asal" required>
       </div>
     </div>
     <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
@@ -170,7 +170,7 @@
         <label class="label-input" for="alamat_sekolah_asal">
           Alamat Sekolah
         </label>
-        <input class="input-data" id="alamat_sekolah_asal" type="text" name="alamat_sekolah_asal">
+        <input class="input-data" id="alamat_sekolah_asal" type="text" name="alamat_sekolah_asal" required>
       </div>
     </div>
 

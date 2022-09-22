@@ -12,7 +12,7 @@ class ApiController extends Controller
         $page = $request->page;
         $perPage = $request->perPage;
 
-        $response = Http::get("https://a86b-103-148-113-86.ap.ngrok.io/siswa?page={$page}&perPage={$perPage}");
+        $response = Http::get("https://ae0b-103-139-10-189.ngrok.io/siswa?page={$page}&perPage={$perPage}");
 
         if ($response->successful()){
             return view('data-induk',[
@@ -29,7 +29,7 @@ class ApiController extends Controller
                 'status' => 'error',
                 'title' => 'data-induk',
                 'active' => 'data-induk',
-                'message' => 'Sori dek, halaman nya ga ada :"('
+                'message' => 'Halaman yang kamu cari tidak dapat ditemukan :('
             ]);
             
         }
@@ -40,7 +40,7 @@ class ApiController extends Controller
 
         $nis = $request->nis;
 
-        $response = Http::get("https://a86b-103-148-113-86.ap.ngrok.io/siswa/{$nis}");
+        $response = Http::get("https://ae0b-103-139-10-189.ngrok.io/siswa/{$nis}");
 
         if ($response->successful()){
             return view('di-detail', [
@@ -54,7 +54,7 @@ class ApiController extends Controller
                 'title' => 'Data Siswa',
                 'active' => 'detail-siswa',
                 'status' => 'error',
-                'message' => 'Sori dek, halaman nya ga ada :"('
+                'message' => 'Halaman yang kamu cari tidak dapat ditemukan :('
             ]);
         }
 
@@ -76,7 +76,7 @@ class ApiController extends Controller
             $file->move($destinationPath,$fileName);
         }
 
-        $response = Http::post('https://a86b-103-148-113-86.ap.ngrok.io/siswa',[
+        $response = Http::post('https://ae0b-103-139-10-189.ngrok.io/siswa',[
             'nis_siswa' => $request->nis,
             'nisn_siswa' => $request->nisn,
             'nama_siswa' => $request->nama,

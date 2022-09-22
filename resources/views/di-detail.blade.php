@@ -8,7 +8,6 @@
         <img src="{{asset('assets/img/error_img.svg')}}" alt="error_img">
         <h1 class="tw-flex tw-justify-center tw-font-pop tw-font-bold tw-mt-6 tw-text-sims">404 Not Found</h1>
         <p class="tw-flex tw-justify-center tw-font-pop tw-text-md tw-font-semibold tw-text-gray-400 tw-mt-5">{{ $message }}</p>
-        <p class="tw-flex tw-justify-center tw-font-pop tw-text-gray-400 tw-text-sm">Jangan nangis dek, coba tanya admin. Siapa tau dibenerin ;)</p>
     </div>
 </div>
 @else
