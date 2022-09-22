@@ -17,7 +17,11 @@
     {{-- foto profil --}}
     <div class="tw-flex sm:tw-flex-col md:tw-flex-row tw-font-pop">
       <div class="md:tw-w-[30%] sm:tw-w-full tw-text-center tw-text-basic tw-text-xl tw-font-pop tw-font-semibold tw-m-9">
+        @if($siswa->foto)
+        <img src="{{ asset('storage/' . $siswa->foto) }}" alt="Pas Foto" srcset="" class="tw-rounded-xl tw-mb-10 tw-w-48 tw-h-52 tw-border tw-border-slate-400 tw-mx-auto md:tw-mt-20 sm:tw-mt-10">
+        @else
         <img src="https://cdn.nerdschalk.com/wp-content/uploads/2020/09/how-to-remove-profile-picture-on-zoom-12.png?width=1000?height=100" alt="Pas Foto" srcset="" class="tw-rounded-xl tw-mb-10 tw-w-48 tw-h-52 tw-border tw-border-slate-400 tw-mx-auto md:tw-mt-20 sm:tw-mt-10">
+        @endif
         <div>{{ $siswa->nama_siswa }}</div>
         <div>{{ $siswa->nis_siswa }} / {{ $siswa->nisn_siswa }}</div>
         <div>{{ $siswa->KelasId }} / Jurusan</div>
@@ -188,33 +192,7 @@
                 </tbody>
             </table>
             </div>
-            
           </div>
-          {{-- <div x-show="tab === 'ketiga'">
-            <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
-              <table class="tw-w-full tw-text-sm tw-text-left">
-                  <thead class="tw-text-lg tw-bg-gray-100 tw-text-basic tw-border tw-font-pop">
-                      <tr>
-                          <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">
-                              Data Diri
-                          </th>
-                          <th scope="col" class="tw-py-3 tw-px-6">
-                              Keterangan
-                          </th>
-                      </tr>
-                  </thead>
-                  <tbody class="tw-text-base">
-                      <tr class="tw-bg-white tw-border">
-                          <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
-                              Email Siswa
-                          </th>
-                          <td class="tw-py-4 tw-px-6">
-                            {{ $siswa->email_siswa }}
-                          </td>
-                      </tr>
-                  </tbody>
-              </table>
-          </div> --}}
         {{-- btn paginate --}}
         <div class="tw-flex tw-flex-row tw-float-right">
           <a :class="{ 'active': tab === 'kesatu' }" @click.prevent="tab = 'kesatu'; window.location.hash = 'kesatu'" href="#" class="tw-text-white tw-bg-sims hover:tw-bg-[#3F7373] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-mt-5"><i class="fa-regular fa-arrow-left"></i></a>
