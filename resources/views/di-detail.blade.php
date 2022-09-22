@@ -225,7 +225,7 @@
                     </tr>
                 </thead>
                 <tbody class="tw-text-base">
-                    <tr class="tw-bg-gray-100 tw-border">
+                    <tr class="tw-bg-white tw-border">
                         <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
                           Tahun SKHUN SMP
                         </th>
@@ -233,7 +233,7 @@
                           {{ $siswa->thn_ijazah_smp }}
                         </td>
                     </tr>
-                    <tr class="tw-bg-white tw-border">
+                    <tr class="tw-bg-gray-100 tw-border">
                       <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
                         Nama Ayah
                       </th>
@@ -241,7 +241,7 @@
                         {{ $siswa->nama_ayah }}
                       </td>
                     </tr>
-                    <tr class="tw-bg-gray-100 tw-border">
+                    <tr class="tw-bg-white tw-border">
                       <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
                         Nama Ibu
                       </th>
@@ -249,7 +249,7 @@
                         {{ $siswa->nama_ibu }}
                       </td>
                     </tr>
-                    <tr class="tw-bg-white tw-border">
+                    <tr class="tw-bg-gray-100 tw-border">
                       <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
                         Alamat Orang Tua
                       </th>
@@ -257,7 +257,7 @@
                         {{ $siswa->alamat_ortu }}
                       </td>
                     </tr>
-                    <tr class="tw-bg-gray-100 tw-border">
+                    <tr class="tw-bg-white tw-border">
                       <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
                         Nomor Telepon Orang Tua
                       </th>
@@ -265,7 +265,7 @@
                         {{ $siswa->no_telp_ortu }}
                       </td>
                     </tr>
-                    <tr class="tw-bg-white tw-border">
+                    <tr class="tw-bg-gray-100 tw-border">
                       <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
                         Email Orang Tua
                       </th>
@@ -299,7 +299,7 @@
                     </tr>
                 </thead>
                 <tbody class="tw-text-base">
-                    <tr class="tw-bg-gray-100 tw-border">
+                    <tr class="tw-bg-white tw-border">
                         <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
                           Alamat Wali
                         </th>
@@ -307,7 +307,7 @@
                           {{ $siswa->alamat_wali }}
                         </td>
                     </tr>
-                    <tr class="tw-bg-white tw-border">
+                    <tr class="tw-bg-gray-100 tw-border">
                       <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
                         Nomor Telepon Wali
                       </th>
@@ -315,7 +315,7 @@
                         {{ $siswa->no_telp_wali }}
                       </td>
                     </tr>
-                    <tr class="tw-bg-gray-100 tw-border">
+                    <tr class="tw-bg-white tw-border">
                       <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
                         Pekerjaan Wali
                       </th>
@@ -323,7 +323,7 @@
                         {{ $siswa->pekerjaan_wali }}
                       </td>
                     </tr>
-                    <tr class="tw-bg-white tw-border">
+                    <tr class="tw-bg-gray-100 tw-border">
                       <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
                         Tanggal Meninggalkan Sekolah
                       </th>
@@ -331,7 +331,7 @@
                         {{ $siswa->tgl_meninggalkan_sekolah }}
                       </td>
                     </tr>
-                    <tr class="tw-bg-gray-100 tw-border">
+                    <tr class="tw-bg-white tw-border">
                       <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
                         Alasan Meninggalkan Sekolah
                       </th>
@@ -339,7 +339,7 @@
                         {{ $siswa->alasan_meninggalkan_sekolah }}
                       </td>
                     </tr>
-                    <tr class="tw-bg-white tw-border">
+                    <tr class="tw-bg-gray-100 tw-border">
                       <th scope="row" class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-text-basic tw-whitespace-nowrap">
                         Nomor Ijazah SMK
                       </th>
@@ -1007,6 +1007,20 @@
                               </td>
                               <td class="tw-py-4 tw-px-6">
                                 75
+                              </td>
+                            </tr>
+                            <tr class="tw-bg-white tw-border">
+                              <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic tw-whitespace-nowrap">
+                                Matematika
+                              </th>
+                              <td class="tw-py-4 tw-px-6">
+                                 76
+                              </td>
+                              <td class="tw-py-4 tw-px-6">
+                                72
+                              </td>
+                              <td class="tw-py-4 tw-px-6">
+                                72
                               </td>
                             </tr>
                         </tbody>
