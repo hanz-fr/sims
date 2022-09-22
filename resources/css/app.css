@@ -18,6 +18,9 @@ a {
   .input-data {
     @apply tw-block tw-w-full tw-bg-gray-200 tw-text-gray-500 tw-border tw-border-gray-200 tw-rounded-xl tw-py-3 tw-px-4 tw-leading-tight focus:tw-outline-sims focus:tw-bg-white focus:tw-border-sims focus:placeholder:tw-invisible;
   }
+  .btn-export {
+    @apply tw-text-xl tw-px-3 tw-py-2 tw-mb-3 tw-mx-2 tw-text-white tw-bg-sims hover:tw-bg-[#3b7a7a] tw-border tw-rounded-lg;
+  }
 }
 
 .snap {

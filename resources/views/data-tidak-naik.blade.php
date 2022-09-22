@@ -6,6 +6,13 @@
         <div class="tw-flex tw-flex-col">
             <h4 class="tw-font-pop tw-font-bold tw-mt-6 tw-mb-12 tw-text-sims">Data Siswa Tidak Naik Kelas</h4>
         </div>
+
+        <div class="tw-flex tw-justify-center tw-items-center -tw-mb-8">
+            <a href=""><i class="fa-solid fa-print btn-export"></i></a>
+            <a href=""><i class="fa-solid fa-copy btn-export"></i></a>
+            <a href=""><i class="fa-solid fa-file-excel btn-export"></i></a>
+            <a href=""><i class="fa-solid fa-file-pdf btn-export"></i></a>
+        </div>
     </div>
 
         <div class="tw-flex tw-justify-between sm:tw-flex-wrap sm:tw-gap-5">

@@ -631,6 +631,29 @@ video {
   visibility: hidden;
 }
 
+.btn-export {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.75rem;
+  border-radius: 0.5rem;
+  border-width: 1px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(77 158 158 / var(--tw-bg-opacity));
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.btn-export:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 122 122 / var(--tw-bg-opacity));
+}
+
 .tw-sr-only {
   position: absolute;
   width: 1px;
@@ -1002,10 +1025,6 @@ video {
 
 .tw-h-16 {
   height: 4rem;
-}
-
-.tw-h-1\/2 {
-  height: 50%;
 }
 
 .tw-w-full {
@@ -1411,10 +1430,6 @@ video {
   padding: 2.5rem;
 }
 
-.tw-p-3 {
-  padding: 0.75rem;
-}
-
 .tw-p-8 {
   padding: 2rem;
 }
@@ -1427,8 +1442,8 @@ video {
   padding: 1rem;
 }
 
-.tw-p-6 {
-  padding: 1.5rem;
+.tw-p-3 {
+  padding: 0.75rem;
 }
 
 .tw-py-3 {
@@ -1853,58 +1868,6 @@ a {
   color: rgb(190 24 93 / var(--tw-text-opacity));
 }
 
-@-webkit-keyframes tw-ping {
-  75%, 100% {
-    transform: scale(2);
-    opacity: 0;
-  }
-}
-
-@keyframes tw-ping {
-  75%, 100% {
-    transform: scale(2);
-    opacity: 0;
-  }
-}
-
-.hover\:tw-animate-ping:hover {
-  -webkit-animation: tw-ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
-          animation: tw-ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
-}
-
-@-webkit-keyframes tw-bounce {
-  0%, 100% {
-    transform: translateY(-25%);
-    -webkit-animation-timing-function: cubic-bezier(0.8,0,1,1);
-            animation-timing-function: cubic-bezier(0.8,0,1,1);
-  }
-
-  50% {
-    transform: none;
-    -webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
-            animation-timing-function: cubic-bezier(0,0,0.2,1);
-  }
-}
-
-@keyframes tw-bounce {
-  0%, 100% {
-    transform: translateY(-25%);
-    -webkit-animation-timing-function: cubic-bezier(0.8,0,1,1);
-            animation-timing-function: cubic-bezier(0.8,0,1,1);
-  }
-
-  50% {
-    transform: none;
-    -webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
-            animation-timing-function: cubic-bezier(0,0,0.2,1);
-  }
-}
-
-.hover\:tw-animate-bounce:hover {
-  -webkit-animation: tw-bounce 1s infinite;
-          animation: tw-bounce 1s infinite;
-}
-
 .hover\:tw-bg-\[\#428888\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(66 136 136 / var(--tw-bg-opacity));
@@ -1933,6 +1896,11 @@ a {
 .hover\:tw-bg-\[\#3F7373\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(63 115 115 / var(--tw-bg-opacity));
+}
+
+.hover\:tw-bg-sims:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(77 158 158 / var(--tw-bg-opacity));
 }
 
 .hover\:tw-bg-\[\#5B9C9C\]:hover {
@@ -1988,11 +1956,6 @@ a {
 .hover\:tw-bg-\[\#3f7f7f\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(63 127 127 / var(--tw-bg-opacity));
-}
-
-.hover\:tw-bg-sims:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(77 158 158 / var(--tw-bg-opacity));
 }
 
 .hover\:tw-bg-sims\/\[0\.6\]:hover {
