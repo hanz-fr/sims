@@ -18,13 +18,13 @@
           <label class="label-input" for="nis">
             NIS
           </label>
-          <input class="input-data tw-w-full" id="nis" name="nis" type="number" required>
+          <input class="input-data tw-w-full" id="nis" name="nis" type="text" maxlength="10" required>
         </div>
         <div class="tw-w-fit md:tw-w-1/2 tw-px-3">
           <label class="label-input" for="nisn">
             NISN
           </label>
-          <input class="input-data tw-w-full" id="nisn" name="nisn" type="number" required>
+          <input class="input-data tw-w-full" id="nisn" name="nisn" type="text" maxlength="10" required>
         </div>
       </div>
       <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
@@ -79,7 +79,7 @@
           <label class="label-input" for="anak_ke">
             Anak-Ke
           </label>
-          <input class="input-data" id="anak_ke" name="anak_ke" type="number" required>
+          <input class="input-data" id="anak_ke" name="anak_ke" type="number" max="99" min="1" required>
         </div>
         <div class="tw-w-full md:tw-w-1/2 tw-px-3">
           <label class="label-input" for="jenis_kelamin">
@@ -118,7 +118,7 @@
           <label class="label-input" for="no_telp">
             No. HP
           </label>
-          <input class="input-data" id="no_telp" type="number" name="no_telp" required>
+          <input class="input-data" id="no_telp" type="number" name="no_telp" required max="20">
         </div>
         <div class="tw-w-full md:tw-w-1/2 tw-px-3">
           <label class="label-input" for="email">
@@ -189,7 +189,7 @@
         <label class="label-input" for="tahun_ijazah_smp">
           Tahun Ijazah SMP
         </label>
-        <input class="input-data" id="tahun_ijazah_smp" type="text" name="tahun_ijazah_smp">
+        <input class="input-data" id="tahun_ijazah_smp" type="text" name="tahun_ijazah_smp" max="10">
       </div>
     </div>
 
@@ -259,7 +259,7 @@
             <label class="label-input" for="no_telp_ortu">
               No.Telp/HP
             </label>
-            <input class="input-data" id="no_telp_ortu" type="number" name="no_telp_ortu">
+            <input class="input-data" id="no_telp_ortu" type="number" name="no_telp_ortu" max="20">
           </div>
           <div class="tw-w-full md:tw-w-1/2 tw-px-3">
             <label class="label-input" for="email_ortu">
@@ -295,7 +295,7 @@
             <label class="label-input" for="no_telp_wali">
               No. Telp/HP
             </label>
-            <input class="input-data" id="no_telp_wali" type="number" name="no_telp_wali">
+            <input class="input-data" id="no_telp_wali" type="number" name="no_telp_wali" max="20">
           </div>
         </div>
         <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
