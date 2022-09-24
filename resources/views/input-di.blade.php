@@ -3,7 +3,7 @@
 @section('content')
 <div class="tw-mx-10">
   <div class="tw-flex tw-flex-col tw-rounded-[35px] tw-bg-white tw-w-4/5 tw-p-8 tw-h-full tw-mx-auto tw-my-14 tw-shadow-lg">
-    <a href="/detail" class="tw-text-sims tw-text-3xl"><i class="fa-solid fa-chevron-left"></i></a>
+    <a href="/data-induk-siswa" class="tw-text-sims tw-text-3xl"><i class="fa-solid fa-chevron-left"></i></a>
     <h3 class="tw-font-pop tw-font-semibold tw-mt-6 tw-text-sims tw-text-center">Tambah Data Siswa</h3>
     
     <form method="POST" action="/api/siswa" enctype="multipart/form-data"  
@@ -118,7 +118,7 @@
           <label class="label-input" for="no_telp">
             No. HP
           </label>
-          <input class="input-data" id="no_telp" type="number" name="no_telp" required max="20">
+          <input class="input-data" id="no_telp" type="text" name="no_telp" required  maxlength="20">
         </div>
         <div class="tw-w-full md:tw-w-1/2 tw-px-3">
           <label class="label-input" for="email">
@@ -259,7 +259,7 @@
             <label class="label-input" for="no_telp_ortu">
               No.Telp/HP
             </label>
-            <input class="input-data" id="no_telp_ortu" type="number" name="no_telp_ortu" max="20">
+            <input class="input-data" id="no_telp_ortu" type="text" name="no_telp_ortu" maxlength="20">
           </div>
           <div class="tw-w-full md:tw-w-1/2 tw-px-3">
             <label class="label-input" for="email_ortu">
@@ -295,7 +295,7 @@
             <label class="label-input" for="no_telp_wali">
               No. Telp/HP
             </label>
-            <input class="input-data" id="no_telp_wali" type="number" name="no_telp_wali" max="20">
+            <input class="input-data" id="no_telp_wali" type="text" name="no_telp_wali"  maxlength="20">
           </div>
         </div>
         <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">

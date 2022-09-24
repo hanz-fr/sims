@@ -12,7 +12,7 @@ class ApiController extends Controller
         $page = $request->page;
         $perPage = $request->perPage;
 
-        $response = Http::get("https://ae0b-103-139-10-189.ngrok.io/siswa?page={$page}&perPage={$perPage}");
+        $response = Http::get("https://d5e3-103-139-10-226.ngrok.io/siswa?page={$page}&perPage={$perPage}");
 
         if ($response->successful()){
             return view('data-induk',[
@@ -40,7 +40,7 @@ class ApiController extends Controller
 
         $nis = $request->nis;
 
-        $response = Http::get("https://ae0b-103-139-10-189.ngrok.io/siswa/{$nis}");
+        $response = Http::get("https://d5e3-103-139-10-226.ngrok.io/siswa/{$nis}");
 
         if ($response->successful()){
             return view('di-detail', [
@@ -76,7 +76,7 @@ class ApiController extends Controller
             $file->move($destinationPath,$fileName);
         }
 
-        $response = Http::post('https://ae0b-103-139-10-189.ngrok.io/siswa',[
+        $response = Http::post('https://d5e3-103-139-10-226.ngrok.io/siswa',[
             'nis_siswa' => $request->nis,
             'nisn_siswa' => $request->nisn,
             'nama_siswa' => $request->nama,
