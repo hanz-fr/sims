@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use PhpParser\JsonDecoder;
 
 class ApiController extends Controller
 {
@@ -41,6 +42,10 @@ class ApiController extends Controller
         $nis = $request->nis;
 
         $response = Http::get("https://d5e3-103-139-10-226.ngrok.io/siswa/{$nis}");
+        $kelasSiswa = json_decode($response)->result->KelasId;  
+
+        $getKelasDetail = Http::get("https://d5e3-103-139-10-226.ngrok.io/kelas/{$kelasSiswa}");
+        $jurusanSiswa = json_decode($getKelasDetail)->result->jurusan;
 
         if ($response->successful()){
             return view('di-detail', [
@@ -48,6 +53,7 @@ class ApiController extends Controller
                 'active' => 'detail-siswa',
                 'status' => 'success',
                 'siswa' => json_decode($response)->result,
+                'jurusan_siswa' => $jurusanSiswa
             ]);
         } else {
             return view('di-detail', [
@@ -61,9 +67,13 @@ class ApiController extends Controller
     }
 
     public function create() {
-        return view('create-siswa', [
+
+        $kelas = Http::get("https://d5e3-103-139-10-226.ngrok.io/kelas");
+
+        return view('input-di', [
             'title' => 'backend-test',
-            'active' => 'backend-test'
+            'active' => 'backend-test',
+            'kelas' => json_decode($kelas),
         ]);
     }
 
@@ -80,7 +90,7 @@ class ApiController extends Controller
             'nis_siswa' => $request->nis,
             'nisn_siswa' => $request->nisn,
             'nama_siswa' => $request->nama,
-            'KelasId' =>  null,
+            'KelasId' =>  $request->kelas,
             'email_siswa' => $request->email,
             'tmp_lahir' => $request->tmp_lahir, 
             'tgl_lahir' => $request->tgl_lahir,

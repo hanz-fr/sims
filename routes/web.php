@@ -32,12 +32,7 @@ Route::get('/jurusan', function () {
     ]);
 });
 
-Route::get('/tambah-data', function () {
-    return view('input-di', [
-        'title' => 'Tambah Data Induk Siswa',
-        'active' => 'data-induk'
-    ]);
-});
+Route::get('/tambah-data', [ApiController::class, 'create']);
 
 Route::get('/update-data', function () {
     return view('update-di', [

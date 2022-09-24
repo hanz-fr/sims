@@ -24,7 +24,7 @@
         @endif
         <div>{{ $siswa->nama_siswa }}</div>
         <div>{{ $siswa->nis_siswa }} / {{ $siswa->nisn_siswa }}</div>
-        <div>{{ $siswa->KelasId }} / Jurusan</div>
+        <div>{{ $siswa->KelasId }} / {{ $jurusan_siswa }}</div>
       </div>
       
       {{-- data siswa n rekap nilai --}}

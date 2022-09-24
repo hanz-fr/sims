@@ -135,7 +135,12 @@
         <label class="label-input" for="kelas">
           Di kelas
         </label>
-        <input class="input-data" id="kelas" type="text" name="kelas">
+        <select class="input-data" id="kelas" name="kelas">
+          <option value="">-</option>
+          @foreach ($kelas as $k)
+          <option value="{{ $k->id }}">{{ $k->id }}</option>
+          @endforeach
+        </select>
       </div>
     </div>
     <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
