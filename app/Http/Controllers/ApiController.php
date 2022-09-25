@@ -2,12 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use PhpParser\JsonDecoder;
+use GuzzleHttp\Exception\RequestException;
 
 class ApiController extends Controller
 {
+
+    // public function getSiswa(Request $request) {     
+    //     $client = new \GuzzleHttp\Client();
+    //     $response = $client->request('GET', 'https://7313-103-139-10-60.ngrok.io/siswa/1131627208');
+        
+    //     $stats = $response->getStatusCode();
+
+    //     if ($stats == '404') {
+    //         return $stats;
+    //     }
+    // }
+
     public function index(Request $request) { 
 
         $page = $request->page;
@@ -100,6 +114,7 @@ class ApiController extends Controller
             'no_ijazah_smp' => $request->nomor_ijazah_smp,
             'tgl_ijazah_smk' => $request->tanggal_ijazah_smk,
             'no_skhun_smp' => $request->nomor_skhun,
+            'thn_skhun_smp' => $request->tahun_skhun,
             'thn_ijazah_smp' => $request->tahun_ijazah_smp,
             'tgl_diterima' => $request->tgl_masuk,
             'semester_diterima' => (int)$request->semester,
@@ -132,6 +147,23 @@ class ApiController extends Controller
         $response->throw();
 
         return redirect('/data-induk-siswa?perPage=10');
+    }
+
+
+    public function edit(Request $request) {
+
+        $nis = $request->nis;
+
+        $response = Http::get("https://7313-103-139-10-60.ngrok.io/siswa/{$nis}");
+
+        $kelas = Http::get("https://7313-103-139-10-60.ngrok.io/kelas");
+
+        return view('edit-di', [
+            'title' => 'backend-test',
+            'active' => 'backend-test',
+            'kelas' => json_decode($kelas),
+            'siswa' => json_decode($response)->result,
+        ]);
     }
 }
 
