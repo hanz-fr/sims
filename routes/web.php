@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\ApiController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ApiController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -121,6 +122,18 @@ Route::get('/testurl', function() {
     ]);
 });
 
+Route::get('/admin', function () {
+    return view('login-admin', [
+        'title' => 'Admin Login'
+    ]);
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard-admin', [
+        'title' => 'Dashboard Admin'
+    ]);
+});
+
 // Route::get('/api/siswa', [ApiController::class, 'index']);
 Route::get('/api/siswa/create', [ApiController::class, 'create']);
 Route::post('/api/siswa', [ApiController::class, 'store']);
@@ -136,3 +149,22 @@ Route::get('/register-success', [UserController::class, 'registersc']);
 Route::post('/registeruser', [UserController::class, 'registeruser']);
 
 Route::post('/loginuser', [UserController::class, 'loginuser']);
+
+Auth::routes();
+  
+
+Route::middleware(['auth', 'user-access:tata usaha'])->group(function () {
+  
+});
+  
+Route::middleware(['auth', 'user-access:kesiswaan'])->group(function () {
+  
+});
+  
+Route::middleware(['auth', 'user-access:kurikulum'])->group(function () {
+  
+});
+
+Route::middleware(['auth', 'user-access:wali kelas'])->group(function () {
+  
+});
