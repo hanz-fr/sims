@@ -2,17 +2,32 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use PhpParser\JsonDecoder;
+use GuzzleHttp\Exception\RequestException;
 
 class ApiController extends Controller
 {
+
+    // public function getSiswa(Request $request) {     
+    //     $client = new \GuzzleHttp\Client();
+    //     $response = $client->request('GET', 'https://7313-103-139-10-60.ngrok.io/siswa/1131627208');
+        
+    //     $stats = $response->getStatusCode();
+
+    //     if ($stats == '404') {
+    //         return $stats;
+    //     }
+    // }
+
     public function index(Request $request) { 
 
         $page = $request->page;
         $perPage = $request->perPage;
 
-        $response = Http::get("https://ae0b-103-139-10-189.ngrok.io/siswa?page={$page}&perPage={$perPage}");
+        $response = Http::get("https://7313-103-139-10-60.ngrok.io/siswa?page={$page}&perPage={$perPage}");
 
         if ($response->successful()){
             return view('data-induk',[
@@ -40,7 +55,11 @@ class ApiController extends Controller
 
         $nis = $request->nis;
 
-        $response = Http::get("https://ae0b-103-139-10-189.ngrok.io/siswa/{$nis}");
+        $response = Http::get("https://7313-103-139-10-60.ngrok.io/siswa/{$nis}");
+        $kelasSiswa = json_decode($response)->result->KelasId;  
+
+        $getKelasDetail = Http::get("https://7313-103-139-10-60.ngrok.io/kelas/{$kelasSiswa}");
+        $jurusanSiswa = json_decode($getKelasDetail)->result->jurusan;
 
         if ($response->successful()){
             return view('di-detail', [
@@ -48,6 +67,7 @@ class ApiController extends Controller
                 'active' => 'detail-siswa',
                 'status' => 'success',
                 'siswa' => json_decode($response)->result,
+                'jurusan_siswa' => $jurusanSiswa
             ]);
         } else {
             return view('di-detail', [
@@ -61,9 +81,13 @@ class ApiController extends Controller
     }
 
     public function create() {
-        return view('create-siswa', [
+
+        $kelas = Http::get("https://7313-103-139-10-60.ngrok.io/kelas");
+
+        return view('input-di', [
             'title' => 'backend-test',
-            'active' => 'backend-test'
+            'active' => 'backend-test',
+            'kelas' => json_decode($kelas),
         ]);
     }
 
@@ -76,11 +100,11 @@ class ApiController extends Controller
             $file->move($destinationPath,$fileName);
         }
 
-        $response = Http::post('https://ae0b-103-139-10-189.ngrok.io/siswa',[
+        $response = Http::post('https://7313-103-139-10-60.ngrok.io/siswa',[
             'nis_siswa' => $request->nis,
             'nisn_siswa' => $request->nisn,
             'nama_siswa' => $request->nama,
-            'KelasId' =>  null,
+            'KelasId' =>  $request->kelas,
             'email_siswa' => $request->email,
             'tmp_lahir' => $request->tmp_lahir, 
             'tgl_lahir' => $request->tgl_lahir,
@@ -90,6 +114,7 @@ class ApiController extends Controller
             'no_ijazah_smp' => $request->nomor_ijazah_smp,
             'tgl_ijazah_smk' => $request->tanggal_ijazah_smk,
             'no_skhun_smp' => $request->nomor_skhun,
+            'thn_skhun_smp' => $request->tahun_skhun,
             'thn_ijazah_smp' => $request->tahun_ijazah_smp,
             'tgl_diterima' => $request->tgl_masuk,
             'semester_diterima' => (int)$request->semester,
@@ -122,6 +147,23 @@ class ApiController extends Controller
         $response->throw();
 
         return redirect('/data-induk-siswa?perPage=10');
+    }
+
+
+    public function edit(Request $request) {
+
+        $nis = $request->nis;
+
+        $response = Http::get("https://7313-103-139-10-60.ngrok.io/siswa/{$nis}");
+
+        $kelas = Http::get("https://7313-103-139-10-60.ngrok.io/kelas");
+
+        return view('edit-di', [
+            'title' => 'backend-test',
+            'active' => 'backend-test',
+            'kelas' => json_decode($kelas),
+            'siswa' => json_decode($response)->result,
+        ]);
     }
 }
 

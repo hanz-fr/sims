@@ -24,7 +24,7 @@
         @endif
         <div>{{ $siswa->nama_siswa }}</div>
         <div>{{ $siswa->nis_siswa }} / {{ $siswa->nisn_siswa }}</div>
-        <div>{{ $siswa->KelasId }} / Jurusan</div>
+        <div>{{ $siswa->KelasId }} / {{ $jurusan_siswa }}</div>
       </div>
       
       {{-- data siswa n rekap nilai --}}
@@ -230,7 +230,7 @@
                           Tahun SKHUN SMP
                         </th>
                         <td class="tw-py-4 tw-px-6">
-                          {{ $siswa->thn_ijazah_smp }}
+                          {{ $siswa->thn_skhun_smp }}
                         </td>
                     </tr>
                     <tr class="tw-bg-gray-100 tw-border">

@@ -24,7 +24,6 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/detail/{nis}', [ApiController::class, 'show']);
 
 Route::get('/jurusan', function () {
     return view('pilih-jurusan', [
@@ -33,12 +32,10 @@ Route::get('/jurusan', function () {
     ]);
 });
 
-Route::get('/tambah-data', function () {
-    return view('input-di', [
-        'title' => 'Tambah Data Induk Siswa',
-        'active' => 'data-induk'
-    ]);
-});
+Route::get('/tambah-data', [ApiController::class, 'create']);
+Route::get('/detail/{nis}', [ApiController::class, 'show']);
+Route::get('/data-induk-siswa', [ApiController::class, 'index']);
+Route::get('/edit-siswa/{nis}', [ApiController::class, 'edit']);
 
 Route::get('/update-data', function () {
     return view('update-di', [
@@ -47,7 +44,6 @@ Route::get('/update-data', function () {
     ]);
 });
 
-Route::get('/data-induk-siswa', [ApiController::class, 'index']);
 
 Route::get('/angkatan', function () {
     return view('pilih-angkatan', [
@@ -137,6 +133,7 @@ Route::get('/dashboard', function () {
 // Route::get('/api/siswa', [ApiController::class, 'index']);
 Route::get('/api/siswa/create', [ApiController::class, 'create']);
 Route::post('/api/siswa', [ApiController::class, 'store']);
+Route::put('/api/siswa/update', [ApiController::class, 'update']);
 
 Route::get('/register', [UserController::class, 'register']);
 
