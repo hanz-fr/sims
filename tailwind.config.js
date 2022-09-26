@@ -19,6 +19,7 @@ module.exports = {
         merah : '#CE6969',
         kuning : '#FFC107',
         ijo : '#28A745',
+        admbiru: '#95BBE8',
       },
     },
   },
