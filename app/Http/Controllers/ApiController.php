@@ -11,6 +11,10 @@ use GuzzleHttp\Exception\RequestException;
 class ApiController extends Controller
 {
 
+    public function __construct(){
+        $this->api_url = 'https://b7cf-103-148-113-86.ap.ngrok.io';
+   }
+
     // public function getSiswa(Request $request) {     
     //     $client = new \GuzzleHttp\Client();
     //     $response = $client->request('GET', 'https://7313-103-139-10-60.ngrok.io/siswa/1131627208');
@@ -27,7 +31,7 @@ class ApiController extends Controller
         $page = $request->page;
         $perPage = $request->perPage;
 
-        $response = Http::get("https://7313-103-139-10-60.ngrok.io/siswa?page={$page}&perPage={$perPage}");
+        $response = Http::get("{$this->api_url}/siswa?page={$page}&perPage={$perPage}");
 
         if ($response->successful()){
             return view('data-induk',[
@@ -55,10 +59,10 @@ class ApiController extends Controller
 
         $nis = $request->nis;
 
-        $response = Http::get("https://7313-103-139-10-60.ngrok.io/siswa/{$nis}");
+        $response = Http::get("{$this->api_url}/siswa/{$nis}");
         $kelasSiswa = json_decode($response)->result->KelasId;  
 
-        $getKelasDetail = Http::get("https://7313-103-139-10-60.ngrok.io/kelas/{$kelasSiswa}");
+        $getKelasDetail = Http::get("{$this->api_url}/kelas/{$kelasSiswa}");
         $jurusanSiswa = json_decode($getKelasDetail)->result->jurusan;
 
         if ($response->successful()){
@@ -82,7 +86,7 @@ class ApiController extends Controller
 
     public function create() {
 
-        $kelas = Http::get("https://7313-103-139-10-60.ngrok.io/kelas");
+        $kelas = Http::get("{$this->api_url}/kelas");
 
         return view('input-di', [
             'title' => 'backend-test',
@@ -100,7 +104,7 @@ class ApiController extends Controller
             $file->move($destinationPath,$fileName);
         }
 
-        $response = Http::post('https://7313-103-139-10-60.ngrok.io/siswa',[
+        $response = Http::post("{$this->api_url}/siswa",[
             'nis_siswa' => $request->nis,
             'nisn_siswa' => $request->nisn,
             'nama_siswa' => $request->nama,
@@ -154,9 +158,9 @@ class ApiController extends Controller
 
         $nis = $request->nis;
 
-        $response = Http::get("https://7313-103-139-10-60.ngrok.io/siswa/{$nis}");
+        $response = Http::get("{$this->api_url}/siswa/{$nis}");
 
-        $kelas = Http::get("https://7313-103-139-10-60.ngrok.io/kelas");
+        $kelas = Http::get("{$this->api_url}/kelas");
 
         return view('edit-di', [
             'title' => 'backend-test',

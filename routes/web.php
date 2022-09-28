@@ -147,7 +147,6 @@ Route::post('/registeruser', [UserController::class, 'registeruser']);
 
 Route::post('/loginuser', [UserController::class, 'loginuser']);
 
-Auth::routes();
   
 
 Route::middleware(['auth', 'user-access:tata usaha'])->group(function () {
