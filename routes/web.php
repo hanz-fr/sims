@@ -133,7 +133,7 @@ Route::get('/dashboard', function () {
 // Route::get('/api/siswa', [ApiController::class, 'index']);
 Route::get('/api/siswa/create', [ApiController::class, 'create']);
 Route::post('/api/siswa', [ApiController::class, 'store']);
-Route::put('/api/siswa/update', [ApiController::class, 'update']);
+Route::put('/api/siswa/update/{nis}', [ApiController::class, 'update']);
 
 Route::get('/register', [UserController::class, 'register']);
 
