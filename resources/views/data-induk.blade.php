@@ -22,7 +22,7 @@
         @if(session()->has('success'))
         <div id="alert-2" class="tw-flex tw-p-4 tw-mt-4 tw-w-full tw-my-5 tw-mx-10 tw-bg-green-200 tw-rounded-lg" role="alert">
           <svg class="tw-my-auto tw-flex-shrink-0 tw-w-5 tw-h-5 tw-text-green-700" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-          <div class="tw-ml-3 tw-text-sm tw-font-medium tw-text-green-700">
+          <div class="tw-ml-3 tw-text-sm tw-font-medium tw-text-green-700 tw-my-auto">
             <div class="tw-font-bold tw-text-lg tw-flex">Success</div>  {{ session('success') }}
           </div>
           <button type="button" class="tw-ml-auto -tw-mx-1.5 tw-my-auto tw-bg-green-200 tw-text-green-500 tw-rounded-lg focus:tw-ring-2 focus:tw-ring-green-400 tw-p-1.5 hover:tw-bg-green-200 tw-inline-flex tw-h-8 tw-w-8 dark:tw-bg-green-300 dark:tw-text-green-600 dark:hover:tw-bg-green-400" data-dismiss-target="#alert-2" aria-label="Close">

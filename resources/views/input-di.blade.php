@@ -17,8 +17,8 @@
   @endif
 
   <div class="tw-flex tw-flex-col tw-rounded-[35px] tw-bg-white tw-w-4/5 tw-p-8 tw-h-full tw-mx-auto tw-my-10 tw-shadow-lg">
-    <a href="/data-induk-siswa" class="tw-text-sims tw-text-3xl"><i class="fa-solid fa-chevron-left"></i></a>
-    <h3 class="tw-font-pop tw-font-semibold tw-mt-6 tw-text-sims tw-text-center">Tambah Data Siswa</h3>
+    <a href="/data-induk-siswa" class="tw-text-sims-400 tw-text-3xl tw-w-min hover:tw-text-sims-500"><i class="fa-solid fa-chevron-left"></i></a>
+    <h3 class="tw-font-pop tw-font-semibold tw-mt-6 tw-text-sims-400 tw-text-center">Tambah Data Siswa</h3>
     
     <form method="POST" action="/api/siswa" enctype="multipart/form-data"  
     class="tw-w-full lg:tw-mx-auto sm:tw-mx-10 tw-my-10 tw-max-w-3xl tw-font-pop">
@@ -131,7 +131,7 @@
             Status dalam keluarga
           </label>
           <select class="input-data" id="status" name="status">
-            <option selected>Pilih</option>
+            <option selected value="">Pilih</option>
             @if(old('status'))
             <option value="{{ old('status') }}">
               @if(old('status') == 'AK') Anak Kandung 

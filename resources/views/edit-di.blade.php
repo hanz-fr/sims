@@ -29,7 +29,7 @@
   @endif
 
   <div class="tw-flex tw-flex-col tw-rounded-[35px] tw-bg-white tw-w-4/5 tw-p-8 tw-h-full tw-mx-auto tw-my-14 tw-shadow-lg">
-    <a href="/data-induk-siswa" class="tw-text-sims-400 tw-text-3xl"><i class="fa-solid fa-chevron-left"></i></a>
+    <a href="/data-induk-siswa" class="tw-text-sims-400 tw-text-3xl tw-w-min hover:tw-text-sims-500"><i class="fa-solid fa-chevron-left"></i></a>
     <h3 class="tw-font-pop tw-font-semibold tw-mt-6 tw-text-sims-400 tw-text-center">Edit Data Siswa</h3>
     
     <form method="POST" action="/api/siswa/update/{{ $siswa->nis_siswa }}" enctype="multipart/form-data"  
@@ -134,20 +134,25 @@
           </label>
           <select class="input-data" id="status" name="status">
             @if($siswa->status == 'AK')
-            <option>Pilih</option>
+            <option value="">Pilih</option>
             <option selected value="AA">Anak Kandung</option>
             <option value="AK">Anak Angkat</option>
             <option value="AT">Anak Tiri</option>
             @elseif($siswa->status == 'AA')
-            <option>Pilih</option>
+            <option value="">Pilih</option>
             <option value="AA">Anak Kandung</option>
             <option selected value="AK">Anak Angkat</option>
             <option value="AT">Anak Tiri</option>
             @elseif($siswa->status == 'AT')
-            <option>Pilih</option>
+            <option value="">Pilih</option>
             <option value="AA">Anak Kandung</option>
             <option value="AK">Anak Angkat</option>
             <option selected value="AT">Anak Tiri</option>
+            @else
+            <option value="">Pilih</option>
+            <option value="AA">Anak Kandung</option>
+            <option value="AK">Anak Angkat</option>
+            <option value="AT">Anak Tiri</option>
             @endif
           </select>
         </div>
@@ -276,7 +281,7 @@
           <label for="default-radio-1" class="tw-ml-2 tw-text-sm tw-font-medium tw-text-basic-700">Ya</label>
         </div>
         <div @click="openTab = 2" class="tw-flex tw-items-center">
-            <input id="default-radio-2" type="radio" name="default-radio" value="" class="tw-w-4 tw-h-4 tw-text-blue-600 tw-bg-gray-100 tw-border-gray-300 focus:tw-ring-blue-500 dark:focus:tw-ring-blue-600 dark:tw-ring-offset-gray-800 focus:tw-ring-2 dark:tw-bg-gray-700 dark:tw-border-gray-600">
+            <input id="default-radio-2" type="radio" name="default-radio" value="" class="tw-w-4 tw-h-4 tw-bg-gray-100 tw-border-gray-300 focus:tw-ring-2">
             <label for="default-radio-2" class="tw-ml-2 tw-text-sm tw-font-medium tw-text-basic-700">Tidak</label>
         </div>
       </div>
