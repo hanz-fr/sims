@@ -31,8 +31,36 @@
       <div x-data="{ openTab: 1,
         activeClasses: 'tw-bg-white tw-border',
         inactiveClasses: 'tw-bg-gray-200 tw-border-t tw-border-x'}"  class="md:tw-w-3/5 sm:tw-w-full">
-      <div class="tw-float-right">
-        <a href="#" class="tw-text-white tw-bg-kuning hover:tw-bg-[#D3A007] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-solid fa-pen-to-square"></i></a>
+      <div class="tw-float-right tw-flex tw-gap-2">
+        <form action="/api/siswa/delete/{{ $siswa->nis_siswa }}" method="POST">
+          @csrf
+          @method('DELETE')
+          <button type="button" data-modal-toggle="popup-modal" class="tw-text-white tw-bg-red-400 hover:tw-bg-red-500 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
+            <i class="fa-solid fa-trash mr-2"></i> Delete Siswa 
+          </button>
+
+          <div id="popup-modal" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full">
+            <div class="relative p-4 w-full max-w-md h-full md:h-auto">
+                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                    <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white" data-modal-toggle="popup-modal">
+                        <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                        <span class="sr-only">Close modal</span>
+                    </button>
+                    <div class="p-6">
+                        <svg aria-hidden="true" class="tw-mx-auto tw-mb-4 tw-w-14 tw-h-14 tw-text-gray-400 dark:tw-text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <h3 class="tw-mb-5 tw-text-lg tw-font-normal tw-text-gray-500 dark:tw-text-gray-400">Are you sure you want to delete this siswa?</h3>
+                        <div class="tw-flex tw-justify-center">
+                          <button type="submit" data-modal-toggle="popup-modal" type="button" class="tw-text-white tw-bg-red-600 hover:tw-bg-red-800 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-red-300 dark:focus:tw-ring-red-800 tw-font-medium tw-rounded-lg tw-text-sm tw-inline-flex tw-items-center tw-px-3 tw-py-2.5 tw-text-center tw-mr-2 tw-px-4">
+                              Ya
+                          </button>
+                          <button data-modal-toggle="popup-modal" type="button" class="tw-text-gray-500 tw-bg-white hover:tw-bg-gray-100 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-gray-200 tw-rounded-lg tw-border tw-border-gray-200 tw-text-sm tw-font-medium tw-px-3 tw-py-2.5 hover:tw-text-gray-900 focus:tw-z-10 dark:tw-bg-gray-700 dark:tw-text-gray-300 dark:tw-border-gray-500 dark:hover:tw-text-white dark:hover:tw-bg-gray-600 dark:focus:tw-ring-gray-600 tw-px-4">Tidak</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </form>
+        <a href="/edit-siswa/{{ $siswa->nis_siswa }}" class="tw-text-white tw-bg-kuning hover:tw-bg-[#D3A007] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-solid fa-pen-to-square mr-2"></i>Edit Siswa</a>
       </div>
         <ul class="tw-flex mb-0 mt-3 tw--ml-6">
           <li @click="openTab = 1" :class="{ 'tw--mb-px': openTab === 1 }" class="tw--mb-px tw-mr-1">
@@ -70,7 +98,7 @@
                               Tempat, Tanggal Lahir
                           </th>
                           <td class="tw-py-4 tw-px-6">
-                            {{ $siswa->tmp_lahir }}, {{ $siswa->tgl_lahir }}
+                            {{ $siswa->tmp_lahir }}, {{ $tgl_lahir_siswa }}
                           </td>
                       </tr>
                       <tr class="tw-border tw-bg-gray-100">

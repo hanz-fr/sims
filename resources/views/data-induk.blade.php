@@ -1,23 +1,25 @@
 @extends('layouts.main')
 
 @section('content')
-
-@if($status == 'error')
-<div class="tw-flex tw-justify-center">
-    <div class="tw-block tw-my-32">
-        <img src="{{asset('assets/img/error_img.svg')}}" alt="error_img">
-        <h1 class="tw-flex tw-justify-center tw-font-pop tw-font-bold tw-mt-6 tw-text-sims">404 Not Found</h1>
-        <p class="tw-flex tw-justify-center tw-font-pop tw-text-md tw-font-semibold tw-text-gray-400 tw-mt-5">{{ $message }}</p>
-        <p class="tw-flex tw-justify-center tw-font-pop tw-text-gray-400 tw-text-sm">Coba hubungi admin untuk penyelesaian lebih lanjut.</p>
-    </div>
-</div>
-@else
 <div class="tw-mx-10">
     <div class="tw-flex tw-justify-between tw-gap-5 tw-mt-8">
         <div class="tw-flex tw-flex-col">
             <h4 class="tw-font-pop tw-font-bold tw-mt-6 tw-text-sims">Data Induk Siswa</h4>
             <h6 class="tw-mb-5 tw-text-gray-400 tw-font-semibold">SELURUH KELAS</h6>
         </div>
+
+        @if(session()->has('success'))
+        <div id="alert-2" class="tw-flex tw-p-4 tw-mt-4 tw-w-full tw-my-5 tw-mx-10 tw-bg-green-200 tw-rounded-lg" role="alert">
+          <svg class="tw-my-auto tw-flex-shrink-0 tw-w-5 tw-h-5 tw-text-green-700" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+          <div class="tw-ml-3 tw-text-sm tw-font-medium tw-text-green-700">
+            <div class="tw-font-bold tw-text-lg tw-flex">Success</div>  {{ session('success') }}
+          </div>
+          <button type="button" class="tw-ml-auto -tw-mx-1.5 tw-my-auto tw-bg-green-200 tw-text-green-500 tw-rounded-lg focus:tw-ring-2 focus:tw-ring-green-400 tw-p-1.5 hover:tw-bg-green-200 tw-inline-flex tw-h-8 tw-w-8 dark:tw-bg-green-300 dark:tw-text-green-600 dark:hover:tw-bg-green-400" data-dismiss-target="#alert-2" aria-label="Close">
+            <span class="sr-only">Close</span>
+            <svg class="tw-w-5 tw-h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+          </button>
+        </div>
+        @endif
 
         <div class="tw-flex tw-justify-center tw-items-center -tw-mb-8">
             <a href=""><i class="fa-solid fa-print btn-export"></i></a>
@@ -115,5 +117,4 @@
           </div>
           @endif
     </div>
-@endif
 @endsection
