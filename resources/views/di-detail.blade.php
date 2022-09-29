@@ -60,7 +60,7 @@
             </div>
         </div>
         </form>
-        <a href="/edit-siswa/{{ $siswa->nis_siswa }}" class="tw-text-white tw-bg-kuning hover:tw-bg-[#D3A007] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-solid fa-pen-to-square mr-2"></i>Edit Siswa</a>
+        <a href="/edit-siswa/{{ $siswa->nis_siswa }}" class="tw-text-white tw-bg-yellow-400 hover:tw-text-white hover:tw-bg-yellow-500 tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-solid fa-pen-to-square mr-2"></i>Edit Siswa</a>
       </div>
         <ul class="tw-flex mb-0 mt-3 tw--ml-6">
           <li @click="openTab = 1" :class="{ 'tw--mb-px': openTab === 1 }" class="tw--mb-px tw-mr-1">
