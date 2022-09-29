@@ -37,7 +37,7 @@
         class="tw-w-full tw-flex-shrink-0">
         <ul class="list-unstyled tw-grid-rows-3 tw-gap-5 tw-flex tw-mt-3">
           <li class="">
-            <div class=" tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-border-sims-400 tw-bg-white">
+            <div class=" tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-bg-white">
               <div class="tw-float-right">
                 <a href="/siswa-keluar" class="tw-text-sims-400 hover:tw-text-sims-600 tw-pr-2 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
               </div>
@@ -53,7 +53,7 @@
             </div>
           </li>
           <li class="">
-            <div class=" tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-border-sims-400 tw-bg-white">
+            <div class=" tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-bg-white">
               <div class="tw-float-right">
                 <a href="/siswa-keluar" class="tw-text-sims-400 hover:tw-text-sims-600 tw-pr-2 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
               </div>
@@ -69,7 +69,7 @@
             </div>
           </li>
           <li class="">
-            <div class=" tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-border-sims-400 tw-bg-white">
+            <div class=" tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-bg-white">
               <div class="tw-float-right">
                 <a href="" class="tw-text-sims-400 hover:tw-text-sims-600 tw-pr-2 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
               </div>
@@ -85,7 +85,7 @@
             </div>
           </li>
           <li class="">
-            <div class=" tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-border-sims-400 tw-bg-white">
+            <div class=" tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-bg-white">
               <div class="tw-float-right">
                 <a href="/siswa-masuk" class="tw-text-sims-400 hover:tw-text-sims-600 tw-pr-2 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
               </div>
