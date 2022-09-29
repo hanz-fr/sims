@@ -4,7 +4,7 @@
     <div class="tw-mx-10">
         <div class="tw-flex tw-justify-between tw-gap-5 tw-mt-8">
             <div class="tw-flex tw-flex-col">
-                <h4 class="tw-font-pop tw-font-bold tw-mt-6 tw-text-sims">Data Rekap Jumlah Siswa</h4>
+                <h4 class="tw-font-pop tw-font-bold tw-mt-6 tw-text-sims-400">Data Rekap Jumlah Siswa</h4>
             </div>
         </div>
         
@@ -13,29 +13,29 @@
             inactiveClasses: 'tw-bg-gray-200 tw-border'
           }"  class="">
           <div class="tw-float-right">
-            <a href="" class="tw-bg-sims tw-text-white hover:tw-text-white  tw-font-pop hover:tw-bg-[#428888] tw-px-5 tw-py-2 tw-rounded-lg tw-mr-5">Export</a>
-            <a href="" class="tw-bg-sims tw-text-white hover:tw-text-white  tw-font-pop hover:tw-bg-[#428888] tw-px-5 tw-py-2 tw-rounded-lg">import</a>
+            <a href="" class="tw-bg-sims-400 tw-text-white hover:tw-text-white tw-font-pop hover:tw-bg-sims-600 tw-px-5 tw-py-2 tw-rounded-lg tw-mr-5">Export</a>
+            <a href="" class="tw-bg-sims-400 tw-text-white hover:tw-text-white tw-font-pop hover:tw-bg-sims-600 tw-px-5 tw-py-2 tw-rounded-lg">import</a>
         </div>
             <ul class="tw-flex mb-0 mt-4 tw--ml-6 tw-font-pop tw-text-xl">
               <li @click="openTab = 1" :class="{ 'tw--mb-px': openTab === 1 }">
-                <button :class="openTab === 1 ? activeClasses : inactiveClasses" class="tw-rounded-t-2xl tw-text-gray-500 hover:tw-text-sims tw-inline-block tw-py-2 tw-px-10 tw-font-semibold" href="#">
+                <button :class="openTab === 1 ? activeClasses : inactiveClasses" class="tw-rounded-t-2xl tw-text-gray-500 hover:tw-text-sims-400 tw-inline-block tw-py-2 tw-px-10 tw-font-semibold" href="#">
                   X
                 </button>
               </li>
               <li @click="openTab = 2" :class="{ 'tw--mb-px': openTab === 2 }">
-                <button :class="openTab === 2 ? activeClasses : inactiveClasses" class="tw-rounded-t-2xl tw-text-gray-500 hover:tw-text-sims tw-inline-block tw-py-2 tw-px-10 tw-font-semibold" href="#">
+                <button :class="openTab === 2 ? activeClasses : inactiveClasses" class="tw-rounded-t-2xl tw-text-gray-500 hover:tw-text-sims-400 tw-inline-block tw-py-2 tw-px-10 tw-font-semibold" href="#">
                   XI
                 </button>
               </li>
               <li @click="openTab = 3" :class="{ 'tw--mb-px': openTab === 3 }">
-                <button :class="openTab === 3 ? activeClasses : inactiveClasses" class="tw-rounded-t-2xl tw-text-gray-500 hover:tw-text-sims tw-inline-block tw-py-2 tw-px-10 tw-font-semibold" href="#">
+                <button :class="openTab === 3 ? activeClasses : inactiveClasses" class="tw-rounded-t-2xl tw-text-gray-500 hover:tw-text-sims-400 tw-inline-block tw-py-2 tw-px-10 tw-font-semibold" href="#">
                   XII
                 </button>
               </li>
             </ul>
             <div x-show="openTab === 1" class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl tw-mb-20">
                 <table class="tw-w-full tw-text-sm tw-text-center">
-                    <thead class="tw-text-md tw-bg-gray-100 tw-text-basic tw-border tw-font-pop">
+                    <thead class="tw-text-md tw-bg-gray-100 tw-text-basic-700 tw-border tw-font-pop">
                         <tr>
                             <th scope="col" rowspan="2" class="tw-py-3 tw-px-6 tw-border-r">KELAS</th>
                             <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border-r">JUMLAH SISWA AWAL BULAN</th>
@@ -319,7 +319,7 @@
                 </div>
             <div x-show="openTab === 2" class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl tw-mb-20">
                 <table class="tw-w-full tw-text-sm tw-text-center">
-                    <thead class="tw-text-md tw-bg-gray-100 tw-text-basic tw-border tw-font-pop">
+                    <thead class="tw-text-md tw-bg-gray-100 tw-text-basic-700 tw-border tw-font-pop">
                         <tr>
                             <th scope="col" rowspan="2" class="tw-py-3 tw-px-6 tw-border-r">KELAS</th>
                             <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border-r">JUMLAH SISWA AWAL BULAN</th>
@@ -603,7 +603,7 @@
                 </div>            
             <div x-show="openTab === 3" class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl tw-mb-20">
             <table class="tw-w-full tw-text-sm tw-text-center">
-                <thead class="tw-text-md tw-bg-gray-100 tw-text-basic tw-border tw-font-pop">
+                <thead class="tw-text-md tw-bg-gray-100 tw-text-basic-700 tw-border tw-font-pop">
                     <tr>
                         <th scope="col" rowspan="2" class="tw-py-3 tw-px-6 tw-border-r">KELAS</th>
                         <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border-r">JUMLAH SISWA AWAL BULAN</th>

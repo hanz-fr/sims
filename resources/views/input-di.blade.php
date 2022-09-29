@@ -26,7 +26,7 @@
       @csrf
       @method('POST')
       {{-- biodata --}}
-      <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims">A.  Biodata Peserta Didik</div>
+      <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims-400">A.  Biodata Peserta Didik</div>
       <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
         <div class="tw-w-max md:tw-w-1/2 tw-px-3 tw-mb-6 md:tw-mb-0">
           <label class="label-input" for="nis">
@@ -179,7 +179,7 @@
       </div>
 
       {{-- section B, Diterima di sekolah ini --}}
-    <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims">B.  Diterima di sekolah ini</div>
+    <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims-400">B.  Diterima di sekolah ini</div>
     <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
       <div class="tw-w-full tw-px-3">
         <label class="label-input" for="kelas">
@@ -214,7 +214,7 @@
     </div>
 
     {{-- sekolah asal --}}
-    <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims">C.  Sekolah Asal</div>
+    <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims-400">C.  Sekolah Asal</div>
     <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
       <div class="tw-w-full tw-px-3">
         <label class="label-input" for="nama_sekolah_asal">
@@ -236,7 +236,7 @@
     </div>
 
     {{-- ijazah smp --}}
-    <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims">D.  Ijazah SMP/MTs</div>
+    <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims-400">D.  Ijazah SMP/MTs</div>
     <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
       <div class="tw-w-full tw-px-3">
         <label class="label-input" for="nomor_ijazah_smp">
@@ -254,7 +254,7 @@
       </div>
     </div>
 
-    <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims">E.  SKHUN SMP/Mts</div>
+    <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims-400">E.  SKHUN SMP/Mts</div>
     <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
       <div class="tw-w-full tw-px-3">
         <label class="label-input" for="nomor_skhun">
@@ -280,7 +280,7 @@
       <div class="tw-flex tw-flex-row tw-gap-3">
         <div @click="openTab = 1" class="tw-flex tw-items-center">
           <input id="default-radio-1" type="radio" name="default-radio" value="" class="tw-w-4 tw-h-4 tw-bg-gray-100 tw-border-gray-300 focus:tw-ring-2">
-          <label for="default-radio-1" class="tw-ml-2 tw-text-sm tw-font-medium tw-text-basic">Ya</label>
+          <label for="default-radio-1" class="tw-ml-2 tw-text-sm tw-font-medium tw-text-basic-700">Ya</label>
         </div>
         <div @click="openTab = 2" class="tw-flex tw-items-center">
             <input id="default-radio-2" type="radio" name="default-radio" value="" class="tw-w-4 tw-h-4 tw-bg-gray-100 tw-border-gray-300 focus:tw-ring-2">
@@ -290,7 +290,7 @@
   
       {{-- data orang tua --}}
       <div x-show="openTab === 1">
-        <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims">F.  Data Orang Tua</div>
+        <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims-400">F.  Data Orang Tua</div>
         <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
           <div class="tw-w-full tw-px-3">
             <label class="label-input" for="nama_ayah">
@@ -334,7 +334,7 @@
   
       {{-- data wali --}}
       <div x-show="openTab === 2">
-        <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims">F.  Data Wali</div>
+        <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims-400">F.  Data Wali</div>
         <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
           <div class="tw-w-full tw-px-3">
             <label class="label-input" for="nama_wali">
@@ -372,7 +372,7 @@
 
 
     {{-- meninggalkan sekolah --}}
-    <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims">G.  Meninggalkan Sekolah</div>
+    <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims-400">G.  Meninggalkan Sekolah</div>
     <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
       <div class="tw-w-full tw-px-3">
         <label class="label-input" for="tgl_meninggalkan_sekolah">
@@ -391,7 +391,7 @@
     </div>
 
         {{-- tamat di sekolah ini --}}
-        <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims">H.  Tamat di Sekolah ini</div>
+        <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims-400">H.  Tamat di Sekolah ini</div>
         <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
           <div class="tw-w-full tw-px-3">
             <label class="label-input" for="nomor_ijazah_smk">
@@ -410,7 +410,7 @@
         </div>
 
         {{-- keterangan lain2 --}}
-        <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims">I.  Keterangan Lain-lain</div>
+        <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims-400">I.  Keterangan Lain-lain</div>
         <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
           <div class="tw-w-full tw-px-3">
             <textarea class="input-data" id="keterangan_lain" type="text" name="keterangan_lain"></textarea>
@@ -418,14 +418,14 @@
         </div>
 
         {{-- rekap nilai --}}
-        <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims">J. Rekap Nilai</div>
+        <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims-400">J. Rekap Nilai</div>
         <div class="tw-flex tw-flex-col">
-          <a href="/rekap-nilai" class="tw-py-2 tw-border tw-w-fit tw-border-gray-600 tw-px-6 hover:tw-text-sims tw-text-gray-600 tw-rounded-md tw-bg-white tw-font-medium">View & Edit</a>
+          <a href="/rekap-nilai" class="tw-py-2 tw-border tw-w-fit tw-border-gray-600 tw-px-6 hover:tw-text-sims-400 tw-text-gray-600 tw-rounded-md tw-bg-white tw-font-medium">View & Edit</a>
           <button type="submit" class="tw-bg-[#1D6F42] tw-w-fit tw-mt-4 tw-font-medium tw-text-white tw-py-3 tw-px-5 tw-rounded-lg">Upload dari excel</button>
         </div>
 
         <div class="tw-mx-auto tw-text-center tw-mt-10">
-          <button type="submit" class="tw-bg-sims tw-font-medium tw-text-white tw-py-3 tw-px-6 tw-rounded-lg">Upload Data</button>
+          <button type="submit" class="tw-bg-sims-400 tw-font-medium tw-text-white tw-py-3 tw-px-6 tw-rounded-lg">Upload Data</button>
         </div>
     </form>
   </div>

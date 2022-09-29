@@ -14,7 +14,7 @@
   {{-- icon --}}
   <link rel="stylesheet" href="font-awesome/css/all.min.css">
 </head>
-<body class="tw-bg-[#FFFFFF]">
+<body class="tw-bg-white">
 
 <div class="tw-flex tw-flex-row">
   <aside class="tw-w-64" aria-label="Sidebar">
@@ -102,37 +102,37 @@
   <div class="tw-m-10">
    <div class="tw-flex tw-flex-col tw-gap-8">
       <div class="tw-flex tw-flex-row tw-mb-8">
-         <div class="tw-border-l-8 tw-border-admbiru tw-h-16 tw-mr-5"></div>
+         <div class="tw-border-l-8 tw-border-admin-300 tw-h-16 tw-mr-5"></div>
          <div class="tw-flex tw-flex-col">
-            <div class="tw-text-3xl tw-font-pop tw-font-bold tw-text-admbiru">Welcome Back, John</div>
+            <div class="tw-text-3xl tw-font-pop tw-font-bold tw-text-admin-300">Welcome Back, John</div>
             <div class="tw-text-xl tw-font-pop tw-font-normal tw-text-gray-300">what are you going to manage today?</div>
          </div>
       </div>
       <div class="tw-flex tw-flex-col">
          <div class="tw-flex tw-flex-row">
-            <i class="fa-solid fa-user-group tw-text-admbiru tw-text-xl"></i>
+            <i class="fa-solid fa-user-group tw-text-admin-300 tw-text-xl"></i>
             <div class="tw-text-xl tw-ml-3 tw-font-pop tw-font-semibold tw-text-gray-300">Account Management</div>
          </div>
          <ul class="list-unstyled tw-flex tw-flex-row tw-gap-5">
             <li class="tw-bg-white tw-rounded-xl tw-shadow-lg tw-flex tw-flex-col">
                <div class="tw-justify-end tw-flex tw-p-2">
                   <a href="">
-                     <i class="fa-solid fa-square-plus tw-text-admbiru tw-text-2xl"></i>
+                     <i class="fa-solid fa-square-plus tw-text-admin-300 tw-text-2xl"></i>
                   </a>
                </div>
                <div class="tw-justify-center tw-text-center tw-pb-5 tw-px-7">
-                  <i class="fa-solid fa-user tw-text-6xl tw-text-admbiru"></i>
-                  <div class="tw-text-admbiru tw-font-ubuntu tw-font-semibold tw-text-lg tw-mt-4">Staff TU</div>
+                  <i class="fa-solid fa-user tw-text-6xl tw-text-admin-300"></i>
+                  <div class="tw-text-admin-300 tw-font-ubuntu tw-font-semibold tw-text-lg tw-mt-4">Staff TU</div>
                   <div class="tw-font-ubuntu tw-font-medium tw-text-gray-300 -tw-mt-1">2 account</div>
                   <a href="">
-                     <div class="tw-bg-admbiru tw-py-3 tw-px-14 tw-rounded-xl tw-text-white tw-font-medium tw-mt-5 hover:tw-bg-[#88ACD7]">View</div>
+                     <div class="tw-bg-admin-300 tw-py-3 tw-px-14 tw-rounded-xl tw-text-white tw-font-medium tw-mt-5 hover:tw-bg-[#88ACD7]">View</div>
                   </a>
                </div>
             </li>
             <li class="tw-bg-white tw-rounded-xl tw-shadow-lg tw-flex tw-flex-col">
                <div class="tw-justify-end tw-flex tw-p-2">
                   <a href="">
-                     <i class="fa-solid fa-square-plus tw-text-admbiru tw-text-2xl"></i>
+                     <i class="fa-solid fa-square-plus tw-text-admin-300 tw-text-2xl"></i>
                   </a>
                </div>
                <div class="tw-justify-center tw-text-center tw-pb-5 tw-px-7">
@@ -140,14 +140,14 @@
                   <div class="tw-text-[#FF869C] tw-font-ubuntu tw-font-semibold tw-text-lg tw-mt-4">Kesiswaan</div>
                   <div class="tw-font-ubuntu tw-font-medium tw-text-gray-300 -tw-mt-1">2 account</div>
                   <a href="">
-                     <div class="tw-bg-admbiru tw-py-3 tw-px-14 tw-rounded-xl tw-text-white tw-font-medium tw-mt-5 hover:tw-bg-[#88ACD7]">View</div>
+                     <div class="tw-bg-admin-300 tw-py-3 tw-px-14 tw-rounded-xl tw-text-white tw-font-medium tw-mt-5 hover:tw-bg-[#88ACD7]">View</div>
                   </a>
                </div>
             </li>
             <li class="tw-bg-white tw-rounded-xl tw-shadow-lg tw-flex tw-flex-col">
                <div class="tw-justify-end tw-flex tw-p-2">
                   <a href="">
-                     <i class="fa-solid fa-square-plus tw-text-admbiru tw-text-2xl"></i>
+                     <i class="fa-solid fa-square-plus tw-text-admin-300 tw-text-2xl"></i>
                   </a>
                </div>
                <div class="tw-justify-center tw-text-center tw-pb-5 tw-px-7">
@@ -155,14 +155,14 @@
                   <div class="tw-text-[#FFA386] tw-font-ubuntu tw-font-semibold tw-text-lg tw-mt-4">Wali Kelas</div>
                   <div class="tw-font-ubuntu tw-font-medium tw-text-gray-300 -tw-mt-1">2 account</div>
                   <a href="">
-                     <div class="tw-bg-admbiru tw-py-3 tw-px-14 tw-rounded-xl tw-text-white tw-font-medium tw-mt-5 hover:tw-bg-[#88ACD7]">View</div>
+                     <div class="tw-bg-admin-300 tw-py-3 tw-px-14 tw-rounded-xl tw-text-white tw-font-medium tw-mt-5 hover:tw-bg-[#88ACD7]">View</div>
                   </a>
                </div>
             </li>
             <li class="tw-bg-white tw-rounded-xl tw-shadow-lg tw-flex tw-flex-col">
                <div class="tw-justify-end tw-flex tw-p-2">
                   <a href="">
-                     <i class="fa-solid fa-square-plus tw-text-admbiru tw-text-2xl"></i>
+                     <i class="fa-solid fa-square-plus tw-text-admin-300 tw-text-2xl"></i>
                   </a>
                </div>
                <div class="tw-justify-center tw-text-center tw-pb-5 tw-px-7">
@@ -170,7 +170,7 @@
                   <div class="tw-text-gray-400 tw-font-ubuntu tw-font-semibold tw-text-lg tw-mt-4">kurikulum</div>
                   <div class="tw-font-ubuntu tw-font-medium tw-text-gray-300 -tw-mt-1">2 account</div>
                   <a href="">
-                     <div class="tw-bg-admbiru tw-py-3 tw-px-14 tw-rounded-xl tw-text-white tw-font-medium tw-mt-5 hover:tw-bg-[#88ACD7]">View</div>
+                     <div class="tw-bg-admin-300 tw-py-3 tw-px-14 tw-rounded-xl tw-text-white tw-font-medium tw-mt-5 hover:tw-bg-[#88ACD7]">View</div>
                   </a>
                </div>
             </li>
@@ -182,7 +182,7 @@
             <i class="fa-regular fa-sliders tw-text-[#90C2C2] tw-text-xl"></i>
             <div class="tw-text-xl tw-ml-3 tw-font-pop tw-font-semibold tw-text-gray-400">Data Management</div>
          </div>
-         <div class="tw-flex tw-flex-row tw-grid-cols-2 tw-mt-7">
+         <div class="tw-flex tw-flex-row tw-overflow-x-scroll tw-mt-7">
             <div class="tw-shadow-lg tw-rounded-xl tw-flex tw-flex-row tw-bg-[#5A6C7C] tw-ml-5">
                <div class="tw-flex tw-flex-row tw-bg-[#90C2C2] tw-rounded-lg tw-gap-8 tw-py-16 tw-px-12">
                   <div class="tw-flex tw-flex-col">
@@ -222,6 +222,40 @@
                      <div class="tw-font-medium tw-font-ubuntu tw-text-white tw-text-4xl">20</div>
                      <div class="tw-text-sm tw-font-ubuntu tw-text-white tw-ml-2">total <br> data</div>
                   </div>
+               </div>
+               <div class="tw-flex tw-flex-col tw-px-7 tw-py-7">
+                  <ul class="list-unstyled tw-mb-8">
+                     <li class="tw-flex tw-justify-between tw-mb-1">
+                        <div class="tw-text-[#B4B8BC] tw-font-ubuntu">latest data created</div>
+                        <div class="tw-text-white tw-font-bold tw-font-ubuntu tw-ml-4">2 days ago</div>
+                     </li>
+                     <li class="tw-flex tw-justify-between tw-mb-1">
+                        <div class="tw-text-[#B4B8BC] tw-font-ubuntu">recent activity</div>
+                        <div class="tw-text-white tw-font-bold tw-font-ubuntu">create</div>
+                     </li>
+                     <li class="tw-flex tw-justify-between">
+                        <div class="tw-text-[#B4B8BC] tw-font-ubuntu">latest data</div>
+                        <div class="tw-text-white tw-font-bold tw-font-ubuntu">TKJ</div>
+                     </li>
+                  </ul>
+                  <div class="tw-border-2 tw-border-[#90C2C2] tw-py-1 tw-px-20 tw-text-[#90C2C2] tw-font-semibold tw-rounded-lg tw-font-ubuntu hover:tw-bg-[#90C2C2] hover:tw-text-white">Manage</div>
+               </div>
+               <div class="tw-flex tw-flex-col tw-px-7 tw-py-7">
+                  <ul class="list-unstyled tw-mb-8">
+                     <li class="tw-flex tw-justify-between tw-mb-1">
+                        <div class="tw-text-[#B4B8BC] tw-font-ubuntu">latest data created</div>
+                        <div class="tw-text-white tw-font-bold tw-font-ubuntu tw-ml-4">2 days ago</div>
+                     </li>
+                     <li class="tw-flex tw-justify-between tw-mb-1">
+                        <div class="tw-text-[#B4B8BC] tw-font-ubuntu">recent activity</div>
+                        <div class="tw-text-white tw-font-bold tw-font-ubuntu">create</div>
+                     </li>
+                     <li class="tw-flex tw-justify-between">
+                        <div class="tw-text-[#B4B8BC] tw-font-ubuntu">latest data</div>
+                        <div class="tw-text-white tw-font-bold tw-font-ubuntu">TKJ</div>
+                     </li>
+                  </ul>
+                  <div class="tw-border-2 tw-border-[#90C2C2] tw-py-1 tw-px-20 tw-text-[#90C2C2] tw-font-semibold tw-rounded-lg tw-font-ubuntu hover:tw-bg-[#90C2C2] hover:tw-text-white">Manage</div>
                </div>
                <div class="tw-flex tw-flex-col tw-px-7 tw-py-7">
                   <ul class="list-unstyled tw-mb-8">
