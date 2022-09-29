@@ -37,30 +37,30 @@
         class="tw-w-full tw-flex-shrink-0">
         <ul class="list-unstyled tw-grid-rows-3 tw-gap-5 tw-flex tw-mt-3">
           <li class="">
-            <div class=" tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-bg-white">
+            <div class="tw-px-4 tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-bg-white">
               <div class="tw-float-right">
-                <a href="/siswa-keluar" class="tw-text-sims-400 hover:tw-text-sims-600 tw-pr-2 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <a href="/siswa-keluar" class="tw-text-sims-400 hover:tw-text-sims-600 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
               </div>
               <div class="sm:tw-px-12 md:tw-px-8">
                 <div class="tw-flex tw-flex-row">
                   <div class="tw-text-5xl tw-text-gray-400"><i class="fa-solid fa-user"></i></div>
-                  <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">658</div>
+                  <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">-</div>
                 </div>
               </div>
               <div class=""> 
-                <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Siswa yang keluar</div>
+                <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Alumni</div>
               </div>
             </div>
           </li>
           <li class="">
-            <div class=" tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-bg-white">
+            <div class="tw-px-4 tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-bg-white">
               <div class="tw-float-right">
-                <a href="/siswa-keluar" class="tw-text-sims-400 hover:tw-text-sims-600 tw-pr-2 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <a href="/siswa-keluar" class="tw-text-sims-400 hover:tw-text-sims-600 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
               </div>
               <div class="sm:tw-px-12 md:tw-px-8">
                 <div class="tw-flex tw-flex-row">
                   <div class="tw-text-5xl tw-text-[#FF869C]"><i class="fa-solid fa-user"></i></div>
-                  <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">658</div>
+                  <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">-</div>
                 </div>
               </div>
               <div class=""> 
@@ -69,14 +69,14 @@
             </div>
           </li>
           <li class="">
-            <div class=" tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-bg-white">
+            <div class="tw-px-4 tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-bg-white">
               <div class="tw-float-right">
-                <a href="" class="tw-text-sims-400 hover:tw-text-sims-600 tw-pr-2 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <a href="" class="tw-text-sims-400 hover:tw-text-sims-600 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
               </div>
               <div class="sm:tw-px-12 md:tw-px-8">
                 <div class="tw-flex tw-flex-row">
                   <div class="tw-text-5xl tw-text-[#FFA386]"><i class="fa-solid fa-user"></i></div>
-                  <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">659</div>
+                  <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">-</div>
                 </div>
               </div>
               <div class="/rekap-siswa"> 
@@ -85,18 +85,18 @@
             </div>
           </li>
           <li class="">
-            <div class=" tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-bg-white">
+            <div class="tw-px-4 tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-bg-white">
               <div class="tw-float-right">
-                <a href="/siswa-masuk" class="tw-text-sims-400 hover:tw-text-sims-600 tw-pr-2 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <a href="/siswa-masuk" class="tw-text-sims-400 hover:tw-text-sims-600 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
               </div>
               <div class="sm:tw-px-12 md:tw-px-8">
                 <div class="tw-flex tw-flex-row">
                   <div class="tw-text-5xl tw-text-sims-400"><i class="fa-solid fa-user"></i></div>
-                  <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">659</div>
+                  <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">-</div>
                 </div>
               </div>
               <div class=""> 
-                <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Siswa yang masuk</div>
+                <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Mapel</div>
               </div>
             </div>
           </li>
@@ -106,68 +106,68 @@
         <div x-init="$dispatch('register', {id: 2})"  
         x-intersect:enter.half="setIndex(1)" 
         class="tw-w-full tw-flex-shrink-0">
-        <ul class="list-unstyled tw-grid-rows-3 tw-gap-9 tw-flex tw-mt-3">
+        <ul class="list-unstyled tw-grid-rows-3 tw-gap-5 tw-flex tw-mt-3">
           <li class="">
-            <div class=" tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-border-sims-400-400 tw-bg-white">
+            <div class="tw-px-4 tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-bg-white">
               <div class="tw-float-right">
-                <a href="/siswa-keluar" class="tw-text-sims-400-400 hover:tw-text-sims-600 tw-pr-2 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <a href="/siswa-keluar" class="tw-text-sims-400 hover:tw-text-sims-600 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
               </div>
               <div class="sm:tw-px-12 md:tw-px-8">
                 <div class="tw-flex tw-flex-row">
-                  <div class="tw-text-5xl tw-text-sims-400-400"><i class="fa-solid fa-user"></i></div>
-                  <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">658</div>
+                  <div class="tw-text-5xl tw-text-sky-400"><i class="fa-solid fa-user"></i></div>
+                  <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">-</div>
                 </div>
               </div>
               <div class=""> 
-                <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Siswa yang keluar</div>
+                <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Kelas</div>
               </div>
             </div>
           </li>
           <li class="">
-            <div class=" tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-border-sims-400 tw-bg-white">
+            <div class="tw-px-4 tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-bg-white">
               <div class="tw-float-right">
-                <a href="/siswa-keluar" class="tw-text-sims-400 hover:tw-text-sims-600 tw-pr-2 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <a href="/siswa-keluar" class="tw-text-sims-400 hover:tw-text-sims-600 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
               </div>
               <div class="sm:tw-px-12 md:tw-px-8">
                 <div class="tw-flex tw-flex-row">
-                  <div class="tw-text-5xl tw-text-sims-400"><i class="fa-solid fa-user"></i></div>
-                  <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">658</div>
+                  <div class="tw-text-5xl tw-text-green-600"><i class="fa-solid fa-user"></i></div>
+                  <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">-</div>
                 </div>
               </div>
               <div class=""> 
-                <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Siswa yang keluar</div>
+                <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Jurusan</div>
               </div>
             </div>
           </li>
           <li class="">
-            <div class=" tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-border-sims-400 tw-bg-white">
+            <div class="tw-px-4 tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-bg-white">
               <div class="tw-float-right">
-                <a href="" class="tw-text-sims-400 hover:tw-text-sims-600 tw-pr-2 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <a href="" class="tw-text-sims-400 hover:tw-text-sims-600 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
               </div>
               <div class="sm:tw-px-12 md:tw-px-8">
                 <div class="tw-flex tw-flex-row">
-                  <div class="tw-text-5xl tw-text-sims-400"><i class="fa-solid fa-user"></i></div>
-                  <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">659</div>
+                  <div class="tw-text-5xl tw-text-[#e4e275]"><i class="fa-solid fa-user"></i></div>
+                  <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">-</div>
                 </div>
               </div>
               <div class="/rekap-siswa"> 
-                <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Jumlah Siswa</div>
+                <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Mutasi</div>
               </div>
             </div>
           </li>
           <li class="">
-            <div class=" tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-border-sims-400 tw-bg-white">
+            <div class="tw-px-4 tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-bg-white">
               <div class="tw-float-right">
-                <a href="/siswa-masuk" class="tw-text-sims-400 hover:tw-text-sims-600 tw-pr-2 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <a href="/siswa-masuk" class="tw-text-sims-400 hover:tw-text-sims-600 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
               </div>
               <div class="sm:tw-px-12 md:tw-px-8">
                 <div class="tw-flex tw-flex-row">
-                  <div class="tw-text-5xl tw-text-sims-400"><i class="fa-solid fa-user"></i></div>
-                  <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">659</div>
+                  <div class="tw-text-5xl tw-text-[#b159c7]"><i class="fa-solid fa-user"></i></div>
+                  <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">-</div>
                 </div>
               </div>
               <div class=""> 
-                <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Siswa yang masuk</div>
+                <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">?</div>
               </div>
             </div>
           </li>
@@ -177,75 +177,76 @@
       <div x-init="$dispatch('register', {id: 3})"  
       x-intersect:enter.half="setIndex(2)" 
       class="tw-w-full tw-flex-shrink-0">
-      <ul class="list-unstyled tw-grid-rows-3 tw-gap-9 tw-flex tw-mt-3">
+      <ul class="list-unstyled tw-grid-rows-3 tw-gap-5 tw-flex tw-mt-3">
         <li class="">
-          <div class=" tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-border-sims-400 tw-bg-white">
+          <div class="tw-px-4 tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-bg-white">
             <div class="tw-float-right">
-              <a href="/siswa-keluar" class="tw-text-sims-400 hover:tw-text-sims-600 tw-pr-2 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+              <a href="/siswa-keluar" class="tw-text-sims-400 hover:tw-text-sims-600 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
             </div>
             <div class="sm:tw-px-12 md:tw-px-8">
               <div class="tw-flex tw-flex-row">
-                <div class="tw-text-5xl tw-text-sims-400"><i class="fa-solid fa-user"></i></div>
-                <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">658</div>
+                <div class="tw-text-5xl tw-text-[#cf6cbf]"><i class="fa-solid fa-user"></i></div>
+                <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">-</div>
               </div>
             </div>
             <div class=""> 
-              <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Siswa yang keluar</div>
+              <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">?</div>
             </div>
           </div>
         </li>
         <li class="">
-          <div class=" tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-border-sims-400 tw-bg-white">
+          <div class="tw-px-4 tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-bg-white">
             <div class="tw-float-right">
-              <a href="/siswa-keluar" class="tw-text-sims-400 hover:tw-text-sims-600 tw-pr-2 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+              <a href="/siswa-keluar" class="tw-text-sims-400 hover:tw-text-sims-600 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
             </div>
             <div class="sm:tw-px-12 md:tw-px-8">
               <div class="tw-flex tw-flex-row">
-                <div class="tw-text-5xl tw-text-sims-400"><i class="fa-solid fa-user"></i></div>
-                <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">658</div>
+                <div class="tw-text-5xl tw-text-[#233341]"><i class="fa-solid fa-user"></i></div>
+                <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">-</div>
               </div>
             </div>
             <div class=""> 
-              <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Siswa yang keluar</div>
+              <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">?</div>
             </div>
           </div>
         </li>
         <li class="">
-          <div class=" tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-border-sims-400 tw-bg-white">
+          <div class="tw-px-4 tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-bg-white">
             <div class="tw-float-right">
-              <a href="" class="tw-text-sims-400 hover:tw-text-sims-600 tw-pr-2 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+              <a href="" class="tw-text-sims-400 hover:tw-text-sims-600 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
             </div>
             <div class="sm:tw-px-12 md:tw-px-8">
               <div class="tw-flex tw-flex-row">
-                <div class="tw-text-5xl tw-text-sims-400"><i class="fa-solid fa-user"></i></div>
-                <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">659</div>
+                <div class="tw-text-5xl tw-text-[#FFA386]"><i class="fa-solid fa-user"></i></div>
+                <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">-</div>
               </div>
             </div>
             <div class="/rekap-siswa"> 
-              <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Jumlah Siswa</div>
+              <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">?</div>
             </div>
           </div>
         </li>
         <li class="">
-          <div class=" tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-border-sims-400 tw-bg-white">
+          <div class="tw-px-4 tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-bg-white">
             <div class="tw-float-right">
-              <a href="/siswa-masuk" class="tw-text-sims-400 hover:tw-text-sims-600 tw-pr-2 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+              <a href="/siswa-masuk" class="tw-text-sims-400 hover:tw-text-sims-600 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
             </div>
             <div class="sm:tw-px-12 md:tw-px-8">
               <div class="tw-flex tw-flex-row">
                 <div class="tw-text-5xl tw-text-sims-400"><i class="fa-solid fa-user"></i></div>
-                <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">659</div>
+                <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">-</div>
               </div>
             </div>
             <div class=""> 
-              <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Siswa yang masuk</div>
+              <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">?</div>
             </div>
           </div>
         </li>
       </ul>
         </div>
-      </div>
         </div>
+      </div>
+      {{-- end of card carousel --}}
       
       {{-- chart view --}}
       <div class="tw-bg-white tw-shadow-md tw-h-fit tw-py-10 tw-w-full">

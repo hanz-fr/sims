@@ -6,7 +6,7 @@
 <div class="tw-flex tw-justify-center">
     <div class="tw-block tw-my-32">
         <img src="{{asset('assets/img/error_img.svg')}}" alt="error_img">
-        <h1 class="tw-flex tw-justify-center tw-font-pop tw-font-bold tw-mt-6 tw-text-sims">404 Not Found</h1>
+        <h1 class="tw-flex tw-justify-center tw-font-pop tw-font-bold tw-mt-6 tw-text-sims-400">404 Not Found</h1>
         <p class="tw-flex tw-justify-center tw-font-pop tw-text-md tw-font-semibold tw-text-gray-400 tw-mt-5">{{ $message }}</p>
     </div>
 </div>
