@@ -2,11 +2,25 @@
 
 @section('content')
 <div class="tw-mx-10">
+
+  @if(session()->has('error'))
+  <div id="alert-2" class="tw-flex tw-p-4 tw-mt-4 tw-bg-red-100 tw-rounded-lg" role="alert">
+    <svg class="tw-my-auto tw-flex-shrink-0 tw-w-5 tw-h-5 tw-text-red-700" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+    <div class="tw-ml-3 tw-text-sm tw-font-medium tw-text-red-700">
+      <div class="tw-font-bold tw-text-lg tw-flex">Error</div>  {{ session('error') }}
+    </div>
+    <button type="button" class="tw-ml-auto -tw-mx-1.5 tw-my-auto tw-bg-red-100 tw-text-red-500 tw-rounded-lg focus:tw-ring-2 focus:tw-ring-red-400 tw-p-1.5 hover:tw-bg-red-200 tw-inline-flex tw-h-8 tw-w-8 dark:tw-bg-red-200 dark:tw-text-red-600 dark:hover:tw-bg-red-300" data-dismiss-target="#alert-2" aria-label="Close">
+      <span class="sr-only">Close</span>
+      <svg class="tw-w-5 tw-h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+    </button>
+  </div>
+  @endif
+
   <div class="tw-flex tw-flex-col tw-rounded-[35px] tw-bg-white tw-w-4/5 tw-p-8 tw-h-full tw-mx-auto tw-my-14 tw-shadow-lg">
     <a href="/data-induk-siswa" class="tw-text-sims-400 tw-text-3xl"><i class="fa-solid fa-chevron-left"></i></a>
     <h3 class="tw-font-pop tw-font-semibold tw-mt-6 tw-text-sims-400 tw-text-center">Edit Data Siswa</h3>
     
-    <form method="POST" action="/api/siswa/update" enctype="multipart/form-data"  
+    <form method="POST" action="/api/siswa/update/{{ $siswa->nis_siswa }}" enctype="multipart/form-data"  
     class="tw-w-full lg:tw-mx-auto sm:tw-mx-10 tw-my-10 tw-max-w-3xl tw-font-pop">
       
       @csrf
@@ -32,15 +46,16 @@
           <label class="label-input" for="nama">
             Pas Foto
           </label>
+          @if($siswa->foto)
+          <img src="{{ asset('foto/'.$siswa->foto) }}" class="img-preview tw-w-1/4 tw-mb-3" alt="pasfoto" width="100" height="100">
+          @else
+          <img class="img-preview tw-w-1/4 tw-mb-3">
+          @endif
+
             <label class="">
               <span class="tw-sr-only">Choose profile photo</span>
-              <input value="{{ $siswa->foto }}" type="file" class=" tw-w-full tw-text-sm text-slate-500
-                file:tw-mr-4 file:tw-py-2 file:tw-px-4
-                file:tw-rounded-full file:tw-border-0
-                file:tw-text-lg file:tw-text-gray-500 file:hover:tw-text-sims-400 file:tw-cursor-pointer file:tw-font-semibold
-                file:bg-violet-50 file:text-sims-400
-                hover:file:bg-violet-100
-              " id="foto" name="foto"/>
+              <input type="hidden" name="oldImage" value="{{ $siswa->foto }}">
+              <input type="file" id="foto" name="foto" onchange="previewImage()"/>
             </label>
         </div>
       </div>
@@ -489,4 +504,21 @@
     </form>
   </div>
 </div>
+
+<script>
+  
+  function previewImage() {
+    const image = document.querySelector('#foto');
+    const imgPreview = document.querySelector('.img-preview');
+
+    imgPreview.style.display = 'block';
+
+    const oFReader = new FileReader();
+    oFReader.readAsDataURL(image.files[0]);
+
+    oFReader.onload = function (oFREvent) {
+      imgPreview.src = oFREvent.target.result;
+    }
+  }
+</script>
 @endsection
