@@ -21,6 +21,24 @@ a {
   .btn-export {
     @apply tw-text-xl tw-px-3 tw-py-2 tw-mb-3 tw-mx-2 tw-text-white tw-bg-sims-400 hover:tw-bg-[#3b7a7a] tw-border tw-rounded-lg;
   }
+  .nav-item-admin {
+    @apply tw-text-base tw-font-normal tw-text-gray-400 tw-rounded-lg hover:tw-bg-[#5A6C7C] hover:tw-text-gray-100 tw-justify-center tw-flex tw-p-2;
+  }
+  .card-account {
+    @apply tw-bg-white tw-rounded-xl tw-shadow-lg tw-flex tw-flex-col;
+  }
+  .card-account-title {
+    @apply tw-font-ubuntu tw-font-semibold tw-text-lg tw-mt-4;
+  }
+  .card-account-btn {
+    @apply tw-bg-admin-300 tw-py-3 tw-px-14 tw-rounded-xl tw-text-white tw-font-medium tw-mt-5 hover:tw-bg-[#88ACD7];
+  }
+  .card-data {
+    @apply tw-shadow-lg tw-rounded-xl tw-flex tw-bg-[#5A6C7C] tw-ml-5;
+  }
+  .card-data-btn {
+    @apply tw-border-2 tw-border-[#90C2C2] tw-py-1 tw-px-20 tw-text-[#90C2C2] tw-font-semibold tw-rounded-lg tw-font-ubuntu hover:tw-bg-[#90C2C2] hover:tw-text-white tw-mt-8;
+  }
 }
 
 .snap {
