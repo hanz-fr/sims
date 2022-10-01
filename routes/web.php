@@ -102,6 +102,13 @@ Route::get('/data-tidak-naik', function () {
     ]);
 });
 
+Route::get('/all-kelas', function () {
+    return view('all-kelas', [
+        'title' => 'List Semua Kelas',
+        'active' => 'data-induk'
+    ]);
+});
+
 Route::get('/profile', function () {
     return view('profil-user', [
         'title' => 'Profile',
