@@ -13,7 +13,7 @@ class ApiController extends Controller
     /* GLOBAL VARIABLES */
     public function __construct()
     {
-        $this->api_url = 'https://19b2-103-139-10-60.ngrok.io'; // Ganti link NGROK disini
+        $this->api_url = 'https://6ef2-103-139-10-60.ngrok.io'; // Ganti link NGROK disini
 
         $this->all_siswa = Http::get("{$this->api_url}/siswa");
     }
@@ -27,6 +27,7 @@ class ApiController extends Controller
         $response = Http::get("{$this->api_url}/siswa?page={$page}&perPage={$perPage}");
 
         if ($response->successful()) {
+            
             return view('data-induk', [
                 'siswa' => json_decode($response)->data->rows,
                 'status' => 'success',
@@ -35,7 +36,9 @@ class ApiController extends Controller
                 'title' => 'data-induk',
                 'active' => 'data-induk',
             ]);
+
         } else {
+
             return view('data-induk', [
                 'response' => $response,
                 'status' => 'error',
@@ -43,6 +46,7 @@ class ApiController extends Controller
                 'active' => 'data-induk',
                 'message' => 'Halaman yang kamu cari tidak dapat ditemukan :('
             ]);
+
         }
     }
 
