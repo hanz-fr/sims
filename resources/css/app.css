@@ -34,7 +34,7 @@ a {
     @apply tw-bg-admin-300 tw-py-3 tw-px-14 tw-rounded-xl tw-text-white tw-font-medium tw-mt-5 hover:tw-bg-[#88ACD7];
   }
   .card-data {
-    @apply tw-shadow-lg tw-rounded-xl tw-flex tw-bg-[#5A6C7C] tw-ml-5;
+    @apply tw-shadow-lg tw-rounded-xl tw-flex tw-bg-[#5A6C7C];
   }
   .card-data-btn {
     @apply tw-border-2 tw-border-[#90C2C2] tw-py-1 tw-px-20 tw-text-[#90C2C2] tw-font-semibold tw-rounded-lg tw-font-ubuntu hover:tw-bg-[#90C2C2] hover:tw-text-white tw-mt-8;
@@ -57,4 +57,12 @@ a {
 
 .snap>div {
    scroll-snap-align: start;
+}
+
+.tw-shadow-inner-r {
+  box-shadow: white 0px 30px 40px -2em inset; 
+}
+
+.shadow-cs {
+  box-shadow: 0px 4px 35px -13px rgba(0, 0, 0, 0.25);
 }

@@ -82,12 +82,12 @@
       </div>
       
       {{-- data management --}}
-      <div class="tw-shadow-lg tw-bg-white tw-px-8 tw-py-7  tw-w-[1260px]">
+      <div class="tw-shadow-lg tw-bg-white tw-px-8 tw-py-7 tw-w-[1245px]">
          <div class="tw-flex">
             <i class="fa-regular fa-sliders tw-text-[#90C2C2] tw-text-xl"></i>
             <div class="tw-text-xl tw-ml-3 tw-font-pop tw-font-semibold tw-text-gray-400">Data Management</div>
          </div>
-         <ul class="tw-overflow-y-scroll tw-h-fit tw-scrollbar-thumb-gray-300 tw-scrollbar-thumb-rounded-lg tw-scrollbar-thin tw-scrollbar-track-gray-100 tw-pb-6 tw-mt-7 tw-list-none tw-grid tw-grid-cols-2 tw-grid-rows-2 tw-gap-8">
+         <ul class="tw-overflow-y-scroll tw-shadow-inner-r tw-h-fit tw-scrollbar-thumb-gray-300 tw-scrollbar-thumb-rounded-lg tw-scrollbar-thin tw-scrollbar-track-gray-100 tw-py-6 tw-mt-7 tw-list-none tw-grid tw-grid-flow-col tw-gap-8">
             <li class="card-data">
                <div class="tw-flex tw-bg-[#90C2C2] tw-font-ubuntu tw-text-white tw-rounded-xl tw-gap-8 tw-py-16 tw-px-12">
                   <div class="tw-flex tw-flex-col">

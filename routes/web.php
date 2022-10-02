@@ -111,8 +111,7 @@ Route::get('/all-kelas', function () {
 
 Route::get('/profile', function () {
     return view('profil-user', [
-        'title' => 'Profile',
-        'active' => ' '
+        'title' => 'Profile'
     ]);
 });
 
@@ -134,6 +133,13 @@ Route::get('/admin', function () {
 Route::get('/dashboard', function () {
     return view('dashboard-admin', [
         'title' => 'Dashboard Admin'
+    ]);
+});
+
+Route::get('/manage-user', function () {
+    return view('manage-user', [
+        'title' => 'Manage User',
+        'active' => 'manage-user'
     ]);
 });
 

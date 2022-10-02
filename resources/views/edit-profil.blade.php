@@ -2,8 +2,9 @@
 
 @section('content')
 <div class="tw-m-10">
-  <div class="tw-flex">
-    <div class="tw-w-3/5 tw-flex tw-flex-col tw-bg-white tw-shadow-md tw-px-20 tw-mx-auto tw-py-16">
+  <div class="tw-flex tw-gap-5">
+    <div class="tw-w-1/5 tw-bg-white tw-p-20 tw-shadow-md"></div>
+    <div class="tw-w-3/5 tw-flex tw-flex-col tw-bg-white tw-shadow-md tw-px-20 tw-py-16">
       <h4 class="title-main tw-mb-8">Edit Profil</h4>
       <form action="/update-profile" method="POST" enctype="multipart/form-data">
         @csrf

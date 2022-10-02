@@ -29,19 +29,19 @@
             </a>
             <ul class="tw-space-y-3 tw-font-ubuntu tw-mt-20">
                <li>
-                  <a href="#" class="nav-item-admin tw-items-center">
+                  <a href="/dashboard" class="{{ ($active === "dashboard-admin") ? 'tw-bg-[#5A6C7C] tw-text-white' : '' }} nav-item-admin tw-transition-colors tw-duration-300">
                   <i class="fa-regular fa-browser tw-text-[#B2FEFE] tw-text-2xl"></i>
                      <span class="tw-ml-3 tw-font-bold tw-text-lg">Dashboard</span>
                   </a>
                </li>
                <li>
-               <a href="#" class="nav-item-admin tw-items-center">
+               <a href="#" class="{{ ($active === "") ? 'tw-bg-[#5A6C7C] tw-text-white' : '' }} nav-item-admin tw-transition-colors tw-duration-300">
                   <i class="fa-regular fa-database tw-text-[#B2FEFE] tw-text-2xl"></i>
                   <span class="tw-ml-3 tw-font-bold tw-text-lg">Database</span>
                </a>
             </li>
             <li>
-               <a href="#" class="nav-item-admin tw-items-center">
+               <a href="/manage-user" class="{{ ($active === "manage-user") ? 'tw-bg-[#5A6C7C] tw-text-white' : '' }} nav-item-admin tw-transition-colors tw-duration-300">
                <i class="fa-solid fa-user tw-text-[#B2FEFE] tw-text-2xl"></i>
                <span class="tw-ml-3 tw-font-bold tw-text-lg">Account</span>
                </a>
