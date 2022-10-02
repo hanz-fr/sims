@@ -15,10 +15,11 @@ class ApiController extends Controller
     {
         $this->api_url = 'https://6ef2-103-139-10-60.ngrok.io'; // Ganti link NGROK disini
 
-        $this->all_siswa = Http::get("{$this->api_url}/siswa");
     }
 
-    public function index(Request $request)
+    /* API SISWA */
+
+    public function getAllSiswa(Request $request)
     {
 
         $page = $request->page;
@@ -51,7 +52,7 @@ class ApiController extends Controller
     }
 
 
-    public function show(Request $request)
+    public function getSiswa(Request $request)
     {
 
         $nis = $request->nis;
@@ -86,7 +87,7 @@ class ApiController extends Controller
         }
     }
 
-    public function create()
+    public function createSiswa()
     {
 
         $kelas = Http::get("{$this->api_url}/kelas");
@@ -98,7 +99,7 @@ class ApiController extends Controller
         ]);
     }
 
-    public function store(Request $request)
+    public function storeSiswa(Request $request)
     {
 
         // validasi nis siswa jika sudah ada
@@ -188,7 +189,7 @@ class ApiController extends Controller
     }
 
 
-    public function edit(Request $request, $nis)
+    public function editSiswa(Request $request, $nis)
     {
 
         $response = Http::get("{$this->api_url}/siswa/{$nis}");
@@ -214,7 +215,7 @@ class ApiController extends Controller
     }
 
 
-    public function update(Request $request, $nis)
+    public function updateSiswa(Request $request, $nis)
     {
 
         if ($request->file('foto')) {
@@ -301,4 +302,39 @@ class ApiController extends Controller
 
         return redirect('/data-induk-siswa?perPage=10')->with('success', 'Siswa deleted successfully.');
     }
+
+
+    /* API MUTASI */
+
+    public function getAllMutasi(Request $request) {
+        
+        $page = $request->page;
+        $perPage = $request->perPage;
+
+        $response = Http::get("{$this->api_url}/mutasi?page={$page}&perPage={$perPage}");
+
+        if ($response->successful()) {
+            
+            return view('siswa-keluar', [
+                'mutasi' => json_decode($response)->data->rows,
+                'status' => 'success',
+                'response' => json_decode($response),
+                'total' => json_decode($response)->data->count,
+                'title' => 'Data Siswa Keluar',
+                'active' => 'data-induk'
+            ]);
+
+        } else {
+
+            return view('siswa-keluar', [
+                'response' => $response,
+                'status' => 'error',
+                'title' => 'Data Siswa Keluar',
+                'active' => 'data-induk',
+                'message' => 'Halaman yang kamu cari tidak dapat ditemukan :('
+            ]);
+
+        }
+    }
+
 }

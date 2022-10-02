@@ -17,6 +17,37 @@ use App\Http\Controllers\UserController;
 |
 */
 
+
+/* ROUTE SISWA */
+
+Route::get('/tambah-data', [ApiController::class, 'createSiswa']);
+Route::get('/detail/{nis}', [ApiController::class, 'getSiswa']);
+Route::get('/data-induk-siswa', [ApiController::class, 'getAllSiswa']);
+Route::get('/edit-siswa/{nis}', [ApiController::class, 'editSiswa']);
+
+Route::get('/api/siswa/create', [ApiController::class, 'createSiswa']);
+Route::post('/api/siswa', [ApiController::class, 'storeSiswa']);
+Route::put('/api/siswa/update/{nis}', [ApiController::class, 'updateSiswa']);
+Route::delete('/api/siswa/delete/{nis}', [ApiController::class, 'deleteSiswa']);
+
+
+/* ROUTE MUTASI */
+
+Route::get('/siswa-keluar', [ApiController::class, 'getAllMutasi']);
+
+
+
+/* ROUTE KELAS */
+
+Route::get('/all-kelas', function () {
+    return view('all-kelas', [
+        'title' => 'List Semua Kelas',
+        'active' => 'data-induk'
+    ]);
+});
+
+
+
 Route::get('/', function () {
     return view('dashboard-main', [
         'title' => 'Dashboard',
@@ -31,11 +62,6 @@ Route::get('/jurusan', function () {
         'active' => 'data-induk'
     ]);
 });
-
-Route::get('/tambah-data', [ApiController::class, 'create']);
-Route::get('/detail/{nis}', [ApiController::class, 'show']);
-Route::get('/data-induk-siswa', [ApiController::class, 'index']);
-Route::get('/edit-siswa/{nis}', [ApiController::class, 'edit']);
 
 Route::get('/update-data', function () {
     return view('update-di', [
@@ -87,13 +113,6 @@ Route::get('/rekap-jumlah-siswa', function () {
     ]);
 });
 
-
-Route::get('/siswa-keluar', function () {
-    return view('siswa-keluar', [
-        'title' => 'Data Siswa Keluar',
-        'active' => 'data-induk'
-    ]);
-});
  
 Route::get('/data-tidak-naik', function () {
     return view('data-tidak-naik', [
@@ -102,12 +121,7 @@ Route::get('/data-tidak-naik', function () {
     ]);
 });
 
-Route::get('/all-kelas', function () {
-    return view('all-kelas', [
-        'title' => 'List Semua Kelas',
-        'active' => 'data-induk'
-    ]);
-});
+
 
 Route::get('/profile', function () {
     return view('profil-user', [
@@ -137,11 +151,6 @@ Route::get('/dashboard', function () {
     ]);
 });
 
-// Route::get('/api/siswa', [ApiController::class, 'index']);
-Route::get('/api/siswa/create', [ApiController::class, 'create']);
-Route::post('/api/siswa', [ApiController::class, 'store']);
-Route::put('/api/siswa/update/{nis}', [ApiController::class, 'update']);
-Route::delete('/api/siswa/delete/{nis}', [ApiController::class, 'deleteSiswa']);
 
 Route::get('/register', [UserController::class, 'register']);
 
