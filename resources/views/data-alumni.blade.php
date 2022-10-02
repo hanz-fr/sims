@@ -4,7 +4,7 @@
 <div class="tw-mx-10">
     <div class="tw-flex tw-justify-between tw-gap-5 tw-mt-8">
         <div class="tw-flex tw-flex-col">
-            <h4 class="tw-font-pop tw-font-bold tw-mt-6 tw-text-sims-400">Data Alumni</h4>
+            <h4 class="title-main">Data Alumni</h4>
             <h6 class="tw-mb-5 tw-text-gray-400 tw-font-semibold">X PENGEMBANGAN PERANGKAT LUNAK DAN GIM</h6>
         </div>
     </div>

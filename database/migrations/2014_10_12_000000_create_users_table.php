@@ -22,7 +22,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->tinyInteger('roles');
-            /* Users: 1=>Tata Usaha, 2=>Kesiswaan, 3=>Kurikulum, 4=>Wali Kelas */
+            /* Users: Tata Usaha, Kesiswaan, Kurikulum, Wali Kelas */
             $table->rememberToken();
             $table->timestamps();
         });

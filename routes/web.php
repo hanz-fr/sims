@@ -155,7 +155,13 @@ Route::post('/registeruser', [UserController::class, 'registeruser']);
 
 Route::post('/loginuser', [UserController::class, 'loginuser']);
 
-  
+Route::get('/profile', [UserController::class, 'show']);
+
+Route::get('/edit-profile', [UserController::class, 'edit']);
+
+Route::post('/update-profile', [UserController::class, 'update']);
+
+
 
 Route::middleware(['auth', 'user-access:tata usaha'])->group(function () {
   

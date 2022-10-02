@@ -15,7 +15,7 @@
 <div class="tw-mx-10">
     <div class="tw-flex tw-justify-between tw-gap-5 tw-mt-8">
         <div class="tw-flex tw-flex-col">
-            <h4 class="tw-font-pop tw-font-bold tw-mt-6 tw-text-sims-400">Data Induk Siswa</h4>
+            <h4 class="title-main">Data Induk Siswa</h4>
             <h6 class="tw-mb-5 tw-text-gray-400 tw-font-semibold">SELURUH KELAS</h6>
         </div>
 
