@@ -9,10 +9,35 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    public function index()
+    public function show()
     {
         $user = User::findOrFail(Auth::id());
-        return view('profil-user', compact('user'));
+        return view('profil-user', compact('user'), [
+            'title' => 'Profile',
+            'active' => ' '
+        ]);
+    }
+
+    public function edit()
+    {
+        $user = User::findOrFail(Auth::id());
+        return view('edit-profil', compact('user'), [
+            'title' => 'Edit Profile',
+            'active' => ' '
+        ]);
+    }
+
+    public function update(Request $request)
+    {
+        $user = User::findOrFail(Auth::id());
+            $this->validate($request,[
+                'foto' => 'image|file|max:2048',
+            ]);
+        $user->update($request->all());
+        return view('edit-profil', compact('user'), [
+            'title' => 'Profile',
+            'active' => ' '
+        ]);
     }
     public function register(){
         return view('register', [

@@ -82,12 +82,105 @@
       </div>
       
       {{-- data management --}}
-      <div class="tw-shadow-lg tw-bg-white tw-px-8 tw-py-7 tw-w-[1240px]">
+      <div class="tw-shadow-lg tw-bg-white tw-px-8 tw-py-7  tw-w-[1260px]">
          <div class="tw-flex">
             <i class="fa-regular fa-sliders tw-text-[#90C2C2] tw-text-xl"></i>
             <div class="tw-text-xl tw-ml-3 tw-font-pop tw-font-semibold tw-text-gray-400">Data Management</div>
          </div>
-         <ul class="tw-flex tw-overflow-x-auto tw-scrollbar-thumb-gray-300 tw-scrollbar-thumb-rounded-lg tw-scrollbar-thin tw-scrollbar-track-gray-100 tw-pb-6 tw-flex-nowrap tw-mt-7 tw-list-none tw-grid-rows-2">
+         <ul class="tw-overflow-y-scroll tw-h-fit tw-scrollbar-thumb-gray-300 tw-scrollbar-thumb-rounded-lg tw-scrollbar-thin tw-scrollbar-track-gray-100 tw-pb-6 tw-mt-7 tw-list-none tw-grid tw-grid-cols-2 tw-grid-rows-2 tw-gap-8">
+            <li class="card-data">
+               <div class="tw-flex tw-bg-[#90C2C2] tw-font-ubuntu tw-text-white tw-rounded-xl tw-gap-8 tw-py-16 tw-px-12">
+                  <div class="tw-flex tw-flex-col">
+                     <i class="fa-solid fa-shapes tw-text-5xl tw-mx-auto"></i>
+                     <div class="tw-font-medium tw-text-xl">Jurusan</div>
+                  </div>
+                  <div class="tw-flex tw-items-center">
+                     <div class="tw-font-medium tw-text-4xl">20</div>
+                     <div class="tw-text-sm tw-ml-2">total <br> data</div>
+                  </div>
+               </div>
+               <div class="tw-flex tw-flex-col tw-px-7 tw-py-7">
+                  <table>
+                     <tbody class="tw-text-left tw-font-ubuntu tw-text-[#B4B8BC] tw-font-bold">
+                     <tr>
+                        <th class="tw-font-normal tw-pb-1.5">latest data created</th>
+                        <td class="tw-text-white tw-text-right tw-pl-3">2 days ago</td>
+                     </tr>
+                     <tr>
+                        <th class="tw-font-normal tw-pb-1.5">recent activity</th>
+                        <td class="tw-text-white tw-text-right">create</td>
+                     </tr>
+                     <tr>
+                        <th class="tw-font-normal">latest data</th>
+                        <td class="tw-text-white tw-text-right">TKJ</td>
+                     </tr>
+                     </tbody>
+                  </table>
+                  <div class="card-data-btn">Manage</div>
+               </div>
+            </li>
+            <li class="card-data">
+               <div class="tw-flex tw-bg-[#90C2C2] tw-font-ubuntu tw-text-white tw-rounded-xl tw-gap-8 tw-py-16 tw-px-12">
+                  <div class="tw-flex tw-flex-col">
+                     <i class="fa-solid fa-shapes tw-text-5xl tw-mx-auto"></i>
+                     <div class="tw-font-medium tw-text-xl">Jurusan</div>
+                  </div>
+                  <div class="tw-flex tw-items-center">
+                     <div class="tw-font-medium tw-text-4xl">20</div>
+                     <div class="tw-text-sm tw-ml-2">total <br> data</div>
+                  </div>
+               </div>
+               <div class="tw-flex tw-flex-col tw-px-7 tw-py-7">
+                  <table>
+                     <tbody class="tw-text-left tw-font-ubuntu tw-text-[#B4B8BC] tw-font-bold">
+                     <tr>
+                        <th class="tw-font-normal tw-pb-1.5">latest data created</th>
+                        <td class="tw-text-white tw-text-right tw-pl-3">2 days ago</td>
+                     </tr>
+                     <tr>
+                        <th class="tw-font-normal tw-pb-1.5">recent activity</th>
+                        <td class="tw-text-white tw-text-right">create</td>
+                     </tr>
+                     <tr>
+                        <th class="tw-font-normal">latest data</th>
+                        <td class="tw-text-white tw-text-right">TKJ</td>
+                     </tr>
+                     </tbody>
+                  </table>
+                  <div class="card-data-btn">Manage</div>
+               </div>
+            </li>
+            <li class="card-data">
+               <div class="tw-flex tw-bg-[#90C2C2] tw-font-ubuntu tw-text-white tw-rounded-xl tw-gap-8 tw-py-16 tw-px-12">
+                  <div class="tw-flex tw-flex-col">
+                     <i class="fa-solid fa-shapes tw-text-5xl tw-mx-auto"></i>
+                     <div class="tw-font-medium tw-text-xl">Jurusan</div>
+                  </div>
+                  <div class="tw-flex tw-items-center">
+                     <div class="tw-font-medium tw-text-4xl">20</div>
+                     <div class="tw-text-sm tw-ml-2">total <br> data</div>
+                  </div>
+               </div>
+               <div class="tw-flex tw-flex-col tw-px-7 tw-py-7">
+                  <table>
+                     <tbody class="tw-text-left tw-font-ubuntu tw-text-[#B4B8BC] tw-font-bold">
+                     <tr>
+                        <th class="tw-font-normal tw-pb-1.5">latest data created</th>
+                        <td class="tw-text-white tw-text-right tw-pl-3">2 days ago</td>
+                     </tr>
+                     <tr>
+                        <th class="tw-font-normal tw-pb-1.5">recent activity</th>
+                        <td class="tw-text-white tw-text-right">create</td>
+                     </tr>
+                     <tr>
+                        <th class="tw-font-normal">latest data</th>
+                        <td class="tw-text-white tw-text-right">TKJ</td>
+                     </tr>
+                     </tbody>
+                  </table>
+                  <div class="card-data-btn">Manage</div>
+               </div>
+            </li>
             <li class="card-data">
                <div class="tw-flex tw-bg-[#90C2C2] tw-font-ubuntu tw-text-white tw-rounded-xl tw-gap-8 tw-py-16 tw-px-12">
                   <div class="tw-flex tw-flex-col">

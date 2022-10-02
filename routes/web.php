@@ -102,15 +102,6 @@ Route::get('/data-tidak-naik', function () {
     ]);
 });
 
-Route::get('/profile', function () {
-    return view('profil-user', [
-        'title' => 'Profile',
-        'active' => ' '
-    ]);
-});
-
-Route::get('/profile', [UserController::class, 'show']);
-
 Route::get('/testurl', function() {
     return view('plswork', [
         'title' => 'Data Tidak Naik Kelas',
@@ -148,7 +139,13 @@ Route::post('/registeruser', [UserController::class, 'registeruser']);
 
 Route::post('/loginuser', [UserController::class, 'loginuser']);
 
-  
+Route::get('/profile', [UserController::class, 'show']);
+
+Route::get('/edit-profile', [UserController::class, 'edit']);
+
+Route::post('/update-profile', [UserController::class, 'update']);
+
+
 
 Route::middleware(['auth', 'user-access:tata usaha'])->group(function () {
   
