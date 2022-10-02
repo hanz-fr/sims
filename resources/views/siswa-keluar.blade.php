@@ -1,6 +1,17 @@
 @extends('layouts.main')
 @section('content')
 
+@if($status == 'error')
+<div class="tw-flex tw-justify-center">
+    <div class="tw-block tw-my-32">
+        <img src="{{asset('assets/img/error_img.svg')}}" alt="error_img">
+        <h1 class="tw-flex tw-justify-center tw-font-pop tw-font-bold tw-mt-6 tw-text-sims-400">404 Not Found</h1>
+        <p class="tw-flex tw-justify-center tw-font-pop tw-text-md tw-font-semibold tw-text-gray-400 tw-mt-5">{{ $message }}</p>
+        <p class="tw-flex tw-justify-center tw-font-pop tw-text-gray-400 tw-text-sm">Coba hubungi admin untuk penyelesaian lebih lanjut.</p>
+    </div>
+</div>
+@else
+
 <div class="tw-mx-10">
     <div class="tw-flex tw-justify-between tw-gap-5 tw-mt-8">
         <div class="tw-flex tw-flex-col">
@@ -51,27 +62,20 @@
                     </tr>
                 </thead>
                 <tbody class="tw-text-base">
+                    @foreach($mutasi as $m)
                     <tr class="tw-bg-white tw-border">
-                        <td class="tw-py-4 tw-px-6 tw-border">01</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">Abdul Sukma Dika</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">200677555</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">XI TJKT</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">22-11-2022</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">421.5/229/Smk11/CadisdikwilVII/2022</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">Paket C</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">#</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">{{ $m->nis_siswa }}</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">{{ $m->keluar_di_kelas }}</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">{{ $m->tgl_mutasi }}</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">{{ $m->sk_mutasi }}</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">{{ $m->alasan_mutasi }}</td>
                     </tr>
-                    <tr class="tw-bg-white tw-border">
-                        <td class="tw-py-4 tw-px-6 tw-border">02</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">Xue Huao Piao Piao</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">200715824</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">XII MLOG 1</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">11-11-2011</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">421.5/229/Smk11/CadisdikwilVII/2022</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">Pindah Sekolah</td>
-                    </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
     </div>
-
+@endif
 @endsection
