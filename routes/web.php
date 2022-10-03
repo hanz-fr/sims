@@ -153,6 +153,13 @@ Route::get('/manage-user', function () {
     ]);
 });
 
+Route::get('/mata-pelajaran', function () {
+    return view('mapel', [
+        'title' => 'Mata Pelajaran',
+        'active' => 'mata-pelajaran'
+    ]);
+});
+
 Route::get('/show-detail', function () {
     return view('account-detail', [
         'title' => 'Account Details',
