@@ -60,21 +60,12 @@ Route::get('/', function () {
     ]);
 });
 
-
 Route::get('/jurusan', function () {
     return view('pilih-jurusan', [
         'title' => 'Pilih Jurusan',
         'active' => 'data-induk'
     ]);
 });
-
-Route::get('/update-data', function () {
-    return view('update-di', [
-        'title' => 'Update Data Induk Siswa',
-        'active' => 'data-induk'
-    ]);
-});
-
 
 Route::get('/angkatan', function () {
     return view('pilih-angkatan', [
@@ -117,7 +108,6 @@ Route::get('/rekap-jumlah-siswa', function () {
         'active' => 'rekap-siswa'
     ]);
 });
-
  
 Route::get('/data-tidak-naik', function () {
     return view('data-tidak-naik', [
@@ -125,8 +115,6 @@ Route::get('/data-tidak-naik', function () {
         'active' => 'data-induk'
     ]);
 });
-
-
 
 Route::get('/profile', function () {
     return view('profil-user', [
@@ -143,6 +131,7 @@ Route::get('/testurl', function() {
     ]);
 });
 
+/* ROUTE ADMIN */
 Route::get('/admin', function () {
     return view('login-admin', [
         'title' => 'Admin Login',
@@ -157,26 +146,29 @@ Route::get('/dashboard', function () {
     ]);
 });
 
+Route::get('/manage-user', function () {
+    return view('manage-user', [
+        'title' => 'Manage User SIMS',
+        'active' => 'account'
+    ]);
+});
+
+Route::get('/show-detail', function () {
+    return view('account-detail', [
+        'title' => 'Account Details',
+        'active' => 'account'
+    ]);
+});
 
 Route::get('/register', [UserController::class, 'register']);
-
 Route::get('/login', [UserController::class, 'login']);
-
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');
-
 Route::get('/register-success', [UserController::class, 'registersc']);
-
 Route::post('/registeruser', [UserController::class, 'registeruser']);
-
 Route::post('/loginuser', [UserController::class, 'loginuser']);
-
 Route::get('/profile', [UserController::class, 'show']);
-
 Route::get('/edit-profile', [UserController::class, 'edit']);
-
 Route::post('/update-profile', [UserController::class, 'update']);
-
-
 
 Route::middleware(['auth', 'user-access:tata usaha'])->group(function () {
   

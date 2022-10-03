@@ -284,7 +284,7 @@
         </div>
         <div @click="openTab = 2" class="tw-flex tw-items-center">
             <input id="default-radio-2" type="radio" name="default-radio" value="" class="tw-w-4 tw-h-4 tw-bg-gray-100 tw-border-gray-300 focus:tw-ring-2">
-            <label for="default-radio-2" class="tw-ml-2 tw-text-sm tw-font-medium tw-text-basic">Tidak</label>
+            <label for="default-radio-2" class="tw-ml-2 tw-text-sm tw-font-medium tw-text-basic-700">Tidak</label>
         </div>
       </div>
   

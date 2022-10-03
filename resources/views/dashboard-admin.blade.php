@@ -1,8 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="tw-mx-10 tw-mt-10 tw-flex">
-   \
+<div class="tw-mx-10 tw-w-screen tw-mt-10 tw-flex">
    <section class="tw-flex tw-flex-col tw-gap-8">
       <div class="tw-flex tw-mb-8">
          <div class="tw-border-l-8 tw-border-admin-300 tw-h-16 tw-mr-5"></div>

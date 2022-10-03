@@ -2,26 +2,26 @@
 
 @section('content')
 <div class="tw-mx-10">
-    <div class="tw-flex tw-flex-row tw-gap-8 tw-mt-8">
+    <div class="tw-flex tw-gap-8 tw-mt-8">
       <div class="tw-bg-white tw-rounded-xl tw-flex tw-flex-col tw-p-14 tw-shadow-lg tw-font-pop tw-w-1/4">
-        <div class="tw-flex tw-flex-row tw-mx-auto tw-text-sims-400">
+        <div class="tw-flex  tw-mx-auto tw-text-sims-400">
           <div class="tw-text-4xl"><i class="fa-solid fa-user-group"></i></div>
           <div class="tw-text-xl my-auto tw-ml-3 tw-font-bold">Siswa</div>
         </div>
         <div class="tw-flex tw-flex-col tw-my-auto">
-          <div class="tw-flex tw-flex-row tw-justify-between">
+          <div class="tw-flex tw-justify-between">
             <div class="tw-text-lg my-auto tw-font-normal tw-text-gray-500">Masuk Sekolah (Pindahan)</div>
             <div class="tw-text-base my-auto tw-font-bold tw-text-sims-400">16</div>
           </div>
-          <div class="tw-flex tw-flex-row tw-justify-between tw-mt-10">
+          <div class="tw-flex tw-justify-between tw-mt-10">
             <div class="tw-text-lg my-auto tw-font-normal tw-text-gray-500">Keluar Sekolah</div>
             <div class="tw-text-base my-auto tw-font-bold tw-text-sims-400">5</div>
           </div>
-          <div class="tw-flex tw-flex-row tw-justify-between tw-mt-10">
+          <div class="tw-flex tw-justify-between tw-mt-10">
             <div class="tw-text-lg my-auto tw-font-normal tw-text-gray-500">Siswa Tidak Naik Kelas</div>
             <div class="tw-text-base my-auto tw-font-bold tw-text-sims-400">2</div>
           </div>
-          <div class="tw-flex tw-flex-row tw-justify-between tw-mt-10">
+          <div class="tw-flex tw-justify-between tw-mt-10">
             <div class="tw-text-base my-auto tw-font-normal tw-text-gray-500">Jumlah Siswa</div>
             <div class="tw-text-base my-auto tw-font-bold tw-text-sims-400">1523</div>
           </div>
@@ -37,7 +37,7 @@
       </div>
     </div>
     {{-- Data Siswa Masuk --}}
-    <div class="tw-gap-8 tw-flex tw-flex-row tw-mt-8">
+    <div class="tw-gap-8 tw-flex  tw-mt-8">
       <div class="tw-bg-white tw-flex tw-flex-col tw-grow tw-rounded-xl tw-py-3 tw-px-7 tw-shadow-lg tw-font-pop tw-w-1/2">
         <div class="-tw-mr-6">
           <a href="/siswa-masuk" class="tw-text-sims-400 hover:tw-text-sims-600 tw-pr-2 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
@@ -357,7 +357,7 @@
     </div>
 
     {{-- Rekap Data Jumlah Siswa --}}
-    <div class="tw-flex tw-flex-row tw-gap-8 tw-my-8">
+    <div class="tw-flex  tw-gap-8 tw-my-8">
       <div class="tw-bg-white tw-grow tw-flex tw-flex-col tw-rounded-xl tw-py-3 tw-pb-10 tw-px-10 tw-shadow-lg tw-font-pop tw-w-full">
         <div class="tw-float-right -tw-mr-8">
           <a href="/rekap-jumlah-siswa" class="tw-text-sims-400 hover:tw-text-sims-600 tw-pr-2 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
