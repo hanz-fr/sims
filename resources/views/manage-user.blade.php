@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="tw-m-10">
+<div class="tw-m-10 tw-w-screen">
   <div class="tw-flex tw-flex-col tw-gap-5">
     <div class="tw-flex">
       <i class="fa-solid fa-user-group tw-text-admin-300 tw-text-xl"></i>
