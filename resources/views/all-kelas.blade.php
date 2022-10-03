@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.admin')
 
 @section('content')
 
@@ -28,7 +28,7 @@
                 <i class="fa-solid fa-magnifying-glass tw-pr-5 tw-pl-3 tw-text-slate-600"></i>
             </div>
         </form>
-        <div class="tw-text-base pt-1 tw-text-basic tw-ml-4 tw-mr-2 tw-font-normal tw-font-pop">Show</div>
+        {{-- <div class="tw-text-base pt-1 tw-text-basic tw-ml-4 tw-mr-2 tw-font-normal tw-font-pop">Show</div>
         <div class="dropdown">
             <button class="dropdown-toggle tw-bg-gray-300 tw-font-bold tw-py-1 tw-px-3 tw-rounded-xl tw-text" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             10
@@ -39,7 +39,7 @@
             <li><a class="dropdown-item" href="#">100</a></li>
             </ul>
         </div>
-        <div class="tw-text-base pt-1 tw-mx-2 tw-font-pop tw-font-normal tw-text-basic">Entries</div>
+        <div class="tw-text-base pt-1 tw-mx-2 tw-font-pop tw-font-normal tw-text-basic">Entries</div> --}}
     </div>
 
             {{-- <div class="tw-flex">
@@ -68,6 +68,74 @@
                         <td class="tw-py-4 tw-px-6 tw-border">PPLG</td>
                         <td class="tw-py-4 tw-px-6 tw-border">1</td>
                         <td class="tw-py-4 tw-px-6 tw-border">X PPLG 1</td>
+                        <td class="tw-py-2 tw-px-4 tw-border">
+                            <a href="#"
+                                class="tw-text-white tw-bg-yellow-400 hover:tw-bg-[#D3A007] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
+                                <i class="fa-solid fa-pen-to-square"></i></a>
+                            </a>
+                            <a href="#"
+                                class="tw-text-white tw-bg-gray-500 hover:tw-bg-gray-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
+                                <i class="fa-solid fa-eye"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="tw-bg-white tw-border">
+                        <td class="tw-py-4 tw-px-6 tw-border">02</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">XI</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">PPLG</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">1</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">XI PPLG 1</td>
+                        <td class="tw-py-2 tw-px-4 tw-border">
+                            <a href="#"
+                                class="tw-text-white tw-bg-yellow-400 hover:tw-bg-[#D3A007] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
+                                <i class="fa-solid fa-pen-to-square"></i></a>
+                            </a>
+                            <a href="#"
+                                class="tw-text-white tw-bg-gray-500 hover:tw-bg-gray-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
+                                <i class="fa-solid fa-eye"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="tw-bg-white tw-border">
+                        <td class="tw-py-4 tw-px-6 tw-border">03</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">XI</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">PPLG</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">2</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">XI PPLG 2</td>
+                        <td class="tw-py-2 tw-px-4 tw-border">
+                            <a href="#"
+                                class="tw-text-white tw-bg-yellow-400 hover:tw-bg-[#D3A007] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
+                                <i class="fa-solid fa-pen-to-square"></i></a>
+                            </a>
+                            <a href="#"
+                                class="tw-text-white tw-bg-gray-500 hover:tw-bg-gray-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
+                                <i class="fa-solid fa-eye"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="tw-bg-white tw-border">
+                        <td class="tw-py-4 tw-px-6 tw-border">04</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">XII</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">RPL</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">1</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">XII RPL 1</td>
+                        <td class="tw-py-2 tw-px-4 tw-border">
+                            <a href="#"
+                                class="tw-text-white tw-bg-yellow-400 hover:tw-bg-[#D3A007] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
+                                <i class="fa-solid fa-pen-to-square"></i></a>
+                            </a>
+                            <a href="#"
+                                class="tw-text-white tw-bg-gray-500 hover:tw-bg-gray-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
+                                <i class="fa-solid fa-eye"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="tw-bg-white tw-border">
+                        <td class="tw-py-4 tw-px-6 tw-border">05</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">XII</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">RPL</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">2</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">XII RPL 2</td>
                         <td class="tw-py-2 tw-px-4 tw-border">
                             <a href="#"
                                 class="tw-text-white tw-bg-yellow-400 hover:tw-bg-[#D3A007] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">

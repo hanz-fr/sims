@@ -1,14 +1,27 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="tw-mx-auto">
-        <div class="tw-flex tw-justify-between tw-gap-5 tw-mt-8">
+    <div class="tw-ml-16">
+        <div class="tw-flex tw-justify-between tw-gap-5 tw-mt-8 tw-mb-10">
             <div class="tw-flex tw-flex-col">
                 <h4 class="tw-font-pop tw-font-bold tw-mt-6 tw-text-sims-400">Data Mata Pelajaran</h4>
             </div>
         </div>
-
-        <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl tw-mb-20">
+    <div class="tw-flex tw-justify-between">
+        <form action="" class="tw-flex tw-w-[264px]">
+            <div class="relative tw-border-2 tw-rounded-lg focus:tw-ring-sims-400">
+                <input type="text" class="tw-py-1 tw-px-5 tw-border-none tw-rounded-md">
+                <i class="fa-solid fa-magnifying-glass tw-pr-5 tw-pl-3 tw-text-slate-600"></i>
+            </div>
+        </form>
+        <div class="tw-flex ">
+            <a href="" class="tw-bg-[#28A745] tw-text-white hover:tw-text-white hover:tw-bg-green-700 tw-font-pop tw-rounded-lg tw-px-5 tw-py-2">
+                <i class="fa-solid fa-circle-plus tw-pr-3"></i>
+                Tambah Mapel
+            </a>
+        </div>
+    </div>
+        <div class="tw-overflow-x-auto tw-mt-6 tw-relative tw-shadow-md sm:tw-rounded-xl tw-mb-20">
             <table class="tw-w-full tw-text-sm tw-text-center">
                 <thead class="tw-text-md tw-bg-gray-100 tw-text-basic-700 tw-border tw-font-pop">
                     <tr>

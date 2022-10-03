@@ -89,5 +89,6 @@
    <script defer src="https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"></script>
    {{-- flowbite --}}
    <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+   @stack('scripts')  
 </body>
 </html>
