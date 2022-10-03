@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
@@ -14,7 +15,6 @@ class ApiController extends Controller
     public function __construct()
     {
         $this->api_url = 'https://03eb-103-139-10-166.ngrok.io'; // Ganti link NGROK disini
-
     }
 
     /* API SISWA */
@@ -309,7 +309,6 @@ class ApiController extends Controller
 
 
     /* API MUTASI */
-
     public function getAllMutasi(Request $request) {
         
         $page = $request->page;
@@ -341,25 +340,55 @@ class ApiController extends Controller
         }
     }
 
-    // public function search(Request $request)
-    // {
-    //     $output = "";
-    //     $anggota = Anggota::where('nama','LIKE','%'.$request->search.'%')->orwhere('alamat','LIKE','%'.$request->search.'%')->get();
+    public function indexLiveSearch(Request $request) 
+    {
+        $page = $request->page;
+        $perPage = $request->perPage;
 
-    //     foreach($anggota as $a)
-    //     {
-    //         $output.=
-    //         '<tr>
+        $response = Http::get("{$this->api_url}/siswa?page={$page}&perPage={$perPage}");
+
+        $siswa = json_decode($response)->data->rows;
+        /* ->orWhere('alamat_siswa','LIKE','%'.$request->search.'%')
+        ->orWhere('KelasId','LIKE','%'.$request->search.'%')
+        ->get(); */
+
+        return $siswa;
+
+
+        return view('livesearch', [
+            'title' => 'Live Search',
+            'active' => 'livesearch',
+            'siswa' => json_decode($response)->data->rows
+        ]);
+    }
+
+    public function search(Request $request)
+    {
+        $page = $request->page;
+        $perPage = $request->perPage;
+
+        $response = Http::get("{$this->api_url}/siswa?page={$page}&perPage={$perPage}");
+
+        $output = "";
+        $siswa = collect(json_decode($response)->data->rows)->where('nama_siswa','LIKE','%'.$request->search.'%')
+        ->orWhere('alamat_siswa','LIKE','%'.$request->search.'%')
+        ->orWhere('KelasId','LIKE','%'.$request->search.'%')
+        ->get();
+
+        foreach($siswa as $s)
+        {
+            $output.=
+            '<tr>
             
-    //         <td class="py-3"> '.$a->nomor_kartu.' </td>
-    //         <td class="py-3"> '.$a->nama.' </td>
-    //         <td class="py-3"> '.$a->alamat.' </td>
+            <td class="py-3"> '.$s->nis_siswa.' </td>
+            <td class="py-3"> '.$s->nama_siswa.' </td>
+            <td class="py-3"> '.$s->KelasId.' </td>
 
-    //         </tr>';
+            </tr>';
 
-    //     }
+        }
 
-    //     return response($output);
-    // }
+        return response($output);
+    }
 
 }
