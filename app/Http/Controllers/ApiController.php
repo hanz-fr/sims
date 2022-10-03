@@ -337,25 +337,25 @@ class ApiController extends Controller
         }
     }
 
-    public function search(Request $request)
-    {
-        $output = "";
-        $anggota = Anggota::where('nama','LIKE','%'.$request->search.'%')->orwhere('alamat','LIKE','%'.$request->search.'%')->get();
+    // public function search(Request $request)
+    // {
+    //     $output = "";
+    //     $anggota = Anggota::where('nama','LIKE','%'.$request->search.'%')->orwhere('alamat','LIKE','%'.$request->search.'%')->get();
 
-        foreach($anggota as $a)
-        {
-            $output.=
-            '<tr>
+    //     foreach($anggota as $a)
+    //     {
+    //         $output.=
+    //         '<tr>
             
-            <td class="py-3"> '.$a->nomor_kartu.' </td>
-            <td class="py-3"> '.$a->nama.' </td>
-            <td class="py-3"> '.$a->alamat.' </td>
+    //         <td class="py-3"> '.$a->nomor_kartu.' </td>
+    //         <td class="py-3"> '.$a->nama.' </td>
+    //         <td class="py-3"> '.$a->alamat.' </td>
 
-            </tr>';
+    //         </tr>';
 
-        }
+    //     }
 
-        return response($output);
-    }
+    //     return response($output);
+    // }
 
 }
