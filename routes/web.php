@@ -46,7 +46,12 @@ Route::get('/all-kelas', function () {
     ]);
 });
 
-
+Route::get('/detail-kelas', function () {
+    return view('detail-kelas', [
+        'title' => 'Detail Kelas',
+        'active' => 'data-induk'
+    ]);
+});
 
 Route::get('/', function () {
     return view('dashboard-main', [
