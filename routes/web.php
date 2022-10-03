@@ -108,7 +108,7 @@ Route::get('/rekap-siswa', function () {
 
 Route::get('/rekap-jumlah-siswa', function () {
     return view('data-rekap-jumlah-siswa', [
-        'title' => 'Data Rekap Siswa',
+        'title' => 'Data Rekap Jumlah Siswa',
         'active' => 'rekap-siswa'
     ]);
 });
@@ -121,6 +121,12 @@ Route::get('/data-tidak-naik', function () {
     ]);
 });
 
+Route::get('/mata-pelajaran', function () {
+    return view('mapel', [
+        'title' => 'Mata Pelajaran',
+        'active' => 'mata-pelajaran'
+    ]);
+});
 
 
 Route::get('/profile', function () {
@@ -150,7 +156,7 @@ Route::get('/dashboard', function () {
     ]);
 });
 
-<<<<<<< HEAD
+
 Route::get('/manage-user', function () {
     return view('manage-user', [
         'title' => 'Manage User',
@@ -163,8 +169,7 @@ Route::get('/api/siswa/create', [ApiController::class, 'create']);
 Route::post('/api/siswa', [ApiController::class, 'store']);
 Route::put('/api/siswa/update/{nis}', [ApiController::class, 'update']);
 Route::delete('/api/siswa/delete/{nis}', [ApiController::class, 'deleteSiswa']);
-=======
->>>>>>> 69632743097230a3b026986d7061890e1b19bf7e
+
 
 Route::get('/register', [UserController::class, 'register']);
 
