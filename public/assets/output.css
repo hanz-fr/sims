@@ -661,9 +661,9 @@ video {
 
 .nav-item-admin {
   display: flex;
-  justify-content: center;
   border-radius: 0.5rem;
-  padding: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   font-size: 1rem;
   line-height: 1.5rem;
   font-weight: 400;

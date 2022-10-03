@@ -146,13 +146,15 @@ Route::get('/testurl', function() {
 
 Route::get('/admin', function () {
     return view('login-admin', [
-        'title' => 'Admin Login'
+        'title' => 'Admin Login',
+        'active' => 'admin'
     ]);
 });
 
 Route::get('/dashboard', function () {
     return view('dashboard-admin', [
-        'title' => 'Dashboard Admin'
+        'title' => 'Dashboard Admin',
+        'active' => 'admin'
     ]);
 });
 
@@ -163,12 +165,6 @@ Route::get('/manage-user', function () {
         'active' => 'manage-user'
     ]);
 });
-
-// Route::get('/api/siswa', [ApiController::class, 'index']);
-Route::get('/api/siswa/create', [ApiController::class, 'create']);
-Route::post('/api/siswa', [ApiController::class, 'store']);
-Route::put('/api/siswa/update/{nis}', [ApiController::class, 'update']);
-Route::delete('/api/siswa/delete/{nis}', [ApiController::class, 'deleteSiswa']);
 
 
 Route::get('/register', [UserController::class, 'register']);
