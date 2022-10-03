@@ -1,13 +1,13 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="tw-m-10 tw-w-screen">
-  <div class="tw-flex tw-flex-col tw-gap-5">
+<div class="tw-mx-10 tw-w-screen">
+  <div class="tw-flex tw-flex-col tw-gap-5 tw-mt-8">
     <div class="tw-flex">
       <i class="fa-solid fa-user-group tw-text-admin-300 tw-text-xl"></i>
       <div class="tw-text-xl tw-ml-3 tw-font-pop tw-font-semibold tw-text-gray-300">Account Management</div>
     </div>
-    <div class="tw-bg-white tw-mt-12 tw-rounded-xl shadow-cs tw-w-full tw-flex tw-py-20 tw-px-36 tw-justify-between tw-font-ubuntu tw-gap-40 tw-border-b-[13px] tw-border-admin-300">
+    <div class="tw-bg-white tw-mt-12 tw-rounded-xl shadow-cs tw-w-full tw-flex tw-p-20 tw-justify-between tw-font-ubuntu tw-border-b-[13px] tw-border-admin-300">
       <div class="tw-flex tw-gap-8 tw-text-admin-300">
         <div class="tw-text-center">
           <i class="fa-solid fa-user tw-text-6xl"></i>
@@ -77,27 +77,27 @@
         </div>
       </div>
       <div class="tw-overflow-y-scroll tw-h-[600px] tw-scrollbar-thumb-gray-300 tw-scrollbar-thumb-rounded-lg tw-scrollbar-thin tw-scrollbar-track-gray-100">
-        <table class="tw-w-full tw-mt-10 tw-text-sm tw-text-center">
+        <table class="tw-mt-10 tw-w-full tw-text-sm tw-text-center">
           <thead class="tw-text-lg tw-font-pop tw-text-admin-300">
               <tr>
-                  <th scope="col" class="tw-pb-9"></th>
-                  <th scope="col" class="tw-pb-9">NIP</th>
-                  <th scope="col" class="tw-pb-9">Nama</th>
-                  <th scope="col" class="tw-pb-9">Created</th>
-                  <th scope="col" class="tw-pb-9">Role</th>
-                  <th scope="col" class="tw-pb-9"></th>
+                  <th scope="col" class="tw-pb-9 tw-px-5"></th>
+                  <th scope="col" class="tw-pb-9 tw-px-5">NIP</th>
+                  <th scope="col" class="tw-pb-9 tw-px-5">Nama</th>
+                  <th scope="col" class="tw-pb-9 tw-px-5">Created</th>
+                  <th scope="col" class="tw-pb-9 tw-px-5">Role</th>
+                  <th scope="col" class="tw-pb-9 tw-px-5"></th>
               </tr>
           </thead>
           <tbody>     
               <tr class="tw-bg-white tw-text-[#B4B8BC] tw-font-bold text-lg tw-font-ubuntu">
                   <td class="tw-pb-6 tw-pl-6 tw-border-b">
                     <div class="tw-bg-admin-300 tw-p-2 tw-rounded-2xl tw-text-white tw-w-14 tw-h-14 tw-items-center tw-flex tw-justify-center"><i class="fa-solid fa-user tw-text-2xl"></i></div>
-                  </td>
-                  <td class="tw-pb-6 tw-border-b">192871837268361728</td>
-                  <td class="tw-pb-6 tw-border-b">Ibnu Asep bin Budi</td>
-                  <td class="tw-pb-6 tw-border-b">12 February 2023</td>
-                  <td class="tw-pb-6 tw-border-b">Tata Usaha</td>
-                  <td class="tw-pb-6 tw-border-b">
+                 </td>
+                  <td class="tw-pb-6 tw-px-5 tw-border-b">192871837268361728</td>
+                  <td class="tw-pb-6 tw-px-5 tw-border-b">Ibnu Asep bin Budi</td>
+                  <td class="tw-pb-6 tw-px-5 tw-border-b">12 February 2023</td>
+                  <td class="tw-pb-6 tw-px-5 tw-border-b">Tata Usaha</td>
+                  <td class="tw-pb-6 tw-px-5 tw-border-b">
                     <a href="#" class="tw-text-white tw-bg-admin-300 hover:tw-bg-admin-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-7 tw-mr-1">
                         View
                     </a>
