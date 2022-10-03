@@ -4,7 +4,7 @@
     <div class="container">
         <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl tw-mt-5">
             <table class="tw-w-full tw-text-sm tw-text-center">
-                <thead class="tw-text-md tw-bg-gray-100 tw-text-basic tw-border tw-font-pop">
+                <thead class="tw-text-md tw-bg-gray-100 tw-text-basic-700 tw-border tw-font-pop">
                     <tr>
                         <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">NO</th>
                         <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">NIS</th>

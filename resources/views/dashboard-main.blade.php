@@ -251,7 +251,7 @@
       {{-- chart view --}}
       <div class="tw-bg-white tw-shadow-md tw-h-fit tw-py-10 tw-w-full">
         <div class="tw-px-10 tw-font-pop">
-          <div class="tw-text-base tw-text-gray-400 tw-font-bold">Data Jumlah Siswa SMKN 11</div>
+          <div class=" tw-text-gray-400 tw-font-bold">Data Jumlah Siswa SMKN 11</div>
           <div>
             <canvas id="myChart" class="tw-mt-4"></canvas>          
           </div>          
@@ -266,31 +266,31 @@
           <a href="#" class="tw-text-gray-500 tw-mr-4 hover:tw-text-gray-600 tw-pr-2 tw-mt-5 tw-text-lg tw-float-right"><i class="fa-solid fa-sliders-simple"></i></a>
         </div>
         <div class="tw-px-10">
-        <div class="tw-text-base tw-text-gray-400 tw-font-bold">Kuota Pendaftaran SMKN 11</div>
+        <div class=" tw-text-gray-400 tw-font-bold">Kuota Pendaftaran SMKN 11</div>
           <ul class="tw-flex tw-justify-center tw-flex-row tw-gap-10 list-unstyled tw-mx-11 tw-mt-12 tw-mb-20">
             <li class="tw-flex-row tw-text-center">
               <div class="tw-text-2xl tw-text-admin-300 tw-font-bold">18</div>
-              <div class="tw-text-base tw-font-light tw-text-gray-400">AKL</div>
+              <div class=" tw-font-light tw-text-gray-400">AKL</div>
             </li>
             <li class="tw-flex-row tw-text-center">
               <div class="tw-text-2xl tw-text-admin-300 tw-font-bold">12</div>
-              <div class="tw-text-base tw-font-light tw-text-gray-400">DKV</div>
+              <div class=" tw-font-light tw-text-gray-400">DKV</div>
             </li>
             <li class="tw-flex-row tw-text-center">
               <div class="tw-text-2xl tw-text-admin-300 tw-font-bold">25</div>
-              <div class="tw-text-base tw-font-light tw-text-gray-400">MPLB</div>
+              <div class=" tw-font-light tw-text-gray-400">MPLB</div>
             </li>
             <li class="tw-flex-row tw-text-center">
               <div class="tw-text-2xl tw-text-admin-300 tw-font-bold">19</div>
-              <div class="tw-text-base tw-font-light tw-text-gray-400">Pemasaran</div>
+              <div class=" tw-font-light tw-text-gray-400">Pemasaran</div>
             </li>
             <li class="tw-flex-row tw-text-center">
               <div class="tw-text-2xl tw-text-admin-300 tw-font-bold">12</div>
-              <div class="tw-text-base tw-font-light tw-text-gray-400">PPLG</div>
+              <div class=" tw-font-light tw-text-gray-400">PPLG</div>
             </li>
             <li class="tw-flex-row tw-text-center">
               <div class="tw-text-2xl tw-text-admin-300 tw-font-bold">6</div>
-              <div class="tw-text-base tw-font-light tw-text-gray-400">TJKT</div>
+              <div class=" tw-font-light tw-text-gray-400">TJKT</div>
             </li>
           </ul>
         </div>

@@ -78,7 +78,7 @@
       </div>
       <div class="tw-overflow-y-scroll tw-h-[600px] tw-scrollbar-thumb-gray-300 tw-scrollbar-thumb-rounded-lg tw-scrollbar-thin tw-scrollbar-track-gray-100">
         <table class="tw-w-full tw-mt-10 tw-text-sm tw-text-center">
-          <thead class="tw-text-lg tw-text-basic tw-font-pop tw-text-admin-300">
+          <thead class="tw-text-lg tw-font-pop tw-text-admin-300">
               <tr>
                   <th scope="col" class="tw-pb-9"></th>
                   <th scope="col" class="tw-pb-9">NIP</th>
@@ -119,6 +119,7 @@
               </tr>
               <tr class="tw-bg-white tw-text-[#B4B8BC] tw-font-bold text-lg tw-font-ubuntu">
                 <td class="tw-py-6 tw-pl-6 tw-border-b">
+                  {{-- nanti ganti sama img --}}
                   <div class="tw-bg-admin-300 tw-p-2 tw-rounded-2xl tw-text-white tw-w-14 tw-h-14 tw-items-center tw-flex tw-justify-center"><i class="fa-solid fa-user tw-text-2xl"></i></div>
                 </td>
                 <td class="tw-py-6 tw-border-b">192871837268361728</td>
