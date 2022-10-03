@@ -152,7 +152,8 @@ Route::get('/admin', function () {
 
 Route::get('/dashboard', function () {
     return view('dashboard-admin', [
-        'title' => 'Dashboard Admin'
+        'title' => 'Dashboard Admin',
+        'active' => 'dashboard-admin'
     ]);
 });
 
