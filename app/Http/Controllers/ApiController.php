@@ -13,7 +13,7 @@ class ApiController extends Controller
     /* GLOBAL VARIABLES */
     public function __construct()
     {
-        $this->api_url = 'https://6ef2-103-139-10-60.ngrok.io'; // Ganti link NGROK disini
+        $this->api_url = 'https://05c0-114-79-49-73.ap.ngrok.io'; // Ganti link NGROK disini
 
     }
 
@@ -336,5 +336,26 @@ class ApiController extends Controller
 
         }
     }
+
+    // public function search(Request $request)
+    // {
+    //     $output = "";
+    //     $anggota = Anggota::where('nama','LIKE','%'.$request->search.'%')->orwhere('alamat','LIKE','%'.$request->search.'%')->get();
+
+    //     foreach($anggota as $a)
+    //     {
+    //         $output.=
+    //         '<tr>
+            
+    //         <td class="py-3"> '.$a->nomor_kartu.' </td>
+    //         <td class="py-3"> '.$a->nama.' </td>
+    //         <td class="py-3"> '.$a->alamat.' </td>
+
+    //         </tr>';
+
+    //     }
+
+    //     return response($output);
+    // }
 
 }

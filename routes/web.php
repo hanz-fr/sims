@@ -108,7 +108,7 @@ Route::get('/rekap-siswa', function () {
 
 Route::get('/rekap-jumlah-siswa', function () {
     return view('data-rekap-jumlah-siswa', [
-        'title' => 'Data Rekap Jumlah Siswa',
+        'title' => 'Data Rekap Siswa',
         'active' => 'rekap-siswa'
     ]);
 });
@@ -121,12 +121,6 @@ Route::get('/data-tidak-naik', function () {
     ]);
 });
 
-Route::get('/mata-pelajaran', function () {
-    return view('mapel', [
-        'title' => 'Mata Pelajaran',
-        'active' => 'mata-pelajaran'
-    ]);
-});
 
 
 Route::get('/profile', function () {
@@ -146,30 +140,17 @@ Route::get('/testurl', function() {
 
 Route::get('/admin', function () {
     return view('login-admin', [
-        'title' => 'Admin Login'
+        'title' => 'Admin Login',
+        'active' => 'admin'
     ]);
 });
 
 Route::get('/dashboard', function () {
     return view('dashboard-admin', [
         'title' => 'Dashboard Admin',
-        'active' => 'dashboard-admin'
+        'active' => 'admin'
     ]);
 });
-
-
-Route::get('/manage-user', function () {
-    return view('manage-user', [
-        'title' => 'Manage User',
-        'active' => 'manage-user'
-    ]);
-});
-
-// Route::get('/api/siswa', [ApiController::class, 'index']);
-Route::get('/api/siswa/create', [ApiController::class, 'create']);
-Route::post('/api/siswa', [ApiController::class, 'store']);
-Route::put('/api/siswa/update/{nis}', [ApiController::class, 'update']);
-Route::delete('/api/siswa/delete/{nis}', [ApiController::class, 'deleteSiswa']);
 
 
 Route::get('/register', [UserController::class, 'register']);
