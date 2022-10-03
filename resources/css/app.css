@@ -22,7 +22,7 @@ a {
     @apply tw-text-xl tw-px-3 tw-py-2 tw-mb-3 tw-mx-2 tw-text-white tw-bg-sims-400 hover:tw-bg-[#3b7a7a] tw-border tw-rounded-lg;
   }
   .nav-item-admin {
-    @apply tw-text-base tw-font-normal tw-text-gray-400 tw-rounded-lg hover:tw-bg-[#5A6C7C] hover:tw-text-gray-100 tw-justify-center tw-flex tw-p-2;
+    @apply tw-text-base tw-font-normal tw-text-gray-400 tw-rounded-lg hover:tw-bg-[#5A6C7C] hover:tw-text-gray-100 tw-flex tw-py-2;
   }
   .card-account {
     @apply tw-bg-white tw-rounded-xl tw-shadow-lg tw-flex tw-flex-col;
