@@ -13,7 +13,7 @@ class ApiController extends Controller
     /* GLOBAL VARIABLES */
     public function __construct()
     {
-        $this->api_url = 'https://05c0-114-79-49-73.ap.ngrok.io'; // Ganti link NGROK disini
+        $this->api_url = 'https://03eb-103-139-10-166.ngrok.io'; // Ganti link NGROK disini
 
     }
 
@@ -121,6 +121,7 @@ class ApiController extends Controller
         if ($message == 'Displaying siswa with nis : ' . $nis) {
 
             return redirect('/tambah-data')->with('error', 'Siswa dengan NIS tersebut sudah terdaftar.');
+        
         } else {
 
             $request->validate([
@@ -128,6 +129,9 @@ class ApiController extends Controller
                 'nisn' => 'required|max:10',
                 'nama' => 'required|max:100',
             ]);
+
+
+            $fileName = '';
 
 
             if ($file = $request->hasFile('foto')) {
