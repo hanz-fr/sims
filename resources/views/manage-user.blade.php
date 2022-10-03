@@ -7,7 +7,7 @@
       <i class="fa-solid fa-user-group tw-text-admin-300 tw-text-xl"></i>
       <div class="tw-text-xl tw-ml-3 tw-font-pop tw-font-semibold tw-text-gray-300">Account Management</div>
     </div>
-    <div class="tw-bg-white tw-mt-12 tw-rounded-xl shadow-cs tw-w-full tw-flex tw-py-20 tw-px-40 tw-font-ubuntu tw-gap-44 tw-border-b-[13px] tw-border-admin-300">
+    <div class="tw-bg-white tw-mt-12 tw-rounded-xl shadow-cs tw-w-full tw-flex tw-py-20 tw-px-36 tw-justify-between tw-font-ubuntu tw-gap-40 tw-border-b-[13px] tw-border-admin-300">
       <div class="tw-flex tw-gap-8 tw-text-admin-300">
         <div class="tw-text-center">
           <i class="fa-solid fa-user tw-text-6xl"></i>
