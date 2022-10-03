@@ -1362,6 +1362,10 @@ video {
   width: 11rem;
 }
 
+.tw-w-\[264px\] {
+  width: 264px;
+}
+
 .tw-max-w-3xl {
   max-width: 48rem;
 }

@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.admin')
 
 @section('content')
 
@@ -68,6 +68,74 @@
                         <td class="tw-py-4 tw-px-6 tw-border">PPLG</td>
                         <td class="tw-py-4 tw-px-6 tw-border">1</td>
                         <td class="tw-py-4 tw-px-6 tw-border">X PPLG 1</td>
+                        <td class="tw-py-2 tw-px-4 tw-border">
+                            <a href="#"
+                                class="tw-text-white tw-bg-yellow-400 hover:tw-bg-[#D3A007] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
+                                <i class="fa-solid fa-pen-to-square"></i></a>
+                            </a>
+                            <a href="#"
+                                class="tw-text-white tw-bg-gray-500 hover:tw-bg-gray-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
+                                <i class="fa-solid fa-eye"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="tw-bg-white tw-border">
+                        <td class="tw-py-4 tw-px-6 tw-border">02</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">XI</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">PPLG</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">1</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">XI PPLG 1</td>
+                        <td class="tw-py-2 tw-px-4 tw-border">
+                            <a href="#"
+                                class="tw-text-white tw-bg-yellow-400 hover:tw-bg-[#D3A007] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
+                                <i class="fa-solid fa-pen-to-square"></i></a>
+                            </a>
+                            <a href="#"
+                                class="tw-text-white tw-bg-gray-500 hover:tw-bg-gray-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
+                                <i class="fa-solid fa-eye"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="tw-bg-white tw-border">
+                        <td class="tw-py-4 tw-px-6 tw-border">03</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">XI</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">PPLG</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">2</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">XI PPLG 2</td>
+                        <td class="tw-py-2 tw-px-4 tw-border">
+                            <a href="#"
+                                class="tw-text-white tw-bg-yellow-400 hover:tw-bg-[#D3A007] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
+                                <i class="fa-solid fa-pen-to-square"></i></a>
+                            </a>
+                            <a href="#"
+                                class="tw-text-white tw-bg-gray-500 hover:tw-bg-gray-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
+                                <i class="fa-solid fa-eye"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="tw-bg-white tw-border">
+                        <td class="tw-py-4 tw-px-6 tw-border">04</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">XII</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">RPL</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">1</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">XII RPL 1</td>
+                        <td class="tw-py-2 tw-px-4 tw-border">
+                            <a href="#"
+                                class="tw-text-white tw-bg-yellow-400 hover:tw-bg-[#D3A007] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
+                                <i class="fa-solid fa-pen-to-square"></i></a>
+                            </a>
+                            <a href="#"
+                                class="tw-text-white tw-bg-gray-500 hover:tw-bg-gray-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
+                                <i class="fa-solid fa-eye"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="tw-bg-white tw-border">
+                        <td class="tw-py-4 tw-px-6 tw-border">05</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">XII</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">RPL</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">2</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">XII RPL 2</td>
                         <td class="tw-py-2 tw-px-4 tw-border">
                             <a href="#"
                                 class="tw-text-white tw-bg-yellow-400 hover:tw-bg-[#D3A007] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
