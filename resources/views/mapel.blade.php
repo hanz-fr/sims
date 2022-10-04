@@ -4,26 +4,27 @@
     <div class="tw-ml-16">
         <div class="tw-flex tw-justify-between tw-gap-5 tw-mt-8 tw-mb-10">
             <div class="tw-flex tw-flex-col">
-                <h4 class="tw-font-pop tw-font-bold tw-mt-6 tw-text-sims-400">Data Mata Pelajaran</h4>
+                <h3 class="tw-font-pop tw-font-bold tw-mt-6 tw-text-gray-400">Data Mata Pelajaran</h3>
             </div>
         </div>
-    <div class="tw-flex tw-justify-between">
-        <form action="" class="tw-flex tw-w-[264px]">
-            <div class="relative tw-border-2 tw-rounded-lg focus:tw-ring-sims-400">
-                <input type="text" class="tw-py-1 tw-px-5 tw-border-none tw-rounded-md">
-                <i class="fa-solid fa-magnifying-glass tw-pr-5 tw-pl-3 tw-text-slate-600"></i>
+        <div class="tw-flex tw-justify-between">
+            <form action="" class="tw-flex ">
+                <div class="relative tw-flex tw-border-2  tw-rounded-lg focus:tw-ring-sims-400">
+                    <input type="text" class="tw-flex tw-py-1 tw-w-[500px] tw-ring-none tw-focus-none tw-px-5 tw-border-none tw-rounded-lg">
+                    <i class="fa-solid fa-magnifying-glass tw-mx-4 tw-mt-2 tw-text-slate-600"></i>
+                </div>
+            </form>
+            <div class="tw-flex ">
+                <a href=""
+                    class="tw-bg-admin-700 tw-text-white hover:tw-text-white hover:tw-bg-admin-800  tw-font-pop tw-rounded-lg tw-px-5 tw-py-2">
+                    <i class="fa-solid fa-circle-plus tw-pr-3"></i>
+                    Tambah Mapel
+                </a>
             </div>
-        </form>
-        <div class="tw-flex ">
-            <a href="" class="tw-bg-[#28A745] tw-text-white hover:tw-text-white hover:tw-bg-green-700 tw-font-pop tw-rounded-lg tw-px-5 tw-py-2">
-                <i class="fa-solid fa-circle-plus tw-pr-3"></i>
-                Tambah Mapel
-            </a>
         </div>
-    </div>
         <div class="tw-overflow-x-auto tw-mt-6 tw-relative tw-shadow-md sm:tw-rounded-xl tw-mb-20">
             <table class="tw-w-full tw-text-sm tw-text-center">
-                <thead class="tw-text-md tw-bg-gray-100 tw-text-basic-700 tw-border tw-font-pop">
+                <thead class="tw-text-md tw-bg-[#454F58] tw-text-white tw-border tw-font-pop">
                     <tr>
                         <th class="tw-py-3 tw-px-6 tw-border-r">ID MAPEL</th>
                         <th class="tw-py-3 tw-px-6 tw-border-r">NAMA MAPEL
@@ -88,7 +89,6 @@
                         <td class="tw-py-4 tw-px-6 tw-border">27 Januari 2024, 23:44</td>
                     </tr>
                 </tbody>
-                <tfoot>
             </table>
         </div>
     </div>
