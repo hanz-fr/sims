@@ -1368,6 +1368,18 @@ video {
   width: 2.5rem;
 }
 
+.tw-w-32 {
+  width: 8rem;
+}
+
+.tw-w-96 {
+  width: 24rem;
+}
+
+.tw-w-\[500px\] {
+  width: 500px;
+}
+
 .tw-max-w-3xl {
   max-width: 48rem;
 }
