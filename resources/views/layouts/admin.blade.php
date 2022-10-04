@@ -15,7 +15,8 @@
   <link rel="stylesheet" href="font-awesome/css/all.min.css">
   @stack('css')
 </head>
-<body class="tw-bg-white">
+<body  x-data="{show:false}" class="tw-bg-white">
+   <div x-show="show" class="modal-overlay tw-absolute tw-w-full tw-h-full tw-bg-gray-900 tw-opacity-50"></div>
 <div class="tw-flex tw-overflow-x-hidden tw-h-screen">
    {{-- sidebar --}}
   <aside class="tw-w-64 tw-top-0 tw-bottom-0 tw-sticky" aria-label="Sidebar">

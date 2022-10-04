@@ -6,10 +6,26 @@
 
 @section('content')
 <div class="tw-mx-10 tw-w-screen">
+
+{{-- modal --}}
+<div x-show="show" class="tw-grid tw-place-items-center tw-items-center tw-justify-center tw-w-full tw-fixed tw-my-40">
+  <div @click.away="show = false" class="tw-w-fit -tw-ml-96 tw-py-10 tw-px-12 tw-text-center tw-rounded-2xl tw-shadow-xl tw-bg-gray-50">
+      <div class="tw-rounded-full tw-mx-auto tw-bg-salmon-100 tw-p-3 tw-h-32 tw-w-32 tw-items-center tw-justify-center tw-flex">
+        <i class="fa-solid fa-triangle-exclamation tw-text-7xl tw-text-salmon-600"></i>
+      </div>
+      <div class="tw-font-semibold tw-text-2xl tw-text-basic-500 tw-mt-7 tw-tracking-wide tw-font-pop">Delete All Account</div>
+      <p class="tw-text-gray-500 tw-font-ubuntu tw-mt-2">Kamu akan menghapus semua akun. ril or fek?</p>
+      <div class="tw-flex tw-justify-center tw-gap-2 tw-font-ubuntu tw-mt-7">
+          <a href="" @click="show=false" class="tw-bg-gray-200 tw-px-8 tw-py-3 tw-font-semibold tw-rounded-3xl tw-text-basic-500">fek</a>
+          <a href="" class="tw-px-8 tw-py-3 tw-font-semibold tw-rounded-3xl tw-bg-salmon-500 hover:tw-bg-salmon-400 tw-text-white">ril cuy</a>
+      </div>
+  </div>
+</div> 
+
   <div class="tw-flex tw-flex-col tw-gap-5 tw-mt-8">
-    <div class="tw-flex">
-      <i class="fa-solid fa-user-group tw-text-admin-300 tw-text-xl"></i>
-      <div class="tw-text-xl tw-ml-3 tw-font-pop tw-font-semibold tw-text-gray-300">Account Management</div>
+    <div class="tw-flex tw-items-center">
+      <i class="fa-solid fa-user-group tw-text-admin-300 tw-text-2xl"></i>
+      <div class="tw-text-2xl tw-ml-4 tw-font-pop tw-font-semibold tw-text-gray-300">Account Management</div>
     </div>
     <div class="tw-bg-white tw-mt-12 tw-rounded-xl shadow-cs tw-w-full tw-flex tw-p-20 tw-justify-between tw-font-ubuntu tw-border-b-[13px] tw-border-admin-300">
       <div class="tw-flex tw-gap-8 tw-text-admin-300">
@@ -57,17 +73,18 @@
         <h3 class="text-5xl tw-font-bold tw-mb-2">1</h3>
         </div>
       </div>
-    
     </div>
     <div class="tw-flex tw-bg-white tw-rounded-xl shadow-cs tw-w-full tw-justify-between tw-py-10 tw-px-12">
       <div class="tw-text-gray-300 tw-text-2xl tw-font-semibold tw-font-pop tw-items-center tw-flex">All Account</div>
       <div class="tw-flex tw-gap-5 tw-font-ubuntu tw-text-white tw-font-medium">
-        <form action="" method="POST" class="tw-bg-salmon-400 tw-rounded-lg">
+        {{-- <form action="" method="" class="tw-bg-salmon-400 tw-rounded-lg"> --}}
           {{-- @csrf
           @method('DELETE') --}}
-          <button type="submit" class="tw-py-4 tw-px-6"><i class="fa-regular fa-trash-can tw-mr-4 tw-text-xl"></i>Delete all account</button>
-        </form>
-        <a href="" class="tw-bg-admin-300 tw-py-4 tw-px-6 tw-rounded-lg"><i class="fa-regular fa-square-plus tw-mr-4 tw-text-xl"></i>Create new account</a>
+          <div x-data="{}" class="">
+            <button @click="show=true" class="tw-py-4 tw-px-6 tw-bg-salmon-400 hover:tw-bg-salmon-500 tw-rounded-lg"><i class="fa-regular fa-trash-can tw-mr-4 tw-text-xl"></i>Delete all account</button>
+          </div>
+        {{-- </form> --}}
+        <a href="/create-account" class="tw-bg-admin-300 tw-py-4 tw-px-6 tw-rounded-lg"><i class="fa-regular fa-square-plus tw-mr-4 tw-text-xl"></i>Create new account</a>
       </div>
     </div>
 
@@ -102,7 +119,7 @@
                   <td class="tw-pb-6 tw-px-5 tw-border-b">12 February 2023</td>
                   <td class="tw-pb-6 tw-px-5 tw-border-b">Tata Usaha</td>
                   <td class="tw-pb-6 tw-px-5 tw-border-b">
-                    <a href="#" class="tw-text-white tw-bg-admin-300 hover:tw-bg-admin-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-7 tw-mr-1">
+                    <a href="/show-detail" class="tw-text-white tw-bg-admin-300 hover:tw-bg-admin-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-7 tw-mr-1">
                         View
                     </a>
                   </td>
@@ -116,7 +133,7 @@
                 <td class="tw-py-6 tw-border-b">12 February 2023</td>
                 <td class="tw-py-6 tw-border-b">Tata Usaha</td>
                 <td class="tw-py-6 tw-border-b">
-                  <a href="#" class="tw-text-white tw-bg-admin-300 hover:tw-bg-admin-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-7 tw-mr-1">
+                  <a href="/show-detail" class="tw-text-white tw-bg-admin-300 hover:tw-bg-admin-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-7 tw-mr-1">
                       View
                   </a>
                 </td>
@@ -131,7 +148,7 @@
                 <td class="tw-py-6 tw-border-b">12 February 2023</td>
                 <td class="tw-py-6 tw-border-b">Tata Usaha</td>
                 <td class="tw-py-6 tw-border-b">
-                  <a href="#" class="tw-text-white tw-bg-admin-300 hover:tw-bg-admin-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-7 tw-mr-1">
+                  <a href="/show-detail" class="tw-text-white tw-bg-admin-300 hover:tw-bg-admin-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-7 tw-mr-1">
                       View
                   </a>
                 </td>
@@ -145,7 +162,7 @@
                 <td class="tw-py-6 tw-border-b">12 February 2023</td>
                 <td class="tw-py-6 tw-border-b">Tata Usaha</td>
                 <td class="tw-py-6 tw-border-b">
-                  <a href="#" class="tw-text-white tw-bg-admin-300 hover:tw-bg-admin-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-7 tw-mr-1">
+                  <a href="/show-detail" class="tw-text-white tw-bg-admin-300 hover:tw-bg-admin-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-7 tw-mr-1">
                       View
                   </a>
                 </td>
@@ -159,7 +176,7 @@
                 <td class="tw-py-6 tw-border-b">12 February 2023</td>
                 <td class="tw-py-6 tw-border-b">Kesiswaan</td>
                 <td class="tw-py-6 tw-border-b">
-                  <a href="#" class="tw-text-white tw-bg-salmon-400 hover:tw-bg-salmon-500 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-7 tw-mr-1">
+                  <a href="/show-detail" class="tw-text-white tw-bg-salmon-400 hover:tw-bg-salmon-500 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-7 tw-mr-1">
                       View
                   </a>
                 </td>
@@ -173,7 +190,7 @@
                 <td class="tw-py-6 tw-border-b">12 February 2023</td>
                 <td class="tw-py-6 tw-border-b">Kesiswaan</td>
                 <td class="tw-py-6 tw-border-b">
-                  <a href="#" class="tw-text-white tw-bg-salmon-400 hover:tw-bg-salmon-500 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-7 tw-mr-1">
+                  <a href="/show-detail" class="tw-text-white tw-bg-salmon-400 hover:tw-bg-salmon-500 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-7 tw-mr-1">
                       View
                   </a>
                 </td>
@@ -187,7 +204,7 @@
                 <td class="tw-py-6 tw-border-b">12 February 2023</td>
                 <td class="tw-py-6 tw-border-b">Kesiswaan</td>
                 <td class="tw-py-6 tw-border-b">
-                  <a href="#" class="tw-text-white tw-bg-salmon-400 hover:tw-bg-salmon-500 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-7 tw-mr-1">
+                  <a href="/show-detail" class="tw-text-white tw-bg-salmon-400 hover:tw-bg-salmon-500 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-7 tw-mr-1">
                       View
                   </a>
                 </td>

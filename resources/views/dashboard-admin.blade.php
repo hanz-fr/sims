@@ -20,7 +20,7 @@
          <ul class="list-unstyled tw-flex tw-gap-5">
             <li class="card-account">
                <div class="tw-justify-end tw-flex tw-p-2">
-                  <a href="">
+                  <a href="/create-account">
                      <i class="fa-solid fa-square-plus tw-text-admin-300 tw-text-2xl"></i>
                   </a>
                </div>
@@ -28,14 +28,14 @@
                   <i class="fa-solid fa-user tw-text-6xl"></i>
                   <div class="card-account-title">Staff TU</div>
                   <div class="tw-font-ubuntu tw-font-medium tw-text-gray-300 -tw-mt-1">2 account</div>
-                  <a href="">
+                  <a href="/show-detail">
                      <div class="card-account-btn">View</div>
                   </a>
                </div>
             </li>
             <li class="card-account">
                <div class="tw-justify-end tw-flex tw-p-2">
-                  <a href="">
+                  <a href="/create-account">
                      <i class="fa-solid fa-square-plus tw-text-admin-300 tw-text-2xl"></i>
                   </a>
                </div>
@@ -43,14 +43,14 @@
                   <i class="fa-solid fa-user tw-text-6xl"></i>
                   <div class="card-account-title">Kesiswaan</div>
                   <div class="tw-font-ubuntu tw-font-medium tw-text-gray-300 -tw-mt-1">2 account</div>
-                  <a href="">
+                  <a href="/show-detail">
                      <div class="card-account-btn">View</div>
                   </a>
                </div>
             </li>
             <li class="card-account">
                <div class="tw-justify-end tw-flex tw-p-2">
-                  <a href="">
+                  <a href="/create-account">
                      <i class="fa-solid fa-square-plus tw-text-admin-300 tw-text-2xl"></i>
                   </a>
                </div>
@@ -58,14 +58,14 @@
                   <i class="fa-solid fa-user tw-text-6xl"></i>
                   <div class="card-account-title">Wali Kelas</div>
                   <div class="tw-font-ubuntu tw-font-medium tw-text-gray-300 -tw-mt-1">2 account</div>
-                  <a href="">
+                  <a href="/show-detail">
                      <div class="card-account-btn">View</div>
                   </a>
                </div>
             </li>
             <li class="card-account">
                <div class="tw-justify-end tw-flex tw-p-2">
-                  <a href="">
+                  <a href="/create-account">
                      <i class="fa-solid fa-square-plus tw-text-admin-300 tw-text-2xl"></i>
                   </a>
                </div>
@@ -73,7 +73,7 @@
                   <i class="fa-solid fa-user tw-text-6xl"></i>
                   <div class="card-account-title">Kurikulum</div>
                   <div class="tw-font-ubuntu tw-font-medium tw-text-gray-300 -tw-mt-1">2 account</div>
-                  <a href="">
+                  <a href="/show-detail">
                      <div class="card-account-btn">View</div>
                   </a>
                </div>
@@ -82,7 +82,7 @@
       </div>
       
       {{-- data management --}}
-      <div class="tw-shadow-lg tw-bg-white tw-px-8 tw-py-7 tw-w-full">
+      <div class="shadow-cs tw-bg-white tw-px-8 tw-py-7 tw-w-full">
          <div class="tw-flex">
             <i class="fa-regular fa-sliders tw-text-[#90C2C2] tw-text-xl"></i>
             <div class="tw-text-xl tw-ml-3 tw-font-pop tw-font-semibold tw-text-gray-400">Data Management</div>

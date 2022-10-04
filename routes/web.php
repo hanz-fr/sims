@@ -169,7 +169,14 @@ Route::get('/show-detail', function () {
 
 Route::get('/edit-account', function () {
     return view('edit-account', [
-        'title' => 'Account Details',
+        'title' => 'Edit Account',
+        'active' => 'account'
+    ]);
+});
+
+Route::get('/create-account', function () {
+    return view('create-account', [
+        'title' => 'Create Account',
         'active' => 'account'
     ]);
 });

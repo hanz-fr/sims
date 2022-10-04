@@ -43,7 +43,7 @@
           @method('DELETE') --}}
           <button type="submit" class="tw-py-4 tw-pl-6 tw-pr-14"><i class="fa-regular fa-trash-can tw-mr-4 tw-text-xl"></i>Delete all account</button>
         </form>
-        <a href="" class="tw-bg-[#FFCF86] tw-py-4 tw-pl-6 tw-pr-14 tw-rounded-lg"><i class="fa-regular fa-pen-to-square tw-mr-4 tw-text-xl"></i>Edit account</a>
+        <a href="/edit-account" class="tw-bg-[#FFCF86] tw-py-4 tw-pl-6 tw-pr-14 tw-rounded-lg"><i class="fa-regular fa-pen-to-square tw-mr-4 tw-text-xl"></i>Edit account</a>
       </div>
     </div>
   </div>
