@@ -13,11 +13,9 @@
   <link rel="stylesheet" href="assets/output.css">
   {{-- icon --}}
   <link rel="stylesheet" href="font-awesome/css/all.min.css">
-  {{-- flowbite --}}
-  <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
+  @stack('css')
 </head>
 <body class="tw-bg-white">
-
 <div class="tw-flex tw-overflow-x-hidden tw-h-screen">
    {{-- sidebar --}}
   <aside class="tw-w-64 tw-top-0 tw-bottom-0 tw-sticky" aria-label="Sidebar">
@@ -87,8 +85,6 @@
    {{-- alpine js --}}
    <script defer src="https://unpkg.com/@alpinejs/intersect@3.10.3/dist/cdn.min.js"></script>
    <script defer src="https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"></script>
-   {{-- flowbite --}}
-   <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
    @stack('scripts')  
 </body>
 </html>

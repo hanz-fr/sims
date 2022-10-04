@@ -167,6 +167,13 @@ Route::get('/show-detail', function () {
     ]);
 });
 
+Route::get('/edit-account', function () {
+    return view('edit-account', [
+        'title' => 'Account Details',
+        'active' => 'account'
+    ]);
+});
+
 Route::get('/register', [UserController::class, 'register']);
 Route::get('/login', [UserController::class, 'login']);
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');

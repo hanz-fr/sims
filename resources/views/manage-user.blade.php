@@ -1,5 +1,9 @@
 @extends('layouts.admin')
 
+@push('css')
+<link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
+@endpush
+
 @section('content')
 <div class="tw-mx-10 tw-w-screen">
   <div class="tw-flex tw-flex-col tw-gap-5 tw-mt-8">
@@ -195,3 +199,7 @@
   </div>
 </div>
 @endsection
+
+@push('scripts')
+  <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+@endpush
