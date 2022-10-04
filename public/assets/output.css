@@ -926,6 +926,11 @@ video {
   margin-bottom: 0.5rem;
 }
 
+.tw-my-20 {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
 .tw-mt-8 {
   margin-top: 2rem;
 }
@@ -1798,6 +1803,16 @@ video {
   background-color: rgb(244 244 244 / var(--tw-bg-opacity));
 }
 
+.tw-bg-admin-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(90 135 215 / var(--tw-bg-opacity));
+}
+
+.tw-bg-admin-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(60 91 185 / var(--tw-bg-opacity));
+}
+
 .tw-fill-current {
   fill: currentColor;
 }
@@ -2073,6 +2088,10 @@ video {
 
 .tw-pl-0 {
   padding-left: 0px;
+}
+
+.tw-pb-20 {
+  padding-bottom: 5rem;
 }
 
 .tw-text-left {
