@@ -167,18 +167,31 @@ Route::get('/show-detail', function () {
     ]);
 });
 
-<<<<<<< HEAD
 Route::get('/edit-account', function () {
     return view('edit-account', [
         'title' => 'Account Details',
         'active' => 'account'
     ]);
 });
-=======
+
+Route::get('/show-jurusan', function () {
+    return view('show-jurusan', [
+        'title' => 'Jurusan',
+        'active' => 'database'
+    ]);
+});
+
+Route::get('/show-detail-jurusan', function () {
+    return view('show-detail-jurusan', [
+        'title' => 'Detail Jurusan',
+        'active' => 'database'
+    ]);
+});
+
 Route::get('/live-search-test', [ApiController::class, 'indexLiveSearch']);
 
 Route::get('/search', [ApiController::class, 'search']);
->>>>>>> 1994e08ac3fc39398214ad899213458a1636002f
+
 
 Route::get('/register', [UserController::class, 'register']);
 Route::get('/login', [UserController::class, 'login']);
