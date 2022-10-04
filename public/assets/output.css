@@ -821,6 +821,10 @@ video {
   margin: 2.5rem;
 }
 
+.tw-m-8 {
+  margin: 2rem;
+}
+
 .tw-mx-10 {
   margin-left: 2.5rem;
   margin-right: 2.5rem;
@@ -1357,6 +1361,18 @@ video {
 
 .tw-w-10 {
   width: 2.5rem;
+}
+
+.tw-w-32 {
+  width: 8rem;
+}
+
+.tw-w-96 {
+  width: 24rem;
+}
+
+.tw-w-\[500px\] {
+  width: 500px;
 }
 
 .tw-max-w-3xl {
