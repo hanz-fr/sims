@@ -1448,6 +1448,10 @@ video {
   justify-content: space-between;
 }
 
+.tw-justify-items-end {
+  justify-items: end;
+}
+
 .tw-gap-8 {
   gap: 2rem;
 }
@@ -1472,16 +1476,8 @@ video {
   gap: 1rem;
 }
 
-.tw-gap-44 {
-  gap: 11rem;
-}
-
 .tw-gap-14 {
   gap: 3.5rem;
-}
-
-.tw-gap-40 {
-  gap: 10rem;
 }
 
 .tw-space-y-3 > :not([hidden]) ~ :not([hidden]) {
@@ -1955,11 +1951,6 @@ video {
   padding-bottom: 12rem;
 }
 
-.tw-px-40 {
-  padding-left: 10rem;
-  padding-right: 10rem;
-}
-
 .tw-py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -1978,11 +1969,6 @@ video {
 .tw-py-12 {
   padding-top: 3rem;
   padding-bottom: 3rem;
-}
-
-.tw-px-36 {
-  padding-left: 9rem;
-  padding-right: 9rem;
 }
 
 .tw-pb-28 {
@@ -2103,6 +2089,10 @@ video {
 
 .tw-text-right {
   text-align: right;
+}
+
+.tw-text-end {
+  text-align: end;
 }
 
 .tw-font-pop {
