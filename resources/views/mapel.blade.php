@@ -8,10 +8,10 @@
             </div>
         </div>
         <div class="tw-flex tw-justify-between">
-            <form action="" class="tw-flex tw-w-[264px]">
+            <form action="" class="tw-flex">
                 <div class="relative tw-border-2 tw-rounded-lg focus:tw-ring-sims-400">
-                    <input type="text" class="tw-py-1 tw-px-5 tw-border-none tw-rounded-md">
-                    <i class="fa-solid fa-magnifying-glass tw-mr-4 tw-text-slate-600"></i>
+                    <input type="text" class="tw-py-1 tw-ring-none tw-focus-none tw-px-5 tw-border-none tw-rounded-lg">
+                    <i class="fa-solid fa-magnifying-glass tw-mx-4 tw-text-slate-600"></i>
                 </div>
             </form>
             <div class="tw-flex ">
