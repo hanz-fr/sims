@@ -1979,6 +1979,11 @@ video {
   background-color: rgb(244 244 244 / var(--tw-bg-opacity));
 }
 
+.tw-bg-red-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(252 165 165 / var(--tw-bg-opacity));
+}
+
 .tw-fill-current {
   fill: currentColor;
 }
@@ -2886,6 +2891,10 @@ table {
 
 .focus\:tw-outline-sims-400:focus {
   outline-color: #4d9e9e;
+}
+
+.focus\:tw-outline-admin-300:focus {
+  outline-color: #95bbe8;
 }
 
 .focus\:tw-ring-2:focus {

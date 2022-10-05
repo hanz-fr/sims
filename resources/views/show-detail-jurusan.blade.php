@@ -9,7 +9,7 @@
     </div>
 
     <div class="tw-overflow-hidden tw-shadow-md tw-mt-14 tw-rounded-xl">
-        <div class="flex tw-bg-[#5A6C7C] tw-py-8 tw-pl-12">
+        <div class="tw-flex tw-bg-[#5A6C7C] tw-py-8 tw-pl-12">
             <div class="tw-bg-white tw-rounded-2xl tw-p-5">
                 <img src="https://www.smkn11bdg.sch.id/src/images/11.png" class="tw-w-[117px] tw-h-[138px]" alt="">
             </div>
@@ -21,7 +21,7 @@
             </div>
         </div>
         <div class="tw-p-12">
-            <h1 class="tw-text-admin-400 font-bold tw-text-xl tw-mb-3">Desc</h1>
+            <h1 class="tw-text-admin-400 tw-font-bold tw-text-xl tw-mb-3">Desc</h1>
             <p class="tw-grid tw-gap-2 tw-grid-cols-2 tw-text-gray-300 tw-font-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed ipsa eligendi nesciunt recusandae facilis dolore, vitae ut voluptates repudiandae, provident vel obcaecati ab at expedita beatae sequi aut, quasi saepe necessitatibus laborum placeat tempora! Rerum quo nisi laboriosam excepturi possimus officiis incidunt neque maiores veniam autem sint repudiandae nemo molestias blanditiis itaque.</p>
             <div class="tw-mt-2 tw-text-end">
                 <p class="tw-text-admin-400 tw-font-bold tw-mb-3">Created : <span class="tw-text-admin-300 tw-font-normal">12 Februari 2023</span></p>

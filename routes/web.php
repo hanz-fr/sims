@@ -157,9 +157,16 @@ Route::get('/manage-user', function () {
 });
 
 Route::get('/mata-pelajaran', function () {
-    return view('mapel', [
+    return view('mapel2', [
         'title' => 'Mata Pelajaran',
-        'active' => 'mata-pelajaran'
+        'active' => 'database'
+    ]);
+});
+
+Route::get('/create-mata-pelajaran', function () {
+    return view('create-mapel', [
+        'title' => 'Mata Pelajaran',
+        'active' => 'database'
     ]);
 });
 
