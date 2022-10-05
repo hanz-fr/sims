@@ -877,6 +877,10 @@ video {
   margin: 2rem;
 }
 
+.tw-m-7 {
+  margin: 1.75rem;
+}
+
 .tw-mx-10 {
   margin-left: 2.5rem;
   margin-right: 2.5rem;
@@ -1566,10 +1570,6 @@ video {
   justify-content: space-between;
 }
 
-.tw-justify-items-end {
-  justify-items: end;
-}
-
 .tw-gap-8 {
   gap: 2rem;
 }
@@ -1966,6 +1966,11 @@ video {
   background-color: rgb(244 244 244 / var(--tw-bg-opacity));
 }
 
+.tw-bg-red-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(252 165 165 / var(--tw-bg-opacity));
+}
+
 .tw-fill-current {
   fill: currentColor;
 }
@@ -2016,6 +2021,10 @@ video {
 
 .tw-p-12 {
   padding: 3rem;
+}
+
+.tw-p-7 {
+  padding: 1.75rem;
 }
 
 .tw-px-10 {
@@ -3138,6 +3147,11 @@ a {
 
 .hover\:tw-bg-sims-400\/\[0\.6\]:hover {
   background-color: rgb(77 158 158 / 0.6);
+}
+
+.hover\:tw-bg-red-600:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 38 38 / var(--tw-bg-opacity));
 }
 
 .hover\:tw-text-white:hover {
