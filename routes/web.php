@@ -20,12 +20,11 @@ use App\Http\Controllers\UserController;
 
 /* ROUTE SISWA */
 
-Route::get('/tambah-data', [ApiController::class, 'createSiswa']);
-Route::get('/detail/{nis}', [ApiController::class, 'getSiswa']);
 Route::get('/data-induk-siswa', [ApiController::class, 'getAllSiswa']);
+Route::get('/detail/{nis}', [ApiController::class, 'getSiswa']);
+Route::get('/tambah-data', [ApiController::class, 'createSiswa']);
 Route::get('/edit-siswa/{nis}', [ApiController::class, 'editSiswa']);
 
-Route::get('/api/siswa/create', [ApiController::class, 'createSiswa']);
 Route::post('/api/siswa', [ApiController::class, 'storeSiswa']);
 Route::put('/api/siswa/update/{nis}', [ApiController::class, 'updateSiswa']);
 Route::delete('/api/siswa/delete/{nis}', [ApiController::class, 'deleteSiswa']);
@@ -34,11 +33,12 @@ Route::delete('/api/siswa/delete/{nis}', [ApiController::class, 'deleteSiswa']);
 /* ROUTE MUTASI */
 
 Route::get('/siswa-keluar', [ApiController::class, 'getAllMutasi']);
-Route::get('/siswa-keluar/create', [ApiController::class, 'createMutasi']);
+Route::get('/create-mutasi', [ApiController::class, 'createMutasi']);
+Route::get('/edit-mutasi/{id}', [ApiController::class, 'editMutasi']);
 
 Route::post('/api/mutasi/store', [ApiController::class, 'storeMutasi']);
-
-
+Route::put('/api/mutasi/update/{id}', [ApiController::class, 'updateMutasi']);
+Route::delete('/api/mutasi/delete/{id}', [ApiController::class, 'deleteMutasi']);
 
 /* ROUTE KELAS */
 

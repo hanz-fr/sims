@@ -33,7 +33,7 @@
             NIS
           </label>
           <input value="{{ old('nis') }}" class="input-data tw-w-full" id="nis" name="nis" type="text" maxlength="10" required>
-          @error('nis')
+          @error('nis_siswa')
           <small class="tw-text-red-500">{{ $message }}</small>
           @enderror
         </div>
