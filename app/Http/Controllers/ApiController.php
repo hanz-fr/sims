@@ -347,14 +347,6 @@ class ApiController extends Controller
 
         $response = Http::get("{$this->api_url}/siswa?page={$page}&perPage={$perPage}");
 
-        $siswa = json_decode($response)->data->rows;
-        /* ->orWhere('alamat_siswa','LIKE','%'.$request->search.'%')
-        ->orWhere('KelasId','LIKE','%'.$request->search.'%')
-        ->get(); */
-
-        return $siswa;
-
-
         return view('livesearch', [
             'title' => 'Live Search',
             'active' => 'livesearch',

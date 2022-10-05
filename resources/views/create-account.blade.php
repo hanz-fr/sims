@@ -32,11 +32,11 @@
 
   <div class="tw-flex tw-flex-col tw-mt-8 tw-gap-8">
     <div class="tw-flex tw-items-center">
-      <a href="/show-detail">
+      <a href="/manage-user">
         <i class="fa-solid fa-chevron-left tw-text-gray-400 tw-text-2xl"></i>
       </a>
       <i class="fa-solid fa-user tw-text-admin-300 tw-text-3xl tw-ml-5"></i>
-      <div class="tw-text-2xl tw-ml-4 tw-font-pop tw-font-semibold tw-text-gray-300">Edit Account</div>
+      <div class="tw-text-2xl tw-ml-4 tw-font-pop tw-font-semibold tw-text-gray-300">Create Account</div>
     </div>
     <form action="" method="POST">
       @csrf
@@ -96,7 +96,7 @@
         </div>
       </div>
       <div class="tw-float-right tw-flex tw-justify-end tw-mt-12">
-        <button type="submit" class="tw-bg-[#90C2C2] hover:tw-bg-sims-400 tw-mr-8 tw-py-5 tw-px-16 tw-text-white tw-font-ubuntu tw-rounded-lg">Save Changes</button>
+        <button type="submit" class="tw-bg-[#90C2C2] hover:tw-bg-sims-400 tw-mr-8 tw-py-5 tw-px-16 tw-text-white tw-font-ubuntu tw-rounded-lg">Create Account</button>
       </div>
     </form>
   </div>
