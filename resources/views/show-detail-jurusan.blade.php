@@ -9,7 +9,7 @@
     </div>
 
     <div class="tw-overflow-hidden tw-shadow-md tw-mt-14 tw-rounded-xl">
-        <div class="flex tw-bg-[#5A6C7C] tw-py-8 tw-pl-12">
+        <div class="tw-flex tw-bg-[#5A6C7C] tw-py-8 tw-pl-12">
             <div class="tw-bg-white tw-rounded-2xl tw-p-5">
                 <img src="https://www.smkn11bdg.sch.id/src/images/11.png" class="tw-w-[117px] tw-h-[138px]" alt="">
             </div>
