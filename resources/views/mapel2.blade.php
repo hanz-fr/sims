@@ -15,7 +15,7 @@
                 </div>
                 <div class="tw-flex ">
                     <a href=""
-                        class="tw-bg-admin-300 tw-text-white hover:tw-text-white hover:tw-bg-admin-600  tw-font-pop tw-rounded-lg tw-px-5 tw-py-2">
+                        class="tw-bg-admin-300 tw-text-white hover:tw-text-white hover:tw-bg-admin-600  tw-font-ubuntu tw-font-bold tw-rounded-lg tw-px-5 tw-py-2">
                         <i class="fa-solid fa-circle-plus tw-pr-3"></i>
                         Tambah Mapel
                     </a>
