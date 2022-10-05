@@ -1566,6 +1566,10 @@ video {
   justify-content: space-between;
 }
 
+.tw-justify-items-end {
+  justify-items: end;
+}
+
 .tw-gap-8 {
   gap: 2rem;
 }
