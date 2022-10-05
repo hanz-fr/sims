@@ -87,7 +87,7 @@
                     @foreach ($siswa as $s)
                         
                     <tr class="tw-bg-white tw-border">
-                        <td class="tw-py-4 tw-px-6 tw-border">#</td>
+                        <td class="counterCell tw-py-4 tw-px-6 tw-border"></td>
                         <td class="tw-py-4 tw-px-6 tw-border">{{ $s->nis_siswa }}</td>
                         <td class="tw-py-4 tw-px-6 tw-border">{{ $s->nisn_siswa }}</td>
                         <td class="tw-py-4 tw-px-6 tw-border">{{ $s->nama_siswa }}</td>

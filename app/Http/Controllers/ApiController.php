@@ -14,7 +14,7 @@ class ApiController extends Controller
     /* GLOBAL VARIABLES */
     public function __construct()
     {
-        $this->api_url = 'https://fb64-103-148-113-86.ap.ngrok.io'; // Ganti link NGROK disini
+        $this->api_url = 'https://39c4-114-79-49-15.ap.ngrok.io'; // Ganti link NGROK disini
     }
 
     /* API SISWA */
@@ -309,6 +309,7 @@ class ApiController extends Controller
 
 
     /* API MUTASI */
+
     public function getAllMutasi(Request $request) {
         
         $page = $request->page;
@@ -318,7 +319,7 @@ class ApiController extends Controller
 
         if ($response->successful()) {
             
-            return view('siswa-keluar', [
+            return view('mutasi.siswa-keluar', [
                 'mutasi' => json_decode($response)->data->rows,
                 'status' => 'success',
                 'response' => json_decode($response),
@@ -329,7 +330,7 @@ class ApiController extends Controller
 
         } else {
 
-            return view('siswa-keluar', [
+            return view('mutasi.siswa-keluar', [
                 'response' => $response,
                 'status' => 'error',
                 'title' => 'Data Siswa Keluar',
@@ -340,6 +341,63 @@ class ApiController extends Controller
         }
     }
 
+    public function createMutasi(Request $request) {
+
+        return view('mutasi.create-mutasi', [
+            'title' => 'Create Mutasi',
+            'active' => 'data-induk',
+        ]);
+
+    }
+
+
+    public function storeMutasi(Request $request) {
+
+        // validasi nis siswa jika sudah ada
+        $nis = $request->nis_siswa;
+
+        $siswaExist = Http::get("{$this->api_url}/siswa/{$nis}");
+
+        return $siswaExist;
+
+        if ($nis) {
+
+            $message = json_decode($siswaExist)->message;
+        
+        } else {
+
+            $message = json_decode($siswaExist);
+
+        }
+
+        if ($message == 'Displaying siswa with nis : ' . $nis) {
+
+            $response = Http::post("{$this->api_url}/mutasi", [
+                'nis_siswa' => $request->nis_siswa,
+                'nama_siswa' =>  $request->nama_siswa,
+                'alasan_mutasi' => $request->alasan_mutasi,
+                'keluar_di_kelas' => $request->keluar_di_kelas,
+                'pindah_dari' => $request->pindah_dari,
+                'pindah_ke' => $request->pindah_ke,
+                'tgl_mutasi' => $request->tgl_mutasi,
+                'sk_mutasi' => $request->sk_mutasi
+            ]);
+
+            $response->throw();
+
+            return redirect('/siswa-keluar');
+
+        } else {
+
+            return redirect('/siswa-keluar/create')->with('error', 'Siswa dengan NIS tersebut tidak terdaftar.');
+
+        }
+
+    }
+
+
+
+    /* API LIVESEARCH (TESTING) */
     public function indexLiveSearch(Request $request) 
     {
         $page = $request->page;

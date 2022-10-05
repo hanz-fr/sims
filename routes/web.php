@@ -34,6 +34,9 @@ Route::delete('/api/siswa/delete/{nis}', [ApiController::class, 'deleteSiswa']);
 /* ROUTE MUTASI */
 
 Route::get('/siswa-keluar', [ApiController::class, 'getAllMutasi']);
+Route::get('/siswa-keluar/create', [ApiController::class, 'createMutasi']);
+
+Route::post('/api/mutasi/store', [ApiController::class, 'storeMutasi']);
 
 
 

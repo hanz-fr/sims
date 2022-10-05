@@ -17,11 +17,13 @@
         <div class="tw-flex tw-flex-col">
             <h4 class="tw-font-pop tw-font-bold tw-mt-6 tw-text-sims-400">Data Siswa Keluar</h4>
         </div>
-        <div class="tw-flex tw-justify-center tw-items-center -tw-mb-8">
-            <a href=""><i class="fa-solid fa-print btn-export"></i></a>
-            <a href=""><i class="fa-solid fa-copy btn-export"></i></a>
-            <a href=""><i class="fa-solid fa-file-excel btn-export"></i></a>
-            <a href=""><i class="fa-solid fa-file-pdf btn-export"></i></a>
+        <div>
+            <div class="tw-flex tw-justify-center tw-items-center -tw-mb-8">
+                <a href=""><i class="fa-solid fa-print btn-export"></i></a>
+                <a href=""><i class="fa-solid fa-copy btn-export"></i></a>
+                <a href=""><i class="fa-solid fa-file-excel btn-export"></i></a>
+                <a href=""><i class="fa-solid fa-file-pdf btn-export"></i></a>
+            </div>
         </div>
     </div>
 
@@ -46,6 +48,12 @@
                 </div>
                 <div class="tw-text-base pt-1 tw-mx-2 tw-font-pop tw-font-normal tw-text-basic-700">Entries</div>
             </div>
+            <div class="flex">
+            <a href="/siswa-keluar/create" class="tw-bg-[#28A745] tw-text-white hover:tw-text-white hover:tw-bg-green-700 tw-font-pop tw-rounded-lg tw-px-5 tw-py-2">
+                <i class="fa-solid fa-circle-plus tw-pr-3"></i>
+                Tambah Data
+            </a>
+        </div>
         </div>
 
         <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl tw-mt-5">
@@ -64,8 +72,8 @@
                 <tbody class="tw-text-base">
                     @foreach($mutasi as $m)
                     <tr class="tw-bg-white tw-border">
-                        <td class="tw-py-4 tw-px-6 tw-border">#</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
+                        <td class="counterCell tw-py-4 tw-px-6 tw-border"></td>
+                        <td class="tw-py-4 tw-px-6 tw-border">{{ $m->nama_siswa }}</td>
                         <td class="tw-py-4 tw-px-6 tw-border">{{ $m->nis_siswa }}</td>
                         <td class="tw-py-4 tw-px-6 tw-border">{{ $m->keluar_di_kelas }}</td>
                         <td class="tw-py-4 tw-px-6 tw-border">{{ $m->tgl_mutasi }}</td>
