@@ -3,7 +3,7 @@
 @section('content')
     <div class="tw-mx-10 tw-w-screen">
         <div class="tw-flex tw-mt-8">
-            <div class="tw-text-2xl tw-font-pop tw-font-semibold tw-text-gray-300">Tambah Mata Pelajaran</div>
+            <div class="tw-text-2xl tw-font-pop tw-font-semibold tw-text-gray-300">Tambah Mata Pelajaran Jurusan</div>
         </div>
         <div
             class="tw-flex tw-justify-center tw-flex-col tw-bg-white shadow-cs tw-py-8 tw-px-40 tw-rounded-xl tw-w-full tw-mx-auto tw-mb-8 tw-mt-10">
