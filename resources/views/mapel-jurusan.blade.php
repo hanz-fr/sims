@@ -14,7 +14,7 @@
                     </button>
                 </div>
                 <div class="tw-flex ">
-                    <a href="/create-mata-pelajaran"
+                    <a href="/create-mata-pelajaran-jurusan"
                         class="tw-bg-admin-300 tw-text-white hover:tw-text-white hover:tw-bg-admin-600  tw-font-ubuntu tw-font-bold tw-rounded-lg tw-px-5 tw-py-2">
                         <i class="fa-solid fa-circle-plus tw-pr-3"></i>
                         Tambah Mapel
@@ -41,11 +41,10 @@
                             <td class="tw-py-6 tw-px-5 tw-border-b">10 Oktober 2023, 09:00</td>
                             <td class="tw-py-6 tw-px-5 tw-border-b">27 Januari 2024, 23:44</td>
                             <td class="tw-py-6 tw-px-5 tw-border-b">
-                                <form action="">
-                                    <a href="" class="tw-bg-red-300 hover:tw-bg-red-500 tw-text-white tw-px-7 tw-py-3 tw-rounded-lg">
-                                        Hapus
-                                    </a>
-                                </form>
+                                <a href="/detail-mata-pelajaran-jurusan"
+                                    class="tw-bg-blue-300 hover:tw-bg-blue-500 tw-text-white tw-px-7 tw-py-3 tw-rounded-lg">
+                                    Lihat
+                                </a>
                             </td>
                         </tr>
                         <tr class="tw-bg-white tw-text-[#B4B8BC] tw-font-bold text-lg tw-font-ubuntu">
@@ -54,11 +53,10 @@
                             <td class="tw-py-6 tw-px-5 tw-border-b">10 Oktober 2023, 09:00</td>
                             <td class="tw-py-6 tw-px-5 tw-border-b">27 Januari 2024, 23:44</td>
                             <td class="tw-py-6 tw-px-5 tw-border-b">
-                                <form action="">
-                                    <a href="" class="tw-bg-red-300 hover:tw-bg-red-500 tw-text-white tw-px-7 tw-py-3 tw-rounded-lg">
-                                        Hapus
-                                    </a>
-                                </form>
+                                <a href="/detail-mata-pelajaran-jurusan"
+                                    class="tw-bg-blue-300 hover:tw-bg-blue-500 tw-text-white tw-px-7 tw-py-3 tw-rounded-lg">
+                                    Lihat
+                                </a>
                             </td>
                         </tr>
                         <tr class="tw-bg-white tw-text-[#B4B8BC] tw-font-bold text-lg tw-font-ubuntu">
@@ -67,11 +65,10 @@
                             <td class="tw-py-6 tw-px-5 tw-border-b">10 Oktober 2023, 09:00</td>
                             <td class="tw-py-6 tw-px-5 tw-border-b">27 Januari 2024, 23:44</td>
                             <td class="tw-py-6 tw-px-5 tw-border-b">
-                                <form action="">
-                                    <a href="" class="tw-bg-red-300 hover:tw-bg-red-500 tw-text-white tw-px-7 tw-py-3 tw-rounded-lg">
-                                        Hapus
-                                    </a>
-                                </form>
+                                <a href="/detail-mata-pelajaran-jurusan"
+                                    class="tw-bg-blue-300 hover:tw-bg-blue-500 tw-text-white tw-px-7 tw-py-3 tw-rounded-lg">
+                                    Lihat
+                                </a>
                             </td>
                         </tr>
                         <tr class="tw-bg-white tw-text-[#B4B8BC] tw-font-bold text-lg tw-font-ubuntu">
@@ -80,11 +77,10 @@
                             <td class="tw-py-6 tw-px-5 tw-border-b">10 Oktober 2023, 09:00</td>
                             <td class="tw-py-6 tw-px-5 tw-border-b">27 Januari 2024, 23:44</td>
                             <td class="tw-py-6 tw-px-5 tw-border-b">
-                                <form action="">
-                                    <a href="" class="tw-bg-red-300 hover:tw-bg-red-500 tw-text-white tw-px-7 tw-py-3 tw-rounded-lg">
-                                        Hapus
-                                    </a>
-                                </form>
+                                <a href="/detail-mata-pelajaran-jurusan"
+                                    class="tw-bg-blue-300 hover:tw-bg-blue-500 tw-text-white tw-px-7 tw-py-3 tw-rounded-lg">
+                                    Lihat
+                                </a>
                             </td>
                         </tr>
                         <tr class="tw-bg-white tw-text-[#B4B8BC] tw-font-bold text-lg tw-font-ubuntu">
@@ -93,11 +89,10 @@
                             <td class="tw-py-6 tw-px-5 tw-border-b">10 Oktober 2023, 09:00</td>
                             <td class="tw-py-6 tw-px-5 tw-border-b">27 Januari 2024, 23:44</td>
                             <td class="tw-py-6 tw-px-5 tw-border-b">
-                                <form action="">
-                                    <a href="" class="tw-bg-red-300 hover:tw-bg-red-500 tw-text-white tw-px-7 tw-py-3 tw-rounded-lg">
-                                        Hapus
-                                    </a>
-                                </form>
+                                <a href="/detail-mata-pelajaran-jurusan"
+                                    class="tw-bg-blue-300 hover:tw-bg-blue-500 tw-text-white tw-px-7 tw-py-3 tw-rounded-lg">
+                                    Lihat
+                                </a>
                             </td>
                         </tr>
                         <tr class="tw-bg-white tw-text-[#B4B8BC] tw-font-bold text-lg tw-font-ubuntu">
@@ -106,11 +101,10 @@
                             <td class="tw-py-6 tw-px-5 tw-border-b">10 Oktober 2023, 09:00</td>
                             <td class="tw-py-6 tw-px-5 tw-border-b">27 Januari 2024, 23:44</td>
                             <td class="tw-py-6 tw-px-5 tw-border-b">
-                                <form action="">
-                                    <a href="" class="tw-bg-red-300 hover:tw-bg-red-500 tw-text-white tw-px-7 tw-py-3 tw-rounded-lg">
-                                        Hapus
-                                    </a>
-                                </form>
+                                <a href="/detail-mata-pelajaran-jurusan"
+                                    class="tw-bg-blue-300 hover:tw-bg-blue-500 tw-text-white tw-px-7 tw-py-3 tw-rounded-lg">
+                                    Lihat
+                                </a>
                             </td>
                         </tr>
                         <tr class="tw-bg-white tw-text-[#B4B8BC] tw-font-bold text-lg tw-font-ubuntu">
@@ -119,11 +113,10 @@
                             <td class="tw-py-6 tw-px-5 tw-border-b">10 Oktober 2023, 09:00</td>
                             <td class="tw-py-6 tw-px-5 tw-border-b">27 Januari 2024, 23:44</td>
                             <td class="tw-py-6 tw-px-5 tw-border-b">
-                                <form action="">
-                                    <a href="" class="tw-bg-red-300 hover:tw-bg-red-500 tw-text-white tw-px-7 tw-py-3 tw-rounded-lg">
-                                        Hapus
-                                    </a>
-                                </form>
+                                <a href="/detail-mata-pelajaran-jurusan"
+                                    class="tw-bg-blue-300 hover:tw-bg-blue-500 tw-text-white tw-px-7 tw-py-3 tw-rounded-lg">
+                                    Lihat
+                                </a>
                             </td>
                         </tr>
                         <tr class="tw-bg-white tw-text-[#B4B8BC] tw-font-bold text-lg tw-font-ubuntu">
@@ -132,11 +125,10 @@
                             <td class="tw-py-6 tw-px-5 tw-border-b">10 Oktober 2023, 09:00</td>
                             <td class="tw-py-6 tw-px-5 tw-border-b">27 Januari 2024, 23:44</td>
                             <td class="tw-py-6 tw-px-5 tw-border-b">
-                                <form action="">
-                                    <a href="" class="tw-bg-red-300 hover:tw-bg-red-500 tw-text-white tw-px-7 tw-py-3 tw-rounded-lg">
-                                        Hapus
-                                    </a>
-                                </form>
+                                <a href="/detail-mata-pelajaran-jurusan"
+                                    class="tw-bg-blue-300 hover:tw-bg-blue-500 tw-text-white tw-px-7 tw-py-3 tw-rounded-lg">
+                                    Lihat
+                                </a>
                             </td>
                         </tr>
                         <tr class="tw-bg-white tw-text-[#B4B8BC] tw-font-bold text-lg tw-font-ubuntu">
@@ -145,11 +137,10 @@
                             <td class="tw-py-6 tw-px-5 tw-border-b">10 Oktober 2023, 09:00</td>
                             <td class="tw-py-6 tw-px-5 tw-border-b">27 Januari 2024, 23:44</td>
                             <td class="tw-py-6 tw-px-5 tw-border-b">
-                                <form action="">
-                                    <a href="" class="tw-bg-red-300 hover:tw-bg-red-500 tw-text-white tw-px-7 tw-py-3 tw-rounded-lg">
-                                        Hapus
-                                    </a>
-                                </form>
+                                <a href="/detail-mata-pelajaran-jurusan"
+                                    class="tw-bg-blue-300 hover:tw-bg-blue-500 tw-text-white tw-px-7 tw-py-3 tw-rounded-lg">
+                                    Lihat
+                                </a>
                             </td>
                         </tr>
                     </tbody>

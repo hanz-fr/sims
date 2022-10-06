@@ -163,6 +163,13 @@ Route::get('/mata-pelajaran-jurusan', function () {
     ]);
 });
 
+Route::get('/detail-mata-pelajaran-jurusan', function () {
+    return view('detail-mapel-jurusan', [
+        'title' => 'Mata Pelajaran',
+        'active' => 'database'
+    ]);
+});
+
 Route::get('/create-mata-pelajaran-jurusan', function () {
     return view('create-mapel-jurusan', [
         'title' => 'Mata Pelajaran',
