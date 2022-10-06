@@ -72,7 +72,7 @@
                                 class="tw-text-white tw-bg-yellow-400 hover:tw-bg-[#D3A007] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                                 <i class="fa-solid fa-pen-to-square"></i></a>
                             </a>
-                            <a href="#"
+                            <a href="/detail-kelas"
                                 class="tw-text-white tw-bg-gray-500 hover:tw-bg-gray-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                                 <i class="fa-solid fa-eye"></i>
                             </a>
@@ -89,7 +89,7 @@
                                 class="tw-text-white tw-bg-yellow-400 hover:tw-bg-[#D3A007] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                                 <i class="fa-solid fa-pen-to-square"></i></a>
                             </a>
-                            <a href="#"
+                            <a href="/detail-kelas"
                                 class="tw-text-white tw-bg-gray-500 hover:tw-bg-gray-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                                 <i class="fa-solid fa-eye"></i>
                             </a>
@@ -106,7 +106,7 @@
                                 class="tw-text-white tw-bg-yellow-400 hover:tw-bg-[#D3A007] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                                 <i class="fa-solid fa-pen-to-square"></i></a>
                             </a>
-                            <a href="#"
+                            <a href="/detail-kelas"
                                 class="tw-text-white tw-bg-gray-500 hover:tw-bg-gray-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                                 <i class="fa-solid fa-eye"></i>
                             </a>
@@ -123,7 +123,7 @@
                                 class="tw-text-white tw-bg-yellow-400 hover:tw-bg-[#D3A007] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                                 <i class="fa-solid fa-pen-to-square"></i></a>
                             </a>
-                            <a href="#"
+                            <a href="/detail-kelas"
                                 class="tw-text-white tw-bg-gray-500 hover:tw-bg-gray-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                                 <i class="fa-solid fa-eye"></i>
                             </a>
@@ -140,7 +140,7 @@
                                 class="tw-text-white tw-bg-yellow-400 hover:tw-bg-[#D3A007] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                                 <i class="fa-solid fa-pen-to-square"></i></a>
                             </a>
-                            <a href="#"
+                            <a href="/detail-kelas"
                                 class="tw-text-white tw-bg-gray-500 hover:tw-bg-gray-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                                 <i class="fa-solid fa-eye"></i>
                             </a>

@@ -5,30 +5,46 @@
   
   {{-- modal --}}
   <div x-show="show" class="tw-grid tw-place-items-center tw-items-center tw-w-full tw-fixed tw-my-40">
-    <div @click.away="show = false" class="tw-w-1/3 -tw-ml-48 tw-rounded-lg tw-shadow-xl tw-bg-gray-50">
-        <div class="tw-m-4">
-            <label class="tw-inline-block tw-mb-2 tw-text-silver-400 tw-font-pop tw-text-xl">File Upload</label>
-            <div class="tw-flex tw-items-center tw-justify-center tw-w-full">
-                <label
-                  class="tw-flex tw-flex-col tw-w-full tw-h-56 tw-border-4 tw-border-admin-200 tw-border-dashed tw-justify-center tw-items-center hover:tw-bg-gray-100 hover:tw-border-gray-300">
-                    <div class="tw-flex tw-flex-col tw-items-center tw-justify-center tw-pt-7">
-                        <svg  @click="show=false" xmlns="http://www.w3.org/2000/svg" class="tw-w-8 tw-h-8 tw-text-gray-400 group-hover:tw-text-gray-600"
-                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                        </svg>
-                        <p class="tw-pt-1 tw-text-2xl tw-tracking-wider tw-text-gray-400 group-hover:tw-text-gray-600">
-                            Attach a file</p>
-                    </div>
-                    <input type="file" class="tw-opacity-0"/>
-                </label>
-            </div>
-        </div>
+    <div @click.away="show = false" class="tw-w-1/4 -tw-ml-64 tw-rounded-lg tw-shadow-xl tw-bg-gray-50 tw-py-2 tw-px-3 tw-relative tw-appearance-none tw-border-2 tw-border-gray-300 tw-border-solid hover:tw-shadow-outline-gray">
+      <div x-data="{ files: null }" id="FileUpload" class="">
+          <label class="tw-flex tw-flex-col tw-w-full tw-h-56 tw-border-4 tw-border-admin-200 tw-border-dashed tw-justify-center tw-items-center hover:tw-bg-gray-100 hover:tw-border-gray-300 tw-px-10" for="">
+            <input type="file" multiple
+                 class="tw-absolute tw-inset-0 tw-z-50 tw-m-0 tw-p-0 tw-w-full tw-h-full tw-outline-none tw-opacity-0"
+                 x-on:change="files = $event.target.files; console.log($event.target.files);"
+                 x-on:dragover="$el.classList.add('active')" x-on:dragleave="$el.classList.remove('active')" x-on:drop="$el.classList.remove('active')"
+              >
+          
+              <template x-if="files !== null">
+                  <div class="tw-flex tw-flex-col tw-space-y-1">
+                      <template x-for="(_,index) in Array.from({ length: files.length })">
+                          <div class="tw-flex tw-flex-row tw-items-center tw-space-x-2">
+                              <template x-if="files[index].type.includes('audio/')"><i class="far fa-file-audio fa-fw"></i></template>
+                              <template x-if="files[index].type.includes('application/')"><i class="far fa-file-alt fa-fw"></i></template>
+                              <template x-if="files[index].type.includes('image/')"><i class="far fa-file-image fa-fw"></i></template>
+                              <template x-if="files[index].type.includes('video/')"><i class="far fa-file-video fa-fw"></i></template>
+                              <span class="tw-font-medium tw-text-gray-400" x-text="files[index].name">Uploading</span>
+                              <span class="tw-text-xs tw-self-end tw-text-gray-400" x-text="filesize(files[index].size)">...</span>
+                          </div>
+                      </template>
+                  </div>
+              </template>
+              <template x-if="files === null">
+                  <div class="tw-flex tw-flex-col tw-space-y-2 tw-items-center tw-justify-center">
+                    <svg  @click="show=false" xmlns="http://www.w3.org/2000/svg" class="tw-w-8 tw-h-8 tw-text-gray-400 group-hover:tw-text-gray-600"
+                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                  </svg>
+                      <p class="tw-text-gray-700">Drag your files here or click in this area.</p>
+                  </div>
+              </template>
+        </label>
         <div class="tw-flex tw-justify-center tw-p-2">
-            <button class="tw-w-full tw-px-4 tw-py-2 tw-text-white tw-bg-admin-300 tw-rounded tw-shadow-xl">Create</button>
-        </div>
-    </div>
-  </div> 
+          <button class="tw-w-full tw-px-5 tw-py-2 tw-text-white tw-bg-admin-300 tw-rounded tw-shadow-xl">Create</button>
+      </div>
+      </div>
+  </div>
+</div>
 
   <div class="tw-flex tw-flex-col tw-mt-8 tw-gap-8">
     <div class="tw-flex tw-items-center">
