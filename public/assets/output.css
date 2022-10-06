@@ -861,10 +861,6 @@ video {
   left: 50%;
 }
 
-.tw-z-50 {
-  z-index: 50;
-}
-
 .tw-float-right {
   float: right;
 }
@@ -1993,11 +1989,6 @@ video {
 .tw-bg-back {
   --tw-bg-opacity: 1;
   background-color: rgb(244 244 244 / var(--tw-bg-opacity));
-}
-
-.tw-bg-red-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
 }
 
 .tw-fill-current {
@@ -3192,16 +3183,6 @@ table {
   background-color: rgb(77 158 158 / 0.6);
 }
 
-.hover\:tw-bg-red-600:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(220 38 38 / var(--tw-bg-opacity));
-}
-
-.hover\:tw-bg-red-700:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(185 28 28 / var(--tw-bg-opacity));
-}
-
 .hover\:tw-bg-sims-500:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(59 144 145 / var(--tw-bg-opacity));
@@ -3303,11 +3284,6 @@ table {
     color: rgb(220 38 38 / var(--tw-text-opacity));
   }
 
-  .dark\:tw-text-red-200 {
-    --tw-text-opacity: 1;
-    color: rgb(254 202 202 / var(--tw-text-opacity));
-  }
-
   .dark\:tw-text-red-400 {
     --tw-text-opacity: 1;
     color: rgb(248 113 113 / var(--tw-text-opacity));
@@ -3385,14 +3361,6 @@ table {
     width: 50%;
   }
 
-  .sm\:tw-w-4\/5 {
-    width: 80%;
-  }
-
-  .sm\:tw-w-2\/5 {
-    width: 40%;
-  }
-
   .sm\:tw-grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
@@ -3429,13 +3397,6 @@ table {
 }
 
 @media (min-width: 768px) {
-  .md\:tw-inset-0 {
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-  }
-
   .md\:tw-order-2 {
     order: 2;
   }
@@ -3450,10 +3411,6 @@ table {
 
   .md\:tw-mb-0 {
     margin-bottom: 0px;
-  }
-
-  .md\:tw-h-full {
-    height: 100%;
   }
 
   .md\:tw-h-auto {
@@ -3476,10 +3433,6 @@ table {
     width: 66.666667%;
   }
 
-  .md\:tw-w-1\/3 {
-    width: 33.333333%;
-  }
-
   .md\:tw-grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -3495,11 +3448,6 @@ table {
   .md\:tw-px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
-  }
-
-  .md\:tw-text-xl {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
   }
 
   .md\:tw-text-3xl {
@@ -3520,10 +3468,6 @@ table {
 
   .lg\:tw-w-1\/2 {
     width: 50%;
-  }
-
-  .lg\:tw-w-1\/3 {
-    width: 33.333333%;
   }
 
   .lg\:tw-grid-cols-3 {

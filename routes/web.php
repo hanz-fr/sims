@@ -32,9 +32,10 @@ Route::delete('/api/siswa/delete/{nis}', [ApiController::class, 'deleteSiswa']);
 
 /* ROUTE MUTASI */
 
-Route::get('/siswa-keluar', [ApiController::class, 'getAllMutasi']);
+Route::get('/siswa-keluar', [ApiController::class, 'getAllMutasiKeluar']);
 Route::get('/create-mutasi', [ApiController::class, 'createMutasi']);
 Route::get('/edit-mutasi/{id}', [ApiController::class, 'editMutasi']);
+Route::get('/siswa-masuk', [ApiController::class, 'indexMutasiMasuk']);
 
 Route::post('/api/mutasi/store', [ApiController::class, 'storeMutasi']);
 Route::put('/api/mutasi/update/{id}', [ApiController::class, 'updateMutasi']);
@@ -91,12 +92,12 @@ Route::get('/rekap-nilai', function () {
     ]);
 });
 
-Route::get('/siswa-masuk', function () {
+/* Route::get('/siswa-masuk', function () {
     return view('siswa-masuk', [
         'title' => 'Data Siswa Masuk',
         'active' => 'data-induk'
     ]);
-});
+}); */
 
 Route::get('/rekap-siswa', function () {
     return view('data-rekap-siswa', [

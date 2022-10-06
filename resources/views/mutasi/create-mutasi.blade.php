@@ -62,6 +62,24 @@
             @enderror
         </div>
         <div class="tw-mx-auto md:tw-w-2/3 sm:tw-w-1/2">
+            <label class="label-input" for="jenis_kelamin">
+                Jenis Kelamin
+              </label>
+              <select class="input-data" id="jenis_kelamin" name="jenis_kelamin" required>
+                @if(old('jenis_kelamin') == 'L')
+                <option selected value="{{ old('jenis_kelamin') }}">Laki-laki</option>
+                <option value="P">Perempuan</option>
+                @elseif(old('jenis_kelamin' == 'P'))
+                <option selected value="{{ old('jenis_kelamin') }}">Perempuan</option>
+                <option value="L">Laki-laki</option>
+                @else
+                <option selected>Pilih</option>
+                <option value="L">Laki-laki</option>
+                <option value="L">Perempuan</option>
+                @endif
+              </select>
+        </div>
+        <div class="tw-mx-auto md:tw-w-2/3 sm:tw-w-1/2">
             <label class="label-input" for="alasan_mutasi">
                 Alasan Mutasi
             </label>
@@ -76,15 +94,6 @@
             </label>
             <input value="{{ old('keluar_di_kelas') }}" class="input-data tw-w-full" id="keluar_di_kelas" name="keluar_di_kelas" type="text">
             @error('keluar_di_kelas')
-            <small class="tw-text-red-500">{{ $message }}</small>
-            @enderror
-        </div>
-        <div class="tw-mx-auto md:tw-w-2/3 sm:tw-w-1/2">
-            <label class="label-input" for="pindah_dari">
-                Pindah dari
-            </label>
-            <input value="{{ old('pindah_dari') }}" class="input-data tw-w-full" id="pindah_dari" name="pindah_dari" type="text">
-            @error('pindah_dari')
             <small class="tw-text-red-500">{{ $message }}</small>
             @enderror
         </div>

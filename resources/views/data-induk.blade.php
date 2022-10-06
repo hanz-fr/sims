@@ -19,7 +19,7 @@
             <h6 class="tw-mb-5 tw-text-gray-400 tw-font-semibold">SELURUH KELAS</h6>
         </div>
 
-        @if(session()->has('success'))
+        {{-- @if(session()->has('success'))
         <div id="alert-2" class="tw-flex tw-p-4 tw-mt-4 tw-w-full tw-my-5 tw-mx-10 tw-bg-green-200 tw-rounded-lg" role="alert">
           <svg class="tw-my-auto tw-flex-shrink-0 tw-w-5 tw-h-5 tw-text-green-700" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
           <div class="tw-ml-3 tw-text-sm tw-font-medium tw-text-green-700 tw-my-auto">
@@ -30,7 +30,7 @@
             <svg class="tw-w-5 tw-h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
           </button>
         </div>
-        @endif
+        @endif --}}
 
         <div class="tw-flex tw-justify-center tw-items-center -tw-mb-8">
             <a href=""><i class="fa-solid fa-print btn-export"></i></a>
@@ -94,7 +94,7 @@
                         <td class="tw-py-4 tw-px-6 tw-border">{{ $s->jenis_kelamin }}</td>
                         <td class="tw-py-4 tw-px-6 tw-border">{{ $s->KelasId }}</td>
                         <td>
-                            <a href="#" class="tw-text-white tw-bg-sims-400 hover:tw-bg-sims-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-mr-1">
+                            <a href="/rekap-nilai" class="tw-text-white tw-bg-sims-400 hover:tw-bg-sims-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-mr-1">
                                 <i class="fa-light fa-clipboard-list"></i>
                             </a>
                             <a href="/edit-siswa/{{ $s->nis_siswa }}" class="tw-text-white tw-bg-kuning-500 hover:tw-bg-kuning-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
