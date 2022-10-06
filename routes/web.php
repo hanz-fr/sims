@@ -209,29 +209,15 @@ Route::get('/live-search-test', [ApiController::class, 'indexLiveSearch']);
 
 Route::get('/search', [ApiController::class, 'search']);
 
+// ROUTE USER
+Route::get('/register', [UserController::class, 'registration']);
+Route::get('/login', [UserController::class, 'index'])->name('login');
+Route::post('/registeruser', [UserController::class, 'register']);
+Route::post('/loginuser', [UserController::class, 'authenticate']);
+Route::get('/signout', [UserController::class, 'signOut']);
 
-Route::get('/register', [UserController::class, 'register']);
-Route::get('/login', [UserController::class, 'login']);
-Route::get('/logout', [UserController::class, 'logout'])->name('logout');
-Route::get('/register-success', [UserController::class, 'registersc']);
-Route::post('/registeruser', [UserController::class, 'registeruser']);
-Route::post('/loginuser', [UserController::class, 'loginuser']);
-Route::get('/profile', [UserController::class, 'show']);
+// profile
+Route::get('/profile', [UserController::class, 'show'])->name('profile');
 Route::get('/edit-profile', [UserController::class, 'edit']);
-Route::post('/update-profile', [UserController::class, 'update']);
-
-Route::middleware(['auth', 'user-access:tata usaha'])->group(function () {
-  
-});
-  
-Route::middleware(['auth', 'user-access:kesiswaan'])->group(function () {
-  
-});
-  
-Route::middleware(['auth', 'user-access:kurikulum'])->group(function () {
-  
-});
-
-Route::middleware(['auth', 'user-access:wali kelas'])->group(function () {
-  
-});
+Route::post('/update-profile/{id}', [UserController::class, 'update']);
+Route::post('/change-password', [UserController::class, 'changePassword']);

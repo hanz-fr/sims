@@ -3,20 +3,31 @@
 @section('content')
 <div class="tw-mx-10">
     <div class="tw-flex tw-flex-col tw-my-5">
-        {{-- foto n username+roles --}}
+        {{-- username+roles --}}
         <div class="tw-flex tw-flex-col tw-bg-white tw-shadow-md tw-w-full">
             <div class="tw-mt-5 tw-mr-5">
                 <div class="tw-float-right">
                     <a href="/edit-profile" class="tw-text-sims-400 tw-cursor-pointer tw-text-2xl"><i class="fa-solid fa-pen-line"></i></a>
                 </div>
             </div>
-            <div class="tw-flex -tw-mt-10">
-                <div class="profile">
+                {{-- <div class="profile">
                     <img src="" alt="Foto Profil" class="tw-rounded-xl tw-mb-10 tw-w-40 tw-h-40 tw-border tw-border-slate-400 tw-mx-20 sm:tw-mt-10">
-                </div>
-                <div class="username tw-flex tw-flex-col tw-justify-center tw-text-sims-400 tw-font-pop tw-font-bold">
-                    <div class="tw-text-2xl tw-mb-2">{{ auth()->user()->nama }}</div>
-                    <div class="tw-text-xl tw-text-silver-400">{{ auth()->user()->roles }}</div>
+                </div> --}}
+            <div class="username tw-flex tw-flex-col tw-justify-center tw-text-sims-400 tw-font-pop tw-font-bold tw-mx-20 tw-mb-12">
+                <div class="tw-text-2xl tw-mb-2">{{ auth()->user()->nama }}</div>
+                <div class="tw-text-xl tw-text-silver-400">
+                    @if (auth()->user()->roles === 1)
+                        Tata Usaha
+                    @endif
+                    @if (auth()->user()->roles === 2)
+                        Kesiswaan
+                    @endif
+                    @if (auth()->user()->roles === 3)
+                        Kurikulum
+                    @endif
+                    @if (auth()->user()->roles === 4)
+                        Wali Kelas
+                    @endif
                 </div>
             </div>
         </div>
@@ -39,7 +50,20 @@
                     </div>
                     <div class="tw-flex tw-flex-col tw-gap-5 tw-font-bold tw-text-xl">
                         <div class="tw-text-sims-400">Bagian</div>
-                        <div class="tw-text-basic-200">{{ auth()->user()->roles }}</div>
+                        <div class="tw-text-basic-200">
+                            @if (auth()->user()->roles === 1)
+                            Tata Usaha
+                            @endif
+                            @if (auth()->user()->roles === 2)
+                                Kesiswaan
+                            @endif
+                            @if (auth()->user()->roles === 3)
+                                Kurikulum
+                            @endif
+                            @if (auth()->user()->roles === 4)
+                                Wali Kelas
+                            @endif
+                        </div>
                     </div>
                 </div>
             </div>

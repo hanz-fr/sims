@@ -16,7 +16,7 @@ a {
     @apply tw-block tw-uppercase tw-tracking-wide tw-text-gray-500 tw-text-sm tw-font-bold tw-mb-2;
   }
   .input-data {
-    @apply tw-block tw-w-full tw-bg-gray-200 tw-text-gray-500 tw-border tw-border-gray-200 tw-rounded-xl tw-py-3 tw-px-4 tw-leading-tight focus:tw-outline-sims-400 focus:tw-bg-white focus:tw-border-sims-400 focus:placeholder:tw-invisible;
+    @apply tw-block tw-w-full tw-bg-gray-200 tw-text-gray-500 tw-border tw-border-gray-200 tw-rounded-xl tw-py-3 tw-px-4 tw-leading-tight focus:tw-outline-none focus:tw-bg-white focus:tw-border-sims-400 focus:tw-ring-1 focus:tw-ring-sims-400 placeholder:tw-invisible;
   }
   .input-account {
     @apply tw-block tw-text-gray-400 tw-w-full tw-font-pop tw-border tw-border-[#E3E3E3] tw-mt-2 tw-rounded-2xl tw-py-3 tw-px-8 tw-bg-white focus:tw-shadow-sm focus:tw-shadow-admin-300 focus:tw-border-admin-300 focus:tw-outline-none;
