@@ -1220,6 +1220,14 @@ video {
   margin-top: 5rem;
 }
 
+.tw-ml-12 {
+  margin-left: 3rem;
+}
+
+.tw-ml-20 {
+  margin-left: 5rem;
+}
+
 .tw-block {
   display: block;
 }
