@@ -17,7 +17,7 @@
         <div class="tw-bg-admin-300 tw-mt-5 tw-mb-10 tw-rounded-l-[20px] tw-px-10 tw-py-2 tw-flex tw-float-right tw-text-white tw-font-light tw-text-2xl">Tata Usaha</div>
         </div>
         <div class="tw-flex tw-ml-10">
-          <div class="tw-bg-admin-300 tw-p-2 tw-rounded-2xl tw-text-white tw-w-44 tw-h-44 tw-items-center tw-flex tw-justify-center"><i class="fa-solid fa-user tw-text-8xl"></i></div>
+          {{-- <div class="tw-bg-admin-300 tw-p-2 tw-rounded-2xl tw-text-white tw-w-44 tw-h-44 tw-items-center tw-flex tw-justify-center"><i class="fa-solid fa-user tw-text-8xl"></i></div> --}}
           <div class="tw-flex tw-flex-col tw-ml-14 tw-justify-center">
             <div class="tw-text-admin-300 tw-font-bold tw-flex tw-flex-col">
               <div class="tw-text-3xl">Ibnu Asep bin Budi</div>

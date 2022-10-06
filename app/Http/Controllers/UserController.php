@@ -61,8 +61,7 @@ class UserController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect()->intended('/')
-                        ->withSuccess('Signed in');
+            return redirect()->intended('/')->withSuccess('Signed in');
         }
   
         return redirect("login")->withSuccess('Login details are not valid');
