@@ -871,10 +871,6 @@ video {
   left: 50%;
 }
 
-.tw-z-50 {
-  z-index: 50;
-}
-
 .tw-float-right {
   float: right;
 }
@@ -2020,6 +2016,8 @@ video {
   background-color: rgb(244 244 244 / var(--tw-bg-opacity));
 }
 
+<<<<<<< HEAD
+=======
 .tw-bg-silver-800 {
   --tw-bg-opacity: 1;
   background-color: rgb(90 90 90 / var(--tw-bg-opacity));
@@ -2035,6 +2033,7 @@ video {
   background-color: rgb(147 197 253 / var(--tw-bg-opacity));
 }
 
+>>>>>>> fb1f514556f47b4d51c161fea12c45d02022d156
 .tw-fill-current {
   fill: currentColor;
 }

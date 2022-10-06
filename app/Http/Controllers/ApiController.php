@@ -7,7 +7,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\File;
-
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ApiController extends Controller
 {
@@ -72,7 +72,7 @@ class ApiController extends Controller
             
             return view('di-detail', [
                 'title' => 'Data Siswa',
-                'active' => 'detail-siswa',
+                'active' => 'data-induk',
                 'status' => 'success',
                 'siswa' => json_decode($response)->result,
                 'jurusan_siswa' => $jurusanSiswa,
@@ -81,7 +81,7 @@ class ApiController extends Controller
         } else {
             return view('di-detail', [
                 'title' => 'Data Siswa',
-                'active' => 'detail-siswa',
+                'active' => 'data-induk',
                 'status' => 'error',
                 'message' => 'Halaman yang kamu cari tidak dapat ditemukan :('
             ]);
@@ -94,8 +94,8 @@ class ApiController extends Controller
         $kelas = Http::get("{$this->api_url}/kelas");
 
         return view('input-di', [
-            'title' => 'backend-test',
-            'active' => 'backend-test',
+            'title' => 'Create Siswa',
+            'active' => 'data-induk',
             'kelas' => json_decode($kelas),
         ]);
     }
@@ -189,7 +189,7 @@ class ApiController extends Controller
 
             $response->throw();
 
-            return redirect('/data-induk-siswa?perPage=10');
+            return redirect('/data-induk-siswa?perPage=10')->with('success', 'Siswa created successfully.');
         }
     }
 
@@ -204,7 +204,7 @@ class ApiController extends Controller
         if ($response->successful()) {
             return view('edit-di', [
                 'title' => 'Edit siswa',
-                'active' => 'edit-siswa',
+                'active' => 'data-induk',
                 'kelas' => json_decode($kelas),
                 'siswa' => json_decode($response)->result,
                 'status' => 'success'
@@ -212,7 +212,7 @@ class ApiController extends Controller
         } else {
             return view('edit-di', [
                 'title' => 'Edit di',
-                'active' => 'edit-siswa',
+                'active' => 'data-induk',
                 'status' => 'error',
                 'message' => 'Halaman yang kamu cari tidak dapat ditemukan :('
             ]);
@@ -311,12 +311,12 @@ class ApiController extends Controller
 
     /* API MUTASI */
 
-    public function getAllMutasi(Request $request) {
+    public function getAllMutasiKeluar(Request $request) {
         
         $page = $request->page;
         $perPage = $request->perPage;
 
-        $response = Http::get("{$this->api_url}/mutasi?page={$page}&perPage={$perPage}");
+        $response = Http::get("{$this->api_url}/mutasi/siswa-keluar?page={$page}&perPage={$perPage}");
 
         if ($response->successful()) {
             
@@ -340,6 +340,40 @@ class ApiController extends Controller
             ]);
 
         }
+    }
+
+
+    public function indexMutasiMasuk(Request $request) {
+
+        $page = $request->page;
+        $perPage = $request->perPage;
+
+        $response = Http::get("{$this->api_url}/mutasi/siswa-masuk?page={$page}&perPage={$perPage}");
+
+
+        if ($response->successful()) {
+            
+            return view('mutasi.siswa-masuk', [
+                'mutasi' => json_decode($response)->data->rows,
+                'status' => 'success',
+                'response' => json_decode($response),
+                'total' => json_decode($response)->data->count,
+                'title' => 'Data Siswa Keluar',
+                'active' => 'rekap-siswa'
+            ]);
+
+        } else {
+
+            return view('mutasi.siswa-masuk', [
+                'response' => $response,
+                'status' => 'error',
+                'title' => 'Data Siswa Masuk',
+                'active' => 'data-induk',
+                'message' => 'Halaman yang kamu cari tidak dapat ditemukan :('
+            ]);
+
+        }
+
     }
 
     public function createMutasi() {
@@ -377,9 +411,9 @@ class ApiController extends Controller
             $response = Http::post("{$this->api_url}/mutasi", [
                 'nis_siswa' => $request->nis_siswa,
                 'nama_siswa' =>  $request->nama_siswa,
+                'jenis_kelamin' => $request->jenis_kelamin,
                 'alasan_mutasi' => $request->alasan_mutasi,
                 'keluar_di_kelas' => $request->keluar_di_kelas,
-                'pindah_dari' => $request->pindah_dari,
                 'pindah_ke' => $request->pindah_ke,
                 'tgl_mutasi' => $request->tgl_mutasi,
                 'sk_mutasi' => $request->sk_mutasi
@@ -445,9 +479,9 @@ class ApiController extends Controller
             $response = Http::put("{$this->api_url}/mutasi/{$id}", [
                 'nis_siswa' => $request->nis_siswa,
                 'nama_siswa' =>  $request->nama_siswa,
+                'jenis_kelamin' => $request->jenis_kelamin,
                 'alasan_mutasi' => $request->alasan_mutasi,
                 'keluar_di_kelas' => $request->keluar_di_kelas,
-                'pindah_dari' => $request->pindah_dari,
                 'pindah_ke' => $request->pindah_ke,
                 'tgl_mutasi' => $request->tgl_mutasi,
                 'sk_mutasi' => $request->sk_mutasi

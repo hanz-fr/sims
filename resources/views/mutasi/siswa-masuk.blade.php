@@ -1,6 +1,16 @@
 @extends('layouts.main')
 @section('content')
 
+@if($status == 'error')
+<div class="tw-flex tw-justify-center">
+    <div class="tw-block tw-my-32">
+        <img src="{{asset('assets/img/error_img.svg')}}" alt="error_img">
+        <h1 class="tw-flex tw-justify-center tw-font-pop tw-font-bold tw-mt-6 tw-text-sims-400">404 Not Found</h1>
+        <p class="tw-flex tw-justify-center tw-font-pop tw-text-md tw-font-semibold tw-text-gray-400 tw-mt-5">{{ $message }}</p>
+        <p class="tw-flex tw-justify-center tw-font-pop tw-text-gray-400 tw-text-sm">Coba hubungi admin untuk penyelesaian lebih lanjut.</p>
+    </div>
+</div>
+@else
 <div class="tw-mx-10">
     <div class="tw-flex tw-justify-between tw-gap-5 tw-mt-8">
         <div class="tw-flex tw-flex-col">
@@ -51,27 +61,20 @@
                     </tr>
                 </thead>
                 <tbody class="tw-text-base">
+                    @foreach($mutasi as $d)
                     <tr class="tw-bg-white tw-border">
-                        <td class="tw-py-4 tw-px-6 tw-border">01</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">Abdullof Hitrullah</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">2006423639</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">L</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">6-10-1939</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">XII RPL 1</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">SMKN Darul Berlin, Dikeluarkan oleh guru kesenian</td>
+                        <td class="counterCell tw-py-4 tw-px-6 tw-border"></td>
+                        <td class="tw-py-4 tw-px-6 tw-border">{{ $d->nama_siswa }}</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">{{ $d->nis_siswa }}</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">{{ $d->jenis_kelamin }}</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">{{ $d->tgl_mutasi }}</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">{{ $d->diterima_di_kelas }}</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">{{ $d->pindah_dari }}, {{ $d->alasan_mutasi }}</td>
                     </tr>
-                    <tr class="tw-bg-white tw-border">
-                        <td class="tw-py-4 tw-px-6 tw-border">02</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">Asep Zeus Kusnadi</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">200715824</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">L</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">9-9-2019</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">X PPLG 1</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">SMKN Athena Jaya, Ingin pindah sekolah</td>
-                    </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
     </div>
-
+@endif
 @endsection
