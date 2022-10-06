@@ -1226,6 +1226,14 @@ video {
   margin-top: 5rem;
 }
 
+.tw-ml-20 {
+  margin-left: 5rem;
+}
+
+.tw-ml-12 {
+  margin-left: 3rem;
+}
+
 .tw-block {
   display: block;
 }
@@ -2012,6 +2020,21 @@ video {
   background-color: rgb(244 244 244 / var(--tw-bg-opacity));
 }
 
+.tw-bg-silver-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(90 90 90 / var(--tw-bg-opacity));
+}
+
+.tw-bg-yellow-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(253 224 71 / var(--tw-bg-opacity));
+}
+
+.tw-bg-blue-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(147 197 253 / var(--tw-bg-opacity));
+}
+
 .tw-fill-current {
   fill: currentColor;
 }
@@ -2319,6 +2342,10 @@ video {
   padding-left: 0px;
 }
 
+.tw-pl-8 {
+  padding-left: 2rem;
+}
+
 .tw-text-left {
   text-align: left;
 }
@@ -2426,6 +2453,10 @@ video {
 
 .tw-font-normal {
   font-weight: 400;
+}
+
+.tw-font-thin {
+  font-weight: 100;
 }
 
 .tw-tracking-wide {
@@ -3202,6 +3233,11 @@ table {
 .hover\:tw-bg-sims-500:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(59 144 145 / var(--tw-bg-opacity));
+}
+
+.hover\:tw-bg-blue-500:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
 }
 
 .hover\:tw-text-white:hover {

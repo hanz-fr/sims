@@ -156,15 +156,22 @@ Route::get('/manage-user', function () {
     ]);
 });
 
-Route::get('/mata-pelajaran', function () {
-    return view('mapel2', [
+Route::get('/mata-pelajaran-jurusan', function () {
+    return view('mapel-jurusan', [
         'title' => 'Mata Pelajaran',
         'active' => 'database'
     ]);
 });
 
-Route::get('/create-mata-pelajaran', function () {
-    return view('create-mapel', [
+Route::get('/detail-mata-pelajaran-jurusan', function () {
+    return view('detail-mapel-jurusan', [
+        'title' => 'Mata Pelajaran',
+        'active' => 'database'
+    ]);
+});
+
+Route::get('/create-mata-pelajaran-jurusan', function () {
+    return view('create-mapel-jurusan', [
         'title' => 'Mata Pelajaran',
         'active' => 'database'
     ]);
