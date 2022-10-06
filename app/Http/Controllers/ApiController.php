@@ -8,13 +8,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\File;
 
+
 class ApiController extends Controller
 {
 
     /* GLOBAL VARIABLES */
     public function __construct()
     {
-        $this->api_url = 'https://fb64-103-148-113-86.ap.ngrok.io'; // Ganti link NGROK disini
+        $this->api_url = 'https://df1c-103-139-10-248.ngrok.io'; // Ganti link NGROK disini
     }
 
     /* API SISWA */
@@ -309,6 +310,7 @@ class ApiController extends Controller
 
 
     /* API MUTASI */
+
     public function getAllMutasi(Request $request) {
         
         $page = $request->page;
@@ -318,28 +320,178 @@ class ApiController extends Controller
 
         if ($response->successful()) {
             
-            return view('siswa-keluar', [
+            return view('mutasi.siswa-keluar', [
                 'mutasi' => json_decode($response)->data->rows,
                 'status' => 'success',
                 'response' => json_decode($response),
                 'total' => json_decode($response)->data->count,
                 'title' => 'Data Siswa Keluar',
-                'active' => 'data-induk'
+                'active' => 'rekap-siswa'
             ]);
 
         } else {
 
-            return view('siswa-keluar', [
+            return view('mutasi.siswa-keluar', [
                 'response' => $response,
                 'status' => 'error',
                 'title' => 'Data Siswa Keluar',
-                'active' => 'data-induk',
+                'active' => 'rekap-siswa',
                 'message' => 'Halaman yang kamu cari tidak dapat ditemukan :('
             ]);
 
         }
     }
 
+    public function createMutasi() {
+
+        return view('mutasi.create-mutasi', [
+            'title' => 'Create Mutasi',
+            'active' => 'rekap-siswa',
+        ]);
+
+    }
+
+
+    public function storeMutasi(Request $request) {
+
+        // validasi nis siswa jika sudah ada
+        $nis = $request->nis_siswa;
+
+        $siswaExist = Http::get("{$this->api_url}/siswa/{$nis}");
+
+        if ($nis) {
+
+            $message = json_decode($siswaExist)->message;
+        
+        } else {
+
+            $message = json_decode($siswaExist);
+
+        }
+
+
+
+        if ($message == 'Displaying siswa with nis : '.$nis) {
+
+            
+            $response = Http::post("{$this->api_url}/mutasi", [
+                'nis_siswa' => $request->nis_siswa,
+                'nama_siswa' =>  $request->nama_siswa,
+                'alasan_mutasi' => $request->alasan_mutasi,
+                'keluar_di_kelas' => $request->keluar_di_kelas,
+                'pindah_dari' => $request->pindah_dari,
+                'pindah_ke' => $request->pindah_ke,
+                'tgl_mutasi' => $request->tgl_mutasi,
+                'sk_mutasi' => $request->sk_mutasi
+            ]);
+
+            if ($response->successful()) {
+                return redirect('/siswa-keluar')->with('success', 'Mutasi created successfully.');
+            } 
+
+            if ($response->clientError()) {
+                return redirect('/create-mutasi')->with('error-mutasi', 'Mutasi dengan NIS tersebut sudah terdaftar.');
+            }
+
+
+        } else {
+
+            return redirect('/create-mutasi')->with('error', 'Siswa dengan NIS tersebut tidak terdaftar.');
+
+        }
+
+    }
+
+    public function editMutasi(Request $request, $id) {
+
+        $response = Http::get("{$this->api_url}/mutasi/{$id}");
+
+        if ($response->successful()) {
+            return view('mutasi.edit-mutasi', [
+                'title' => 'Edit Mutasi',
+                'active' => 'rekap-siswa',
+                'mutasi' => json_decode($response)->result,
+                'status' => 'success'
+            ]);
+        } else {
+            return view('mutasi.edit-mutasi', [
+                'title' => 'Edit Mutasi',
+                'active' => 'rekap-siswa',
+                'status' => 'error',
+                'message' => 'Halaman yang kamu cari tidak dapat ditemukan.'
+            ]);
+        }
+    }
+
+    public function updateMutasi(Request $request, $id) {
+
+        // validasi nis siswa jika sudah ada
+        $nis = $request->nis_siswa;
+
+        $siswaExist = Http::get("{$this->api_url}/siswa/{$nis}");
+
+        if ($nis) {
+
+            $message = json_decode($siswaExist)->message;
+        
+        } else {
+
+            $message = json_decode($siswaExist);
+
+        }
+
+        if ($message == 'Displaying siswa with nis : '.$nis) {
+    
+            $response = Http::put("{$this->api_url}/mutasi/{$id}", [
+                'nis_siswa' => $request->nis_siswa,
+                'nama_siswa' =>  $request->nama_siswa,
+                'alasan_mutasi' => $request->alasan_mutasi,
+                'keluar_di_kelas' => $request->keluar_di_kelas,
+                'pindah_dari' => $request->pindah_dari,
+                'pindah_ke' => $request->pindah_ke,
+                'tgl_mutasi' => $request->tgl_mutasi,
+                'sk_mutasi' => $request->sk_mutasi
+            ]);
+    
+            $response->throw();
+
+            return redirect('/siswa-keluar')->with('success', 'Mutasi updated successfully.');
+    
+        } else {
+            
+            return redirect("/edit-mutasi/{$id}")->with('error', 'Siswa dengan NIS tersebut tidak terdaftar.');
+
+        }
+    }
+
+    
+    public function deleteMutasi($id) {
+
+        // validasi apakah id valid atau tidak
+        $mutasiExist = Http::get("{$this->api_url}/mutasi/{$id}");
+
+        if (json_decode($mutasiExist)->message) {
+
+            Http::delete("{$this->api_url}/mutasi/{$id}");
+
+            return redirect('/siswa-keluar')->with('success', 'Mutasi deleted successfully.');
+
+        } else {
+
+            return redirect('/siswa-keluar', [
+                'title' => 'Data Siswa Keluar',
+                'active' => 'rekap-siswa',
+                'status' => 'error',
+                'message' => 'Halaman yang kamu cari tidak dapat ditemukan.'
+            ]);
+
+        }
+
+
+    }
+
+
+    /* API LIVESEARCH (TESTING) */
     public function indexLiveSearch(Request $request) 
     {
         $page = $request->page;

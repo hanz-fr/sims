@@ -104,3 +104,11 @@ box-shadow:inset 0px -11px 8px -10px #CCC;
   background: -webkit-linear-gradient(90deg, rgba(0, 0, 0, 0.35), transparent);
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.35), transparent);
 }
+
+table {
+  counter-reset: tableCount;     
+}
+.counterCell:before {              
+  content: counter(tableCount); 
+  counter-increment: tableCount; 
+}

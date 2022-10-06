@@ -21,7 +21,7 @@
             </div>
         </div>
         <div class="tw-p-12">
-            <h1 class="tw-text-admin-400 font-bold tw-text-xl tw-mb-3">Desc</h1>
+            <h1 class="tw-text-admin-400 tw-font-bold tw-text-xl tw-mb-3">Desc</h1>
             <p class="tw-grid tw-gap-2 tw-grid-cols-2 tw-text-gray-300 tw-font-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed ipsa eligendi nesciunt recusandae facilis dolore, vitae ut voluptates repudiandae, provident vel obcaecati ab at expedita beatae sequi aut, quasi saepe necessitatibus laborum placeat tempora! Rerum quo nisi laboriosam excepturi possimus officiis incidunt neque maiores veniam autem sint repudiandae nemo molestias blanditiis itaque.</p>
             <div class="tw-mt-2 tw-text-end">
                 <p class="tw-text-admin-400 tw-font-bold tw-mb-3">Created : <span class="tw-text-admin-300 tw-font-normal">12 Februari 2023</span></p>
