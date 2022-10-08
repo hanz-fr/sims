@@ -121,7 +121,7 @@ class ApiController extends Controller
 
         if ($message == 'Displaying siswa with nis : ' . $nis) {
 
-            return redirect('/tambah-data')->with('error', 'Siswa dengan NIS tersebut sudah terdaftar.');
+            return redirect('/tambah-data')->with('warning', 'Siswa dengan NIS tersebut sudah terdaftar.');
         
         } else {
 
