@@ -15,7 +15,7 @@ class ApiController extends Controller
     /* GLOBAL VARIABLES */
     public function __construct()
     {
-        $this->api_url = 'https://7b6f-2404-c0-2c10-00-2775-3c90.ap.ngrok.io'; // Ganti link NGROK disini
+        $this->api_url = 'https://cf69-103-139-10-131.ngrok.io'; // Ganti link NGROK disini
     }
 
     /* API SISWA */
@@ -343,7 +343,7 @@ class ApiController extends Controller
     }
 
 
-    public function indexMutasiMasuk(Request $request) {
+    public function getAllMutasiMasuk(Request $request) {
 
         $page = $request->page;
         $perPage = $request->perPage;
@@ -358,7 +358,7 @@ class ApiController extends Controller
                 'status' => 'success',
                 'response' => json_decode($response),
                 'total' => json_decode($response)->data->count,
-                'title' => 'Data Siswa Keluar',
+                'title' => 'Data Siswa Masuk',
                 'active' => 'rekap-siswa'
             ]);
 
@@ -376,17 +376,26 @@ class ApiController extends Controller
 
     }
 
-    public function createMutasi() {
+    public function createMutasiKeluar() {
 
-        return view('mutasi.create-mutasi', [
-            'title' => 'Create Mutasi',
+        return view('mutasi.create-mutasi-keluar', [
+            'title' => 'Create Mutasi Keluar',
             'active' => 'rekap-siswa',
         ]);
 
     }
 
 
-    public function storeMutasi(Request $request) {
+    public function createMutasiMasuk() {
+
+        return view('mutasi.create-mutasi-masuk', [
+            'title' => 'Create Mutasi Masuk',
+            'active' => 'rekap-siswa',
+        ]);
+    }
+
+
+    public function storeMutasiKeluar(Request $request) {
 
         // validasi nis siswa jika sudah ada
         $nis = $request->nis_siswa;
@@ -424,32 +433,85 @@ class ApiController extends Controller
             } 
 
             if ($response->clientError()) {
-                return redirect('/create-mutasi')->with('error-mutasi', 'Mutasi dengan NIS tersebut sudah terdaftar.');
+                return redirect('/create-mutasi-keluar')->with('error-mutasi', 'Mutasi dengan NIS tersebut sudah terdaftar.');
             }
 
 
         } else {
 
-            return redirect('/create-mutasi')->with('error', 'Siswa dengan NIS tersebut tidak terdaftar.');
+            return redirect('/create-mutasi-keluar')->with('error', 'Siswa dengan NIS tersebut tidak terdaftar.');
 
         }
 
     }
 
-    public function editMutasi(Request $request, $id) {
+
+
+    public function storeMutasiMasuk(Request $request) {
+
+        // validasi nis siswa jika sudah ada
+        $nis = $request->nis_siswa;
+
+        $siswaExist = Http::get("{$this->api_url}/siswa/{$nis}");
+
+        if ($nis) {
+
+            $message = json_decode($siswaExist)->message;
+        
+        } else {
+
+            $message = json_decode($siswaExist);
+
+        }
+
+
+
+        if ($message == 'Displaying siswa with nis : '.$nis) {
+
+            
+            $response = Http::post("{$this->api_url}/mutasi", [
+                'nis_siswa' => $request->nis_siswa,
+                'nama_siswa' =>  $request->nama_siswa,
+                'jenis_kelamin' => $request->jenis_kelamin,
+                'pindah_dari' => $request->pindah_dari,
+                'diterima_di_kelas' => $request->diterima_di_kelas,
+                'alasan_mutasi' => $request->alasan_mutasi,
+                'tgl_mutasi' => $request->tgl_mutasi,
+                'sk_mutasi' => $request->sk_mutasi
+            ]);
+
+            if ($response->successful()) {
+                return redirect('/siswa-masuk')->with('success', 'Mutasi created successfully.');
+            } 
+
+            if ($response->clientError()) {
+                return redirect('/create-mutasi-masuk')->with('error-mutasi', 'Mutasi dengan NIS tersebut sudah terdaftar.');
+            }
+
+
+        } else {
+
+            return redirect('/create-mutasi-masuk')->with('error', 'Siswa dengan NIS tersebut tidak terdaftar.');
+
+        }
+    }
+
+
+
+    public function editMutasiKeluar(Request $request, $id) {
 
         $response = Http::get("{$this->api_url}/mutasi/{$id}");
 
         if ($response->successful()) {
-            return view('mutasi.edit-mutasi', [
-                'title' => 'Edit Mutasi',
+            return view('mutasi.edit-mutasi-keluar', [
+                'title' => 'Edit Mutasi Keluar',
                 'active' => 'rekap-siswa',
                 'mutasi' => json_decode($response)->result,
                 'status' => 'success'
             ]);
         } else {
-            return view('mutasi.edit-mutasi', [
-                'title' => 'Edit Mutasi',
+            return view('mutasi.edit-mutasi-keluar', [
+                'title' => 'Edit Mutasi Keluar',
                 'active' => 'rekap-siswa',
                 'status' => 'error',
                 'message' => 'Halaman yang kamu cari tidak dapat ditemukan.'
@@ -457,7 +519,29 @@ class ApiController extends Controller
         }
     }
 
-    public function updateMutasi(Request $request, $id) {
+    
+    public function editMutasiMasuk(Request $request, $id) {
+
+        $response = Http::get("{$this->api_url}/mutasi/{$id}");
+
+        if ($response->successful()) {
+            return view('mutasi.edit-mutasi-masuk', [
+                'title' => 'Edit Mutasi Masuk',
+                'active' => 'rekap-siswa',
+                'mutasi' => json_decode($response)->result,
+                'status' => 'success'
+            ]);
+        } else {
+            return view('mutasi.edit-mutasi-masuk', [
+                'title' => 'Edit Mutasi Masuk',
+                'active' => 'rekap-siswa',
+                'status' => 'error',
+                'message' => 'Halaman yang kamu cari tidak dapat ditemukan.'
+            ]);
+        }
+    }
+
+    public function updateMutasiKeluar(Request $request, $id) {
 
         // validasi nis siswa jika sudah ada
         $nis = $request->nis_siswa;
@@ -498,8 +582,49 @@ class ApiController extends Controller
         }
     }
 
+    public function updateMutasiMasuk(Request $request, $id) {
+
+        // validasi nis siswa jika sudah ada
+        $nis = $request->nis_siswa;
+
+        $siswaExist = Http::get("{$this->api_url}/siswa/{$nis}");
+
+        if ($nis) {
+
+            $message = json_decode($siswaExist)->message;
+        
+        } else {
+
+            $message = json_decode($siswaExist);
+
+        }
+
+        if ($message == 'Displaying siswa with nis : '.$nis) {
     
-    public function deleteMutasi($id) {
+            $response = Http::put("{$this->api_url}/mutasi/{$id}", [
+                'nis_siswa' => $request->nis_siswa,
+                'nama_siswa' =>  $request->nama_siswa,
+                'jenis_kelamin' => $request->jenis_kelamin,
+                'pindah_dari' => $request->pindah_dari,
+                'diterima_di_kelas' => $request->diterima_di_kelas,
+                'alasan_mutasi' => $request->alasan_mutasi,
+                'tgl_mutasi' => $request->tgl_mutasi,
+                'sk_mutasi' => $request->sk_mutasi
+            ]);
+    
+            $response->throw();
+
+            return redirect('/siswa-masuk')->with('success', 'Mutasi updated successfully.');
+    
+        } else {
+            
+            return redirect("/edit-mutasi-masuk/{$id}")->with('error', 'Siswa dengan NIS tersebut tidak terdaftar.');
+
+        }
+    }
+
+    
+    public function deleteMutasiKeluar($id) {
 
         // validasi apakah id valid atau tidak
         $mutasiExist = Http::get("{$this->api_url}/mutasi/{$id}");
@@ -520,8 +645,29 @@ class ApiController extends Controller
             ]);
 
         }
+    }
 
+    public function deleteMutasiMasuk($id) {
 
+        // validasi apakah id valid atau tidak
+        $mutasiExist = Http::get("{$this->api_url}/mutasi/{$id}");
+
+        if (json_decode($mutasiExist)->message) {
+
+            Http::delete("{$this->api_url}/mutasi/{$id}");
+
+            return redirect('/siswa-masuk')->with('success', 'Mutasi deleted successfully.');
+
+        } else {
+
+            return redirect('/siswa-masuk', [
+                'title' => 'Data Siswa Masuk',
+                'active' => 'rekap-siswa',
+                'status' => 'error',
+                'message' => 'Halaman yang kamu cari tidak dapat ditemukan.'
+            ]);
+
+        }
     }
 
 

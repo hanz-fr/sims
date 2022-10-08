@@ -35,8 +35,8 @@
 
     <div class="tw-flex  tw-flex-col tw-rounded-[35px] tw-bg-white lg:tw-w-1/2 sm:tw-w-full sm:tw-mx-5 tw-p-8 tw-h-full tw-mx-auto tw-my-10 tw-shadow-lg">
         <a href="/siswa-keluar" class="tw-text-sims-400 sm:tw-text-md md:tw-text-3xl tw-w-min hover:tw-text-sims-500"><i class="fa-solid fa-chevron-left"></i></a>
-        <h3 class="tw-font-pop tw-font-semibold tw-mt-6 tw-text-sims-400 tw-text-center tw-mb-14">Edit Data Mutasi</h3>
-    <form action="/api/mutasi/update/{{ $mutasi->id }}" method="POST">
+        <h3 class="tw-font-pop tw-font-semibold tw-mt-6 tw-text-sims-400 tw-text-center tw-mb-14">Edit Data Mutasi Keluar</h3>
+    <form action="/api/mutasi-keluar/update/{{ $mutasi->id }}" method="POST">
     @csrf
     @method('PUT')
     <div class="tw-flex tw-flex-col tw-space-y-6">

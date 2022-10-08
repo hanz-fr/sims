@@ -37,9 +37,9 @@
 </div>
    @endif
     <div class="tw-flex tw-flex-col tw-rounded-[35px] tw-bg-white lg:tw-w-1/2 sm:tw-w-full sm:tw-mx-5 tw-p-8 tw-h-full tw-mx-auto tw-my-10 tw-shadow-lg">
-        <a href="/siswa-keluar" class="tw-text-sims-400 sm:tw-text-md md:tw-text-3xl tw-w-min hover:tw-text-sims-500"><i class="fa-solid fa-chevron-left"></i></a>
-        <h3 class="tw-font-pop tw-font-semibold tw-mt-6 tw-mb-14 tw-text-sims-400 tw-text-center">Tambah Data Mutasi</h3>
-    <form action="/api/mutasi/store" method="POST">
+        <a href="/siswa-masuk" class="tw-text-sims-400 sm:tw-text-md md:tw-text-3xl tw-w-min hover:tw-text-sims-500"><i class="fa-solid fa-chevron-left"></i></a>
+        <h3 class="tw-font-pop tw-font-semibold tw-mt-6 tw-mb-14 tw-text-sims-400 tw-text-center">Tambah Data Mutasi Masuk</h3>
+    <form action="/api/mutasi-masuk/store" method="POST">
     @csrf
     @method('POST')
     <div class="tw-flex tw-flex-col tw-space-y-6">
@@ -80,6 +80,24 @@
               </select>
         </div>
         <div class="tw-mx-auto md:tw-w-2/3 sm:tw-w-1/2">
+            <label class="label-input" for="pindah_dari">
+                Pindah dari
+            </label>
+            <input value="{{ old('pindah_dari') }}" class="input-data tw-w-full" id="pindah_dari" name="pindah_dari" type="text" required>
+            @error('pindah_dari')
+            <small class="tw-text-red-500">{{ $message }}</small>
+            @enderror
+        </div>
+        <div class="tw-mx-auto md:tw-w-2/3 sm:tw-w-1/2">
+            <label class="label-input" for="diterima_di_kelas">
+                Diterima di Kelas
+            </label>
+            <input value="{{ old('diterima_di_kelas') }}" class="input-data tw-w-full" id="diterima_di_kelas" name="diterima_di_kelas" type="text" required>
+            @error('diterima_di_kelas')
+            <small class="tw-text-red-500">{{ $message }}</small>
+            @enderror
+        </div>
+        <div class="tw-mx-auto md:tw-w-2/3 sm:tw-w-1/2">
             <label class="label-input" for="alasan_mutasi">
                 Alasan Mutasi
             </label>
@@ -89,26 +107,8 @@
             @enderror
         </div>
         <div class="tw-mx-auto md:tw-w-2/3 sm:tw-w-1/2">
-            <label class="label-input" for="keluar_di_kelas">
-                Keluar di Kelas
-            </label>
-            <input value="{{ old('keluar_di_kelas') }}" class="input-data tw-w-full" id="keluar_di_kelas" name="keluar_di_kelas" type="text">
-            @error('keluar_di_kelas')
-            <small class="tw-text-red-500">{{ $message }}</small>
-            @enderror
-        </div>
-        <div class="tw-mx-auto md:tw-w-2/3 sm:tw-w-1/2">
-            <label class="label-input" for="pindah_ke">
-                Pindah Ke
-            </label>
-            <input value="{{ old('pindah_ke') }}" class="input-data tw-w-full" id="pindah_ke" name="pindah_ke" type="text">
-            @error('pindah_ke')
-            <small class="tw-text-red-500">{{ $message }}</small>
-            @enderror
-        </div>
-        <div class="tw-mx-auto md:tw-w-2/3 sm:tw-w-1/2">
             <label class="label-input" for="tgl_mutasi">
-                Tanggal Mutasi
+                Tanggal Masuk
             </label>
             <input value="{{ old('tgl_mutasi') }}" class="input-data tw-w-full" id="tgl_mutasi" name="tgl_mutasi" type="date" required>
             @error('tgl_mutasi')

@@ -30,16 +30,28 @@ Route::put('/api/siswa/update/{nis}', [ApiController::class, 'updateSiswa']);
 Route::delete('/api/siswa/delete/{nis}', [ApiController::class, 'deleteSiswa']);
 
 
+
 /* ROUTE MUTASI */
 
+// siswa-keluar
 Route::get('/siswa-keluar', [ApiController::class, 'getAllMutasiKeluar']);
-Route::get('/create-mutasi', [ApiController::class, 'createMutasi']);
-Route::get('/edit-mutasi/{id}', [ApiController::class, 'editMutasi']);
-Route::get('/siswa-masuk', [ApiController::class, 'indexMutasiMasuk']);
+Route::get('/create-mutasi-keluar', [ApiController::class, 'createMutasiKeluar']);
+Route::get('/edit-mutasi-keluar/{id}', [ApiController::class, 'editMutasiKeluar']);
 
-Route::post('/api/mutasi/store', [ApiController::class, 'storeMutasi']);
-Route::put('/api/mutasi/update/{id}', [ApiController::class, 'updateMutasi']);
-Route::delete('/api/mutasi/delete/{id}', [ApiController::class, 'deleteMutasi']);
+Route::post('/api/mutasi-keluar/store', [ApiController::class, 'storeMutasiKeluar']);
+Route::put('/api/mutasi-keluar/update/{id}', [ApiController::class, 'updateMutasiKeluar']);
+Route::delete('/api/mutasi-keluar/delete/{id}', [ApiController::class, 'deleteMutasiKeluar']);
+
+// siswa-masuk
+Route::get('/siswa-masuk', [ApiController::class, 'getAllMutasiMasuk']);
+Route::get('/create-mutasi-masuk', [ApiController::class, 'createMutasiMasuk']);
+Route::get('/edit-mutasi-masuk/{id}', [ApiController::class, 'editMutasiMasuk']);
+
+Route::post('/api/mutasi-masuk/store', [ApiController::class, 'storeMutasiMasuk']);
+Route::put('/api/mutasi-masuk/update/{id}', [ApiController::class, 'updateMutasiMasuk']);
+Route::delete('/api/mutasi-masuk/delete/{id}', [ApiController::class, 'deleteMutasiMasuk']);
+
+
 
 /* ROUTE KELAS */
 

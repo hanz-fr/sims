@@ -3,7 +3,7 @@
 @section('content')
     <div class="tw-mx-10">
 
-        <a href="/detail" class=" tw-text-sims-400 tw-text-3xl hover:tw-text-sims-600"><i class="fa-regular fa-chevron-left tw-mt-5"></i></a>
+        <a href="/data-induk-siswa" class=" tw-text-sims-400 tw-text-3xl hover:tw-text-sims-600"><i class="fa-regular fa-chevron-left tw-mt-5"></i></a>
 
         <div class="tw-text-3xl tw-text-sims-400 tw-font-pop tw-font-semibold tw-flex tw-flex-row tw-mt-9">Data Raport</div>
         <div class="tw-flex tw-justify-end tw-mb-5">
