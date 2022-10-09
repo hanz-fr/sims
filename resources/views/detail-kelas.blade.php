@@ -13,26 +13,17 @@
             <div class="tw-bg-white tw-rounded-2xl tw-p-5">
                 <img src="https://www.smkn11bdg.sch.id/src/images/11.png" class="tw-w-[117px] tw-h-[138px]" alt="">
             </div>
-            <div class="tw-flex tw-flex-col tw-text-white tw-ml-8 tw-my-5">
-              <div class="tw-flex">
-                <span class="">Kelas</span>
-                <span class="tw-ml-16">Divisi</span>
+            <div class="tw-flex tw-flex-col tw-text-white tw-ml-8 tw-my-12">
+              <div class="tw-flex-col">
+                <span class="tw-text-lg">Kelas</span>
               </div>
 
-              <div class="tw-flex">
-                <span class="tw-font-bold tw-text-xl">XII</span>
-                <span class="tw-font-bold tw-text-xl tw-ml-20">2</span>
+              <div class="tw-flex-col">
+                <span class="tw-font-bold tw-text-2xl">XII</span>
+                <span class="tw-font-bold tw-text-2xl">TKJ</span>
+                <span class="tw-font-bold tw-text-2xl">2</span>
               </div>
 
-              <div class="tw-flex">
-                <span class="tw-mt-5">Jurusan</span>
-                <span class="tw-mt-5 tw-ml-12">Kelas Lengkap</span>
-              </div>
-
-              <div class="tw-flex">
-                <span class="tw-font-bold tw-text-xl">TKJ</span>
-                <span class="tw-font-bold tw-text-xl tw-ml-16">XII TKJ 2</span>
-              </div>
             </div>
         </div>
         <div class="tw-p-12">

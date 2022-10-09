@@ -55,7 +55,7 @@
                         <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">NO</th>
                         <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">KELAS</th>
                         <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">JURUSAN</th>
-                        <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">DIVISI KE</th>
+                        <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">ROMBEL</th>
                         <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">LENGKAP</th>
                         <th scope="col" class="tw-py-3 tw-px-6">AKSI</th>
                     </tr>
