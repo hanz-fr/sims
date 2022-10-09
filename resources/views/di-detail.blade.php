@@ -76,10 +76,10 @@
         </ul>
         <div class="tw-w-full">
           <div x-show="openTab === 1">
-            <div x-data="{ selected: '1',
+            <div x-data="{ selected: 1,
             activeClasses: 'tw-bg-sims-400 tw-text-white',
             inactiveClasses: 'tw-bg-white tw-text-sims-400' }">
-            <div x-show="selected === '1'">
+            <div x-show="selected === 1">
               <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
               <table class="tw-w-full tw-text-sm tw-text-left">
                   <thead class="tw-text-lg tw-bg-gray-100 tw-text-basic-700 tw-border tw-font-pop">
@@ -165,7 +165,7 @@
               </table>
               </div>
           </div>
-          <div x-show="selected === '2'">
+          <div x-show="selected === 2">
             <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
             <table class="tw-w-full tw-text-sm tw-text-left">
                 <thead class="tw-text-lg tw-bg-gray-100 tw-text-basic-700 tw-border tw-font-pop">
@@ -239,7 +239,7 @@
             </table>
             </div>
           </div>
-          <div x-show="selected === '3'">
+          <div x-show="selected === 3">
             <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
             <table class="tw-w-full tw-text-sm tw-text-left">
                 <thead class="tw-text-lg tw-bg-gray-100 tw-text-basic-700 tw-border tw-font-pop">
@@ -313,7 +313,7 @@
             </table>
             </div>
           </div>
-          <div x-show="selected === '4'">
+          <div x-show="selected === 4">
             <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
             <table class="tw-w-full tw-text-sm tw-text-left">
                 <thead class="tw-text-lg tw-bg-gray-100 tw-text-basic-700 tw-border tw-font-pop">
@@ -387,7 +387,7 @@
             </table>
             </div>
           </div>
-          <div x-show="selected === '5'">
+          <div x-show="selected === 5">
             <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
             <table class="tw-w-full tw-text-sm tw-text-left">
                 <thead class="tw-text-lg tw-bg-gray-100 tw-text-basic-700 tw-border tw-font-pop">
@@ -416,11 +416,8 @@
 
         {{-- btn paginate --}}
         <div class="tw-flex tw-flex-row tw-justify-center tw-mt-8 tw-gap-4">
-          <a x-on:click="selected = '1'" :class="selected === '1' ? activeClasses : inactiveClasses" href="#" class="tw-rounded-lg tw-text-lg tw-py-2 tw-px-5 tw-shadow-md tw-font-semibold hover:tw-bg-sims-400 hover:tw-text-white">1</a>
-          <a x-on:click="selected = '2'" :class="selected === '2' ? activeClasses : inactiveClasses" href="#" class="tw-rounded-lg tw-text-lg tw-py-2 tw-px-5 tw-shadow-md tw-font-semibold hover:tw-bg-sims-400 hover:tw-text-white">2</a>
-          <a x-on:click="selected = '3'" :class="selected === '3' ? activeClasses : inactiveClasses" href="#" class="tw-rounded-lg tw-text-lg tw-py-2 tw-px-5 tw-shadow-md tw-font-semibold hover:tw-bg-sims-400 hover:tw-text-white">3</a>
-          <a x-on:click="selected = '4'" :class="selected === '4' ? activeClasses : inactiveClasses" href="#" class="tw-rounded-lg tw-text-lg tw-py-2 tw-px-5 tw-shadow-md tw-font-semibold hover:tw-bg-sims-400 hover:tw-text-white">4</a>
-          <a x-on:click="selected = '5'" :class="selected === '5' ? activeClasses : inactiveClasses" href="#" class="tw-rounded-lg tw-text-lg tw-py-2 tw-px-5 tw-shadow-md tw-font-semibold hover:tw-bg-sims-400 hover:tw-text-white">5</a>        
+          <button x-on:click="selected = selected === 1 ? 5 : selected - 1" class="tw-text-white tw-bg-sims-400 hover:tw-bg-[#3F7373] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-regular fa-arrow-left"></i></button>
+          <button x-on:click="selected = selected === 5 ? 1 : selected + 1" class="tw-text-white tw-bg-sims-400 hover:tw-bg-[#3F7373] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-regular fa-arrow-right"></i></button>    
         </div>
         </div>
           {{-- <div class="tw-float-right tw-py-5 tw-px-3">
