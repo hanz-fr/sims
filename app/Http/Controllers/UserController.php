@@ -38,14 +38,18 @@ class UserController extends Controller
         ]);
         $user->save();
          
-        return redirect("/login")->withSuccess('You have signed-in');
+        return view("auth.login", [
+            'title' => 'Akun berhasil dibuat',
+            'status' => 'success'
+        ]);
     }
     
     // login
     public function index()
     {
         return view('auth.login', [
-            'title' => 'Log In'
+            'title' => 'Log In',
+            'status' => ''
         ]);
     }
 
@@ -61,10 +65,10 @@ class UserController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect()->intended('/')->withSuccess('Signed in');
+            return redirect()->intended('/')->with('success', 'Signed in');
         }
   
-        return redirect("login")->withSuccess('Login details are not valid');
+        return redirect("login")->with('error', 'Login details are not valid');
     }
 
     // logout
