@@ -8,7 +8,7 @@
 <div class="tw-mx-10 tw-w-screen">
 
 {{-- modal --}}
-<div x-show="show" class="tw-grid tw-place-items-center tw-items-center tw-justify-center tw-w-full tw-fixed tw-my-40">
+{{-- <div x-show="show" class="tw-grid tw-place-items-center tw-items-center tw-justify-center tw-w-full tw-fixed tw-my-40">
   <div @click.away="show = false" class="tw-w-fit -tw-ml-96 tw-py-10 tw-px-12 tw-text-center tw-rounded-2xl tw-shadow-xl tw-bg-gray-50">
       <div class="tw-rounded-full tw-mx-auto tw-bg-salmon-100 tw-p-3 tw-h-32 tw-w-32 tw-items-center tw-justify-center tw-flex">
         <i class="fa-solid fa-triangle-exclamation tw-text-7xl tw-text-salmon-600"></i>
@@ -20,7 +20,7 @@
           <a href="" class="tw-px-8 tw-py-3 tw-font-semibold tw-rounded-3xl tw-bg-salmon-500 hover:tw-bg-salmon-400 tw-text-white">ril cuy</a>
       </div>
   </div>
-</div> 
+</div>  --}}
 
   <div class="tw-flex tw-flex-col tw-gap-5 tw-mt-8">
     <div class="tw-flex tw-items-center">
@@ -80,8 +80,8 @@
         {{-- <form action="" method="" class="tw-bg-salmon-400 tw-rounded-lg"> --}}
           {{-- @csrf
           @method('DELETE') --}}
-          <div x-data="{}" class="">
-            <button @click="show=true" class="tw-py-4 tw-px-6 tw-bg-salmon-400 hover:tw-bg-salmon-500 tw-rounded-lg"><i class="fa-regular fa-trash-can tw-mr-4 tw-text-xl"></i>Delete all account</button>
+          <div class="">
+            <button class="tw-py-4 tw-px-6 tw-bg-salmon-400 hover:tw-bg-salmon-500 tw-rounded-lg"><i class="fa-regular fa-trash-can tw-mr-4 tw-text-xl"></i>Delete all account</button>
           </div>
         {{-- </form> --}}
         <a href="/create-account" class="tw-bg-admin-300 tw-py-4 tw-px-6 tw-rounded-lg"><i class="fa-regular fa-square-plus tw-mr-4 tw-text-xl"></i>Create new account</a>

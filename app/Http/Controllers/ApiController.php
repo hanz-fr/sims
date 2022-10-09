@@ -30,7 +30,7 @@ class ApiController extends Controller
 
         if ($response->successful()) {
             
-            return view('data-induk', [
+            return view('induk.show-all', [
                 'siswa' => json_decode($response)->data->rows,
                 'status' => 'success',
                 'response' => json_decode($response),
@@ -41,7 +41,7 @@ class ApiController extends Controller
 
         } else {
 
-            return view('data-induk', [
+            return view('induk.show-all', [
                 'response' => $response,
                 'status' => 'error',
                 'title' => 'data-induk',
@@ -70,7 +70,7 @@ class ApiController extends Controller
             $getSiswaBirthDate = json_decode($response)->result->tgl_lahir;
             $tgl_lahir_siswa = Carbon::parse($getSiswaBirthDate)->translatedFormat('l d F Y');
             
-            return view('di-detail', [
+            return view('induk.show-detail', [
                 'title' => 'Data Siswa',
                 'active' => 'data-induk',
                 'status' => 'success',
@@ -79,7 +79,7 @@ class ApiController extends Controller
                 'tgl_lahir_siswa' => $tgl_lahir_siswa
             ]);
         } else {
-            return view('di-detail', [
+            return view('induk.show-detail', [
                 'title' => 'Data Siswa',
                 'active' => 'data-induk',
                 'status' => 'error',
@@ -93,7 +93,7 @@ class ApiController extends Controller
 
         $kelas = Http::get("{$this->api_url}/kelas");
 
-        return view('input-di', [
+        return view('induk.create', [
             'title' => 'Create Siswa',
             'active' => 'data-induk',
             'kelas' => json_decode($kelas),
@@ -202,7 +202,7 @@ class ApiController extends Controller
         $kelas = Http::get("{$this->api_url}/kelas");
 
         if ($response->successful()) {
-            return view('edit-di', [
+            return view('induk.edit', [
                 'title' => 'Edit siswa',
                 'active' => 'data-induk',
                 'kelas' => json_decode($kelas),
@@ -210,7 +210,7 @@ class ApiController extends Controller
                 'status' => 'success'
             ]);
         } else {
-            return view('edit-di', [
+            return view('induk.edit', [
                 'title' => 'Edit di',
                 'active' => 'data-induk',
                 'status' => 'error',

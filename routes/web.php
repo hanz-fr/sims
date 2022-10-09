@@ -91,14 +91,14 @@ Route::get('/angkatan', function () {
 });
 
 Route::get('/data-alumni', function () {
-    return view('data-alumni', [
+    return view('induk.show-alumni', [
         'title' => 'Data Alumni',
         'active' => 'data-induk'
     ]);
 });
 
 Route::get('/rekap-nilai', function () {
-    return view('rekap-nilai', [
+    return view('induk.show-rekap-nilai', [
         'title' => 'Rekap Nilai',
         'active' => 'data-induk'
     ]);
