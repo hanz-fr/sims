@@ -671,6 +671,36 @@ class ApiController extends Controller
     }
 
 
+    public function rekapJumlahSiswa() {
+
+        $kelas = Http::get("{$this->api_url}/kelas/siswa-per-kelas/all");
+
+        if ($kelas->successful()) {
+
+            /* $totalSiswaLakiAkhir = json_decode($kelas)->result->jumlahSiswaLaki - json_decode($kelas)->result->siswaLakiKeluar + json_decode($kelas)->result->siswaLakiMasuk;
+            $totalSiswaPerempuanAkhir = 
+            $totalSiswaAkhir =  */
+
+            return view('data-rekap-jumlah-siswa', [
+                'title' => 'Data Rekap Siswa',
+                'active' => 'rekap-siswa',
+                'kelas' => json_decode($kelas)->result
+            ]);
+
+        } else {
+
+            return view('induk.show-all', [
+                'response' => $kelas,
+                'status' => 'error',
+                'title' => 'data-induk',
+                'active' => 'data-induk',
+                'message' => 'Halaman yang kamu cari tidak dapat ditemukan :('
+            ]);
+        }
+    }
+
+
+
     /* API LIVESEARCH (TESTING) */
     public function indexLiveSearch(Request $request) 
     {

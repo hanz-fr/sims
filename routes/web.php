@@ -64,6 +64,12 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('/api/mutasi-masuk/delete/{id}', [ApiController::class, 'deleteMutasiMasuk']);
     
 
+    /* REKAP DATA SISWA */
+    
+    Route::get('/rekap-jumlah-siswa', [ApiController::class, 'rekapJumlahSiswa']);
+
+
+
     /* GET DATA INDUK BY JURUSAN */
 
     Route::get('/jurusan', function () {
@@ -114,16 +120,6 @@ Route::middleware(['auth'])->group(function () {
         ]);
     });
     
-
-    /* REKAP JUMLAH SISWA */
-
-    Route::get('/rekap-jumlah-siswa', function () {
-        return view('data-rekap-jumlah-siswa', [
-            'title' => 'Data Rekap Siswa',
-            'active' => 'rekap-siswa'
-        ]);
-    });
-
 
     /* DATA TIDAK NAIK KELAS */
 

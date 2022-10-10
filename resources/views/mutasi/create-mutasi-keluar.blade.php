@@ -75,7 +75,7 @@
                 @else
                 <option selected>Pilih</option>
                 <option value="L">Laki-laki</option>
-                <option value="L">Perempuan</option>
+                <option value="P">Perempuan</option>
                 @endif
               </select>
         </div>
