@@ -27,6 +27,13 @@ class UserController extends Controller
             'email'    => 'required|email|unique:users',
             'roles'    => 'required',
             'password' => 'required|min:6',
+        ],[
+            'nip.required'      => 'NIP field is required.',
+            'nama.required'     => 'Nama field is required.',
+            'email.required'    => 'Email field is required.',
+            'email.email'       => 'Email field must be a valid email address.',
+            'password.required' => 'Password field is required.',
+            'password.min'      => 'Password should be minimum of 6 character.',
         ]);
         
         $user = new User([
@@ -55,9 +62,14 @@ class UserController extends Controller
 
     public function authenticate(Request $request)
     {
+
         $request->validate([
             'nip'      => 'required',
-            'password' => 'required',
+            'password' => 'required|min:6',
+        ],[
+            'nip.required'      => 'Name field is required.',
+            'password.required' => 'Password field is required.',
+            'password.min'      => 'Password should be minimum of 6 character.'
         ]);
    
         $credentials = $request->only('nip', 'password');
@@ -65,7 +77,7 @@ class UserController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect()->intended('/')->with('success', 'Signed in');
+            return redirect()->intended('/')->with('success', 'Signed In');
         }
   
         return redirect("login")->with('error', 'Login details are not valid');
@@ -108,7 +120,12 @@ class UserController extends Controller
         $this->validate($request,[
             'nip'   => 'required',
             'nama'  => 'required',
-            'email' => 'required|email'
+            'email' => 'required|email|unique:users'
+        ],[
+            'nip.required'      => 'NIP field is required.',
+            'nama.required'     => 'Nama field is required.',
+            'email.required'    => 'Email field is required.',
+            'email.email'       => 'Email field must be a valid email address.'
         ]);
 
         $user = User::find($id);

@@ -79,7 +79,7 @@
                   <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">-</div>
                 </div>
               </div>
-              <div class="/rekap-siswa"> 
+              <div class="/rekap-jumlah-siswa"> 
                 <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Jumlah Siswa</div>
               </div>
             </div>
@@ -301,7 +301,7 @@
       <div class="tw-bg-white tw-items-center tw-justify-center tw-shadow-md tw-font-pop tw-border tw-mt-6 sm:tw-px-14 tw-flex tw-h-fit tw-py-20 tw-flex-col">
         <div class="tw-text-lg tw-text-gray-400 tw-font-bold tw-mb-10">Quick Access</div>
           <ul class="tw-flex tw-flex-row grid-rows-3 tw-justify-between tw-gap-3 tw-p-2 list-unstyled">
-            <a href="/rekap-siswa" class="tw-group">
+            <a href="/rekap-jumlah-siswa" class="tw-group">
               <li class="tw-flex tw-flex-col tw-justify-center tw-text-center tw-border-2 tw-py-4 tw-px-4 tw-bg-white tw-rounded-lg group-hover:tw-text-white group-hover:tw-bg-sims-400 tw-transition-all tw-duration-300">
                 <div class="tw-text-4xl tw-text-sims-400 group-hover:tw-text-white"><i class="fa-solid fa-graduation-cap"></i></div>
                 <div class="tw-text-sm tw-text-gray-500 tw-font-normal tw-mt-3 group-hover:tw-text-white">Data Jumlah Siswa</div>

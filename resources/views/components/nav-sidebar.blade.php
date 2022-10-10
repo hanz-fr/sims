@@ -68,12 +68,12 @@
                       class="tw-relative">
                       <!-- Button -->
                       <button x-ref="button" x-on:click="toggle()" :aria-expanded="open" :aria-controls="$id('dropdown-button')" type="button" class="tw-flex tw-items-center tw-gap-2 tw-bg-white tw-text-sims-400 tw-px-5 tw-font-pop tw-text-sm tw-font-bold">
-                      Ibnu Asep bin Budi
+                      {{ auth()->user()->nama }}
                       <i class="fa-solid fa-caret-down"></i>
                       </button>
               
                       <div x-ref="panel" x-show="open" x-transition.origin.top.left x-on:click.outside="close($refs.button)" :id="$id('dropdown-button')" style="display: none;"
-                          class="tw-absolute tw-left-0 tw-mt-2 tw-w-40 tw-rounded-md tw-bg-white tw-shadow-md tw-font-pop">
+                          class="tw-absolute tw-left-0 tw-mt-2 tw-w-32 tw-rounded-md tw-bg-white tw-shadow-md tw-font-pop">
                           <a href="/profile" class="tw-flex tw-items-center tw-gap-2 tw-w-full tw-font-medium tw-text-basic-700 first-of-type:tw-rounded-t-md last-of-type:tw-rounded-b-md tw-px-4 tw-py-2.5 tw-text-left tw-text-sm hover:tw-bg-sims-400 hover:tw-text-white">
                               Profil
                           </a>
@@ -83,7 +83,7 @@
                       </div>
                   </div>
               </div>
-            <i class="fa-solid fa-user tw-w-10 tw-text-sims-400 tw-ml-6 tw-text-xl tw-mr-7"></i>
+            <i class="fa-solid fa-usery tw-w-8 tw-text-sims-400 tw-text-xl"></i>
         </div>
         </div>
         {{-- main content --}}

@@ -27,7 +27,10 @@
             <label class="label-input" for="nama">
               Nama
             </label>
-            <input class="input-data" id="nama" type="text" name="nama" value="{{ auth()->user()->nama }}">
+            <input class="input-data" id="nama" @error('nama') is-invalid @enderror type="text" name="nama" value="{{ auth()->user()->nama }}">
+            @error('nama')
+              <div class="tw-text-sm tw-text-pink-700 tw-mt-1 tw-font-ubuntu">{{ $message }}</div>
+            @enderror
           </div>
         </div>
         <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
@@ -35,7 +38,10 @@
             <label class="label-input" for="nip">
               NIP
             </label>
-            <input class="input-data" id="nip" type="number" name="nip" value="{{ auth()->user()->nip }}">
+            <input class="input-data" id="nip" @error('nip') is-invalid @enderror type="number" name="nip" value="{{ auth()->user()->nip }}">
+            @error('nip')
+              <div class="tw-text-sm tw-text-pink-700 tw-mt-1 tw-font-ubuntu">{{ $message }}</div>
+            @enderror
           </div>
         </div>
         <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
@@ -43,7 +49,10 @@
             <label class="label-input" for="email">
               Email
             </label>
-            <input class="input-data" id="email" type="email" name="email" value="{{ auth()->user()->email }}">
+            <input class="input-data" id="email" @error('email') is-invalid @enderror type="email" name="email" value="{{ auth()->user()->email }}">
+            @error('email')
+              <div class="tw-text-sm tw-text-pink-700 tw-mt-1 tw-font-ubuntu">{{ $message }}</div>
+            @enderror
           </div>
         </div>
         <div class="tw-mx-auto tw-text-center tw-mt-10 ">
