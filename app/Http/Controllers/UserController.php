@@ -39,7 +39,7 @@ class UserController extends Controller
         $user->save();
          
         return view("auth.login", [
-            'title' => 'Akun berhasil dibuat',
+            'title'  => 'Akun berhasil dibuat',
             'status' => 'success'
         ]);
     }
@@ -48,7 +48,7 @@ class UserController extends Controller
     public function index()
     {
         return view('auth.login', [
-            'title' => 'Log In',
+            'title'  => 'Log In',
             'status' => ''
         ]);
     }
@@ -120,18 +120,16 @@ class UserController extends Controller
 
     public function changePassword(Request $request) 
     {
-    # Validation
+    #Validation
         $request->validate([
         'old_password' => 'required',
         'new_password' => 'required|confirmed',
         ]);
 
-
     #Match The Old Password
         if(!Hash::check($request->old_password, auth()->user()->password)){
             return back()->with("error", "Old Password Doesn't match!");
         }
-
 
     #Update the new Password
         User::whereId(auth()->user()->id)->update([

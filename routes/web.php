@@ -77,14 +77,14 @@ Route::get('/', function () {
 });
 
 Route::get('/jurusan', function () {
-    return view('pilih-jurusan', [
+    return view('induk.select-jurusan', [
         'title' => 'Pilih Jurusan',
         'active' => 'data-induk'
     ]);
 });
 
 Route::get('/angkatan', function () {
-    return view('pilih-angkatan', [
+    return view('induk.select-angkatan', [
         'title' => 'Pilih Angkatan',
         'active' => 'data-induk'
     ]);
