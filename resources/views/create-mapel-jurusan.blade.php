@@ -14,7 +14,7 @@
                 <img src="{{ url('https://www.smkn11bdg.sch.id/src/images/11.png') }}" alt=""
                     class="tw-w-44 tw-border-8 tw-rounded-xl tw-border-sims-500">
             </div>
-            <div class="tw-flex tw-justify-center tw-bg-white tw-py-8 tw-w-full tw-px-32 tw-mx-auto">
+            <div class="tw-flex tw-justify-center tw-bg-white tw-py-7 tw-w-full tw-px-32 tw-mx-auto">
                 <form action="">
                     <div class="tw-font-ubuntu tw-justify-center">
                         <label for="id" class="tw-font-bold tw-text-lg tw-flex tw-mb-2 tw-text-admin-300">ID
@@ -60,6 +60,5 @@
                 </form>
             </div>
         </div>
-    </div>
     </div>
 @endsection
