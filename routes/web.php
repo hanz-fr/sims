@@ -225,6 +225,13 @@ Route::get('/show-detail-jurusan', function () {
     ]);
 });
 
+Route::get('/create-show-jurusan', function () {
+    return view('create-show-jurusan', [
+        'title' => 'Create Jurusan',
+        'active' => 'database'
+    ]);
+});
+
 Route::get('/live-search-test', [ApiController::class, 'indexLiveSearch']);
 
 Route::get('/search', [ApiController::class, 'search']);
