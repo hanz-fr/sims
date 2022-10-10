@@ -4,7 +4,7 @@
     <div class="tw-mx-10 tw-w-screen">
         <div class="tw-flex tw-mt-8">
             <a href="/mata-pelajaran-jurusan">
-                <i class="fa-solid fa-chevron-left tw-text-2xl tw-text-gray-400 hover:tw-text-gray-600"></i>
+                <i class="fa-solid fa-chevron-left tw-text-2xl tw-text-gray-300 hover:tw-text-gray-600"></i>
             </a>
             <div class="tw-text-2xl tw-ml-3 tw-font-pop tw-font-semibold tw-text-gray-300">Tambah Mata Pelajaran Jurusan</div>
         </div>
@@ -25,6 +25,9 @@
                             <option value="3">3</option>
                             <option value="4">4</option>
                             <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+
                         </select>
                     </div>
                     <div class="tw-font-ubuntu tw-flex-col tw-mt-8 tw-justify-center">
