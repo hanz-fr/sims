@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @extends('layouts.admin')
 
 @section('content')
@@ -61,3 +62,6 @@
         </div>
     </div>
 @endsection
+=======
+plis
+>>>>>>> 97105ebbd24048240ab02c5bbd5b62700adfd890
