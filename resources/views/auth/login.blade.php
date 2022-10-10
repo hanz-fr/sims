@@ -40,17 +40,23 @@
           <div class="tw-text-sm tw-mt-2 tw-text-slate-400 tw-font-pop">Please login to access the website</div>
           <form action="/loginuser" method="post" class="tw-mt-12">
             @csrf
-            <ul>
+            <ul class="tw-flex tw-flex-col tw-gap-5">
               <li>
-                <input type="text" name="nip" id="nip" placeholder="NIP" class="tw-font-ubuntu tw-font-medium tw-mb-6 tw-px-4 tw-py-3 tw-border-2 tw-text-gray-500 tw-border-gray-300 tw-w-full tw-block tw-text-sm placeholder:tw-text-gray-400 focus:placeholder:tw-invisible focus:tw-outline-none focus:tw-ring-1 focus:tw-ring-sims-400 focus:tw-border-sims-400 invalid:tw-text-pink-700 tw-peer invalid:focus:tw-ring-pink-700 invalid:focus:tw-border-pink-700">
+                <input type="text" name="nip" id="nip" @error('nip') is-invalid @enderror placeholder="NIP" class="tw-font-ubuntu tw-font-medium tw-px-4 tw-py-3 tw-border-2 tw-text-gray-500 tw-border-gray-300 tw-w-full tw-block tw-text-sm placeholder:tw-text-gray-400 focus:placeholder:tw-invisible focus:tw-outline-none focus:tw-ring-1 focus:tw-ring-sims-400 focus:tw-border-sims-400 invalid:tw-text-pink-700 tw-peer invalid:focus:tw-ring-pink-700 invalid:focus:tw-border-pink-700">
+                @error('nip')
+                  <div class="tw-text-sm tw-text-pink-700 tw-mt-1 tw-font-ubuntu">{{ $message }}</div>
+                @enderror
               </li>
               <li>
-                <input type="password" name="password" id="password" placeholder="Password" class="tw-font-ubuntu tw-font-medium tw-px-4 tw-py-3 tw-border-2 tw-text-gray-500 tw-border-gray-300 tw-w-full tw-block tw-text-sm placeholder:tw-text-gray-400 focus:placeholder:tw-invisible focus:tw-outline-none focus:tw-ring-1 focus:tw-ring-sims-400 focus:tw-border-sims-400 invalid:tw-text-pink-700 tw-peer invalid:focus:tw-ring-pink-700 invalid:focus:tw-border-pink-700">
+                <input type="password" name="password" id="password" @error('password') is-invalid @enderror placeholder="Password" class="tw-font-ubuntu tw-font-medium tw-px-4 tw-py-3 tw-border-2 tw-text-gray-500 tw-border-gray-300 tw-w-full tw-block tw-text-sm placeholder:tw-text-gray-400 focus:placeholder:tw-invisible focus:tw-outline-none focus:tw-ring-1 focus:tw-ring-sims-400 focus:tw-border-sims-400 invalid:tw-text-pink-700 tw-peer invalid:focus:tw-ring-pink-700 invalid:focus:tw-border-pink-700">
+                @error('password')
+                  <div class="tw-text-sm tw-text-pink-700 tw-mt-1 tw-font-ubuntu">{{ $message }}</div>
+                @enderror
               </li>
               <li>
-                <button type="submit" class="tw-font-ubuntu tw-bg-[#90C2C2] tw-w-full tw-py-3 tw-text-sm tw-font-medium tw-text-white tw-mt-7 hover:tw-bg-[#5B9C9C]">Login</button>
+                <button type="submit" class="tw-font-ubuntu tw-bg-[#90C2C2] tw-w-full tw-py-3 tw-text-sm tw-font-medium tw-text-white hover:tw-bg-[#5B9C9C]">Login</button>
               </li>
-              <li class="tw-text-center tw-mt-4 tw-mb-8">
+              <li class="tw-text-center tw-mb-8">
                 <a href="/register" class="tw-font-ubuntu tw-text-sims-400 tw-underline tw-text-sm">Don't have an account?</a>
               </li>
             </ul>
@@ -62,5 +68,6 @@
     </div>
   </div> <!-- container -->
   @endif
+  @include('sweetalert::alert')
 </body>
 </html>
