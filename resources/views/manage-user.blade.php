@@ -101,7 +101,7 @@
         <table class="tw-mt-10 tw-w-full tw-text-sm tw-text-center">
           <thead class="tw-text-lg tw-font-pop tw-text-admin-300">
               <tr>
-                  <th scope="col" class="tw-pb-9 tw-px-5"></th>
+                  {{-- <th scope="col" class="tw-pb-9 tw-px-5"></th> --}}
                   <th scope="col" class="tw-pb-9 tw-px-5">NIP</th>
                   <th scope="col" class="tw-pb-9 tw-px-5">Nama</th>
                   <th scope="col" class="tw-pb-9 tw-px-5">Created</th>
@@ -111,9 +111,9 @@
           </thead>
           <tbody>     
               <tr class="tw-bg-white tw-text-[#B4B8BC] tw-font-bold text-lg tw-font-ubuntu">
-                  <td class="tw-pb-6 tw-pl-6 tw-border-b">
+                  {{-- <td class="tw-pb-6 tw-pl-6 tw-border-b">
                     <div class="tw-bg-admin-300 tw-p-2 tw-rounded-2xl tw-text-white tw-w-14 tw-h-14 tw-items-center tw-flex tw-justify-center"><i class="fa-solid fa-user tw-text-2xl"></i></div>
-                 </td>
+                 </td> --}}
                   <td class="tw-pb-6 tw-px-5 tw-border-b">192871837268361728</td>
                   <td class="tw-pb-6 tw-px-5 tw-border-b">Ibnu Asep bin Budi</td>
                   <td class="tw-pb-6 tw-px-5 tw-border-b">12 February 2023</td>
@@ -125,9 +125,9 @@
                   </td>
               </tr>
               <tr class="tw-bg-white tw-text-[#B4B8BC] tw-font-bold text-lg tw-font-ubuntu">
-                <td class="tw-py-6 tw-pl-6 tw-border-b">
+                {{-- <td class="tw-py-6 tw-pl-6 tw-border-b">
                   <div class="tw-bg-admin-300 tw-p-2 tw-rounded-2xl tw-text-white tw-w-14 tw-h-14 tw-items-center tw-flex tw-justify-center"><i class="fa-solid fa-user tw-text-2xl"></i></div>
-                </td>
+                </td> --}}
                 <td class="tw-py-6 tw-border-b">192871837268361728</td>
                 <td class="tw-py-6 tw-border-b">Maria Saint Joseph</td>
                 <td class="tw-py-6 tw-border-b">12 February 2023</td>
@@ -139,10 +139,9 @@
                 </td>
               </tr>
               <tr class="tw-bg-white tw-text-[#B4B8BC] tw-font-bold text-lg tw-font-ubuntu">
-                <td class="tw-py-6 tw-pl-6 tw-border-b">
-                  {{-- nanti ganti sama img --}}
+                {{-- <td class="tw-py-6 tw-pl-6 tw-border-b">
                   <div class="tw-bg-admin-300 tw-p-2 tw-rounded-2xl tw-text-white tw-w-14 tw-h-14 tw-items-center tw-flex tw-justify-center"><i class="fa-solid fa-user tw-text-2xl"></i></div>
-                </td>
+                </td> --}}
                 <td class="tw-py-6 tw-border-b">192871837268361728</td>
                 <td class="tw-py-6 tw-border-b">Lucifer Mattius</td>
                 <td class="tw-py-6 tw-border-b">12 February 2023</td>
@@ -154,9 +153,9 @@
                 </td>
               </tr>
               <tr class="tw-bg-white tw-text-[#B4B8BC] tw-font-bold text-lg tw-font-ubuntu">
-                <td class="tw-py-6 tw-pl-6 tw-border-b">
+                {{-- <td class="tw-py-6 tw-pl-6 tw-border-b">
                   <div class="tw-bg-admin-300 tw-p-2 tw-rounded-2xl tw-text-white tw-w-14 tw-h-14 tw-items-center tw-flex tw-justify-center"><i class="fa-solid fa-user tw-text-2xl"></i></div>
-                </td>
+                </td> --}}
                 <td class="tw-py-6 tw-border-b">192871837268361728</td>
                 <td class="tw-py-6 tw-border-b">Farhan Ibn Umar</td>
                 <td class="tw-py-6 tw-border-b">12 February 2023</td>
@@ -168,9 +167,9 @@
                 </td>
               </tr>
               <tr class="tw-bg-white tw-text-[#B4B8BC] tw-font-bold text-lg tw-font-ubuntu">
-                <td class="tw-py-6 tw-pl-6 tw-border-b">
+                {{-- <td class="tw-py-6 tw-pl-6 tw-border-b">
                   <div class="tw-bg-salmon-400 tw-p-2 tw-rounded-2xl tw-text-white tw-w-14 tw-h-14 tw-items-center tw-flex tw-justify-center"><i class="fa-solid fa-user tw-text-2xl"></i></div>
-                </td>
+                </td> --}}
                 <td class="tw-py-6 tw-border-b">192871837268361728</td>
                 <td class="tw-py-6 tw-border-b">Trevor Jonas</td>
                 <td class="tw-py-6 tw-border-b">12 February 2023</td>
@@ -182,9 +181,9 @@
                 </td>
               </tr>
               <tr class="tw-bg-white tw-text-[#B4B8BC] tw-font-bold text-lg tw-font-ubuntu">
-                <td class="tw-py-6 tw-pl-6 tw-border-b">
+                {{-- <td class="tw-py-6 tw-pl-6 tw-border-b">
                   <div class="tw-bg-salmon-400 tw-p-2 tw-rounded-2xl tw-text-white tw-w-14 tw-h-14 tw-items-center tw-flex tw-justify-center"><i class="fa-solid fa-user tw-text-2xl"></i></div>
-                </td>
+                </td> --}}
                 <td class="tw-py-6 tw-border-b">192871837268361728</td>
                 <td class="tw-py-6 tw-border-b">Joni Kesbor</td>
                 <td class="tw-py-6 tw-border-b">12 February 2023</td>
@@ -196,9 +195,9 @@
                 </td>
               </tr>
               <tr class="tw-bg-white tw-text-[#B4B8BC] tw-font-bold text-lg tw-font-ubuntu">
-                <td class="tw-py-6 tw-pl-6 tw-border-b">
+                {{-- <td class="tw-py-6 tw-pl-6 tw-border-b">
                   <div class="tw-bg-salmon-400 tw-p-2 tw-rounded-2xl tw-text-white tw-w-14 tw-h-14 tw-items-center tw-flex tw-justify-center"><i class="fa-solid fa-user tw-text-2xl"></i></div>
-                </td>
+                </td> --}}
                 <td class="tw-py-6 tw-border-b">192871837268361728</td>
                 <td class="tw-py-6 tw-border-b">Asep Slebew</td>
                 <td class="tw-py-6 tw-border-b">12 February 2023</td>

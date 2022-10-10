@@ -50,11 +50,11 @@
          <div class="tw-flex tw-flex-col tw-justify-center">
             <hr class="tw-bg-[#b2fefe] tw-mb-2 tw-mx-5">
             <div x-data="{ isActive: false, open: false }">
-               <div x-show="open" x-transition.duration.90ms class="tw-my-2 tw-font-ubuntu tw-font-bold" role="menu" arial-label="Components">
-                  <a href="#" role="menuitem" class="nav-item-admin tw-font-bold tw-transition-colors tw-duration-200">
+               <div x-show="open" x-transition.duration.90ms class="tw-my-2 tw-font-ubuntu tw-font-bold tw-justify-center tw-text-center" role="menu" arial-label="Components">
+                  <a href="#" role="menuitem" class="nav-item-admin tw-justify-center tw-font-bold tw-transition-colors tw-duration-200 tw-text-center">
                   Dropdowns Item
                   </a>
-                  <a href="#" role="menuitem" class="nav-item-admin tw-font-bold tw-transition-colors tw-duration-200">
+                  <a href="#" role="menuitem" class="nav-item-admin tw-justify-center tw-font-bold tw-transition-colors tw-duration-200">
                   Dropdowns Item
                   </a>
               </div>
@@ -65,10 +65,10 @@
                    role="button"
                    aria-haspopup="true"
                    :aria-expanded="(open || isActive) ? 'true' : 'false'">
-                   <span aria-hidden="true">
+                   <span aria-hidden="true" class="tw-mr-3">
                      <i class="fa-light fa-circle-user tw-text-4xl group-hover:tw-text-white group-focus:tw-text-white"></i>
                    </span>
-                   <span class="ml-3 text-left whitespace-nowrap tw-font-pop tw-text-gray-400 font-medium group-hover:tw-text-white group-focus:tw-text-white tw-mr-2"> hyperadmin </span>
+                   <span class="mx-3 text-left whitespace-nowrap tw-font-pop tw-text-gray-400 font-medium group-hover:tw-text-white group-focus:tw-text-white"> hyperadmin </span>
                    <span aria-hidden="true" class="tw-ml-2">
                    <i class="fa-solid fa-caret-down transition-transform transform tw-origin-center group-hover:tw-text-white group-focus:tw-text-white"
                    :class="{ 'tw-rotate-180': open }"></i>
