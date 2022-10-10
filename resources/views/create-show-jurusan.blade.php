@@ -11,9 +11,9 @@
 
     <div class="tw-overflow-hidden tw-shadow-md tw-mt-14 tw-rounded-xl">
         <div class="tw-flex">
-            <div class="tw-bg-[#5A6C7C] tw-p-14">
-                <div class="tw-bg-white tw-p-12 tw-my-10 tw-rounded-xl">
-                    <img src="https://www.smkn11bdg.sch.id/src/images/11.png" class="tw-w-[117px] tw-h-[138px]" alt="">
+            <div class="tw-bg-[#5a6c7c] tw-px-24 tw-flex tw-justify-center tw-items-center">
+                <div class="tw-bg-white tw-p-10 tw-rounded-xl">
+                    <img src="https://www.smkn11bdg.sch.id/src/images/11.png" alt="" class="tw-w-44 tw-rounded-xl">
                 </div>
             </div>
             <div class="tw-mx-auto">
