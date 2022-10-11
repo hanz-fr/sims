@@ -11,19 +11,19 @@
         <div class="tw-flex tw-flex-col tw-my-auto">
           <div class="tw-flex tw-justify-between">
             <div class="tw-text-lg my-auto tw-font-normal tw-text-gray-500">Masuk Sekolah (Pindahan)</div>
-            <div class="tw-text-base my-auto tw-font-bold tw-text-sims-400">16</div>
+            <div class="tw-text-base my-auto tw-font-bold tw-text-sims-400">-</div>
           </div>
           <div class="tw-flex tw-justify-between tw-mt-10">
             <div class="tw-text-lg my-auto tw-font-normal tw-text-gray-500">Keluar Sekolah</div>
-            <div class="tw-text-base my-auto tw-font-bold tw-text-sims-400">5</div>
+            <div class="tw-text-base my-auto tw-font-bold tw-text-sims-400">-</div>
           </div>
           <div class="tw-flex tw-justify-between tw-mt-10">
             <div class="tw-text-lg my-auto tw-font-normal tw-text-gray-500">Siswa Tidak Naik Kelas</div>
-            <div class="tw-text-base my-auto tw-font-bold tw-text-sims-400">2</div>
+            <div class="tw-text-base my-auto tw-font-bold tw-text-sims-400">-</div>
           </div>
           <div class="tw-flex tw-justify-between tw-mt-10">
             <div class="tw-text-base my-auto tw-font-normal tw-text-gray-500">Jumlah Siswa</div>
-            <div class="tw-text-base my-auto tw-font-bold tw-text-sims-400">1523</div>
+            <div class="tw-text-base my-auto tw-font-bold tw-text-sims-400">-</div>
           </div>
           {{-- <div class="tw-flex tw-flex-col tw-text-sims-400 tw-gap-3 tw-mt-8 tw-w-1/2 tw-ml-10">
           </div> --}}
