@@ -213,6 +213,14 @@ Route::middleware(['admin'])->group(function() {
             'active' => 'database'
         ]);
     });
+
+    /* EDIT MAPEL JURUSAN */
+    Route::get('/edit-mata-pelajaran-jurusan', function () {
+        return view('edit-mapel-jurusan', [
+            'title' => 'Mata Pelajaran',
+            'active' => 'database'
+        ]);
+    });
     
     
     /* SHOW USER DETAIL */
