@@ -11,7 +11,7 @@
 <div class="tw-mx-10 tw-w-screen">
     <div class="tw-flex tw-justify-between tw-gap-5 tw-mt-8">
         <div class="tw-flex tw-flex-col">
-            <h4 class="tw-font-pop tw-font-bold tw-mt-6 tw-mb-12 tw-text-sims-400">Data Semua Kelas</h4>
+            <h4 class="tw-font-pop tw-font-bold tw-mt-6 tw-mb-6 tw-text-sims-400">Data Semua Kelas</h4>
         </div>
 
         <!-- <div class="tw-flex tw-justify-center tw-items-center -tw-mb-8">

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ForgotPasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -77,7 +78,7 @@ Route::middleware(['auth'])->group(function () {
             'title' => 'Pilih Jurusan',
             'active' => 'data-induk'
         ]);
-    });
+    })->middleware('kesiswaan');
 
 
 
@@ -213,6 +214,14 @@ Route::middleware(['admin'])->group(function() {
             'active' => 'database'
         ]);
     });
+
+    /* EDIT MAPEL JURUSAN */
+    Route::get('/edit-mata-pelajaran-jurusan', function () {
+        return view('edit-mapel-jurusan', [
+            'title' => 'Mata Pelajaran',
+            'active' => 'database'
+        ]);
+    });
     
     
     /* SHOW USER DETAIL */
@@ -283,3 +292,8 @@ Route::get('/login', [UserController::class, 'index'])->name('login');
 Route::post('/registeruser', [UserController::class, 'register']);
 Route::post('/loginuser', [UserController::class, 'authenticate']);
 Route::get('/signout', [UserController::class, 'signOut']);
+
+Route::get('/forgot-password', [UserController::class, 'showForgetPasswordForm']);
+Route::post('/forget-password', [UserController::class, 'submitForgetPasswordForm']); 
+Route::get('/reset-password/{token}', [UserController::class, 'showResetPasswordForm'])->name('reset.password');
+Route::post('/reset-password', [UserController::class, 'submitResetPasswordForm'])->name('update.password');
