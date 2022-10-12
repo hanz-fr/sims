@@ -17,7 +17,7 @@ class ApiController extends Controller
     /* GLOBAL VARIABLES */
     public function __construct()
     {
-        $this->api_url = 'https://4edd-114-79-49-84.ap.ngrok.io'; // Ganti link NGROK disini
+        $this->api_url = 'https://0cd5-103-139-10-131.ngrok.io'; // Ganti link NGROK disini
     }
 
     /* API SISWA */
@@ -63,21 +63,17 @@ class ApiController extends Controller
         $response = Http::get("{$this->api_url}/siswa/{$nis}");
 
         if ($response->successful()) {
-            $kelasSiswa = json_decode($response)->result->KelasId;
-
-            $getKelasDetail = Http::get("{$this->api_url}/kelas/{$kelasSiswa}");
-            $jurusanSiswa = json_decode($getKelasDetail)->result->jurusan;
 
             // Parse siswa birthdate
             $getSiswaBirthDate = json_decode($response)->result->tgl_lahir;
             $tgl_lahir_siswa = Carbon::parse($getSiswaBirthDate)->translatedFormat('l d F Y');
             
+
             return view('induk.show-detail', [
                 'title' => 'Data Siswa',
                 'active' => 'data-induk',
                 'status' => 'success',
                 'siswa' => json_decode($response)->result,
-                'jurusan_siswa' => $jurusanSiswa,
                 'tgl_lahir_siswa' => $tgl_lahir_siswa
             ]);
         } else {
