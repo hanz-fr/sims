@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
@@ -25,7 +28,7 @@ class UserController extends Controller
             'nip'      => 'required|unique:users',
             'nama'     => 'required',
             'email'    => 'required|email|unique:users',
-            'roles'    => 'required',
+            'role'    => 'required',
             'password' => 'required|min:6',
         ],[
             'nip.required'      => 'NIP field is required.',
@@ -40,7 +43,7 @@ class UserController extends Controller
             'nip'      => $request->nip,
             'nama'     => $request->nama,
             'email'    => $request->email,
-            'roles'    => $request->roles,
+            'role'    => $request->role,
             'password' => Hash::make($request->password),
         ]);
         $user->save();
@@ -154,6 +157,83 @@ class UserController extends Controller
         ]);
 
         return back()->with("status", "Password changed successfully!");
+    }
+
+          /**
+       * Write code on Method
+       *
+       * @return response()
+       */
+      public function showForgetPasswordForm()
+      {
+         return view('auth.forgot-password', [
+            'title' => 'Forgot Password',
+            'status' => ''
+         ]);
+      }
+  
+      /**
+       * Write code on Method
+       *
+       * @return response()
+       */
+      public function submitForgetPasswordForm(Request $request)
+      {
+          $request->validate([
+              'email' => 'required|email|exists:users',
+          ]);
+  
+          $token = Str::random(64);
+  
+          DB::table('password_resets')->insert([
+              'email' => $request->email, 
+              'token' => $token, 
+              'created_at' => Carbon::now()
+            ]);
+  
+          Mail::send('auth.email.forget-password', ['token' => $token], function($message) use($request){
+              $message->to($request->email);
+              $message->subject('Reset Password');
+          });
+  
+          return view("auth.forgot-password", [
+            'title'  => 'Email Sent',
+            'status' => 'message'
+        ]);
+      }
+
+      /**
+       * Write code on Method
+       *
+       * @return response()
+       */
+      public function showResetPasswordForm($token) { 
+         return view('auth.reset-password', [
+            'token' => $token,
+            'title' => 'Reset your password'
+        ]);
+      }
+  
+      /**
+       * Write code on Method
+       *
+       * @return response()
+       */
+      public function submitResetPasswordForm(Request $request)
+      {
+        $this->validate($request, [
+            'email' => 'required',
+            'password' => 'required|min:6',
+            'password_confirmation' => 'required|same:password'
+        ]);
+
+        $user = User::where('email', $request->email)->first();
+        if ($user) {
+            $user['password'] = Hash::make($request->password);
+            $user->save();
+            return redirect()->route('login')->with('success', 'Password has been changed');
+        }
+        return redirect()->route('update.password')->with('failed', 'Failed! something went wrong');
     }
 }
 

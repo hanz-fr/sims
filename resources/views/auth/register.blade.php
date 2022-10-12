@@ -51,7 +51,7 @@
                 @enderror
               </li>
               <li>
-                <select name="roles" class="tw-mb-5 dropdown-toggle tw-font-ubuntu tw-font-medium tw-px-4 tw-py-4 tw-border-2 tw-text-gray-400 tw-border-gray-300 tw-w-full tw-block tw-text-sm placeholder:tw-text-gray-400 focus:placeholder:tw-invisible focus:tw-outline-none focus:tw-ring-1 focus:tw-ring-sims-400 focus:tw-border-sims-400">
+                <select name="role" class="tw-mb-5 dropdown-toggle tw-font-ubuntu tw-font-medium tw-px-4 tw-py-4 tw-border-2 tw-text-gray-400 tw-border-gray-300 tw-w-full tw-block tw-text-sm placeholder:tw-text-gray-400 focus:placeholder:tw-invisible focus:tw-outline-none focus:tw-ring-1 focus:tw-ring-sims-400 focus:tw-border-sims-400">
                   <option selected>Bagian</option>
                   <option value="1">Tata Usaha</option>
                   <option value="2">Kesiswaan</option>
