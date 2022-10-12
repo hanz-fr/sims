@@ -5,7 +5,7 @@
     <div class="tw-flex tw-justify-between tw-gap-5 tw-mt-8">
         <div class="tw-flex tw-flex-col">
             <h4 class="title-main">Data Alumni</h4>
-            <h6 class="tw-mb-5 tw-text-gray-400 tw-font-semibold">X PENGEMBANGAN PERANGKAT LUNAK DAN GIM</h6>
+            <h6 class="tw-mb-5 tw-text-gray-400 tw-font-semibold">PENGEMBANGAN PERANGKAT LUNAK DAN GIM</h6>
         </div>
     </div>
 
@@ -67,9 +67,6 @@
                         <td class="tw-py-4 tw-px-6 tw-border">-</td>
                         <td class="tw-py-4 tw-px-6 tw-border">-</td>
                         <td>
-                            <a href="" class="tw-text-white tw-bg-sims-400 hover:tw-bg-sims-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-mr-1">
-                                <i class="fa-light fa-clipboard-list"></i>
-                            </a>
                             <a href="#" class="tw-text-white tw-bg-kuning-500 hover:tw-bg-kuning-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                                 <i class="fa-solid fa-pen-to-square"></i></a>
                             </a>
@@ -86,9 +83,6 @@
                         <td class="tw-py-4 tw-px-6 tw-border">-</td>
                         <td class="tw-py-4 tw-px-6 tw-border">-</td>
                         <td>
-                            <a href="" class="tw-text-white tw-bg-sims-400 hover:tw-bg-sims-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-mr-1">
-                                <i class="fa-light fa-clipboard-list"></i>
-                            </a>
                             <a href="#" class="tw-text-white tw-bg-kuning-500 hover:tw-bg-kuning-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                                 <i class="fa-solid fa-pen-to-square"></i></a>
                             </a>
