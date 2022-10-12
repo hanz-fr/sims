@@ -276,7 +276,14 @@ Route::middleware(['admin'])->group(function() {
             'active' => 'database'
         ]);
     });
-    
+
+    /* ALL SISWA */
+    Route::get('/all-siswa', function () {
+        return view('all-siswa-admin', [
+            'title' => 'Data Seluruh Siswa',
+            'active' => 'database'
+        ]);
+    });
     
     /* LIVE SEARCH TEST */
     Route::get('/live-search-test', [ApiController::class, 'indexLiveSearch']);
