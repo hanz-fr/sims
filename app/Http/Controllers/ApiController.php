@@ -15,7 +15,7 @@ class ApiController extends Controller
     /* GLOBAL VARIABLES */
     public function __construct()
     {
-        $this->api_url = 'https://f474-103-139-10-131.ngrok.io'; // Ganti link NGROK disini
+        $this->api_url = 'https://2ccb-114-79-54-133.ap.ngrok.io'; // Ganti link NGROK disini
     }
 
     /* API SISWA */
@@ -669,6 +669,32 @@ class ApiController extends Controller
 
         }
     }
+
+
+    public function rekapJumlahSiswa() {
+
+        $kelas = Http::get("{$this->api_url}/kelas/siswa-per-kelas/all");
+
+        if ($kelas->successful()) {
+
+            return view('data-rekap-jumlah-siswa', [
+                'title' => 'Data Rekap Siswa',
+                'active' => 'rekap-siswa',
+                'kelas' => json_decode($kelas)->result
+            ]);
+
+        } else {
+
+            return view('induk.show-all', [
+                'response' => $kelas,
+                'status' => 'error',
+                'title' => 'data-induk',
+                'active' => 'rekap-siswa',
+                'message' => 'Halaman yang kamu cari tidak dapat ditemukan :('
+            ]);
+        }
+    }
+
 
 
     /* API LIVESEARCH (TESTING) */

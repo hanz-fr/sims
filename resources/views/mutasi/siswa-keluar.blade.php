@@ -87,7 +87,17 @@
                             <a href="/edit-mutasi-keluar/{{ $m->id }}" class="tw-text-white tw-bg-kuning-500 hover:tw-bg-kuning-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                                 <i class="fa-solid fa-pen-to-square"></i></a>
                             </a>
-                            <form action="/api/mutasi-keluar/delete/{{ $m->id }}" method="POST">
+
+                            <form method="post" action="{{ url('/api/mutasi-keluar/delete/'.$m->id) }}">
+                                @csrf
+                                @method('delete')
+                                <button type="submit" onclick="confirmDelete(event)" class="showModal tw-text-white tw-bg-red-400 hover:tw-bg-red-500 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </div>
+                            </form>
+
+                            {{-- <form action="/api/mutasi-keluar/delete/{{ $m->id }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button type="button" data-modal-toggle="popup-modal" class="tw-text-white tw-bg-red-400 hover:tw-bg-red-500 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
@@ -114,7 +124,7 @@
                                     </div>
                                 </div>
                             </div>
-                            </form>
+                            </form> --}}
                         </td>
                     </tr>
                     @endforeach
@@ -122,5 +132,22 @@
             </table>
         </div>
     </div>
+    <script>
+        function confirmDelete(e) {
+            if(confirm('Are you sure ?'))
+            e.e;
+            else {
+                e.preventDefault();
+            }
+        }
+
+        const modal = document.querySelector('.popup-modal');
+
+        const showModal = document.querySelector('.showModal');
+
+        showModal.addEventListener('click', function() {
+            modal.classList.remove('hidden')
+        });
+    </script>
 @endif
 @endsection
