@@ -191,7 +191,7 @@ class UserController extends Controller
               'created_at' => Carbon::now()
             ]);
   
-          Mail::send('auth.email.forget-password', ['token' => $token], function($message) use($request){
+          Mail::send('auth.email.forget-password', ['token' => $token, 'title' => 'Email'], function($message) use($request){
               $message->to($request->email);
               $message->subject('Reset Password');
           });
