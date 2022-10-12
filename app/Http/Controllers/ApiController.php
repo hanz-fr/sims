@@ -9,13 +9,15 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\File;
 use RealRashid\SweetAlert\Facades\Alert;
 
+use function PHPUnit\Framework\isNull;
+
 class ApiController extends Controller
 {
 
     /* GLOBAL VARIABLES */
     public function __construct()
     {
-        $this->api_url = 'https://c52d-114-79-49-84.ap.ngrok.io'; // Ganti link NGROK disini
+        $this->api_url = 'https://4edd-114-79-49-84.ap.ngrok.io'; // Ganti link NGROK disini
     }
 
     /* API SISWA */
@@ -319,15 +321,30 @@ class ApiController extends Controller
         $response = Http::get("{$this->api_url}/mutasi/siswa-keluar?page={$page}&perPage={$perPage}");
 
         if ($response->successful()) {
-            
-            return view('mutasi.siswa-keluar', [
-                'mutasi' => json_decode($response)->data->rows,
-                'status' => 'success',
-                'response' => json_decode($response),
-                'total' => json_decode($response)->data->count,
-                'title' => 'Data Siswa Keluar',
-                'active' => 'rekap-siswa'
-            ]);
+
+            if (is_null(json_decode($response)->data->rows)) {
+
+                return view('mutasi.siswa-keluar', [
+                    'status' => 'success',
+                    'response' => json_decode($response),
+                    'total' => json_decode($response)->data->count,
+                    'title' => 'Data Siswa Keluar',
+                    'active' => 'rekap-siswa'
+                ]);
+
+            } else {
+
+                return view('mutasi.siswa-keluar', [
+                    'mutasi' => json_decode($response)->data->rows,
+                    'status' => 'success',
+                    'response' => json_decode($response),
+                    'total' => json_decode($response)->data->count,
+                    'title' => 'Data Siswa Keluar',
+                    'active' => 'rekap-siswa'
+                ]);
+
+            }
+
 
         } else {
 

@@ -74,7 +74,8 @@
                             <th scope="col" class="tw-py-3 tw-px-6">ACTION</th>
                         </tr>
                     </thead>
-                    <tbody class="tw-text-base">
+                    <tbody class="tw-text-
+                    base">
                         @foreach ($mutasi as $m)
                             <tr class="tw-bg-white tw-border">
                                 <td class="counterCell tw-py-4 tw-px-6 tw-border"></td>
@@ -98,7 +99,7 @@
                                     </button>
                                     </div>
                                     </form> --}}
-
+                                    
                                     <form action="{{ url('/api/mutasi-keluar/delete/' . $m->id) }}" method="post">
                                         @csrf
                                         @method('delete')
@@ -157,18 +158,13 @@
                 </table>
             </div>
         </div>
+        @foreach($mutasi as $m)
+        @isset($m->id)
         <script>
-            function confirmDeletet(e) {
-                if (confirm('Are you sure ?'))
-                    e.e;
-                else {
-                    e.preventDefault();
-                }
-            }
-
+            
             var mutasi_id = $(this).val();
 
-            const modal = document.querySelector('.popup-modal_{{$m->id}}');
+            const modal = document.getElementById('.popup-modal_{{$m->id}}');
 
             const showModal = document.querySelector('.showModal');
 
@@ -176,5 +172,7 @@
                 modal.classList.remove('hidden')
             });
         </script>
+        @endisset
+        @endforeach
     @endif
 @endsection
