@@ -15,7 +15,7 @@ class ApiController extends Controller
     /* GLOBAL VARIABLES */
     public function __construct()
     {
-        $this->api_url = '127.0.0.1:3000'; // Ganti link NGROK disini
+        $this->api_url = 'https://c52d-114-79-49-84.ap.ngrok.io'; // Ganti link NGROK disini
     }
 
     /* API SISWA */
@@ -378,19 +378,24 @@ class ApiController extends Controller
 
     public function createMutasiKeluar() {
 
+        $kelas = Http::get("{$this->api_url}/kelas");
+
         return view('mutasi.create-mutasi-keluar', [
             'title' => 'Create Mutasi Keluar',
             'active' => 'rekap-siswa',
+            'kelas' => json_decode($kelas),
         ]);
-
     }
 
 
     public function createMutasiMasuk() {
 
+        $kelas = Http::get("{$this->api_url}/kelas");
+
         return view('mutasi.create-mutasi-masuk', [
             'title' => 'Create Mutasi Masuk',
             'active' => 'rekap-siswa',
+            'kelas' => json_decode($kelas),
         ]);
     }
 
@@ -503,11 +508,15 @@ class ApiController extends Controller
         $response = Http::get("{$this->api_url}/mutasi/{$id}");
 
         if ($response->successful()) {
+
+            $kelas = Http::get("{$this->api_url}/kelas");
+
             return view('mutasi.edit-mutasi-keluar', [
                 'title' => 'Edit Mutasi Keluar',
                 'active' => 'rekap-siswa',
                 'mutasi' => json_decode($response)->result,
-                'status' => 'success'
+                'status' => 'success',
+                'kelas' => json_decode($kelas)
             ]);
         } else {
             return view('mutasi.edit-mutasi-keluar', [
@@ -525,11 +534,15 @@ class ApiController extends Controller
         $response = Http::get("{$this->api_url}/mutasi/{$id}");
 
         if ($response->successful()) {
+
+            $kelas = Http::get("{$this->api_url}/kelas");
+
             return view('mutasi.edit-mutasi-masuk', [
                 'title' => 'Edit Mutasi Masuk',
                 'active' => 'rekap-siswa',
                 'mutasi' => json_decode($response)->result,
-                'status' => 'success'
+                'status' => 'success',
+                'kelas' => json_decode($kelas)
             ]);
         } else {
             return view('mutasi.edit-mutasi-masuk', [

@@ -89,10 +89,12 @@
             <label class="label-input" for="keluar_di_kelas">
                 Keluar di Kelas
             </label>
-            <input value="{{ $mutasi->keluar_di_kelas }}" class="input-data tw-w-full" id="keluar_di_kelas" name="keluar_di_kelas" type="text">
-            @error('keluar_di_kelas')
-            <small class="tw-text-red-500">{{ $message }}</small>
-            @enderror
+            <select class="input-data" id="keluar_di_kelas" name="keluar_di_kelas">
+                <option selected value="{{ $mutasi->diterima_di_kelas }}">{{ $mutasi->diterima_di_kelas }}</option>
+                @foreach ($kelas as $k)
+                <option value="{{ $k->id }}">{{ $k->id }}</option>
+                @endforeach
+            </select>
         </div>
         <div class="tw-mx-auto md:tw-w-2/3 sm:tw-w-1/2">
             <label class="label-input" for="pindah_ke">
