@@ -92,7 +92,7 @@
             <label class="label-input" for="diterima_di_kelas">
                 Diterima di Kelas
             </label>
-            <select class="input-data" id="kelas" name="kelas">
+            <select class="input-data" id="diterima_di_kelas" name="diterima_di_kelas">
                 <option value="">-</option>
                 @if(old('kelas'))
                 <option value="{{ old('kelas') }}">{{ old('kelas') }}</option>
