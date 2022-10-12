@@ -142,6 +142,6 @@ module.exports = {
   },
   plugins: [
     require('tailwind-scrollbar')({ nocompatible: true }),
-    require('tw-elements/dist/plugin')
+    // require('tw-elements/dist/plugin')
   ],
 }
