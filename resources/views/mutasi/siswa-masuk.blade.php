@@ -86,31 +86,31 @@
                                         <i class="fa-solid fa-pen-to-square"></i></a>
                                     </a>
 
-                                    <form method="post" action="{{ url('/api/mutasi-masuk/delete/'.$m->id) }}">
+                                    {{-- <form method="post" action="{{ url('/api/mutasi-masuk/delete/'.$m->id) }}">
                                         @csrf
                                         @method('delete')
                                         <button type="submit" onclick="confirmDelete(event)" class="showModal tw-text-white tw-bg-red-400 hover:tw-bg-red-500 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                                             <i class="fa-solid fa-trash"></i>
                                         </button>
                                     </div>
-                                    </form>
+                                    </form> --}}
 
-                                    {{-- <form id="form-{{ $m->id }}" action="/api/mutasi-masuk/delete/{{ $m->id }}" method="POST">
+                                    <form action="{{ url('/api/mutasi-masuk/delete/' . $m->id) }}" method="post">
                                         @csrf
-                                        @method('DELETE')
-                                        <button type="button" data-modal-toggle="popup-modal"
+                                        @method('delete')
+                                        <button type="button" data-modal-toggle="popup-modal_{{$m->id}}" data-target="popup-modal_{{$m->id}}"
                                             class="tw-text-white tw-bg-red-400 hover:tw-bg-red-500 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                                             <i class="fa-solid fa-trash"></i>
                                         </button>
-                                    </form> --}}
 
-                                    {{-- <div id="popup-modal" class="hidden popup-modal overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full">
+                                        <div id="popup-modal_{{$m->id}}" tabindex="-1"
+                                            class="popup-modal hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full">
                                             <div class="relative p-4 w-full max-w-md h-full md:h-auto">
                                                 <div
                                                     class="tw-relative tw-bg-white tw-rounded-lg tw-shadow dark:tw-bg-slate-100">
                                                     <button type="button"
                                                         class="tw-absolute tw-top-3 tw-right-2.5 tw-text-gray-400 tw-bg-transparent hover:tw-bg-gray-200 hover:tw-text-gray-900 tw-rounded-lg tw-text-sm tw-p-1.5 tw-ml-auto tw-inline-flex tw-items-center dark:hover:tw-bg-gray-800 dark:hover:tw-text-white"
-                                                        data-modal-toggle="popup-modal">
+                                                        data-modal-toggle="popup-modal_{{$m->id}}">
                                                         <svg aria-hidden="true" class="tw-w-5 tw-h-5" fill="currentColor"
                                                             viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                                             <path fill-rule="evenodd"
@@ -133,18 +133,19 @@
                                                             class="tw-mb-5 tw-flex tw-justify-center tw-text-md tw-font-normal tw-text-gray-500 dark:tw-text-gray-400">
                                                             Hapus data Mutasi?</div>
                                                         <div class="tw-flex tw-justify-center">
-                                                            <button type="submit" data-modal-toggle="popup-modal"
+                                                            <button type="submit" data-modal-toggle="popup-modal_{{$m->id}}"
                                                                 type="button"
                                                                 class="tw-text-white tw-bg-red-600 hover:tw-bg-red-800 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-red-300 dark:focus:tw-ring-red-800 tw-font-medium tw-rounded-lg tw-text-sm tw-inline-flex tw-items-center tw-py-2.5 tw-text-center tw-mr-2 tw-px-6">
                                                                 Ya
                                                             </button>
-                                                            <button data-modal-toggle="popup-modal" type="button"
+                                                            <button data-modal-toggle="popup-modal_{{$m->id}}" type="button"
                                                                 class="tw-text-gray-500 tw-bg-white hover:tw-bg-gray-100 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-gray-200 tw-rounded-lg tw-border tw-border-gray-200 tw-text-sm tw-font-medium tw-py-2.5 hover:tw-text-gray-900 focus:tw-z-10 dark:tw-bg-gray-700 dark:tw-text-gray-300 dark:tw-border-gray-500 dark:hover:tw-text-white dark:hover:tw-bg-gray-600 dark:focus:tw-ring-gray-600 tw-px-4">Tidak</button>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div> --}}
+                                        </div>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach
@@ -152,16 +153,13 @@
                 </table>
             </div>
         </div>
+        @foreach($mutasi as $m)
+        @isset($m->id)
         <script>
-            function confirmDelete(e) {
-                if(confirm('Are you sure ?'))
-                e.e;
-                else {
-                    e.preventDefault();
-                }
-            }
+            
+            var mutasi_id = $(this).val();
 
-            const modal = document.querySelector('.popup-modal');
+            const modal = document.getElementById('.popup-modal_{{$m->id}}');
 
             const showModal = document.querySelector('.showModal');
 
@@ -169,5 +167,7 @@
                 modal.classList.remove('hidden')
             });
         </script>
+        @endisset
+        @endforeach
     @endif
 @endsection
