@@ -544,13 +544,13 @@
                                                                 {{ $nm->MapelJurusan->MapelId }}
                                                             </th>
                                                             <td class="tw-py-4 tw-px-6">
-                                                                -
+                                                              {{ $nm->kkm }}
                                                             </td>
                                                             <td class="tw-py-4 tw-px-6">
-                                                                -
+                                                              {{ $nm->nilai_pengetahuan }}
                                                             </td>
                                                             <td class="tw-py-4 tw-px-6">
-                                                                -
+                                                              {{ $nm->nilai_keterampilan }}
                                                             </td>
                                                         </tr>
                                                     @endforeach
@@ -588,13 +588,13 @@
                                                                 {{ $nm->MapelJurusan->MapelId }}
                                                             </th>
                                                             <td class="tw-py-4 tw-px-6">
-                                                                -
+                                                              {{ $nm->kkm }}
                                                             </td>
                                                             <td class="tw-py-4 tw-px-6">
-                                                                -
+                                                              {{ $nm->nilai_pengetahuan }}
                                                             </td>
                                                             <td class="tw-py-4 tw-px-6">
-                                                                -
+                                                              {{ $nm->nilai_keterampilan }}
                                                             </td>
                                                         </tr>
                                                     @endforeach
