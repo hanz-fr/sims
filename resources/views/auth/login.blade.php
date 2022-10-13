@@ -20,11 +20,11 @@
   <div class="tw-mx-auto tw-container">
     <div class="tw-bg-white tw-rounded-[50px] tw-flex tw-flex-col tw-mx-auto tw-my-28 tw-px-20 tw-py-11 tw-top-1/2 tw-w-3/5 tw-h-3/5 tw-border tw-border-slate-200 tw-shadow-xl tw-text-center">
         <img class="tw-w-1/2 tw-mx-auto" src="assets/img/regist-sc.svg" alt="" srcset="">
-          <div class="tw-text-3xl tw-font-bold tw-text-sims-400 tw-font-pop tw-mt-5">Registration Success</div>
-          <div class="tw-text-sm tw-text-[#B8B8B8] tw-font-medium tw-font-pop tw-mt-3">Please login using your newly created account.</div>
+          <div class="tw-text-3xl tw-font-bold tw-text-sims-400 tw-font-pop tw-mt-5">Registrasi Berhasil</div>
+          <div class="tw-text-sm tw-text-[#B8B8B8] tw-font-medium tw-font-pop tw-mt-3">Silahkan masuk dengan akun baru anda.</div>
           <a href="/login">
           <button class="tw-font-ubuntu tw-bg-[#90C2C2] tw-py-3 text-md tw-mx-auto tw-font-medium tw-text-white tw-mt-9 hover:tw-bg-[#5B9C9C] tw-w-2/4">
-          Okay
+          Oke!
         </button>
       </a>
     </div> <!-- card -->
@@ -36,8 +36,8 @@
     <div class="tw-flex lg:tw-flex-row sm:tw-flex-col-reverse tw-bg-white tw-px-20 tw-py-16 tw-mx-auto tw-w-2/3 tw-h-3/5 tw-border tw-border-slate-200 tw-shadow-xl">
         <!-- form section -->
         <div class="input-area lg:tw-w-3/5 tw-mr-8 sm:tw-w-full">
-          <div class="tw-text-3xl tw-text-sims-400 tw-font-pop tw-font-bold">Welcome</div>
-          <div class="tw-text-sm tw-mt-2 tw-text-slate-400 tw-font-pop">Please login to access the website</div>
+          <div class="tw-text-3xl tw-text-sims-400 tw-font-pop tw-font-bold">Selamat Datang</div>
+          <div class="tw-text-sm tw-mt-2 tw-text-slate-400 tw-font-pop">Masuk untuk mengakses website</div>
           <form action="/loginuser" method="post" class="tw-mt-12">
             @csrf
             <ul class="tw-flex tw-flex-col tw-gap-5 tw-font-ubuntu">
@@ -48,19 +48,19 @@
                 @enderror
               </li>
               <li>
-                <input type="password" name="password" id="password" @error('password') is-invalid @enderror placeholder="Password" class="tw-font-ubuntu tw-font-medium tw-px-4 tw-py-3 tw-border-2 tw-text-gray-500 tw-border-gray-300 tw-w-full tw-block tw-text-sm placeholder:tw-text-gray-400 focus:placeholder:tw-invisible focus:tw-outline-none focus:tw-ring-1 focus:tw-ring-sims-400 focus:tw-border-sims-400 invalid:tw-text-pink-700 tw-peer invalid:focus:tw-ring-pink-700 invalid:focus:tw-border-pink-700">
+                <input type="password" name="password" id="password" @error('password') is-invalid @enderror placeholder="Kata Sandi" class="tw-font-ubuntu tw-font-medium tw-px-4 tw-py-3 tw-border-2 tw-text-gray-500 tw-border-gray-300 tw-w-full tw-block tw-text-sm placeholder:tw-text-gray-400 focus:placeholder:tw-invisible focus:tw-outline-none focus:tw-ring-1 focus:tw-ring-sims-400 focus:tw-border-sims-400 invalid:tw-text-pink-700 tw-peer invalid:focus:tw-ring-pink-700 invalid:focus:tw-border-pink-700">
                 @error('password')
                   <div class="tw-text-sm tw-text-pink-700 tw-mt-1">{{ $message }}</div>
                 @enderror
               </li>
               <li class="tw-flex tw-justify-end">
-                <a href="/forgot-password" class="tw-text-sims-400 tw-underline tw-text-sm">Forgot Password?</a>
+                <a href="/forgot-password" class="tw-text-sims-400 tw-underline tw-text-sm">Lupa Kata Sandi?</a>
               </li>
               <li>
-                <button type="submit" class="tw-bg-[#90C2C2] tw-w-full tw-py-3 tw-text-sm tw-font-medium tw-text-white hover:tw-bg-[#5B9C9C]">Login</button>
+                <button type="submit" class="tw-bg-[#90C2C2] tw-w-full tw-py-3 tw-text-sm tw-font-medium tw-text-white hover:tw-bg-[#5B9C9C]">Masuk</button>
               </li>
               <li class="tw-text-center tw-mb-8">
-                <a href="/register" class="tw-text-sims-400 tw-underline tw-text-sm">Don't have an account?</a>
+                <a href="/register" class="tw-text-sims-400 tw-underline tw-text-sm">Tidak punya akun?</a>
               </li>
             </ul>
           </form>

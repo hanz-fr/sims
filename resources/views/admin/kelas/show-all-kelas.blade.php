@@ -57,7 +57,7 @@
                         <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">JURUSAN</th>
                         <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">ROMBEL</th>
                         <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">LENGKAP</th>
-                        <th scope="col" class="tw-py-3 tw-px-6">AKSI</th>
+                        <th scope="col" class="tw-py-3 tw-px-6">ACTION</th>
                     </tr>
                 </thead>
                 <tbody class="tw-text-base">

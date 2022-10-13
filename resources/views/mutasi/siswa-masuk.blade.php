@@ -67,7 +67,7 @@
                             <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">TANGGAL MASUK</th>
                             <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">DITERIMA DI KELAS</th>
                             <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">PINDAH DARI/ALASAN</th>
-                            <th scope="col" class="tw-py-3 tw-px-6">ACTION</th>
+                            <th scope="col" class="tw-py-3 tw-px-6">AKSI</th>
                         </tr>
                     </thead>
                     <tbody class="tw-text-base">

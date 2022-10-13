@@ -6,7 +6,7 @@
             <a href="/detail-mata-pelajaran-jurusan">
                 <i class="fa-solid fa-chevron-left tw-text-2xl tw-text-gray-300 hover:tw-text-gray-600"></i>
             </a>
-            <div class="tw-text-2xl tw-ml-3 tw-font-pop tw-font-semibold tw-text-gray-300">Sunting Mata Pelajaran Jurusan
+            <div class="tw-text-2xl tw-ml-3 tw-font-pop tw-font-semibold tw-text-gray-300">Edit Mata Pelajaran Jurusan
             </div>
         </div>
         <div class="tw-flex tw-justify-between tw-mb-8 tw-mt-14 shadow-cs tw-rounded-xl tw-mx-auto tw-overflow-hidden">
@@ -19,8 +19,7 @@
                 <form action="">
                     @method('PUT')
                     <div class="tw-font-ubuntu tw-justify-center">
-                        <label for="id" class="tw-font-bold tw-text-lg tw-flex tw-mb-2 tw-text-admin-300">ID
-                            Mapel</label>
+                        <label for="id" class="tw-font-bold tw-text-lg tw-flex tw-mb-2 tw-text-admin-300">ID Mapel</label>
                         <select id="id"
                             class="tw-border tw-w-[500px] tw-border-admin-300 tw-rounded-2xl tw-py-3 tw-px-4 focus:tw-outline-admin-300">
                             <option selected>1</option>
@@ -36,8 +35,7 @@
                     <div class="tw-font-ubuntu tw-mt-8 tw-justify-center">
                         <label for="nama" class="tw-font-bold tw-text-lg tw-flex tw-mb-2 tw-text-admin-300">Nama
                             Mapel</label>
-                        <input type="text" id="nama" name="Nama"
-                            class="tw-border tw-w-[500px] tw-border-admin-300 tw-rounded-2xl tw-py-3 tw-px-4 focus:tw-outline-admin-300">
+                        <input type="text" id="nama" name="Nama" class="tw-border tw-w-[500px] tw-border-admin-300 tw-rounded-2xl tw-py-3 tw-px-4 focus:tw-outline-admin-300">
                     </div>
 
                     <div class="tw-font-ubuntu tw-mt-8 tw-justify-center">
@@ -56,7 +54,7 @@
                     <div class="tw-font-ubuntu tw-flex tw-mt-12 tw-justify-center">
                         <button type="submit"
                             class="tw-text-white tw-bg-admin-300 hover:tw-bg-admin-600 tw-px-8 tw-py-3 tw-rounded-lg">
-                            Submit
+                            Save Changes
                         </button>
                     </div>
                 </form>

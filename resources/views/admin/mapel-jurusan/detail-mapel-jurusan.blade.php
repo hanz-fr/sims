@@ -42,8 +42,8 @@
                     Suspendisse vulputate felis velit, in iaculis neque semper nec.
                 </span> --}}
                 <div class="tw-mt-20">
-                    <p class="tw-font-bold">Waktu Pembuatan: <span class="tw-font-thin">10 Oktober 2023, 09:00</span> </p>
-                    <p class="tw-font-bold">Waktu Pembaruan: <span class="tw-font-thin">27 Januari 2024, 23:44</span> </p>
+                    <p class="tw-font-bold">Created: <span class="tw-font-thin">10 Oktober 2023, 09:00</span> </p>
+                    <p class="tw-font-bold">Updated: <span class="tw-font-thin">27 January 2024, 23:44</span> </p>
                 </div>
             </div>
         </div>
@@ -51,11 +51,11 @@
         <div class="tw-my-10 tw-flex tw-gap-4 tw-justify-end tw-font-ubuntu">
             <a href="/edit-mata-pelajaran-jurusan"
                 class="tw-bg-[#FFCF86] hover:tw-bg-[#ffba51] tw-text-white tw-px-7 tw-py-3 tw-rounded-lg">
-                Edit
+                Edit Mapel Jurusan
             </a>
             <form action="" class="tw-inline-flex">
                 <a href="" class="tw-bg-[#FF7575] hover:tw-bg-salmon-600 tw-px-7 tw-py-3  tw-text-white tw-rounded-lg">
-                    Hapus
+                    Delete Mapel Jurusan
                 </a>
             </form>
         </div>
