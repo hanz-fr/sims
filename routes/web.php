@@ -148,7 +148,7 @@ Route::middleware(['admin'])->group(function() {
 
     /* SHOW ALL KELAS */
     Route::get('/all-kelas', function () {
-        return view('all-kelas', [
+        return view('admin.kelas.all-kelas', [
             'title' => 'List Semua Kelas',
             'active' => 'data-induk'
         ]);
@@ -156,7 +156,7 @@ Route::middleware(['admin'])->group(function() {
     
     /* SHOW KELAS DETAIL */
     Route::get('/detail-kelas', function () {
-        return view('detail-kelas', [
+        return view('admin.kelas.detail-kelas', [
             'title' => 'Detail Kelas',
             'active' => 'data-induk'
         ]);
@@ -164,7 +164,7 @@ Route::middleware(['admin'])->group(function() {
     
     /* ADMIN LOGIN */
     Route::get('/admin', function () {
-        return view('login-admin', [
+        return view('admin.login', [
             'title' => 'Admin Login',
             'active' => 'admin'
         ]);
@@ -173,7 +173,7 @@ Route::middleware(['admin'])->group(function() {
     
     /* ADMIN DASHBOARD */
     Route::get('/dashboard', function () {
-        return view('dashboard-admin', [
+        return view('admin.dashboard', [
             'title' => 'Dashboard Admin',
             'active' => 'admin'
         ]);
@@ -182,7 +182,7 @@ Route::middleware(['admin'])->group(function() {
     
     /* MANAGE USER */
     Route::get('/manage-user', function () {
-        return view('manage-user', [
+        return view('admin.account.manage-user', [
             'title' => 'Manage User SIMS',
             'active' => 'account'
         ]);
@@ -191,7 +191,7 @@ Route::middleware(['admin'])->group(function() {
     
     /* MAPEL JURUSAN */
     Route::get('/mata-pelajaran-jurusan', function () {
-        return view('mapel-jurusan', [
+        return view('admin.mapel-jurusan.mapel-jurusan', [
             'title' => 'Mata Pelajaran',
             'active' => 'database'
         ]);
@@ -200,7 +200,7 @@ Route::middleware(['admin'])->group(function() {
     
     /* DETAIL MAPEL JURUSAN */
     Route::get('/detail-mata-pelajaran-jurusan', function () {
-        return view('detail-mapel-jurusan', [
+        return view('admin.mapel-jurusan.detail-mapel-jurusan', [
             'title' => 'Mata Pelajaran',
             'active' => 'database'
         ]);
@@ -209,7 +209,7 @@ Route::middleware(['admin'])->group(function() {
     
     /* CREATE MAPEL JURUSAN */
     Route::get('/create-mata-pelajaran-jurusan', function () {
-        return view('create-mapel-jurusan', [
+        return view('admin.mapel-jurusan.create-mapel-jurusan', [
             'title' => 'Mata Pelajaran',
             'active' => 'database'
         ]);
@@ -217,7 +217,7 @@ Route::middleware(['admin'])->group(function() {
 
     /* EDIT MAPEL JURUSAN */
     Route::get('/edit-mata-pelajaran-jurusan', function () {
-        return view('edit-mapel-jurusan', [
+        return view('admin.mapel-jurusan.edit-mapel-jurusan', [
             'title' => 'Mata Pelajaran',
             'active' => 'database'
         ]);
@@ -226,7 +226,7 @@ Route::middleware(['admin'])->group(function() {
     
     /* SHOW USER DETAIL */
     Route::get('/show-detail', function () {
-        return view('account.show-detail', [
+        return view('admin.account.show-detail', [
             'title' => 'Account Details',
             'active' => 'account'
         ]);
@@ -235,7 +235,7 @@ Route::middleware(['admin'])->group(function() {
     
     /* EDIT USER */
     Route::get('/edit-account', function () {
-        return view('account.edit', [
+        return view('admin.account.edit', [
             'title' => 'Edit Account',
             'active' => 'account'
         ]);
@@ -244,7 +244,7 @@ Route::middleware(['admin'])->group(function() {
     
     /* CREATE USER */
     Route::get('/create-account', function () {
-        return view('account.create', [
+        return view('admin.account.create', [
             'title' => 'Create Account',
             'active' => 'account'
         ]);
@@ -253,7 +253,7 @@ Route::middleware(['admin'])->group(function() {
     
     /* SHOW ALL JURUSAN */
     Route::get('/show-jurusan', function () {
-        return view('show-jurusan', [
+        return view('admin.jurusan.show-jurusan', [
             'title' => 'Jurusan',
             'active' => 'database'
         ]);
@@ -262,7 +262,7 @@ Route::middleware(['admin'])->group(function() {
     
     /* SHOW JURUSAN DETAIL */
     Route::get('/show-detail-jurusan', function () {
-        return view('show-detail-jurusan', [
+        return view('admin.jurusan.show-detail-jurusan', [
             'title' => 'Detail Jurusan',
             'active' => 'database'
         ]);
@@ -271,7 +271,7 @@ Route::middleware(['admin'])->group(function() {
     
     /* CREATE JURUSAN */
     Route::get('/create-show-jurusan', function () {
-        return view('create-show-jurusan', [
+        return view('admin.jurusan.create-show-jurusan', [
             'title' => 'Create Jurusan',
             'active' => 'database'
         ]);

@@ -111,7 +111,7 @@ class UserController extends Controller
     {
         $user = User::findOrFail(Auth::id());
 
-        return view('edit-profil', [
+        return view('auth.edit-profil', [
             'title'  => 'Profil User',
             'active' => ''
         ], 
