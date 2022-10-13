@@ -32,7 +32,7 @@
                         </div>
                         <div class="tw-font-ubuntu tw-flex tw-my-12 tw-justify-center">
                             <button type="submit" class="tw-text-white tw-bg-admin-300 hover:tw-bg-admin-600 tw-px-60 tw-py-3 tw-rounded-lg">
-                                Create
+                                Save Changes
                             </button>
                         </div>
                     </form>   
