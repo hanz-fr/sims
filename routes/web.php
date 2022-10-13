@@ -63,10 +63,10 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/api/mutasi-masuk/store', [ApiController::class, 'storeMutasiMasuk']);
     Route::put('/api/mutasi-masuk/update/{id}', [ApiController::class, 'updateMutasiMasuk']);
     Route::delete('/api/mutasi-masuk/delete/{id}', [ApiController::class, 'deleteMutasiMasuk']);
-    
+
 
     /* REKAP DATA SISWA */
-    
+
     Route::get('/rekap-jumlah-siswa', [ApiController::class, 'rekapJumlahSiswa']);
 
 
@@ -100,7 +100,7 @@ Route::middleware(['auth'])->group(function () {
             'active' => 'data-induk'
         ]);
     });
-    
+
 
     /* REKAP NILAI */
 
@@ -110,7 +110,7 @@ Route::middleware(['auth'])->group(function () {
             'active' => 'data-induk'
         ]);
     });
-    
+
 
     /* REKAP SISWA */
 
@@ -120,7 +120,7 @@ Route::middleware(['auth'])->group(function () {
             'active' => 'rekap-siswa'
         ]);
     });
-    
+
 
     /* DATA TIDAK NAIK KELAS */
 
@@ -130,7 +130,7 @@ Route::middleware(['auth'])->group(function () {
             'active' => 'data-induk'
         ]);
     });
-    
+
 
     /* PROFILE */
     Route::get('/profile', [UserController::class, 'show'])->name('profile');
@@ -144,7 +144,7 @@ Route::middleware(['auth'])->group(function () {
 
 /* ROUTE ADMIN */
 
-Route::middleware(['admin'])->group(function() {
+Route::middleware(['admin'])->group(function () {
 
     /* SHOW ALL KELAS */
     Route::get('/all-kelas', function () {
@@ -153,7 +153,7 @@ Route::middleware(['admin'])->group(function() {
             'active' => 'data-induk'
         ]);
     });
-    
+
     /* SHOW KELAS DETAIL */
     Route::get('/detail-kelas', function () {
         return view('admin.kelas.detail-kelas', [
@@ -161,7 +161,7 @@ Route::middleware(['admin'])->group(function() {
             'active' => 'data-induk'
         ]);
     });
-    
+
     /* ADMIN LOGIN */
     Route::get('/admin', function () {
         return view('admin.login', [
@@ -169,8 +169,8 @@ Route::middleware(['admin'])->group(function() {
             'active' => 'admin'
         ]);
     });
-    
-    
+
+
     /* ADMIN DASHBOARD */
     Route::get('/dashboard', function () {
         return view('admin.dashboard', [
@@ -178,8 +178,8 @@ Route::middleware(['admin'])->group(function() {
             'active' => 'admin'
         ]);
     });
-    
-    
+
+
     /* MANAGE USER */
     Route::get('/manage-user', function () {
         return view('admin.account.manage-user', [
@@ -187,8 +187,8 @@ Route::middleware(['admin'])->group(function() {
             'active' => 'account'
         ]);
     });
-    
-    
+
+
     /* MAPEL JURUSAN */
     Route::get('/mata-pelajaran-jurusan', function () {
         return view('admin.mapel-jurusan.mapel-jurusan', [
@@ -196,8 +196,8 @@ Route::middleware(['admin'])->group(function() {
             'active' => 'database'
         ]);
     });
-    
-    
+
+
     /* DETAIL MAPEL JURUSAN */
     Route::get('/detail-mata-pelajaran-jurusan', function () {
         return view('admin.mapel-jurusan.detail-mapel-jurusan', [
@@ -205,8 +205,8 @@ Route::middleware(['admin'])->group(function() {
             'active' => 'database'
         ]);
     });
-    
-    
+
+
     /* CREATE MAPEL JURUSAN */
     Route::get('/create-mata-pelajaran-jurusan', function () {
         return view('admin.mapel-jurusan.create-mapel-jurusan', [
@@ -222,8 +222,23 @@ Route::middleware(['admin'])->group(function() {
             'active' => 'database'
         ]);
     });
-    
-    
+
+    // RAPOR
+    Route::get('/rapor', function () {
+        return view('rapor', [
+            'title' => 'Rapor',
+            'active' => 'database'
+        ]);
+    });
+
+    // DETAIL RAPOR
+    Route::get('/detail-rapor', function () {
+        return view('detail-rapor', [
+            'title' => 'Detail Rapor',
+            'active' => 'database'
+        ]);
+    });
+
     /* SHOW USER DETAIL */
     Route::get('/show-detail', function () {
         return view('admin.account.show-detail', [
@@ -231,8 +246,8 @@ Route::middleware(['admin'])->group(function() {
             'active' => 'account'
         ]);
     });
-    
-    
+
+
     /* EDIT USER */
     Route::get('/edit-account', function () {
         return view('admin.account.edit', [
@@ -240,8 +255,8 @@ Route::middleware(['admin'])->group(function() {
             'active' => 'account'
         ]);
     });
-    
-    
+
+
     /* CREATE USER */
     Route::get('/create-account', function () {
         return view('admin.account.create', [
@@ -249,8 +264,8 @@ Route::middleware(['admin'])->group(function() {
             'active' => 'account'
         ]);
     });
-    
-    
+
+
     /* SHOW ALL JURUSAN */
     Route::get('/show-jurusan', function () {
         return view('admin.jurusan.show-jurusan', [
@@ -258,8 +273,8 @@ Route::middleware(['admin'])->group(function() {
             'active' => 'database'
         ]);
     });
-    
-    
+
+
     /* SHOW JURUSAN DETAIL */
     Route::get('/show-detail-jurusan', function () {
         return view('admin.jurusan.show-detail-jurusan', [
@@ -267,8 +282,8 @@ Route::middleware(['admin'])->group(function() {
             'active' => 'database'
         ]);
     });
-    
-    
+
+
     /* CREATE JURUSAN */
     Route::get('/create-show-jurusan', function () {
         return view('admin.jurusan.create-show-jurusan', [
@@ -291,12 +306,11 @@ Route::middleware(['admin'])->group(function() {
             'active' => 'database'
         ]);
     });
-    
+
     /* LIVE SEARCH TEST */
     Route::get('/live-search-test', [ApiController::class, 'indexLiveSearch']);
-    
-    Route::get('/search', [ApiController::class, 'search']);
 
+    Route::get('/search', [ApiController::class, 'search']);
 });
 
 
@@ -308,6 +322,6 @@ Route::post('/loginuser', [UserController::class, 'authenticate']);
 Route::get('/signout', [UserController::class, 'signOut']);
 
 Route::get('/forgot-password', [UserController::class, 'showForgetPasswordForm']);
-Route::post('/forget-password', [UserController::class, 'submitForgetPasswordForm']); 
+Route::post('/forget-password', [UserController::class, 'submitForgetPasswordForm']);
 Route::get('/reset-password/{token}', [UserController::class, 'showResetPasswordForm'])->name('reset.password');
 Route::post('/reset-password', [UserController::class, 'submitResetPasswordForm'])->name('update.password');
