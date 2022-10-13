@@ -13,7 +13,7 @@
         <div class="tw-rounded-xl tw-font-ubuntu tw-overflow-hidden tw-shadow-md tw-mt-14">
             <div class="tw-flex tw-bg-[#5A6C7C] tw-py-8 tw-pl-8">
                 <div class="tw-flex tw-text-slate-400 tw-mr-8 tw-p-2 tw-bg-none tw-rounded-lg">
-                    <img src="{{ asset('/foto/632be1cb2d5643308951dd692adf09c01937065b79fff0fa36040.jpg') }}" alt=""
+                    <img src="{{ asset('/foto/633abb3763a14nekopara.gif') }}" alt=""
                         class="tw-w-44 tw-object-contain tw-rounded-lg">
                 </div>
                 <div class="tw-flex tw-flex-col tw-text-white">
@@ -31,8 +31,7 @@
                     </span>
                 </div>
             </div>
-            <div class="tw-text-admin-600 tw-flex-col tw-bg-white tw-px-10 tw-py-12">
-                {{-- <div class="tw-mt-1">
+            {{-- <div class="tw-mt-1">
                     <p class="tw-font-bold tw-text-xl tw-mb-4">Semester: <span class="tw-font-normal">7</span>
                     </p>
                     <p class="tw-font-bold tw-text-xl tw-mb-4">Tahun Ajaran: <span class="tw-font-normal">2023-2024</span>
@@ -47,101 +46,101 @@
                     <p class="tw-font-bold tw-text-xl tw-mb-4">Tanggal Kenaikan: <span class="tw-font-normal">16 Juli 2024</span>
                     </p>
                 </div> --}}
-                <div class="tw-my-2">
-                    <table class="tw-w-full  table-auto">
-                        <tbody>
-                            <tr class="tw-border-b">
-                                <td class="tw-p-2 tw-font-bold tw-text-2xl">
-                                    Semester
-                                </td>
-                                <td>
-                                    :
-                                </td>
-                                <td class="tw-p-2 tw-text-xl tw-font-medium">
-                                    7
-                                </td>
-                            </tr>
-                            <tr class="tw-border-b">
-                                <td class="tw-p-2 tw-font-bold tw-text-2xl">
-                                    Tahun Ajaran
-                                </td>
-                                <td>
-                                    :
-                                </td>
-                                <td class="tw-p-2 tw-text-xl tw-font-medium">
-                                    2023-2024
-                                </td>
-                            </tr>
-                            <tr class="tw-border-b">
-                                <td class="tw-p-2 tw-font-bold tw-text-2xl">
-                                    Sakit
-                                </td>
-                                <td>
-                                    :
-                                </td>
-                                <td class="tw-p-2 tw-text-xl tw-font-medium">
-                                    0
-                                </td>
-                            </tr>
-                            <tr class="tw-border-b">
-                                <td class="tw-p-2 tw-font-bold tw-text-2xl">
-                                    Izin
-                                </td>
-                                <td>
-                                    :
-                                </td>
-                                <td class="tw-p-2 tw-text-xl tw-font-medium">
-                                    &infin;
-                                </td>
-                            </tr>
-                            <tr class="tw-border-b">
-                                <td class="tw-p-2 tw-font-bold tw-text-2xl">
-                                    Alpa
-                                </td>
-                                <td>
-                                    :
-                                </td>
-                                <td class="tw-p-2 tw-text-xl tw-font-medium">
-                                    2
-                                </td>
-                            </tr>
-                            <tr class="tw-border-b">
-                                <td class="tw-p-2 tw-font-bold tw-text-2xl">
-                                    Status Kenaikan
-                                </td>
-                                <td>
-                                    :
-                                </td>
-                                <td class="tw-p-2 tw-text-xl tw-font-medium">
-                                    Naik Kelas
-                                </td>
-                            </tr>
-                            <tr class="tw-border-b">
-                                <td class="tw-p-2 tw-font-bold tw-text-2xl">
-                                    Naik ke Kelas
-                                </td>
-                                <td>
-                                    :
-                                </td>
-                                <td class="tw-p-2 tw-text-xl tw-font-medium">
-                                    XIV PPLG 2
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="tw-p-2 tw-font-bold tw-text-2xl">
-                                    Tanggal Kenaikan
-                                </td>
-                                <td>
-                                    :
-                                </td>
-                                <td class="tw-p-2 tw-text-xl tw-font-medium">
-                                    16 Juli 2024
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+
+        </div>
+        <div class="tw-my-2 tw-p-8 tw-text-admin-600 tw-font-ubuntu tw-rounded-xl tw-shadow-md">
+            <table class="tw-w-full  table-auto">
+                <tbody>
+                    <tr class="tw-border-b">
+                        <td class="tw-p-2 tw-font-bold tw-text-2xl">
+                            Semester
+                        </td>
+                        <td class="tw-text-xl">
+                            :
+                        </td>
+                        <td class="tw-py-2 tw-px-0 tw-text-xl tw-font-medium">
+                            7
+                        </td>
+                    </tr>
+                    <tr class="tw-border-b">
+                        <td class="tw-p-2 tw-font-bold tw-text-2xl">
+                            Tahun Ajaran
+                        </td>
+                        <td class="tw-text-xl">
+                            :
+                        </td>
+                        <td class="tw-py-2 tw-px-0 tw-text-xl tw-font-medium">
+                            2023-2024
+                        </td>
+                    </tr>
+                    <tr class="tw-border-b">
+                        <td class="tw-p-2 tw-font-bold tw-text-2xl">
+                            Sakit
+                        </td>
+                        <td class="tw-text-xl">
+                            :
+                        </td>
+                        <td class="tw-py-2 tw-px-0 tw-text-xl tw-font-medium">
+                            0
+                        </td>
+                    </tr>
+                    <tr class="tw-border-b">
+                        <td class="tw-p-2 tw-font-bold tw-text-2xl">
+                            Izin
+                        </td>
+                        <td class="tw-text-xl">
+                            :
+                        </td>
+                        <td class="tw-py-2 tw-px-0 tw-text-xl tw-font-medium">
+                            &infin;
+                        </td>
+                    </tr>
+                    <tr class="tw-border-b">
+                        <td class="tw-p-2 tw-font-bold tw-text-2xl">
+                            Alpa
+                        </td>
+                        <td class="tw-text-xl">
+                            :
+                        </td>
+                        <td class="tw-py-2 tw-px-0 tw-text-xl tw-font-medium">
+                            2
+                        </td>
+                    </tr>
+                    <tr class="tw-border-b">
+                        <td class="tw-p-2 tw-font-bold tw-text-2xl">
+                            Status Kenaikan
+                        </td>
+                        <td class="tw-text-xl">
+                            :
+                        </td>
+                        <td class="tw-py-2 tw-px-0 tw-text-xl tw-font-medium">
+                            Naik Kelas
+                        </td>
+                    </tr>
+                    <tr class="tw-border-b">
+                        <td class="tw-p-2 tw-font-bold tw-text-2xl">
+                            Naik ke Kelas
+                        </td>
+                        <td class="tw-text-xl">
+                            :
+                        </td>
+                        <td class="tw-py-2 tw-px-0 tw-text-xl tw-font-medium">
+                            XIV PPLG 2
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tw-p-2 tw-font-bold tw-text-2xl">
+                            Tanggal Kenaikan
+                        </td>
+                        <td class="tw-text-xl">
+                            :
+                        </td>
+                        <td class="tw-py-2 tw-px-0 tw-text-xl tw-font-medium">
+                            16 Juli 2024
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
         <div class="tw-my-10 tw-flex tw-gap-4 tw-justify-end tw-font-ubuntu tw-pb-5">
