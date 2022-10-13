@@ -284,6 +284,13 @@ Route::middleware(['admin'])->group(function() {
             'active' => 'database'
         ]);
     });
+
+    Route::get('/detail-siswa-admin', function () {
+        return view('detail-siswa-admin', [
+            'title' => 'Detail Siswa',
+            'active' => 'database'
+        ]);
+    });
     
     /* LIVE SEARCH TEST */
     Route::get('/live-search-test', [ApiController::class, 'indexLiveSearch']);
