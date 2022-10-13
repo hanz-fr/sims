@@ -703,7 +703,7 @@ class ApiController extends Controller
 
         if ($kelas->successful()) {
 
-            return view('data-rekap-jumlah-siswa', [
+            return view('rekap-siswa.data-rekap-jumlah-siswa', [
                 'title' => 'Data Rekap Siswa',
                 'active' => 'rekap-siswa',
                 'kelas' => json_decode($kelas)->result

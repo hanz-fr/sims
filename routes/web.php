@@ -115,7 +115,7 @@ Route::middleware(['auth'])->group(function () {
     /* REKAP SISWA */
 
     Route::get('/rekap-siswa', function () {
-        return view('data-rekap-siswa', [
+        return view('rekap-siswa.dashboard-rekap-siswa', [
             'title' => 'Data Rekap Siswa',
             'active' => 'rekap-siswa'
         ]);
@@ -125,7 +125,7 @@ Route::middleware(['auth'])->group(function () {
     /* DATA TIDAK NAIK KELAS */
 
     Route::get('/data-tidak-naik', function () {
-        return view('data-tidak-naik', [
+        return view('rekap-siswa.data-tidak-naik', [
             'title' => 'Data Tidak Naik Kelas',
             'active' => 'data-induk'
         ]);
@@ -225,7 +225,7 @@ Route::middleware(['admin'])->group(function () {
 
     // RAPOR
     Route::get('/rapor', function () {
-        return view('rapor', [
+        return view('admin.raport.rapor', [
             'title' => 'Rapor',
             'active' => 'database'
         ]);
@@ -233,7 +233,7 @@ Route::middleware(['admin'])->group(function () {
 
     // DETAIL RAPOR
     Route::get('/detail-rapor', function () {
-        return view('detail-rapor', [
+        return view('admin.raport.detail-rapor', [
             'title' => 'Detail Rapor',
             'active' => 'database'
         ]);
@@ -294,14 +294,14 @@ Route::middleware(['admin'])->group(function () {
 
     /* ALL SISWA */
     Route::get('/all-siswa', function () {
-        return view('all-siswa-admin', [
+        return view('admin.siswa.all-siswa-admin', [
             'title' => 'Data Seluruh Siswa',
             'active' => 'database'
         ]);
     });
 
     Route::get('/detail-siswa-admin', function () {
-        return view('detail-siswa-admin', [
+        return view('admin.siswa.detail-siswa-admin', [
             'title' => 'Detail Siswa',
             'active' => 'database'
         ]);
