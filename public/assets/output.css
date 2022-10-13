@@ -1017,6 +1017,11 @@ video {
   margin-bottom: 0.5rem;
 }
 
+.tw-my-3 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
 .tw-mt-8 {
   margin-top: 2rem;
 }
@@ -2037,6 +2042,11 @@ video {
   background-color: rgb(244 244 244 / var(--tw-bg-opacity));
 }
 
+.tw-bg-yellow-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(234 179 8 / var(--tw-bg-opacity));
+}
+
 .tw-fill-current {
   fill: currentColor;
 }
@@ -2350,6 +2360,14 @@ video {
 
 .tw-pl-0 {
   padding-left: 0px;
+}
+
+.tw-pb-4 {
+  padding-bottom: 1rem;
+}
+
+.tw-pb-3 {
+  padding-bottom: 0.75rem;
 }
 
 .tw-text-left {
@@ -3274,6 +3292,11 @@ table {
 .hover\:tw-bg-sims-500:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(59 144 145 / var(--tw-bg-opacity));
+}
+
+.hover\:tw-bg-yellow-600:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(202 138 4 / var(--tw-bg-opacity));
 }
 
 .hover\:tw-text-white:hover {
