@@ -226,7 +226,7 @@ Route::middleware(['admin'])->group(function() {
     
     /* SHOW USER DETAIL */
     Route::get('/show-detail', function () {
-        return view('account-detail', [
+        return view('account.show-detail', [
             'title' => 'Account Details',
             'active' => 'account'
         ]);
@@ -235,7 +235,7 @@ Route::middleware(['admin'])->group(function() {
     
     /* EDIT USER */
     Route::get('/edit-account', function () {
-        return view('edit-account', [
+        return view('account.edit', [
             'title' => 'Edit Account',
             'active' => 'account'
         ]);
@@ -244,7 +244,7 @@ Route::middleware(['admin'])->group(function() {
     
     /* CREATE USER */
     Route::get('/create-account', function () {
-        return view('create-account', [
+        return view('account.create', [
             'title' => 'Create Account',
             'active' => 'account'
         ]);
