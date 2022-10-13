@@ -103,7 +103,7 @@
               <tr>
                   {{-- <th scope="col" class="tw-pb-9 tw-px-5"></th> --}}
                   <th scope="col" class="tw-pb-9 tw-px-5">NIP</th>
-                  <th scope="col" class="tw-pb-9 tw-px-5">Nama</th>
+                  <th scope="col" class="tw-pb-9 tw-px-5">Name</th>
                   <th scope="col" class="tw-pb-9 tw-px-5">Created</th>
                   <th scope="col" class="tw-pb-9 tw-px-5">Role</th>
                   <th scope="col" class="tw-pb-9 tw-px-5"></th>

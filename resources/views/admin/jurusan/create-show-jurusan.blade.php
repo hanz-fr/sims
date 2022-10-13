@@ -27,7 +27,7 @@
                             <input type="text" id="nama" name="Nama" class="tw-flex tw-border tw-w-full tw-border-admin-300 tw-rounded-2xl tw-py-3 tw-px-4 focus:tw-outline-admin-300">
                         </div>
                         <div class="tw-font-ubuntu tw-flex-col tw-mt-8 tw-justify-center">
-                            <label for="deskripsi" class="tw-font-bold tw-text-lg tw-flex tw-mb-2 tw-text-admin-300">Deskripsi</label>
+                            <label for="deskripsi" class="tw-font-bold tw-text-lg tw-flex tw-mb-2 tw-text-admin-300">Description</label>
                             <textarea class="tw-flex tw-border tw-w-full tw-border-admin-300 tw-rounded-2xl tw-py-3 tw-px-4 focus:tw-outline-admin-300"></textarea>
                         </div>
                         <div class="tw-font-ubuntu tw-flex tw-my-12 tw-justify-center">

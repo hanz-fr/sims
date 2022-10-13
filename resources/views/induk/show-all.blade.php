@@ -80,7 +80,7 @@
                         <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">NAMA PESERTA DIDIK</th>
                         <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">GENDER</th>
                         <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">KELAS</th>
-                        <th scope="col" class="tw-py-3 tw-px-6">ACTION</th>
+                        <th scope="col" class="tw-py-3 tw-px-6">AKSI</th>
                     </tr>
                 </thead>
                 <tbody class="tw-text-base">
@@ -97,9 +97,11 @@
                             <a href="/rekap-nilai" class="tw-text-white tw-bg-sims-400 hover:tw-bg-sims-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-mr-1">
                                 <i class="fa-light fa-clipboard-list"></i>
                             </a>
+                            @can('tata usaha')
                             <a href="/edit-siswa/{{ $s->nis_siswa }}" class="tw-text-white tw-bg-kuning-500 hover:tw-bg-kuning-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                                 <i class="fa-solid fa-pen-to-square"></i></a>
                             </a>
+                            @endcan
                             <a href="/detail/{{ $s->nis_siswa }}" class="tw-text-white tw-bg-gray-500 hover:tw-bg-gray-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                                 <i class="fa-solid fa-eye"></i>
                             </a>

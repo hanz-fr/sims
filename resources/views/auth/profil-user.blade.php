@@ -16,16 +16,16 @@
             <div class="username tw-flex tw-flex-col tw-justify-center tw-text-sims-400 tw-font-pop tw-font-bold tw-mx-20 tw-mb-12">
                 <div class="tw-text-2xl tw-mb-2">{{ auth()->user()->nama }}</div>
                 <div class="tw-text-xl tw-text-silver-400">
-                    @if (auth()->user()->roles === 1)
+                    @if (auth()->user()->role === 1)
                         Tata Usaha
                     @endif
-                    @if (auth()->user()->roles === 2)
+                    @if (auth()->user()->role === 2)
                         Kesiswaan
                     @endif
-                    @if (auth()->user()->roles === 3)
+                    @if (auth()->user()->role === 3)
                         Kurikulum
                     @endif
-                    @if (auth()->user()->roles === 4)
+                    @if (auth()->user()->role === 4)
                         Wali Kelas
                     @endif
                 </div>
@@ -34,7 +34,7 @@
         {{-- detail --}}
         <div class="tw-flex tw-w-full tw-h-fit tw-mt-5 tw-gap-8">
             <div class="tw-w-3/5 tw-flex tw-flex-col tw-bg-white tw-shadow-md tw-font-pop tw-px-20 tw-pt-10 tw-pb-24">
-                <div class="tw-text-basic-200 tw-mb-20 tw-font-bold tw-text-3xl">Details</div>
+                <div class="tw-text-basic-200 tw-mb-20 tw-font-bold tw-text-3xl">Detail</div>
                 <div class="tw-grid tw-grid-cols-2 tw-justify-between tw-gap-14">
                     <div class="tw-flex tw-flex-col tw-gap-5 tw-font-bold tw-text-xl">
                         <div class="tw-text-sims-400">Nama</div>
@@ -51,16 +51,16 @@
                     <div class="tw-flex tw-flex-col tw-gap-5 tw-font-bold tw-text-xl">
                         <div class="tw-text-sims-400">Bagian</div>
                         <div class="tw-text-basic-200">
-                            @if (auth()->user()->roles === 1)
+                            @if (auth()->user()->role === 1)
                             Tata Usaha
                             @endif
-                            @if (auth()->user()->roles === 2)
+                            @if (auth()->user()->role === 2)
                                 Kesiswaan
                             @endif
-                            @if (auth()->user()->roles === 3)
+                            @if (auth()->user()->role === 3)
                                 Kurikulum
                             @endif
-                            @if (auth()->user()->roles === 4)
+                            @if (auth()->user()->role === 4)
                                 Wali Kelas
                             @endif
                         </div>

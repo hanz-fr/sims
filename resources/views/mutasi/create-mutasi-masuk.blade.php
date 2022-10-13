@@ -130,7 +130,7 @@
             @enderror
         </div>
         <div class="tw-mx-auto tw-text-center tw-mt-10">
-            <button type="submit" class="tw-bg-sims-400 tw-font-medium tw-transition hover:tw-bg-sims-500 tw-text-white tw-py-3 tw-px-6 tw-rounded-lg">Submit</button>
+            <button type="submit" class="tw-bg-sims-400 tw-font-medium tw-transition hover:tw-bg-sims-500 tw-text-white tw-py-3 tw-px-6 tw-rounded-lg">Kirim</button>
         </div>
     </div>
     </form>

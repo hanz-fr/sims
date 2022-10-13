@@ -17,7 +17,7 @@
                     <a href="/create-mata-pelajaran-jurusan"
                         class="tw-bg-admin-300 tw-text-white hover:tw-text-white hover:tw-bg-admin-600  tw-font-ubuntu tw-font-bold tw-rounded-lg tw-px-5 tw-py-2">
                         <i class="fa-solid fa-circle-plus tw-pr-3"></i>
-                        Tambah Mapel
+                        Add New Mapel
                     </a>
                 </div>
             </div>
@@ -26,12 +26,11 @@
                 <table class="tw-mt-10 tw-w-full tw-text-sm tw-text-center">
                     <thead class="tw-text-lg tw-font-pop tw-text-admin-300">
                         <tr>
-                            <th scope="col" class="tw-pb-6 tw-px-5"">ID MAPEL</th>
-                            <th scope="col" class="tw-pb-6 tw-px-5"">NAMA MAPEL
-                            </th>
-                            <th scope="col" class="tw-pb-6 tw-px-5"">WAKTU PEMBUATAN</th>
-                            <th scope="col" class="tw-pb-6 tw-px-5"">WAKTU PEMBARUAN</th>
-                            <th scope="col" class="tw-pb-6 tw-px-5"">AKSI</th>
+                            <th scope="col" class="tw-pb-6 tw-px-5">ID MAPEL</th>
+                            <th scope="col" class="tw-pb-6 tw-px-5">NAMA MAPEL</th>                            
+                            <th scope="col" class="tw-pb-6 tw-px-5">CREATED</th>
+                            <th scope="col" class="tw-pb-6 tw-px-5">UPDATED</th>
+                            <th scope="col" class="tw-pb-6 tw-px-5">ACTION</th>
                         </tr>
                     </thead>
                     <tbody>

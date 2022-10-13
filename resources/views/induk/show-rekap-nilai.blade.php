@@ -5,7 +5,7 @@
 
         <a href="/data-induk-siswa" class=" tw-text-sims-400 tw-text-3xl hover:tw-text-sims-600"><i class="fa-regular fa-chevron-left tw-mt-5"></i></a>
 
-        <div class="tw-text-3xl tw-text-sims-400 tw-font-pop tw-font-semibold tw-flex tw-flex-row tw-mt-9">Data Raport</div>
+        <div class="tw-text-3xl tw-text-sims-400 tw-font-pop tw-font-semibold tw-flex tw-flex-row tw-mt-9">Rekap Nilai Siswa</div>
         <div class="tw-flex tw-justify-end tw-mb-5">
             <a href="" class="tw-bg-sims-400 tw-text-white hover:tw-text-white  tw-font-pop hover:tw-bg-sims-600 tw-px-5 tw-py-2 tw-rounded-lg tw-mr-5">Export</a>
             <a href="" class="tw-bg-sims-400 tw-text-white hover:tw-text-white  tw-font-pop hover:tw-bg-sims-600 tw-px-5 tw-py-2 tw-rounded-lg">import</a>
