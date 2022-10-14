@@ -6,11 +6,11 @@
 
     {{-- title --}}
     <section class="tw-flex tw-items-center">
-      <a href="/add-mutasi-keluar">
+      <a href="/data-mutasi">
         <i class="fa-solid fa-chevron-left tw-text-gray-400 tw-text-2xl"></i>
       </a>
       <i class="fa-solid fa-user tw-text-admin-300 tw-text-3xl tw-ml-5"></i>
-      <div class="tw-text-2xl tw-ml-4 tw-font-pop tw-font-semibold tw-text-gray-300">Edit Data Mutasi</div>
+      <div class="tw-text-2xl tw-ml-4 tw-font-pop tw-font-semibold tw-text-gray-300">Add New Mutasi</div>
     </section>
 
     {{-- card form add data --}}
@@ -84,7 +84,7 @@
         </div>
       </section>
       <div class="tw-float-right tw-flex tw-justify-end tw-mt-12">
-        <button type="submit" class="tw-bg-[#90C2C2] hover:tw-bg-sims-400 tw-mr-8 tw-py-5 tw-px-16 tw-text-white tw-font-ubuntu tw-rounded-lg">Save Changes</button>
+        <button type="submit" class="tw-bg-[#90C2C2] hover:tw-bg-sims-400 tw-mr-8 tw-py-5 tw-px-16 tw-text-white tw-font-ubuntu tw-rounded-lg">Add New Data</button>
       </div>
     </form>
     

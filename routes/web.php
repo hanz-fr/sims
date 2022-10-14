@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ForgotPasswordController;
 
 /*
@@ -148,7 +149,7 @@ Route::middleware(['admin'])->group(function () {
 
     /* SHOW ALL KELAS */
     Route::get('/all-kelas', function () {
-        return view('admin.kelas.all-kelas', [
+        return view('admin.kelas.show-all-kelas', [
             'title' => 'List Semua Kelas',
             'active' => 'data-induk'
         ]);
@@ -163,13 +164,8 @@ Route::middleware(['admin'])->group(function () {
     });
 
     /* ADMIN LOGIN */
-    Route::get('/admin', function () {
-        return view('admin.login', [
-            'title' => 'Admin Login',
-            'active' => 'admin'
-        ]);
-    });
-
+    Route::get('/admin', [AdminController::class, 'index'])->name('login.admin');
+    Route::post('/login-admin', [AdminController::class, 'authenticate']);
 
     /* ADMIN DASHBOARD */
     Route::get('/dashboard', function () {
@@ -179,6 +175,13 @@ Route::middleware(['admin'])->group(function () {
         ]);
     });
 
+    // DATABASE DASHBOARD
+    Route::get('/database', function () {
+        return view('admin.dashboard-database', [
+            'title' => 'Database',
+            'active' => 'database'
+        ]);
+    });
 
     /* MANAGE USER */
     Route::get('/manage-user', function () {
@@ -303,6 +306,56 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/detail-siswa-admin', function () {
         return view('admin.siswa.detail-siswa-admin', [
             'title' => 'Detail Siswa',
+            'active' => 'database'
+        ]);
+    });
+
+    // MUTASI
+    Route::get('/data-mutasi', function () {
+        return view('admin.mutasi.show-all-mutasi', [
+            'title' => 'Data Mutasi',
+            'active' => 'database'
+        ]);
+    });
+
+    Route::get('/detail-mutasi-keluar', function () {
+        return view('admin.mutasi.detail-keluar', [
+            'title' => 'Detail Mutasi Keluar',
+            'active' => 'database'
+        ]);
+    });
+
+    Route::get('/detail-mutasi-masuk', function () {
+        return view('admin.mutasi.detail-masuk', [
+            'title' => 'Detail Mutasi Masuk',
+            'active' => 'database'
+        ]);
+    });
+
+    Route::get('/add-mutasi-keluar', function () {
+        return view('admin.mutasi.create-keluar', [
+            'title' => 'Add Mutasi Keluar',
+            'active' => 'database'
+        ]);
+    });
+
+    Route::get('/add-mutasi-masuk', function () {
+        return view('admin.mutasi.create-masuk', [
+            'title' => 'Add Mutasi Masuk',
+            'active' => 'database'
+        ]);
+    });
+
+    Route::get('/edit-mutasi-keluar', function () {
+        return view('admin.mutasi.edit-keluar', [
+            'title' => 'Edit Mutasi Keluar',
+            'active' => 'database'
+        ]);
+    });
+
+    Route::get('/edit-mutasi-masuk', function () {
+        return view('admin.mutasi.edit-masuk', [
+            'title' => 'Edit Mutasi Masuk',
             'active' => 'database'
         ]);
     });

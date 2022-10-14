@@ -2,17 +2,17 @@
 
 @section('content')
 <div class="tw-m-10 tw-w-screen tw-flex">
-   <section class="tw-flex tw-flex-col tw-gap-8">
-      <div class="tw-w-full tw-flex tw-mb-8">
+   <div class="tw-gap-8">
+      <section class="tw-w-full tw-flex tw-mb-8">
          <div class="tw-border-l-8 tw-border-admin-300 tw-h-16 tw-mr-5"></div>
          <div class="tw-flex tw-flex-col">
             <div class="tw-text-3xl tw-font-pop tw-font-bold tw-text-admin-300">Welcome Back, John</div>
             <div class="tw-text-xl tw-font-pop tw-font-normal tw-text-gray-300">what are you going to manage today?</div>
          </div>
-      </div>
+      </section>
 
       {{-- account management --}}
-      <div class="tw-w-full tw-flex tw-flex-col">
+      <section class="tw-w-full tw-flex tw-flex-col">
          <div class="tw-flex">
             <i class="fa-solid fa-user-group tw-text-admin-300 tw-text-xl"></i>
             <div class="tw-text-xl tw-ml-3 tw-font-pop tw-font-semibold tw-text-gray-300">Account Management</div>
@@ -79,10 +79,10 @@
                </div>
             </li>
          </ul>
-      </div>
+      </section>
       
       {{-- data management --}}
-      <div class="shadow-cs tw-bg-white tw-px-8 tw-py-7 tw-w-full">
+      <section class="shadow-cs tw-bg-white tw-px-8 tw-py-7 tw-w-full">
          <div class="tw-flex">
             <i class="fa-regular fa-sliders tw-text-[#90C2C2] tw-text-xl"></i>
             <div class="tw-text-xl tw-ml-3 tw-font-pop tw-font-semibold tw-text-gray-400">Data Management</div>
@@ -277,7 +277,7 @@
                </li>
             </ul>
          </div>
-      </div>
-   </section>
+      </section>
+   </div>
 </div>
 @endsection

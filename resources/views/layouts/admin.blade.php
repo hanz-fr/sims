@@ -10,13 +10,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
   {{-- css --}}
-  <link rel="stylesheet" href="assets/output.css">
+  <link rel="stylesheet" href="{{ URL::asset('assets/output.css') }}">
   {{-- icon --}}
-  <link rel="stylesheet" href="font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="{{ URL::asset('font-awesome/css/all.min.css') }}">
   @stack('css')
 </head>
-<body  x-data="{show:false}" class="tw-bg-white">
-   <div x-show="show" class="modal-overlay tw-absolute tw-w-full tw-h-full tw-bg-gray-900 tw-opacity-50"></div>
+<body class="tw-bg-white">
+   {{-- <div x-show="show" class="modal-overlay tw-absolute tw-w-full tw-h-full tw-bg-gray-900 tw-opacity-50"></div> --}}
 <div class="tw-flex tw-overflow-x-hidden tw-h-screen">
    {{-- sidebar --}}
   <aside class="tw-w-64 tw-top-0 tw-bottom-0 tw-sticky" aria-label="Sidebar">
@@ -34,7 +34,7 @@
                   </a>
                </li>
                <li>
-               <a href="#" class="{{ ($active === "database") ? 'tw-bg-[#5A6C7C] tw-text-white' : '' }} nav-item-admin tw-transition-colors tw-duration-300">
+               <a href="/database" class="{{ ($active === "database") ? 'tw-bg-[#5A6C7C] tw-text-white' : '' }} nav-item-admin tw-transition-colors tw-duration-300">
                   <i class="fa-regular fa-database tw-text-[#B2FEFE] tw-text-2xl"></i>
                   <span class="tw-ml-3 tw-font-bold tw-text-lg">Database</span>
                </a>
