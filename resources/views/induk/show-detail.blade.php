@@ -624,111 +624,25 @@
                                                 </tr>
                                             </thead>
                                             <tbody class="tw-text-base text-center">
-                                                <tr class="tw-bg-white tw-border">
-                                                    <th scope="row"
-                                                        class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                                                        Bahasa Inggris
-                                                    </th>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        70
-                                                    </td>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        72
-                                                    </td>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        75
-                                                    </td>
-                                                </tr>
-                                                <tr class="tw-border tw-bg-gray-100">
-                                                    <th scope="row"
-                                                        class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                                                        Bahasa Indonesia
-                                                    </th>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        81
-                                                    </td>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        88
-                                                    </td>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        75
-                                                    </td>
-                                                </tr>
-                                                <tr class="tw-bg-white tw-border">
-                                                    <th scope="row"
-                                                        class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                                                        Agama
-                                                    </th>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        95
-                                                    </td>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        98
-                                                    </td>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        72
-                                                    </td>
-                                                </tr>
-                                                <tr class="tw-bg-gray-100 tw-border">
-                                                    <th scope="row"
-                                                        class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                                                        PPKN
-                                                    </th>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        77
-                                                    </td>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        77
-                                                    </td>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        75
-                                                    </td>
-                                                </tr>
-                                                <tr class="tw-bg-white tw-border">
-                                                    <th scope="row"
-                                                        class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                                                        Matematika
-                                                    </th>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        76
-                                                    </td>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        72
-                                                    </td>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        72
-                                                    </td>
-                                                </tr>
-                                                <tr class="tw-bg-gray-100 tw-border">
-                                                    <th scope="row"
-                                                        class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                                                        Bahasa Jepang
-                                                    </th>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        72
-                                                    </td>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        87
-                                                    </td>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        75
-                                                    </td>
-                                                </tr>
-                                                <tr class="tw-bg-white tw-border">
-                                                    <th scope="row"
-                                                        class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                                                        Matematika
-                                                    </th>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        76
-                                                    </td>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        72
-                                                    </td>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        72
-                                                    </td>
-                                                </tr>
+                                                @foreach (collect($siswa->raport)->where('semester', 3) as $rp)
+                                                @foreach ($rp->NilaiMapel as $nm)
+                                                    <tr class="tw-bg-white tw-border">
+                                                        <th scope="row"
+                                                            class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
+                                                            {{ $nm->MapelJurusan->MapelId }}
+                                                        </th>
+                                                        <td class="tw-py-4 tw-px-6">
+                                                          {{ $nm->kkm }}
+                                                        </td>
+                                                        <td class="tw-py-4 tw-px-6">
+                                                          {{ $nm->nilai_pengetahuan }}
+                                                        </td>
+                                                        <td class="tw-py-4 tw-px-6">
+                                                          {{ $nm->nilai_keterampilan }}
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
+                                                @endforeach
                                             </tbody>
                                         </table>
                                     </div>
@@ -754,111 +668,25 @@
                                                 </tr>
                                             </thead>
                                             <tbody class="tw-text-base text-center">
-                                                <tr class="tw-bg-white tw-border">
-                                                    <th scope="row"
-                                                        class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                                                        Bahasa Inggris
-                                                    </th>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        70
-                                                    </td>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        72
-                                                    </td>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        75
-                                                    </td>
-                                                </tr>
-                                                <tr class="tw-border tw-bg-gray-100">
-                                                    <th scope="row"
-                                                        class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                                                        Bahasa Indonesia
-                                                    </th>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        81
-                                                    </td>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        88
-                                                    </td>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        75
-                                                    </td>
-                                                </tr>
-                                                <tr class="tw-bg-white tw-border">
-                                                    <th scope="row"
-                                                        class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                                                        Agama
-                                                    </th>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        95
-                                                    </td>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        98
-                                                    </td>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        72
-                                                    </td>
-                                                </tr>
-                                                <tr class="tw-bg-gray-100 tw-border">
-                                                    <th scope="row"
-                                                        class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                                                        PPKN
-                                                    </th>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        77
-                                                    </td>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        77
-                                                    </td>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        75
-                                                    </td>
-                                                </tr>
-                                                <tr class="tw-bg-white tw-border">
-                                                    <th scope="row"
-                                                        class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                                                        Matematika
-                                                    </th>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        76
-                                                    </td>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        72
-                                                    </td>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        72
-                                                    </td>
-                                                </tr>
-                                                <tr class="tw-bg-gray-100 tw-border">
-                                                    <th scope="row"
-                                                        class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                                                        Bahasa Jepang
-                                                    </th>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        72
-                                                    </td>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        87
-                                                    </td>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        75
-                                                    </td>
-                                                </tr>
-                                                <tr class="tw-bg-white tw-border">
-                                                    <th scope="row"
-                                                        class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                                                        Matematika
-                                                    </th>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        76
-                                                    </td>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        72
-                                                    </td>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        72
-                                                    </td>
-                                                </tr>
+                                                @foreach (collect($siswa->raport)->where('semester', 4) as $rp)
+                                                    @foreach ($rp->NilaiMapel as $nm)
+                                                        <tr class="tw-bg-white tw-border">
+                                                            <th scope="row"
+                                                                class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
+                                                                {{ $nm->MapelJurusan->MapelId }}
+                                                            </th>
+                                                            <td class="tw-py-4 tw-px-6">
+                                                              {{ $nm->kkm }}
+                                                            </td>
+                                                            <td class="tw-py-4 tw-px-6">
+                                                              {{ $nm->nilai_pengetahuan }}
+                                                            </td>
+                                                            <td class="tw-py-4 tw-px-6">
+                                                              {{ $nm->nilai_keterampilan }}
+                                                            </td>
+                                                        </tr>
+                                                    @endforeach
+                                                @endforeach
                                             </tbody>
                                         </table>
                                     </div>
@@ -884,111 +712,25 @@
                                                 </tr>
                                             </thead>
                                             <tbody class="tw-text-base text-center">
-                                                <tr class="tw-bg-white tw-border">
-                                                    <th scope="row"
-                                                        class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                                                        Bahasa Inggris
-                                                    </th>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        70
-                                                    </td>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        72
-                                                    </td>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        75
-                                                    </td>
-                                                </tr>
-                                                <tr class="tw-border tw-bg-gray-100">
-                                                    <th scope="row"
-                                                        class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                                                        Bahasa Indonesia
-                                                    </th>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        81
-                                                    </td>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        88
-                                                    </td>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        75
-                                                    </td>
-                                                </tr>
-                                                <tr class="tw-bg-white tw-border">
-                                                    <th scope="row"
-                                                        class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                                                        Agama
-                                                    </th>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        95
-                                                    </td>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        98
-                                                    </td>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        72
-                                                    </td>
-                                                </tr>
-                                                <tr class="tw-bg-gray-100 tw-border">
-                                                    <th scope="row"
-                                                        class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                                                        PPKN
-                                                    </th>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        77
-                                                    </td>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        77
-                                                    </td>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        75
-                                                    </td>
-                                                </tr>
-                                                <tr class="tw-bg-white tw-border">
-                                                    <th scope="row"
-                                                        class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                                                        Matematika
-                                                    </th>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        76
-                                                    </td>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        72
-                                                    </td>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        72
-                                                    </td>
-                                                </tr>
-                                                <tr class="tw-bg-gray-100 tw-border">
-                                                    <th scope="row"
-                                                        class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                                                        Bahasa Jepang
-                                                    </th>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        72
-                                                    </td>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        87
-                                                    </td>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        75
-                                                    </td>
-                                                </tr>
-                                                <tr class="tw-bg-white tw-border">
-                                                    <th scope="row"
-                                                        class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                                                        Matematika
-                                                    </th>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        76
-                                                    </td>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        72
-                                                    </td>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        72
-                                                    </td>
-                                                </tr>
+                                                @foreach (collect($siswa->raport)->where('semester', 5) as $rp)
+                                                    @foreach ($rp->NilaiMapel as $nm)
+                                                        <tr class="tw-bg-white tw-border">
+                                                            <th scope="row"
+                                                                class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
+                                                                {{ $nm->MapelJurusan->MapelId }}
+                                                            </th>
+                                                            <td class="tw-py-4 tw-px-6">
+                                                              {{ $nm->kkm }}
+                                                            </td>
+                                                            <td class="tw-py-4 tw-px-6">
+                                                              {{ $nm->nilai_pengetahuan }}
+                                                            </td>
+                                                            <td class="tw-py-4 tw-px-6">
+                                                              {{ $nm->nilai_keterampilan }}
+                                                            </td>
+                                                        </tr>
+                                                    @endforeach
+                                                @endforeach
                                             </tbody>
                                         </table>
                                     </div>
