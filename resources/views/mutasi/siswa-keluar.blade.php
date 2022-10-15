@@ -71,7 +71,7 @@
                             <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">TANGGAL KELUAR</th>
                             <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">SK MUTASI</th>
                             <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">ALASAN</th>
-                            <th scope="col" class="tw-py-3 tw-px-6">ACTION</th>
+                            <th scope="col" class="tw-py-3 tw-px-6">AKSI</th>
                         </tr>
                     </thead>
                     <tbody class="tw-text-

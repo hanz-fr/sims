@@ -78,7 +78,7 @@
                               Profil
                           </a>
                           <a href="/signout" class="tw-flex tw-items-center tw-text-red-600 tw-gap-2 tw-w-full first-of-type:tw-rounded-t-md last-of-type:tw-rounded-b-md tw-px-4 tw-py-2.5 tw-text-left tw-text-sm hover:tw-bg-sims-400 hover:tw-text-white">
-                              <span class="tw-font-medium">Logout &nbsp;<i class="fa-solid fa-right-from-bracket"></i></span>
+                              <span class="tw-font-medium">Keluar &nbsp;<i class="fa-solid fa-right-from-bracket"></i></span>
                           </a>
                       </div>
                   </div>

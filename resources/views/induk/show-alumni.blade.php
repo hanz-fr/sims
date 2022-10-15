@@ -55,7 +55,7 @@
                         <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">NAMA PESERTA DIDIK</th>
                         <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">GENDER</th>
                         <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">KELAS</th>
-                        <th scope="col" class="tw-py-3 tw-px-6">ACTION</th>
+                        <th scope="col" class="tw-py-3 tw-px-6">AKSI</th>
                     </tr>
                 </thead>
                 <tbody class="tw-text-base">

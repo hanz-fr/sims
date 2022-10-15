@@ -17,7 +17,11 @@ class ApiController extends Controller
     /* GLOBAL VARIABLES */
     public function __construct()
     {
+<<<<<<< HEAD
         $this->api_url = '127.0.0.1:3000'; // Ganti link NGROK disini
+=======
+        $this->api_url = 'https://b2b3-103-148-113-86.ap.ngrok.io'; // Ganti link NGROK disini
+>>>>>>> d09a9c8151636e1262198763c9cd5f3ee6c35565
     }
 
     /* API SISWA */
@@ -703,7 +707,7 @@ class ApiController extends Controller
 
         if ($kelas->successful()) {
 
-            return view('data-rekap-jumlah-siswa', [
+            return view('rekap-siswa.data-rekap-jumlah-siswa', [
                 'title' => 'Data Rekap Siswa',
                 'active' => 'rekap-siswa',
                 'kelas' => json_decode($kelas)->result

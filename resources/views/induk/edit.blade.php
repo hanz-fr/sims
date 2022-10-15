@@ -516,7 +516,7 @@
         </div>
 
         <div class="tw-mx-auto tw-text-center tw-mt-10">
-          <button type="submit" class="tw-bg-sims-400 tw-font-medium tw-text-white tw-py-3 tw-px-6 tw-rounded-lg">Update Data</button>
+          <button type="submit" class="tw-bg-sims-400 tw-font-medium tw-text-white tw-py-3 tw-px-6 tw-rounded-lg">Simpan Perubahan</button>
         </div>
     </form>
   </div>

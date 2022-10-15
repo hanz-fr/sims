@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ForgotPasswordController;
 
 /*
@@ -63,10 +64,10 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/api/mutasi-masuk/store', [ApiController::class, 'storeMutasiMasuk']);
     Route::put('/api/mutasi-masuk/update/{id}', [ApiController::class, 'updateMutasiMasuk']);
     Route::delete('/api/mutasi-masuk/delete/{id}', [ApiController::class, 'deleteMutasiMasuk']);
-    
+
 
     /* REKAP DATA SISWA */
-    
+
     Route::get('/rekap-jumlah-siswa', [ApiController::class, 'rekapJumlahSiswa']);
 
 
@@ -100,7 +101,7 @@ Route::middleware(['auth'])->group(function () {
             'active' => 'data-induk'
         ]);
     });
-    
+
 
     /* REKAP NILAI */
 
@@ -110,27 +111,27 @@ Route::middleware(['auth'])->group(function () {
             'active' => 'data-induk'
         ]);
     });
-    
+
 
     /* REKAP SISWA */
 
     Route::get('/rekap-siswa', function () {
-        return view('data-rekap-siswa', [
+        return view('rekap-siswa.dashboard-rekap-siswa', [
             'title' => 'Data Rekap Siswa',
             'active' => 'rekap-siswa'
         ]);
     });
-    
+
 
     /* DATA TIDAK NAIK KELAS */
 
     Route::get('/data-tidak-naik', function () {
-        return view('data-tidak-naik', [
+        return view('rekap-siswa.data-tidak-naik', [
             'title' => 'Data Tidak Naik Kelas',
             'active' => 'data-induk'
         ]);
     });
-    
+
 
     /* PROFILE */
     Route::get('/profile', [UserController::class, 'show'])->name('profile');
@@ -144,72 +145,74 @@ Route::middleware(['auth'])->group(function () {
 
 /* ROUTE ADMIN */
 
-Route::middleware(['admin'])->group(function() {
+Route::middleware(['admin'])->group(function () {
 
     /* SHOW ALL KELAS */
     Route::get('/all-kelas', function () {
-        return view('all-kelas', [
+        return view('admin.kelas.show-all-kelas', [
             'title' => 'List Semua Kelas',
             'active' => 'data-induk'
         ]);
     });
-    
+
     /* SHOW KELAS DETAIL */
     Route::get('/detail-kelas', function () {
-        return view('detail-kelas', [
+        return view('admin.kelas.detail-kelas', [
             'title' => 'Detail Kelas',
             'active' => 'data-induk'
         ]);
     });
-    
+
     /* ADMIN LOGIN */
-    Route::get('/admin', function () {
-        return view('login-admin', [
-            'title' => 'Admin Login',
-            'active' => 'admin'
-        ]);
-    });
-    
-    
+    Route::get('/admin', [AdminController::class, 'index'])->name('login.admin');
+    Route::post('/login-admin', [AdminController::class, 'authenticate']);
+
     /* ADMIN DASHBOARD */
     Route::get('/dashboard', function () {
-        return view('dashboard-admin', [
+        return view('admin.dashboard', [
             'title' => 'Dashboard Admin',
             'active' => 'admin'
         ]);
     });
-    
-    
+
+    // DATABASE DASHBOARD
+    Route::get('/database', function () {
+        return view('admin.dashboard-database', [
+            'title' => 'Database',
+            'active' => 'database'
+        ]);
+    });
+
     /* MANAGE USER */
     Route::get('/manage-user', function () {
-        return view('manage-user', [
+        return view('admin.account.manage-user', [
             'title' => 'Manage User SIMS',
             'active' => 'account'
         ]);
     });
-    
-    
+
+
     /* MAPEL JURUSAN */
     Route::get('/mata-pelajaran-jurusan', function () {
-        return view('mapel-jurusan', [
+        return view('admin.mapel-jurusan.mapel-jurusan', [
             'title' => 'Mata Pelajaran',
             'active' => 'database'
         ]);
     });
-    
-    
+
+
     /* DETAIL MAPEL JURUSAN */
     Route::get('/detail-mata-pelajaran-jurusan', function () {
-        return view('detail-mapel-jurusan', [
+        return view('admin.mapel-jurusan.detail-mapel-jurusan', [
             'title' => 'Mata Pelajaran',
             'active' => 'database'
         ]);
     });
-    
-    
+
+
     /* CREATE MAPEL JURUSAN */
     Route::get('/create-mata-pelajaran-jurusan', function () {
-        return view('create-mapel-jurusan', [
+        return view('admin.mapel-jurusan.create-mapel-jurusan', [
             'title' => 'Mata Pelajaran',
             'active' => 'database'
         ]);
@@ -217,61 +220,76 @@ Route::middleware(['admin'])->group(function() {
 
     /* EDIT MAPEL JURUSAN */
     Route::get('/edit-mata-pelajaran-jurusan', function () {
-        return view('edit-mapel-jurusan', [
+        return view('admin.mapel-jurusan.edit-mapel-jurusan', [
             'title' => 'Mata Pelajaran',
             'active' => 'database'
         ]);
     });
-    
-    
+
+    // RAPOR
+    Route::get('/rapor', function () {
+        return view('admin.raport.rapor', [
+            'title' => 'Rapor',
+            'active' => 'database'
+        ]);
+    });
+
+    // DETAIL RAPOR
+    Route::get('/detail-rapor', function () {
+        return view('admin.raport.detail-rapor', [
+            'title' => 'Detail Rapor',
+            'active' => 'database'
+        ]);
+    });
+
     /* SHOW USER DETAIL */
     Route::get('/show-detail', function () {
-        return view('account-detail', [
+        return view('admin.account.show-detail', [
             'title' => 'Account Details',
             'active' => 'account'
         ]);
     });
-    
-    
+
+
     /* EDIT USER */
     Route::get('/edit-account', function () {
-        return view('edit-account', [
+        return view('admin.account.edit', [
             'title' => 'Edit Account',
             'active' => 'account'
         ]);
     });
-    
-    
+
+
     /* CREATE USER */
     Route::get('/create-account', function () {
-        return view('create-account', [
+        return view('admin.account.create', [
             'title' => 'Create Account',
             'active' => 'account'
         ]);
     });
-    
-    
+
+
     /* SHOW ALL JURUSAN */
     Route::get('/show-jurusan', function () {
-        return view('show-jurusan', [
+        return view('admin.jurusan.show-jurusan', [
             'title' => 'Jurusan',
             'active' => 'database'
         ]);
     });
-    
-    
+
+
     /* SHOW JURUSAN DETAIL */
     Route::get('/show-detail-jurusan', function () {
-        return view('show-detail-jurusan', [
+        return view('admin.jurusan.show-detail-jurusan', [
             'title' => 'Detail Jurusan',
             'active' => 'database'
         ]);
     });
-    
-    
+
+
     /* CREATE JURUSAN */
     Route::get('/create-show-jurusan', function () {
-        return view('create-show-jurusan', [
+        return view('admin.jurusan.create-show-jurusan', [
             'title' => 'Create Jurusan',
             'active' => 'database'
         ]);
@@ -279,17 +297,73 @@ Route::middleware(['admin'])->group(function() {
 
     /* ALL SISWA */
     Route::get('/all-siswa', function () {
-        return view('all-siswa-admin', [
+        return view('admin.siswa.all-siswa-admin', [
             'title' => 'Data Seluruh Siswa',
             'active' => 'database'
         ]);
     });
-    
+
+    Route::get('/detail-siswa-admin', function () {
+        return view('admin.siswa.detail-siswa-admin', [
+            'title' => 'Detail Siswa',
+            'active' => 'database'
+        ]);
+    });
+
+    // MUTASI
+    Route::get('/data-mutasi', function () {
+        return view('admin.mutasi.show-all-mutasi', [
+            'title' => 'Data Mutasi',
+            'active' => 'database'
+        ]);
+    });
+
+    Route::get('/detail-mutasi-keluar', function () {
+        return view('admin.mutasi.detail-keluar', [
+            'title' => 'Detail Mutasi Keluar',
+            'active' => 'database'
+        ]);
+    });
+
+    Route::get('/detail-mutasi-masuk', function () {
+        return view('admin.mutasi.detail-masuk', [
+            'title' => 'Detail Mutasi Masuk',
+            'active' => 'database'
+        ]);
+    });
+
+    Route::get('/add-mutasi-keluar', function () {
+        return view('admin.mutasi.create-keluar', [
+            'title' => 'Add Mutasi Keluar',
+            'active' => 'database'
+        ]);
+    });
+
+    Route::get('/add-mutasi-masuk', function () {
+        return view('admin.mutasi.create-masuk', [
+            'title' => 'Add Mutasi Masuk',
+            'active' => 'database'
+        ]);
+    });
+
+    Route::get('/edit-mutasi-keluar', function () {
+        return view('admin.mutasi.edit-keluar', [
+            'title' => 'Edit Mutasi Keluar',
+            'active' => 'database'
+        ]);
+    });
+
+    Route::get('/edit-mutasi-masuk', function () {
+        return view('admin.mutasi.edit-masuk', [
+            'title' => 'Edit Mutasi Masuk',
+            'active' => 'database'
+        ]);
+    });
+
     /* LIVE SEARCH TEST */
     Route::get('/live-search-test', [ApiController::class, 'indexLiveSearch']);
-    
-    Route::get('/search', [ApiController::class, 'search']);
 
+    Route::get('/search', [ApiController::class, 'search']);
 });
 
 
@@ -301,6 +375,6 @@ Route::post('/loginuser', [UserController::class, 'authenticate']);
 Route::get('/signout', [UserController::class, 'signOut']);
 
 Route::get('/forgot-password', [UserController::class, 'showForgetPasswordForm']);
-Route::post('/forget-password', [UserController::class, 'submitForgetPasswordForm']); 
+Route::post('/forget-password', [UserController::class, 'submitForgetPasswordForm']);
 Route::get('/reset-password/{token}', [UserController::class, 'showResetPasswordForm'])->name('reset.password');
 Route::post('/reset-password', [UserController::class, 'submitResetPasswordForm'])->name('update.password');

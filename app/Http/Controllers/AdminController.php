@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Admin;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
@@ -14,7 +15,27 @@ class AdminController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.login', [
+            'title'  => 'SIMS Admin',
+            'status' => ''
+        ]);
+    }
+
+    public function authenticate(Request $request)
+    {
+
+        $request->validate([
+            'email'      => 'required',
+            'password'   => 'required',
+        ]);
+   
+        $credentials = $request->only('email', 'password');
+        if (Auth::attempt($credentials)) {
+            return redirect()->intended('dashboard')
+                        ->with('success', 'Signed in');
+        }
+  
+        return redirect("admin")->with('error','Login details are not valid');
     }
 
     /**
