@@ -11,7 +11,7 @@
             </div>
         </div>
     @else
-        <div class="tw-mx-10">
+        <div class="tw-mx-10 tw-my-10">
             <div class="tw-text-3xl tw-text-sims-400 tw-font-pop tw-font-semibold tw-flex tw-flex-row tw-mt-9 tw-mx-9">Data Siswa</div>
             {{-- foto profil --}}
             <div class="tw-flex sm:tw-flex-col md:tw-flex-row tw-font-pop">

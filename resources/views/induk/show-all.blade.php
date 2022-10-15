@@ -42,9 +42,9 @@
 
         <div class="tw-flex tw-justify-between sm:tw-flex-wrap sm:tw-gap-5">
             <div class="tw-flex">
-                <form action=""> 
+                <form action="/get-request"> 
                     <div class="relative tw-border-2 tw-rounded-lg focus:tw-ring-sims-400">
-                        <input type="text" class="tw-py-1 tw-px-5 tw-border-none tw-rounded-md">
+                        <input name="search" id="search" type="text" class="tw-py-1 tw-px-5 tw-border-none tw-rounded-md">
                         <i class="fa-solid fa-magnifying-glass tw-pr-5 tw-pl-3 tw-text-slate-600"></i>
                     </div>
                 </form>

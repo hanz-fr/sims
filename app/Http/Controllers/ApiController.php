@@ -738,6 +738,14 @@ class ApiController extends Controller
         ]);
     }
 
+
+    /* API FOR TESTING REQUEST */   
+    public function getRequest(Request $request) 
+    {
+        return $request;
+    }
+
+
     public function search(Request $request)
     {
         $page = $request->page;

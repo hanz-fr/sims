@@ -43,6 +43,7 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/api/siswa/update/{nis}', [ApiController::class, 'updateSiswa']);
     Route::delete('/api/siswa/delete/{nis}', [ApiController::class, 'deleteSiswa']);
 
+    Route::get('/get-request', [ApiController::class, 'getRequest']);
 
 
     /* ROUTE MUTASI */
