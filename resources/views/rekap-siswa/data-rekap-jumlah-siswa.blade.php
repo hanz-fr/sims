@@ -29,7 +29,7 @@
               </li>
               <li @click="openTab = 3" :class="{ 'tw--mb-px': openTab === 3 }">
                 <button :class="openTab === 3 ? activeClasses : inactiveClasses" class="tw-rounded-t-2xl tw-text-gray-500 hover:tw-text-sims-400 tw-inline-block tw-py-2 tw-px-10 tw-font-semibold" href="#">
-                  XII
+                  XI
                 </button>
               </li>
               <li @click="openTab = 4" :class="{ 'tw--mb-px': openTab === 4 }">
@@ -64,8 +64,47 @@
                         </tr>
                     </thead>
                     <tbody class="tw-text-base">
-                        @foreach ($kelas as $k)
-                        <tr class="tw-bg-white tw-border">
+
+                        <?php $sum_total_siswa_p = 0 ?>
+                        <?php $sum_total_siswa_l = 0 ?>
+                        <?php $sum_total_siswa = 0 ?>
+                        
+                        <?php $sum_total_siswa_p_keluar = 0 ?>
+                        <?php $sum_total_siswa_l_keluar = 0 ?>
+                        <?php $sum_total_siswa_keluar = 0 ?>
+                        
+                        <?php $sum_total_siswa_p_masuk = 0 ?>
+                        <?php $sum_total_siswa_l_masuk = 0 ?>
+                        <?php $sum_total_siswa_masuk = 0 ?>
+
+                        <?php $sum_total_siswa_p_akhir = 0 ?>
+                        <?php $sum_total_siswa_l_akhir = 0 ?>
+                        <?php $sum_total_siswa_akhir = 0 ?>
+
+
+                        <!-- buat ganti bgcolor perbaris -->
+                        @php
+
+                        $lastid = null;
+                        $rowclass = ''
+
+                        @endphp
+                        <!-- ---------------------------- -->
+
+                        @foreach ($semua_kelas as $k)
+
+                        <!-- buat ganti bgcolor perbaris -->
+                        @php 
+                        if ($lastid !== $k->id)
+                        {
+                            $lastid = $k->id;
+                            if ($rowclass == 'tw-bg-slate-50') $rowclass = 'tw-bg-white';
+                            else $rowclass = 'tw-bg-slate-50';
+                        }
+                        @endphp
+                        <!-- ---------------------------- -->
+
+                        <tr class="tw-bg-white tw-border {{ $rowclass }}">
                             <td class="tw-py-4 tw-px-6 tw-border">{{ $k->id }}</td>
                             <td class="tw-py-4 tw-px-6 tw-border">{{ $k->jumlahSiswaPerempuan }}</td>
                             <td class="tw-py-4 tw-px-6 tw-border">{{ $k->jumlahSiswaLaki }}</td>
@@ -80,22 +119,37 @@
                             <td class="tw-py-4 tw-px-6 tw-border">{{ $k->jumlahSiswaLaki - $k->siswaLakiKeluar + $k->siswaLakiMasuk }}</td>
                             <td class="tw-py-4 tw-px-6 tw-border">{{ $k->jumlahSiswaPerempuan - $k->siswaPerempuanKeluar + $k->siswaPerempuanMasuk + $k->jumlahSiswaLaki - $k->siswaLakiKeluar + $k->siswaLakiMasuk }}</td>
                         </tr>
+                        <?php $sum_total_siswa_p += $k->jumlahSiswaPerempuan ?>
+                        <?php $sum_total_siswa_l += $k->jumlahSiswaLaki ?>
+                        <?php $sum_total_siswa += $k->jumlahSiswa ?>
+                        
+                        <?php $sum_total_siswa_p_keluar += $k->siswaPerempuanKeluar ?>
+                        <?php $sum_total_siswa_l_keluar += $k->siswaLakiKeluar ?>
+                        <?php $sum_total_siswa_keluar += $k->jumlahSiswaKeluar ?>
+                        
+                        <?php $sum_total_siswa_p_masuk += $k->siswaPerempuanMasuk ?>
+                        <?php $sum_total_siswa_l_masuk += $k->siswaLakiMasuk ?>
+                        <?php $sum_total_siswa_masuk += $k->jumlahSiswaMasuk ?>
+                        
+                        <?php $sum_total_siswa_p_akhir += $k->jumlahSiswaPerempuan - $k->siswaPerempuanKeluar + $k->siswaPerempuanMasuk ?>
+                        <?php $sum_total_siswa_l_akhir += $k->jumlahSiswaLaki - $k->siswaLakiKeluar + $k->siswaLakiMasuk ?>
+                        <?php $sum_total_siswa_akhir += $k->jumlahSiswaPerempuan - $k->siswaPerempuanKeluar + $k->siswaPerempuanMasuk + $k->jumlahSiswaLaki - $k->siswaLakiKeluar + $k->siswaLakiMasuk ?>
                         @endforeach
                     </tbody>
                     <tfoot>
                       <th>JUMLAH SISWA</th>
-                      <th class="tw-border tw-py-3 tw-px-6">-</th>
-                      <th class="tw-border tw-py-3 tw-px-6">-</th>
-                      <th class="tw-border tw-py-3 tw-px-6">-</th>
-                      <th class="tw-border tw-py-3 tw-px-6">-</th>
-                      <th class="tw-border tw-py-3 tw-px-6">-</th>
-                      <th class="tw-border tw-py-3 tw-px-6">-</th>
-                      <th class="tw-border tw-py-3 tw-px-6">-</th>
-                      <th class="tw-border tw-py-3 tw-px-6">-</th>
-                      <th class="tw-border tw-py-3 tw-px-6">-</th>
-                      <th class="tw-border tw-py-3 tw-px-6">-</th>
-                      <th class="tw-border tw-py-3 tw-px-6">-</th>
-                      <th class="tw-border tw-py-3 tw-px-6">-</th>
+                      <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_p }}</th>
+                      <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_l }}</th>
+                      <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa }}</th>
+                      <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_p_keluar }}</th>
+                      <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_l_keluar }}</th>
+                      <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_keluar }}</th>
+                      <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_p_masuk }}</th>
+                      <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_l_masuk }}</th>
+                      <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_masuk }}</th>
+                      <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_p_akhir }}</th>
+                      <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_l_akhir }}</th>
+                      <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_akhir }}</th>
                     </tfoot>
                 </table>
                 </div>
@@ -125,21 +179,82 @@
                         </tr>
                     </thead>
                     <tbody class="tw-text-base">
+
+                        <?php $sum_total_siswa_p_X = 0 ?>
+                        <?php $sum_total_siswa_l_X = 0 ?>
+                        <?php $sum_total_siswa_X = 0 ?>
+                        
+                        <?php $sum_total_siswa_p_keluar_X = 0 ?>
+                        <?php $sum_total_siswa_l_keluar_X = 0 ?>
+                        <?php $sum_total_siswa_keluar_X = 0 ?>
+                        
+                        <?php $sum_total_siswa_p_masuk_X = 0 ?>
+                        <?php $sum_total_siswa_l_masuk_X = 0 ?>
+                        <?php $sum_total_siswa_masuk_X = 0 ?>
+
+                        <?php $sum_total_siswa_p_akhir_X = 0 ?>
+                        <?php $sum_total_siswa_l_akhir_X = 0 ?>
+                        <?php $sum_total_siswa_akhir_X = 0 ?>
+
+                        @foreach ($kelas10 as $k10)
+
+                        <!-- buat ganti bgcolor perbaris -->
+                        @php 
+                        if ($lastid !== $k10->id)
+                        {
+                            $lastid = $k10->id;
+                            if ($rowclass == 'tw-bg-slate-50') $rowclass = 'tw-bg-white';
+                            else $rowclass = 'tw-bg-slate-50';
+                        }
+                        @endphp
+                        <!-- ---------------------------- -->
+
+                        <tr class="tw-bg-white tw-border {{ $rowclass }}">
+                            <td class="tw-py-4 tw-px-6 tw-border">{{ $k10->id }}</td>
+                            <td class="tw-py-4 tw-px-6 tw-border">{{ $k10->jumlahSiswaPerempuan }}</td>
+                            <td class="tw-py-4 tw-px-6 tw-border">{{ $k10->jumlahSiswaLaki }}</td>
+                            <td class="tw-py-4 tw-px-6 tw-border">{{ $k10->jumlahSiswa }}</td>
+                            <td class="tw-py-4 tw-px-6 tw-border">{{ $k10->siswaPerempuanKeluar }}</td>
+                            <td class="tw-py-4 tw-px-6 tw-border">{{ $k10->siswaLakiKeluar}}</td>
+                            <td class="tw-py-4 tw-px-6 tw-border">{{ $k10->jumlahSiswaKeluar }}</td>
+                            <td class="tw-py-4 tw-px-6 tw-border">{{ $k10->siswaPerempuanMasuk }}</td>
+                            <td class="tw-py-4 tw-px-6 tw-border">{{ $k10->siswaLakiMasuk }}</td>
+                            <td class="tw-py-4 tw-px-6 tw-border">{{ $k10->jumlahSiswaMasuk }}</td>
+                            <td class="tw-py-4 tw-px-6 tw-border">{{ $k10->jumlahSiswaPerempuan - $k10->siswaPerempuanKeluar + $k10->siswaPerempuanMasuk }}</td>
+                            <td class="tw-py-4 tw-px-6 tw-border">{{ $k10->jumlahSiswaLaki - $k10->siswaLakiKeluar + $k10->siswaLakiMasuk }}</td>
+                            <td class="tw-py-4 tw-px-6 tw-border">{{ $k10->jumlahSiswaPerempuan - $k10->siswaPerempuanKeluar + $k10->siswaPerempuanMasuk + $k10->jumlahSiswaLaki - $k10->siswaLakiKeluar + $k10->siswaLakiMasuk }}</td>
+                        </tr>
+                        <?php $sum_total_siswa_p_X += $k10->jumlahSiswaPerempuan ?>
+                        <?php $sum_total_siswa_l_X += $k10->jumlahSiswaLaki ?>
+                        <?php $sum_total_siswa_X += $k10->jumlahSiswa ?>
+                        
+                        <?php $sum_total_siswa_p_keluar_X += $k10->siswaPerempuanKeluar ?>
+                        <?php $sum_total_siswa_l_keluar_X += $k10->siswaLakiKeluar ?>
+                        <?php $sum_total_siswa_keluar_X += $k10->jumlahSiswaKeluar ?>
+                        
+                        <?php $sum_total_siswa_p_masuk_X += $k10->siswaPerempuanMasuk ?>
+                        <?php $sum_total_siswa_l_masuk_X += $k10->siswaLakiMasuk ?>
+                        <?php $sum_total_siswa_masuk_X += $k10->jumlahSiswaMasuk ?>
+                        
+                        <?php $sum_total_siswa_p_akhir_X += $k10->jumlahSiswaPerempuan - $k10->siswaPerempuanKeluar + $k10->siswaPerempuanMasuk ?>
+                        <?php $sum_total_siswa_l_akhir_X += $k10->jumlahSiswaLaki - $k10->siswaLakiKeluar + $k10->siswaLakiMasuk ?>
+                        <?php $sum_total_siswa_akhir_X += $k10->jumlahSiswaPerempuan - $k10->siswaPerempuanKeluar + $k10->siswaPerempuanMasuk + $k10->jumlahSiswaLaki - $k10->siswaLakiKeluar + $k10->siswaLakiMasuk ?>
+                        @endforeach
                     </tbody>
                     <tfoot>
                       <th>JUMLAH SISWA</th>
-                      <th class="tw-border tw-py-3 tw-px-6">-</th>
-                      <th class="tw-border tw-py-3 tw-px-6">-</th>
-                      <th class="tw-border tw-py-3 tw-px-6">-</th>
-                      <th class="tw-border tw-py-3 tw-px-6">-</th>
-                      <th class="tw-border tw-py-3 tw-px-6">-</th>
-                      <th class="tw-border tw-py-3 tw-px-6">-</th>
-                      <th class="tw-border tw-py-3 tw-px-6">-</th>
-                      <th class="tw-border tw-py-3 tw-px-6">-</th>
-                      <th class="tw-border tw-py-3 tw-px-6">-</th>
-                      <th class="tw-border tw-py-3 tw-px-6">-</th>
-                      <th class="tw-border tw-py-3 tw-px-6">-</th>
-                      <th class="tw-border tw-py-3 tw-px-6">-</th>
+                      <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_p_X }}</th>
+                      <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_l_X }}</th>
+                      <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_X }}</th>
+                      <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_p_keluar_X }}</th>
+                      <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_l_keluar_X }}</th>
+                      <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_keluar_X }}</th>
+                      <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_p_masuk_X }}</th>
+                      <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_l_masuk_X }}</th>
+                      <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_masuk_X }}</th>
+                      <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_p_akhir_X }}</th>
+                      <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_l_akhir_X }}</th>
+                      <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_akhir_X }}</th>
                     </tfoot>
                 </table>
                 </div>            
@@ -169,261 +284,80 @@
                     </tr>
                 </thead>
                 <tbody class="tw-text-base">
-                    <tr class="tw-bg-white tw-border">
-                        <td class="tw-py-4 tw-px-6 tw-border">XII AKL 1</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">29</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">5</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">34</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">29</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">5</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">34</td>
-                    </tr>
-                    <tr class="tw-bg-white tw-border">
-                        <td class="tw-py-4 tw-px-6 tw-border">XII AKL 2</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">30</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">4</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">34</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">30</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">4</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">34</td>
-                    </tr>
-                    <tr class="tw-bg-white tw-border">
-                        <td class="tw-py-4 tw-px-6 tw-border">XII AKL 3</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">29</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">4</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">33</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">29</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">4</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">33</td>
-                    </tr>
-                    <tr class="tw-bg-white tw-border">
-                        <td class="tw-py-4 tw-px-6 tw-border">XII OTKP 1</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">29</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">5</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">34</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">29</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">5</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">34</td>
-                    </tr>
-                    <tr class="tw-bg-white tw-border">
-                        <td class="tw-py-4 tw-px-6 tw-border">XII OTKP 2</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">28</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">5</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">33</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">28</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">5</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">33</td>
-                    </tr>
-                    <tr class="tw-bg-white tw-border">
-                        <td class="tw-py-4 tw-px-6 tw-border">XII OTKP 3</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">29</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">5</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">34</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">29</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">5</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">34</td>
-                    </tr>
-                    <tr class="tw-bg-white tw-border">
-                        <td class="tw-py-4 tw-px-6 tw-border">XII OTKP 4</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">34</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">34</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">34</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">34</td>
-                    </tr>
-                    <tr class="tw-bg-white tw-border">
-                        <td class="tw-py-4 tw-px-6 tw-border">XII BDP 1</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">20</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">10</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">30</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">20</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">10</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">30</td>
-                    </tr>
-                    <tr class="tw-bg-white tw-border">
-                        <td class="tw-py-4 tw-px-6 tw-border">XII BDP 2</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">18</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">14</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">32</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">18</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">14</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">32</td>
-                    </tr>
-                    <tr class="tw-bg-white tw-border">
-                        <td class="tw-py-4 tw-px-6 tw-border">XII BDP 3</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">19</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">16</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">35</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">19</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">16</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">35</td>
-                    </tr>
-                    <tr class="tw-bg-white tw-border">
-                        <td class="tw-py-4 tw-px-6 tw-border">XII MLOG</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">13</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">19</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">32</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">13</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">19</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">32</td>
-                    </tr>
-                    <tr class="tw-bg-white tw-border">
-                        <td class="tw-py-4 tw-px-6 tw-border">XII RPL 1</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">10</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">22</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">32</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">10</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">22</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">32</td>
-                    </tr>
-                    <tr class="tw-bg-white tw-border">
-                        <td class="tw-py-4 tw-px-6 tw-border">XII RPL 2</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">9</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">24</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">33</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">9</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">24</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">33</td>
-                    </tr>
-                    <tr class="tw-bg-white tw-border">
-                        <td class="tw-py-4 tw-px-6 tw-border">XII MM 1</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">10</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">22</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">32</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">10</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">22</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">32</td>
-                    </tr>
-                    <tr class="tw-bg-white tw-border">
-                        <td class="tw-py-4 tw-px-6 tw-border">XII MM 2</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">10</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">22</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">32</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">10</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">22</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">32</td>
-                    </tr>
-                    <tr class="tw-bg-white tw-border">
-                        <td class="tw-py-4 tw-px-6 tw-border">XII TKJ</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">8</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">24</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">32</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">8</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">24</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">32</td>
-                    </tr>
+                    <?php $sum_total_siswa_p_XI = 0 ?>
+                    <?php $sum_total_siswa_l_XI = 0 ?>
+                    <?php $sum_total_siswa_XI = 0 ?>
+                    
+                    <?php $sum_total_siswa_p_keluar_XI = 0 ?>
+                    <?php $sum_total_siswa_l_keluar_XI = 0 ?>
+                    <?php $sum_total_siswa_keluar_XI = 0 ?>
+                    
+                    <?php $sum_total_siswa_p_masuk_XI = 0 ?>
+                    <?php $sum_total_siswa_l_masuk_XI = 0 ?>
+                    <?php $sum_total_siswa_masuk_XI = 0 ?>
+                    <?php $sum_total_siswa_p_akhir_XI = 0 ?>
+                    <?php $sum_total_siswa_l_akhir_XI = 0 ?>
+                    <?php $sum_total_siswa_akhir_XI = 0 ?>
+
+                    @foreach ($kelas11 as $k11)
+
+                    <!-- buat ganti bgcolor perbaris -->
+                    @php 
+                    if ($lastid !== $k11->id)
+                    {
+                        $lastid = $k11->id;
+                        if ($rowclass == 'tw-bg-slate-50') $rowclass = 'tw-bg-white';
+                        else $rowclass = 'tw-bg-slate-50';
+                    }
+                    @endphp
+                    <!-- ---------------------------- -->
+
+                        <tr class="tw-bg-white tw-border {{ $rowclass }}">
+                            <td class="tw-py-4 tw-px-6 tw-border">{{ $k11->id }}</td>
+                            <td class="tw-py-4 tw-px-6 tw-border">{{ $k11->jumlahSiswaPerempuan }}</td>
+                            <td class="tw-py-4 tw-px-6 tw-border">{{ $k11->jumlahSiswaLaki }}</td>
+                            <td class="tw-py-4 tw-px-6 tw-border">{{ $k11->jumlahSiswa }}</td>
+                            <td class="tw-py-4 tw-px-6 tw-border">{{ $k11->siswaPerempuanKeluar }}</td>
+                            <td class="tw-py-4 tw-px-6 tw-border">{{ $k11->siswaLakiKeluar}}</td>
+                            <td class="tw-py-4 tw-px-6 tw-border">{{ $k11->jumlahSiswaKeluar }}</td>
+                            <td class="tw-py-4 tw-px-6 tw-border">{{ $k11->siswaPerempuanMasuk }}</td>
+                            <td class="tw-py-4 tw-px-6 tw-border">{{ $k11->siswaLakiMasuk }}</td>
+                            <td class="tw-py-4 tw-px-6 tw-border">{{ $k11->jumlahSiswaMasuk }}</td>
+                            <td class="tw-py-4 tw-px-6 tw-border">{{ $k11->jumlahSiswaPerempuan - $k11->siswaPerempuanKeluar + $k11->siswaPerempuanMasuk }}</td>
+                            <td class="tw-py-4 tw-px-6 tw-border">{{ $k11->jumlahSiswaLaki - $k11->siswaLakiKeluar + $k11->siswaLakiMasuk }}</td>
+                            <td class="tw-py-4 tw-px-6 tw-border">{{ $k11->jumlahSiswaPerempuan - $k11->siswaPerempuanKeluar + $k11->siswaPerempuanMasuk + $k11->jumlahSiswaLaki - $k11->siswaLakiKeluar + $k11->siswaLakiMasuk }}</td>
+                        </tr>
+                        <?php $sum_total_siswa_p_XI += $k11->jumlahSiswaPerempuan ?>
+                        <?php $sum_total_siswa_l_XI += $k11->jumlahSiswaLaki ?>
+                        <?php $sum_total_siswa_XI += $k11->jumlahSiswa ?>
+                        
+                        <?php $sum_total_siswa_p_keluar_XI += $k11->siswaPerempuanKeluar ?>
+                        <?php $sum_total_siswa_l_keluar_XI += $k11->siswaLakiKeluar ?>
+                        <?php $sum_total_siswa_keluar_XI += $k11->jumlahSiswaKeluar ?>
+                        
+                        <?php $sum_total_siswa_p_masuk_XI += $k11->siswaPerempuanMasuk ?>
+                        <?php $sum_total_siswa_l_masuk_XI += $k11->siswaLakiMasuk ?>
+                        <?php $sum_total_siswa_masuk_XI += $k11->jumlahSiswaMasuk ?>
+                        
+                        <?php $sum_total_siswa_p_akhir_XI += $k11->jumlahSiswaPerempuan - $k11->siswaPerempuanKeluar + $k11->siswaPerempuanMasuk ?>
+                        <?php $sum_total_siswa_l_akhir_XI += $k11->jumlahSiswaLaki - $k11->siswaLakiKeluar + $k11->siswaLakiMasuk ?>
+                        <?php $sum_total_siswa_akhir_XI += $k11->jumlahSiswaPerempuan - $k11->siswaPerempuanKeluar + $k11->siswaPerempuanMasuk + $k11->jumlahSiswaLaki - $k11->siswaLakiKeluar + $k11->siswaLakiMasuk ?>
+                    @endforeach
                 </tbody>
                 <tfoot>
                   <th>JUMLAH SISWA</th>
-                  <th class="tw-border tw-py-3 tw-px-6">325</th>
-                  <th class="tw-border tw-py-3 tw-px-6">201</th>
-                  <th class="tw-border tw-py-3 tw-px-6">526</th>
-                  <th class="tw-border tw-py-3 tw-px-6">-</th>
-                  <th class="tw-border tw-py-3 tw-px-6">-</th>
-                  <th class="tw-border tw-py-3 tw-px-6">-</th>
-                  <th class="tw-border tw-py-3 tw-px-6">-</th>
-                  <th class="tw-border tw-py-3 tw-px-6">-</th>
-                  <th class="tw-border tw-py-3 tw-px-6">-</th>
-                  <th class="tw-border tw-py-3 tw-px-6">325</th>
-                  <th class="tw-border tw-py-3 tw-px-6">201</th>
-                  <th class="tw-border tw-py-3 tw-px-6">526</th>
+                  <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_p_XI }}</th>
+                  <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_l_XI }}</th>
+                  <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_XI }}</th>
+                  <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_p_keluar_XI }}</th>
+                  <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_l_keluar_XI }}</th>
+                  <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_keluar_XI }}</th>
+                  <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_p_masuk_XI }}</th>
+                  <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_l_masuk_XI }}</th>
+                  <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_masuk_XI }}</th>
+                  <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_p_akhir_XI }}</th>
+                  <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_l_akhir_XI }}</th>
+                  <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_akhir_XI }}</th>
                 </tfoot>
             </table>
             </div>
@@ -453,21 +387,82 @@
                     </tr>
                 </thead>
                 <tbody class="tw-text-base">
+
+                    <?php $sum_total_siswa_p_XII = 0 ?>
+                    <?php $sum_total_siswa_l_XII = 0 ?>
+                    <?php $sum_total_siswa_XII = 0 ?>
+                    
+                    <?php $sum_total_siswa_p_keluar_XII = 0 ?>
+                    <?php $sum_total_siswa_l_keluar_XII = 0 ?>
+                    <?php $sum_total_siswa_keluar_XII = 0 ?>
+                    
+                    <?php $sum_total_siswa_p_masuk_XII = 0 ?>
+                    <?php $sum_total_siswa_l_masuk_XII = 0 ?>
+                    <?php $sum_total_siswa_masuk_XII = 0 ?>
+
+                    <?php $sum_total_siswa_p_akhir_XII = 0 ?>
+                    <?php $sum_total_siswa_l_akhir_XII = 0 ?>
+                    <?php $sum_total_siswa_akhir_XII = 0 ?>
+
+                    @foreach ($kelas12 as $k12)
+
+                    <!-- buat ganti bgcolor perbaris -->
+                    @php 
+                    if ($lastid !== $k12->id)
+                    {
+                        $lastid = $k12->id;
+                        if ($rowclass == 'tw-bg-slate-50') $rowclass = 'tw-bg-white';
+                        else $rowclass = 'tw-bg-slate-50';
+                    }
+                    @endphp
+                    <!-- ---------------------------- -->
+
+                    <tr class="tw-bg-white tw-border {{ $rowclass }}">
+                        <td class="tw-py-4 tw-px-6 tw-border">{{ $k12->id }}</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">{{ $k12->jumlahSiswaPerempuan }}</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">{{ $k12->jumlahSiswaLaki }}</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">{{ $k12->jumlahSiswa }}</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">{{ $k12->siswaPerempuanKeluar }}</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">{{ $k12->siswaLakiKeluar}}</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">{{ $k12->jumlahSiswaKeluar }}</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">{{ $k12->siswaPerempuanMasuk }}</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">{{ $k12->siswaLakiMasuk }}</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">{{ $k12->jumlahSiswaMasuk }}</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">{{ $k12->jumlahSiswaPerempuan - $k12->siswaPerempuanKeluar + $k12->siswaPerempuanMasuk }}</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">{{ $k12->jumlahSiswaLaki - $k12->siswaLakiKeluar + $k12->siswaLakiMasuk }}</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">{{ $k12->jumlahSiswaPerempuan - $k12->siswaPerempuanKeluar + $k12->siswaPerempuanMasuk + $k12->jumlahSiswaLaki - $k12->siswaLakiKeluar + $k12->siswaLakiMasuk }}</td>
+                    </tr>
+                    <?php $sum_total_siswa_p_XII += $k12->jumlahSiswaPerempuan ?>
+                    <?php $sum_total_siswa_l_XII += $k12->jumlahSiswaLaki ?>
+                    <?php $sum_total_siswa_XII += $k12->jumlahSiswa ?>
+                    
+                    <?php $sum_total_siswa_p_keluar_XII += $k12->siswaPerempuanKeluar ?>
+                    <?php $sum_total_siswa_l_keluar_XII += $k12->siswaLakiKeluar ?>
+                    <?php $sum_total_siswa_keluar_XII += $k12->jumlahSiswaKeluar ?>
+                    
+                    <?php $sum_total_siswa_p_masuk_XII += $k12->siswaPerempuanMasuk ?>
+                    <?php $sum_total_siswa_l_masuk_XII += $k12->siswaLakiMasuk ?>
+                    <?php $sum_total_siswa_masuk_XII += $k12->jumlahSiswaMasuk ?>
+                    
+                    <?php $sum_total_siswa_p_akhir_XII += $k12->jumlahSiswaPerempuan - $k12->siswaPerempuanKeluar + $k12->siswaPerempuanMasuk ?>
+                    <?php $sum_total_siswa_l_akhir_XII += $k12->jumlahSiswaLaki - $k12->siswaLakiKeluar + $k12->siswaLakiMasuk ?>
+                    <?php $sum_total_siswa_akhir_XII += $k12->jumlahSiswaPerempuan - $k12->siswaPerempuanKeluar + $k12->siswaPerempuanMasuk + $k12->jumlahSiswaLaki - $k12->siswaLakiKeluar + $k12->siswaLakiMasuk ?>
+                    @endforeach
                 </tbody>
                 <tfoot>
                   <th>JUMLAH SISWA</th>
-                  <th class="tw-border tw-py-3 tw-px-6">-</th>
-                  <th class="tw-border tw-py-3 tw-px-6">-</th>
-                  <th class="tw-border tw-py-3 tw-px-6">-</th>
-                  <th class="tw-border tw-py-3 tw-px-6">-</th>
-                  <th class="tw-border tw-py-3 tw-px-6">-</th>
-                  <th class="tw-border tw-py-3 tw-px-6">-</th>
-                  <th class="tw-border tw-py-3 tw-px-6">-</th>
-                  <th class="tw-border tw-py-3 tw-px-6">-</th>
-                  <th class="tw-border tw-py-3 tw-px-6">-</th>
-                  <th class="tw-border tw-py-3 tw-px-6">-</th>
-                  <th class="tw-border tw-py-3 tw-px-6">-</th>
-                  <th class="tw-border tw-py-3 tw-px-6">-</th>
+                  <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_p_XII }}</th>
+                  <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_l_XII }}</th>
+                  <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_XII }}</th>
+                  <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_p_keluar_XII }}</th>
+                  <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_l_keluar_XII }}</th>
+                  <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_keluar_XII }}</th>
+                  <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_p_masuk_XII }}</th>
+                  <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_l_masuk_XII }}</th>
+                  <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_masuk_XII }}</th>
+                  <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_p_akhir_XII }}</th>
+                  <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_l_akhir_XII }}</th>
+                  <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_akhir_XII }}</th>
                 </tfoot>
             </table>
             </div>
