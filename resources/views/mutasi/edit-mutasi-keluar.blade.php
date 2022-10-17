@@ -90,7 +90,7 @@
                 Keluar di Kelas
             </label>
             <select class="input-data" id="keluar_di_kelas" name="keluar_di_kelas">
-                <option selected value="{{ $mutasi->diterima_di_kelas }}">{{ $mutasi->diterima_di_kelas }}</option>
+                <option selected value="{{ $mutasi->keluar_di_kelas }}">{{ $mutasi->keluar_di_kelas }}</option>
                 @foreach ($kelas as $k)
                 <option value="{{ $k->id }}">{{ $k->id }}</option>
                 @endforeach
