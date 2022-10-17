@@ -80,7 +80,7 @@ Route::middleware(['auth'])->group(function () {
             'title' => 'Pilih Jurusan',
             'active' => 'data-induk'
         ]);
-    })->middleware('kesiswaan');
+    });
 
 
 
@@ -214,7 +214,7 @@ Route::middleware(['admin'])->group(function () {
     /* CREATE MAPEL JURUSAN */
     Route::get('/create-mata-pelajaran-jurusan', function () {
         return view('admin.mapel-jurusan.create-mapel-jurusan', [
-            'title' => 'Mata Pelajaran',
+            'title' => 'Create Mata Pelajaran',
             'active' => 'database'
         ]);
     });
@@ -222,7 +222,7 @@ Route::middleware(['admin'])->group(function () {
     /* EDIT MAPEL JURUSAN */
     Route::get('/edit-mata-pelajaran-jurusan', function () {
         return view('admin.mapel-jurusan.edit-mapel-jurusan', [
-            'title' => 'Mata Pelajaran',
+            'title' => 'Edit Mata Pelajaran',
             'active' => 'database'
         ]);
     });
@@ -239,6 +239,22 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/detail-rapor', function () {
         return view('admin.raport.detail-rapor', [
             'title' => 'Detail Rapor',
+            'active' => 'database'
+        ]);
+    });
+
+    // CREATE RAPOR
+    Route::get('/create-rapor', function () {
+        return view('admin.raport.create-rapor', [
+            'title' => 'Create Rapor',
+            'active' => 'database'
+        ]);
+    });
+
+    // EDIT RAPOR
+    Route::get('/edit-rapor', function () {
+        return view('admin.raport.edit-rapor', [
+            'title' => 'Edit Rapor',
             'active' => 'database'
         ]);
     });
@@ -307,6 +323,38 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/detail-siswa-admin', function () {
         return view('admin.siswa.detail-siswa-admin', [
             'title' => 'Detail Siswa',
+            'active' => 'database'
+        ]);
+    });
+
+    // ALL MAPEL
+    Route::get('/all-mata-pelajaran', function () {
+        return view('admin.all-mapel.all-mapel', [
+            'title' => 'Mata Pelajaran',
+            'active' => 'database'
+        ]);
+    });
+
+    // DETAIL ALL MAPEL
+    Route::get('/detail-all-mata-pelajaran', function () {
+        return view('admin.all-mapel.detail-all-mapel', [
+            'title' => 'Detail Mata Pelajaran',
+            'active' => 'database'
+        ]);
+    });
+
+    // CREATE ALL MAPEL
+    Route::get('/create-all-mata-pelajaran', function () {
+        return view('admin.all-mapel.create-all-mapel', [
+            'title' => 'Create Mata Pelajaran',
+            'active' => 'database'
+        ]);
+    });
+
+    // UPDATE ALL MAPEL
+    Route::get('/edit-all-mata-pelajaran', function () {
+        return view('admin.all-mapel.edit-all-mapel', [
+            'title' => 'Edit Mata Pelajaran',
             'active' => 'database'
         ]);
     });
