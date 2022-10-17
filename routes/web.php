@@ -72,26 +72,19 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/rekap-jumlah-siswa', [ApiController::class, 'rekapJumlahSiswa']);
 
 
-
     /* GET DATA INDUK BY JURUSAN */
 
-    Route::get('/jurusan', function () {
-        return view('induk.select-jurusan', [
-            'title' => 'Pilih Jurusan',
-            'active' => 'data-induk'
-        ]);
-    });
+    Route::get('/data-induk-siswa/{jurusan}/{kelas}', [ApiController::class, 'getSiswaByJurusanKelas']);
 
+
+    /* JURUSAN */
+
+    Route::get('/jurusan', [ApiController::class, 'getJurusan']);
 
 
     /* ANGKATAN */
 
-    Route::get('/angkatan', function () {
-        return view('induk.select-angkatan', [
-            'title' => 'Pilih Angkatan',
-            'active' => 'data-induk'
-        ]);
-    });
+    Route::get('/angkatan', [ApiController::class, 'getAngkatan']);
 
 
     /* ALUMNI */

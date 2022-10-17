@@ -16,7 +16,11 @@
     <div class="tw-flex tw-justify-between tw-gap-5 tw-mt-8">
         <div class="tw-flex tw-flex-col">
             <h4 class="title-main">Data Induk Siswa</h4>
+            @if( ! empty($jurusan) && ! empty($kelas))
+            <h6 class="tw-mb-5 tw-text-gray-400 tw-font-semibold">{{ $jurusan }} - Kelas {{ $kelas }}</h6>
+            @else
             <h6 class="tw-mb-5 tw-text-gray-400 tw-font-semibold">SELURUH KELAS</h6>
+            @endif
         </div>
 
         {{-- @if(session()->has('success'))

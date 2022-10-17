@@ -17,7 +17,7 @@ class ApiController extends Controller
     /* GLOBAL VARIABLES */
     public function __construct()
     {
-        $this->api_url = 'https://d70f-114-79-54-151.ap.ngrok.io'; // Ganti link NGROK disini
+        $this->api_url = 'https://8cb8-103-139-10-28.ngrok.io'; // Ganti link NGROK disini
     }
 
     /* API SISWA */
@@ -52,6 +52,57 @@ class ApiController extends Controller
             ]);
 
         }
+    }
+
+    public function getJurusan() {
+        return view('induk.select-jurusan', [
+            'title' => 'Pilih Jurusan',
+            'active' => 'data-induk'
+        ]);
+    }
+
+    public function getAngkatan(Request $request) {
+        return view('induk.select-angkatan', [
+            'title' => 'Pilih Angkatan',
+            'active' => 'data-induk',
+            'jurusan' => $request->jurusan
+        ]);
+    }
+
+
+    public function getSiswaByJurusanKelas(Request $request) 
+    {
+
+        $page = $request->page;
+        $perPage = $request->perPage;
+
+        $response = Http::get("{$this->api_url}/siswa/{$request->jurusan}/{$request->kelas}?page={$page}&perPage={$perPage}");
+
+        if ($response->successful()) {
+            
+            return view('induk.show-all', [
+                'siswa' => json_decode($response)->data->rows,
+                'status' => 'success',
+                'jurusan' => $request->jurusan,
+                'kelas' => $request->kelas,
+                'response' => json_decode($response),
+                'total' => json_decode($response)->data->count,
+                'title' => 'data-induk',
+                'active' => 'data-induk',
+            ]);
+
+        } else {
+
+            return view('induk.show-all', [
+                'response' => $response,
+                'status' => 'error',
+                'title' => 'data-induk',
+                'active' => 'data-induk',
+                'message' => 'Halaman yang kamu cari tidak dapat ditemukan :('
+            ]);
+
+        }
+
     }
 
 
