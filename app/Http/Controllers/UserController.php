@@ -30,13 +30,6 @@ class UserController extends Controller
             'email'    => 'required|email|unique:users',
             'role'    => 'required',
             'password' => 'required|min:6',
-        ],[
-            'nip.required'      => 'NIP field is required.',
-            'nama.required'     => 'Nama field is required.',
-            'email.required'    => 'Email field is required.',
-            'email.email'       => 'Email field must be a valid email address.',
-            'password.required' => 'Password field is required.',
-            'password.min'      => 'Password should be minimum of 6 character.',
         ]);
         
         $user = new User([
@@ -69,10 +62,6 @@ class UserController extends Controller
         $request->validate([
             'nip'      => 'required',
             'password' => 'required|min:6',
-        ],[
-            'nip.required'      => 'Name field is required.',
-            'password.required' => 'Password field is required.',
-            'password.min'      => 'Password should be minimum of 6 character.'
         ]);
    
         $credentials = $request->only('nip', 'password');
@@ -124,18 +113,13 @@ class UserController extends Controller
             'nip'   => 'required',
             'nama'  => 'required',
             'email' => 'required|email|unique:users'
-        ],[
-            'nip.required'      => 'NIP field is required.',
-            'nama.required'     => 'Nama field is required.',
-            'email.required'    => 'Email field is required.',
-            'email.email'       => 'Email field must be a valid email address.'
         ]);
 
         $user = User::find($id);
 
         $user->update($request->all());
 
-        return redirect()->route('profile')->with(['info','Data berhasil Di Update']);
+        return redirect()->route('profile')->with('success','Data berhasil Di Update');
     }
 
     public function changePassword(Request $request) 
@@ -156,7 +140,7 @@ class UserController extends Controller
         'password' => Hash::make($request->new_password)
         ]);
 
-        return back()->with("status", "Password changed successfully!");
+        return back()->with('success', 'Password changed successfully!');
     }
 
           /**
