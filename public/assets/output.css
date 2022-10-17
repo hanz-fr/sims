@@ -1473,6 +1473,10 @@ video {
   width: 550px;
 }
 
+.tw-w-\[600px\] {
+  width: 600px;
+}
+
 .tw-max-w-3xl {
   max-width: 48rem;
 }

@@ -214,7 +214,7 @@ Route::middleware(['admin'])->group(function () {
     /* CREATE MAPEL JURUSAN */
     Route::get('/create-mata-pelajaran-jurusan', function () {
         return view('admin.mapel-jurusan.create-mapel-jurusan', [
-            'title' => 'Mata Pelajaran',
+            'title' => 'Create Mata Pelajaran',
             'active' => 'database'
         ]);
     });
@@ -222,7 +222,7 @@ Route::middleware(['admin'])->group(function () {
     /* EDIT MAPEL JURUSAN */
     Route::get('/edit-mata-pelajaran-jurusan', function () {
         return view('admin.mapel-jurusan.edit-mapel-jurusan', [
-            'title' => 'Mata Pelajaran',
+            'title' => 'Edit Mata Pelajaran',
             'active' => 'database'
         ]);
     });
@@ -239,6 +239,14 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/detail-rapor', function () {
         return view('admin.raport.detail-rapor', [
             'title' => 'Detail Rapor',
+            'active' => 'database'
+        ]);
+    });
+
+    // CREATE RAPOR
+    Route::get('/create-rapor', function () {
+        return view('admin.raport.create-rapor', [
+            'title' => 'Create Rapor',
             'active' => 'database'
         ]);
     });
