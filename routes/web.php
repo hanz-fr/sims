@@ -251,6 +251,14 @@ Route::middleware(['admin'])->group(function () {
         ]);
     });
 
+    // EDIT RAPOR
+    Route::get('/edit-rapor', function () {
+        return view('admin.raport.edit-rapor', [
+            'title' => 'Edit Rapor',
+            'active' => 'database'
+        ]);
+    });
+
     /* SHOW USER DETAIL */
     Route::get('/show-detail', function () {
         return view('admin.account.show-detail', [
