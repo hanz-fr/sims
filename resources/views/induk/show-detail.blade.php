@@ -565,7 +565,7 @@
                                                 class="tw-text-lg tw-bg-gray-100 tw-text-basic-700 tw-border-b tw-font-pop">
                                                 <tr class="tw-border">
                                                     <th scope="col" class="tw-py-3 tw-px-6">
-                                                        Second Page
+                                                        Nama Mapel
                                                     </th>
                                                     <th scope="col" class="tw-py-3 tw-px-6">
                                                         KBM
