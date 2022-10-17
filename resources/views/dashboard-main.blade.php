@@ -2,9 +2,9 @@
 
 @section('content')
 <div class="tw-mx-10">
-  <div class="tw-flex sm:tw-flex-col md:tw-flex-col lg:tw-flex-row tw-gap-8">
+  <div class="tw-flex sm:tw-flex-col lg:tw-flex-row tw-gap-8">
     
-    <div class="tw-flex tw-flex-col tw-w-1/2">
+    <div class="tw-w-1/2">
           {{-- card jumlah --}}
         <div x-data="{
             currentPage: 0,

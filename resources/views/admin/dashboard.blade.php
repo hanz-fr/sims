@@ -3,6 +3,8 @@
 @section('content')
 <div class="tw-m-10 tw-w-screen tw-flex">
    <div class="tw-gap-8">
+
+      {{-- title --}}
       <section class="tw-w-full tw-flex tw-mb-8">
          <div class="tw-border-l-8 tw-border-admin-300 tw-h-16 tw-mr-5"></div>
          <div class="tw-flex tw-flex-col">

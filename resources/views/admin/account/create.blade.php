@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="tw-mx-10 tw-w-screen tw-h-screen">
-  <div class="tw-flex tw-flex-col tw-mt-8 tw-gap-8">
+  <div class="tw-mt-8 tw-gap-8">
 
     {{-- title --}}
     <section class="tw-flex tw-items-center">
@@ -16,7 +16,7 @@
     {{-- card form add data --}}
     <form action="" method="POST">
       @csrf
-    <section class="tw-bg-white tw-rounded-xl tw-border-l-[17px] tw-border-admin-300 tw-py-20 tw-pl-10 tw-font-pop shadow-cs">
+    <section class="tw-bg-white tw-mt-8 tw-rounded-xl tw-border-l-[17px] tw-border-admin-300 tw-py-20 tw-pl-10 tw-font-pop shadow-cs">
       <div class="tw-flex tw-w-full tw-items-center">
         {{-- @if()
         <img src="" alt="Pas Foto" srcset="" class="tw-rounded-xl tw-mb-10 tw-w-48 tw-h-52 tw-border tw-border-slate-400 tw-mx-auto md:tw-mt-20 sm:tw-mt-10">
