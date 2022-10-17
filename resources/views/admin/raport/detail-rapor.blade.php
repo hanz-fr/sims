@@ -31,22 +31,6 @@
                     </span>
                 </div>
             </div>
-            {{-- <div class="tw-mt-1">
-                    <p class="tw-font-bold tw-text-xl tw-mb-4">Semester: <span class="tw-font-normal">7</span>
-                    </p>
-                    <p class="tw-font-bold tw-text-xl tw-mb-4">Tahun Ajaran: <span class="tw-font-normal">2023-2024</span>
-                    </p>
-                    <p class="tw-font-bold tw-text-xl tw-mb-4">Sakit: <span class="tw-font-normal">0</span> </p>
-                    <p class="tw-font-bold tw-text-xl tw-mb-4">Izin: <span class="tw-font-normal">&infin;</span> </p>
-                    <p class="tw-font-bold tw-text-xl tw-mb-4">Alpa: <span class="tw-font-normal">2</span> </p>
-                    <p class="tw-font-bold tw-text-xl tw-mb-4">Status Kenaikan: <span class="tw-font-normal">Naik Kelas</span>
-                    </p>
-                    <p class="tw-font-bold tw-text-xl tw-mb-4">Naik ke Kelas: <span class="tw-font-normal">XIV PPLG 1</span>
-                    </p>
-                    <p class="tw-font-bold tw-text-xl tw-mb-4">Tanggal Kenaikan: <span class="tw-font-normal">16 Juli 2024</span>
-                    </p>
-                </div> --}}
-
         </div>
         <div class="tw-my-2 tw-p-8 tw-text-admin-600 tw-font-ubuntu tw-rounded-xl tw-shadow-md">
             <table class="tw-w-full  table-auto">
@@ -144,10 +128,11 @@
         </div>
 
         <div class="tw-my-10 tw-flex tw-gap-4 tw-justify-end tw-font-ubuntu tw-pb-5">
-            <a href="#" class="tw-bg-[#FFCF86] hover:tw-bg-[#ffba51] tw-text-black tw-px-7 tw-py-3 tw-rounded-lg">
+            <a href="/edit-rapor" class="tw-bg-[#FFCF86] hover:tw-bg-[#ffba51] tw-text-black tw-px-7 tw-py-3 tw-rounded-lg">
                 Edit
             </a>
-            <form action="" class="tw-inline-flex">
+            <form action="post" class="tw-inline-flex">
+                @method('delete')
                 <a href=""
                     class="tw-bg-[#FF7575] hover:tw-bg-salmon-600 tw-px-7 tw-py-3  tw-text-white tw-rounded-lg">
                     Hapus
