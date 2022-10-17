@@ -17,7 +17,7 @@ class ApiController extends Controller
     /* GLOBAL VARIABLES */
     public function __construct()
     {
-        $this->api_url = 'https://6c6f-114-79-55-149.ap.ngrok.io'; // Ganti link NGROK disini
+        $this->api_url = '127.0.0.1:3000'; // Ganti link NGROK disini
     }
 
     /* API SISWA */
@@ -699,20 +699,27 @@ class ApiController extends Controller
 
     public function rekapJumlahSiswa() {
 
-        $kelas = Http::get("{$this->api_url}/kelas/siswa-per-kelas/all");
+        $semuaKelas = Http::get("{$this->api_url}/kelas/siswa-per-kelas/all");
+        $kelas10 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/10");
+        $kelas11 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/11");
+        $kelas12 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/12");
 
-        if ($kelas->successful()) {
+
+        if ($semuaKelas->successful()) {
 
             return view('rekap-siswa.data-rekap-jumlah-siswa', [
                 'title' => 'Data Rekap Siswa',
                 'active' => 'rekap-siswa',
-                'kelas' => json_decode($kelas)->result
+                'semua_kelas' => json_decode($semuaKelas)->result,
+                'kelas10' => json_decode($kelas10)->result,
+                'kelas11' => json_decode($kelas11)->result,
+                'kelas12' => json_decode($kelas12)->result,
             ]);
 
         } else {
 
             return view('induk.show-all', [
-                'response' => $kelas,
+                'response' => $semuaKelas,
                 'status' => 'error',
                 'title' => 'data-induk',
                 'active' => 'rekap-siswa',
@@ -720,7 +727,6 @@ class ApiController extends Controller
             ]);
         }
     }
-
 
 
     /* API LIVESEARCH (TESTING) */
