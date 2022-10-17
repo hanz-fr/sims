@@ -311,6 +311,38 @@ Route::middleware(['admin'])->group(function () {
         ]);
     });
 
+    // ALL MAPEL
+    Route::get('/all-mata-pelajaran', function () {
+        return view('admin.all-mapel.all-mapel', [
+            'title' => 'Mata Pelajaran',
+            'active' => 'database'
+        ]);
+    });
+
+    // DETAIL ALL MAPEL
+    Route::get('/detail-all-mata-pelajaran', function () {
+        return view('admin.all-mapel.detail-all-mapel', [
+            'title' => 'Detail Mata Pelajaran',
+            'active' => 'database'
+        ]);
+    });
+
+    // CREATE ALL MAPEL
+    Route::get('/create-all-mata-pelajaran', function () {
+        return view('admin.all-mapel.create-all-mapel', [
+            'title' => 'Create Mata Pelajaran',
+            'active' => 'database'
+        ]);
+    });
+
+    // UPDATE ALL MAPEL
+    Route::get('/edit-all-mata-pelajaran', function () {
+        return view('admin.all-mapel.edit-all-mapel', [
+            'title' => 'Edit Mata Pelajaran',
+            'active' => 'database'
+        ]);
+    });
+
     // MUTASI
     Route::get('/data-mutasi', function () {
         return view('admin.mutasi.show-all-mutasi', [
