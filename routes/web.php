@@ -80,7 +80,7 @@ Route::middleware(['auth'])->group(function () {
             'title' => 'Pilih Jurusan',
             'active' => 'data-induk'
         ]);
-    })->middleware('kesiswaan');
+    });
 
 
 
