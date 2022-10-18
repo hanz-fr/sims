@@ -31,11 +31,7 @@
                 </div>
 
                 {{-- data siswa n rekap nilai --}}
-                <div x-data="{
-                    openTab: 1,
-                    activeClasses: 'tw-bg-white tw-border',
-                    inactiveClasses: 'tw-bg-gray-200 tw-border-t tw-border-x'
-                }" class="md:tw-w-3/5 sm:tw-w-full">
+                <div class="md:tw-w-3/5 sm:tw-w-full">
                     <div class="tw-float-right tw-flex tw-gap-2">
                         <form action="/api/siswa/delete/{{ $siswa->nis_siswa }}" method="POST">
                             @csrf
@@ -87,25 +83,21 @@
                         <a href="/edit-siswa/{{ $siswa->nis_siswa }}"
                             class="tw-text-white tw-text-sm tw-bg-yellow-400 hover:tw-text-white hover:tw-bg-yellow-500 tw-rounded-lg tw-py-2 tw-px-3"><i
                                 class="fa-solid fa-pen-to-square mr-2"></i>Edit</a>
+                        <a href="/rekap-nilai"
+                        class="tw-text-white tw-text-sm tw-bg-sims-400 hover:tw-text-white hover:tw-bg-sims-500 tw-rounded-lg tw-py-2 tw-px-3"><i
+                            class="fa-light fa-clipboard-list mr-2"></i>Rekap Nilai</a>
                     </div>
                     <ul class="tw-flex mb-0 mt-3 tw--ml-6">
-                        <li @click="openTab = 1" :class="{ 'tw--mb-px': openTab === 1 }" class="tw--mb-px tw-mr-1">
-                            <button :class="openTab === 1 ? activeClasses : inactiveClasses"
-                                class="tw-rounded-t-2xl tw-text-basic-700 hover:tw-text-sims-400 tw-inline-block tw-py-2 tw-px-4 tw-font-semibold"
+                        <li class="tw--mb-px tw-mr-1">
+                            <button
+                                class="tw-rounded-t-2xl tw-bg-white tw-border tw-text-basic-700 hover:tw-text-sims-400 tw-inline-block tw-py-2 tw-px-4 tw-font-semibold"
                                 href="#">
                                 Data Diri
                             </button>
                         </li>
-                        <li @click="openTab = 2" :class="{ 'tw--mb-px': openTab === 2 }">
-                            <button :class="openTab === 2 ? activeClasses : inactiveClasses"
-                                class="tw-rounded-t-2xl tw-text-basic-700 hover:tw-text-sims-400 tw-inline-block tw-py-2 tw-px-4 tw-font-semibold"
-                                href="#">
-                                Rekap Nilai
-                            </button>
-                        </li>
                     </ul>
                     <div class="tw-w-full">
-                        <div x-show="openTab === 1">
+                        <div>
                             <div x-data="{
                                 selected: 1,
                                 activeClasses: 'tw-bg-sims-400 tw-text-white',
@@ -507,254 +499,6 @@
             <a class="tw-text-gray-300 tw-bg-[#2f5555] hover:tw-text-gray-300 tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-regular fa-arrow-left"></i></a>
           </div>
           @endif --}}
-                        </div>
-                        <div x-show="openTab === 2">
-                            <div x-data="{
-                                selected: 'semester-1',
-                                activeClasses: 'tw-bg-sims-400 tw-text-white',
-                                inactiveClasses: 'tw-bg-white tw-text-sims-400'
-                            }">
-                                <div x-show="selected === 'semester-1'">
-                                    <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
-                                        <table class="tw-w-full tw-text-sm tw-text-center">
-                                            <thead
-                                                class="tw-text-lg tw-bg-gray-100 tw-text-basic-700 tw-border-b tw-font-pop">
-                                                <tr class="tw-border">
-                                                    <th scope="col" class="tw-py-3 tw-px-6">
-                                                        Nama Mapel
-                                                    </th>
-                                                    <th scope="col" class="tw-py-3 tw-px-6">
-                                                        KBM
-                                                    </th>
-                                                    <th scope="col" class="tw-py-3 tw-px-6">
-                                                        Pengetahuan
-                                                    </th>
-                                                    <th scope="col" class="tw-py-3 tw-px-6">
-                                                        Keterampilan
-                                                    </th>
-                                                </tr>
-                                            </thead>
-                                            <tbody class="tw-text-base text-center">
-                                                @foreach (collect($siswa->raport)->where('semester', 1) as $rp)
-                                                    @foreach ($rp->NilaiMapel as $nm)
-                                                        <tr class="tw-bg-white tw-border">
-                                                            <th scope="row"
-                                                                class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                                                                {{ $nm->MapelJurusan->MapelId }}
-                                                            </th>
-                                                            <td class="tw-py-4 tw-px-6">
-                                                              {{ $nm->kkm }}
-                                                            </td>
-                                                            <td class="tw-py-4 tw-px-6">
-                                                              {{ $nm->nilai_pengetahuan }}
-                                                            </td>
-                                                            <td class="tw-py-4 tw-px-6">
-                                                              {{ $nm->nilai_keterampilan }}
-                                                            </td>
-                                                        </tr>
-                                                    @endforeach
-                                                @endforeach
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div x-show="selected === 'semester-2'">
-                                    <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
-                                        <table class="tw-w-full tw-text-sm tw-text-center">
-                                            <thead
-                                                class="tw-text-lg tw-bg-gray-100 tw-text-basic-700 tw-border-b tw-font-pop">
-                                                <tr class="tw-border">
-                                                    <th scope="col" class="tw-py-3 tw-px-6">
-                                                        Nama Mapel
-                                                    </th>
-                                                    <th scope="col" class="tw-py-3 tw-px-6">
-                                                        KBM
-                                                    </th>
-                                                    <th scope="col" class="tw-py-3 tw-px-6">
-                                                        Pengetahuan
-                                                    </th>
-                                                    <th scope="col" class="tw-py-3 tw-px-6">
-                                                        Keterampilan
-                                                    </th>
-                                                </tr>
-                                            </thead>
-                                            <tbody class="tw-text-base text-center">
-                                                @foreach (collect($siswa->raport)->where('semester', 2) as $rp)
-                                                    @foreach ($rp->NilaiMapel as $nm)
-                                                        <tr class="tw-bg-white tw-border">
-                                                            <th scope="row"
-                                                                class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                                                                {{ $nm->MapelJurusan->MapelId }}
-                                                            </th>
-                                                            <td class="tw-py-4 tw-px-6">
-                                                              {{ $nm->kkm }}
-                                                            </td>
-                                                            <td class="tw-py-4 tw-px-6">
-                                                              {{ $nm->nilai_pengetahuan }}
-                                                            </td>
-                                                            <td class="tw-py-4 tw-px-6">
-                                                              {{ $nm->nilai_keterampilan }}
-                                                            </td>
-                                                        </tr>
-                                                    @endforeach
-                                                @endforeach
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div x-show="selected === 'semester-3'">
-                                    <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
-                                        <table class="tw-w-full tw-text-sm tw-text-center">
-                                            <thead
-                                                class="tw-text-lg tw-bg-gray-100 tw-text-basic-700 tw-border-b tw-font-pop">
-                                                <tr class="tw-border">
-                                                    <th scope="col" class="tw-py-3 tw-px-6">
-                                                        Nama Mapel
-                                                    </th>
-                                                    <th scope="col" class="tw-py-3 tw-px-6">
-                                                        KBM
-                                                    </th>
-                                                    <th scope="col" class="tw-py-3 tw-px-6">
-                                                        Pengetahuan
-                                                    </th>
-                                                    <th scope="col" class="tw-py-3 tw-px-6">
-                                                        Keterampilan
-                                                    </th>
-                                                </tr>
-                                            </thead>
-                                            <tbody class="tw-text-base text-center">
-                                                @foreach (collect($siswa->raport)->where('semester', 3) as $rp)
-                                                @foreach ($rp->NilaiMapel as $nm)
-                                                    <tr class="tw-bg-white tw-border">
-                                                        <th scope="row"
-                                                            class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                                                            {{ $nm->MapelJurusan->MapelId }}
-                                                        </th>
-                                                        <td class="tw-py-4 tw-px-6">
-                                                          {{ $nm->kkm }}
-                                                        </td>
-                                                        <td class="tw-py-4 tw-px-6">
-                                                          {{ $nm->nilai_pengetahuan }}
-                                                        </td>
-                                                        <td class="tw-py-4 tw-px-6">
-                                                          {{ $nm->nilai_keterampilan }}
-                                                        </td>
-                                                    </tr>
-                                                @endforeach
-                                                @endforeach
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div x-show="selected === 'semester-4'">
-                                    <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
-                                        <table class="tw-w-full tw-text-sm tw-text-center">
-                                            <thead
-                                                class="tw-text-lg tw-bg-gray-100 tw-text-basic-700 tw-border-b tw-font-pop">
-                                                <tr class="tw-border">
-                                                    <th scope="col" class="tw-py-3 tw-px-6">
-                                                        Nama Mapel
-                                                    </th>
-                                                    <th scope="col" class="tw-py-3 tw-px-6">
-                                                        KBM
-                                                    </th>
-                                                    <th scope="col" class="tw-py-3 tw-px-6">
-                                                        Pengetahuan
-                                                    </th>
-                                                    <th scope="col" class="tw-py-3 tw-px-6">
-                                                        Keterampilan
-                                                    </th>
-                                                </tr>
-                                            </thead>
-                                            <tbody class="tw-text-base text-center">
-                                                @foreach (collect($siswa->raport)->where('semester', 4) as $rp)
-                                                    @foreach ($rp->NilaiMapel as $nm)
-                                                        <tr class="tw-bg-white tw-border">
-                                                            <th scope="row"
-                                                                class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                                                                {{ $nm->MapelJurusan->MapelId }}
-                                                            </th>
-                                                            <td class="tw-py-4 tw-px-6">
-                                                              {{ $nm->kkm }}
-                                                            </td>
-                                                            <td class="tw-py-4 tw-px-6">
-                                                              {{ $nm->nilai_pengetahuan }}
-                                                            </td>
-                                                            <td class="tw-py-4 tw-px-6">
-                                                              {{ $nm->nilai_keterampilan }}
-                                                            </td>
-                                                        </tr>
-                                                    @endforeach
-                                                @endforeach
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div x-show="selected === 'semester-5'">
-                                    <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
-                                        <table class="tw-w-full tw-text-sm tw-text-center">
-                                            <thead
-                                                class="tw-text-lg tw-bg-gray-100 tw-text-basic-700 tw-border-b tw-font-pop">
-                                                <tr class="tw-border">
-                                                    <th scope="col" class="tw-py-3 tw-px-6">
-                                                        Nama Mapel
-                                                    </th>
-                                                    <th scope="col" class="tw-py-3 tw-px-6">
-                                                        KBM
-                                                    </th>
-                                                    <th scope="col" class="tw-py-3 tw-px-6">
-                                                        Pengetahuan
-                                                    </th>
-                                                    <th scope="col" class="tw-py-3 tw-px-6">
-                                                        Keterampilan
-                                                    </th>
-                                                </tr>
-                                            </thead>
-                                            <tbody class="tw-text-base text-center">
-                                                @foreach (collect($siswa->raport)->where('semester', 5) as $rp)
-                                                    @foreach ($rp->NilaiMapel as $nm)
-                                                        <tr class="tw-bg-white tw-border">
-                                                            <th scope="row"
-                                                                class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                                                                {{ $nm->MapelJurusan->MapelId }}
-                                                            </th>
-                                                            <td class="tw-py-4 tw-px-6">
-                                                              {{ $nm->kkm }}
-                                                            </td>
-                                                            <td class="tw-py-4 tw-px-6">
-                                                              {{ $nm->nilai_pengetahuan }}
-                                                            </td>
-                                                            <td class="tw-py-4 tw-px-6">
-                                                              {{ $nm->nilai_keterampilan }}
-                                                            </td>
-                                                        </tr>
-                                                    @endforeach
-                                                @endforeach
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div
-                                    class="tw-text-center tw-font-medium tw-mt-8 tw-mb-3 tw-text-gray-500 tw-font-pop tw-text-xl">
-                                    SEMESTER</div>
-                                <div class="tw-flex tw-flex-row tw-justify-center tw-gap-4">
-                                    <a x-on:click="selected = 'semester-1'"
-                                        :class="selected === 'semester-1' ? activeClasses : inactiveClasses" href="#"
-                                        class="tw-rounded-lg tw-font-semibold tw-text-lg tw-py-2 tw-px-5 tw-shadow-md hover:tw-bg-sims-400 hover:tw-text-white">1</a>
-                                    <a x-on:click="selected = 'semester-2'"
-                                        :class="selected === 'semester-2' ? activeClasses : inactiveClasses" href="#"
-                                        class="tw-rounded-lg tw-font-semibold tw-text-lg tw-py-2 tw-px-5 tw-shadow-md hover:tw-bg-sims-400 hover:tw-text-white">2</a>
-                                    <a x-on:click="selected = 'semester-3'"
-                                        :class="selected === 'semester-3' ? activeClasses : inactiveClasses" href="#"
-                                        class="tw-rounded-lg tw-font-semibold tw-text-lg tw-py-2 tw-px-5 tw-shadow-md hover:tw-bg-sims-400 hover:tw-text-white">3</a>
-                                    <a x-on:click="selected = 'semester-4'"
-                                        :class="selected === 'semester-4' ? activeClasses : inactiveClasses" href="#"
-                                        class="tw-rounded-lg tw-font-semibold tw-text-lg tw-py-2 tw-px-5 tw-shadow-md hover:tw-bg-sims-400 hover:tw-text-white">4</a>
-                                    <a x-on:click="selected = 'semester-5'"
-                                        :class="selected === 'semester-5' ? activeClasses : inactiveClasses" href="#"
-                                        class="tw-rounded-lg tw-font-semibold tw-text-lg tw-py-2 tw-px-5 tw-shadow-md hover:tw-bg-sims-400 hover:tw-text-white">5</a>
-                                </div>
-                            </div>
                             {{-- <div class="tw-float-right tw-py-5 tw-px-3">
             <a href="#" class="tw-text-white tw-bg-sims-400 hover:tw-bg-[#3F7373] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-regular fa-arrow-right"></i></a>
           </div>
