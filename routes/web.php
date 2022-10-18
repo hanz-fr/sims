@@ -99,12 +99,7 @@ Route::middleware(['auth'])->group(function () {
 
     /* REKAP NILAI */
 
-    Route::get('/rekap-nilai', function () {
-        return view('induk.show-rekap-nilai', [
-            'title' => 'Rekap Nilai',
-            'active' => 'data-induk'
-        ]);
-    });
+    Route::get('/rekap-nilai/{nis}', [ApiController::class, 'getRaportSiswa']);
 
 
     /* REKAP SISWA */

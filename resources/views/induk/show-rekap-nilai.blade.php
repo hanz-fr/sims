@@ -34,90 +34,87 @@
                     </tr>
                 </thead>
                 <tbody class="tw-text-base text-center">
-                    <tr class="tw-bg-white tw-border">
-                        <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                          Bahasa Inggris
+                  @foreach (collect($siswa->raport)->where('semester', 1) as $rp)
+                  @foreach ($rp->NilaiMapel as $nm)
+                      <tr class="tw-bg-white tw-border">
+                          <th scope="row"
+                              class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
+                              {{ $nm->MapelJurusan->MapelId }}
+                          </th>
+                          <td class="tw-py-4 tw-px-6">
+                            {{ $nm->kkm }}
+                          </td>
+                          <td class="tw-py-4 tw-px-6">
+                            {{ $nm->nilai_pengetahuan }}
+                          </td>
+                          <td class="tw-py-4 tw-px-6">
+                            {{ $nm->nilai_keterampilan }}
+                          </td>
+                      </tr>
+                  @endforeach
+                      <tr>
+                        <th scope="row" rowspan="4" class="bg-white tw-py-2 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap tw-border">
+                          Absen
                         </th>
-                        <td class="tw-py-4 tw-px-6">
-                          72
+                        <td class="tw-border">
+                          Sakit (hari)
                         </td>
-                        <td class="tw-py-4 tw-px-6">
-                          75
+                        <td class="tw-border">
+                          {{ $rp->sakit }}
                         </td>
-                        <td class="tw-py-4 tw-px-6">
-                          75
+                      </tr>
+                      <tr class="tw-bg-gray-100">
+                        <td class="tw-py-2 tw-px-6 tw-border">
+                          Ijin (hari)
                         </td>
-                    </tr>
-                    <tr class="tw-border tw-bg-gray-100">
-                        <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                          Bahasa Indonesia
+                        <td class="tw-border">
+                          {{ $rp->ijin }}
+                        </td>
+                      </tr>
+                      <tr class="tw-bg-gray-100">
+                        <td class="tw-py-2 tw-px-6 tw-border">
+                          Alpa (hari)
+                        </td>
+                        <td class="tw-border">
+                          {{ $rp->alpa }}
+                        </td>
+                      </tr>
+                      <tr class="tw-bg-gray-100">
+                        <td class="tw-py-2 tw-px-6 tw-border">
+                          Jumlah (hari)
+                        </td>
+                        <td class="tw-border">
+                          {{ $rp->sakit + $rp->ijin + $rp->alpa  }}
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row" rowspan="3" class="tw-bg-white tw-py-2 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap tw-border">
+                          Status Akhir Tahun
                         </th>
-                        <td class="tw-py-4 tw-px-6">
-                          88
+                        <td class="tw-py-2 tw-px-6 tw-border">
+                          Status Kenaikan
                         </td>
-                        <td class="tw-py-4 tw-px-6">
-                          75
+                        <td class="tw-border">
+                          Naik
                         </td>
-                        <td class="tw-py-4 tw-px-6">
-                          75
+                      </tr>
+                      <tr class="tw-bg-gray-100">
+                        <td class="tw-py-2 tw-px-6 tw-border">
+                          Naik ke
                         </td>
-                    </tr>
-                    <tr class="tw-bg-white tw-border">
-                        <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                          Agama
-                        </th>
-                        <td class="tw-py-4 tw-px-6">
-                          98
+                        <td class="tw-border">
+                          {{ $rp->naikKelas }}
                         </td>
-                        <td class="tw-py-4 tw-px-6">
-                          72
+                      </tr>
+                      <tr class="tw-bg-gray-100">
+                        <td class="tw-py-2 tw-px-6 tw-border">
+                          Tanggal Kenaikan
                         </td>
-                        <td class="tw-py-4 tw-px-6">
-                          72
+                        <td class="tw-border">
+                          {{ $rp->tgl_kenaikan }}
                         </td>
-                    </tr>
-                    <tr class="tw-bg-gray-100 tw-border">
-                      <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                        PPKN 
-                      </th>
-                      <td class="tw-py-4 tw-px-6">
-                        77
-                      </td>
-                      <td class="tw-py-4 tw-px-6">
-                        75
-                      </td>
-                      <td class="tw-py-4 tw-px-6">
-                        75
-                      </td>
-                    </tr>
-                    <tr class="tw-bg-white tw-border">
-                      <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                        Matematika
-                      </th>
-                      <td class="tw-py-4 tw-px-6">
-                        72
-                      </td>
-                      <td class="tw-py-4 tw-px-6">
-                        72
-                      </td>
-                      <td class="tw-py-4 tw-px-6">
-                        72
-                      </td>
-                    </tr>
-                    <tr class="tw-bg-gray-100 tw-border">
-                      <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                        Bahasa Jepang
-                      </th>
-                      <td class="tw-py-4 tw-px-6">
-                        87
-                      </td>
-                      <td class="tw-py-4 tw-px-6">
-                        75
-                      </td>
-                      <td class="tw-py-4 tw-px-6">
-                        75
-                      </td>
-                    </tr>
+                      </tr>
+                  @endforeach
                 </tbody>
             </table>
         </div>
@@ -140,152 +137,87 @@
                   </tr>
               </thead>
               <tbody class="tw-text-base text-center">
-                  <tr class="tw-bg-white tw-border">
-                      <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                        Bahasa Inggris
+                @foreach (collect($siswa->raport)->where('semester', 2) as $rp)
+                @foreach ($rp->NilaiMapel as $nm)
+                    <tr class="tw-bg-white tw-border">
+                        <th scope="row"
+                            class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
+                            {{ $nm->MapelJurusan->MapelId }}
+                        </th>
+                        <td class="tw-py-4 tw-px-6">
+                          {{ $nm->kkm }}
+                        </td>
+                        <td class="tw-py-4 tw-px-6">
+                          {{ $nm->nilai_pengetahuan }}
+                        </td>
+                        <td class="tw-py-4 tw-px-6">
+                          {{ $nm->nilai_keterampilan }}
+                        </td>
+                    </tr>
+                @endforeach
+                    <tr>
+                      <th scope="row" rowspan="4" class="bg-white tw-py-2 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap tw-border">
+                        Absen
                       </th>
-                      <td class="tw-py-4 tw-px-6">
-                        72
+                      <td class="tw-border">
+                        Sakit (hari)
                       </td>
-                      <td class="tw-py-4 tw-px-6">
-                        75
+                      <td class="tw-border">
+                        {{ $rp->sakit }}
                       </td>
-                      <td class="tw-py-4 tw-px-6">
-                        75
+                    </tr>
+                    <tr class="tw-bg-gray-100">
+                      <td class="tw-py-2 tw-px-6 tw-border">
+                        Ijin (hari)
                       </td>
-                  </tr>
-                  <tr class="tw-border tw-bg-gray-100">
-                      <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                        Bahasa Indonesia
+                      <td class="tw-border">
+                        {{ $rp->ijin }}
+                      </td>
+                    </tr>
+                    <tr class="tw-bg-gray-100">
+                      <td class="tw-py-2 tw-px-6 tw-border">
+                        Alpa (hari)
+                      </td>
+                      <td class="tw-border">
+                        {{ $rp->alpa }}
+                      </td>
+                    </tr>
+                    <tr class="tw-bg-gray-100">
+                      <td class="tw-py-2 tw-px-6 tw-border">
+                        Jumlah (hari)
+                      </td>
+                      <td class="tw-border">
+                        {{ $rp->sakit + $rp->ijin + $rp->alpa  }}
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row" rowspan="3" class="tw-bg-white tw-py-2 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap tw-border">
+                        Status Akhir Tahun
                       </th>
-                      <td class="tw-py-4 tw-px-6">
-                        88
+                      <td class="tw-py-2 tw-px-6 tw-border">
+                        Status Kenaikan
                       </td>
-                      <td class="tw-py-4 tw-px-6">
-                        75
+                      <td class="tw-border">
+                        Naik
                       </td>
-                      <td class="tw-py-4 tw-px-6">
-                        75
+                    </tr>
+                    <tr class="tw-bg-gray-100">
+                      <td class="tw-py-2 tw-px-6 tw-border">
+                        Naik ke
                       </td>
-                  </tr>
-                  <tr class="tw-bg-white tw-border">
-                      <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                        Agama
-                      </th>
-                      <td class="tw-py-4 tw-px-6">
-                        98
+                      <td class="tw-border">
+                        {{ $rp->naikKelas }}
                       </td>
-                      <td class="tw-py-4 tw-px-6">
-                        72
+                    </tr>
+                    <tr class="tw-bg-gray-100">
+                      <td class="tw-py-2 tw-px-6 tw-border">
+                        Tanggal Kenaikan
                       </td>
-                      <td class="tw-py-4 tw-px-6">
-                        72
+                      <td class="tw-border">
+                        {{ $rp->tgl_kenaikan }}
                       </td>
-                  </tr>
-                  <tr class="tw-bg-gray-100 tw-border">
-                    <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                      PPKN 
-                    </th>
-                    <td class="tw-py-4 tw-px-6">
-                      77
-                    </td>
-                    <td class="tw-py-4 tw-px-6">
-                      75
-                    </td>
-                    <td class="tw-py-4 tw-px-6">
-                      75
-                    </td>
-                  </tr>
-                  <tr class="tw-bg-white tw-border">
-                    <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                      Matematika
-                    </th>
-                    <td class="tw-py-4 tw-px-6">
-                      72
-                    </td>
-                    <td class="tw-py-4 tw-px-6">
-                      72
-                    </td>
-                    <td class="tw-py-4 tw-px-6">
-                      72
-                    </td>
-                  </tr>
-                  <tr class="tw-bg-gray-100 tw-border">
-                    <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                      Bahasa Jepang
-                    </th>
-                    <td class="tw-py-4 tw-px-6">
-                      87
-                    </td>
-                    <td class="tw-py-4 tw-px-6">
-                      75
-                    </td>
-                    <td class="tw-py-4 tw-px-6">
-                      75
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row" rowspan="4" class="bg-white tw-py-2 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap tw-border">
-                      Absen
-                    </th>
-                    <td class="tw-border">
-                      Sakit (hari)
-                    </td>
-                    <td class="tw-border">
-                      75
-                    </td>
-                  </tr>
-                  <tr class="tw-bg-gray-100">
-                    <td class="tw-py-2 tw-px-6 tw-border">
-                      Ijin (hari)
-                    </td>
-                    <td class="tw-border">
-                      75
-                    </td>
-                  </tr>
-                  <tr class="tw-bg-gray-100">
-                    <td class="tw-py-2 tw-px-6 tw-border">
-                      Alpa (hari)
-                    </td>
-                    <td class="tw-border">
-                      75
-                    </td>
-                  </tr>
-                  <tr class="tw-bg-gray-100">
-                    <td class="tw-py-2 tw-px-6 tw-border">
-                      Jumlah (hari)
-                    </td>
-                    <td class="tw-border">
-                      75
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row" rowspan="3" class="tw-bg-white tw-py-2 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap tw-border">
-                      Status Akhir Tahun
-                    </th>
-                    <td class="tw-py-2 tw-px-6 tw-border">
-                      Status Kenaikan
-                    </td>
-                    <td class="tw-border">
-                      Naik
-                    </td>
-                  </tr>
-                  <tr class="tw-bg-gray-100">
-                    <td class="tw-py-2 tw-px-6 tw-border">
-                      Naik ke
-                    </td>
-                    <td class="tw-border">
-                      XI
-                    </td>
-                  </tr>
-                  <tr class="tw-bg-gray-100">
-                    <td class="tw-py-2 tw-px-6 tw-border">
-                      Tanggal Kenaikan
-                    </td>
-                    <td class="tw-border">
-                      24 Juni 2021
-                    </td>
-                  </tr>
+                    </tr>
+                @endforeach
               </tbody>
           </table>
         </div>
@@ -308,90 +240,87 @@
                   </tr>
               </thead>
               <tbody class="tw-text-base text-center">
-                  <tr class="tw-bg-white tw-border">
-                      <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                        Bahasa Inggris
+                @foreach (collect($siswa->raport)->where('semester', 3) as $rp)
+                @foreach ($rp->NilaiMapel as $nm)
+                    <tr class="tw-bg-white tw-border">
+                        <th scope="row"
+                            class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
+                            {{ $nm->MapelJurusan->MapelId }}
+                        </th>
+                        <td class="tw-py-4 tw-px-6">
+                          {{ $nm->kkm }}
+                        </td>
+                        <td class="tw-py-4 tw-px-6">
+                          {{ $nm->nilai_pengetahuan }}
+                        </td>
+                        <td class="tw-py-4 tw-px-6">
+                          {{ $nm->nilai_keterampilan }}
+                        </td>
+                    </tr>
+                @endforeach
+                    <tr>
+                      <th scope="row" rowspan="4" class="bg-white tw-py-2 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap tw-border">
+                        Absen
                       </th>
-                      <td class="tw-py-4 tw-px-6">
-                        72
+                      <td class="tw-border">
+                        Sakit (hari)
                       </td>
-                      <td class="tw-py-4 tw-px-6">
-                        75
+                      <td class="tw-border">
+                        {{ $rp->sakit }}
                       </td>
-                      <td class="tw-py-4 tw-px-6">
-                        75
+                    </tr>
+                    <tr class="tw-bg-gray-100">
+                      <td class="tw-py-2 tw-px-6 tw-border">
+                        Ijin (hari)
                       </td>
-                  </tr>
-                  <tr class="tw-border tw-bg-gray-100">
-                      <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                        Bahasa Indonesia
+                      <td class="tw-border">
+                        {{ $rp->ijin }}
+                      </td>
+                    </tr>
+                    <tr class="tw-bg-gray-100">
+                      <td class="tw-py-2 tw-px-6 tw-border">
+                        Alpa (hari)
+                      </td>
+                      <td class="tw-border">
+                        {{ $rp->alpa }}
+                      </td>
+                    </tr>
+                    <tr class="tw-bg-gray-100">
+                      <td class="tw-py-2 tw-px-6 tw-border">
+                        Jumlah (hari)
+                      </td>
+                      <td class="tw-border">
+                        {{ $rp->sakit + $rp->ijin + $rp->alpa  }}
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row" rowspan="3" class="tw-bg-white tw-py-2 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap tw-border">
+                        Status Akhir Tahun
                       </th>
-                      <td class="tw-py-4 tw-px-6">
-                        88
+                      <td class="tw-py-2 tw-px-6 tw-border">
+                        Status Kenaikan
                       </td>
-                      <td class="tw-py-4 tw-px-6">
-                        75
+                      <td class="tw-border">
+                        Naik
                       </td>
-                      <td class="tw-py-4 tw-px-6">
-                        75
+                    </tr>
+                    <tr class="tw-bg-gray-100">
+                      <td class="tw-py-2 tw-px-6 tw-border">
+                        Naik ke
                       </td>
-                  </tr>
-                  <tr class="tw-bg-white tw-border">
-                      <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                        Agama
-                      </th>
-                      <td class="tw-py-4 tw-px-6">
-                        98
+                      <td class="tw-border">
+                        {{ $rp->naikKelas }}
                       </td>
-                      <td class="tw-py-4 tw-px-6">
-                        72
+                    </tr>
+                    <tr class="tw-bg-gray-100">
+                      <td class="tw-py-2 tw-px-6 tw-border">
+                        Tanggal Kenaikan
                       </td>
-                      <td class="tw-py-4 tw-px-6">
-                        72
+                      <td class="tw-border">
+                        {{ $rp->tgl_kenaikan }}
                       </td>
-                  </tr>
-                  <tr class="tw-bg-gray-100 tw-border">
-                    <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                      PPKN 
-                    </th>
-                    <td class="tw-py-4 tw-px-6">
-                      77
-                    </td>
-                    <td class="tw-py-4 tw-px-6">
-                      75
-                    </td>
-                    <td class="tw-py-4 tw-px-6">
-                      75
-                    </td>
-                  </tr>
-                  <tr class="tw-bg-white tw-border">
-                    <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                      Matematika
-                    </th>
-                    <td class="tw-py-4 tw-px-6">
-                      72
-                    </td>
-                    <td class="tw-py-4 tw-px-6">
-                      72
-                    </td>
-                    <td class="tw-py-4 tw-px-6">
-                      72
-                    </td>
-                  </tr>
-                  <tr class="tw-bg-gray-100 tw-border">
-                    <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                      Bahasa Jepang
-                    </th>
-                    <td class="tw-py-4 tw-px-6">
-                      87
-                    </td>
-                    <td class="tw-py-4 tw-px-6">
-                      75
-                    </td>
-                    <td class="tw-py-4 tw-px-6">
-                      75
-                    </td>
-                  </tr>
+                    </tr>
+                @endforeach
               </tbody>
           </table>
         </div>
@@ -414,152 +343,87 @@
                   </tr>
               </thead>
               <tbody class="tw-text-base text-center">
-                  <tr class="tw-bg-white tw-border">
-                      <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                        Bahasa Inggris
+                @foreach (collect($siswa->raport)->where('semester', 4) as $rp)
+                @foreach ($rp->NilaiMapel as $nm)
+                    <tr class="tw-bg-white tw-border">
+                        <th scope="row"
+                            class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
+                            {{ $nm->MapelJurusan->MapelId }}
+                        </th>
+                        <td class="tw-py-4 tw-px-6">
+                          {{ $nm->kkm }}
+                        </td>
+                        <td class="tw-py-4 tw-px-6">
+                          {{ $nm->nilai_pengetahuan }}
+                        </td>
+                        <td class="tw-py-4 tw-px-6">
+                          {{ $nm->nilai_keterampilan }}
+                        </td>
+                    </tr>
+                @endforeach
+                    <tr>
+                      <th scope="row" rowspan="4" class="bg-white tw-py-2 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap tw-border">
+                        Absen
                       </th>
-                      <td class="tw-py-4 tw-px-6">
-                        72
+                      <td class="tw-border">
+                        Sakit (hari)
                       </td>
-                      <td class="tw-py-4 tw-px-6">
-                        75
+                      <td class="tw-border">
+                        {{ $rp->sakit }}
                       </td>
-                      <td class="tw-py-4 tw-px-6">
-                        75
+                    </tr>
+                    <tr class="tw-bg-gray-100">
+                      <td class="tw-py-2 tw-px-6 tw-border">
+                        Ijin (hari)
                       </td>
-                  </tr>
-                  <tr class="tw-border tw-bg-gray-100">
-                      <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                        Bahasa Indonesia
+                      <td class="tw-border">
+                        {{ $rp->ijin }}
+                      </td>
+                    </tr>
+                    <tr class="tw-bg-gray-100">
+                      <td class="tw-py-2 tw-px-6 tw-border">
+                        Alpa (hari)
+                      </td>
+                      <td class="tw-border">
+                        {{ $rp->alpa }}
+                      </td>
+                    </tr>
+                    <tr class="tw-bg-gray-100">
+                      <td class="tw-py-2 tw-px-6 tw-border">
+                        Jumlah (hari)
+                      </td>
+                      <td class="tw-border">
+                        {{ $rp->sakit + $rp->ijin + $rp->alpa  }}
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row" rowspan="3" class="tw-bg-white tw-py-2 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap tw-border">
+                        Status Akhir Tahun
                       </th>
-                      <td class="tw-py-4 tw-px-6">
-                        88
+                      <td class="tw-py-2 tw-px-6 tw-border">
+                        Status Kenaikan
                       </td>
-                      <td class="tw-py-4 tw-px-6">
-                        75
+                      <td class="tw-border">
+                        Naik
                       </td>
-                      <td class="tw-py-4 tw-px-6">
-                        75
+                    </tr>
+                    <tr class="tw-bg-gray-100">
+                      <td class="tw-py-2 tw-px-6 tw-border">
+                        Naik ke
                       </td>
-                  </tr>
-                  <tr class="tw-bg-white tw-border">
-                      <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                        Agama
-                      </th>
-                      <td class="tw-py-4 tw-px-6">
-                        98
+                      <td class="tw-border">
+                        {{ $rp->naikKelas }}
                       </td>
-                      <td class="tw-py-4 tw-px-6">
-                        72
+                    </tr>
+                    <tr class="tw-bg-gray-100">
+                      <td class="tw-py-2 tw-px-6 tw-border">
+                        Tanggal Kenaikan
                       </td>
-                      <td class="tw-py-4 tw-px-6">
-                        72
+                      <td class="tw-border">
+                        {{ $rp->tgl_kenaikan }}
                       </td>
-                  </tr>
-                  <tr class="tw-bg-gray-100 tw-border">
-                    <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                      PPKN 
-                    </th>
-                    <td class="tw-py-4 tw-px-6">
-                      77
-                    </td>
-                    <td class="tw-py-4 tw-px-6">
-                      75
-                    </td>
-                    <td class="tw-py-4 tw-px-6">
-                      75
-                    </td>
-                  </tr>
-                  <tr class="tw-bg-white tw-border">
-                    <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                      Matematika
-                    </th>
-                    <td class="tw-py-4 tw-px-6">
-                      72
-                    </td>
-                    <td class="tw-py-4 tw-px-6">
-                      72
-                    </td>
-                    <td class="tw-py-4 tw-px-6">
-                      72
-                    </td>
-                  </tr>
-                  <tr class="tw-bg-gray-100 tw-border">
-                    <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                      Bahasa Jepang
-                    </th>
-                    <td class="tw-py-4 tw-px-6">
-                      87
-                    </td>
-                    <td class="tw-py-4 tw-px-6">
-                      75
-                    </td>
-                    <td class="tw-py-4 tw-px-6">
-                      75
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row" rowspan="4" class="bg-white tw-py-2 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap tw-border">
-                      Absen
-                    </th>
-                    <td class="tw-border">
-                      Sakit (hari)
-                    </td>
-                    <td class="tw-border">
-                      75
-                    </td>
-                  </tr>
-                  <tr class="tw-bg-gray-100">
-                    <td class="tw-py-2 tw-px-6 tw-border">
-                      Ijin (hari)
-                    </td>
-                    <td class="tw-border">
-                      75
-                    </td>
-                  </tr>
-                  <tr class="tw-bg-gray-100">
-                    <td class="tw-py-2 tw-px-6 tw-border">
-                      Alpa (hari)
-                    </td>
-                    <td class="tw-border">
-                      75
-                    </td>
-                  </tr>
-                  <tr class="tw-bg-gray-100">
-                    <td class="tw-py-2 tw-px-6 tw-border">
-                      Jumlah (hari)
-                    </td>
-                    <td class="tw-border">
-                      75
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row" rowspan="3" class="tw-bg-white tw-py-2 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap tw-border">
-                      Status Akhir Tahun
-                    </th>
-                    <td class="tw-py-2 tw-px-6 tw-border">
-                      Status Kenaikan
-                    </td>
-                    <td class="tw-border">
-                      Naik
-                    </td>
-                  </tr>
-                  <tr class="tw-bg-gray-100">
-                    <td class="tw-py-2 tw-px-6 tw-border">
-                      Naik ke
-                    </td>
-                    <td class="tw-border">
-                      XI
-                    </td>
-                  </tr>
-                  <tr class="tw-bg-gray-100">
-                    <td class="tw-py-2 tw-px-6 tw-border">
-                      Tanggal Kenaikan
-                    </td>
-                    <td class="tw-border">
-                      24 Juni 2021
-                    </td>
-                  </tr>
+                    </tr>
+                @endforeach
               </tbody>
           </table>
         </div>
@@ -582,90 +446,87 @@
                   </tr>
               </thead>
               <tbody class="tw-text-base text-center">
-                  <tr class="tw-bg-white tw-border">
-                      <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                        Bahasa Inggris
+                @foreach (collect($siswa->raport)->where('semester', 5) as $rp)
+                @foreach ($rp->NilaiMapel as $nm)
+                    <tr class="tw-bg-white tw-border">
+                        <th scope="row"
+                            class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
+                            {{ $nm->MapelJurusan->MapelId }}
+                        </th>
+                        <td class="tw-py-4 tw-px-6">
+                          {{ $nm->kkm }}
+                        </td>
+                        <td class="tw-py-4 tw-px-6">
+                          {{ $nm->nilai_pengetahuan }}
+                        </td>
+                        <td class="tw-py-4 tw-px-6">
+                          {{ $nm->nilai_keterampilan }}
+                        </td>
+                    </tr>
+                @endforeach
+                    <tr>
+                      <th scope="row" rowspan="4" class="bg-white tw-py-2 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap tw-border">
+                        Absen
                       </th>
-                      <td class="tw-py-4 tw-px-6">
-                        72
+                      <td class="tw-border">
+                        Sakit (hari)
                       </td>
-                      <td class="tw-py-4 tw-px-6">
-                        75
+                      <td class="tw-border">
+                        {{ $rp->sakit }}
                       </td>
-                      <td class="tw-py-4 tw-px-6">
-                        75
+                    </tr>
+                    <tr class="tw-bg-gray-100">
+                      <td class="tw-py-2 tw-px-6 tw-border">
+                        Ijin (hari)
                       </td>
-                  </tr>
-                  <tr class="tw-border tw-bg-gray-100">
-                      <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                        Bahasa Indonesia
+                      <td class="tw-border">
+                        {{ $rp->ijin }}
+                      </td>
+                    </tr>
+                    <tr class="tw-bg-gray-100">
+                      <td class="tw-py-2 tw-px-6 tw-border">
+                        Alpa (hari)
+                      </td>
+                      <td class="tw-border">
+                        {{ $rp->alpa }}
+                      </td>
+                    </tr>
+                    <tr class="tw-bg-gray-100">
+                      <td class="tw-py-2 tw-px-6 tw-border">
+                        Jumlah (hari)
+                      </td>
+                      <td class="tw-border">
+                        {{ $rp->sakit + $rp->ijin + $rp->alpa  }}
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row" rowspan="3" class="tw-bg-white tw-py-2 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap tw-border">
+                        Status Akhir Tahun
                       </th>
-                      <td class="tw-py-4 tw-px-6">
-                        88
+                      <td class="tw-py-2 tw-px-6 tw-border">
+                        Status Kenaikan
                       </td>
-                      <td class="tw-py-4 tw-px-6">
-                        75
+                      <td class="tw-border">
+                        Naik
                       </td>
-                      <td class="tw-py-4 tw-px-6">
-                        75
+                    </tr>
+                    <tr class="tw-bg-gray-100">
+                      <td class="tw-py-2 tw-px-6 tw-border">
+                        Naik ke
                       </td>
-                  </tr>
-                  <tr class="tw-bg-white tw-border">
-                      <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                        Agama
-                      </th>
-                      <td class="tw-py-4 tw-px-6">
-                        98
+                      <td class="tw-border">
+                        {{ $rp->naikKelas }}
                       </td>
-                      <td class="tw-py-4 tw-px-6">
-                        72
+                    </tr>
+                    <tr class="tw-bg-gray-100">
+                      <td class="tw-py-2 tw-px-6 tw-border">
+                        Tanggal Kenaikan
                       </td>
-                      <td class="tw-py-4 tw-px-6">
-                        72
+                      <td class="tw-border">
+                        {{ $rp->tgl_kenaikan }}
                       </td>
-                  </tr>
-                  <tr class="tw-bg-gray-100 tw-border">
-                    <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                      PPKN 
-                    </th>
-                    <td class="tw-py-4 tw-px-6">
-                      77
-                    </td>
-                    <td class="tw-py-4 tw-px-6">
-                      75
-                    </td>
-                    <td class="tw-py-4 tw-px-6">
-                      75
-                    </td>
-                  </tr>
-                  <tr class="tw-bg-white tw-border">
-                    <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                      Matematika
-                    </th>
-                    <td class="tw-py-4 tw-px-6">
-                      72
-                    </td>
-                    <td class="tw-py-4 tw-px-6">
-                      72
-                    </td>
-                    <td class="tw-py-4 tw-px-6">
-                      72
-                    </td>
-                  </tr>
-                  <tr class="tw-bg-gray-100 tw-border">
-                    <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                      Bahasa Jepang
-                    </th>
-                    <td class="tw-py-4 tw-px-6">
-                      87
-                    </td>
-                    <td class="tw-py-4 tw-px-6">
-                      75
-                    </td>
-                    <td class="tw-py-4 tw-px-6">
-                      75
-                    </td>
-                  </tr>
+                    </tr>
+                @endforeach
               </tbody>
           </table>
       </div>
@@ -700,163 +561,30 @@
                   </tr>
               </thead>
               <tbody class="tw-text-base text-center">
-                  <tr class="tw-bg-white tw-border">
-                      <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                        Bahasa Inggris
-                      </th>
-                      <td class="tw-py-4 tw-px-6">
-                        72
-                      </td>
-                      <td class="tw-py-4 tw-px-6">
-                        75
-                      </td>
-                      <td class="tw-py-4 tw-px-6">
-                        75
-                      </td>
-                      <td class="tw-py-4 tw-px-6">
-                        75
-                      </td>
-                      <td class="tw-py-4 tw-px-6">
-                        75
-                      </td>
-                      <td class="tw-py-4 tw-px-6">
-                        75
-                      </td>
-                      <td class="tw-py-4 tw-px-6">
-                        75
-                      </td>
-                  </tr>
-                  <tr class="tw-border tw-bg-gray-100">
-                      <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                        Bahasa Indonesia
-                      </th>
-                      <td class="tw-py-4 tw-px-6">
-                        88
-                      </td>
-                      <td class="tw-py-4 tw-px-6">
-                        75
-                      </td>
-                      <td class="tw-py-4 tw-px-6">
-                        75
-                      </td>
-                      <td class="tw-py-4 tw-px-6">
-                        75
-                      </td>
-                      <td class="tw-py-4 tw-px-6">
-                        75
-                      </td>
-                      <td class="tw-py-4 tw-px-6">
-                        75
-                      </td>
-                      <td class="tw-py-4 tw-px-6">
-                        75
-                      </td>
-                  </tr>
-                  <tr class="tw-bg-white tw-border">
-                      <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                        Agama
-                      </th>
-                      <td class="tw-py-4 tw-px-6">
-                        98
-                      </td>
-                      <td class="tw-py-4 tw-px-6">
-                        72
-                      </td>
-                      <td class="tw-py-4 tw-px-6">
-                        72
-                      </td>
-                      <td class="tw-py-4 tw-px-6">
-                        75
-                      </td>
-                      <td class="tw-py-4 tw-px-6">
-                        75
-                      </td>
-                      <td class="tw-py-4 tw-px-6">
-                        75
-                      </td>
-                      <td class="tw-py-4 tw-px-6">
-                        75
-                      </td>
-                  </tr>
-                  <tr class="tw-bg-gray-100 tw-border">
-                    <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                      PPKN 
-                    </th>
-                    <td class="tw-py-4 tw-px-6">
-                      77
-                    </td>
-                    <td class="tw-py-4 tw-px-6">
-                      75
-                    </td>
-                    <td class="tw-py-4 tw-px-6">
-                      75
-                    </td>
-                    <td class="tw-py-4 tw-px-6">
-                      75
-                    </td>
-                    <td class="tw-py-4 tw-px-6">
-                      75
-                    </td>
-                    <td class="tw-py-4 tw-px-6">
-                      75
-                    </td>
-                    <td class="tw-py-4 tw-px-6">
-                      75
-                    </td>
-                  </tr>
-                  <tr class="tw-bg-white tw-border">
-                    <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                      Matematika
-                    </th>
-                    <td class="tw-py-4 tw-px-6">
-                      72
-                    </td>
-                    <td class="tw-py-4 tw-px-6">
-                      72
-                    </td>
-                    <td class="tw-py-4 tw-px-6">
-                      72
-                    </td>
-                    <td class="tw-py-4 tw-px-6">
-                      75
-                    </td>
-                    <td class="tw-py-4 tw-px-6">
-                      75
-                    </td>
-                    <td class="tw-py-4 tw-px-6">
-                      75
-                    </td>
-                    <td class="tw-py-4 tw-px-6">
-                      75
-                    </td>
-                  </tr>
-                  <tr class="tw-bg-gray-100 tw-border">
-                    <th scope="row" class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                      Bahasa Jepang
-                    </th>
-                    <td class="tw-py-4 tw-px-6">
-                      87
-                    </td>
-                    <td class="tw-py-4 tw-px-6">
-                      75
-                    </td>
-                    <td class="tw-py-4 tw-px-6">
-                      75
-                    </td>
-                    <td class="tw-py-4 tw-px-6">
-                      75
-                    </td>
-                    <td class="tw-py-4 tw-px-6">
-                      75
-                    </td>
-                    <td class="tw-py-4 tw-px-6">
-                      75
-                    </td>
-                    <td class="tw-py-4 tw-px-6">
-                      75
-                    </td>
-                  </tr>
-                  <tr>
+                @foreach (collect($siswa->raport)->where('semester', 5) as $rp)
+                @foreach ($rp->NilaiMapel as $nm)
+                    <tr class="tw-bg-white tw-border">
+                        <th scope="row"
+                            class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
+                            {{ $nm->MapelJurusan->MapelId }}
+                        </th>
+                        <td class="tw-py-4 tw-px-6">
+                          {{ $nm->kkm }}
+                        </td>
+                        <td class="tw-py-4 tw-px-6">
+                          {{ $nm->nilai_pengetahuan }}
+                        </td>
+                        <td class="tw-py-4 tw-px-6">
+                          {{ $nm->nilai_keterampilan }}
+                        </td>
+                        @foreach ($rp->NilaiAkhir as $na)
+                        <td class="tw-py-4 tw-px-6">
+                          {{ $na->nilai_keterampilan }}
+                        </td>
+                        @endforeach
+                    </tr>
+                @endforeach
+                    <tr>
                       <th scope="row" rowspan="4" class="bg-white tw-py-2 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap tw-border">
                         Absen
                       </th>
@@ -864,7 +592,7 @@
                         Sakit (hari)
                       </td>
                       <td class="tw-border">
-                        75
+                        {{ $rp->sakit }}
                       </td>
                     </tr>
                     <tr class="tw-bg-gray-100">
@@ -872,7 +600,7 @@
                         Ijin (hari)
                       </td>
                       <td class="tw-border">
-                        75
+                        {{ $rp->ijin }}
                       </td>
                     </tr>
                     <tr class="tw-bg-gray-100">
@@ -880,7 +608,7 @@
                         Alpa (hari)
                       </td>
                       <td class="tw-border">
-                        75
+                        {{ $rp->alpa }}
                       </td>
                     </tr>
                     <tr class="tw-bg-gray-100">
@@ -888,7 +616,7 @@
                         Jumlah (hari)
                       </td>
                       <td class="tw-border">
-                        75
+                        {{ $rp->sakit + $rp->ijin + $rp->alpa  }}
                       </td>
                     </tr>
                     <tr>
@@ -907,7 +635,7 @@
                         Naik ke
                       </td>
                       <td class="tw-border">
-                        XI
+                        {{ $rp->naikKelas }}
                       </td>
                     </tr>
                     <tr class="tw-bg-gray-100">
@@ -915,9 +643,10 @@
                         Tanggal Kenaikan
                       </td>
                       <td class="tw-border">
-                        24 Juni 2021
+                        {{ $rp->tgl_kenaikan }}
                       </td>
                     </tr>
+                @endforeach
               </tbody>
           </table>
         </div>

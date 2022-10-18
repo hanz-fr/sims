@@ -98,7 +98,7 @@
                         <td class="tw-py-4 tw-px-6 tw-border">{{ $s->jenis_kelamin }}</td>
                         <td class="tw-py-4 tw-px-6 tw-border">{{ $s->KelasId }}</td>
                         <td>
-                            <a href="/rekap-nilai" class="tw-text-white tw-bg-sims-400 hover:tw-bg-sims-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-mr-1">
+                            <a href="/rekap-nilai/{{ $s->nis_siswa }}" class="tw-text-white tw-bg-sims-400 hover:tw-bg-sims-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-mr-1">
                                 <i class="fa-light fa-clipboard-list"></i>
                             </a>
                             @can('tata usaha')

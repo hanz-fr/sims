@@ -1493,10 +1493,6 @@ video {
   flex-grow: 1;
 }
 
-.tw-border-collapse {
-  border-collapse: collapse;
-}
-
 .tw-origin-center {
   transform-origin: center;
 }
