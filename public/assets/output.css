@@ -1225,10 +1225,6 @@ video {
   box-sizing: border-box;
 }
 
-.tw-box-content {
-  box-sizing: content-box;
-}
-
 .tw-block {
   display: block;
 }
@@ -1495,6 +1491,10 @@ video {
 
 .tw-grow {
   flex-grow: 1;
+}
+
+.tw-border-collapse {
+  border-collapse: collapse;
 }
 
 .tw-origin-center {
