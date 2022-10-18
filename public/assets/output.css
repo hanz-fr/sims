@@ -1221,6 +1221,14 @@ video {
   margin-left: 0.25rem;
 }
 
+.tw-box-border {
+  box-sizing: border-box;
+}
+
+.tw-box-content {
+  box-sizing: content-box;
+}
+
 .tw-block {
   display: block;
 }
