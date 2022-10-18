@@ -57,7 +57,7 @@
                                 class="tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                                 <i class="fa-solid fa-trash-can-xmark tw-text-red-500"></i>
                             </a>
-                            <a href="#"
+                            <a href="/detail-siswa-admin"
                                 class="tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                                 <i class="fa-solid fa-eye tw-text-[#95BBE8]"></i>
                             </a>
