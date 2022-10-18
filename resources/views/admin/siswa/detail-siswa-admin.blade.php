@@ -3,7 +3,12 @@
 @section('content')
 
 <div class="tw-m-10 tw-w-screen tw-flex">
-   <div class="tw-flex tw-flex-col tw-gap-8 tw-w-full">
+   <div class="tw-flex tw-flex-col tw-gap-8 tw-w-full tw-mb-10">
+      <div class="tw-flex">
+            <a href="/all-siswa-admin"><i class="fa-solid fa-chevron-left tw-text-2xl tw-text-gray-400 hover:tw-text-gray-600"></i></a>
+            <i class="fa-solid fa-users tw-text-2xl tw-ml-2 tw-text-[#95BBE8]"></i>
+            <h4 class="tw-font-pop tw-font-bold tw-ml-2 tw-text-[#DBDBDB]">Detail Siswa</h4>
+      </div>
             <li class="card-data-white">
                   <div class="tw-flex tw-bg-[#5A6C7C] tw-font-ubuntu tw-text-white tw-rounded-xl tw-gap-8 tw-py-16 tw-px-12">
                      <div class="tw-flex tw-flex-col">
@@ -27,7 +32,7 @@
                   </div>
             </li>
 
-            <li class="card-data-white">
+            <li class="card-data-white tw-mb-10">
                   <div class="tw-flex tw-flex-col tw-px-7 tw-py-7">
                     <table>
                         <tbody class="tw-text-left tw-font-ubuntu tw-text-[#B4B8BC] tw-font-bold">

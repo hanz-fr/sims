@@ -67,7 +67,7 @@ class UserController extends Controller
         $credentials = $request->only('nip', 'password');
 
         if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
+            // $request->session()->regenerate();
 
             return redirect()->intended('/')->with('success', 'Signed In');
         }
@@ -78,7 +78,7 @@ class UserController extends Controller
     // logout
     public function signOut() 
     {
-        Session::flush();
+        // Session::flush();
         Auth::logout();
   
         return redirect('login');
