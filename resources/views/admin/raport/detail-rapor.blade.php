@@ -127,15 +127,15 @@
             </table>
         </div>
 
-        <div class="tw-my-10 tw-flex tw-gap-4 tw-justify-end tw-font-ubuntu tw-pb-5">
+        <div class="tw-mt-5 tw-flex tw-gap-4 tw-justify-end tw-font-ubuntu tw-pb-10">
             <a href="/edit-rapor" class="tw-bg-[#FFCF86] hover:tw-bg-[#ffba51] tw-text-black tw-px-7 tw-py-3 tw-rounded-lg">
-                Edit
+                Edit Rapor
             </a>
             <form action="post" class="tw-inline-flex">
                 @method('delete')
                 <a href=""
                     class="tw-bg-[#FF7575] hover:tw-bg-salmon-600 tw-px-7 tw-py-3  tw-text-white tw-rounded-lg">
-                    Hapus
+                    Delete
                 </a>
             </form>
         </div>
