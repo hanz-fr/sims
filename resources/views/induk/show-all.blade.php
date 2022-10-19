@@ -48,7 +48,7 @@
             <div class="tw-flex">
                 <form action="/get-request"> 
                     <div class="relative tw-border-2 tw-rounded-lg focus:tw-ring-sims-400">
-                        <input name="search" id="search" type="text" class="tw-py-1 tw-px-5 tw-border-none tw-rounded-md">
+                        <input type="text" id="search-box" class="tw-py-1 tw-px-5 tw-border-none tw-rounded-md" onkeyup="sendSiswaRes(this.value)">
                         <i class="fa-solid fa-magnifying-glass tw-pr-5 tw-pl-3 tw-text-slate-600"></i>
                     </div>
                 </form>
@@ -133,6 +133,31 @@
             <a class="tw-text-gray-300 tw-bg-[#2f5555] hover:tw-text-gray-300 tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-regular fa-arrow-left"></i></a>
           </div>
           @endif
+
+          <button type="button">Test jQuery Code</button>
     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script rel="javascript"  type="text/javascript">
+       $(document).ready(function() {
+           function sendSiswaRes(e) {
+                fetch('searchSiswa', {
+                    method: 'POST',
+                    async: true,
+                    headers: {'Content-Type', 'application/json'},
+                    body: JSON.stringify({payload: e.value})
+                });
+            }
+       });
+
+
+       $(document).ready(function(){
+        $("button").click(function(){
+        alert("jQuery is working perfectly.");
+        });      
+    });
+    </script>
 @endif
 @endsection
