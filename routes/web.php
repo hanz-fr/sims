@@ -106,7 +106,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/rekap-siswa', function () {
         return view('rekap-siswa.dashboard-rekap-siswa', [
-            'title' => 'Data Rekap Siswa',
+            'title' => 'Rekap Siswa',
             'active' => 'rekap-siswa'
         ]);
     });
@@ -173,13 +173,7 @@ Route::middleware(['admin'])->group(function () {
     });
 
     /* MANAGE USER */
-    Route::get('/manage-user', function () {
-        return view('admin.account.manage-user', [
-            'title' => 'Manage User SIMS',
-            'active' => 'account'
-        ]);
-    });
-
+    Route::get('/manage-user', [AdminController::class, 'show'])->name('manage.user');
 
     /* MAPEL JURUSAN */
     Route::get('/mata-pelajaran-jurusan', function () {
@@ -248,30 +242,18 @@ Route::middleware(['admin'])->group(function () {
     });
 
     /* SHOW USER DETAIL */
-    Route::get('/show-detail', function () {
-        return view('admin.account.show-detail', [
-            'title' => 'Account Details',
-            'active' => 'account'
-        ]);
-    });
-
+    Route::get('/show-detail/{id}', [AdminController::class, 'showDetail']);
 
     /* EDIT USER */
-    Route::get('/edit-account', function () {
-        return view('admin.account.edit', [
-            'title' => 'Edit Account',
-            'active' => 'account'
-        ]);
-    });
-
+    Route::get('/edit-account/{id}', [AdminController::class, 'editAccount']);
+    Route::post('/update-account/{id}', [AdminController::class, 'updateAccount']);
 
     /* CREATE USER */
-    Route::get('/create-account', function () {
-        return view('admin.account.create', [
-            'title' => 'Create Account',
-            'active' => 'account'
-        ]);
-    });
+    Route::get('/create-account', [AdminController::class, 'createAccount']);
+    Route::post('/store-account', [AdminController::class, 'storeAccount']);
+
+    // DELETE USER
+    Route::get('/delete-account/{id}', [AdminController::class, 'destroyAccount']);
 
 
     /* SHOW ALL JURUSAN */

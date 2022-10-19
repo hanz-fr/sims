@@ -14,7 +14,7 @@
     </section>
 
     {{-- card form add data --}}
-    <form action="" method="POST">
+    <form action="/store-account" method="POST">
       @csrf
     <section class="tw-bg-white tw-mt-8 tw-rounded-xl tw-border-l-[17px] tw-border-admin-300 tw-py-20 tw-pl-10 tw-font-pop shadow-cs">
       <div class="tw-flex tw-w-full tw-items-center">
@@ -34,13 +34,19 @@
                 <label class="tw-text-admin-300 tw-font-bold tw-ml-3 tw-text-lg" for="nip">
                   NIP
                 </label>
-                <input value="" class="input-account" id="nip" name="nip" type="number" required>
+                <input class="input-account" @error('nip') is-invalid @enderror id="nip" name="nip" type="number" required>
+                @error('nip')
+                  <div class="tw-text-sm tw-text-pink-700 tw-mt-1">{{ $message }}</div>
+                @enderror
               </div>
               <div class="md:tw-w-1/2 sm:tw-w-full tw-px-3 tw-mb-6 md:tw-mb-0 tw-font-ubuntu">
                 <label class="tw-text-admin-300 tw-font-bold tw-ml-3 tw-text-lg" for="email">
                   Email
                 </label>
-                <input value="" class="input-account" id="email" name="email" type="email" required>
+                <input class="input-account" @error('email') is-invalid @enderror id="email" name="email" type="email" required>
+                @error('email')
+                  <div class="tw-text-sm tw-text-pink-700 tw-mt-1">{{ $message }}</div>
+                @enderror
               </div>
             </div>
             <div class="tw-flex tw-flex-wrap tw-justify-between tw-w-full tw-mb-6">
@@ -48,24 +54,30 @@
                 <label class="tw-text-admin-300 tw-font-bold tw-ml-3" for="nama">
                   Name
                 </label>
-                <input value="" class="input-account" id="nama" name="nama" type="text" required>
+                <input class="input-account" @error('nama') is-invalid @enderror id="nama" name="nama" type="text" required>
+                @error('nama')
+                  <div class="tw-text-sm tw-text-pink-700 tw-mt-1">{{ $message }}</div>
+                @enderror
               </div>
               <div class="md:tw-w-1/2 sm:tw-w-full tw-px-3 tw-mb-6 md:tw-mb-0 tw-font-ubuntu">
                 <label class="tw-text-admin-300 tw-font-bold tw-ml-3 tw-text-lg" for="password">
                   Password
                 </label>
-                <input value="" class="input-account" id="password" name="password" type="password" required>
+                <input class="input-account" @error('password') is-invalid @enderror id="password" name="password" type="password" required>
+                @error('password')
+                  <div class="tw-text-sm tw-text-pink-700 tw-mt-1">{{ $message }}</div>
+                @enderror
               </div>
             </div>
             <div class="md:tw-w-1/2 sm:tw-w-full tw-pr-10 tw-mb-6 md:tw-mb-0 tw-font-ubuntu">
               <label class="tw-text-admin-300 tw-font-bold tw-ml-3 tw-text-lg" for="role">
                 Role
               </label>
-              <select value="" class="input-account" id="nip" name="role" type="text" required>
-                <option value="Tata Usaha">Tata Usaha</option>
-                <option value="Kesiswaan">Kesiswaan</option>
-                <option value="Kurikulum">Kurikulum</option>
-                <option value="Walikelas">Wali Kelas</option>
+              <select class="input-account" id="nip" name="role" type="text" required>
+                <option value="1">Tata Usaha</option>
+                <option value="2">Kesiswaan</option>
+                <option value="3">Kurikulum</option>
+                <option value="4">Wali Kelas</option>
               </select>
             </div>
           </div>

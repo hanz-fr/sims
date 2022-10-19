@@ -14,7 +14,7 @@
     </section>
     
     {{-- card form edit data --}}
-    <form action="" method="POST">
+    <form action="/update-account/{{ $user->id }}" method="POST">
       @csrf
     <div class="tw-bg-white tw-mt-10 tw-rounded-xl tw-border-l-[17px] tw-border-admin-300 tw-py-20 tw-pl-10 tw-font-pop shadow-cs">
       <div class="tw-flex  tw-w-full tw-items-center">
@@ -34,13 +34,13 @@
                 <label class="tw-text-admin-300 tw-font-bold tw-ml-3 tw-text-lg" for="nip">
                   NIP
                 </label>
-                <input value="" class="input-account" id="nip" name="nip" type="number" required>
+                <input value="{{ $user->nip }}" class="input-account" id="nip" name="nip" type="number" required>
               </div>
               <div class="tw-w-1/2 tw-px-3 tw-mb-6 md:tw-mb-0 tw-font-ubuntu">
                 <label class="tw-text-admin-300 tw-font-bold tw-ml-3 tw-text-lg" for="email">
                   Email
                 </label>
-                <input value="" class="input-account" id="email" name="email" type="email" required>
+                <input value="{{ $user->email }}" class="input-account" id="email" name="email" type="email" required>
               </div>
             </div>
             <div class="tw-flex tw-flex-wrap tw-justify-between tw-w-full tw-mb-6">
@@ -48,20 +48,20 @@
                 <label class="tw-text-admin-300 tw-font-bold tw-ml-3" for="nama">
                   Name
                 </label>
-                <input value="" class="input-account" id="nama" name="nama" type="text" required>
+                <input value="{{ $user->nama }}" class="input-account" id="nama" name="nama" type="text" required>
               </div>
               <div class="tw-w-1/2 tw-px-3 tw-mb-6 md:tw-mb-0 tw-font-ubuntu">
                 <label class="tw-text-admin-300 tw-font-bold tw-ml-3 tw-text-lg" for="password">
                   Password
                 </label>
-                <input value="" class="input-account" id="password" name="password" type="password" required>
+                <input value="{{ $user->password }}" class="input-account" id="password" name="password" type="password" required>
               </div>
             </div>
             <div class="tw-w-1/2 tw-pr-10 tw-mb-6 md:tw-mb-0 tw-font-ubuntu">
               <label class="tw-text-admin-300 tw-font-bold tw-ml-3 tw-text-lg" for="role">
                 Role
               </label>
-              <select value="" class="input-account" id="nip" name="role" type="text" required>
+              <select value="{{ $user->role }}" class="input-account" id="nip" name="role" type="text" required>
                 <option value="Tata Usaha">Tata Usaha</option>
                 <option value="Kesiswaan">Kesiswaan</option>
                 <option value="Kurikulum">Kurikulum</option>

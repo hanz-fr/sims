@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -43,9 +45,12 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function createAccount()
     {
-        //
+        return view('admin.account.create', [
+            'title' => 'Create Account',
+            'active' => 'account'
+        ]);
     }
 
     /**
@@ -54,53 +59,101 @@ class AdminController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function storeAccount(Request $request)
     {
-        //
+        $request->validate([
+            'nip'      => 'required|unique:users|min:7',
+            'nama'     => 'required',
+            'email'    => 'required|email|unique:users',
+            'role'    => 'required',
+            'password' => 'required|min:6',
+        ]);
+        
+        $user = new User([
+            'nip'      => $request->nip,
+            'nama'     => $request->nama,
+            'email'    => $request->email,
+            'role'    => $request->role,
+            'password' => Hash::make($request->password),
+        ]);
+        $user->save();
+         
+        return route("manage.user")->with('success', 'Account created successfully');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function show(Admin $admin)
+    public function show()
     {
-        //
+        // $tatausaha = User::where('role',1)->count();
+        $user = User::all();
+        return view('admin.account.manage-user', [
+            'title' => 'Manage User SIMS',
+            'active' => 'account'
+        ],
+        compact('user'));
+    }
+
+    public function showDetail($id)
+    {
+        $user = User::find($id);
+
+        return view('admin.account.show-detail', [
+            'title' => 'Account Details',
+            'active' => 'account'
+        ],
+        compact('user'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function edit(Admin $admin)
+    public function editAccount(User $user, $id)
     {
-        //
+        $user = User::find($id);
+
+        return view('admin.account.edit', [
+            'title' => 'Edit Account',
+            'active' => 'manage-user'
+        ],
+        compact('user'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Admin $admin)
+    public function updateAccount(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'nip'   => 'required|min:7',
+            'nama'  => 'required',
+            'email' => 'required|email|unique:users'
+        ]);
+
+        $user = User::find($id);
+
+        $user->update($request->all());
+
+        return redirect()->route('manage.user')->with('success','Account has been updated successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Admin $admin)
+    public function destroyAccount($id)
     {
-        //
+        $user = User::find($id);
+        $user->delete();
+        return redirect()->route('manage.user')->with('success','Account has been deleted successfully');
     }
 }

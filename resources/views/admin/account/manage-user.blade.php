@@ -100,7 +100,7 @@
                           </svg>
                           <div
                               class="tw-mb-5 tw-flex tw-justify-center tw-text-md tw-font-normal tw-text-gray-500 dark:tw-text-gray-400">
-                              Hapus data siswa?</div>
+                              Delete All Account?</div>
                           <div class="tw-flex tw-justify-center">
                               <button type="submit" data-modal-toggle="popup-modal" type="button"
                                   class="tw-text-white tw-bg-red-600 hover:tw-bg-red-800 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-red-300 dark:focus:tw-ring-red-800 tw-font-medium tw-rounded-lg tw-text-sm tw-inline-flex tw-items-center tw-py-2.5 tw-text-center tw-mr-2 tw-px-6">
@@ -142,94 +142,32 @@
               </tr>
           </thead>
           <tbody class="tw-text-[#B4B8BC] tw-bg-white tw-font-bold text-lg tw-font-ubuntu">     
+            @foreach ($user as $u)
               <tr class="tw-border-b">
-                  <td class="tw-p-6">192871837268361728</td>
-                  <td class="tw-p-6">Ibnu Asep bin Budi</td>
-                  <td class="tw-p-6">12 February 2023</td>
-                  <td class="tw-p-6">Tata Usaha</td>
-                  <td class="tw-p-6">
-                    <a href="/show-detail" class="tw-text-white tw-bg-admin-300 hover:tw-bg-admin-600 tw-rounded-lg tw-text-xl tw-py-2 tw-px-7">
-                        View
-                    </a>
-                  </td>
-              </tr>
-              <tr class="tw-border-b">
-                <td class="tw-py-6">192871837268361728</td>
-                <td class="tw-py-6">Maria Saint Joseph</td>
-                <td class="tw-py-6">12 February 2023</td>
-                <td class="tw-py-6">Tata Usaha</td>
-                <td class="tw-py-6">
-                  <a href="/show-detail" class="tw-text-white tw-bg-admin-300 hover:tw-bg-admin-600 tw-rounded-lg tw-text-xl tw-py-2 tw-px-7">
+                <td class="tw-p-6">{{ $u->nip }}</td>
+                <td class="tw-p-6">{{ $u->nama }}</td>
+                <td class="tw-p-6">{{ $u->created_at }}</td>
+                <td class="tw-p-6">
+                @if ($u->role === 1)
+                  Tata Usaha
+                @endif
+                @if ($u->role === 2)
+                    Kesiswaan
+                @endif
+                @if ($u->role === 3)
+                    Kurikulum
+                @endif
+                @if ($u->role === 4)
+                    Wali Kelas
+                @endif
+                </td>
+                <td class="tw-p-6">
+                  <a href="/show-detail/{{ $u->id }}" class="tw-text-white tw-bg-admin-300 hover:tw-bg-admin-600 tw-rounded-lg tw-text-xl tw-py-2 tw-px-7">
                       View
                   </a>
                 </td>
               </tr>
-              <tr class="tw-border-b">
-                <td class="tw-py-6">192871837268361728</td>
-                <td class="tw-py-6">Lucifer Mattius</td>
-                <td class="tw-py-6">12 February 2023</td>
-                <td class="tw-py-6">Tata Usaha</td>
-                <td class="tw-py-6">
-                  <a href="/show-detail" class="tw-text-white tw-bg-admin-300 hover:tw-bg-admin-600 tw-rounded-lg tw-text-xl tw-py-2 tw-px-7">
-                      View
-                  </a>
-                </td>
-              </tr>
-              <tr class="tw-border-b">
-                <td class="tw-py-6">192871837268361728</td>
-                <td class="tw-py-6">Farhan Ibn Umar</td>
-                <td class="tw-py-6">12 February 2023</td>
-                <td class="tw-py-6">Tata Usaha</td>
-                <td class="tw-py-6">
-                  <a href="/show-detail" class="tw-text-white tw-bg-admin-300 hover:tw-bg-admin-600 tw-rounded-lg tw-text-xl tw-py-2 tw-px-7">
-                      View
-                  </a>
-                </td>
-              </tr>
-              <tr class="tw-border-b">
-                <td class="tw-py-6">192871837268361728</td>
-                <td class="tw-py-6">Trevor Jonas</td>
-                <td class="tw-py-6">12 February 2023</td>
-                <td class="tw-py-6">Kesiswaan</td>
-                <td class="tw-py-6">
-                  <a href="/show-detail" class="tw-text-white tw-bg-salmon-400 hover:tw-bg-salmon-500 tw-rounded-lg tw-text-xl tw-py-2 tw-px-7">
-                      View
-                  </a>
-                </td>
-              </tr>
-              <tr class="tw-border-bu">
-                <td class="tw-py-6">192871837268361728</td>
-                <td class="tw-py-6">Joni Kesbor</td>
-                <td class="tw-py-6">12 February 2023</td>
-                <td class="tw-py-6">Kesiswaan</td>
-                <td class="tw-py-6">
-                  <a href="/show-detail" class="tw-text-white tw-bg-salmon-400 hover:tw-bg-salmon-500 tw-rounded-lg tw-text-xl tw-py-2 tw-px-7">
-                      View
-                  </a>
-                </td>
-              </tr>
-              <tr class="tw-border-b">
-                <td class="tw-py-6">192871837268361728</td>
-                <td class="tw-py-6">Asep Slebew</td>
-                <td class="tw-py-6">12 February 2023</td>
-                <td class="tw-py-6">Kesiswaan</td>
-                <td class="tw-py-6">
-                  <a href="/show-detail" class="tw-text-white tw-bg-salmon-400 hover:tw-bg-salmon-500 tw-rounded-lg tw-text-xl tw-py-2 tw-px-7">
-                      View
-                  </a>
-                </td>
-              </tr>
-              <tr class="tw-border-b">
-                <td class="tw-py-6">192871837268361728</td>
-                <td class="tw-py-6">Asep Slebew</td>
-                <td class="tw-py-6">12 February 2023</td>
-                <td class="tw-py-6">Kesiswaan</td>
-                <td class="tw-py-6">
-                  <a href="/show-detail" class="tw-text-white tw-bg-salmon-400 hover:tw-bg-salmon-500 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-7 tw-mr-1">
-                      View
-                  </a>
-                </td>
-              </tr>
+            @endforeach
           </tbody>
         </table>
       </div>
