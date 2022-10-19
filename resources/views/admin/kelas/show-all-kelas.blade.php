@@ -14,12 +14,12 @@
             <h4 class="tw-font-pop tw-font-bold tw-mt-6 tw-mb-6 tw-text-sims-400">Data Semua Kelas</h4>
         </div>
 
-        <!-- <div class="tw-flex tw-justify-center tw-items-center -tw-mb-8">
+        <div class="tw-flex tw-justify-center tw-items-center -tw-mb-8">
             <a href=""><i class="fa-solid fa-print btn-export"></i></a>
             <a href=""><i class="fa-solid fa-copy btn-export"></i></a>
             <a href=""><i class="fa-solid fa-file-excel btn-export"></i></a>
             <a href=""><i class="fa-solid fa-file-pdf btn-export"></i></a>
-        </div> -->
+        </div>
     </div>
     <div class="tw-flex tw-justify-between">
         <form action=""> 
@@ -29,10 +29,7 @@
             </div>
         </form>
         <div class="tw-flex tw-justify-end">
-                <a href=""><i class="fa-solid fa-print tw-text-xl tw-px-3 tw-py-1 tw-mx-2 tw-text-white tw-bg-sims-400 hover:tw-bg-[#3b7a7a] tw-border tw-rounded-lg"></i></a>
-                <a href=""><i class="fa-solid fa-copy tw-text-xl tw-px-3 tw-py-1 tw-mx-2 tw-text-white tw-bg-sims-400 hover:tw-bg-[#3b7a7a] tw-border tw-rounded-lg"></i></a>
-                <a href=""><i class="fa-solid fa-file-excel tw-text-xl tw-px-3 tw-py-1 tw-mx-2 tw-text-white tw-bg-sims-400 hover:tw-bg-[#3b7a7a] tw-border tw-rounded-lg"></i></a>
-                <a href=""><i class="fa-solid fa-file-pdf tw-text-xl tw-px-3 tw-py-1 tw-mx-2 tw-text-white tw-bg-sims-400 hover:tw-bg-[#3b7a7a] tw-border tw-rounded-lg"></i></a>
+                <a href="/tambah-kelas-admin" class=" tw-text-white tw-bg-sims-400 hover:tw-bg-[#3b7a7a] tw-border tw-rounded-lg tw-px-4"><i class="fa-solid fa-circle-plus tw-text-xl tw-px-1 tw-py-1"></i>Add Kelas  </a>
             </div>
         <!-- <div class="tw-text-base pt-1 tw-text-basic-700 tw-ml-4 tw-mr-2 tw-font-normal tw-font-pop">Show</div>
         <div class="dropdown">
