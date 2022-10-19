@@ -23,7 +23,7 @@
             </div>
             <div
                 class="tw-overflow-y-scroll tw-h-[500px] tw-scrollbar-thumb-gray-300 tw-scrollbar-thumb-rounded-lg tw-scrollbar-thin tw-scrollbar-track-gray-100">
-                <table class="tw-mt-10 tw-w-full tw-text-sm tw-text-center">
+                <table class="tw-mt-10 tw-w-full  tw-text-center">
                     <thead class="tw-text-lg tw-font-pop tw-text-admin-300">
                         <tr>
                             <th scope="col" class="tw-pb-6 tw-px-5">ID MAPEL</th>
@@ -33,7 +33,7 @@
                             <th scope="col" class="tw-pb-6 tw-px-5">ACTION</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="tw-text-sm">
                         <tr class="tw-bg-white tw-text-[#B4B8BC] tw-font-bold text-lg tw-font-ubuntu">
                             <td class="tw-py-6 tw-px-5 tw-border-b">RPLPBO</td>
                             <td class="tw-py-6 tw-px-5 tw-border-b">Pemrograman Berorientasi Objek</td>
