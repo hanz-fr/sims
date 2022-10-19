@@ -158,6 +158,13 @@ Route::middleware(['admin'])->group(function () {
         ]);
     });
 
+    Route::get('/edit-kelas-admin', function () {
+        return view('admin.kelas.edit-kelas-admin', [
+            'title' => 'Edit Kelas',
+            'active' => 'database'
+        ]);
+    });
+
     /* ADMIN LOGIN */
     Route::get('/admin', [AdminController::class, 'index'])->name('login.admin');
     Route::post('/login-admin', [AdminController::class, 'authenticate']);
