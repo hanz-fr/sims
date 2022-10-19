@@ -136,19 +136,32 @@ Route::middleware(['auth'])->group(function () {
 
 Route::middleware(['admin'])->group(function () {
 
-    /* SHOW ALL KELAS */
+    /* ADMIN KELAS */
     Route::get('/all-kelas', function () {
         return view('admin.kelas.show-all-kelas', [
             'title' => 'List Semua Kelas',
-            'active' => 'data-induk'
+            'active' => 'database'
         ]);
     });
 
-    /* SHOW KELAS DETAIL */
     Route::get('/detail-kelas', function () {
         return view('admin.kelas.detail-kelas', [
             'title' => 'Detail Kelas',
-            'active' => 'data-induk'
+            'active' => 'database'
+        ]);
+    });
+
+    Route::get('/tambah-kelas-admin', function () {
+        return view('admin.kelas.tambah-kelas-admin', [
+            'title' => 'Tambah Kelas Baru',
+            'active' => 'database'
+        ]);
+    });
+
+    Route::get('/edit-kelas-admin', function () {
+        return view('admin.kelas.edit-kelas-admin', [
+            'title' => 'Edit Kelas',
+            'active' => 'database'
         ]);
     });
 

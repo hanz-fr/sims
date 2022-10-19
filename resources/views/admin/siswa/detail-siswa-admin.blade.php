@@ -32,6 +32,7 @@
                   </div>
             </li>
 
+         <div class="tw-mb-5">
             <li class="card-data-white tw-mb-10">
                   <div class="tw-flex tw-flex-col tw-px-7 tw-py-7">
                     <table>
@@ -150,6 +151,7 @@
                     </table>
                 </div>
             </li>
+         </div>  
    </div>
 </div>
 
