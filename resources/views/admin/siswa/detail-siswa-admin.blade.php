@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="tw-m-10 tw-w-screen tw-flex">
-   <div class="tw-flex tw-flex-col tw-gap-8 tw-w-full tw-mb-10">
+   <div class="tw-flex tw-flex-col tw-gap-8 tw-w-full">
       <div class="tw-flex">
             <a href="/all-siswa-admin"><i class="fa-solid fa-chevron-left tw-text-2xl tw-text-gray-400 hover:tw-text-gray-600"></i></a>
             <i class="fa-solid fa-users tw-text-2xl tw-ml-2 tw-text-[#95BBE8]"></i>

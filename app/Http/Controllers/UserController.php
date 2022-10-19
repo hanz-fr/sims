@@ -63,6 +63,8 @@ class UserController extends Controller
             'nip'      => 'required|min:7',
             'password' => 'required|min:6',
         ]);
+
+        // $remember_me = $request->has('remember_me') ? true : false;
    
         $credentials = $request->only('nip', 'password');
 
@@ -71,6 +73,10 @@ class UserController extends Controller
 
             return redirect()->intended('/')->with('success', 'Signed In');
         }
+
+        // if($request->get('remember')):
+        //     Auth::setRememberDuration(43200); // equivalent to 1 month
+        // endif;
   
         return redirect("login")->with('error', 'Login details are not valid');
     }
