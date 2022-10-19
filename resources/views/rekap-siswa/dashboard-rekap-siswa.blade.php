@@ -37,7 +37,7 @@
       </div>
     </div>
     {{-- Data Siswa Masuk --}}
-    <div class="tw-gap-8 tw-flex  tw-mt-8">
+    {{-- <div class="tw-gap-8 tw-flex  tw-mt-8">
       <div class="tw-bg-white tw-flex tw-flex-col tw-grow tw-rounded-xl tw-py-3 tw-px-7 tw-shadow-lg tw-font-pop tw-w-1/2">
         <div class="-tw-mr-6">
           <a href="/siswa-masuk" class="tw-text-sims-400 hover:tw-text-sims-600 tw-pr-2 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
@@ -197,7 +197,7 @@
       </div>
       </div>
       {{-- Data Siswa Keluar --}}
-      <div class="tw-bg-white tw-flex tw-flex-col tw-grow tw-rounded-xl tw-py-3 tw-px-7 tw-shadow-lg tw-font-pop tw-w-1/2">
+      {{-- <div class="tw-bg-white tw-flex tw-flex-col tw-grow tw-rounded-xl tw-py-3 tw-px-7 tw-shadow-lg tw-font-pop tw-w-1/2">
         <div class="-tw-mr-6">
           <a href="/siswa-keluar" class="tw-text-sims-400 hover:tw-text-sims-600 tw-pr-2 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
@@ -354,7 +354,7 @@
         <a href="#" class="tw-text-sims-400 hover:tw-text-[#428787] tw-pr-7 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-chevron-left"></i></a>
       </div>
       </div>
-    </div>
+    </div> --}}
 
     {{-- Rekap Data Jumlah Siswa --}}
     <div class="tw-flex  tw-gap-8 tw-my-8">
