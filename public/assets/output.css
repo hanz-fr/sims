@@ -1226,6 +1226,10 @@ video {
   margin-left: 0.25rem;
 }
 
+.tw-ml-32 {
+  margin-left: 8rem;
+}
+
 .tw-box-border {
   box-sizing: border-box;
 }
@@ -1482,6 +1486,10 @@ video {
   width: 600px;
 }
 
+.tw-w-52 {
+  width: 13rem;
+}
+
 .tw-max-w-3xl {
   max-width: 48rem;
 }
@@ -1500,6 +1508,10 @@ video {
 
 .tw-grow {
   flex-grow: 1;
+}
+
+.tw-table-auto {
+  table-layout: auto;
 }
 
 .tw-origin-center {

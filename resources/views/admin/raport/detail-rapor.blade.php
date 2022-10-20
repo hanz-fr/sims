@@ -11,12 +11,12 @@
         </div>
 
         <div class="tw-rounded-xl tw-font-ubuntu tw-overflow-hidden tw-shadow-md tw-mt-14">
-            <div class="tw-flex tw-bg-[#5A6C7C] tw-py-8 tw-pl-8">
-                <div class="tw-flex tw-text-slate-400 tw-mr-8 tw-p-2 tw-bg-none tw-rounded-lg">
+            <div class="tw-flex tw-bg-[#5A6C7C] ">
+                <div class="tw-flex tw-text-slate-400 tw-mr-8 tw-m-0 tw-bg-none">
                     <img src="{{ asset('/foto/633abb3763a14nekopara.gif') }}" alt=""
-                        class="tw-w-44 tw-object-contain tw-rounded-lg">
+                        class="tw-w-52 tw-object-contain">
                 </div>
-                <div class="tw-flex tw-flex-col tw-text-white">
+                <div class="tw-flex tw-flex-col tw-text-white tw-py-8 tw-px-8">
                     <span class="tw-font-thin">
                         Nama Siswa:
                     </span>
@@ -32,8 +32,8 @@
                 </div>
             </div>
         </div>
-        <div class="tw-my-2 tw-p-8 tw-text-admin-600 tw-font-ubuntu tw-rounded-xl tw-shadow-md">
-            <table class="tw-w-full  table-auto">
+        <div class="tw-my-2 tw-py-8 tw-px-8 tw-text-admin-600 tw-flex tw-justify-center tw-font-ubuntu tw-rounded-xl tw-shadow-md">
+            <table class="tw-w-full tw-table-auto">
                 <tbody>
                     <tr class="tw-border-b">
                         <td class="tw-p-2 tw-font-bold tw-text-2xl">
@@ -42,7 +42,7 @@
                         <td class="tw-text-xl">
                             :
                         </td>
-                        <td class="tw-py-2 tw-px-0 tw-text-xl tw-font-medium">
+                        <td class="tw-p-2 tw-text-xl tw-font-medium tw-text-right">
                             7
                         </td>
                     </tr>
@@ -53,7 +53,7 @@
                         <td class="tw-text-xl">
                             :
                         </td>
-                        <td class="tw-py-2 tw-px-0 tw-text-xl tw-font-medium">
+                        <td class="tw-p-2 tw-text-xl tw-font-medium tw-text-right">
                             2023-2024
                         </td>
                     </tr>
@@ -64,21 +64,25 @@
                         <td class="tw-text-xl">
                             :
                         </td>
-                        <td class="tw-py-2 tw-px-0 tw-text-xl tw-font-medium">
+                        <td class="tw-p-2 tw-text-xl tw-font-medium tw-text-right">
                             0
                         </td>
                     </tr>
-                    <tr class="tw-border-b">
+                    <tr>
                         <td class="tw-p-2 tw-font-bold tw-text-2xl">
                             Izin
                         </td>
                         <td class="tw-text-xl">
                             :
                         </td>
-                        <td class="tw-py-2 tw-px-0 tw-text-xl tw-font-medium">
+                        <td class="tw-p-2 tw-text-xl tw-font-medium tw-text-right">
                             &infin;
                         </td>
                     </tr>
+                </tbody>
+            </table>
+            <table class="tw-w-full tw-table-auto tw-ml-32">
+                <tbody>
                     <tr class="tw-border-b">
                         <td class="tw-p-2 tw-font-bold tw-text-2xl">
                             Alpa
@@ -86,7 +90,7 @@
                         <td class="tw-text-xl">
                             :
                         </td>
-                        <td class="tw-py-2 tw-px-0 tw-text-xl tw-font-medium">
+                        <td class="tw-p-2 tw-text-xl tw-font-medium tw-text-right">
                             2
                         </td>
                     </tr>
@@ -97,7 +101,7 @@
                         <td class="tw-text-xl">
                             :
                         </td>
-                        <td class="tw-py-2 tw-px-0 tw-text-xl tw-font-medium">
+                        <td class="tw-p-2 tw-text-xl tw-font-medium tw-text-right">
                             Naik Kelas
                         </td>
                     </tr>
@@ -108,7 +112,7 @@
                         <td class="tw-text-xl">
                             :
                         </td>
-                        <td class="tw-py-2 tw-px-0 tw-text-xl tw-font-medium">
+                        <td class="tw-p-2 tw-text-xl tw-font-medium tw-text-right">
                             XIV PPLG 2
                         </td>
                     </tr>
@@ -119,7 +123,7 @@
                         <td class="tw-text-xl">
                             :
                         </td>
-                        <td class="tw-py-2 tw-px-0 tw-text-xl tw-font-medium">
+                        <td class="tw-p-2 tw-text-xl tw-font-medium tw-text-right">
                             16 Juli 2024
                         </td>
                     </tr>

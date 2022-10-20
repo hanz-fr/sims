@@ -561,7 +561,7 @@
                   </tr>
               </thead>
               <tbody class="tw-text-base text-center">
-                @foreach (collect($siswa->raport)->where('semester', 5) as $rp)
+                @foreach (collect($siswa->raport)->where('semester', 6) as $rp)
                 @foreach ($rp->NilaiMapel as $nm)
                     <tr class="tw-bg-white tw-border">
                         <th scope="row"
@@ -577,11 +577,18 @@
                         <td class="tw-py-4 tw-px-6">
                           {{ $nm->nilai_keterampilan }}
                         </td>
-                        @foreach ($rp->NilaiAkhir as $na)
                         <td class="tw-py-4 tw-px-6">
-                          {{ $na->nilai_keterampilan }}
+                        {{ $nm->nilai_us_teori }}
                         </td>
-                        @endforeach
+                        <td class="tw-py-4 tw-px-6">
+                        {{ $nm->nilai_us_praktek }}
+                        </td>
+                        <td class="tw-py-4 tw-px-6">
+                        {{ $nm->nilai_ukk_teori }}
+                        </td>
+                        <td class="tw-py-4 tw-px-6">
+                        {{ $nm->nilai_ukk_praktek }}
+                        </td>
                     </tr>
                 @endforeach
                     <tr>
