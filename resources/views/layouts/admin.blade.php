@@ -9,6 +9,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+   {{-- flowbite --}}
+   <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css"/>
   {{-- css --}}
   <link rel="stylesheet" href="{{ URL::asset('assets/output.css') }}">
   {{-- icon --}}
@@ -40,7 +43,7 @@
                </a>
             </li>
             <li>
-               <a href="/manage-user" class="{{ ($active === "account") ? 'tw-bg-[#5A6C7C] tw-text-white' : '' }} nav-item-admin tw-transition-colors tw-duration-300">
+               <a href="/account" class="{{ ($active === "account") ? 'tw-bg-[#5A6C7C] tw-text-white' : '' }} nav-item-admin tw-transition-colors tw-duration-300">
                <i class="fa-solid fa-user tw-text-[#B2FEFE] tw-text-2xl"></i>
                <span class="tw-ml-3 tw-font-bold tw-text-lg">Account</span>
                </a>
@@ -83,6 +86,7 @@
    {{-- alpine js --}}
    <script defer src="https://unpkg.com/@alpinejs/intersect@3.10.3/dist/cdn.min.js"></script>
    <script defer src="https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"></script>
+  @include('sweetalert::alert')
    @stack('scripts')  
 </body>
 </html>

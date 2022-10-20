@@ -45,12 +45,8 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function createAccount()
+    public function create()
     {
-        return view('admin.account.create', [
-            'title' => 'Create Account',
-            'active' => 'account'
-        ]);
     }
 
     /**
@@ -59,26 +55,9 @@ class AdminController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function storeAccount(Request $request)
+    public function store(Request $request)
     {
-        $request->validate([
-            'nip'      => 'required|unique:users|min:7',
-            'nama'     => 'required',
-            'email'    => 'required|email|unique:users',
-            'role'    => 'required',
-            'password' => 'required|min:6',
-        ]);
-        
-        $user = new User([
-            'nip'      => $request->nip,
-            'nama'     => $request->nama,
-            'email'    => $request->email,
-            'role'    => $request->role,
-            'password' => Hash::make($request->password),
-        ]);
-        $user->save();
-         
-        return route("manage.user")->with('success', 'Account created successfully');
+
     }
 
     /**
@@ -88,24 +67,7 @@ class AdminController extends Controller
      */
     public function show()
     {
-        // $tatausaha = User::where('role',1)->count();
-        $user = User::all();
-        return view('admin.account.manage-user', [
-            'title' => 'Manage User SIMS',
-            'active' => 'account'
-        ],
-        compact('user'));
-    }
 
-    public function showDetail($id)
-    {
-        $user = User::find($id);
-
-        return view('admin.account.show-detail', [
-            'title' => 'Account Details',
-            'active' => 'account'
-        ],
-        compact('user'));
     }
 
     /**
@@ -113,15 +75,9 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function editAccount(User $user, $id)
+    public function edit($id)
     {
-        $user = User::find($id);
 
-        return view('admin.account.edit', [
-            'title' => 'Edit Account',
-            'active' => 'manage-user'
-        ],
-        compact('user'));
     }
 
     /**
@@ -130,19 +86,9 @@ class AdminController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function updateAccount(Request $request, $id)
+    public function update(Request $request, $id)
     {
-        $this->validate($request,[
-            'nip'   => 'required|min:7',
-            'nama'  => 'required',
-            'email' => 'required|email|unique:users'
-        ]);
 
-        $user = User::find($id);
-
-        $user->update($request->all());
-
-        return redirect()->route('manage.user')->with('success','Account has been updated successfully');
     }
 
     /**
@@ -150,10 +96,8 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function destroyAccount($id)
+    public function destroy($id)
     {
-        $user = User::find($id);
-        $user->delete();
-        return redirect()->route('manage.user')->with('success','Account has been deleted successfully');
+
     }
 }

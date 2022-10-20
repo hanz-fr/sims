@@ -1,8 +1,5 @@
 @extends('layouts.admin')
 
-@push('css')
-<link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css"/>
-@endpush
 
 @section('content')
 <div class="tw-mx-10 tw-w-screen">
@@ -115,7 +112,7 @@
           </div>
       </form>
 
-        <a href="/create-account" class="tw-bg-admin-300 tw-py-4 tw-px-6 tw-rounded-lg"><i class="fa-regular fa-square-plus tw-mr-4 tw-text-xl"></i>Create new account</a>
+        <a href="/account/create" class="tw-bg-admin-300 tw-py-4 tw-px-6 tw-rounded-lg"><i class="fa-regular fa-square-plus tw-mr-4 tw-text-xl"></i>Create new account</a>
       </div>
     </section>
 
@@ -162,7 +159,7 @@
                 @endif
                 </td>
                 <td class="tw-p-6">
-                  <a href="/show-detail/{{ $u->id }}" class="tw-text-white tw-bg-admin-300 hover:tw-bg-admin-600 tw-rounded-lg tw-text-xl tw-py-2 tw-px-7">
+                  <a href="/account/{{ $u->id }}" class="tw-text-white tw-bg-admin-300 hover:tw-bg-admin-600 tw-rounded-lg tw-text-xl tw-py-2 tw-px-7">
                       View
                   </a>
                 </td>

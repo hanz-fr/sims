@@ -6,7 +6,7 @@
 
     {{-- title --}}
     <section class="tw-flex tw-items-center">
-      <a href="/manage-user">
+      <a href="/account">
         <i class="fa-solid fa-chevron-left tw-text-gray-400 tw-text-2xl"></i>
       </a>
       <i class="fa-solid fa-user tw-text-admin-300 tw-text-3xl tw-ml-5"></i>
@@ -14,7 +14,7 @@
     </section>
 
     {{-- card form add data --}}
-    <form action="/store-account" method="POST">
+    <form action="/account" method="POST">
       @csrf
     <section class="tw-bg-white tw-mt-8 tw-rounded-xl tw-border-l-[17px] tw-border-admin-300 tw-py-20 tw-pl-10 tw-font-pop shadow-cs">
       <div class="tw-flex tw-w-full tw-items-center">

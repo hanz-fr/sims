@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AccountController;
 use App\Http\Controllers\ForgotPasswordController;
 
 /*
@@ -185,8 +186,8 @@ Route::middleware(['admin'])->group(function () {
         ]);
     });
 
-    /* MANAGE USER */
-    Route::get('/manage-user', [AdminController::class, 'show'])->name('manage.user');
+    /* ACCOUNT MANAGEMENT */
+    Route::resource('account', AccountController::class);
 
     /* MAPEL JURUSAN */
     Route::get('/mata-pelajaran-jurusan', function () {
@@ -253,20 +254,6 @@ Route::middleware(['admin'])->group(function () {
             'active' => 'database'
         ]);
     });
-
-    /* SHOW USER DETAIL */
-    Route::get('/show-detail/{id}', [AdminController::class, 'showDetail']);
-
-    /* EDIT USER */
-    Route::get('/edit-account/{id}', [AdminController::class, 'editAccount']);
-    Route::post('/update-account/{id}', [AdminController::class, 'updateAccount']);
-
-    /* CREATE USER */
-    Route::get('/create-account', [AdminController::class, 'createAccount']);
-    Route::post('/store-account', [AdminController::class, 'storeAccount']);
-
-    // DELETE USER
-    Route::get('/delete-account/{id}', [AdminController::class, 'destroyAccount']);
 
 
     /* SHOW ALL JURUSAN */
