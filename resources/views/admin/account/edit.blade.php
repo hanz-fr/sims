@@ -6,7 +6,7 @@
 
     {{-- title --}}
     <section class="tw-flex tw-items-center">
-      <a href="/show-detail">
+      <a href="/account/{{ $user->id }}">
         <i class="fa-solid fa-chevron-left tw-text-gray-400 tw-text-2xl"></i>
       </a>
       <i class="fa-solid fa-user tw-text-admin-300 tw-text-3xl tw-ml-5"></i>
@@ -14,8 +14,9 @@
     </section>
     
     {{-- card form edit data --}}
-    <form action="/update-account/{{ $user->id }}" method="POST">
+    <form action="/account/{{ $user->id }}" method="POST">
       @csrf
+      @method('PUT')
     <div class="tw-bg-white tw-mt-10 tw-rounded-xl tw-border-l-[17px] tw-border-admin-300 tw-py-20 tw-pl-10 tw-font-pop shadow-cs">
       <div class="tw-flex  tw-w-full tw-items-center">
         {{-- @if()
@@ -34,13 +35,19 @@
                 <label class="tw-text-admin-300 tw-font-bold tw-ml-3 tw-text-lg" for="nip">
                   NIP
                 </label>
-                <input value="{{ $user->nip }}" class="input-account" id="nip" name="nip" type="number" required>
+                <input value="{{ $user->nip }}" @error('nip') is-invalid @enderror class="input-account" id="nip" name="nip" type="number" required>
+                @error('nip')
+                  <div class="tw-text-sm tw-text-pink-700 tw-mt-1">{{ $message }}</div>
+                @enderror
               </div>
               <div class="tw-w-1/2 tw-px-3 tw-mb-6 md:tw-mb-0 tw-font-ubuntu">
                 <label class="tw-text-admin-300 tw-font-bold tw-ml-3 tw-text-lg" for="email">
                   Email
                 </label>
-                <input value="{{ $user->email }}" class="input-account" id="email" name="email" type="email" required>
+                <input value="{{ $user->email }}" @error('email') is-invalid @enderror class="input-account" id="email" name="email" type="email" required>
+                @error('email')
+                  <div class="tw-text-sm tw-text-pink-700 tw-mt-1">{{ $message }}</div>
+                @enderror
               </div>
             </div>
             <div class="tw-flex tw-flex-wrap tw-justify-between tw-w-full tw-mb-6">
@@ -48,24 +55,30 @@
                 <label class="tw-text-admin-300 tw-font-bold tw-ml-3" for="nama">
                   Name
                 </label>
-                <input value="{{ $user->nama }}" class="input-account" id="nama" name="nama" type="text" required>
+                <input value="{{ $user->nama }}" @error('nama') is-invalid @enderror class="input-account" id="nama" name="nama" type="text" required>
+                @error('nama')
+                  <div class="tw-text-sm tw-text-pink-700 tw-mt-1">{{ $message }}</div>
+                @enderror
               </div>
               <div class="tw-w-1/2 tw-px-3 tw-mb-6 md:tw-mb-0 tw-font-ubuntu">
                 <label class="tw-text-admin-300 tw-font-bold tw-ml-3 tw-text-lg" for="password">
                   Password
                 </label>
-                <input value="{{ $user->password }}" class="input-account" id="password" name="password" type="password" required>
+                <input value="{{ $user->password }}" @error('password') is-invalid @enderror class="input-account" id="password" name="password" type="password" required>
+                @error('password')
+                  <div class="tw-text-sm tw-text-pink-700 tw-mt-1">{{ $message }}</div>
+                @enderror
               </div>
             </div>
             <div class="tw-w-1/2 tw-pr-10 tw-mb-6 md:tw-mb-0 tw-font-ubuntu">
               <label class="tw-text-admin-300 tw-font-bold tw-ml-3 tw-text-lg" for="role">
                 Role
               </label>
-              <select value="{{ $user->role }}" class="input-account" id="nip" name="role" type="text" required>
-                <option value="Tata Usaha">Tata Usaha</option>
-                <option value="Kesiswaan">Kesiswaan</option>
-                <option value="Kurikulum">Kurikulum</option>
-                <option value="Walikelas">Wali Kelas</option>
+              <select value="{{ $user->role }}" class="input-account" id="role" name="role" required>
+                <option value="1">Tata Usaha</option>
+                <option value="2">Kesiswaan</option>
+                <option value="3">Kurikulum</option>
+                <option value="4">Wali Kelas</option>
               </select>
             </div>
           </div>

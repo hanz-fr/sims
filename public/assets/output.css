@@ -818,6 +818,10 @@ video {
   border-width: 0;
 }
 
+.tw-fixed {
+  position: fixed;
+}
+
 .tw-absolute {
   position: absolute;
 }
@@ -876,6 +880,10 @@ video {
 
 .tw-left-1\/2 {
   left: 50%;
+}
+
+.tw-z-50 {
+  z-index: 50;
 }
 
 .tw-float-right {
@@ -1662,6 +1670,10 @@ video {
   overflow-x: auto;
 }
 
+.tw-overflow-y-auto {
+  overflow-y: auto;
+}
+
 .tw-overflow-x-hidden {
   overflow-x: hidden;
 }
@@ -1984,11 +1996,6 @@ video {
   background-color: rgb(255 134 156 / var(--tw-bg-opacity));
 }
 
-.tw-bg-\[\#FF7575\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 117 117 / var(--tw-bg-opacity));
-}
-
 .tw-bg-\[\#FFCF86\] {
   --tw-bg-opacity: 1;
   background-color: rgb(255 207 134 / var(--tw-bg-opacity));
@@ -2002,6 +2009,11 @@ video {
 .tw-bg-\[\#5a6c7c\] {
   --tw-bg-opacity: 1;
   background-color: rgb(90 108 124 / var(--tw-bg-opacity));
+}
+
+.tw-bg-\[\#FF7575\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 117 117 / var(--tw-bg-opacity));
 }
 
 .tw-bg-slate-700 {
@@ -2237,11 +2249,6 @@ video {
 .tw-px-1 {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
-}
-
-.tw-px-0 {
-  padding-left: 0px;
-  padding-right: 0px;
 }
 
 .tw-pr-2 {
@@ -3491,14 +3498,14 @@ table {
     background-color: rgb(74 222 128 / var(--tw-bg-opacity));
   }
 
-  .dark\:hover\:tw-bg-gray-800:hover {
-    --tw-bg-opacity: 1;
-    background-color: rgb(31 41 55 / var(--tw-bg-opacity));
-  }
-
   .dark\:hover\:tw-bg-gray-600:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(75 85 99 / var(--tw-bg-opacity));
+  }
+
+  .dark\:hover\:tw-bg-gray-800:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(31 41 55 / var(--tw-bg-opacity));
   }
 
   .dark\:hover\:tw-text-white:hover {
@@ -3575,6 +3582,13 @@ table {
 }
 
 @media (min-width: 768px) {
+  .md\:tw-inset-0 {
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+  }
+
   .md\:tw-order-2 {
     order: 2;
   }
@@ -3593,6 +3607,10 @@ table {
 
   .md\:tw-h-auto {
     height: auto;
+  }
+
+  .md\:tw-h-full {
+    height: 100%;
   }
 
   .md\:tw-w-1\/2 {
