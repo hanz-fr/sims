@@ -19,7 +19,7 @@
           <h5 class="tw-font-bold tw-mt-2">Staff TU</h5>
         </div>
         <div class="tw-items-center tw-flex">
-        <h3 class="text-5xl tw-font-bold tw-mb-2">{{ $tatausaha }}</h3>
+        <h3 class="text-5xl tw-font-bold tw-mb-2">4</h3>
         </div>
       </div>
       <div class="tw-flex tw-gap-8 tw-text-salmon-400">
