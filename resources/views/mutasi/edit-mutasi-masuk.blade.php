@@ -44,18 +44,18 @@
             <label class="label-input" for="nis_siswa">
                 NIS
             </label>
-            <input value="{{ $mutasi->nis_siswa }}" class="input-data tw-w-full" id="nis_siswa" name="nis_siswa" type="text" maxlength="10">
+            <input value="{{ $mutasi->nis_siswa }}" @error('nis_siswa') is-invalid @enderror class="input-data tw-w-full" id="nis_siswa" name="nis_siswa" type="text" maxlength="10">
             @error('nis_siswa')
-            <small class="tw-text-red-500">{{ $message }}</small>
+                <small class="tw-text-red-500">{{ $message }}</small>
             @enderror
         </div>
         <div class="tw-mx-auto md:tw-w-2/3 sm:tw-w-1/2">
             <label class="label-input" for="nama_siswa">
                 Nama Siswa
             </label>
-            <input value="{{ $mutasi->nama_siswa }}" class="input-data tw-w-full" id="nama_siswa" name="nama_siswa" type="text">
+            <input value="{{ $mutasi->nama_siswa }}" @error('nama_siswa') is-invalid @enderror class="input-data tw-w-full" id="nama_siswa" name="nama_siswa" type="text">
             @error('nama_siswa')
-            <small class="tw-text-red-500">{{ $message }}</small>
+                <small class="tw-text-red-500">{{ $message }}</small>
             @enderror
         </div>
         <div class="tw-mx-auto md:tw-w-2/3 sm:tw-w-1/2">
@@ -80,9 +80,9 @@
             <label class="label-input" for="pindah_dari">
                 Pindah dari
             </label>
-            <input value="{{ $mutasi->pindah_dari }}" class="input-data tw-w-full" id="pindah_dari" name="pindah_dari" type="text">
+            <input value="{{ $mutasi->pindah_dari }}" @error('pindah_dari') is-invalid @enderror class="input-data tw-w-full" id="pindah_dari" name="pindah_dari" type="text">
             @error('pindah_dari')
-            <small class="tw-text-red-500">{{ $message }}</small>
+                <small class="tw-text-red-500">{{ $message }}</small>
             @enderror
         </div>
         <div class="tw-mx-auto md:tw-w-2/3 sm:tw-w-1/2">
@@ -100,27 +100,27 @@
             <label class="label-input" for="alasan_mutasi">
                 Alasan Mutasi
             </label>
-            <input value="{{ $mutasi->alasan_mutasi }}" class="input-data tw-w-full" id="alasan_mutasi" name="alasan_mutasi" type="text">
+            <input value="{{ $mutasi->alasan_mutasi }}" @error('alasan_mutasi') is-invalid @enderror class="input-data tw-w-full" id="alasan_mutasi" name="alasan_mutasi" type="text">
             @error('alasan_mutasi')
-            <small class="tw-text-red-500">{{ $message }}</small>
+                <small class="tw-text-red-500">{{ $message }}</small>
             @enderror
         </div>
         <div class="tw-mx-auto md:tw-w-2/3 sm:tw-w-1/2">
             <label class="label-input" for="tgl_mutasi">
                 Tanggal Masuk
             </label>
-            <input value="{{ $mutasi->tgl_mutasi }}" class="input-data tw-w-full" id="tgl_mutasi" name="tgl_mutasi" type="date">
+            <input value="{{ $mutasi->tgl_mutasi }}" @error('tgl_mutasi') is-invalid @enderror class="input-data tw-w-full" id="tgl_mutasi" name="tgl_mutasi" type="date">
             @error('tgl_mutasi')
-            <small class="tw-text-red-500">{{ $message }}</small>
+                <small class="tw-text-red-500">{{ $message }}</small>
             @enderror
         </div>
         <div class="tw-mx-auto md:tw-w-2/3 sm:tw-w-1/2">
             <label class="label-input" for="sk_mutasi">
                 Surat Mutasi
             </label>
-            <input value="{{ $mutasi->sk_mutasi }}" class="input-data tw-w-full" id="sk_mutasi" name="sk_mutasi" type="text">
+            <input value="{{ $mutasi->sk_mutasi }}" @error('sk_mutasi') is-invalid @enderror class="input-data tw-w-full" id="sk_mutasi" name="sk_mutasi" type="text">
             @error('sk_mutasi')
-            <small class="tw-text-red-500">{{ $message }}</small>
+                <small class="tw-text-red-500">{{ $message }}</small>
             @enderror
         </div>
         <div class="tw-mx-auto tw-text-center tw-mt-10">
@@ -132,6 +132,9 @@
 </div>
 @endif
 
+@endsection
+
+@push('scripts')
 <script>
     let okbtn = document.getElementById("okbtn");
 
@@ -141,5 +144,4 @@
         targetModal.style.display = "none";
     }
 </script>
-
-@endsection
+@endpush

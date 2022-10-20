@@ -47,7 +47,7 @@
                   <div class="tw-text-sm tw-text-pink-700 tw-mt-1">{{ $message }}</div>
                 @enderror
               </li>
-              <li x-data="{ show: true }" class="tw-flex">
+              <li x-data="{ show: true }">
                 <div class="tw-relative tw-w-full">
                   <input name="password" id="password" @error('password') is-invalid @enderror placeholder="Kata Sandi" :type="show ? 'password' : 'text'" class="tw-block tw-font-ubuntu tw-font-medium tw-px-4 tw-py-3 tw-border-2 tw-text-gray-500 tw-border-gray-300 focus:tw-outline-none focus:tw-ring-1 focus:tw-ring-sims-400 focus:tw-border-sims-400 invalid:tw-text-pink-700 tw-peer invalid:focus:tw-ring-pink-700 invalid:focus:tw-border-pink-700 tw-w-full">
                   <div class="tw-absolute tw-inset-y-0 tw-right-0 tw-pr-3 tw-flex tw-items-center tw-text-sm tw-leading-5">

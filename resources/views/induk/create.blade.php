@@ -32,18 +32,18 @@
           <label class="label-input" for="nis">
             NIS
           </label>
-          <input value="{{ old('nis') }}" class="input-data tw-w-full" id="nis" name="nis" type="text" maxlength="10" required>
+          <input value="{{ old('nis') }}" @error('nis_siswa') is-invalid @enderror class="input-data tw-w-full" id="nis" name="nis" type="text" maxlength="10" required>
           @error('nis_siswa')
-          <small class="tw-text-red-500">{{ $message }}</small>
+            <small class="tw-text-red-500">{{ $message }}</small>
           @enderror
         </div>
         <div class="tw-w-fit md:tw-w-1/2 tw-px-3">
           <label class="label-input" for="nisn">
             NISN
           </label>
-          <input value="{{ old('nisn') }}" class="input-data tw-w-full" id="nisn" name="nisn" type="text" maxlength="10" required>
+          <input value="{{ old('nisn') }}" @error('nisn') is-invalid @enderror class="input-data tw-w-full" id="nisn" name="nisn" type="text" maxlength="10" required>
           @error('nisn')
-          <small class="tw-text-red-500">{{ $message }}</small>
+            <small class="tw-text-red-500">{{ $message }}</small>
           @enderror
         </div>
       </div>
@@ -62,9 +62,9 @@
           <label class="label-input" for="nama">
             Nama Peserta Didik
           </label>
-          <input value="{{ old('nama') }}" class="input-data" id="nama" type="text" name="nama" required>
+          <input value="{{ old('nama') }}" @error('nama') is-invalid @enderror class="input-data" id="nama" type="text" name="nama" required>
           @error('nama')
-          <small class="tw-text-red-500">{{ $message }}</small>
+            <small class="tw-text-red-500">{{ $message }}</small>
           @enderror
         </div>
       </div>
@@ -73,18 +73,18 @@
           <label class="label-input" for="tmp_lahir">
             Tempat Lahir
           </label>
-          <input value="{{ old('tmp_lahir') }}" class="input-data" id="tmp_lahir" name="tmp_lahir" type="text" required>
+          <input value="{{ old('tmp_lahir') }}" @error('tmp_lahir') is-invalid @enderror class="input-data" id="tmp_lahir" name="tmp_lahir" type="text" required>
           @error('tmp_lahir')
-          <small class="tw-text-red-500">{{ $message }}</small>
+            <small class="tw-text-red-500">{{ $message }}</small>
           @enderror
         </div>
         <div class="tw-w-full md:tw-w-1/2 tw-px-3">
           <label class="label-input" for="tgl_lahir">
             Tanggal Lahir
           </label>
-          <input value="{{ old('tgl_lahir') }}" class="input-data" id="tgl_lahir" name="tgl_lahir" type="date" placeholder="dd/mm/yyyy" required>
+          <input value="{{ old('tgl_lahir') }}" @error('tgl_lahir') is-invalid @enderror class="input-data" id="tgl_lahir" name="tgl_lahir" type="date" placeholder="dd/mm/yyyy" required>
           @error('tgl_lahir')
-          <small class="tw-text-red-500">{{ $message }}</small>
+            <small class="tw-text-red-500">{{ $message }}</small>
           @enderror
         </div>
       </div>
@@ -93,9 +93,9 @@
           <label class="label-input" for="agama">
             Agama
           </label>
-          <input value="{{ old('agama') }}" class="input-data" id="agama" type="text" name="agama" required>
+          <input value="{{ old('agama') }}" @error('agama') is-invalid @enderror class="input-data" id="agama" type="text" name="agama" required>
           @error('agama')
-          <small class="tw-text-red-500">{{ $message }}</small>
+            <small class="tw-text-red-500">{{ $message }}</small>
           @enderror
         </div>
       </div>
@@ -145,7 +145,7 @@
             <option value="AT">Anak Tiri</option>
           </select>
           @error('status')
-          <small class="tw-text-red-500">{{ $message }}</small>
+            <small class="tw-text-red-500">{{ $message }}</small>
           @enderror
         </div>
       </div>
@@ -156,7 +156,7 @@
           </label>
           <textarea class="input-data" id="alamat_siswa" type="text" name="alamat_siswa" required>{{ old('alamat_siswa') }}</textarea>
           @error('alamat_siswa')
-          <small class="tw-text-red-500">{{ $message }}</small>
+            <small class="tw-text-red-500">{{ $message }}</small>
           @enderror
         </div>
       </div>
@@ -165,9 +165,9 @@
           <label class="label-input" for="no_telp">
             No. HP
           </label>
-          <input value="{{ old('no_telp') }}" class="input-data" id="no_telp" type="text" name="no_telp" required  maxlength="20">
+          <input value="{{ old('no_telp') }}" @error('no_telp') is-invalid @enderror class="input-data" id="no_telp" type="text" name="no_telp" required  maxlength="20">
           @error('no_telp')
-          <small class="tw-text-red-500">{{ $message }}</small>
+            <small class="tw-text-red-500">{{ $message }}</small>
           @enderror
         </div>
         <div class="tw-w-full md:tw-w-1/2 tw-px-3">
@@ -220,7 +220,7 @@
         <label class="label-input" for="nama_sekolah_asal">
           Nama Sekolah
         </label>
-        <input class="input-data" id="nama_sekolah_asal" type="text" name="nama_sekolah_asal" required>
+        <input class="input-data" @error('nama_sekolah_asal') is-invalid @enderror id="nama_sekolah_asal" type="text" name="nama_sekolah_asal" required>
         @error('nama_sekolah_asal')
           <small class="tw-text-red-500">{{ $message }}</small>
         @enderror
