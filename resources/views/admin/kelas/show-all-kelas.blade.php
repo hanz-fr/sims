@@ -2,11 +2,11 @@
 
 @section('content')
 
-{{-- <head>
+<!-- {{-- <head>
     <link rel="stylesheet" href="DataTables/datatables.min.css"/>
-</head> --}}
+</head> --}} -->
 
-{{-- <body> --}}
+<!-- {{-- <body> --}} -->
     
 <div class="tw-mx-10 tw-w-screen">
     <div class="tw-flex tw-justify-between tw-gap-5 tw-mt-8">
@@ -65,7 +65,7 @@
                         <td class="tw-py-4 tw-px-6 tw-border">1</td>
                         <td class="tw-py-4 tw-px-6 tw-border">X PPLG 1</td>
                         <td class="tw-py-2 tw-px-4 tw-border">
-                            <a href="#"
+                            <a href="/edit-kelas-admin"
                                 class="tw-text-white tw-bg-yellow-400 hover:tw-bg-[#D3A007] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                                 <i class="fa-solid fa-pen-to-square"></i></a>
                             </a>
@@ -82,7 +82,7 @@
                         <td class="tw-py-4 tw-px-6 tw-border">1</td>
                         <td class="tw-py-4 tw-px-6 tw-border">XI PPLG 1</td>
                         <td class="tw-py-2 tw-px-4 tw-border">
-                            <a href="#"
+                            <a href="/edit-kelas-admin"
                                 class="tw-text-white tw-bg-yellow-400 hover:tw-bg-[#D3A007] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                                 <i class="fa-solid fa-pen-to-square"></i></a>
                             </a>
@@ -99,7 +99,7 @@
                         <td class="tw-py-4 tw-px-6 tw-border">2</td>
                         <td class="tw-py-4 tw-px-6 tw-border">XI PPLG 2</td>
                         <td class="tw-py-2 tw-px-4 tw-border">
-                            <a href="#"
+                            <a href="/edit-kelas-admin"
                                 class="tw-text-white tw-bg-yellow-400 hover:tw-bg-[#D3A007] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                                 <i class="fa-solid fa-pen-to-square"></i></a>
                             </a>
@@ -116,7 +116,7 @@
                         <td class="tw-py-4 tw-px-6 tw-border">1</td>
                         <td class="tw-py-4 tw-px-6 tw-border">XII RPL 1</td>
                         <td class="tw-py-2 tw-px-4 tw-border">
-                            <a href="#"
+                            <a href="/edit-kelas-admin"
                                 class="tw-text-white tw-bg-yellow-400 hover:tw-bg-[#D3A007] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                                 <i class="fa-solid fa-pen-to-square"></i></a>
                             </a>
@@ -133,7 +133,7 @@
                         <td class="tw-py-4 tw-px-6 tw-border">2</td>
                         <td class="tw-py-4 tw-px-6 tw-border">XII RPL 2</td>
                         <td class="tw-py-2 tw-px-4 tw-border">
-                            <a href="#"
+                            <a href="/edit-kelas-admin"
                                 class="tw-text-white tw-bg-yellow-400 hover:tw-bg-[#D3A007] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                                 <i class="fa-solid fa-pen-to-square"></i></a>
                             </a>
@@ -147,14 +147,14 @@
             </table>
         </div>
     </div>
-    {{-- <script src="https://code.jquery.com/jquery-3.5.1.js"> </script>
+    <!-- {{-- <script src="https://code.jquery.com/jquery-3.5.1.js"> </script>
     <script src="DataTables/datatables.min.js"></script>
     <script>
         $(document).ready(function () {
         $('#KelasTable').DataTable();
         });
-    </script> --}}
+    </script> --}} -->
 
-{{-- </body> --}}
+<!-- {{-- </body> --}} -->
 
 @endsection
