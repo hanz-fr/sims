@@ -310,6 +310,13 @@ Route::middleware(['admin'])->group(function () {
         ]);
     });
 
+    Route::get('/add-siswa-admin', function () {
+        return view('admin.siswa.add-siswa-admin', [
+            'title' => 'Tambah Siswa',
+            'active' => 'database'
+        ]);
+    });
+
     // ALL MAPEL
     Route::get('/all-mata-pelajaran', function () {
         return view('admin.all-mapel.all-mapel', [

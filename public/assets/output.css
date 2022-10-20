@@ -1014,6 +1014,16 @@ video {
   margin-right: 0.75rem;
 }
 
+.tw-mx-7 {
+  margin-left: 1.75rem;
+  margin-right: 1.75rem;
+}
+
+.tw-my-3 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
 .tw-mt-5 {
   margin-top: 1.25rem;
 }
@@ -1228,6 +1238,10 @@ video {
 
 .tw-ml-32 {
   margin-left: 8rem;
+}
+
+.tw-mr-32 {
+  margin-right: 8rem;
 }
 
 .tw-box-border {
@@ -1636,6 +1650,10 @@ video {
 
 .tw-gap-4 {
   gap: 1rem;
+}
+
+.tw-gap-20 {
+  gap: 5rem;
 }
 
 .tw-space-y-3 > :not([hidden]) ~ :not([hidden]) {
@@ -2239,11 +2257,6 @@ video {
   padding-right: 0.25rem;
 }
 
-.tw-px-0 {
-  padding-left: 0px;
-  padding-right: 0px;
-}
-
 .tw-pr-2 {
   padding-right: 0.5rem;
 }
@@ -2414,6 +2427,10 @@ video {
 
 .tw-font-ubuntu {
   font-family: Ubuntu;
+}
+
+.tw-font-\[ubuntu\] {
+  font-family: ubuntu;
 }
 
 .tw-text-sm {
@@ -2742,6 +2759,11 @@ video {
 .tw-text-yellow-400 {
   --tw-text-opacity: 1;
   color: rgb(250 204 21 / var(--tw-text-opacity));
+}
+
+.tw-text-slate-100 {
+  --tw-text-opacity: 1;
+  color: rgb(241 245 249 / var(--tw-text-opacity));
 }
 
 .tw-underline {
@@ -3333,6 +3355,16 @@ table {
 .hover\:tw-bg-oren-300:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(255 183 160 / var(--tw-bg-opacity));
+}
+
+.hover\:tw-bg-slate-200:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
+}
+
+.hover\:tw-bg-\[\#4c719f\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(76 113 159 / var(--tw-bg-opacity));
 }
 
 .hover\:tw-bg-\[\#4a85cd\]:hover {
