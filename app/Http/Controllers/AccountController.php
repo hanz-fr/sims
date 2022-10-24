@@ -46,7 +46,7 @@ class AccountController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nip'      => 'required|unique:users|min:7',
+            'nip'      => 'required|unique:users|min:9|max:18',
             'nama'     => 'required',
             'email'    => 'required|email|unique:users',
             'role'    => 'required',
@@ -109,7 +109,7 @@ class AccountController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request,[
-            'nip'   => 'required|min:7',
+            'nip'   => 'required|min:9|max:18',
             'nama'  => 'required',
             'email' => 'required|email'
         ]);
