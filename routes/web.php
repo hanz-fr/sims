@@ -189,7 +189,8 @@ Route::middleware(['admin'])->group(function () {
     /* ACCOUNT MANAGEMENT */
     Route::resource('account', AccountController::class);
 
-    /* MAPEL JURUSAN */
+    /* 
+    APEL JURUSAN */
     Route::get('/mata-pelajaran-jurusan', function () {
         return view('admin.mapel-jurusan.mapel-jurusan', [
             'title' => 'Mata Pelajaran',
