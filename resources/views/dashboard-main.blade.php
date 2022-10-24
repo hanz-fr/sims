@@ -39,7 +39,7 @@
           <li class="">
             <div class="tw-px-4 tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-bg-white">
               <div class="tw-float-right">
-                <a href="/siswa-keluar" class="tw-text-sims-400 hover:tw-text-sims-600 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <a href="/data-alumni" class="tw-text-sims-400 hover:tw-text-sims-600 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
               </div>
               <div class="sm:tw-px-12 md:tw-px-8">
                 <div class="tw-flex tw-flex-row">
@@ -71,7 +71,7 @@
           <li class="">
             <div class="tw-px-4 tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-bg-white">
               <div class="tw-float-right">
-                <a href="" class="tw-text-sims-400 hover:tw-text-sims-600 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <a href="/siswa-masuk" class="tw-text-sims-400 hover:tw-text-sims-600 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
               </div>
               <div class="sm:tw-px-12 md:tw-px-8">
                 <div class="tw-flex tw-flex-row">
@@ -79,7 +79,7 @@
                   <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">{{ $siswaMasuk }}</div>
                 </div>
               </div>
-              <div class="/rekap-siswa"> 
+              <div> 
                 <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Siswa Masuk</div>
               </div>
             </div>
@@ -87,7 +87,7 @@
           <li class="">
             <div class="tw-px-4 tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-bg-white">
               <div class="tw-float-right">
-                <a href="" class="tw-text-sims-400 hover:tw-text-sims-600 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <a href="/rekap-jumlah-siswa" class="tw-text-sims-400 hover:tw-text-sims-600 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
               </div>
               <div class="sm:tw-px-12 md:tw-px-8">
                 <div class="tw-flex tw-flex-row">
