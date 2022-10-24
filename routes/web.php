@@ -184,7 +184,8 @@ Route::middleware(['admin'])->group(function () {
     /* ACCOUNT MANAGEMENT */
     Route::resource('account', AccountController::class);
 
-    /* MAPEL JURUSAN */
+    /* 
+    APEL JURUSAN */
     Route::get('/mata-pelajaran-jurusan', function () {
         return view('admin.mapel-jurusan.mapel-jurusan', [
             'title' => 'Mata Pelajaran',
@@ -234,6 +235,14 @@ Route::middleware(['admin'])->group(function () {
         ]);
     });
 
+    // EDIT RAPOR
+    Route::get('/edit-rapor', function () {
+        return view('admin.raport.edit-rapor', [
+            'title' => 'Edit Rapor',
+            'active' => 'database'
+        ]);
+    });
+
     // CREATE RAPOR
     Route::get('/create-rapor', function () {
         return view('admin.raport.create-rapor', [
@@ -242,9 +251,31 @@ Route::middleware(['admin'])->group(function () {
         ]);
     });
 
-    // EDIT RAPOR
-    Route::get('/edit-rapor', function () {
-        return view('admin.raport.edit-rapor', [
+    // NILAI MAPEL
+    Route::get('/nilai-mapel', function () {
+        return view('admin.nilai-mapel.show-nilai-mapel', [
+            'title' => 'Edit Rapor',
+            'active' => 'database'
+        ]);
+    });
+
+    // DETAIL NILAI MAPEL
+    Route::get('/detail-nilai-mapel', function () {
+        return view('admin.nilai-mapel.detail-nilai-mapel', [
+            'title' => 'Edit Rapor',
+            'active' => 'database'
+        ]);
+    });
+    // CREATE NILAI MAPEL
+    Route::get('/create-nilai-mapel', function () {
+        return view('admin.nilai-mapel.create-nilai-mapel', [
+            'title' => 'Edit Rapor',
+            'active' => 'database'
+        ]);
+    });
+    // EDIT NILAI MAPEL
+    Route::get('/edit-nilai-mapel', function () {
+        return view('admin.nilai-mapel.edit-nilai-mapel', [
             'title' => 'Edit Rapor',
             'active' => 'database'
         ]);
