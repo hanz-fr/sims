@@ -3,14 +3,14 @@
 @section('content')
     <div class="tw-mx-10">
       <div class="tw-flex tw-mt-8 tw-items-center">
-        <a href="/data-induk-siswa" class=" tw-text-sims-400 tw-text-3xl hover:tw-text-sims-600"><i class="fa-regular fa-chevron-left"></i></a>
+        <a href="{{ URL::previous() }}" class=" tw-text-sims-400 tw-text-3xl hover:tw-text-sims-600"><i class="fa-regular fa-chevron-left"></i></a>
         <div class="tw-text-2xl tw-text-sims-400 tw-font-pop tw-font-semibold tw-flex tw-flex-row tw-ml-4">Rekap Nilai Siswa</div>
       </div>
-        <div class="tw-flex tw-justify-between tw-mb-5">
+        <div class="tw-flex tw-justify-between tw-mb-5 tw-mt-8">
             <div class="tw-font-pop tw-font-medium tw-text-md tw-text-slate-400 tw-mt-3">
-              NIS : {{ $siswa->nis_siswa }}<br>Nama :  {{ $siswa->nama_siswa }}
+              NIS : {{ $siswa->nis_siswa }}<br>Nama :  {{ $siswa->nama_siswa }}<br>Kelas : {{ $siswa->KelasId }}
             </div>
-            <div>
+            <div class="tw-my-auto">
               <a href="" class="tw-bg-sims-400 tw-text-white hover:tw-text-white  tw-font-pop hover:tw-bg-sims-600 tw-px-5 tw-py-2 tw-rounded-lg tw-mr-5">Export</a>
               <a href="" class="tw-bg-sims-400 tw-text-white hover:tw-text-white  tw-font-pop hover:tw-bg-sims-600 tw-px-5 tw-py-2 tw-rounded-lg">import</a>
             </div>

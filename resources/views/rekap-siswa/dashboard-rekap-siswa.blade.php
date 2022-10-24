@@ -11,19 +11,19 @@
         <div class="tw-flex tw-flex-col tw-my-auto">
           <div class="tw-flex tw-justify-between">
             <div class="tw-text-lg my-auto tw-font-normal tw-text-gray-500">Masuk Sekolah (Pindahan)</div>
-            <div class="tw-text-base my-auto tw-font-bold tw-text-sims-400">-</div>
+            <div class="tw-text-base my-auto tw-font-bold tw-text-sims-400">{{ $siswaMasuk }}</div>
           </div>
           <div class="tw-flex tw-justify-between tw-mt-10">
             <div class="tw-text-lg my-auto tw-font-normal tw-text-gray-500">Keluar Sekolah</div>
-            <div class="tw-text-base my-auto tw-font-bold tw-text-sims-400">-</div>
+            <div class="tw-text-base my-auto tw-font-bold tw-text-sims-400">{{ $siswaKeluar }}</div>
           </div>
           <div class="tw-flex tw-justify-between tw-mt-10">
             <div class="tw-text-lg my-auto tw-font-normal tw-text-gray-500">Siswa Tidak Naik Kelas</div>
-            <div class="tw-text-base my-auto tw-font-bold tw-text-sims-400">-</div>
+            <div class="tw-text-base my-auto tw-font-bold tw-text-sims-400">{{ $siswaTdkNaik }}</div>
           </div>
           <div class="tw-flex tw-justify-between tw-mt-10">
             <div class="tw-text-base my-auto tw-font-normal tw-text-gray-500">Jumlah Siswa</div>
-            <div class="tw-text-base my-auto tw-font-bold tw-text-sims-400">-</div>
+            <div class="tw-text-base my-auto tw-font-bold tw-text-sims-400">{{ $jmlSiswa }}</div>
           </div>
           {{-- <div class="tw-flex tw-flex-col tw-text-sims-400 tw-gap-3 tw-mt-8 tw-w-1/2 tw-ml-10">
           </div> --}}
@@ -392,29 +392,136 @@
                 <th>JML</th>
               </tr>
           </thead>
+
+          
           <tbody class="tw-text-xs text-center">
-              <tr class="tw-text-gray-500">
+
+            {{-- X --}}
+            <?php $sum_total_siswa_p_X = 0 ?>
+            <?php $sum_total_siswa_l_X = 0 ?>
+            <?php $sum_total_siswa_X = 0 ?>
+                          
+            <?php $sum_total_siswa_p_keluar_X = 0 ?>
+            <?php $sum_total_siswa_l_keluar_X = 0 ?>
+            <?php $sum_total_siswa_keluar_X = 0 ?>
+                          
+            <?php $sum_total_siswa_p_masuk_X = 0 ?>
+            <?php $sum_total_siswa_l_masuk_X = 0 ?>
+            <?php $sum_total_siswa_masuk_X = 0 ?>
+  
+            <?php $sum_total_siswa_p_akhir_X = 0 ?>
+            <?php $sum_total_siswa_l_akhir_X = 0 ?>
+            <?php $sum_total_siswa_akhir_X = 0 ?>
+
+            {{-- XI --}}
+            <?php $sum_total_siswa_p_XI = 0 ?>
+            <?php $sum_total_siswa_l_XI = 0 ?>
+            <?php $sum_total_siswa_XI = 0 ?>
+                    
+            <?php $sum_total_siswa_p_keluar_XI = 0 ?>
+            <?php $sum_total_siswa_l_keluar_XI = 0 ?>
+            <?php $sum_total_siswa_keluar_XI = 0 ?>
+                    
+            <?php $sum_total_siswa_p_masuk_XI = 0 ?>
+            <?php $sum_total_siswa_l_masuk_XI = 0 ?>
+            <?php $sum_total_siswa_masuk_XI = 0 ?>
+            <?php $sum_total_siswa_p_akhir_XI = 0 ?>
+            <?php $sum_total_siswa_l_akhir_XI = 0 ?>
+            <?php $sum_total_siswa_akhir_XI = 0 ?>
+
+            @foreach ($rekapKelas10 as $k10)
+            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k10->id }}</td>
+            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k10->jumlahSiswaPerempuan }}</td>
+            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k10->jumlahSiswaLaki }}</td>
+            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k10->jumlahSiswa }}</td>
+            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k10->siswaPerempuanKeluar }}</td>
+            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k10->siswaLakiKeluar}}</td>
+            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k10->jumlahSiswaKeluar }}</td>
+            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k10->siswaPerempuanMasuk }}</td>
+            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k10->siswaLakiMasuk }}</td>
+            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k10->jumlahSiswaMasuk }}</td>
+            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k10->jumlahSiswaPerempuan - $k10->siswaPerempuanKeluar + $k10->siswaPerempuanMasuk }}</td>
+            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k10->jumlahSiswaLaki - $k10->siswaLakiKeluar + $k10->siswaLakiMasuk }}</td>
+            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k10->jumlahSiswaPerempuan - $k10->siswaPerempuanKeluar + $k10->siswaPerempuanMasuk + $k10->jumlahSiswaLaki - $k10->siswaLakiKeluar + $k10->siswaLakiMasuk }}</td>
+            @endforeach
+
+            @foreach ($rekapKelas11 as $k11)
+            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k11->id }}</td>
+            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k11->jumlahSiswaPerempuan }}</td>
+            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k11->jumlahSiswaLaki }}</td>
+            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k11->jumlahSiswa }}</td>
+            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k11->siswaPerempuanKeluar }}</td>
+            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k11->siswaLakiKeluar}}</td>
+            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k11->jumlahSiswaKeluar }}</td>
+            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k11->siswaPerempuanMasuk }}</td>
+            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k11->siswaLakiMasuk }}</td>
+            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k11->jumlahSiswaMasuk }}</td>
+            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k11->jumlahSiswaPerempuan - $k11->siswaPerempuanKeluar + $k11->siswaPerempuanMasuk }}</td>
+            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k11->jumlahSiswaLaki - $k11->siswaLakiKeluar + $k11->siswaLakiMasuk }}</td>
+            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k11->jumlahSiswaPerempuan - $k11->siswaPerempuanKeluar + $k11->siswaPerempuanMasuk + $k11->jumlahSiswaLaki - $k11->siswaLakiKeluar + $k11->siswaLakiMasuk }}</td>
+            @endforeach
+
+            {{-- X --}}
+            <?php $sum_total_siswa_p_X += $k10->jumlahSiswaPerempuan ?>
+            <?php $sum_total_siswa_l_X += $k10->jumlahSiswaLaki ?>
+            <?php $sum_total_siswa_X += $k10->jumlahSiswa ?>
+                        
+            <?php $sum_total_siswa_p_keluar_X += $k10->siswaPerempuanKeluar ?>
+            <?php $sum_total_siswa_l_keluar_X += $k10->siswaLakiKeluar ?>
+            <?php $sum_total_siswa_keluar_X += $k10->jumlahSiswaKeluar ?>
+                        
+            <?php $sum_total_siswa_p_masuk_X += $k10->siswaPerempuanMasuk ?>
+            <?php $sum_total_siswa_l_masuk_X += $k10->siswaLakiMasuk ?>
+            <?php $sum_total_siswa_masuk_X += $k10->jumlahSiswaMasuk ?>
+                        
+            <?php $sum_total_siswa_p_akhir_X += $k10->jumlahSiswaPerempuan - $k10->siswaPerempuanKeluar + $k10->siswaPerempuanMasuk ?>
+            <?php $sum_total_siswa_l_akhir_X += $k10->jumlahSiswaLaki - $k10->siswaLakiKeluar + $k10->siswaLakiMasuk ?>
+            <?php $sum_total_siswa_akhir_X += $k10->jumlahSiswaPerempuan - $k10->siswaPerempuanKeluar + $k10->siswaPerempuanMasuk + $k10->jumlahSiswaLaki - $k10->siswaLakiKeluar + $k10->siswaLakiMasuk ?>
+              
+            {{-- XI --}}
+            <?php $sum_total_siswa_p_XI += $k11->jumlahSiswaPerempuan ?>
+            <?php $sum_total_siswa_l_XI += $k11->jumlahSiswaLaki ?>
+            <?php $sum_total_siswa_XI += $k11->jumlahSiswa ?>
+                        
+            <?php $sum_total_siswa_p_keluar_XI += $k11->siswaPerempuanKeluar ?>
+            <?php $sum_total_siswa_l_keluar_XI += $k11->siswaLakiKeluar ?>
+            <?php $sum_total_siswa_keluar_XI += $k11->jumlahSiswaKeluar ?>
+                        
+            <?php $sum_total_siswa_p_masuk_XI += $k11->siswaPerempuanMasuk ?>
+            <?php $sum_total_siswa_l_masuk_XI += $k11->siswaLakiMasuk ?>
+            <?php $sum_total_siswa_masuk_XI += $k11->jumlahSiswaMasuk ?>
+                        
+            <?php $sum_total_siswa_p_akhir_XI += $k11->jumlahSiswaPerempuan - $k11->siswaPerempuanKeluar + $k11->siswaPerempuanMasuk ?>
+            <?php $sum_total_siswa_l_akhir_XI += $k11->jumlahSiswaLaki - $k11->siswaLakiKeluar + $k11->siswaLakiMasuk ?>
+            <?php $sum_total_siswa_akhir_XI += $k11->jumlahSiswaPerempuan - $k11->siswaPerempuanKeluar + $k11->siswaPerempuanMasuk + $k11->jumlahSiswaLaki - $k11->siswaLakiKeluar + $k11->siswaLakiMasuk ?>
+
+
+            <tr class="tw-text-gray-500">
                   <th scope="row" class="tw-py-4 tw-px-6 tw-font-normal tw-text-gray-400 tw-whitespace-nowrap">
                     AWAL BULAN
                   </th>
                   <td class="tw-py-4 tw-px-6">
-                    70
+                   {{ $sum_total_siswa_l_X }}
                   </td>
                   <td class="tw-py-4 tw-px-6">
-                    72
+                   {{ $sum_total_siswa_p_X }}
                   </td>
                   <td class="tw-py-4 tw-px-6">
-                    75
+                   {{ $sum_total_siswa_X }}
+                  </td>
+
+
+                  <td class="tw-py-4 tw-px-6">
+                    {{ $sum_total_siswa_l_XI }}
                   </td>
                   <td class="tw-py-4 tw-px-6">
-                    70
+                    {{ $sum_total_siswa_p_XI }}
                   </td>
                   <td class="tw-py-4 tw-px-6">
-                    72
+                    {{ $sum_total_siswa_XI }}
                   </td>
-                  <td class="tw-py-4 tw-px-6">
-                    75
-                  </td>
+
+
                   <td class="tw-py-4 tw-px-6">
                     70
                   </td>
@@ -566,11 +673,11 @@
 <script>
   // chart view dasbrot
 const labels = [
-  'Jan',
-  'Feb',
-  'Mar',
-  'Apr',
-  'May',
+  '-',
+  '-',
+  '-',
+  '-',
+  '-',
 ];
 const data = {
   labels: labels,
@@ -578,12 +685,12 @@ const data = {
     label: 'Siswa Masuk',
     backgroundColor: '#47B2E0',
     borderColor: '#47B2E0',
-    data: [20, 10, 10, 30, 60],
+    data: [{{ $siswaMasuk }}],
   }, {
     label: 'Siswa Keluar',
     backgroundColor: '#DC98AC',
     borderColor: '#DC98AC',
-    data: [40, 20, 10, 10, 0],
+    data: [{{ $siswaKeluar }}],
   }]
 };
 

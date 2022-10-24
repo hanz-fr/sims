@@ -100,12 +100,7 @@ Route::middleware(['auth'])->group(function () {
 
     /* REKAP SISWA */
 
-    Route::get('/rekap-siswa', function () {
-        return view('rekap-siswa.dashboard-rekap-siswa', [
-            'title' => 'Rekap Siswa',
-            'active' => 'rekap-siswa'
-        ]);
-    });
+    Route::get('/rekap-siswa', [ApiController::class, 'rekapSiswaDashboard']);
 
 
     /* DATA TIDAK NAIK KELAS */

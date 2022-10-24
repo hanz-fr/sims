@@ -22,6 +22,7 @@ class ApiController extends Controller
 
 
     /* API DASHBOARD */
+
     public function mainDashboard() 
     {
         $response = Http::get("{$this->api_url}/dashboard");
@@ -36,6 +37,23 @@ class ApiController extends Controller
             'jurusan' => json_decode($response)->jurusan->count,
             'alumni' => json_decode($response)->alumni->count,
             'siswaMasuk' => json_decode($response)->siswaMasuk->count
+        ]);
+    }
+
+    public function rekapSiswaDashboard() {
+
+        $response = Http::get("{$this->api_url}/dashboard");
+
+        return view('rekap-siswa.dashboard-rekap-siswa', [
+            'title' => 'Rekap Siswa',
+            'active' => 'rekap-siswa',
+            'siswaMasuk' => json_decode($response)->siswaMasuk->count,
+            'siswaTdkNaik' =>  json_decode($response)->siswaTdkNaik->count,
+            'jmlSiswa' => json_decode($response)->siswa->count,
+            'siswaKeluar' => json_decode($response)->mutasi->count,
+            'rekapKelas10' => json_decode($response)->rekapKelas10,
+            'rekapKelas11' => json_decode($response)->rekapKelas11,
+            'rekapKelas12' => json_decode($response)->rekapKelas12
         ]);
     }
 
