@@ -20,6 +20,26 @@ class ApiController extends Controller
         $this->api_url = '127.0.0.1:3000'; // Ganti link NGROK disini
     }
 
+
+    /* API DASHBOARD */
+    public function mainDashboard() 
+    {
+        $response = Http::get("{$this->api_url}/dashboard");
+
+        return view('dashboard-main', [
+            'title' => 'Dashboard',
+            'active' => 'dashboard-main',
+            'mutasi' => json_decode($response)->mutasi->count,
+            'kelas' => json_decode($response)->kelas->count,
+            'siswa' => json_decode($response)->siswa->count,
+            'mapel' => json_decode($response)->mapel->count,
+            'jurusan' => json_decode($response)->jurusan->count,
+            'alumni' => json_decode($response)->alumni->count,
+            'siswaMasuk' => json_decode($response)->siswaMasuk->count
+        ]);
+    }
+
+
     /* API SISWA */
 
     public function getAllSiswa(Request $request)

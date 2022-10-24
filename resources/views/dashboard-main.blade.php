@@ -44,7 +44,7 @@
               <div class="sm:tw-px-12 md:tw-px-8">
                 <div class="tw-flex tw-flex-row">
                   <div class="tw-text-5xl tw-text-gray-400"><i class="fa-solid fa-user"></i></div>
-                  <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">-</div>
+                  <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">{{ $alumni }}</div>
                 </div>
               </div>
               <div class=""> 
@@ -60,7 +60,7 @@
               <div class="sm:tw-px-12 md:tw-px-8">
                 <div class="tw-flex tw-flex-row">
                   <div class="tw-text-5xl tw-text-[#FF869C]"><i class="fa-solid fa-user"></i></div>
-                  <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">-</div>
+                  <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">{{ $mutasi }}</div>
                 </div>
               </div>
               <div class=""> 
@@ -76,7 +76,7 @@
               <div class="sm:tw-px-12 md:tw-px-8">
                 <div class="tw-flex tw-flex-row">
                   <div class="tw-text-5xl tw-text-[#FFA386]"><i class="fa-solid fa-user"></i></div>
-                  <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">-</div>
+                  <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">{{ $siswa }}</div>
                 </div>
               </div>
               <div class="/rekap-jumlah-siswa"> 
@@ -92,7 +92,7 @@
               <div class="sm:tw-px-12 md:tw-px-8">
                 <div class="tw-flex tw-flex-row">
                   <div class="tw-text-5xl tw-text-sims-400"><i class="fa-solid fa-user"></i></div>
-                  <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">-</div>
+                  <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">{{ $mapel }}</div>
                 </div>
               </div>
               <div class=""> 
@@ -115,7 +115,7 @@
               <div class="sm:tw-px-12 md:tw-px-8">
                 <div class="tw-flex tw-flex-row">
                   <div class="tw-text-5xl tw-text-sky-400"><i class="fa-solid fa-user"></i></div>
-                  <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">-</div>
+                  <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">{{ $kelas }}</div>
                 </div>
               </div>
               <div class=""> 
@@ -131,7 +131,7 @@
               <div class="sm:tw-px-12 md:tw-px-8">
                 <div class="tw-flex tw-flex-row">
                   <div class="tw-text-5xl tw-text-green-600"><i class="fa-solid fa-user"></i></div>
-                  <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">-</div>
+                  <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">{{ $jurusan }}</div>
                 </div>
               </div>
               <div class=""> 
@@ -147,11 +147,11 @@
               <div class="sm:tw-px-12 md:tw-px-8">
                 <div class="tw-flex tw-flex-row">
                   <div class="tw-text-5xl tw-text-[#e4e275]"><i class="fa-solid fa-user"></i></div>
-                  <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">-</div>
+                  <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">{{ $siswaMasuk }}</div>
                 </div>
               </div>
               <div class="/rekap-siswa"> 
-                <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Mutasi</div>
+                <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Siswa Masuk</div>
               </div>
             </div>
           </li>
@@ -269,27 +269,27 @@
         <div class=" tw-text-gray-400 tw-font-bold">Kuota Pendaftaran SMKN 11</div>
           <ul class="tw-flex tw-justify-center tw-flex-row tw-gap-10 list-unstyled tw-mx-11 tw-mt-12 tw-mb-20">
             <li class="tw-flex-row tw-text-center">
-              <div class="tw-text-2xl tw-text-admin-300 tw-font-bold">18</div>
+              <div class="tw-text-2xl tw-text-admin-300 tw-font-bold">-</div>
               <div class=" tw-font-light tw-text-gray-400">AKL</div>
             </li>
             <li class="tw-flex-row tw-text-center">
-              <div class="tw-text-2xl tw-text-admin-300 tw-font-bold">12</div>
+              <div class="tw-text-2xl tw-text-admin-300 tw-font-bold">-</div>
               <div class=" tw-font-light tw-text-gray-400">DKV</div>
             </li>
             <li class="tw-flex-row tw-text-center">
-              <div class="tw-text-2xl tw-text-admin-300 tw-font-bold">25</div>
+              <div class="tw-text-2xl tw-text-admin-300 tw-font-bold">-</div>
               <div class=" tw-font-light tw-text-gray-400">MPLB</div>
             </li>
             <li class="tw-flex-row tw-text-center">
-              <div class="tw-text-2xl tw-text-admin-300 tw-font-bold">19</div>
+              <div class="tw-text-2xl tw-text-admin-300 tw-font-bold">-</div>
               <div class=" tw-font-light tw-text-gray-400">Pemasaran</div>
             </li>
             <li class="tw-flex-row tw-text-center">
-              <div class="tw-text-2xl tw-text-admin-300 tw-font-bold">12</div>
+              <div class="tw-text-2xl tw-text-admin-300 tw-font-bold">-</div>
               <div class=" tw-font-light tw-text-gray-400">PPLG</div>
             </li>
             <li class="tw-flex-row tw-text-center">
-              <div class="tw-text-2xl tw-text-admin-300 tw-font-bold">6</div>
+              <div class="tw-text-2xl tw-text-admin-300 tw-font-bold">-</div>
               <div class=" tw-font-light tw-text-gray-400">TJKT</div>
             </li>
           </ul>
@@ -331,11 +331,10 @@
 <script>
   // chart view dasbrot
 const labels = [
-  'Jan',
-  'Feb',
-  'Mar',
-  'Apr',
-  'May',
+  '-',
+  '-',
+  '-',
+  '-',
 ];
 const data = {
   labels: labels,

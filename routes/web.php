@@ -25,12 +25,7 @@ Route::middleware(['auth'])->group(function () {
 
     /* MAIN DASHBOARD */
 
-    Route::get('/', function () {
-        return view('dashboard-main', [
-            'title' => 'Dashboard',
-            'active' => 'dashboard-main'
-        ]);
-    });
+    Route::get('/', [ApiController::class, 'mainDashboard']);
 
 
     /* ROUTE SISWA */
