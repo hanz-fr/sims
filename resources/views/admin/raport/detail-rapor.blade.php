@@ -34,7 +34,7 @@
         </div>
 
         <div x-data="{openTab: 1, activeClasses: 'tw-bg-white tw-border tw-border-b-white', inactiveClasses: 'tw-bg-gray-200 tw-border'}">
-            <ul class="tw-my-2 tw-pt-8 tw-px-8 tw-flex tw-font-ubuntu tw-text-xl">
+            <ul class="tw-my-2 tw-pt-4 tw-px-8 tw-flex tw-font-ubuntu tw-text-xl">
                 <li @click="openTab = 1" :class="{ 'tw--mb-px': openTab === 1 }">
                     <button :class="openTab === 1 ? activeClasses : inactiveClasses"
                         class="tw-rounded-t-2xl tw-text-gray-500 hover:tw-text-admin-800 tw-inline-block tw-py-2 tw-px-10 tw-font-semibold"
@@ -79,7 +79,7 @@
                 </li>
             </ul>
             <div x-show="openTab === 1"
-                class="tw-my-2 tw-pb-8 tw-pt-2 tw-px-8 tw-text-admin-600 tw-flex tw-justify-center tw-font-ubuntu tw-rounded-xl tw-shadow-md">
+                class="tw-my-2 tw-py-4 tw-px-8 tw-text-admin-600 tw-flex tw-justify-center tw-font-ubuntu tw-rounded-xl tw-shadow-md">
                 <table class="tw-w-full tw-table-auto">
                     <tbody>
                         <tr class="tw-border-b">
@@ -167,7 +167,7 @@
                 </table>
             </div>
             <div x-show="openTab === 2"
-                class="tw-my-2 tw-pb-8 tw-pt-2 tw-px-8 tw-text-admin-600 tw-flex tw-justify-center tw-font-ubuntu tw-rounded-xl tw-shadow-md">
+                class="tw-my-2 tw-py-4 tw-px-8 tw-text-admin-600 tw-flex tw-justify-center tw-font-ubuntu tw-rounded-xl tw-shadow-md">
                 <table class="tw-w-full tw-table-auto">
                     <tbody>
                         <tr class="tw-border-b">
@@ -255,7 +255,7 @@
                 </table>
             </div>
             <div x-show="openTab === 3"
-                class="tw-my-2 tw-pb-8 tw-pt-2 tw-px-8 tw-text-admin-600 tw-flex tw-justify-center tw-font-ubuntu tw-rounded-xl tw-shadow-md">
+                class="tw-my-2 tw-py-4 tw-px-8 tw-text-admin-600 tw-flex tw-justify-center tw-font-ubuntu tw-rounded-xl tw-shadow-md">
                 <table class="tw-w-full tw-table-auto">
                     <tbody>
                         <tr class="tw-border-b">
@@ -343,7 +343,7 @@
                 </table>
             </div>
             <div x-show="openTab === 4"
-                class="tw-my-2 tw-pb-8 tw-pt-2 tw-px-8 tw-text-admin-600 tw-flex tw-justify-center tw-font-ubuntu tw-rounded-xl tw-shadow-md">
+                class="tw-my-2 tw-py-4 tw-px-8 tw-text-admin-600 tw-flex tw-justify-center tw-font-ubuntu tw-rounded-xl tw-shadow-md">
                 <table class="tw-w-full tw-table-auto">
                     <tbody>
                         <tr class="tw-border-b">
@@ -431,7 +431,7 @@
                 </table>
             </div>
             <div x-show="openTab === 5"
-                class="tw-my-2 tw-pb-8 tw-pt-2 tw-px-8 tw-text-admin-600 tw-flex tw-justify-center tw-font-ubuntu tw-rounded-xl tw-shadow-md">
+                class="tw-my-2 tw-py-4 tw-px-8 tw-text-admin-600 tw-flex tw-justify-center tw-font-ubuntu tw-rounded-xl tw-shadow-md">
                 <table class="tw-w-full tw-table-auto">
                     <tbody>
                         <tr class="tw-border-b">
@@ -519,7 +519,7 @@
                 </table>
             </div>
             <div x-show="openTab === 6"
-                class="tw-my-2 tw-pb-8 tw-pt-2 tw-px-8 tw-text-admin-600 tw-flex tw-justify-center tw-font-ubuntu tw-rounded-xl tw-shadow-md">
+                class="tw-my-2 tw-py-4 tw-px-8 tw-text-admin-600 tw-flex tw-justify-center tw-font-ubuntu tw-rounded-xl tw-shadow-md">
                 <table class="tw-w-full tw-table-auto">
                     <tbody>
                         <tr class="tw-border-b">
