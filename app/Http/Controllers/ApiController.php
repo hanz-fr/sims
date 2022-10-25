@@ -17,7 +17,7 @@ class ApiController extends Controller
     /* GLOBAL VARIABLES */
     public function __construct()
     {
-        $this->api_url = '127.0.0.1:3000'; // Ganti link NGROK disini
+        $this->api_url = 'https://4aa4-103-148-113-86.ap.ngrok.io'; // Ganti link NGROK disini
     }
 
 
@@ -27,34 +27,57 @@ class ApiController extends Controller
     {
         $response = Http::get("{$this->api_url}/dashboard");
 
-        return view('dashboard-main', [
-            'title' => 'Dashboard',
-            'active' => 'dashboard-main',
-            'mutasi' => json_decode($response)->mutasi->count,
-            'kelas' => json_decode($response)->kelas->count,
-            'siswa' => json_decode($response)->siswa->count,
-            'mapel' => json_decode($response)->mapel->count,
-            'jurusan' => json_decode($response)->jurusan->count,
-            'alumni' => json_decode($response)->alumni->count,
-            'siswaMasuk' => json_decode($response)->siswaMasuk->count
-        ]);
+        if ($response->successful()) {
+
+            return view('dashboard-main', [
+                'title' => 'Dashboard',
+                'active' => 'dashboard-main',
+                'mutasi' => json_decode($response)->mutasi->count,
+                'kelas' => json_decode($response)->kelas->count,
+                'siswa' => json_decode($response)->siswa->count,
+                'mapel' => json_decode($response)->mapel->count,
+                'jurusan' => json_decode($response)->jurusan->count,
+                'alumni' => json_decode($response)->alumni->count,
+                'siswaMasuk' => json_decode($response)->siswaMasuk->count
+            ]);
+        } else {
+            return view('induk.show-all', [
+                'status' => 'error',
+                'title' => 'data-induk',
+                'active' => 'data-induk',
+                'message' => 'Halaman yang kamu cari tidak dapat ditemukan :('
+            ]);
+        }
+
     }
 
     public function rekapSiswaDashboard() {
 
         $response = Http::get("{$this->api_url}/dashboard");
 
-        return view('rekap-siswa.dashboard-rekap-siswa', [
-            'title' => 'Rekap Siswa',
-            'active' => 'rekap-siswa',
-            'siswaMasuk' => json_decode($response)->siswaMasuk->count,
-            'siswaTdkNaik' =>  json_decode($response)->siswaTdkNaik->count,
-            'jmlSiswa' => json_decode($response)->siswa->count,
-            'siswaKeluar' => json_decode($response)->mutasi->count,
-            'rekapKelas10' => json_decode($response)->rekapKelas10,
-            'rekapKelas11' => json_decode($response)->rekapKelas11,
-            'rekapKelas12' => json_decode($response)->rekapKelas12
-        ]);
+        if ($response->successful()) {
+
+            return view('rekap-siswa.dashboard-rekap-siswa', [
+                'title' => 'Rekap Siswa',
+                'active' => 'rekap-siswa',
+                'siswaMasuk' => json_decode($response)->siswaMasuk->count,
+                'siswaTdkNaik' =>  json_decode($response)->siswaTdkNaik->count,
+                'jmlSiswa' => json_decode($response)->siswa->count,
+                'siswaKeluar' => json_decode($response)->mutasi->count,
+                'rekapKelas10' => json_decode($response)->rekapKelas10,
+                'rekapKelas11' => json_decode($response)->rekapKelas11,
+                'rekapKelas12' => json_decode($response)->rekapKelas12
+            ]);
+        } else {
+
+            return view('induk.show-all', [
+                'status' => 'error',
+                'title' => 'data-induk',
+                'active' => 'data-induk',
+                'message' => 'Halaman yang kamu cari tidak dapat ditemukan :('
+            ]);
+        }
+
     }
 
 
@@ -206,7 +229,7 @@ class ApiController extends Controller
 
     public function createSiswa()
     {
-
+     
         $kelas = Http::get("{$this->api_url}/kelas");
 
         return view('induk.create', [
