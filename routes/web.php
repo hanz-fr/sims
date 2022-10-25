@@ -105,12 +105,7 @@ Route::middleware(['auth'])->group(function () {
 
     /* DATA TIDAK NAIK KELAS */
 
-    Route::get('/data-tidak-naik', function () {
-        return view('rekap-siswa.data-tidak-naik', [
-            'title' => 'Data Tidak Naik Kelas',
-            'active' => 'data-induk'
-        ]);
-    });
+    Route::get('/data-tidak-naik', [ApiController::class, 'siswaTidakNaik']);
 
 
     /* PROFILE */

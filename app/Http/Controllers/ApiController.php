@@ -86,6 +86,31 @@ class ApiController extends Controller
     }
 
 
+    public function siswaTidakNaik() {
+
+        $response = Http::get("{$this->api_url}/dashboard/siswa-tidak-naik");
+
+        if ($response->successful()) {
+
+            return view('rekap-siswa.data-tidak-naik', [
+                'title' => 'Data Tidak Naik Kelas',
+                'active' => 'data-induk',
+                'siswa' => json_decode($response)->result->rows
+            ]);
+
+        } else {
+
+            return view('induk.show-all', [
+                'status' => 'error',
+                'title' => 'data-induk',
+                'active' => 'data-induk',
+                'message' => 'Halaman yang kamu cari tidak dapat ditemukan :('
+            ]);
+
+        }
+    }
+
+
     /* API SISWA */
 
     public function getAllSiswa(Request $request)
