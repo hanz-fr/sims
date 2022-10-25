@@ -17,7 +17,7 @@ class ApiController extends Controller
     /* GLOBAL VARIABLES */
     public function __construct()
     {
-        $this->api_url = 'https://4aa4-103-148-113-86.ap.ngrok.io'; // Ganti link NGROK disini
+        $this->api_url = '127.0.0.1:3000'; // Ganti link NGROK disini
     }
 
 
@@ -60,14 +60,19 @@ class ApiController extends Controller
             return view('rekap-siswa.dashboard-rekap-siswa', [
                 'title' => 'Rekap Siswa',
                 'active' => 'rekap-siswa',
+                'response' => $response,
                 'siswaMasuk' => json_decode($response)->siswaMasuk->count,
                 'siswaTdkNaik' =>  json_decode($response)->siswaTdkNaik->count,
                 'jmlSiswa' => json_decode($response)->siswa->count,
                 'siswaKeluar' => json_decode($response)->mutasi->count,
                 'rekapKelas10' => json_decode($response)->rekapKelas10,
                 'rekapKelas11' => json_decode($response)->rekapKelas11,
-                'rekapKelas12' => json_decode($response)->rekapKelas12
+                'rekapKelas12' => json_decode($response)->rekapKelas12,
+                'jumlahSiswaX' => json_decode($response)->jumlahSiswaX->count,
+                'jumlahSiswaXI' => json_decode($response)->jumlahSiswaXI->count,
+                'jumlahSiswaXII' => json_decode($response)->jumlahSiswaXII->count
             ]);
+
         } else {
 
             return view('induk.show-all', [
