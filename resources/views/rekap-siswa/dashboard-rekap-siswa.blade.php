@@ -357,283 +357,31 @@
     </div> --}}
 
     {{-- Rekap Data Jumlah Siswa --}}
-    <div class="tw-flex  tw-gap-8 tw-my-8">
-      <div class="tw-bg-white tw-grow tw-flex tw-flex-col tw-rounded-xl tw-py-3 tw-pb-10 tw-px-10 tw-shadow-lg tw-font-pop tw-w-full">
+    <div class="tw-flex tw-gap-8 tw-my-8">
+      <div class="tw-bg-white tw-flex tw-flex-col tw-rounded-xl tw-pt-3 tw-pb-12 tw-px-16 tw-shadow-lg tw-font-pop tw-w-full">
         <div class="tw-float-right -tw-mr-8">
           <a href="/rekap-jumlah-siswa" class="tw-text-sims-400 hover:tw-text-sims-600 tw-pr-2 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
-        <div class="tw-text-lg tw-text-sims-400 tw-font-bold tw-mb-1 tw-text-center">Rekap Data Jumlah Siswa</div>
-        <div class="tw-text-sm tw-text-gray-400 tw-text-center tw-font-normal">Data Juli 2021</div>
-        <table class="tw-w-full tw-text-sm tw-text-center tw-mt-10">
-          <thead class="tw-text-sm tw-text-gray-400 tw-border-b tw-border-gray-500 tw-font-pop">
-              <tr class="">
-                  <th rowspan="2" colspan="1" class="tw-py-3 tw-px-6">
-                      #
-                  </th>
-                  <th rowspan="1" colspan="3" class="tw-py-3 tw-px-6">
-                    KELAS X
-                  </th>
-                  <th rowspan="1" colspan="3" class="tw-py-3 tw-px-6">
-                    KELAS XI
-                  </th>
-                  <th rowspan="1" colspan="3" class="tw-py-3 tw-px-6">
-                    KELAS XII
-                  </th>
-              </tr>
-              <tr>
-                <th>L</th>
-                <th>P</th>
-                <th>JML</th>
-                <th>L</th>
-                <th>P</th>
-                <th>JML</th>
-                <th>L</th>
-                <th>P</th>
-                <th>JML</th>
-              </tr>
-          </thead>
-
-          
-          <tbody class="tw-text-xs text-center">
-
-            {{-- X --}}
-            <?php $sum_total_siswa_p_X = 0 ?>
-            <?php $sum_total_siswa_l_X = 0 ?>
-            <?php $sum_total_siswa_X = 0 ?>
-                          
-            <?php $sum_total_siswa_p_keluar_X = 0 ?>
-            <?php $sum_total_siswa_l_keluar_X = 0 ?>
-            <?php $sum_total_siswa_keluar_X = 0 ?>
-                          
-            <?php $sum_total_siswa_p_masuk_X = 0 ?>
-            <?php $sum_total_siswa_l_masuk_X = 0 ?>
-            <?php $sum_total_siswa_masuk_X = 0 ?>
-  
-            <?php $sum_total_siswa_p_akhir_X = 0 ?>
-            <?php $sum_total_siswa_l_akhir_X = 0 ?>
-            <?php $sum_total_siswa_akhir_X = 0 ?>
-
-            {{-- XI --}}
-            <?php $sum_total_siswa_p_XI = 0 ?>
-            <?php $sum_total_siswa_l_XI = 0 ?>
-            <?php $sum_total_siswa_XI = 0 ?>
-                    
-            <?php $sum_total_siswa_p_keluar_XI = 0 ?>
-            <?php $sum_total_siswa_l_keluar_XI = 0 ?>
-            <?php $sum_total_siswa_keluar_XI = 0 ?>
-                    
-            <?php $sum_total_siswa_p_masuk_XI = 0 ?>
-            <?php $sum_total_siswa_l_masuk_XI = 0 ?>
-            <?php $sum_total_siswa_masuk_XI = 0 ?>
-            <?php $sum_total_siswa_p_akhir_XI = 0 ?>
-            <?php $sum_total_siswa_l_akhir_XI = 0 ?>
-            <?php $sum_total_siswa_akhir_XI = 0 ?>
-
-            @foreach ($rekapKelas10 as $k10)
-            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k10->id }}</td>
-            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k10->jumlahSiswaPerempuan }}</td>
-            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k10->jumlahSiswaLaki }}</td>
-            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k10->jumlahSiswa }}</td>
-            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k10->siswaPerempuanKeluar }}</td>
-            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k10->siswaLakiKeluar}}</td>
-            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k10->jumlahSiswaKeluar }}</td>
-            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k10->siswaPerempuanMasuk }}</td>
-            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k10->siswaLakiMasuk }}</td>
-            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k10->jumlahSiswaMasuk }}</td>
-            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k10->jumlahSiswaPerempuan - $k10->siswaPerempuanKeluar + $k10->siswaPerempuanMasuk }}</td>
-            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k10->jumlahSiswaLaki - $k10->siswaLakiKeluar + $k10->siswaLakiMasuk }}</td>
-            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k10->jumlahSiswaPerempuan - $k10->siswaPerempuanKeluar + $k10->siswaPerempuanMasuk + $k10->jumlahSiswaLaki - $k10->siswaLakiKeluar + $k10->siswaLakiMasuk }}</td>
-            @endforeach
-
-            @foreach ($rekapKelas11 as $k11)
-            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k11->id }}</td>
-            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k11->jumlahSiswaPerempuan }}</td>
-            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k11->jumlahSiswaLaki }}</td>
-            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k11->jumlahSiswa }}</td>
-            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k11->siswaPerempuanKeluar }}</td>
-            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k11->siswaLakiKeluar}}</td>
-            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k11->jumlahSiswaKeluar }}</td>
-            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k11->siswaPerempuanMasuk }}</td>
-            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k11->siswaLakiMasuk }}</td>
-            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k11->jumlahSiswaMasuk }}</td>
-            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k11->jumlahSiswaPerempuan - $k11->siswaPerempuanKeluar + $k11->siswaPerempuanMasuk }}</td>
-            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k11->jumlahSiswaLaki - $k11->siswaLakiKeluar + $k11->siswaLakiMasuk }}</td>
-            <td class="tw-py-4 tw-px-6 tw-border hidden">{{ $k11->jumlahSiswaPerempuan - $k11->siswaPerempuanKeluar + $k11->siswaPerempuanMasuk + $k11->jumlahSiswaLaki - $k11->siswaLakiKeluar + $k11->siswaLakiMasuk }}</td>
-            @endforeach
-
-            {{-- X --}}
-            <?php $sum_total_siswa_p_X += $k10->jumlahSiswaPerempuan ?>
-            <?php $sum_total_siswa_l_X += $k10->jumlahSiswaLaki ?>
-            <?php $sum_total_siswa_X += $k10->jumlahSiswa ?>
-                        
-            <?php $sum_total_siswa_p_keluar_X += $k10->siswaPerempuanKeluar ?>
-            <?php $sum_total_siswa_l_keluar_X += $k10->siswaLakiKeluar ?>
-            <?php $sum_total_siswa_keluar_X += $k10->jumlahSiswaKeluar ?>
-                        
-            <?php $sum_total_siswa_p_masuk_X += $k10->siswaPerempuanMasuk ?>
-            <?php $sum_total_siswa_l_masuk_X += $k10->siswaLakiMasuk ?>
-            <?php $sum_total_siswa_masuk_X += $k10->jumlahSiswaMasuk ?>
-                        
-            <?php $sum_total_siswa_p_akhir_X += $k10->jumlahSiswaPerempuan - $k10->siswaPerempuanKeluar + $k10->siswaPerempuanMasuk ?>
-            <?php $sum_total_siswa_l_akhir_X += $k10->jumlahSiswaLaki - $k10->siswaLakiKeluar + $k10->siswaLakiMasuk ?>
-            <?php $sum_total_siswa_akhir_X += $k10->jumlahSiswaPerempuan - $k10->siswaPerempuanKeluar + $k10->siswaPerempuanMasuk + $k10->jumlahSiswaLaki - $k10->siswaLakiKeluar + $k10->siswaLakiMasuk ?>
-              
-            {{-- XI --}}
-            <?php $sum_total_siswa_p_XI += $k11->jumlahSiswaPerempuan ?>
-            <?php $sum_total_siswa_l_XI += $k11->jumlahSiswaLaki ?>
-            <?php $sum_total_siswa_XI += $k11->jumlahSiswa ?>
-                        
-            <?php $sum_total_siswa_p_keluar_XI += $k11->siswaPerempuanKeluar ?>
-            <?php $sum_total_siswa_l_keluar_XI += $k11->siswaLakiKeluar ?>
-            <?php $sum_total_siswa_keluar_XI += $k11->jumlahSiswaKeluar ?>
-                        
-            <?php $sum_total_siswa_p_masuk_XI += $k11->siswaPerempuanMasuk ?>
-            <?php $sum_total_siswa_l_masuk_XI += $k11->siswaLakiMasuk ?>
-            <?php $sum_total_siswa_masuk_XI += $k11->jumlahSiswaMasuk ?>
-                        
-            <?php $sum_total_siswa_p_akhir_XI += $k11->jumlahSiswaPerempuan - $k11->siswaPerempuanKeluar + $k11->siswaPerempuanMasuk ?>
-            <?php $sum_total_siswa_l_akhir_XI += $k11->jumlahSiswaLaki - $k11->siswaLakiKeluar + $k11->siswaLakiMasuk ?>
-            <?php $sum_total_siswa_akhir_XI += $k11->jumlahSiswaPerempuan - $k11->siswaPerempuanKeluar + $k11->siswaPerempuanMasuk + $k11->jumlahSiswaLaki - $k11->siswaLakiKeluar + $k11->siswaLakiMasuk ?>
-
-
-            <tr class="tw-text-gray-500">
-                  <th scope="row" class="tw-py-4 tw-px-6 tw-font-normal tw-text-gray-400 tw-whitespace-nowrap">
-                    AWAL BULAN
-                  </th>
-                  <td class="tw-py-4 tw-px-6">
-                   {{ $sum_total_siswa_l_X }}
-                  </td>
-                  <td class="tw-py-4 tw-px-6">
-                   {{ $sum_total_siswa_p_X }}
-                  </td>
-                  <td class="tw-py-4 tw-px-6">
-                   {{ $sum_total_siswa_X }}
-                  </td>
-
-
-                  <td class="tw-py-4 tw-px-6">
-                    {{ $sum_total_siswa_l_XI }}
-                  </td>
-                  <td class="tw-py-4 tw-px-6">
-                    {{ $sum_total_siswa_p_XI }}
-                  </td>
-                  <td class="tw-py-4 tw-px-6">
-                    {{ $sum_total_siswa_XI }}
-                  </td>
-
-
-                  <td class="tw-py-4 tw-px-6">
-                    70
-                  </td>
-                  <td class="tw-py-4 tw-px-6">
-                    72
-                  </td>
-                  <td class="tw-py-4 tw-px-6">
-                    75
-                  </td>
-              </tr>
-              <tr class="tw-text-gray-500">
-                  <th scope="row" class="tw-py-4 tw-px-6 tw-font-normal tw-text-gray-400 tw-whitespace-nowrap">
-                    MASUK
-                  </th>
-                  <td class="tw-py-4 tw-px-6">
-                    81
-                  </td>
-                  <td class="tw-py-4 tw-px-6">
-                    88
-                  </td>
-                  <td class="tw-py-4 tw-px-6">
-                    75
-                  </td>
-                  <td class="tw-py-4 tw-px-6">
-                    70
-                  </td>
-                  <td class="tw-py-4 tw-px-6">
-                    72
-                  </td>
-                  <td class="tw-py-4 tw-px-6">
-                    75
-                  </td>
-                  <td class="tw-py-4 tw-px-6">
-                    70
-                  </td>
-                  <td class="tw-py-4 tw-px-6">
-                    72
-                  </td>
-                  <td class="tw-py-4 tw-px-6">
-                    75
-                  </td>
-              </tr>
-              <tr class="tw-text-gray-500">
-                  <th scope="row" class="tw-py-4 tw-px-6 tw-font-normal tw-text-gray-400 tw-whitespace-nowrap">
-                    KELUAR
-                  </th>
-                  <td class="tw-py-4 tw-px-6">
-                    95
-                  </td>
-                  <td class="tw-py-4 tw-px-6">
-                    98
-                  </td>
-                  <td class="tw-py-4 tw-px-6">
-                    72
-                  </td>
-                  <td class="tw-py-4 tw-px-6">
-                    70
-                  </td>
-                  <td class="tw-py-4 tw-px-6">
-                    72
-                  </td>
-                  <td class="tw-py-4 tw-px-6">
-                    75
-                  </td>
-                  <td class="tw-py-4 tw-px-6">
-                    70
-                  </td>
-                  <td class="tw-py-4 tw-px-6">
-                    72
-                  </td>
-                  <td class="tw-py-4 tw-px-6">
-                    75
-                  </td>
-              </tr>
-              <tr class="tw-text-gray-500">
-                <th scope="row" class="tw-py-4 tw-px-6 tw-font-normal tw-text-gray-400 tw-whitespace-nowrap">
-                  AKHIR BULAN
-                </th>
-                <td class="tw-py-4 tw-px-6">
-                  77
-                </td>
-                <td class="tw-py-4 tw-px-6">
-                  77
-                </td>
-                <td class="tw-py-4 tw-px-6">
-                  75
-                </td>
-                <td class="tw-py-4 tw-px-6">
-                  70
-                </td>
-                <td class="tw-py-4 tw-px-6">
-                  72
-                </td>
-                <td class="tw-py-4 tw-px-6">
-                  75
-                </td>
-                <td class="tw-py-4 tw-px-6">
-                  70
-                </td>
-                <td class="tw-py-4 tw-px-6">
-                  72
-                </td>
-                <td class="tw-py-4 tw-px-6">
-                  75
-                </td>
-              </tr>
-          </tbody>
-      </table>
+        <div class="tw-text-xl tw-text-sims-400 tw-font-bold tw-mb-1">Rekap Data Jumlah Siswa</div>
+        <div class="tw-text-gray-400 tw-font-normal">Data Juli 2021</div>
+        <div class="tw-flex tw-justify-between tw-mt-14">
+          <div class="shadow-card tw-bg-white tw-rounded-lg tw-pt-7 tw-pb-10 tw-px-14 tw-text-center">
+            <h2 class="tw-text-gray-500 tw-font-bold tw-text-2xl">KELAS X</h2>
+            <h1 class="tw-text-sims-400 tw-font-medium tw-text-6xl tw-pt-6">1141</h1>
+          </div>
+          <div class="shadow-card tw-bg-white tw-rounded-lg tw-pt-7 tw-pb-10 tw-px-14 tw-text-center">
+            <h2 class="tw-text-gray-500 tw-font-bold tw-text-2xl">KELAS XI</h2>
+            <h1 class="tw-text-sims-400 tw-font-medium tw-text-6xl tw-pt-6">1141</h1>
+          </div>
+          <div class="shadow-card tw-bg-white tw-rounded-lg tw-pt-7 tw-pb-10 tw-px-14 tw-text-center">
+            <h2 class="tw-text-gray-500 tw-font-bold tw-text-2xl">KELAS XII</h2>
+            <h1 class="tw-text-sims-400 tw-font-medium tw-text-6xl tw-pt-6">1141</h1>
+          </div>
+        </div>
       </div>
 
       {{-- Quick Access --}}
-      <div class="tw-bg-white tw-rounded-xl tw-p-14 tw-shadow-lg tw-font-pop tw-w-2/3">
+      <div class="tw-bg-white tw-rounded-xl tw-p-14 tw-shadow-lg tw-font-pop tw-w-3/4">
         <div class="tw-text-sims-400 tw-text-center">
           <div class="tw-text-xl my-auto tw-ml-3 tw-font-bold tw-text-gray-500">Quick Access</div>
         </div>
