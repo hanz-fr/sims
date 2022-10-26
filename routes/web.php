@@ -97,6 +97,19 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/rekap-nilai/{nis}', [ApiController::class, 'getRaportSiswa']);
 
+    Route::get('/tambah-nilai', function () {
+        return view('rekap-nilai.add-rekap-nilai', [
+            'title' => 'Tambah Rekap Nilai',
+            'active' => 'data-induk'
+        ]);
+    });
+
+    Route::get('/edit-nilai', function () {
+        return view('rekap-nilai.edit-rekap-nilai', [
+            'title' => 'Edit Rekap Nilai',
+            'active' => 'data-induk'
+        ]);
+    });
 
     /* REKAP SISWA */
 

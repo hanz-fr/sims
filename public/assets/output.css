@@ -775,6 +775,16 @@ video {
   border-radius: 0.75rem;
 }
 
+.card-data-bright {
+  display: flex;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  border-radius: 0.75rem;
+}
+
 .card-data-btn {
   margin-top: 2rem;
   border-radius: 0.5rem;
@@ -1597,6 +1607,10 @@ video {
 
 .tw-place-items-center {
   place-items: center;
+}
+
+.tw-content-center {
+  align-content: center;
 }
 
 .tw-items-start {
@@ -2762,6 +2776,11 @@ video {
 .tw-text-yellow-400 {
   --tw-text-opacity: 1;
   color: rgb(250 204 21 / var(--tw-text-opacity));
+}
+
+.tw-text-sims-500 {
+  --tw-text-opacity: 1;
+  color: rgb(59 144 145 / var(--tw-text-opacity));
 }
 
 .tw-underline {

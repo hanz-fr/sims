@@ -42,6 +42,9 @@ a {
   .card-data-white {
     @apply tw-shadow-lg tw-rounded-xl tw-flex tw-bg-gray-100;
   }
+  .card-data-bright {
+    @apply tw-shadow-lg tw-rounded-xl tw-flex tw-bg-white;
+  }
   .card-data-btn {
     @apply tw-border-2 tw-border-[#90C2C2] tw-py-1 tw-px-20 tw-text-[#90C2C2] tw-font-semibold tw-rounded-lg tw-font-ubuntu hover:tw-bg-[#90C2C2] hover:tw-text-white tw-mt-8;
   }

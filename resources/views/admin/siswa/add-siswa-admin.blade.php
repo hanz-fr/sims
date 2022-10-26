@@ -27,7 +27,7 @@
             </li>
 
          <div class="tw-mb-5">
-            <li class="tw-flex card-data-white tw-mb-10 tw-gap-20">
+            <li class="tw-flex card-data-white tw-mb-10 tw-gap-20 tw-justify-center">
                 <div class="tw-flex-col tw-flex tw-px-7 tw-py-7">
                     <span class="tw-font-[ubuntu] tw-mx-3 tw-font-medium tw-text-slate-400">NIS</span>
                     <input type="text" placeholder="NIS..." class="input-account tw-mr-32">
