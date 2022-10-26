@@ -799,8 +799,6 @@ video {
 }
 
 .report-card-pills {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -1658,6 +1656,10 @@ video {
 .tw-gap-x-2 {
   -moz-column-gap: 0.5rem;
        column-gap: 0.5rem;
+}
+
+.tw-gap-y-4 {
+  row-gap: 1rem;
 }
 
 .tw-space-y-3 > :not([hidden]) ~ :not([hidden]) {
