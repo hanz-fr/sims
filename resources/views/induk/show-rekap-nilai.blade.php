@@ -4,7 +4,7 @@
     <div class="tw-mx-10">
       <div class="tw-flex tw-mt-8 tw-items-center">
         <a href="{{ URL::previous() }}" class=" tw-text-sims-400 tw-text-3xl hover:tw-text-sims-600"><i class="fa-regular fa-chevron-left"></i></a>
-        <div class="tw-text-2xl tw-text-sims-400 tw-font-pop tw-font-semibold tw-flex tw-flex-row tw-ml-4">Rekap Nilai Siswa</div>
+        <div class="tw-text-2xl tw-text-sims-400 tw-font-pop tw-font-semibold tw-flex tw-ml-4">Rekap Nilai Siswa</div>
       </div>
         <div class="tw-flex tw-justify-between tw-mb-5 tw-mt-8">
             <div class="tw-font-pop tw-font-medium tw-text-md tw-text-slate-400 tw-mt-3">
@@ -663,7 +663,7 @@
           </table>
         </div>
         <div class="tw-text-center tw-font-medium tw-mt-8 tw-mb-3 tw-text-gray-500 tw-font-pop tw-text-xl">SEMESTER</div>
-        <div class="tw-flex tw-flex-row tw-justify-center tw-gap-4 tw-mb-8">
+        <div class="tw-flex tw-justify-center tw-gap-4 tw-mb-8">
           <a x-on:click="selected = 1"
               :class="selected === 1 ? activeClasses : inactiveClasses" href="#"
               class="tw-rounded-lg tw-font-semibold tw-text-lg tw-py-2 tw-px-5 tw-shadow-md hover:tw-bg-sims-400 hover:tw-text-white">1</a>
