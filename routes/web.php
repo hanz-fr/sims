@@ -85,18 +85,26 @@ Route::middleware(['auth'])->group(function () {
 
     /* ALUMNI */
 
-    Route::get('/data-alumni', function () {
-        return view('induk.show-alumni', [
-            'title' => 'Data Alumni',
-            'active' => 'data-induk'
-        ]);
-    });
+    Route::get('/data-alumni', [ApiController::class, 'viewAlumni']);
 
 
     /* REKAP NILAI */
 
     Route::get('/rekap-nilai/{nis}', [ApiController::class, 'getRaportSiswa']);
 
+    Route::get('/tambah-nilai', function () {
+        return view('rekap-nilai.add-rekap-nilai', [
+            'title' => 'Tambah Rekap Nilai',
+            'active' => 'data-induk'
+        ]);
+    });
+
+    Route::get('/edit-nilai', function () {
+        return view('rekap-nilai.edit-rekap-nilai', [
+            'title' => 'Edit Rekap Nilai',
+            'active' => 'data-induk'
+        ]);
+    });
 
     /* REKAP SISWA */
 
@@ -105,12 +113,7 @@ Route::middleware(['auth'])->group(function () {
 
     /* DATA TIDAK NAIK KELAS */
 
-    Route::get('/data-tidak-naik', function () {
-        return view('rekap-siswa.data-tidak-naik', [
-            'title' => 'Data Tidak Naik Kelas',
-            'active' => 'data-induk'
-        ]);
-    });
+    Route::get('/data-tidak-naik', [ApiController::class, 'siswaTidakNaik']);
 
 
     /* PROFILE */
@@ -249,7 +252,7 @@ Route::middleware(['admin'])->group(function () {
     // NILAI MAPEL
     Route::get('/nilai-mapel', function () {
         return view('admin.nilai-mapel.show-nilai-mapel', [
-            'title' => 'Edit Rapor',
+            'title' => 'Nilai Mapel',
             'active' => 'database'
         ]);
     });
@@ -257,21 +260,21 @@ Route::middleware(['admin'])->group(function () {
     // DETAIL NILAI MAPEL
     Route::get('/detail-nilai-mapel', function () {
         return view('admin.nilai-mapel.detail-nilai-mapel', [
-            'title' => 'Edit Rapor',
+            'title' => 'Detail Nilai Mapel',
             'active' => 'database'
         ]);
     });
     // CREATE NILAI MAPEL
     Route::get('/create-nilai-mapel', function () {
         return view('admin.nilai-mapel.create-nilai-mapel', [
-            'title' => 'Edit Rapor',
+            'title' => 'Create Nilai Mapel',
             'active' => 'database'
         ]);
     });
     // EDIT NILAI MAPEL
     Route::get('/edit-nilai-mapel', function () {
         return view('admin.nilai-mapel.edit-nilai-mapel', [
-            'title' => 'Edit Rapor',
+            'title' => 'Edit Nilai Mapel',
             'active' => 'database'
         ]);
     });

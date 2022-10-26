@@ -57,20 +57,17 @@
                     </tr>
                 </thead>
                 <tbody class="tw-text-base">
+                    @foreach ($siswa as $s)
                     <tr class="tw-bg-white tw-border">
-                        <td class="tw-py-4 tw-px-6 tw-border">01</td>
                         <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">{{ $s->nama_siswa }}</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">{{ $s->tmp_lahir, $s->tgl_lahir }}</td>
+                        @foreach($s->raport as $r)
+                        <td class="tw-py-4 tw-px-6 tw-border">{{ $r->tinggal_di_Kelas }}</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">{{ $r->alasan_tidak_naik }}</td>
+                        @endforeach
                     </tr>
-                    <tr class="tw-bg-white tw-border">
-                        <td class="tw-py-4 tw-px-6 tw-border">02</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                    </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
