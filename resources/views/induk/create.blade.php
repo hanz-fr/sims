@@ -277,7 +277,7 @@
       <label class="label-input tw-text-xl">
         Apakah Siswa memiliki orang tua?
       </label>
-      <div class="tw-flex tw-flex-row tw-gap-3">
+      <div class="tw-flex tw-gap-3">
         <div @click="openTab = 1" class="tw-flex tw-items-center">
           <input id="default-radio-1" type="radio" name="default-radio" value="" class="tw-w-4 tw-h-4 tw-bg-gray-100 tw-border-gray-300 focus:tw-ring-2">
           <label for="default-radio-1" class="tw-ml-2 tw-text-sm tw-font-medium tw-text-basic-700">Ya</label>
@@ -408,9 +408,36 @@
             <input class="input-data" id="tanggal_ijazah_smk" type="date" name="tanggal_ijazah_smk">
           </div>
         </div>
+        
+        {{-- keterangan jasmani dan kesehatan siswa --}}
+        <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims-400">I.  Keterangan Jasmani dan Kesehatan Siswa</div>
+        <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
+          <div class="tw-w-full tw-px-3">
+            <label class="label-input" for="berat_badan">
+              Berat Badan   (.kg)
+            </label>
+            <input class="input-data" id="berat_badan" type="number" name="berat_badan">
+          </div>
+        </div>
+        <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
+          <div class="tw-w-full tw-px-3">
+            <label class="label-input" for="tinggi_badan">
+              Tinggi Badan   (.cm)
+            </label>
+            <input class="input-data" id="tinggi_badan" type="number" name="tinggi_badan">
+          </div>
+        </div>
+        <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
+          <div class="tw-w-full tw-px-3">
+            <label class="label-input" for="golongan_darah">
+              Golongan Darah
+            </label>
+            <input class="input-data" id="golongan_darah" type="text" name="golongan_darah">
+          </div>
+        </div>
 
         {{-- keterangan lain2 --}}
-        <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims-400">I.  Keterangan Lain-lain</div>
+        <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims-400">J.  Keterangan Lain-lain</div>
         <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
           <div class="tw-w-full tw-px-3">
             <textarea class="input-data" id="keterangan_lain" type="text" name="keterangan_lain"></textarea>
@@ -418,7 +445,7 @@
         </div>
 
         {{-- rekap nilai --}}
-        <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims-400">J. Rekap Nilai</div>
+        <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims-400">K. Rekap Nilai</div>
         <div class="tw-flex tw-flex-col">
           <a href="/rekap-nilai" class="tw-py-2 tw-border tw-w-fit tw-border-gray-600 tw-px-6 hover:tw-text-sims-400 tw-text-gray-600 tw-rounded-md tw-bg-white tw-font-medium">View & Edit</a>
           <button type="submit" class="tw-bg-[#1D6F42] tw-w-fit tw-mt-4 tw-font-medium tw-text-white tw-py-3 tw-px-5 tw-rounded-lg">Upload dari excel</button>

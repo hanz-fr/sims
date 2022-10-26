@@ -24,16 +24,12 @@
                     </div>
                 </form>
                 <div class="tw-text-base pt-1 tw-text-basic-700 tw-ml-4 tw-mr-2 tw-font-normal tw-font-pop">Show</div>
-                <div class="dropdown">
-                    <button class="dropdown-toggle tw-bg-gray-300 tw-font-bold tw-py-1 tw-px-3 tw-rounded-xl tw-text" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    10
-                    </button>
-                    <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">25</a></li>
-                    <li><a class="dropdown-item" href="#">50</a></li>
-                    <li><a class="dropdown-item" href="#">100</a></li>
-                    </ul>
-                </div>
+                <select name="" id="" class="tw-bg-gray-300 tw-font-bold tw-px-7 tw-rounded-xl tw-text tw-mb-2 tw-border-none">
+                    <option value="" class="tw-bg-white">10</option>
+                    <option value="" class="tw-bg-white">25</option>
+                    <option value="" class="tw-bg-white">50</option>
+                    <option value="" class="tw-bg-white">100</option>
+                </select>
                 <div class="tw-text-base pt-1 tw-mx-2 tw-font-pop tw-font-normal tw-text-basic-700">Entries</div>
 
             </div>

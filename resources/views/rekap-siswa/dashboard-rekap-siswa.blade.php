@@ -367,7 +367,7 @@
         <div class="tw-flex tw-justify-between tw-mt-14">
           <div class="shadow-card tw-bg-white tw-rounded-lg tw-pt-7 tw-pb-10 tw-px-14 tw-text-center">
             <h2 class="tw-text-gray-500 tw-font-bold tw-text-2xl">KELAS X</h2>
-            <h1 class="tw-text-sims-400 tw-font-medium tw-text-6xl tw-pt-6">{{ $jumlahSiswaX }}</h1>
+            <h1 class="tw-text-sims-400 tw-font-medium tw-text-6xl tw-pt-6"></h1>
           </div>
           <div class="shadow-card tw-bg-white tw-rounded-lg tw-pt-7 tw-pb-10 tw-px-14 tw-text-center">
             <h2 class="tw-text-gray-500 tw-font-bold tw-text-2xl">KELAS XI</h2>

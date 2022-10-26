@@ -16,7 +16,7 @@
 </head>
 <body style="background-image: url('assets/img/bg-admin.svg');">
   <div class="tw-mx-auto tw-container tw-py-48">
-    <div class="tw-mx-auto tw-flex tw-flex-row tw-rounded-3xl tw-overflow-hidden tw-w-2/5 tw-h-2/3 tw-shadow-lg tw-bg-white">
+    <div class="tw-mx-auto tw-flex tw-rounded-3xl tw-overflow-hidden tw-w-2/5 tw-h-2/3 tw-shadow-lg tw-bg-white">
       <div class="tw-h-full tw-w-3/4 tw-py-10 tw-mx-14 tw-bg-white">
 
         <div class="tw-text-center tw-text-admin-300 tw-font-bold tw-text-2xl tw-font-ubuntu tw-pb-8">SIMS Admin</div>

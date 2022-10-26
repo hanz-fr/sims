@@ -275,7 +275,7 @@
       </label>
 
       @if($siswa->nama_ayah || $siswa->nama_ibu)
-      <div class="tw-flex tw-flex-row tw-gap-3">
+      <div class="tw-flex tw-gap-3">
         <div @click="openTab = 1" class="tw-flex tw-items-center">
           <input id="default-radio-1" type="radio" name="default-radio" value="" checked class="tw-w-4 tw-h-4 tw-bg-gray-100 tw-border-gray-300 focus:tw-ring-2">
           <label for="default-radio-1" class="tw-ml-2 tw-text-sm tw-font-medium tw-text-basic-700">Ya</label>
@@ -367,7 +367,7 @@
       </div>
 
       @else
-      <div class="tw-flex tw-flex-row tw-gap-3">
+      <div class="tw-flex tw-gap-3">
         <div @click="openTab = 1" class="tw-flex tw-items-center">
           <input id="default-radio-1" type="radio" name="default-radio" value="" class="tw-w-4 tw-h-4 tw-bg-gray-100 tw-border-gray-300 focus:tw-ring-2">
           <label for="default-radio-1" class="tw-ml-2 tw-text-sm tw-font-medium tw-text-basic-700">Ya</label>
