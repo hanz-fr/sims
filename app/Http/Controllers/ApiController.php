@@ -106,6 +106,64 @@ class ApiController extends Controller
         }
     }
 
+    public function viewTambahNilaiMapel() {
+        return view('rekap-nilai.add-rekap-nilai', [
+            'title' => 'Tambah Rekap Nilai',
+            'active' => 'data-induk'
+        ]); 
+    }
+
+
+    public function storeTambahNilaiMapel(Request $request) {
+
+        $response = Http::get("{$this->api_url}/raport/create/raport-n-nilaimapel");
+       
+        $nis = $request->nis_siswa;
+
+        $siswaExist = Http::get("{$this->api_url}/siswa/{$nis}");
+
+        if ($nis) {
+
+            $message = json_decode($siswaExist)->message;
+        
+        } else {
+
+            $message = json_decode($siswaExist);
+
+        }
+
+
+        if ($message == 'Displaying siswa with nis : ' . $nis) {
+
+            $response = Http::post("{$this->api_url}/raport/create/raport-n-nilai-mapel", [
+                'nis_siswa' => $request->nis_siswa,
+                'semester' => $request->semester,
+                'thn_ajaran' => $request->thn_ajaran,
+                'sakit' => $request->sakit,
+                'ijin' => $request->ijin,
+                'alpa' => $request->alpa,
+                'isNaik' => $request->isNaik,
+                'naikKelas' => $request->naikKelas,
+                'tgl_kenaikan' => $request->tgl_kenaikan,
+                'idMapelJurusan' => $request->idMapelJurusan,
+                'nilai_pengetahuan' => $request->nilai_pengetahuan,
+                'nilai_keterampilan' => $request->nilai_keterampilan,
+                'kkm' => $request->kkm,
+                'nilai_us_teori' => $request->nilai_us_teori,
+                'nilai_us_teori' => $request->nilai_us_praktek,
+                'nilai_ukk_teori' => $request->nilai_ukk_teori,
+                'nilai_ukk_praktek' => $request->nilai_ukk_praktek,
+            ]);
+
+            return redirect('rekap-nilai/'.$request->nis_siswa);
+        
+        } else {
+            
+            return redirect('/tambah-nilai')->with('warning', 'Siswa dengan NIS tersebut tidak terdaftar.');
+
+        }
+    }
+
 
     public function viewAlumni() {
 

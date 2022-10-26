@@ -63,6 +63,11 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('/api/mutasi-masuk/delete/{id}', [ApiController::class, 'deleteMutasiMasuk']);
 
 
+    /* ROUTE RAPORT */
+
+    Route::get('/tambah-nilai', [ApiController::class, 'viewTambahNilaiMapel']);
+    Route::post('/api/raport/tambah-nilai', [ApiController::class, 'storeTambahNilaiMapel']);
+
     /* REKAP DATA SISWA */
 
     Route::get('/rekap-jumlah-siswa', [ApiController::class, 'rekapJumlahSiswa']);
@@ -92,12 +97,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/rekap-nilai/{nis}', [ApiController::class, 'getRaportSiswa']);
 
-    Route::get('/tambah-nilai', function () {
-        return view('rekap-nilai.add-rekap-nilai', [
-            'title' => 'Tambah Rekap Nilai',
-            'active' => 'data-induk'
-        ]);
-    });
+    
 
     Route::get('/edit-nilai', function () {
         return view('rekap-nilai.edit-rekap-nilai', [
