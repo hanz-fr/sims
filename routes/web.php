@@ -85,12 +85,7 @@ Route::middleware(['auth'])->group(function () {
 
     /* ALUMNI */
 
-    Route::get('/data-alumni', function () {
-        return view('induk.show-alumni', [
-            'title' => 'Data Alumni',
-            'active' => 'data-induk'
-        ]);
-    });
+    Route::get('/data-alumni', [ApiController::class, 'viewAlumni']);
 
 
     /* REKAP NILAI */

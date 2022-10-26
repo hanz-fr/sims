@@ -5,7 +5,6 @@
     <div class="tw-flex tw-justify-between tw-gap-5 tw-mt-8">
         <div class="tw-flex tw-flex-col">
             <h4 class="title-main">Data Alumni</h4>
-            <h6 class="tw-mb-5 tw-text-gray-400 tw-font-semibold">PENGEMBANGAN PERANGKAT LUNAK DAN GIM</h6>
         </div>
     </div>
 
@@ -59,38 +58,24 @@
                     </tr>
                 </thead>
                 <tbody class="tw-text-base">
+                    @foreach ($alumni as $a)
                     <tr class="tw-bg-white tw-border">
-                        <td class="tw-py-4 tw-px-6 tw-border">01</td>
                         <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">{{ $a->nis_siswa }}</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">{{ $a->nisn_siswa }}</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">{{ $a->nama_siswa }}</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">{{ $a->jenis_kelamin }}</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">{{ $a->KelasId }}</td>
                         <td>
-                            <a href="#" class="tw-text-white tw-bg-kuning-500 hover:tw-bg-kuning-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
+                            <a href="/edit-siswa/{{ $a->nis_siswa }}" class="tw-text-white tw-bg-kuning-500 hover:tw-bg-kuning-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                                 <i class="fa-solid fa-pen-to-square"></i></a>
                             </a>
-                            <a href="#" class="tw-text-white tw-bg-gray-500 hover:tw-bg-gray-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
+                            <a href="/detail/{{ $a->nis_siswa }}" class="tw-text-white tw-bg-gray-500 hover:tw-bg-gray-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                                 <i class="fa-solid fa-eye"></i>
                             </a>
                         </td>
                     </tr>
-                    <tr class="tw-bg-white tw-border">
-                        <td class="tw-py-4 tw-px-6 tw-border">01</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td>
-                            <a href="#" class="tw-text-white tw-bg-kuning-500 hover:tw-bg-kuning-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
-                                <i class="fa-solid fa-pen-to-square"></i></a>
-                            </a>
-                            <a href="#" class="tw-text-white tw-bg-gray-500 hover:tw-bg-gray-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
-                                <i class="fa-solid fa-eye"></i>
-                            </a>
-                        </td>
-                    </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
