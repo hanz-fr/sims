@@ -45,6 +45,9 @@ a {
   .card-data-btn {
     @apply tw-border-2 tw-border-[#90C2C2] tw-py-1 tw-px-20 tw-text-[#90C2C2] tw-font-semibold tw-rounded-lg tw-font-ubuntu hover:tw-bg-[#90C2C2] hover:tw-text-white tw-mt-8;
   }
+  .report-card-pills {
+    @apply tw-w-full tw-px-4 tw-py-2 tw-shadow-md tw-rounded-full tw-flex tw-justify-between;
+  }
   .title-main {
   @apply tw-font-pop tw-font-bold tw-mt-6 tw-text-sims-400;
   }

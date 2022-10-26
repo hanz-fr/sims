@@ -239,7 +239,7 @@ Route::middleware(['admin'])->group(function () {
     // NILAI MAPEL
     Route::get('/nilai-mapel', function () {
         return view('admin.nilai-mapel.show-nilai-mapel', [
-            'title' => 'Edit Rapor',
+            'title' => 'Nilai Mapel',
             'active' => 'database'
         ]);
     });
@@ -247,21 +247,21 @@ Route::middleware(['admin'])->group(function () {
     // DETAIL NILAI MAPEL
     Route::get('/detail-nilai-mapel', function () {
         return view('admin.nilai-mapel.detail-nilai-mapel', [
-            'title' => 'Edit Rapor',
+            'title' => 'Detail Nilai Mapel',
             'active' => 'database'
         ]);
     });
     // CREATE NILAI MAPEL
     Route::get('/create-nilai-mapel', function () {
         return view('admin.nilai-mapel.create-nilai-mapel', [
-            'title' => 'Edit Rapor',
+            'title' => 'Create Nilai Mapel',
             'active' => 'database'
         ]);
     });
     // EDIT NILAI MAPEL
     Route::get('/edit-nilai-mapel', function () {
         return view('admin.nilai-mapel.edit-nilai-mapel', [
-            'title' => 'Edit Rapor',
+            'title' => 'Edit Nilai Mapel',
             'active' => 'database'
         ]);
     });
