@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\File;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\Session;
 
 use function PHPUnit\Framework\isNull;
 
@@ -245,6 +246,8 @@ class ApiController extends Controller
         $perPage = $request->perPage;
 
         $response = Http::get("{$this->api_url}/siswa/{$request->jurusan}/{$request->kelas}?page={$page}&perPage={$perPage}");
+
+        Session::put('page_jurusan', request()->fullUrl());
 
         if ($response->successful()) {
             
@@ -533,7 +536,7 @@ class ApiController extends Controller
 
         $response->throw();
 
-        return redirect('/data-induk-siswa?perPage=10')->with('success', 'Siswa updated successfully.');
+        return redirect(Session('page_jurusan'))->with('success', 'Siswa updated successfully.');
     }
 
     public function deleteSiswa($nis)
