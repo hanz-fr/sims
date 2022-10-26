@@ -18,7 +18,7 @@ class ApiController extends Controller
     /* GLOBAL VARIABLES */
     public function __construct()
     {
-        $this->api_url = 'https://f169-103-148-113-86.ap.ngrok.io'; // Ganti link NGROK disini
+        $this->api_url = '127.0.0.1:3000'; // Ganti link NGROK disini
     }
 
 
@@ -117,8 +117,7 @@ class ApiController extends Controller
 
     public function storeTambahNilaiMapel(Request $request) {
 
-        $response = Http::get("{$this->api_url}/raport/create/raport-n-nilaimapel");
-       
+        
         $nis = $request->nis_siswa;
 
         $siswaExist = Http::get("{$this->api_url}/siswa/{$nis}");
@@ -136,27 +135,42 @@ class ApiController extends Controller
 
         if ($message == 'Displaying siswa with nis : ' . $nis) {
 
+            $isNaik = '';
+
+            if ($request->isNaik == 'true') {
+
+                $isNaik = true;
+
+            } elseif($request->isNaik == 'false') {
+
+                $isNaik = false;
+            }
+
+            
             $response = Http::post("{$this->api_url}/raport/create/raport-n-nilai-mapel", [
                 'nis_siswa' => $request->nis_siswa,
-                'semester' => $request->semester,
-                'thn_ajaran' => $request->thn_ajaran,
-                'sakit' => $request->sakit,
-                'ijin' => $request->ijin,
-                'alpa' => $request->alpa,
-                'isNaik' => $request->isNaik,
+                'semester' => (int)$request->semester,
+                'RaportId' =>  'RPT' . $request->nis_siswa . '-' . $request->semester,
+                'thn_ajaran' => (int)$request->thn_ajaran,
+                'sakit' => (int)$request->sakit,
+                'ijin' => (int)$request->ijin,
+                'alpa' => (int)$request->alpa,
+                'isNaik' => $isNaik,
                 'naikKelas' => $request->naikKelas,
                 'tgl_kenaikan' => $request->tgl_kenaikan,
                 'idMapelJurusan' => $request->idMapelJurusan,
-                'nilai_pengetahuan' => $request->nilai_pengetahuan,
-                'nilai_keterampilan' => $request->nilai_keterampilan,
-                'kkm' => $request->kkm,
-                'nilai_us_teori' => $request->nilai_us_teori,
-                'nilai_us_teori' => $request->nilai_us_praktek,
-                'nilai_ukk_teori' => $request->nilai_ukk_teori,
-                'nilai_ukk_praktek' => $request->nilai_ukk_praktek,
+                'nilai_pengetahuan' => (int)$request->nilai_pengetahuan,
+                'nilai_keterampilan' => (int)$request->nilai_keterampilan,
+                'kkm' => (int)$request->kkm,
+                'nilai_us_teori' => (int)$request->nilai_us_teori,
+                'nilai_us_teori' => (int)$request->nilai_us_praktek,
+                'nilai_ukk_teori' => (int)$request->nilai_ukk_teori,
+                'nilai_ukk_praktek' => (int)$request->nilai_ukk_praktek,
             ]);
 
-            return redirect('rekap-nilai/'.$request->nis_siswa);
+            $response->throw();
+
+            return redirect('rekap-nilai/'.$request->nis_siswa)->with('success', 'Rekap nilai baru ditambahkan.');
         
         } else {
             

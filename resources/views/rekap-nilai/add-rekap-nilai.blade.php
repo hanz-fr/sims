@@ -47,8 +47,8 @@
             <div>
                 <label for="isNaik" class="tw-font-pop tw-mx-3 tw-font-lg tw-font-bold tw-text-white">Apakah siswa naik?</label>
                 <select type="text" id="isNaik" name="isNaik" placeholder="Naik atau Tidak Naik..." class="input-account">
-                    <option value="Naik">Naik</option>
-                    <option value="Tidak Naik">Tidak Naik</option>
+                    <option value="true">Naik</option>
+                    <option value="false">Tidak Naik</option>
                 </select>
             </div>
             
