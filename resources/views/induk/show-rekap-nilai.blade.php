@@ -100,7 +100,13 @@
                           Status Kenaikan
                         </td>
                         <td class="tw-border">
+                          @if($rp->isNaik == true)
                           Naik
+                          @elseif($rp->isNaik == false)
+                          Tidak naik
+                          @else
+                          -
+                          @endif
                         </td>
                       </tr>
                       <tr class="tw-bg-gray-100">
@@ -203,7 +209,13 @@
                         Status Kenaikan
                       </td>
                       <td class="tw-border">
+                        @if($rp->isNaik == true)
                         Naik
+                        @elseif($rp->isNaik == false)
+                        Tidak naik
+                        @else
+                        -
+                        @endif
                       </td>
                     </tr>
                     <tr class="tw-bg-gray-100">
@@ -409,7 +421,13 @@
                         Status Kenaikan
                       </td>
                       <td class="tw-border">
+                        @if($rp->isNaik == true)
                         Naik
+                        @elseif($rp->isNaik == false)
+                        Tidak naik
+                        @else
+                        -
+                        @endif
                       </td>
                     </tr>
                     <tr class="tw-bg-gray-100">
@@ -512,7 +530,13 @@
                         Status Kenaikan
                       </td>
                       <td class="tw-border">
+                        @if($rp->isNaik == true)
                         Naik
+                        @elseif($rp->isNaik == false)
+                        Tidak naik
+                        @else
+                        -
+                        @endif
                       </td>
                     </tr>
                     <tr class="tw-bg-gray-100">
@@ -639,7 +663,13 @@
                         Status Kenaikan
                       </td>
                       <td class="tw-border">
+                        @if($rp->isNaik == true)
                         Naik
+                        @elseif($rp->isNaik == false)
+                        Tidak naik
+                        @else
+                        -
+                        @endif
                       </td>
                     </tr>
                     <tr class="tw-bg-gray-100">

@@ -65,9 +65,6 @@ class ApiController extends Controller
                 'siswaTdkNaik' =>  json_decode($response)->siswaTdkNaik->count,
                 'jmlSiswa' => json_decode($response)->siswa->count,
                 'siswaKeluar' => json_decode($response)->mutasi->count,
-                'rekapKelas10' => json_decode($response)->rekapKelas10,
-                'rekapKelas11' => json_decode($response)->rekapKelas11,
-                'rekapKelas12' => json_decode($response)->rekapKelas12,
                 'jumlahSiswaX' => json_decode($response)->jumlahSiswaX->count,
                 'jumlahSiswaXI' => json_decode($response)->jumlahSiswaXI->count,
                 'jumlahSiswaXII' => json_decode($response)->jumlahSiswaXII->count
@@ -84,7 +81,6 @@ class ApiController extends Controller
         }
 
     }
-
 
     public function siswaTidakNaik() {
 
@@ -107,6 +103,29 @@ class ApiController extends Controller
                 'message' => 'Halaman yang kamu cari tidak dapat ditemukan :('
             ]);
 
+        }
+    }
+
+
+    public function viewAlumni() {
+
+        $response = Http::get("{$this->api_url}/dashboard/alumni/get");;
+
+        if($response->successful()) {
+
+            return view('induk.show-alumni', [
+                'title' => 'Data Alumni',
+                'active' => 'data-induk',
+                'alumni' => json_decode($response)->result,
+            ]);
+
+        } else {
+            return view('induk.show-all', [
+                'status' => 'error',
+                'title' => 'data-induk',
+                'active' => 'data-induk',
+                'message' => 'Halaman yang kamu cari tidak dapat ditemukan :('
+            ]);
         }
     }
 
