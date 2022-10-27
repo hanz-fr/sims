@@ -143,7 +143,8 @@ class ApiController extends Controller
 
 
     public function storeTambahNilaiMapel(Request $request) {
-        
+
+
         $nis = $request->nis_siswa;
 
         $siswaExist = Http::get("{$this->api_url}/siswa/{$nis}");
@@ -213,6 +214,8 @@ class ApiController extends Controller
                 'isNaik' => $isNaik,
                 'naikKelas' => $request->naikKelas,
                 'tgl_kenaikan' => $request->tgl_kenaikan, 
+                'tinggal_di_Kelas' => $request->tinggal_di_kelas,
+                'alasan_tidak_naik' => $request->alasan_tidak_naik
             ]);
 
             for ($i = 0; $i < count($idMapelJurusan); $i++) {

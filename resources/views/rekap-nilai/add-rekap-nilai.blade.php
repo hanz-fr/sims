@@ -62,7 +62,30 @@
                 <span class="tw-font-pop tw-mx-3 tw-font-lg tw-font-bold tw-mt-5 tw-text-white">Tanggal Kenaikan</span>
                 <input type="date" class="input-account" name="tgl_kenaikan">
             </div>
+
         </div>
+
+        <div class="card-data-bright tw-flex tw-flex-col tw-w-5/6 tw-mx-5 tw-bg-slate-600">
+
+            <div class="card-data-bright tw-bg-slate-500 tw-flex tw-justify-start tw-gap-10 tw-mx-5 tw-shadow-lg tw-px-20 tw-my-5 tw-py-10 tw-rounded-lg">
+                
+                <div>
+                    <span class="tw-font-pop tw-mx-3 tw-font-lg tw-font-bold tw-mt-5 tw-text-white">Tinggal di Kelas</span>
+                    <input type="text" placeholder="" class="input-account" name="tinggal_di_kelas">
+                </div>
+                
+                <div>
+                    <span class="tw-font-pop tw-mx-3 tw-font-lg tw-font-bold tw-mt-5 tw-text-white">Alasan tidak naik</span>
+                    <input type="text" class="input-account" name="alasan_tidak_naik">
+                </div>
+    
+            </div>
+
+            <div class="tw-flex tw-justify-start tw-font-pop tw-text-gray-100 tw-font-medium tw-mx-10 tw-my-3">
+                *Hanya diisi jika siswa tidak naik kelas
+            </div>
+        </div>
+
         
 
 
