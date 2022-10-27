@@ -65,7 +65,7 @@ Route::middleware(['auth'])->group(function () {
 
     /* ROUTE RAPORT */
 
-    Route::get('/tambah-nilai', [ApiController::class, 'viewTambahNilaiMapel']);
+    Route::get('/tambah-nilai/{nis}', [ApiController::class, 'viewTambahNilaiMapel']);
     Route::post('/api/raport/tambah-nilai', [ApiController::class, 'storeTambahNilaiMapel']);
 
     /* REKAP DATA SISWA */
