@@ -15,7 +15,6 @@ module.exports = {
         ubuntu : ['Ubuntu'],
       },
       backgroundImage: {
-        'hello-ds': "url('./img/bg-hello.svg')",
         'admin-login': "url('./img/bg-admin.svg')",
       },
         colors : {

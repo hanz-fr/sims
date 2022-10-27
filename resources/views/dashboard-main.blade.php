@@ -170,10 +170,10 @@
             </ul>
         </section>
 
-        <section class="tw-bg-white tw-font-pop tw-shadow-md tw-flex tw-flex-col tw-mt-5">
+        <section class="tw-bg-white tw-font-pop tw-shadow-md tw-flex tw-flex-col tw-my-5">
           <div class="tw-px-10 tw-mt-10">
           <div class=" tw-text-gray-400 tw-font-bold">Persebaran Murid (?) SMKN 11</div>
-            <ul class="tw-flex tw-justify-center md:tw-gap-10 sm:tw-gap-2 list-unstyled tw-mt-12 tw-mb-20">
+            <ul class="tw-flex tw-justify-center md:tw-gap-10 sm:tw-gap-2 list-unstyled tw-py-10">
               <li class="tw-flex-row tw-text-center">
                 <div class="tw-text-2xl tw-text-slate-200 tw-font-normal">-</div>
                 <div class=" tw-font-light tw-text-gray-400">AKL</div>
@@ -204,12 +204,12 @@
 
     </div>
 
-    <div class="md:tw-w-1/2 sm:tw-w-full tw-mt-8">
+    <div class="md:tw-w-1/2 sm:tw-w-full tw-mt-5">
       {{-- kuota pendaftar --}}
 
       {{-- <div class="tw-bg-white tw-shadow-md tw-h-96 tw-w-full">
       </div> --}}
-      <section class="tw-px-8 tw-pt-8 tw-flex tw-rounded-xl tw-w-full tw-justify-between tw-bg-hello-ds tw-bg-no-repeat">
+      <section class="tw-px-8 tw-pt-8 tw-flex tw-rounded-xl tw-w-full tw-justify-between tw-bg-no-repeat" style="background-image: url('{{ URL::asset('assets/img/bg-hello.svg') }}')">
         <div class="tw-text-white tw-font-pop tw-h-full">
           <h1 class="tw-text-2xl">Welcome, <span class="tw-font-bold">{{ auth()->user()->nama }}</span></h1>
           <p>Lorem ipsum dolor sit amet.</p>
@@ -220,7 +220,7 @@
       </section>
 
       {{-- chart view --}}
-      <section class="tw-bg-white tw-shadow-md tw-h-fit tw-p-10 tw-w-full">
+      <section class="tw-bg-white tw-shadow-md tw-h-fit tw-p-10 tw-w-full tw-mt-7">
         <div class="tw-px-10 tw-font-pop">
           <div class=" tw-text-gray-400 tw-font-bold">Data Jumlah Siswa SMKN 11</div>
           <div>

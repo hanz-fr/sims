@@ -18,7 +18,7 @@ class ApiController extends Controller
     /* GLOBAL VARIABLES */
     public function __construct()
     {
-        $this->api_url = '127.0.0.1:3000'; // Ganti link NGROK disini
+        $this->api_url = 'https://faa6-103-139-10-229.ap.ngrok.io'; // Ganti link NGROK disini
     }
 
 

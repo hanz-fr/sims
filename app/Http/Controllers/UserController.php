@@ -25,7 +25,7 @@ class UserController extends Controller
     public function register(Request $request)
     {  
         $request->validate([
-            'nip'      => 'required|unique:users|min:7',
+            'nip'      => 'required|unique:users|min:9|max:18',
             'nama'     => 'required',
             'email'    => 'required|email|unique:users',
             'role'    => 'required',
@@ -60,7 +60,7 @@ class UserController extends Controller
     {
 
         $request->validate([
-            'nip'      => 'required|min:7',
+            'nip'      => 'required|min:9|max:18',
             'password' => 'required|min:6',
         ]);
 
@@ -116,9 +116,9 @@ class UserController extends Controller
     public function update(Request $request, User $user, $id)
     {
         $this->validate($request,[
-            'nip'   => 'required|min:7',
+            'nip'   => 'required|min:9|max:18',
             'nama'  => 'required',
-            'email' => 'required|email|unique:users'
+            'email' => 'required|email'
         ]);
 
         $user = User::find($id);
