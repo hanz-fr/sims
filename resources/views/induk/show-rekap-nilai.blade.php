@@ -10,9 +10,10 @@
             <div class="tw-font-pop tw-font-medium tw-text-md tw-text-slate-400 tw-mt-3">
               NIS : {{ $siswa->nis_siswa }}<br>Nama :  {{ $siswa->nama_siswa }}<br>Kelas : {{ $siswa->KelasId }}
             </div>
-            <div class="tw-my-auto">
-              <a href="" class="tw-bg-sims-400 tw-text-white hover:tw-text-white  tw-font-pop hover:tw-bg-sims-600 tw-px-5 tw-py-2 tw-rounded-lg tw-mr-5">Export</a>
+            <div class="tw-my-auto tw-flex tw-gap-5">
+              <a href="" class="tw-bg-sims-400 tw-text-white hover:tw-text-white  tw-font-pop hover:tw-bg-sims-600 tw-px-5 tw-py-2 tw-rounded-lg">Export</a>
               <a href="" class="tw-bg-sims-400 tw-text-white hover:tw-text-white  tw-font-pop hover:tw-bg-sims-600 tw-px-5 tw-py-2 tw-rounded-lg">import</a>
+              <a href="/tambah-nilai/{{ $siswa->nis_siswa }}" class="tw-bg-sims-400 tw-text-white hover:tw-text-white  tw-font-pop hover:tw-bg-sims-600 tw-px-5 tw-py-2 tw-rounded-lg">Tambah Rekap Nilai +</a>
             </div>
         </div>
         <div x-data="{
