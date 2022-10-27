@@ -1088,14 +1088,6 @@ video {
   margin-bottom: 2.5rem;
 }
 
-.tw-ml-4 {
-  margin-left: 1rem;
-}
-
-.tw-mt-8 {
-  margin-top: 2rem;
-}
-
 .tw-mt-10 {
   margin-top: 2.5rem;
 }
@@ -1106,6 +1098,14 @@ video {
 
 .tw-mb-20 {
   margin-bottom: 5rem;
+}
+
+.tw-mt-8 {
+  margin-top: 2rem;
+}
+
+.-tw-mb-1 {
+  margin-bottom: -0.25rem;
 }
 
 .tw-ml-16 {
@@ -1198,6 +1198,10 @@ video {
 
 .-tw-mb-8 {
   margin-bottom: -2rem;
+}
+
+.tw-ml-4 {
+  margin-left: 1rem;
 }
 
 .tw-mr-2 {
@@ -1314,16 +1318,20 @@ video {
   height: 24rem;
 }
 
+.tw-h-full {
+  height: 100%;
+}
+
+.tw-h-auto {
+  height: auto;
+}
+
 .tw-h-16 {
   height: 4rem;
 }
 
 .tw-h-2\/3 {
   height: 66.666667%;
-}
-
-.tw-h-full {
-  height: 100%;
 }
 
 .tw-h-3\/5 {
@@ -2093,8 +2101,20 @@ video {
   background-color: rgb(149 187 232 / var(--tw-bg-opacity));
 }
 
+.tw-bg-hello-ds {
+  background-image: url('./img/bg-hello.svg');
+}
+
+.tw-bg-admin-login {
+  background-image: url('./img/bg-admin.svg');
+}
+
 .tw-bg-none {
   background-image: none;
+}
+
+.tw-bg-no-repeat {
+  background-repeat: no-repeat;
 }
 
 .tw-fill-current {
@@ -2193,6 +2213,11 @@ video {
   padding-right: 2.5rem;
 }
 
+.tw-px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
 .tw-py-1 {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
@@ -2206,11 +2231,6 @@ video {
 .tw-px-7 {
   padding-left: 1.75rem;
   padding-right: 1.75rem;
-}
-
-.tw-px-8 {
-  padding-left: 2rem;
-  padding-right: 2rem;
 }
 
 .tw-py-7 {
@@ -2316,6 +2336,10 @@ video {
   padding-left: 0.75rem;
 }
 
+.tw-pt-8 {
+  padding-top: 2rem;
+}
+
 .tw-pr-3 {
   padding-right: 0.75rem;
 }
@@ -2362,10 +2386,6 @@ video {
 
 .tw-pl-5 {
   padding-left: 1.25rem;
-}
-
-.tw-pt-8 {
-  padding-top: 2rem;
 }
 
 .tw-pr-5 {
@@ -2521,6 +2541,11 @@ video {
   line-height: 2rem;
 }
 
+.tw-text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
 .tw-text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
@@ -2529,11 +2554,6 @@ video {
 .tw-text-6xl {
   font-size: 3.75rem;
   line-height: 1;
-}
-
-.tw-text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
 }
 
 .tw-text-lg {

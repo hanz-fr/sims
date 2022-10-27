@@ -14,6 +14,10 @@ module.exports = {
         pop : ['Poppins','sans-serif'],
         ubuntu : ['Ubuntu'],
       },
+      backgroundImage: {
+        'hello-ds': "url('./img/bg-hello.svg')",
+        'admin-login': "url('./img/bg-admin.svg')",
+      },
         colors : {
           'sims': {
             '50': '#f3faf9',

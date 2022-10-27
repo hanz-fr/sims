@@ -148,26 +148,58 @@
         {{-- quick access --}}
         <section class="tw-bg-white tw-w-full tw-items-center tw-justify-center tw-shadow-md tw-font-pop tw-border tw-mt-6 tw-flex tw-h-fit tw-py-10 tw-flex-col">
           <div class="tw-text-xl tw-text-gray-400 tw-font-bold tw-mb-10">Quick Access</div>
-            <ul class="tw-flex tw-flex-col grid-rows-3 tw-justify-between tw-gap-3 tw-p-2 list-unstyled">
+            <ul class="tw-flex tw-justify-between tw-gap-3 tw-p-2 list-unstyled">
               <a href="/rekap-jumlah-siswa" class="tw-group">
-                <li class="tw-flex tw-justify-center tw-text-center tw-border-2 tw-p-6 tw-items-center tw-bg-white tw-rounded-lg group-hover:tw-text-white group-hover:tw-bg-sims-400 tw-transition-all tw-duration-300">
-                  <div class="tw-text-5xl tw-text-sims-400 group-hover:tw-text-white"><i class="fa-solid fa-graduation-cap"></i></div>
-                  <div class="tw-text-gray-500 tw-font-normal tw-ml-4 group-hover:tw-text-white">Data Jumlah Siswa</div>
+                <li class="tw-justify-center tw-text-center tw-border-2 tw-p-6 tw-items-center tw-bg-white tw-rounded-lg group-hover:tw-text-white group-hover:tw-bg-sims-400 tw-transition-all tw-duration-300">
+                  <div class="tw-text-4xl tw-text-sims-400 group-hover:tw-text-white"><i class="fa-solid fa-graduation-cap"></i></div>
+                  <div class="tw-text-gray-500 tw-text-sm tw-font-normal tw-mt-4 group-hover:tw-text-white">Data Jumlah Siswa</div>
                 </li>
               </a>
               <a href="/data-induk-siswa?perPage=10" class="tw-group">
-                <li class="tw-flex tw-justify-center tw-text-center tw-border-2 tw-p-6 tw-items-center tw-bg-white tw-rounded-lg group-hover:tw-bg-sims-400 group-hover:tw-text-white tw-transition-all tw-duration-300">
-                  <div class="tw-text-5xl tw-text-sims-400 group-hover:tw-text-white"><i class="fa-regular fa-book-open"></i></div>
-                  <div class="tw-text-gray-500 tw-font-normal tw-ml-4 group-hover:tw-text-white">Data Induk Siswa</div>
+                <li class="tw-justify-center tw-text-center tw-border-2 tw-p-6 tw-items-center tw-bg-white tw-rounded-lg group-hover:tw-bg-sims-400 group-hover:tw-text-white tw-transition-all tw-duration-300">
+                  <div class="tw-text-4xl tw-text-sims-400 group-hover:tw-text-white"><i class="fa-regular fa-book-open"></i></div>
+                  <div class="tw-text-gray-500 tw-text-sm tw-font-normal tw-mt-4 group-hover:tw-text-white">Data Induk Siswa</div>
                 </li>
               </a>
               <a href="/siswa-keluar" class="tw-group">
-                <li class="tw-flex tw-justify-center tw-text-center tw-border-2 tw-p-6 tw-items-center tw-bg-white tw-rounded-lg group-hover:tw-bg-sims-400 group-hover:tw-text-white  tw-transition-all tw-duration-300">
-                  <div class="tw-text-5xl tw-text-sims-400 group-hover:tw-text-white"><i class="fa-solid fa-user-group"></i></div>
-                  <div class="tw-text-gray-500 tw-font-normal tw-ml-4 group-hover:tw-text-white">Data Perpindahan</div>
+                <li class="tw-justify-center tw-text-center tw-border-2 tw-p-6 tw-items-center tw-bg-white tw-rounded-lg group-hover:tw-bg-sims-400 group-hover:tw-text-white  tw-transition-all tw-duration-300">
+                  <div class="tw-text-4xl tw-text-sims-400 group-hover:tw-text-white"><i class="fa-solid fa-user-group"></i></div>
+                  <div class="tw-text-gray-500 tw-text-sm tw-font-normal tw-mt-4 group-hover:tw-text-white">Data Perpindahan</div>
                 </li>
               </a>
             </ul>
+        </section>
+
+        <section class="tw-bg-white tw-font-pop tw-shadow-md tw-flex tw-flex-col tw-mt-5">
+          <div class="tw-px-10 tw-mt-10">
+          <div class=" tw-text-gray-400 tw-font-bold">Persebaran Murid (?) SMKN 11</div>
+            <ul class="tw-flex tw-justify-center md:tw-gap-10 sm:tw-gap-2 list-unstyled tw-mt-12 tw-mb-20">
+              <li class="tw-flex-row tw-text-center">
+                <div class="tw-text-2xl tw-text-slate-200 tw-font-normal">-</div>
+                <div class=" tw-font-light tw-text-gray-400">AKL</div>
+              </li>
+              <li class="tw-flex-row tw-text-center">
+                <div class="tw-text-2xl tw-text-slate-200 tw-font-normal">-</div>
+                <div class=" tw-font-light tw-text-gray-400">DKV</div>
+              </li>
+              <li class="tw-flex-row tw-text-center">
+                <div class="tw-text-2xl tw-text-slate-200 tw-font-normal">-</div>
+                <div class=" tw-font-light tw-text-gray-400">MPLB</div>
+              </li>
+              <li class="tw-flex-row tw-text-center">
+                <div class="tw-text-2xl tw-text-slate-200 tw-font-normal">-</div>
+                <div class=" tw-font-light tw-text-gray-400">PM</div>
+              </li>
+              <li class="tw-flex-row tw-text-center">
+                <div class="tw-text-2xl tw-text-slate-200 tw-font-normal">-</div>
+                <div class=" tw-font-light tw-text-gray-400">PPLG</div>
+              </li>
+              <li class="tw-flex-row tw-text-center">
+                <div class="tw-text-2xl tw-text-slate-200 tw-font-normal">-</div>
+                <div class=" tw-font-light tw-text-gray-400">TJKT</div>
+              </li>
+            </ul>
+          </div>
         </section>
 
     </div>
@@ -177,6 +209,16 @@
 
       {{-- <div class="tw-bg-white tw-shadow-md tw-h-96 tw-w-full">
       </div> --}}
+      <section class="tw-px-8 tw-pt-8 tw-flex tw-rounded-xl tw-w-full tw-justify-between tw-bg-hello-ds tw-bg-no-repeat">
+        <div class="tw-text-white tw-font-pop tw-h-full">
+          <h1 class="tw-text-2xl">Welcome, <span class="tw-font-bold">{{ auth()->user()->nama }}</span></h1>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="tw-flex tw-justify-end">
+        <img src="{{ URL::asset('assets/img/halodek.svg') }}" class="tw-w-full tw-h-auto -tw-mb-1" alt="">
+        </div>
+      </section>
+
       {{-- chart view --}}
       <section class="tw-bg-white tw-shadow-md tw-h-fit tw-p-10 tw-w-full">
         <div class="tw-px-10 tw-font-pop">
@@ -187,38 +229,6 @@
         </div>
       </section>
 
-
-      <section class="tw-bg-white tw-font-pop tw-shadow-md tw-flex tw-flex-col tw-mt-5">
-        <div class="tw-px-10 tw-mt-10">
-        <div class=" tw-text-gray-400 tw-font-bold">Persebaran Murid (?) SMKN 11</div>
-          <ul class="tw-flex tw-justify-center md:tw-gap-10 sm:tw-gap-2 list-unstyled tw-mt-12 tw-mb-20">
-            <li class="tw-flex-row tw-text-center">
-              <div class="tw-text-2xl tw-text-slate-200 tw-font-normal">-</div>
-              <div class=" tw-font-light tw-text-gray-400">AKL</div>
-            </li>
-            <li class="tw-flex-row tw-text-center">
-              <div class="tw-text-2xl tw-text-slate-200 tw-font-normal">-</div>
-              <div class=" tw-font-light tw-text-gray-400">DKV</div>
-            </li>
-            <li class="tw-flex-row tw-text-center">
-              <div class="tw-text-2xl tw-text-slate-200 tw-font-normal">-</div>
-              <div class=" tw-font-light tw-text-gray-400">MPLB</div>
-            </li>
-            <li class="tw-flex-row tw-text-center">
-              <div class="tw-text-2xl tw-text-slate-200 tw-font-normal">-</div>
-              <div class=" tw-font-light tw-text-gray-400">PM</div>
-            </li>
-            <li class="tw-flex-row tw-text-center">
-              <div class="tw-text-2xl tw-text-slate-200 tw-font-normal">-</div>
-              <div class=" tw-font-light tw-text-gray-400">PPLG</div>
-            </li>
-            <li class="tw-flex-row tw-text-center">
-              <div class="tw-text-2xl tw-text-slate-200 tw-font-normal">-</div>
-              <div class=" tw-font-light tw-text-gray-400">TJKT</div>
-            </li>
-          </ul>
-        </div>
-      </section>
     </div>
 
   </div>
