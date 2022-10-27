@@ -940,6 +940,11 @@ video {
   margin-right: 2.5rem;
 }
 
+.tw-my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
 .tw-mx-4 {
   margin-left: 1rem;
   margin-right: 1rem;
@@ -968,11 +973,6 @@ video {
 .tw-my-28 {
   margin-top: 7rem;
   margin-bottom: 7rem;
-}
-
-.tw-my-5 {
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
 }
 
 .tw-mx-20 {
@@ -1080,24 +1080,8 @@ video {
   margin-top: 1rem;
 }
 
-.tw-mt-6 {
-  margin-top: 1.5rem;
-}
-
-.tw-mb-10 {
-  margin-bottom: 2.5rem;
-}
-
 .tw-mt-10 {
   margin-top: 2.5rem;
-}
-
-.tw-mt-12 {
-  margin-top: 3rem;
-}
-
-.tw-mb-20 {
-  margin-bottom: 5rem;
 }
 
 .tw-mt-8 {
@@ -1106,6 +1090,22 @@ video {
 
 .-tw-mb-1 {
   margin-bottom: -0.25rem;
+}
+
+.tw-mt-6 {
+  margin-top: 1.5rem;
+}
+
+.tw-mb-10 {
+  margin-bottom: 2.5rem;
+}
+
+.tw-mt-12 {
+  margin-top: 3rem;
+}
+
+.tw-mb-20 {
+  margin-bottom: 5rem;
 }
 
 .tw-ml-16 {
@@ -1696,6 +1696,10 @@ video {
   gap: 5rem;
 }
 
+.tw-gap-10 {
+  gap: 2.5rem;
+}
+
 .tw-gap-x-2 {
   -moz-column-gap: 0.5rem;
        column-gap: 0.5rem;
@@ -2101,6 +2105,16 @@ video {
   background-color: rgb(149 187 232 / var(--tw-bg-opacity));
 }
 
+.tw-bg-slate-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(71 85 105 / var(--tw-bg-opacity));
+}
+
+.tw-bg-slate-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(100 116 139 / var(--tw-bg-opacity));
+}
+
 .tw-bg-hello-ds {
   background-image: url('./img/bg-hello.svg');
 }
@@ -2134,10 +2148,6 @@ video {
   padding: 1.5rem;
 }
 
-.tw-p-10 {
-  padding: 2.5rem;
-}
-
 .tw-p-5 {
   padding: 1.25rem;
 }
@@ -2164,6 +2174,10 @@ video {
 
 .tw-p-14 {
   padding: 3.5rem;
+}
+
+.tw-p-10 {
+  padding: 2.5rem;
 }
 
 .tw-p-20 {
@@ -2203,9 +2217,9 @@ video {
   padding-right: 0.75rem;
 }
 
-.tw-py-10 {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
+.tw-py-14 {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
 }
 
 .tw-px-10 {
@@ -2216,6 +2230,11 @@ video {
 .tw-px-8 {
   padding-left: 2rem;
   padding-right: 2rem;
+}
+
+.tw-py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 
 .tw-py-1 {
@@ -2326,11 +2345,6 @@ video {
 .tw-px-1 {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
-}
-
-.tw-px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
 }
 
 .tw-pr-2 {
