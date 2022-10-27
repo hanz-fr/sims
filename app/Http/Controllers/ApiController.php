@@ -109,8 +109,11 @@ class ApiController extends Controller
 
     public function viewTambahNilaiMapel($nis) {
 
+
+
         $siswa = Http::get("{$this->api_url}/siswa/{$nis}");
-        $mapel = Http::get("{$this->api_url}/mapel-jurusan");
+        $jurusanSiswa = json_decode($siswa)->result->kelas->JurusanId;
+        $mapel = Http::get("{$this->api_url}/mapel-jurusan/get/by-jurusan/$jurusanSiswa"); // get mapel by jurusan siswa
 
         if ($nis) {
 
@@ -190,6 +193,15 @@ class ApiController extends Controller
             $nilai_ukk_praktek = $request->nilai_ukk_praktek;
             $nilai_akm = $request->nilai_akm;
 
+
+            // RaportId check
+            $getRaport = Http::get("{$this->api_url}/raport/$RaportId");
+
+            if (json_decode($getRaport)->message == 'Displaying raport with id '.$RaportId) {
+                
+                return redirect(url()->previous())->with('warning', 'Raport dengan Id tersebut sudah terdaftar.');
+            
+            }
 
             $response = Http::post("{$this->api_url}/raport", [
                 'nis_siswa' => $request->nis_siswa,

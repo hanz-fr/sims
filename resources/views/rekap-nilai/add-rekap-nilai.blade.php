@@ -5,7 +5,7 @@
 <div class="tw-m-10 tw-w-screen tw-flex">
    <div class="tw-flex tw-flex-col tw-w-full">
         <div class="tw-flex">
-            <a href="/"><i class="fa-solid fa-chevron-left tw-text-2xl tw-text-gray-400 hover:tw-text-gray-600"></i></a>
+            <a href="/rekap-nilai/{{ $siswa->nis_siswa }}"><i class="fa-solid fa-chevron-left tw-text-2xl tw-text-gray-400 hover:tw-text-gray-600"></i></a>
             <i class="fa-solid fa-users tw-text-2xl tw-ml-2 tw-text-sims-500"></i>
             <h4 class="tw-font-pop tw-font-bold tw-ml-2 tw-text-gray-500">Tambah Rekap Nilai Siswa</h4>
         </div>
