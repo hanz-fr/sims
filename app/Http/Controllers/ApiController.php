@@ -220,8 +220,6 @@ class ApiController extends Controller
 
             $response->throw();
             $nilaiMapel->throw();
-
-            return $request;
             
              /* Http::post("{$this->api_url}/raport/create/raport-n-nilai-mapel", [
                 'nis_siswa' => $nis_siswa,
@@ -244,8 +242,6 @@ class ApiController extends Controller
                 'nilai_ukk_praktek' => (int)$request->nilai_ukk_praktek,
                 'nilai_akm' => (int)$request->nilai_akm,
             ]); */
-
-       
 
             return redirect('rekap-nilai/'.$request->nis_siswa)->with('success', 'Rekap nilai baru ditambahkan.');
         
