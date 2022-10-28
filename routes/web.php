@@ -63,10 +63,15 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('/api/mutasi-masuk/delete/{id}', [ApiController::class, 'deleteMutasiMasuk']);
 
 
-    /* ROUTE RAPORT */
+     /* REKAP NILAI */
 
+    Route::get('/rekap-nilai/{nis}', [ApiController::class, 'getRaportSiswa']);
     Route::get('/tambah-nilai/{nis}', [ApiController::class, 'viewTambahNilaiMapel']);
+    Route::get('/edit-rekap-nilai/{RaportId}', [ApiController::class, 'editRekapNilai']);
     Route::post('/api/raport/tambah-nilai', [ApiController::class, 'storeTambahNilaiMapel']);
+    Route::put('/api/raport/update-nilai', [ApiController::class, 'storeUpdateNilaiMapel']);
+    
+    
 
     /* REKAP DATA SISWA */
 
@@ -93,18 +98,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/data-alumni', [ApiController::class, 'viewAlumni']);
 
 
-    /* REKAP NILAI */
-
-    Route::get('/rekap-nilai/{nis}', [ApiController::class, 'getRaportSiswa']);
-
-    
-
-    Route::get('/edit-nilai', function () {
-        return view('rekap-nilai.edit-rekap-nilai', [
-            'title' => 'Edit Rekap Nilai',
-            'active' => 'data-induk'
-        ]);
-    });
 
     /* REKAP SISWA */
 

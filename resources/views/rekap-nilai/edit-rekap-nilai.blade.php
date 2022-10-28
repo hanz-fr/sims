@@ -3,101 +3,161 @@
 @section('content')
 
 <div class="tw-m-10 tw-w-screen tw-flex">
-   <div class="tw-flex tw-flex-col tw-gap-8 tw-w-full">
+   <div class="tw-flex tw-flex-col tw-w-full">
         <div class="tw-flex">
-            <a href="/"><i class="fa-solid fa-chevron-left tw-text-2xl tw-text-gray-400 hover:tw-text-gray-600"></i></a>
+            <a href="/rekap-nilai/{{ $siswa->nis_siswa }}"><i class="fa-solid fa-chevron-left tw-text-2xl tw-text-gray-400 hover:tw-text-gray-600"></i></a>
             <i class="fa-solid fa-users tw-text-2xl tw-ml-2 tw-text-sims-500"></i>
             <h4 class="tw-font-pop tw-font-bold tw-ml-2 tw-text-gray-500">Edit Rekap Nilai Siswa</h4>
         </div>
 
-        <li class="card-data-bright tw-justify-center">
-            <div class="tw-flex-col tw-flex tw-px-7 tw-py-7 tw-mb-5 tw-mt-5 tw-ml-10">
-                <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-slate-400">NIS</span>
-                <input type="text" placeholder="NIS..." class="input-account tw-mr-32">
+        
+        <form action="/api/raport/update-nilai" method="POST">
+        @csrf
+        @method('PUT')
+        <div class="card-data-bright tw-flex tw-justify-start tw-w-5/6 tw-mx-5 tw-mt-10 tw-py-12">
+            <div class="tw-flex-col tw-flex  tw-px-7 tw-py-7 tw-mb-5 tw-mt-5 tw-mx-10">
+                <span class="tw-font-pop tw-mx-3 tw-text-sims-400 tw-font-bold">NIS</span>
+                <input type="text" placeholder="NIS..." class="input-account tw-mr-32" name="nis_siswa" value="{{ $siswa->nis_siswa }}" maxlength="10" required>
 
-                <span class="tw-font-pop tw-mx-3 tw-font-medium tw-mt-5 tw-text-slate-400">Semester</span>
-                <select name="Semester" id="" class="input-account tw-px-28">
-                <option value="">1</option>
-                <option value="">2</option>
-                <option value="">3</option>
-                <option value="">4</option>
-                <option value="">5</option>
-                <option value="">6</option>
+                <span class="tw-font-pop tw-mt-5 tw-text-sims-400 tw-font-bold">Semester</span>
+                <select name="semester" id="" class="input-account tw-px-10">
+                <option selected value="{{ $raport->semester }}">{{ $raport->semester }}</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
                 </select>
 
-                <span class="tw-font-pop tw-mx-3 tw-font-medium tw-mt-5 tw-text-slate-400">Tahun Ajaran</span>
-                <input type="text" placeholder="Tahun Ajaram..." class="input-account">
+                <span class="tw-font-pop tw-mx-3 tw-mt-5 tw-text-sims-400 tw-font-bold">Tahun Ajaran</span>
+                <input type="text" placeholder="..." class="input-account" name="thn_ajaran" value="{{ $raport->thn_ajaran }}">
             </div>
 
             <div class="tw-flex-col tw-flex tw-px-7 tw-py-7 tw-mb-5 tw-mt-5 tw-ml-4">
-                <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-slate-400">Sakit</span>
-                <input type="text" placeholder="Jumlah Sakit..." class="input-account tw-mr-32">
+                <span class="tw-font-pop tw-mx-3 tw-text-sims-400 tw-font-bold">Sakit</span>
+                <input type="number" placeholder="..." class="input-account" name="sakit" value="{{ $raport->sakit }}">
 
-                <span class="tw-font-pop tw-mx-3 tw-font-medium tw-mt-5 tw-text-slate-400">Izin</span>
-                <input type="text" placeholder="Jumlah Izin..." class="input-account">
+                <span class="tw-font-pop tw-mx-3 tw-mt-5 tw-text-sims-400 tw-font-bold">Izin</span>
+                <input type="number" placeholder="..." class="input-account" name="ijin" value="{{ $raport->ijin }}">
 
-                <span class="tw-font-pop tw-mx-3 tw-font-medium tw-mt-5 tw-text-slate-400">Alpha</span>
-                <input type="text" placeholder="Jumlah Alpha..." class="input-account">
+                <span class="tw-font-pop tw-mx-3 tw-mt-5 tw-text-sims-400 tw-font-bold">Alpha</span>
+                <input type="number" placeholder="..." class="input-account" name="alpa" value="{{ $raport->alpa }}">
             </div>
+        </div>
 
-            <div class="tw-flex-col tw-flex tw-px-7 tw-py-7 tw-mb-5 tw-mt-5 tw-ml-4">
-                <span class="tw-font-pop tw-mx-3 tw-font-lg tw-font-bold tw-text-sims-500">Apakah Siswa Naik Kelas?</span>
-                <input type="text" placeholder="Naik atau Tidak Naik..." class="input-account tw-mr-32">
-
-                <span class="tw-font-pop tw-mx-3 tw-font-lg tw-font-bold tw-mt-5 tw-text-sims-500">Naik ke Kelas</span>
-                <input type="text" placeholder="Kelas..." class="input-account">
-
-                <span class="tw-font-pop tw-mx-3 tw-font-lg tw-font-bold tw-mt-5 tw-text-sims-500">Tanggal Kenaikan</span>
-                <input type="text" placeholder="Tanggal..." class="input-account">
-            </div>
-        </li>
-
-        <li class="card-data-bright tw-mt-10">
-            <div class="tw-flex-col tw-flex tw-px-7 tw-py-7 tw-mb-5 tw-ml-10">
-                <span class="tw-font-pop tw-mx-3 tw-font-medium tw-mt-5 tw-text-slate-400">Mapel</span>
-                <select name="Mapel" id="" class="input-account tw-px-28">
-                <option value="">Basis Data</option>
-                <option value="">PPL</option>
-                <option value="">PWPB</option>
-                <option value="">PBO</option>
-                <option value="">Agama</option>
-                <option value="">B.Jepang</option>
+        <div class="card-data-bright tw-flex tw-justify-around tw-mx-5 tw-bg-sims-400 tw-shadow-lg tw-px-10 tw-my-5 tw-py-10 tw-w-5/6 tw-rounded-lg">
+            <div>
+                <label for="isNaik" class="tw-font-pop tw-mx-3 tw-font-lg tw-font-bold tw-text-white">Apakah siswa naik?</label>
+                <select type="text" id="isNaik" name="isNaik" placeholder="Naik atau Tidak Naik..." class="input-account">
+                    @if($raport->isNaik == true)
+                    <option value="true">Naik</option>
+                    @else
+                    <option value="false">Tidak Naik</option>
+                    @endif
+                    <option value="true">Naik</option>
+                    <option value="false">Tidak Naik</option>
                 </select>
             </div>
-
-            <div class="tw-flex-col tw-flex tw-px-7 tw-py-7 tw-mb-5 tw-mt-5 tw-ml-4">
-                <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-slate-400">Nilai Pengetahuan</span>
-                <input type="text" placeholder="Pengetahuan..." class="input-account tw-mr-32">
-
-                <span class="tw-font-pop tw-mx-3 tw-font-medium tw-mt-5 tw-text-slate-400">Nilai Keterampilan</span>
-                <input type="text" placeholder="Keterampilan..." class="input-account">
-
-                <span class="tw-font-pop tw-mx-3 tw-font-medium tw-mt-5 tw-text-slate-400">KKM</span>
-                <input type="text" placeholder="KKM..." class="input-account">
+            
+            <div>
+                <span class="tw-font-pop tw-mx-3 tw-font-lg tw-font-bold tw-mt-5 tw-text-white">Naik ke Kelas</span>
+                <input type="text" placeholder="Kelas..." class="input-account" name="naikKelas" value="{{ $raport->naikKelas }}">
+            </div>
+            
+            <div>
+                <span class="tw-font-pop tw-mx-3 tw-font-lg tw-font-bold tw-mt-5 tw-text-white">Tanggal Kenaikan</span>
+                <input type="date" class="input-account" name="tgl_kenaikan" value="{{ $raport->tgl_kenaikan }}">
             </div>
 
-            <div class="tw-flex-col tw-flex tw-px-7 tw-py-7 tw-mb-5 tw-mt-5 tw-ml-4">
-                <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-slate-400">Nilai US Teori</span>
-                <input type="text" placeholder="Jumlah Sakit..." class="input-account tw-mr-32">
+        </div>
 
-                <span class="tw-font-pop tw-mx-3 tw-font-medium tw-mt-5 tw-text-slate-400">Nilai US Praktek</span>
-                <input type="text" placeholder="Jumlah Izin..." class="input-account">
+        <div class="card-data-bright tw-flex tw-flex-col tw-w-5/6 tw-mx-5 tw-bg-slate-600">
 
-                <span class="tw-font-pop tw-mx-3 tw-font-medium tw-mt-5 tw-text-slate-400">AKM</span>
-                <input type="text" placeholder="AKM..." class="input-account">
+            <div class="card-data-bright tw-bg-slate-500 tw-flex tw-justify-start tw-gap-10 tw-mx-5 tw-shadow-lg tw-px-20 tw-my-5 tw-py-10 tw-rounded-lg">
+                
+                <div>
+                    <span class="tw-font-pop tw-mx-3 tw-font-lg tw-font-bold tw-mt-5 tw-text-white">Tinggal di Kelas</span>
+                    <input type="text" placeholder="" class="input-account" name="tinggal_di_kelas" value="{{ $raport->tinggal_di_Kelas }}">
+                </div>
+                
+                <div>
+                    <span class="tw-font-pop tw-mx-3 tw-font-lg tw-font-bold tw-mt-5 tw-text-white">Alasan tidak naik</span>
+                    <input type="text" class="input-account" name="alasan_tidak_naik" value="{{ $raport->alasan_tidak_naik }}">
+                </div>
+    
             </div>
 
-            <div class="tw-flex-col tw-flex tw-px-7 tw-py-7 tw-mb-5 tw-mt-5 tw-ml-4">
-                <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-slate-400">Nilai UKK Teori</span>
-                <input type="text" placeholder="Nilai Teori..." class="input-account tw-mr-32">
+            <div class="tw-flex tw-justify-start tw-font-pop tw-text-gray-100 tw-font-medium tw-mx-10 tw-my-3">
+                *Hanya diisi jika siswa tidak naik kelas
+            </div>
+        </div>
 
-                <span class="tw-font-pop tw-mx-3 tw-font-medium tw-mt-5 tw-text-slate-400">Nilai UKK Praktek</span>
-                <input type="text" placeholder="Nilai Praktek..." class="input-account">
+        
+
+        @foreach ($nilaiMapel as $nm)
+        <div class="tw-flex tw-justify-around tw-w-5/6 tw-mx-5 tw-my-10 tw-py-10 tw-bg-white tw-shadow-lg tw-rounded-lg">
+            
+            <div class="tw-bg-slate-200 tw-px-5 tw-rounded-lg">
+                <div class="tw-mt-5">
+                <span class="tw-font-pop tw-mt-5 tw-text-slate-400 tw-font-bold">Mapel</span>
+                <select name="idMapelJurusan[]" id="idMapelJurusan" class="input-account tw-px-10">
+                <option value="{{ $nm->idMapelJurusan }}">{{ $nm->MapelJurusan->MapelId }}</option>
+                </select>
+                </div>
             </div>
-        </li>
-            <div class="tw-text-end tw-mb-7">
-                <a href="#" class="tw-mx-7 tw-my-3 tw-bg-green-400 hover:tw-bg-green-600 tw-rounded-xl tw-border tw-px-7 tw-py-3 tw-font-pop tw-text-slate-100 tw-font-4xl">Edit Nilai</a>
+
+            {{-- COLUMN 1 --}}
+            <div class="tw-flex tw-flex-col tw-gap-8">
+                <div>
+                    <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-slate-400">Nilai Pengetahuan</span>
+                    <input type="number" name="nilai_pengetahuan[]" id="nilai_pengetahuan" placeholder="" class="input-account" value="{{ $nm->nilai_pengetahuan }}">
+                </div>
+
+                <div>
+                    <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-slate-400">Nilai Keterampilan</span>
+                    <input type="number" name="nilai_keterampilan[]" id="nilai_keterampilan" placeholder="" class="input-account" value="{{ $nm->nilai_keterampilan }}">
+                </div>
+
+                <div>
+                    <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-slate-400">KKM</span>
+                    <input type="number" name="kkm[]" id="kkm" placeholder="" class="input-account" value="{{ $nm->kkm }}">
+                </div>
             </div>
+            <div class="tw-flex tw-flex-col tw-gap-8">
+                <div>
+                    <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-slate-400">Nilai US Teori</span>
+                    <input type="number" name="nilai_us_teori[]" id="nilai_us_teori" placeholder="" class="input-account" value="{{ $nm->nilai_us_teori }}">
+                </div>
+
+                <div>
+                    <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-slate-400">Nilai US Praktek</span>
+                    <input type="number" name="nilai_us_praktek[]" id="nilai_us_praktek" placeholder="" class="input-account" value="{{ $nm->nilai_us_praktek }}">
+                </div>
+
+                <div>
+                    <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-slate-400">AKM</span>
+                    <input type="number" name="nilai_akm[]" id="nilai_akm" placeholder="" class="input-account" value="{{ $nm->nilai_akm }}">
+                </div>
+            </div>
+            <div class="tw-flex tw-flex-col tw-gap-8">
+                <div>
+                    <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-slate-400">Nilai UKK Teori</span>
+                    <input type="number" name="nilai_ukk_teori[]" id="nilai_ukk_teori" placeholder="" class="input-account" value="{{ $nm->nilai_ukk_teori }}">
+                </div>
+
+                <div>
+                    <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-slate-400">Nilai UKK Praktek</span>
+                    <input type="number" name="nilai_ukk_praktek[]" id="nilai_ukk_praktek" placeholder="" class="input-account" value="{{ $nm->nilai_ukk_praktek }}">
+                </div>
+            </div>
+
+        </div>
+        @endforeach
+        <div class="tw-flex justify-center">
+            <button type="submit" class="tw-bg-sims-400 tw-font-medium tw-text-white tw-py-3 tw-px-6 tw-rounded-lg">Update Data</button>
+        </div>
+    </form>
    </div>
 </div>
 @endsection

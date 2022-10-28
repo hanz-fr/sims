@@ -48,13 +48,13 @@
                               {{ $nm->MapelJurusan->MapelId }}
                           </th>
                           <td class="tw-py-4 tw-px-6">
-                            {{ $nm->kkm }}
-                          </td>
-                          <td class="tw-py-4 tw-px-6">
                             {{ $nm->nilai_pengetahuan }}
                           </td>
                           <td class="tw-py-4 tw-px-6">
                             {{ $nm->nilai_keterampilan }}
+                          </td>
+                          <td class="tw-py-4 tw-px-6">
+                            {{ $nm->kkm }}
                           </td>
                       </tr>
                   @endforeach
@@ -126,6 +126,20 @@
                           {{ $rp->tgl_kenaikan }}
                         </td>
                       </tr>
+                      <tr class="tw-bg-sims-500">
+                        <td></td>
+                        <td>
+                        </td>
+                        <td></td>
+                        <td class="tw-py-10 tw-flex tw-justify-center tw-gap-10">
+                          <div>
+                            <a href="/edit-rekap-nilai/{{ $rp->id }}" class="tw-text-white tw-text-sm tw-bg-yellow-400 hover:tw-text-white hover:tw-bg-yellow-500 tw-rounded-lg tw-py-2 tw-px-3">
+                              <i class="fa-solid fa-pen-to-square mr-2"></i>Edit
+                            </a>
+                          </div>
+                          <div></div>
+                        </td>
+                      </tr>
                   @endforeach
                 </tbody>
             </table>
@@ -151,21 +165,21 @@
               <tbody class="tw-text-base text-center">
                 @foreach (collect($siswa->raport)->where('semester', 2) as $rp)
                 @foreach ($rp->NilaiMapel as $nm)
-                    <tr class="tw-bg-white tw-border">
-                        <th scope="row"
-                            class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                            {{ $nm->MapelJurusan->MapelId }}
-                        </th>
-                        <td class="tw-py-4 tw-px-6">
-                          {{ $nm->kkm }}
-                        </td>
-                        <td class="tw-py-4 tw-px-6">
-                          {{ $nm->nilai_pengetahuan }}
-                        </td>
-                        <td class="tw-py-4 tw-px-6">
-                          {{ $nm->nilai_keterampilan }}
-                        </td>
-                    </tr>
+                <tr class="tw-bg-white tw-border">
+                  <th scope="row"
+                      class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
+                      {{ $nm->MapelJurusan->MapelId }}
+                  </th>
+                  <td class="tw-py-4 tw-px-6">
+                    {{ $nm->nilai_pengetahuan }}
+                  </td>
+                  <td class="tw-py-4 tw-px-6">
+                    {{ $nm->nilai_keterampilan }}
+                  </td>
+                  <td class="tw-py-4 tw-px-6">
+                    {{ $nm->kkm }}
+                  </td>
+              </tr>
                 @endforeach
                     <tr>
                       <th scope="row" rowspan="4" class="bg-white tw-py-2 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap tw-border">
@@ -235,6 +249,20 @@
                         {{ $rp->tgl_kenaikan }}
                       </td>
                     </tr>
+                    <tr class="tw-bg-sims-500">
+                        <td></td>
+                        <td>
+                        </td>
+                        <td></td>
+                        <td class="tw-py-10 tw-flex tw-justify-center tw-gap-10">
+                          <div>
+                            <a href="/edit-rekap-nilai/{{ $rp->id }}" class="tw-text-white tw-text-sm tw-bg-yellow-400 hover:tw-text-white hover:tw-bg-yellow-500 tw-rounded-lg tw-py-2 tw-px-3">
+                              <i class="fa-solid fa-pen-to-square mr-2"></i>Edit
+                            </a>
+                          </div>
+                          <div></div>
+                        </td>
+                      </tr>
                 @endforeach
               </tbody>
           </table>
@@ -260,21 +288,21 @@
               <tbody class="tw-text-base text-center">
                 @foreach (collect($siswa->raport)->where('semester', 3) as $rp)
                 @foreach ($rp->NilaiMapel as $nm)
-                    <tr class="tw-bg-white tw-border">
-                        <th scope="row"
-                            class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                            {{ $nm->MapelJurusan->MapelId }}
-                        </th>
-                        <td class="tw-py-4 tw-px-6">
-                          {{ $nm->kkm }}
-                        </td>
-                        <td class="tw-py-4 tw-px-6">
-                          {{ $nm->nilai_pengetahuan }}
-                        </td>
-                        <td class="tw-py-4 tw-px-6">
-                          {{ $nm->nilai_keterampilan }}
-                        </td>
-                    </tr>
+                <tr class="tw-bg-white tw-border">
+                  <th scope="row"
+                      class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
+                      {{ $nm->MapelJurusan->MapelId }}
+                  </th>
+                  <td class="tw-py-4 tw-px-6">
+                    {{ $nm->nilai_pengetahuan }}
+                  </td>
+                  <td class="tw-py-4 tw-px-6">
+                    {{ $nm->nilai_keterampilan }}
+                  </td>
+                  <td class="tw-py-4 tw-px-6">
+                    {{ $nm->kkm }}
+                  </td>
+              </tr>
                 @endforeach
                     <tr>
                       <th scope="row" rowspan="4" class="bg-white tw-py-2 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap tw-border">
@@ -338,6 +366,20 @@
                         {{ $rp->tgl_kenaikan }}
                       </td>
                     </tr>
+                    <tr class="tw-bg-sims-500">
+                        <td></td>
+                        <td>
+                        </td>
+                        <td></td>
+                        <td class="tw-py-10 tw-flex tw-justify-center tw-gap-10">
+                          <div>
+                            <a href="/edit-rekap-nilai/{{ $rp->id }}" class="tw-text-white tw-text-sm tw-bg-yellow-400 hover:tw-text-white hover:tw-bg-yellow-500 tw-rounded-lg tw-py-2 tw-px-3">
+                              <i class="fa-solid fa-pen-to-square mr-2"></i>Edit
+                            </a>
+                          </div>
+                          <div></div>
+                        </td>
+                      </tr>
                 @endforeach
               </tbody>
           </table>
@@ -363,21 +405,21 @@
               <tbody class="tw-text-base text-center">
                 @foreach (collect($siswa->raport)->where('semester', 4) as $rp)
                 @foreach ($rp->NilaiMapel as $nm)
-                    <tr class="tw-bg-white tw-border">
-                        <th scope="row"
-                            class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                            {{ $nm->MapelJurusan->MapelId }}
-                        </th>
-                        <td class="tw-py-4 tw-px-6">
-                          {{ $nm->kkm }}
-                        </td>
-                        <td class="tw-py-4 tw-px-6">
-                          {{ $nm->nilai_pengetahuan }}
-                        </td>
-                        <td class="tw-py-4 tw-px-6">
-                          {{ $nm->nilai_keterampilan }}
-                        </td>
-                    </tr>
+                <tr class="tw-bg-white tw-border">
+                  <th scope="row"
+                      class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
+                      {{ $nm->MapelJurusan->MapelId }}
+                  </th>
+                  <td class="tw-py-4 tw-px-6">
+                    {{ $nm->nilai_pengetahuan }}
+                  </td>
+                  <td class="tw-py-4 tw-px-6">
+                    {{ $nm->nilai_keterampilan }}
+                  </td>
+                  <td class="tw-py-4 tw-px-6">
+                    {{ $nm->kkm }}
+                  </td>
+              </tr>
                 @endforeach
                     <tr>
                       <th scope="row" rowspan="4" class="bg-white tw-py-2 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap tw-border">
@@ -447,6 +489,20 @@
                         {{ $rp->tgl_kenaikan }}
                       </td>
                     </tr>
+                    <tr class="tw-bg-sims-500">
+                        <td></td>
+                        <td>
+                        </td>
+                        <td></td>
+                        <td class="tw-py-10 tw-flex tw-justify-center tw-gap-10">
+                          <div>
+                            <a href="/edit-rekap-nilai/{{ $rp->id }}" class="tw-text-white tw-text-sm tw-bg-yellow-400 hover:tw-text-white hover:tw-bg-yellow-500 tw-rounded-lg tw-py-2 tw-px-3">
+                              <i class="fa-solid fa-pen-to-square mr-2"></i>Edit
+                            </a>
+                          </div>
+                          <div></div>
+                        </td>
+                      </tr>
                 @endforeach
               </tbody>
           </table>
@@ -472,21 +528,21 @@
               <tbody class="tw-text-base text-center">
                 @foreach (collect($siswa->raport)->where('semester', 5) as $rp)
                 @foreach ($rp->NilaiMapel as $nm)
-                    <tr class="tw-bg-white tw-border">
-                        <th scope="row"
-                            class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                            {{ $nm->MapelJurusan->MapelId }}
-                        </th>
-                        <td class="tw-py-4 tw-px-6">
-                          {{ $nm->kkm }}
-                        </td>
-                        <td class="tw-py-4 tw-px-6">
-                          {{ $nm->nilai_pengetahuan }}
-                        </td>
-                        <td class="tw-py-4 tw-px-6">
-                          {{ $nm->nilai_keterampilan }}
-                        </td>
-                    </tr>
+                <tr class="tw-bg-white tw-border">
+                  <th scope="row"
+                      class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
+                      {{ $nm->MapelJurusan->MapelId }}
+                  </th>
+                  <td class="tw-py-4 tw-px-6">
+                    {{ $nm->nilai_pengetahuan }}
+                  </td>
+                  <td class="tw-py-4 tw-px-6">
+                    {{ $nm->nilai_keterampilan }}
+                  </td>
+                  <td class="tw-py-4 tw-px-6">
+                    {{ $nm->kkm }}
+                  </td>
+              </tr>
                 @endforeach
                     <tr>
                       <th scope="row" rowspan="4" class="bg-white tw-py-2 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap tw-border">
@@ -556,6 +612,20 @@
                         {{ $rp->tgl_kenaikan }}
                       </td>
                     </tr>
+                    <tr class="tw-bg-sims-500">
+                        <td></td>
+                        <td>
+                        </td>
+                        <td></td>
+                        <td class="tw-py-10 tw-flex tw-justify-center tw-gap-10">
+                          <div>
+                            <a href="/edit-rekap-nilai/{{ $rp->id }}" class="tw-text-white tw-text-sm tw-bg-yellow-400 hover:tw-text-white hover:tw-bg-yellow-500 tw-rounded-lg tw-py-2 tw-px-3">
+                              <i class="fa-solid fa-pen-to-square mr-2"></i>Edit
+                            </a>
+                          </div>
+                          <div></div>
+                        </td>
+                      </tr>
                 @endforeach
               </tbody>
           </table>
@@ -689,6 +759,20 @@
                         {{ $rp->tgl_kenaikan }}
                       </td>
                     </tr>
+                    <tr class="tw-bg-sims-500">
+                        <td></td>
+                        <td>
+                        </td>
+                        <td></td>
+                        <td class="tw-py-10 tw-flex tw-justify-center tw-gap-10">
+                          <div>
+                            <a href="/edit-rekap-nilai/{{ $rp->id }}" class="tw-text-white tw-text-sm tw-bg-yellow-400 hover:tw-text-white hover:tw-bg-yellow-500 tw-rounded-lg tw-py-2 tw-px-3">
+                              <i class="fa-solid fa-pen-to-square mr-2"></i>Edit
+                            </a>
+                          </div>
+                          <div></div>
+                        </td>
+                      </tr>
                 @endforeach
               </tbody>
           </table>
