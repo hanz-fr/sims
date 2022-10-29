@@ -12,6 +12,9 @@ a {
 }
 
 @layer components {
+  .login-input {
+    @apply invalid:tw-text-pink-700 tw-font-ubuntu invalid:focus:tw-ring-pink-700 invalid:focus:tw-border-pink-700 tw-font-medium tw-px-4 tw-py-3 tw-border-2 tw-text-gray-500 tw-border-gray-300 tw-w-full tw-block tw-text-sm placeholder:tw-text-gray-400 focus:placeholder:tw-invisible focus:tw-outline-none focus:tw-ring-1 focus:tw-ring-sims-400 focus:tw-border-sims-400;
+  }
   .label-input {
     @apply tw-block tw-uppercase tw-tracking-wide tw-text-gray-500 tw-text-sm tw-font-bold tw-mb-2;
   }

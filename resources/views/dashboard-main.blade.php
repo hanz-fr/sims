@@ -4,18 +4,39 @@
 <div class="tw-mx-10">
   <div class="tw-flex sm:tw-flex-col lg:tw-flex-row tw-gap-8">
     
-    <div class="tw-w-[710px]">
+    <div class="md:tw-w-1/2 sm:tw-w-full tw-mt-8">
 
-      <section class="">
-        
+      {{-- halo deck --}}
+      <section class="tw-px-8 tw-pt-8 tw-flex tw-rounded-xl tw-w-full tw-justify-between tw-bg-no-repeat" style="background-image: url('{{ URL::asset('assets/img/bg-hello.svg') }}')">
+        <div class="tw-text-white tw-font-pop tw-h-full">
+          <h1 class="tw-text-2xl">Halo, <span class="tw-font-bold">{{ auth()->user()->nama }}</span></h1>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="tw-flex tw-justify-end">
+        <img src="{{ URL::asset('assets/img/halodek.svg') }}" class="tw-w-full tw-h-auto -tw-mb-1" alt="">
+        </div>
       </section>
 
-      {{-- card jumlah --}}
-        <div x-data="{
+      {{-- chart view --}}
+      <section class="tw-bg-white tw-shadow-md tw-h-fit tw-p-10 tw-w-full tw-mt-7">
+        <div class="tw-px-10 tw-font-pop">
+          <div class=" tw-text-gray-400 tw-font-bold">Data Jumlah Siswa SMKN 11</div>
+          <div>
+            <canvas id="myChart" class="tw-mt-4"></canvas>          
+          </div>          
+        </div>
+      </section>
+
+    </div>
+
+    <div class="lg:tw-w-[710px]">
+
+      {{-- carousel info --}}
+        <section x-data="{
           currentPage: 0,
           pages: [],
           decrementPage() {if(this.currentPage > 0){ this.currentPage--}},
-          incrementPage() {if(this.currentPage < this.pages.length -3) this.currentPage++ },
+          incrementPage() {if(this.currentPage < this.pages.length -1) this.currentPage++ },
           setIndex(value) {this.currentPage = value;},
           scrollContainer(value) {$refs.container.scrollLeft = $refs.container.scrollWidth / this.pages.length * value}
           }" 
@@ -142,7 +163,7 @@
             </div>
           </div>
           </div>
-        </div>
+        </section>
         {{-- end of card carousel --}}
         
         {{-- quick access --}}
@@ -170,6 +191,7 @@
             </ul>
         </section>
 
+        {{-- jumlah per jurusan --}}
         <section class="tw-bg-white tw-font-pop tw-shadow-md tw-flex tw-flex-col tw-my-5">
           <div class="tw-px-10 tw-mt-10">
           <div class=" tw-text-gray-400 tw-font-bold">Persebaran Murid (?) SMKN 11</div>
@@ -204,33 +226,6 @@
 
     </div>
 
-    <div class="md:tw-w-1/2 sm:tw-w-full tw-mt-5">
-      {{-- kuota pendaftar --}}
-
-      {{-- <div class="tw-bg-white tw-shadow-md tw-h-96 tw-w-full">
-      </div> --}}
-      <section class="tw-px-8 tw-pt-8 tw-flex tw-rounded-xl tw-w-full tw-justify-between tw-bg-no-repeat" style="background-image: url('{{ URL::asset('assets/img/bg-hello.svg') }}')">
-        <div class="tw-text-white tw-font-pop tw-h-full">
-          <h1 class="tw-text-2xl">Welcome, <span class="tw-font-bold">{{ auth()->user()->nama }}</span></h1>
-          <p>Lorem ipsum dolor sit amet.</p>
-        </div>
-        <div class="tw-flex tw-justify-end">
-        <img src="{{ URL::asset('assets/img/halodek.svg') }}" class="tw-w-full tw-h-auto -tw-mb-1" alt="">
-        </div>
-      </section>
-
-      {{-- chart view --}}
-      <section class="tw-bg-white tw-shadow-md tw-h-fit tw-p-10 tw-w-full tw-mt-7">
-        <div class="tw-px-10 tw-font-pop">
-          <div class=" tw-text-gray-400 tw-font-bold">Data Jumlah Siswa SMKN 11</div>
-          <div>
-            <canvas id="myChart" class="tw-mt-4"></canvas>          
-          </div>          
-        </div>
-      </section>
-
-    </div>
-
   </div>
 </div>
 @endsection
@@ -245,6 +240,7 @@ const labels = [
   '-',
   '-',
 ];
+
 const data = {
   labels: labels,
   datasets: [{
@@ -266,6 +262,5 @@ const myChart = new Chart(
     config
   );
 
-  
 </script>
 @endpush

@@ -32,11 +32,11 @@
                     Tambah Data
                 </a>
             </div> --}}
-            <div class="tw-flex tw-justify-center tw-items-center">
-                <a href=""><i class="fa-solid fa-print tw-text-xl tw-px-3 tw-py-1 tw-mb-3 tw-mx-2 tw-text-white tw-bg-sims-400 hover:tw-bg-sims-600 tw-border tw-rounded-lg"></i></a>
-                <a href=""><i class="fa-solid fa-copy tw-text-xl tw-px-3 tw-py-1 tw-mb-3 tw-mx-2 tw-text-white tw-bg-sims-400 hover:tw-bg-sims-600 tw-border tw-rounded-lg"></i></a>
-                <a href=""><i class="fa-solid fa-file-excel tw-text-xl tw-px-3 tw-py-1 tw-mb-3 tw-mx-2 tw-text-white tw-bg-sims-400 hover:tw-bg-sims-600 tw-border tw-rounded-lg"></i></a>
-                <a href=""><i class="fa-solid fa-file-pdf tw-text-xl tw-px-3 tw-py-1 tw-mb-3 tw-mx-2 tw-text-white tw-bg-sims-400 hover:tw-bg-sims-600 tw-border tw-rounded-lg"></i></a>
+            <div class="tw-flex tw-justify-center tw-items-center -tw-mb-8">
+                <a href=""><i class="fa-solid fa-print btn-export"></i></a>
+                <a href=""><i class="fa-solid fa-copy btn-export"></i></a>
+                <a href=""><i class="fa-solid fa-file-excel btn-export"></i></a>
+                <a href=""><i class="fa-solid fa-file-pdf btn-export"></i></a>
             </div>
         </div>
 
