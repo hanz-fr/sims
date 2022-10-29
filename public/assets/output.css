@@ -2387,6 +2387,11 @@ video {
   padding-right: 0.25rem;
 }
 
+.tw-py-14 {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+
 .tw-pt-8 {
   padding-top: 2rem;
 }
@@ -3692,6 +3697,10 @@ table {
 }
 
 @media (min-width: 640px) {
+  .sm\:tw-invisible {
+    visibility: hidden;
+  }
+
   .sm\:tw-mx-10 {
     margin-left: 2.5rem;
     margin-right: 2.5rem;
@@ -3718,12 +3727,38 @@ table {
     margin-top: 0.75rem;
   }
 
+  .sm\:tw-ml-4 {
+    margin-left: 1rem;
+  }
+
+  .sm\:tw-hidden {
+    display: none;
+  }
+
   .sm\:tw-w-full {
     width: 100%;
   }
 
   .sm\:tw-w-1\/2 {
     width: 50%;
+  }
+
+  .sm\:tw-w-\[\] {
+    width: ;
+  }
+
+  .sm\:tw-w-\[500px\] {
+    width: 500px;
+  }
+
+  .sm\:tw-w-\[480px\] {
+    width: 480px;
+  }
+
+  .sm\:tw-w-fit {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
   }
 
   .sm\:tw-grid-cols-1 {
@@ -3746,6 +3781,10 @@ table {
     flex-wrap: wrap;
   }
 
+  .sm\:tw-flex-nowrap {
+    flex-wrap: nowrap;
+  }
+
   .sm\:tw-gap-2 {
     gap: 0.5rem;
   }
@@ -3766,6 +3805,11 @@ table {
   .sm\:tw-px-5 {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
+  }
+
+  .sm\:tw-px-10 {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
   }
 
   .sm\:tw-text-center {
@@ -3801,6 +3845,14 @@ table {
     margin-top: 5rem;
   }
 
+  .md\:-tw-mb-8 {
+    margin-bottom: -2rem;
+  }
+
+  .md\:tw-flex {
+    display: flex;
+  }
+
   .md\:tw-h-auto {
     height: auto;
   }
@@ -3821,12 +3873,44 @@ table {
     width: 66.666667%;
   }
 
+  .md\:tw-w-\[\] {
+    width: ;
+  }
+
+  .md\:tw-w-\[680px\] {
+    width: 680px;
+  }
+
+  .md\:tw-w-\[690px\] {
+    width: 690px;
+  }
+
+  .md\:tw-w-\[px\] {
+    width: px;
+  }
+
+  .md\:tw-w-\[710px\] {
+    width: 710px;
+  }
+
+  .md\:tw-w-full {
+    width: 100%;
+  }
+
   .md\:tw-grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .md\:tw-flex-row {
     flex-direction: row;
+  }
+
+  .md\:tw-flex-wrap {
+    flex-wrap: wrap;
+  }
+
+  .md\:tw-justify-center {
+    justify-content: center;
   }
 
   .md\:tw-gap-10 {
@@ -3855,6 +3939,10 @@ table {
 }
 
 @media (min-width: 1024px) {
+  .lg\:tw-visible {
+    visibility: visible;
+  }
+
   .lg\:tw-mx-auto {
     margin-left: auto;
     margin-right: auto;
@@ -3866,6 +3954,14 @@ table {
 
   .lg\:tw-mt-0 {
     margin-top: 0px;
+  }
+
+  .lg\:tw-mt-4 {
+    margin-top: 1rem;
+  }
+
+  .lg\:tw-block {
+    display: block;
   }
 
   .lg\:tw-flex {
@@ -3892,6 +3988,38 @@ table {
     width: 20%;
   }
 
+  .lg\:tw-w-full {
+    width: 100%;
+  }
+
+  .lg\:tw-w-2\/3 {
+    width: 66.666667%;
+  }
+
+  .lg\:tw-w-1\/3 {
+    width: 33.333333%;
+  }
+
+  .lg\:tw-w-3\/4 {
+    width: 75%;
+  }
+
+  .lg\:tw-w-2 {
+    width: 0.5rem;
+  }
+
+  .lg\:tw-w-2\/6 {
+    width: 33.333333%;
+  }
+
+  .lg\:tw-w-4\/6 {
+    width: 66.666667%;
+  }
+
+  .lg\:tw-w-1\/4 {
+    width: 25%;
+  }
+
   .lg\:tw-grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -3906,6 +4034,31 @@ table {
 
   .lg\:tw-flex-col {
     flex-direction: column;
+  }
+
+  .lg\:tw-flex-wrap {
+    flex-wrap: wrap;
+  }
+
+  .lg\:tw-justify-end {
+    justify-content: flex-end;
+  }
+
+  .lg\:tw-justify-center {
+    justify-content: center;
+  }
+
+  .lg\:tw-justify-between {
+    justify-content: space-between;
+  }
+
+  .lg\:tw-gap-5 {
+    gap: 1.25rem;
+  }
+
+  .lg\:tw-px-14 {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
   }
 
   .lg\:tw-pr-8 {
@@ -3925,10 +4078,18 @@ table {
   .xl\:tw-w-2\/5 {
     width: 40%;
   }
+
+  .xl\:tw-flex-row {
+    flex-direction: row;
+  }
 }
 
 @media (min-width: 1536px) {
   .\32xl\:tw-w-2\/5 {
     width: 40%;
+  }
+
+  .\32xl\:tw-flex-row {
+    flex-direction: row;
   }
 }

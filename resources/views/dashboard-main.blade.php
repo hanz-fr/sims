@@ -2,231 +2,234 @@
 
 @section('content')
 <div class="tw-mx-10">
-  <div class="tw-flex sm:tw-flex-col lg:tw-flex-row tw-gap-8">
-    
-    <div class="md:tw-w-1/2 sm:tw-w-full tw-mt-8">
-
-      {{-- halo deck --}}
-      <section class="tw-px-8 tw-pt-8 tw-flex tw-rounded-xl tw-w-full tw-justify-between tw-bg-no-repeat" style="background-image: url('{{ URL::asset('assets/img/bg-hello.svg') }}')">
-        <div class="tw-text-white tw-font-pop tw-h-full">
-          <h1 class="tw-text-2xl">Halo, <span class="tw-font-bold">{{ auth()->user()->nama }}</span></h1>
-          <p>Lorem ipsum dolor sit amet.</p>
-        </div>
-        <div class="tw-flex tw-justify-end">
-        <img src="{{ URL::asset('assets/img/halodek.svg') }}" class="tw-w-full tw-h-auto -tw-mb-1" alt="">
-        </div>
-      </section>
-
-      {{-- chart view --}}
-      <section class="tw-bg-white tw-shadow-md tw-h-fit tw-p-10 tw-w-full tw-mt-7">
-        <div class="tw-px-10 tw-font-pop">
-          <div class=" tw-text-gray-400 tw-font-bold">Data Jumlah Siswa SMKN 11</div>
-          <div>
-            <canvas id="myChart" class="tw-mt-4"></canvas>          
-          </div>          
-        </div>
-      </section>
-
-    </div>
-
-    <div class="lg:tw-w-[710px]">
-
-      {{-- carousel info --}}
-        <section x-data="{
-          currentPage: 0,
-          pages: [],
-          decrementPage() {if(this.currentPage > 0){ this.currentPage--}},
-          incrementPage() {if(this.currentPage < this.pages.length -1) this.currentPage++ },
-          setIndex(value) {this.currentPage = value;},
-          scrollContainer(value) {$refs.container.scrollLeft = $refs.container.scrollWidth / this.pages.length * value}
-          }" 
-          @register="pages.push($event.detail.id)" class="tw-flex tw-flex-col tw-w-full">
-          <div>
-            <div class="tw-float-right tw-mt-3 tw-flex tw-flex-row">
-              <button @click="decrementPage();
-              scrollContainer(currentPage);" 
-              class="tw-text-sims-400 hover:tw-text-sims-600 tw-pr-2 tw-mt-2 tw-text-sm tw-float-right">
-              <i class="fa-solid fa-chevron-left"></i>        
-              </button>
-              <button @click="incrementPage();
-              scrollContainer(currentPage);" 
-              class="tw-text-sims-400 hover:tw-text-sims-600 tw-pr-2 tw-mt-2 tw-text-sm tw-float-right">
-              <i class="fa-solid fa-chevron-right"></i>
-              </button>
-            </div>
-          </div>
-
-          <div x-ref="container"
-            class="tw-overflow-x-scroll tw-w-full tw-flex snap tw-gap-4 tw-mt-4 ">
-
-            <div x-init="$dispatch('register', {id: 1})"  
-              x-intersect:enter.half="setIndex(0)" x-transition.duration.500ms>
-              <div class="card-dashboard">
-                <div class="tw-float-right">
-                  <a href="/siswa-keluar" class="tw-text-sims-400 hover:tw-text-sims-600 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
-                <div class="sm:tw-px-12 md:tw-px-8">
-                  <div class="tw-flex tw-flex-row">
-                    <div class="tw-text-5xl tw-text-[#FF869C]"><i class="fa-solid fa-user"></i></div>
-                    <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">{{ $mutasi }}</div>
-                  </div>
-                </div>
-                <div class=""> 
-                  <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Siswa yang keluar</div>
-                </div>
-              </div>
-            </div>
-            <div x-init="$dispatch('register', {id: 2})"  
-              x-intersect:enter.half="setIndex(1)" x-transition.duration.500ms>
-              <div class="card-dashboard">
-                <div class="tw-float-right">
-                  <a href="/siswa-masuk" class="tw-text-sims-400 hover:tw-text-sims-600 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
-                <div class="sm:tw-px-12 md:tw-px-8">
-                  <div class="tw-flex tw-flex-row">
-                    <div class="tw-text-5xl tw-text-[#6fc5bb]"><i class="fa-solid fa-user"></i></div>
-                    <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">{{ $siswaMasuk }}</div>
-                  </div>
-                </div>
-                <div> 
-                  <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Siswa Masuk</div>
-                </div>
-              </div>
-            </div>
-
-            <div x-init="$dispatch('register', {id: 3})"  
-              x-intersect:enter.half="setIndex(2)" x-transition.duration.500ms>
-              <div class="card-dashboard">
-                <div class="tw-float-right">
-                  <a href="/data-alumni" class="tw-text-sims-400 hover:tw-text-sims-600 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
-                <div class="sm:tw-px-12 md:tw-px-8">
-                  <div class="tw-flex tw-flex-row">
-                    <div class="tw-text-5xl tw-text-gray-400"><i class="fa-solid fa-user-graduate"></i></div>
-                    <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">{{ $alumni }}</div>
-                  </div>
-                </div>
-                <div class=""> 
-                  <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Alumni</div>
-                </div>
-              </div>
-            </div>
-            <div x-init="$dispatch('register', {id: 4})"  
-              x-intersect:enter.half="setIndex(3)" x-transition.duration.500ms>
-              <div class="card-dashboard">
-                <div class="tw-float-right">
-                  <a href="/siswa-keluar" class="tw-text-sims-400 hover:tw-text-sims-600 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
-                <div class="sm:tw-px-12 md:tw-px-8">
-                  <div class="tw-flex tw-flex-row">
-                    <div class="tw-text-5xl tw-text-sky-400"><i class="fa-solid fa-chalkboard-user"></i></div>
-                    <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">{{ $kelas }}</div>
-                  </div>
-                </div>
-                <div> 
-                  <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Kelas</div>
-                </div>
-              </div>
-            </div>
-            <div x-init="$dispatch('register', {id: 5})"  
-              x-intersect:enter.half="setIndex(4)" x-transition.duration.500ms>
-              <div class="card-dashboard">
-                <div class="tw-float-right">
-                  <a href="/siswa-keluar" class="tw-text-sims-400 hover:tw-text-sims-600 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
-                <div class="sm:tw-px-12 md:tw-px-8">
-                  <div class="tw-flex tw-flex-row">
-                    <div class="tw-text-5xl tw-text-indigo-400"><i class="fa-solid fa-shapes"></i></div>
-                    <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">{{ $jurusan }}</div>
-                  </div>
-                </div>
-                <div> 
-                  <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Jurusan</div>
-                </div>
-              </div>
-            </div>
-            <div x-init="$dispatch('register', {id: 6})"  
-            x-intersect:enter.half="setIndex(5)" x-transition.duration.500ms>
-            <div class="card-dashboard">
-              <div class="tw-float-right">
-                <a href="/rekap-jumlah-siswa" class="tw-text-sims-400 hover:tw-text-sims-600 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-              </div>
-              <div class="sm:tw-px-12 md:tw-px-4">
-                <div class="tw-flex tw-flex-row">
-                  <div class="tw-text-5xl tw-text-[#FFA386]"><i class="fa-solid fa-user"></i></div>
-                  <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">{{ $siswa }}</div>
-                </div>
-              </div>
-              <div class="/rekap-jumlah-siswa"> 
-                <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Jumlah Siswa</div>
-              </div>
-            </div>
-          </div>
-          </div>
-        </section>
-        {{-- end of card carousel --}}
+    <div class="tw-flex sm:tw-flex-col lg:tw-flex-row tw-gap-8">
         
-        {{-- quick access --}}
-        <section class="tw-bg-white tw-w-full tw-items-center tw-justify-center tw-shadow-md tw-font-pop tw-border tw-mt-6 tw-flex tw-h-fit tw-py-10 tw-flex-col">
-          <div class="tw-text-xl tw-text-gray-400 tw-font-bold tw-mb-10">Quick Access</div>
-            <ul class="tw-flex tw-justify-between tw-gap-3 tw-p-2 list-unstyled">
-              <a href="/rekap-jumlah-siswa" class="tw-group">
-                <li class="tw-justify-center tw-text-center tw-border-2 tw-p-6 tw-items-center tw-bg-white tw-rounded-lg group-hover:tw-text-white group-hover:tw-bg-sims-400 tw-transition-all tw-duration-300">
-                  <div class="tw-text-4xl tw-text-sims-400 group-hover:tw-text-white"><i class="fa-solid fa-graduation-cap"></i></div>
-                  <div class="tw-text-gray-500 tw-text-sm tw-font-normal tw-mt-4 group-hover:tw-text-white">Data Jumlah Siswa</div>
-                </li>
-              </a>
-              <a href="/data-induk-siswa?perPage=10" class="tw-group">
-                <li class="tw-justify-center tw-text-center tw-border-2 tw-p-6 tw-items-center tw-bg-white tw-rounded-lg group-hover:tw-bg-sims-400 group-hover:tw-text-white tw-transition-all tw-duration-300">
-                  <div class="tw-text-4xl tw-text-sims-400 group-hover:tw-text-white"><i class="fa-regular fa-book-open"></i></div>
-                  <div class="tw-text-gray-500 tw-text-sm tw-font-normal tw-mt-4 group-hover:tw-text-white">Data Induk Siswa</div>
-                </li>
-              </a>
-              <a href="/siswa-keluar" class="tw-group">
-                <li class="tw-justify-center tw-text-center tw-border-2 tw-p-6 tw-items-center tw-bg-white tw-rounded-lg group-hover:tw-bg-sims-400 group-hover:tw-text-white  tw-transition-all tw-duration-300">
-                  <div class="tw-text-4xl tw-text-sims-400 group-hover:tw-text-white"><i class="fa-solid fa-user-group"></i></div>
-                  <div class="tw-text-gray-500 tw-text-sm tw-font-normal tw-mt-4 group-hover:tw-text-white">Data Perpindahan</div>
-                </li>
-              </a>
-            </ul>
-        </section>
+        <div class="lg:tw-w-1/2 sm:tw-w-full tw-flex tw-flex-col tw-mt-8">
 
-        {{-- jumlah per jurusan --}}
-        <section class="tw-bg-white tw-font-pop tw-shadow-md tw-flex tw-flex-col tw-my-5">
-          <div class="tw-px-10 tw-mt-10">
-          <div class=" tw-text-gray-400 tw-font-bold">Persebaran Murid (?) SMKN 11</div>
-            <ul class="tw-flex tw-justify-center md:tw-gap-10 sm:tw-gap-2 list-unstyled tw-py-10">
-              <li class="tw-flex-row tw-text-center">
-                <div class="tw-text-2xl tw-text-slate-200 tw-font-normal">-</div>
-                <div class=" tw-font-light tw-text-gray-400">AKL</div>
-              </li>
-              <li class="tw-flex-row tw-text-center">
-                <div class="tw-text-2xl tw-text-slate-200 tw-font-normal">-</div>
-                <div class=" tw-font-light tw-text-gray-400">DKV</div>
-              </li>
-              <li class="tw-flex-row tw-text-center">
-                <div class="tw-text-2xl tw-text-slate-200 tw-font-normal">-</div>
-                <div class=" tw-font-light tw-text-gray-400">MPLB</div>
-              </li>
-              <li class="tw-flex-row tw-text-center">
-                <div class="tw-text-2xl tw-text-slate-200 tw-font-normal">-</div>
-                <div class=" tw-font-light tw-text-gray-400">PM</div>
-              </li>
-              <li class="tw-flex-row tw-text-center">
-                <div class="tw-text-2xl tw-text-slate-200 tw-font-normal">-</div>
-                <div class=" tw-font-light tw-text-gray-400">PPLG</div>
-              </li>
-              <li class="tw-flex-row tw-text-center">
-                <div class="tw-text-2xl tw-text-slate-200 tw-font-normal">-</div>
-                <div class=" tw-font-light tw-text-gray-400">TJKT</div>
-              </li>
-            </ul>
-          </div>
-        </section>
+            {{-- halo deck --}}
+            <section class="tw-px-8 tw-flex tw-pt-8 tw-rounded-xl tw-w-full tw-justify-between tw-bg-no-repeat" style="background-image: url('{{ URL::asset('assets/img/bg-hello.svg') }}')">
+                <div class="tw-text-white tw-font-pop tw-h-full">
+                    <h1 class="tw-text-2xl">Halo, <span class="tw-font-bold">{{ auth()->user()->nama }}</span></h1>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+                <div class="tw-flex">
+                    <img src="{{ URL::asset('assets/img/halodek.svg') }}" class="tw-w-full tw-h-auto -tw-mb-1" alt="kerja woi">
+                </div>
+            </section>
+
+            {{-- chart view --}}
+            <section class="tw-bg-white tw-shadow-md tw-h-fit tw-px-10 tw-py-14 lg:tw-w-full sm:tw-w-full tw-mt-7">
+                <div class="tw-font-pop">
+                  <div class=" tw-text-gray-400 tw-font-bold">Data Jumlah Siswa SMKN 11</div>
+                    <div>
+                        <canvas id="myChart" class="tw-mt-4"></canvas>          
+                    </div>          
+                </div>
+            </section>
+
+        </div>
+
+        <div class="lg:tw-w-[710px] sm:tw-w-full tw-h-full">
+
+            {{-- carousel info --}}
+            <section x-data="{
+              currentPage: 0,
+              pages: [],
+              decrementPage() {if(this.currentPage > 0){ this.currentPage--}},
+              incrementPage() {if(this.currentPage < this.pages.length -1) this.currentPage++ },
+              setIndex(value) {this.currentPage = value;},
+              scrollContainer(value) {$refs.container.scrollLeft = $refs.container.scrollWidth / this.pages.length * value}
+              }" 
+              @register="pages.push($event.detail.id)" class="tw-flex tw-flex-col md:tw-w-full sm:tw-w-[480px]">
+                <div>
+                    <div class="tw-float-right tw-mt-3 tw-text-sm tw-flex tw-flex-row">
+                        <button @click="decrementPage();
+                          scrollContainer(currentPage);" 
+                          class="tw-text-sims-400 hover:tw-text-sims-600 tw-pr-2 tw-mt-2">
+                          <i class="fa-solid fa-chevron-left"></i>        
+                        </button>
+                        <button @click="incrementPage();
+                          scrollContainer(currentPage);" 
+                          class="tw-text-sims-400 hover:tw-text-sims-600 tw-pr-2 tw-mt-2">
+                          <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div x-ref="container" class="tw-overflow-x-scroll tw-w-full tw-flex snap tw-gap-4 tw-mt-4 ">
+
+                    <div x-init="$dispatch('register', {id: 1})"  
+                      x-intersect:enter.half="setIndex(0)" x-transition.duration.500ms>
+                        <div class="card-dashboard">
+                            <div>
+                                <a href="/siswa-keluar" class="tw-text-sims-400 hover:tw-text-sims-600 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                            <div class="sm:tw-px-12 md:tw-px-8">
+                                <div class="tw-flex tw-flex-row">
+                                    <div class="tw-text-5xl tw-text-[#FF869C]"><i class="fa-solid fa-user"></i></div>
+                                    <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">{{ $mutasi }}</div>
+                                </div>
+                            </div>
+                            <div> 
+                                <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Siswa yang keluar</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div x-init="$dispatch('register', {id: 2})"  
+                      x-intersect:enter.half="setIndex(1)" x-transition.duration.500ms>
+                        <div class="card-dashboard">
+                            <div>
+                                <a href="/siswa-masuk" class="tw-text-sims-400 hover:tw-text-sims-600 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                            <div class="sm:tw-px-12 md:tw-px-8">
+                                <div class="tw-flex tw-flex-row">
+                                    <div class="tw-text-5xl tw-text-[#6fc5bb]"><i class="fa-solid fa-user"></i></div>
+                                    <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">{{ $siswaMasuk }}</div>
+                                </div>
+                            </div>
+                            <div> 
+                                <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Siswa Masuk</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div x-init="$dispatch('register', {id: 3})"  
+                      x-intersect:enter.half="setIndex(2)" x-transition.duration.500ms>
+                        <div class="card-dashboard">
+                            <div>
+                                <a href="/data-alumni" class="tw-text-sims-400 hover:tw-text-sims-600 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                            <div class="sm:tw-px-12 md:tw-px-8">
+                                <div class="tw-flex tw-flex-row">
+                                    <div class="tw-text-5xl tw-text-gray-400"><i class="fa-solid fa-user-graduate"></i></div>
+                                    <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">{{ $alumni }}</div>
+                                </div>
+                            </div>
+                            <div> 
+                                <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Alumni</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div x-init="$dispatch('register', {id: 4})"  
+                      x-intersect:enter.half="setIndex(3)" x-transition.duration.500ms>
+                        <div class="card-dashboard">
+                            <div>
+                                <a href="/siswa-keluar" class="tw-text-sims-400 hover:tw-text-sims-600 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                            <div class="sm:tw-px-12 md:tw-px-8">
+                                <div class="tw-flex tw-flex-row">
+                                    <div class="tw-text-5xl tw-text-sky-400"><i class="fa-solid fa-chalkboard-user"></i></div>
+                                    <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">{{ $kelas }}</div>
+                                </div>
+                            </div>
+                            <div> 
+                                <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Kelas</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div x-init="$dispatch('register', {id: 5})"  
+                      x-intersect:enter.half="setIndex(4)" x-transition.duration.500ms>
+                        <div class="card-dashboard">
+                            <div>
+                                <a href="/siswa-keluar" class="tw-text-sims-400 hover:tw-text-sims-600 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                            <div class="sm:tw-px-12 md:tw-px-8">
+                                <div class="tw-flex tw-flex-row">
+                                    <div class="tw-text-5xl tw-text-indigo-400"><i class="fa-solid fa-shapes"></i></div>
+                                    <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">{{ $jurusan }}</div>
+                                </div>
+                            </div>
+                            <div> 
+                                <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Jurusan</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div x-init="$dispatch('register', {id: 6})"  
+                      x-intersect:enter.half="setIndex(5)" x-transition.duration.500ms>
+                        <div class="card-dashboard">
+                            <div>
+                                <a href="/rekap-jumlah-siswa" class="tw-text-sims-400 hover:tw-text-sims-600 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                            <div class="sm:tw-px-12 md:tw-px-4">
+                                <div class="tw-flex tw-flex-row">
+                                    <div class="tw-text-5xl tw-text-[#FFA386]"><i class="fa-solid fa-user"></i></div>
+                                <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">{{ $siswa }}</div>
+                                </div>
+                            </div>
+                            <div class="/rekap-jumlah-siswa"> 
+                                <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Jumlah Siswa</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {{-- end of card carousel --}}
+            
+            {{-- quick access --}}
+            <section class="tw-bg-white tw-w-full tw-items-center tw-justify-center tw-shadow-md tw-font-pop tw-border tw-mt-6 tw-flex tw-h-fit tw-py-10 tw-flex-col">
+              <div class="tw-text-xl tw-text-gray-400 tw-font-bold tw-mb-10">Quick Access</div>
+                <div class="tw-flex lg:tw-flex-row sm:tw-flex-col tw-justify-between tw-gap-3 tw-p-2">
+                    <a href="/rekap-jumlah-siswa" class="tw-group">
+                        <div class="tw-justify-center tw-flex lg:tw-flex-col sm:tw-flex-row tw-text-center tw-border-2 tw-p-6 tw-items-center tw-bg-white tw-rounded-lg group-hover:tw-text-white group-hover:tw-bg-sims-400 tw-transition-all tw-duration-300">
+                            <div class="tw-text-4xl tw-text-sims-400 group-hover:tw-text-white"><i class="fa-solid fa-graduation-cap"></i></div>
+                            <div class="tw-text-gray-500 tw-text-sm tw-font-normal lg:tw-mt-4 sm:tw-ml-4 group-hover:tw-text-white">Data Jumlah Siswa</div>
+                        </div>
+                    </a>
+                    <a href="/data-induk-siswa?perPage=10" class="tw-group">
+                        <div class="tw-justify-center tw-flex lg:tw-flex-col sm:tw-flex-row  tw-text-center tw-border-2 tw-p-6 tw-items-center tw-bg-white tw-rounded-lg group-hover:tw-bg-sims-400 group-hover:tw-text-white tw-transition-all tw-duration-300">
+                            <div class="tw-text-4xl tw-text-sims-400 group-hover:tw-text-white"><i class="fa-regular fa-book-open"></i></div>
+                            <div class="tw-text-gray-500 tw-text-sm tw-font-normal lg:tw-mt-4 sm:tw-ml-4 group-hover:tw-text-white">Data Induk Siswa</div>
+                        </div>
+                    </a>
+                    <a href="/siswa-keluar" class="tw-group">
+                        <div class="tw-justify-center tw-flex lg:tw-flex-col sm:tw-flex-row  tw-text-center tw-border-2 tw-p-6 tw-items-center tw-bg-white tw-rounded-lg group-hover:tw-bg-sims-400 group-hover:tw-text-white  tw-transition-all tw-duration-300">
+                            <div class="tw-text-4xl tw-text-sims-400 group-hover:tw-text-white"><i class="fa-solid fa-user-group"></i></div>
+                            <div class="tw-text-gray-500 tw-text-sm tw-font-normal lg:tw-mt-4 sm:tw-ml-4 group-hover:tw-text-white">Data Perpindahan</div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            {{-- jumlah per jurusan --}}
+            <section class="tw-bg-white tw-font-pop tw-shadow-md tw-flex tw-flex-col tw-my-5">
+                <div class="tw-px-10 tw-mt-10">
+                  <div class=" tw-text-gray-400 tw-font-bold">Persebaran Murid (?) SMKN 11</div>
+                    <ul class="tw-flex tw-justify-center md:tw-gap-10 sm:tw-gap-2 tw-list-none tw-py-10">
+                        <li class="tw-flex-row tw-text-center">
+                            <div class="tw-text-2xl tw-text-slate-200 tw-font-normal">-</div>
+                            <div class=" tw-font-light tw-text-gray-400">AKL</div>
+                        </li>
+                        <li class="tw-flex-row tw-text-center">
+                            <div class="tw-text-2xl tw-text-slate-200 tw-font-normal">-</div>
+                            <div class=" tw-font-light tw-text-gray-400">DKV</div>
+                        </li>
+                        <li class="tw-flex-row tw-text-center">
+                            <div class="tw-text-2xl tw-text-slate-200 tw-font-normal">-</div>
+                            <div class=" tw-font-light tw-text-gray-400">MPLB</div>
+                        </li>
+                        <li class="tw-flex-row tw-text-center">
+                            <div class="tw-text-2xl tw-text-slate-200 tw-font-normal">-</div>
+                            <div class=" tw-font-light tw-text-gray-400">PM</div>
+                        </li>
+                        <li class="tw-flex-row tw-text-center">
+                            <div class="tw-text-2xl tw-text-slate-200 tw-font-normal">-</div>
+                            <div class=" tw-font-light tw-text-gray-400">PPLG</div>
+                        </li>
+                        <li class="tw-flex-row tw-text-center">
+                            <div class="tw-text-2xl tw-text-slate-200 tw-font-normal">-</div>
+                            <div class=" tw-font-light tw-text-gray-400">TJKT</div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+        </div>
 
     </div>
-
-  </div>
 </div>
 @endsection
 
