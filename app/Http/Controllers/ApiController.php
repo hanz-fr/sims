@@ -18,7 +18,7 @@ class ApiController extends Controller
     /* GLOBAL VARIABLES */
     public function __construct()
     {
-        $this->api_url = 'https://636c-103-139-10-229.ngrok.io'; // Ganti link NGROK disini
+        $this->api_url = '127.0.0.1:3000'; // Ganti link NGROK disini
     }
 
 
@@ -140,6 +140,122 @@ class ApiController extends Controller
         }
     }
 
+
+    public function editRekapNilai($RaportId) {
+
+        $raport = Http::get("{$this->api_url}/raport/{$RaportId}");
+        $nis_siswa = json_decode($raport)->result->nis_siswa;
+        $siswa = Http::get("{$this->api_url}/siswa/{$nis_siswa}");
+        $jurusanSiswa = json_decode($siswa)->result->kelas->JurusanId;
+        $mapel = Http::get("{$this->api_url}/mapel-jurusan/get/by-jurusan/$jurusanSiswa"); // get mapel by jurusan siswa
+
+        if (isset(json_decode($raport)->status)) {
+    
+            return view('induk.show-all', [
+                'status' => 'error',
+                'title' => 'data-induk',
+                'active' => 'data-induk',
+                'message' => 'Halaman yang kamu cari tidak dapat ditemukan :('
+            ]);
+
+        } else {
+            return view('rekap-nilai.edit-rekap-nilai', [
+                'title' => 'Edit Rekap Nilai',
+                'active' => 'data-induk',
+                'siswa' =>  json_decode($siswa)->result,
+                'mapel' => json_decode($mapel),
+                'raport' => json_decode($raport)->result,
+                'nilaiMapel' => json_decode($raport)->result->NilaiMapel,
+            ]);
+        }
+    }
+
+    
+    public function storeUpdateNilaiMapel(Request $request) {
+
+        $nis = $request->nis_siswa;
+
+        $siswaExist = Http::get("{$this->api_url}/siswa/{$nis}");
+
+        if ($nis) {
+
+            $message = json_decode($siswaExist)->message;
+        
+        } else {
+
+            $message = json_decode($siswaExist);
+
+        }
+
+        if ($message == 'Displaying siswa with nis : ' . $nis) {
+        
+            $isNaik = '';
+
+            if ($request->isNaik == 'true') {
+
+                $isNaik = true;
+
+            } elseif($request->isNaik == 'false') {
+
+                $isNaik = false;
+            }
+
+            $RaportId = 'RPT' . $request->nis_siswa . '-' . $request->semester;
+            $idMapelJurusan = $request->idMapelJurusan;
+            $nilai_pengetahuan = $request->nilai_pengetahuan;
+            $nilai_keterampilan = $request->nilai_keterampilan;
+            $kkm = $request->kkm;
+            $nilai_us_teori = $request->nilai_us_teori;
+            $nilai_us_praktek = $request->nilai_us_praktek;
+            $nilai_ukk_teori = $request->nilai_ukk_teori;
+            $nilai_ukk_praktek = $request->nilai_ukk_praktek;
+            $nilai_akm = $request->nilai_akm;
+            
+    
+            $response = Http::put("{$this->api_url}/raport/{$RaportId}", [
+                'nis_siswa' => $request->nis_siswa,
+                'semester' => (int)$request->semester,
+                'thn_ajaran' => (int)$request->thn_ajaran,
+                'sakit' => (int)$request->sakit,
+                'ijin' => (int)$request->ijin,
+                'alpa' => (int)$request->alpa,
+                'isNaik' => $isNaik,
+                'naikKelas' => $request->naikKelas,
+                'tgl_kenaikan' => $request->tgl_kenaikan, 
+                'tinggal_di_Kelas' => $request->tinggal_di_kelas,
+                'alasan_tidak_naik' => $request->alasan_tidak_naik
+            ]);
+    
+    
+            for ($i = 0; $i < count($idMapelJurusan); $i++) {
+                $idNM = 'NM'.$RaportId.'-'.$idMapelJurusan[$i];
+                $nilaiMapel = Http::put("{$this->api_url}/nilai-mapel/{$idNM}", [
+                    'idMapelJurusan' => $idMapelJurusan[$i],
+                    'RaportId' => $RaportId,
+                    'nilai_pengetahuan' => (int)$nilai_pengetahuan[$i],
+                    'nilai_keterampilan' => (int)$nilai_keterampilan[$i],
+                    'kkm' => (int)$kkm[$i],
+                    'nilai_us_teori' => (int)$nilai_us_teori[$i],
+                    'nilai_us_praktek' => (int)$nilai_us_praktek[$i],
+                    'nilai_ukk_teori' => (int)$nilai_ukk_teori[$i],
+                    'nilai_ukk_praktek' => (int)$nilai_ukk_praktek[$i],
+                    'nilai_akm' => (int)$nilai_akm[$i],
+                ]);
+            }
+    
+            $response->throw();
+            $nilaiMapel->throw();
+    
+            return redirect('rekap-nilai/'.$request->nis_siswa)->with('success', 'Rekap nilai berhasil diupdate.');
+        
+        } else {
+
+            return redirect('/tambah-nilai')->with('warning', 'Siswa dengan NIS tersebut tidak terdaftar.');
+
+        }
+
+
+    }
 
 
     public function storeTambahNilaiMapel(Request $request) {
@@ -266,6 +382,16 @@ class ApiController extends Controller
 
         }
     }
+
+
+    public function deleteNilaiMapel($RaportId) {
+
+        Http::delete("{$this->api_url}/raport/{$RaportId}");
+
+        return redirect()->back()->with('success', 'Rekap nilai berhasil dihapus.');
+
+    }
+
 
 
     public function viewAlumni() {

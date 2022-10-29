@@ -15,8 +15,8 @@
 
     {{-- css --}}
     <link rel="stylesheet" href="{{ URL::asset('assets/output.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('bootstrap/css/bootstrap.min.css') }}">
-        
+    <link rel="stylesheet" href="{{ URL::asset('bootstrap/css/bootstrap.min.css') }}">  
+
     {{-- icon --}}
     <link rel="stylesheet" href="{{ URL::asset('font-awesome/css/all.min.css') }}">
     <title>SIMS | {{ $title }}</title>
@@ -26,6 +26,9 @@
     @include('components.nav-sidebar')
 
     <script src="{{ URL::asset('assets/main.js') }}"></script>
+
+    {{-- ajax --}}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
     {{-- alpine js --}}
     <script defer src="https://unpkg.com/@alpinejs/intersect@3.10.3/dist/cdn.min.js"></script>

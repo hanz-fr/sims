@@ -48,13 +48,13 @@
                               {{ $nm->MapelJurusan->MapelId }}
                           </th>
                           <td class="tw-py-4 tw-px-6">
-                            {{ $nm->kkm }}
-                          </td>
-                          <td class="tw-py-4 tw-px-6">
                             {{ $nm->nilai_pengetahuan }}
                           </td>
                           <td class="tw-py-4 tw-px-6">
                             {{ $nm->nilai_keterampilan }}
+                          </td>
+                          <td class="tw-py-4 tw-px-6">
+                            {{ $nm->kkm }}
                           </td>
                       </tr>
                   @endforeach
@@ -126,6 +126,27 @@
                           {{ $rp->tgl_kenaikan }}
                         </td>
                       </tr>
+                      <tr class="tw-bg-sims-500">
+                        <td class="tw-py-10 tw-flex tw-justify-center tw-gap-10">
+                          <div class="tw-flex tw-gap-5 tw-justify-center">
+                            <a href="/edit-rekap-nilai/{{ $rp->id }}" class="tw-text-white tw-text-sm tw-bg-yellow-400 hover:tw-text-white hover:tw-bg-yellow-500 tw-rounded-lg tw-py-2 tw-px-3">
+                              <i class="fa-solid fa-pen-to-square mr-2"></i>Edit
+                            </a>
+                            <form action="/api/raport/delete/{{ $rp->id }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" 
+                                class="show_confirm tw-text-white tw-text-sm tw-bg-red-400 hover:tw-bg-red-500 hover:tw-text-white tw-rounded-lg tw-py-2 tw-px-3">
+                                <i class="fa-solid fa-trash mr-2"></i> Delete
+                            </button>
+                          </form>
+                          </div>
+                          <div></div>
+                        </td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                      </tr>
                   @endforeach
                 </tbody>
             </table>
@@ -151,21 +172,21 @@
               <tbody class="tw-text-base text-center">
                 @foreach (collect($siswa->raport)->where('semester', 2) as $rp)
                 @foreach ($rp->NilaiMapel as $nm)
-                    <tr class="tw-bg-white tw-border">
-                        <th scope="row"
-                            class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                            {{ $nm->MapelJurusan->MapelId }}
-                        </th>
-                        <td class="tw-py-4 tw-px-6">
-                          {{ $nm->kkm }}
-                        </td>
-                        <td class="tw-py-4 tw-px-6">
-                          {{ $nm->nilai_pengetahuan }}
-                        </td>
-                        <td class="tw-py-4 tw-px-6">
-                          {{ $nm->nilai_keterampilan }}
-                        </td>
-                    </tr>
+                <tr class="tw-bg-white tw-border">
+                  <th scope="row"
+                      class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
+                      {{ $nm->MapelJurusan->MapelId }}
+                  </th>
+                  <td class="tw-py-4 tw-px-6">
+                    {{ $nm->nilai_pengetahuan }}
+                  </td>
+                  <td class="tw-py-4 tw-px-6">
+                    {{ $nm->nilai_keterampilan }}
+                  </td>
+                  <td class="tw-py-4 tw-px-6">
+                    {{ $nm->kkm }}
+                  </td>
+              </tr>
                 @endforeach
                     <tr>
                       <th scope="row" rowspan="4" class="bg-white tw-py-2 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap tw-border">
@@ -234,6 +255,27 @@
                       <td class="tw-border">
                         {{ $rp->tgl_kenaikan }}
                       </td>
+                    </tr>
+                    <tr class="tw-bg-sims-500">
+                      <td class="tw-py-10 tw-flex tw-justify-center tw-gap-10">
+                        <div class="tw-flex tw-gap-5 tw-justify-center">
+                          <a href="/edit-rekap-nilai/{{ $rp->id }}" class="tw-text-white tw-text-sm tw-bg-yellow-400 hover:tw-text-white hover:tw-bg-yellow-500 tw-rounded-lg tw-py-2 tw-px-3">
+                            <i class="fa-solid fa-pen-to-square mr-2"></i>Edit
+                          </a>
+                          <form action="/api/raport/delete/{{ $rp->id }}" method="POST">
+                          @csrf
+                          @method('DELETE')
+                          <button type="submit" 
+                              class="show_confirm tw-text-white tw-text-sm tw-bg-red-400 hover:tw-bg-red-500 hover:tw-text-white tw-rounded-lg tw-py-2 tw-px-3">
+                              <i class="fa-solid fa-trash mr-2"></i> Delete
+                          </button>
+                        </form>
+                        </div>
+                        <div></div>
+                      </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                     </tr>
                 @endforeach
               </tbody>
@@ -260,21 +302,21 @@
               <tbody class="tw-text-base text-center">
                 @foreach (collect($siswa->raport)->where('semester', 3) as $rp)
                 @foreach ($rp->NilaiMapel as $nm)
-                    <tr class="tw-bg-white tw-border">
-                        <th scope="row"
-                            class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                            {{ $nm->MapelJurusan->MapelId }}
-                        </th>
-                        <td class="tw-py-4 tw-px-6">
-                          {{ $nm->kkm }}
-                        </td>
-                        <td class="tw-py-4 tw-px-6">
-                          {{ $nm->nilai_pengetahuan }}
-                        </td>
-                        <td class="tw-py-4 tw-px-6">
-                          {{ $nm->nilai_keterampilan }}
-                        </td>
-                    </tr>
+                <tr class="tw-bg-white tw-border">
+                  <th scope="row"
+                      class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
+                      {{ $nm->MapelJurusan->MapelId }}
+                  </th>
+                  <td class="tw-py-4 tw-px-6">
+                    {{ $nm->nilai_pengetahuan }}
+                  </td>
+                  <td class="tw-py-4 tw-px-6">
+                    {{ $nm->nilai_keterampilan }}
+                  </td>
+                  <td class="tw-py-4 tw-px-6">
+                    {{ $nm->kkm }}
+                  </td>
+              </tr>
                 @endforeach
                     <tr>
                       <th scope="row" rowspan="4" class="bg-white tw-py-2 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap tw-border">
@@ -337,6 +379,27 @@
                       <td class="tw-border">
                         {{ $rp->tgl_kenaikan }}
                       </td>
+                    </tr>
+                    <tr class="tw-bg-sims-500">
+                      <td class="tw-py-10 tw-flex tw-justify-center tw-gap-10">
+                        <div class="tw-flex tw-gap-5 tw-justify-center">
+                          <a href="/edit-rekap-nilai/{{ $rp->id }}" class="tw-text-white tw-text-sm tw-bg-yellow-400 hover:tw-text-white hover:tw-bg-yellow-500 tw-rounded-lg tw-py-2 tw-px-3">
+                            <i class="fa-solid fa-pen-to-square mr-2"></i>Edit
+                          </a>
+                          <form action="/api/raport/delete/{{ $rp->id }}" method="POST">
+                          @csrf
+                          @method('DELETE')
+                          <button type="submit" 
+                              class="show_confirm tw-text-white tw-text-sm tw-bg-red-400 hover:tw-bg-red-500 hover:tw-text-white tw-rounded-lg tw-py-2 tw-px-3">
+                              <i class="fa-solid fa-trash mr-2"></i> Delete
+                          </button>
+                        </form>
+                        </div>
+                        <div></div>
+                      </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                     </tr>
                 @endforeach
               </tbody>
@@ -363,21 +426,21 @@
               <tbody class="tw-text-base text-center">
                 @foreach (collect($siswa->raport)->where('semester', 4) as $rp)
                 @foreach ($rp->NilaiMapel as $nm)
-                    <tr class="tw-bg-white tw-border">
-                        <th scope="row"
-                            class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                            {{ $nm->MapelJurusan->MapelId }}
-                        </th>
-                        <td class="tw-py-4 tw-px-6">
-                          {{ $nm->kkm }}
-                        </td>
-                        <td class="tw-py-4 tw-px-6">
-                          {{ $nm->nilai_pengetahuan }}
-                        </td>
-                        <td class="tw-py-4 tw-px-6">
-                          {{ $nm->nilai_keterampilan }}
-                        </td>
-                    </tr>
+                <tr class="tw-bg-white tw-border">
+                  <th scope="row"
+                      class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
+                      {{ $nm->MapelJurusan->MapelId }}
+                  </th>
+                  <td class="tw-py-4 tw-px-6">
+                    {{ $nm->nilai_pengetahuan }}
+                  </td>
+                  <td class="tw-py-4 tw-px-6">
+                    {{ $nm->nilai_keterampilan }}
+                  </td>
+                  <td class="tw-py-4 tw-px-6">
+                    {{ $nm->kkm }}
+                  </td>
+              </tr>
                 @endforeach
                     <tr>
                       <th scope="row" rowspan="4" class="bg-white tw-py-2 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap tw-border">
@@ -446,6 +509,27 @@
                       <td class="tw-border">
                         {{ $rp->tgl_kenaikan }}
                       </td>
+                    </tr>
+                    <tr class="tw-bg-sims-500">
+                      <td class="tw-py-10 tw-flex tw-justify-center tw-gap-10">
+                        <div class="tw-flex tw-gap-5 tw-justify-center">
+                          <a href="/edit-rekap-nilai/{{ $rp->id }}" class="tw-text-white tw-text-sm tw-bg-yellow-400 hover:tw-text-white hover:tw-bg-yellow-500 tw-rounded-lg tw-py-2 tw-px-3">
+                            <i class="fa-solid fa-pen-to-square mr-2"></i>Edit
+                          </a>
+                          <form action="/api/raport/delete/{{ $rp->id }}" method="POST">
+                          @csrf
+                          @method('DELETE')
+                          <button type="submit" 
+                              class="show_confirm tw-text-white tw-text-sm tw-bg-red-400 hover:tw-bg-red-500 hover:tw-text-white tw-rounded-lg tw-py-2 tw-px-3">
+                              <i class="fa-solid fa-trash mr-2"></i> Delete
+                          </button>
+                        </form>
+                        </div>
+                        <div></div>
+                      </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                     </tr>
                 @endforeach
               </tbody>
@@ -472,21 +556,21 @@
               <tbody class="tw-text-base text-center">
                 @foreach (collect($siswa->raport)->where('semester', 5) as $rp)
                 @foreach ($rp->NilaiMapel as $nm)
-                    <tr class="tw-bg-white tw-border">
-                        <th scope="row"
-                            class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                            {{ $nm->MapelJurusan->MapelId }}
-                        </th>
-                        <td class="tw-py-4 tw-px-6">
-                          {{ $nm->kkm }}
-                        </td>
-                        <td class="tw-py-4 tw-px-6">
-                          {{ $nm->nilai_pengetahuan }}
-                        </td>
-                        <td class="tw-py-4 tw-px-6">
-                          {{ $nm->nilai_keterampilan }}
-                        </td>
-                    </tr>
+                <tr class="tw-bg-white tw-border">
+                  <th scope="row"
+                      class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
+                      {{ $nm->MapelJurusan->MapelId }}
+                  </th>
+                  <td class="tw-py-4 tw-px-6">
+                    {{ $nm->nilai_pengetahuan }}
+                  </td>
+                  <td class="tw-py-4 tw-px-6">
+                    {{ $nm->nilai_keterampilan }}
+                  </td>
+                  <td class="tw-py-4 tw-px-6">
+                    {{ $nm->kkm }}
+                  </td>
+              </tr>
                 @endforeach
                     <tr>
                       <th scope="row" rowspan="4" class="bg-white tw-py-2 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap tw-border">
@@ -555,6 +639,27 @@
                       <td class="tw-border">
                         {{ $rp->tgl_kenaikan }}
                       </td>
+                    </tr>
+                    <tr class="tw-bg-sims-500">
+                      <td class="tw-py-10 tw-flex tw-justify-center tw-gap-10">
+                        <div class="tw-flex tw-gap-5 tw-justify-center">
+                          <a href="/edit-rekap-nilai/{{ $rp->id }}" class="tw-text-white tw-text-sm tw-bg-yellow-400 hover:tw-text-white hover:tw-bg-yellow-500 tw-rounded-lg tw-py-2 tw-px-3">
+                            <i class="fa-solid fa-pen-to-square mr-2"></i>Edit
+                          </a>
+                          <form action="/api/raport/delete/{{ $rp->id }}" method="POST">
+                          @csrf
+                          @method('DELETE')
+                          <button type="submit" 
+                              class="show_confirm tw-text-white tw-text-sm tw-bg-red-400 hover:tw-bg-red-500 hover:tw-text-white tw-rounded-lg tw-py-2 tw-px-3">
+                              <i class="fa-solid fa-trash mr-2"></i> Delete
+                          </button>
+                        </form>
+                        </div>
+                        <div></div>
+                      </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                     </tr>
                 @endforeach
               </tbody>
@@ -689,6 +794,31 @@
                         {{ $rp->tgl_kenaikan }}
                       </td>
                     </tr>
+                    <tr class="tw-bg-sims-500">
+                      <td class="tw-py-10 tw-flex tw-justify-center tw-gap-10">
+                        <div class="tw-flex tw-gap-5 tw-justify-center">
+                          <a href="/edit-rekap-nilai/{{ $rp->id }}" class="tw-text-white tw-text-sm tw-bg-yellow-400 hover:tw-text-white hover:tw-bg-yellow-500 tw-rounded-lg tw-py-2 tw-px-3">
+                            <i class="fa-solid fa-pen-to-square mr-2"></i>Edit
+                          </a>
+                          <form action="/api/raport/delete/{{ $rp->id }}" method="POST">
+                          @csrf
+                          @method('DELETE')
+                          <button type="submit" 
+                              class="show_confirm tw-text-white tw-text-sm tw-bg-red-400 hover:tw-bg-red-500 hover:tw-text-white tw-rounded-lg tw-py-2 tw-px-3">
+                              <i class="fa-solid fa-trash mr-2"></i> Delete
+                          </button>
+                        </form>
+                        </div>
+                        <div></div>
+                      </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
                 @endforeach
               </tbody>
           </table>
@@ -716,4 +846,27 @@
       </div>
     </div>
     </div>
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+    <script type="text/javascript">
+ 
+      $('.show_confirm').click(function(event) {
+           var form =  $(this).closest("form");
+           var name = $(this).data("name");
+           event.preventDefault();
+           swal({
+               title: `Hapus data rekap nilai?`,
+               icon: "warning",
+               buttons: true,
+               dangerMode: true,
+           })
+           .then((willDelete) => {
+             if (willDelete) {
+               form.submit();
+             }
+           });
+       });
+   
+ </script>
 @endsection
