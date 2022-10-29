@@ -70,7 +70,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/edit-rekap-nilai/{RaportId}', [ApiController::class, 'editRekapNilai']);
     Route::post('/api/raport/tambah-nilai', [ApiController::class, 'storeTambahNilaiMapel']);
     Route::put('/api/raport/update-nilai', [ApiController::class, 'storeUpdateNilaiMapel']);
-    
+    Route::delete('/api/raport/delete/{RaportId}', [ApiController::class, 'deleteNilaiMapel']);
     
 
     /* REKAP DATA SISWA */

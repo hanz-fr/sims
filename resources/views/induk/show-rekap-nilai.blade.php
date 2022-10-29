@@ -127,18 +127,25 @@
                         </td>
                       </tr>
                       <tr class="tw-bg-sims-500">
-                        <td></td>
-                        <td>
-                        </td>
-                        <td></td>
                         <td class="tw-py-10 tw-flex tw-justify-center tw-gap-10">
-                          <div>
+                          <div class="tw-flex tw-gap-5 tw-justify-center">
                             <a href="/edit-rekap-nilai/{{ $rp->id }}" class="tw-text-white tw-text-sm tw-bg-yellow-400 hover:tw-text-white hover:tw-bg-yellow-500 tw-rounded-lg tw-py-2 tw-px-3">
                               <i class="fa-solid fa-pen-to-square mr-2"></i>Edit
                             </a>
+                            <form action="/api/raport/delete/{{ $rp->id }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" 
+                                class="show_confirm tw-text-white tw-text-sm tw-bg-red-400 hover:tw-bg-red-500 hover:tw-text-white tw-rounded-lg tw-py-2 tw-px-3">
+                                <i class="fa-solid fa-trash mr-2"></i> Delete
+                            </button>
+                          </form>
                           </div>
                           <div></div>
                         </td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
                       </tr>
                   @endforeach
                 </tbody>
@@ -250,19 +257,26 @@
                       </td>
                     </tr>
                     <tr class="tw-bg-sims-500">
+                      <td class="tw-py-10 tw-flex tw-justify-center tw-gap-10">
+                        <div class="tw-flex tw-gap-5 tw-justify-center">
+                          <a href="/edit-rekap-nilai/{{ $rp->id }}" class="tw-text-white tw-text-sm tw-bg-yellow-400 hover:tw-text-white hover:tw-bg-yellow-500 tw-rounded-lg tw-py-2 tw-px-3">
+                            <i class="fa-solid fa-pen-to-square mr-2"></i>Edit
+                          </a>
+                          <form action="/api/raport/delete/{{ $rp->id }}" method="POST">
+                          @csrf
+                          @method('DELETE')
+                          <button type="submit" 
+                              class="show_confirm tw-text-white tw-text-sm tw-bg-red-400 hover:tw-bg-red-500 hover:tw-text-white tw-rounded-lg tw-py-2 tw-px-3">
+                              <i class="fa-solid fa-trash mr-2"></i> Delete
+                          </button>
+                        </form>
+                        </div>
+                        <div></div>
+                      </td>
                         <td></td>
-                        <td>
-                        </td>
                         <td></td>
-                        <td class="tw-py-10 tw-flex tw-justify-center tw-gap-10">
-                          <div>
-                            <a href="/edit-rekap-nilai/{{ $rp->id }}" class="tw-text-white tw-text-sm tw-bg-yellow-400 hover:tw-text-white hover:tw-bg-yellow-500 tw-rounded-lg tw-py-2 tw-px-3">
-                              <i class="fa-solid fa-pen-to-square mr-2"></i>Edit
-                            </a>
-                          </div>
-                          <div></div>
-                        </td>
-                      </tr>
+                        <td></td>
+                    </tr>
                 @endforeach
               </tbody>
           </table>
@@ -367,19 +381,26 @@
                       </td>
                     </tr>
                     <tr class="tw-bg-sims-500">
+                      <td class="tw-py-10 tw-flex tw-justify-center tw-gap-10">
+                        <div class="tw-flex tw-gap-5 tw-justify-center">
+                          <a href="/edit-rekap-nilai/{{ $rp->id }}" class="tw-text-white tw-text-sm tw-bg-yellow-400 hover:tw-text-white hover:tw-bg-yellow-500 tw-rounded-lg tw-py-2 tw-px-3">
+                            <i class="fa-solid fa-pen-to-square mr-2"></i>Edit
+                          </a>
+                          <form action="/api/raport/delete/{{ $rp->id }}" method="POST">
+                          @csrf
+                          @method('DELETE')
+                          <button type="submit" 
+                              class="show_confirm tw-text-white tw-text-sm tw-bg-red-400 hover:tw-bg-red-500 hover:tw-text-white tw-rounded-lg tw-py-2 tw-px-3">
+                              <i class="fa-solid fa-trash mr-2"></i> Delete
+                          </button>
+                        </form>
+                        </div>
+                        <div></div>
+                      </td>
                         <td></td>
-                        <td>
-                        </td>
                         <td></td>
-                        <td class="tw-py-10 tw-flex tw-justify-center tw-gap-10">
-                          <div>
-                            <a href="/edit-rekap-nilai/{{ $rp->id }}" class="tw-text-white tw-text-sm tw-bg-yellow-400 hover:tw-text-white hover:tw-bg-yellow-500 tw-rounded-lg tw-py-2 tw-px-3">
-                              <i class="fa-solid fa-pen-to-square mr-2"></i>Edit
-                            </a>
-                          </div>
-                          <div></div>
-                        </td>
-                      </tr>
+                        <td></td>
+                    </tr>
                 @endforeach
               </tbody>
           </table>
@@ -490,19 +511,26 @@
                       </td>
                     </tr>
                     <tr class="tw-bg-sims-500">
+                      <td class="tw-py-10 tw-flex tw-justify-center tw-gap-10">
+                        <div class="tw-flex tw-gap-5 tw-justify-center">
+                          <a href="/edit-rekap-nilai/{{ $rp->id }}" class="tw-text-white tw-text-sm tw-bg-yellow-400 hover:tw-text-white hover:tw-bg-yellow-500 tw-rounded-lg tw-py-2 tw-px-3">
+                            <i class="fa-solid fa-pen-to-square mr-2"></i>Edit
+                          </a>
+                          <form action="/api/raport/delete/{{ $rp->id }}" method="POST">
+                          @csrf
+                          @method('DELETE')
+                          <button type="submit" 
+                              class="show_confirm tw-text-white tw-text-sm tw-bg-red-400 hover:tw-bg-red-500 hover:tw-text-white tw-rounded-lg tw-py-2 tw-px-3">
+                              <i class="fa-solid fa-trash mr-2"></i> Delete
+                          </button>
+                        </form>
+                        </div>
+                        <div></div>
+                      </td>
                         <td></td>
-                        <td>
-                        </td>
                         <td></td>
-                        <td class="tw-py-10 tw-flex tw-justify-center tw-gap-10">
-                          <div>
-                            <a href="/edit-rekap-nilai/{{ $rp->id }}" class="tw-text-white tw-text-sm tw-bg-yellow-400 hover:tw-text-white hover:tw-bg-yellow-500 tw-rounded-lg tw-py-2 tw-px-3">
-                              <i class="fa-solid fa-pen-to-square mr-2"></i>Edit
-                            </a>
-                          </div>
-                          <div></div>
-                        </td>
-                      </tr>
+                        <td></td>
+                    </tr>
                 @endforeach
               </tbody>
           </table>
@@ -613,19 +641,26 @@
                       </td>
                     </tr>
                     <tr class="tw-bg-sims-500">
+                      <td class="tw-py-10 tw-flex tw-justify-center tw-gap-10">
+                        <div class="tw-flex tw-gap-5 tw-justify-center">
+                          <a href="/edit-rekap-nilai/{{ $rp->id }}" class="tw-text-white tw-text-sm tw-bg-yellow-400 hover:tw-text-white hover:tw-bg-yellow-500 tw-rounded-lg tw-py-2 tw-px-3">
+                            <i class="fa-solid fa-pen-to-square mr-2"></i>Edit
+                          </a>
+                          <form action="/api/raport/delete/{{ $rp->id }}" method="POST">
+                          @csrf
+                          @method('DELETE')
+                          <button type="submit" 
+                              class="show_confirm tw-text-white tw-text-sm tw-bg-red-400 hover:tw-bg-red-500 hover:tw-text-white tw-rounded-lg tw-py-2 tw-px-3">
+                              <i class="fa-solid fa-trash mr-2"></i> Delete
+                          </button>
+                        </form>
+                        </div>
+                        <div></div>
+                      </td>
                         <td></td>
-                        <td>
-                        </td>
                         <td></td>
-                        <td class="tw-py-10 tw-flex tw-justify-center tw-gap-10">
-                          <div>
-                            <a href="/edit-rekap-nilai/{{ $rp->id }}" class="tw-text-white tw-text-sm tw-bg-yellow-400 hover:tw-text-white hover:tw-bg-yellow-500 tw-rounded-lg tw-py-2 tw-px-3">
-                              <i class="fa-solid fa-pen-to-square mr-2"></i>Edit
-                            </a>
-                          </div>
-                          <div></div>
-                        </td>
-                      </tr>
+                        <td></td>
+                    </tr>
                 @endforeach
               </tbody>
           </table>
@@ -760,18 +795,29 @@
                       </td>
                     </tr>
                     <tr class="tw-bg-sims-500">
+                      <td class="tw-py-10 tw-flex tw-justify-center tw-gap-10">
+                        <div class="tw-flex tw-gap-5 tw-justify-center">
+                          <a href="/edit-rekap-nilai/{{ $rp->id }}" class="tw-text-white tw-text-sm tw-bg-yellow-400 hover:tw-text-white hover:tw-bg-yellow-500 tw-rounded-lg tw-py-2 tw-px-3">
+                            <i class="fa-solid fa-pen-to-square mr-2"></i>Edit
+                          </a>
+                          <form action="/api/raport/delete/{{ $rp->id }}" method="POST">
+                          @csrf
+                          @method('DELETE')
+                          <button type="submit" 
+                              class="show_confirm tw-text-white tw-text-sm tw-bg-red-400 hover:tw-bg-red-500 hover:tw-text-white tw-rounded-lg tw-py-2 tw-px-3">
+                              <i class="fa-solid fa-trash mr-2"></i> Delete
+                          </button>
+                        </form>
+                        </div>
+                        <div></div>
+                      </td>
                         <td></td>
-                        <td>
-                        </td>
                         <td></td>
-                        <td class="tw-py-10 tw-flex tw-justify-center tw-gap-10">
-                          <div>
-                            <a href="/edit-rekap-nilai/{{ $rp->id }}" class="tw-text-white tw-text-sm tw-bg-yellow-400 hover:tw-text-white hover:tw-bg-yellow-500 tw-rounded-lg tw-py-2 tw-px-3">
-                              <i class="fa-solid fa-pen-to-square mr-2"></i>Edit
-                            </a>
-                          </div>
-                          <div></div>
-                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                       </tr>
                 @endforeach
               </tbody>
@@ -800,4 +846,27 @@
       </div>
     </div>
     </div>
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+    <script type="text/javascript">
+ 
+      $('.show_confirm').click(function(event) {
+           var form =  $(this).closest("form");
+           var name = $(this).data("name");
+           event.preventDefault();
+           swal({
+               title: `Hapus data rekap nilai?`,
+               icon: "warning",
+               buttons: true,
+               dangerMode: true,
+           })
+           .then((willDelete) => {
+             if (willDelete) {
+               form.submit();
+             }
+           });
+       });
+   
+ </script>
 @endsection

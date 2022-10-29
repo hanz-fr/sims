@@ -384,6 +384,16 @@ class ApiController extends Controller
     }
 
 
+    public function deleteNilaiMapel($RaportId) {
+
+        Http::delete("{$this->api_url}/raport/{$RaportId}");
+
+        return redirect()->back()->with('success', 'Rekap nilai berhasil dihapus.');
+
+    }
+
+
+
     public function viewAlumni() {
 
         $response = Http::get("{$this->api_url}/dashboard/alumni/get");;
