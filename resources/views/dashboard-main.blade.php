@@ -10,7 +10,7 @@
             <section class="tw-px-8 tw-flex tw-pt-8 tw-rounded-xl tw-w-full tw-justify-between tw-bg-no-repeat" style="background-image: url('{{ URL::asset('assets/img/bg-hello.svg') }}')">
                 <div class="tw-text-white tw-font-pop tw-h-full">
                     <h1 class="tw-text-2xl">Halo, <span class="tw-font-bold">{{ auth()->user()->nama }}</span></h1>
-                    <p>Lorem ipsum dolor sit amet.</p>
+                    <p class="tw-font-bold">今日は何をしますか ?</p>
                 </div>
                 <div class="tw-flex">
                     <img src="{{ URL::asset('assets/img/halodek.svg') }}" class="tw-w-full tw-h-auto -tw-mb-1" alt="kerja woi">
