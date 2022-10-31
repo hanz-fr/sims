@@ -27,9 +27,9 @@
 
             <div class="tw-flex tw-justify-between sm:tw-flex-wrap sm:tw-gap-5">
                 <div class="tw-flex">
-                    <form action="">
+                    <form action="/siswa-masuk">
                         <div class="relative tw-border-2 tw-rounded-lg focus:tw-ring-sims-400">
-                            <input type="text" class="tw-py-1 tw-px-5 tw-border-none tw-rounded-md">
+                            <input type="text" name="search" id="search" class="tw-py-1 tw-px-5 tw-border-none tw-rounded-md" value="{{ request()->search }}">
                             <i class="fa-solid fa-magnifying-glass tw-pr-5 tw-pl-3 tw-text-slate-600"></i>
                         </div>
                     </form>
@@ -51,6 +51,7 @@
                 </div>
             </div>
 
+            @if(isset($mutasi))
             <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl tw-mt-5">
                 <table class="tw-w-full tw-text-sm tw-text-center">
                     <thead class="tw-text-md tw-bg-gray-100 tw-text-basic-700 tw-border tw-font-pop">
@@ -147,7 +148,18 @@
                     </tbody>
                 </table>
             </div>
+            @else
+            <div class="tw-flex tw-justify-center">
+                <div class="tw-w-1/3 tw-my-10">
+                    <img src="{{ URL::asset('assets/img/search-not-found.png') }}" class="-tw-mb-1" alt="g ada dek">
+                    <div class="tw-font-pop tw-text-sims-500 tw-font-bold tw-text-3xl tw-text-center tw-mt-8">
+                        Data tidak dapat ditemukan.
+                    </div>
+                </div>
+            </div>
+            @endif
         </div>
+        @if(isset($mutasi))
         @foreach($mutasi as $m)
         @isset($m->id)
         <script>
@@ -164,5 +176,6 @@
         </script>
         @endisset
         @endforeach
+        @endif
     @endif
 @endsection

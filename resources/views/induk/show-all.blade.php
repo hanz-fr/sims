@@ -49,12 +49,21 @@
         <section class="tw-flex lg:tw-flex-row sm:tw-flex-col tw-justify-between sm:tw-flex-wrap sm:tw-gap-5">
             <div class="tw-flex lg:tw-flex-row sm:tw-flex-col">
 
-                <form action="/get-request"> 
+                @if( ! empty($jurusan) && ! empty($kelas))
+                <form action="/data-induk-siswa/{{ $jurusan }}/{{ $kelas }}"> 
                     <div class="relative tw-border-2 tw-rounded-lg focus:tw-ring-sims-400">
-                        <input type="text" id="search-box" class="tw-py-1 tw-px-5 tw-border-none tw-rounded-md" onkeyup="sendSiswaRes(this.value)">
+                        <input type="text" id="search" name="search" class="tw-py-1 tw-px-5 tw-border-none tw-rounded-md" value="{{ request()->search }}">
                         <i class="fa-solid fa-magnifying-glass tw-pr-5 tw-pl-3 tw-text-slate-600"></i>
                     </div>
                 </form>
+                @else
+                <form action="/data-induk-siswa"> 
+                    <div class="relative tw-border-2 tw-rounded-lg focus:tw-ring-sims-400">
+                        <input type="text" id="search" name="search" class="tw-py-1 tw-px-5 tw-border-none tw-rounded-md" value="{{ request()->search }}">
+                        <i class="fa-solid fa-magnifying-glass tw-pr-5 tw-pl-3 tw-text-slate-600"></i>
+                    </div>
+                </form>
+                @endif
                 <div class="tw-flex">
                     <div class="tw-text-base pt-1 tw-text-basic-700 tw-ml-4 tw-mr-2 tw-font-normal tw-font-pop">Show</div>
                     {{-- <div class="dropdown">
@@ -121,6 +130,7 @@
             </div>
         </section>
 
+        @if(isset($siswa))
         <section class="tw-overflow-x-auto tw-relative tw-shadow-md tw-rounded-xl tw-mt-5">
             <table class="tw-w-full tw-text-sm tw-text-center">
                 <thead class="tw-bg-gray-100 tw-text-basic-700 tw-border tw-font-pop">
@@ -162,6 +172,16 @@
                 </tbody>
             </table>
         </section>
+        @else
+        <div class="tw-flex tw-justify-center">
+            <div class="tw-w-1/3 tw-my-10">
+                <img src="{{ URL::asset('assets/img/search-not-found.png') }}" class="-tw-mb-1" alt="g ada dek">
+                <div class="tw-font-pop tw-text-sims-500 tw-font-bold tw-text-3xl tw-text-center tw-mt-8">
+                    Data tidak dapat ditemukan.
+                </div>
+            </div>
+        </div>
+        @endif
 
         {{-- pagination --}}
         <div class="tw-float-right tw-py-5 tw-px-3">

@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\File;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Session;
 
+use function PHPUnit\Framework\isEmpty;
 use function PHPUnit\Framework\isNull;
 
 class ApiController extends Controller
@@ -18,7 +19,7 @@ class ApiController extends Controller
     /* GLOBAL VARIABLES */
     public function __construct()
     {
-        $this->api_url = '127.0.0.1:3000'; // Ganti link NGROK disini
+        $this->api_url = 'https://fbee-103-139-10-44.ngrok.io'; // Ganti link NGROK disini
     }
 
 
@@ -392,17 +393,32 @@ class ApiController extends Controller
 
 
 
-    public function viewAlumni() {
+    public function viewAlumni(Request $request) {
 
-        $response = Http::get("{$this->api_url}/dashboard/alumni/get");;
+        $search = $request->search;
+
+        $response = Http::get("{$this->api_url}/dashboard/alumni/get?search={$search}");;
 
         if($response->successful()) {
 
-            return view('induk.show-alumni', [
-                'title' => 'Data Alumni',
-                'active' => 'data-induk',
-                'alumni' => json_decode($response)->result,
-            ]);
+            if (json_decode($response)->result == []) {
+
+                return view('induk.show-alumni', [
+                    'title' => 'Data Alumni',
+                    'active' => 'data-induk',
+                    'status' => 'error'
+                ]);
+
+            } else {
+
+                return view('induk.show-alumni', [
+                    'title' => 'Data Alumni',
+                    'active' => 'data-induk',
+                    'alumni' => json_decode($response)->result
+                ]);
+
+            }
+
 
         } else {
             return view('induk.show-all', [
@@ -422,19 +438,36 @@ class ApiController extends Controller
 
         $page = $request->page;
         $perPage = $request->perPage;
+        $search = $request->search;
 
-        $response = Http::get("{$this->api_url}/siswa?page={$page}&perPage={$perPage}");
+        $response = Http::get("{$this->api_url}/siswa?page={$page}&perPage={$perPage}&search={$search}");
 
         if ($response->successful()) {
             
-            return view('induk.show-all', [
-                'siswa' => json_decode($response)->data->rows,
-                'status' => 'success',
-                'response' => json_decode($response),
-                'total' => json_decode($response)->data->count,
-                'title' => 'data-induk',
-                'active' => 'data-induk',
-            ]);
+            if(json_decode($response)->data->rows == []) {
+
+                return view('induk.show-all', [
+                    'status' => 'Pencarian tidak ditemukan!',
+                    'response' => json_decode($response),
+                    'total' => json_decode($response)->data->count,
+                    'title' => 'data-induk',
+                    'active' => 'data-induk',
+                ]);
+
+            } else {
+
+
+                return view('induk.show-all', [
+                    'siswa' => json_decode($response)->data->rows,
+                    'status' => 'success',
+                    'response' => json_decode($response),
+                    'total' => json_decode($response)->data->count,
+                    'title' => 'data-induk',
+                    'active' => 'data-induk',
+                ]);
+
+            }
+
 
         } else {
 
@@ -470,23 +503,42 @@ class ApiController extends Controller
 
         $page = $request->page;
         $perPage = $request->perPage;
+        $search = $request->search;
 
-        $response = Http::get("{$this->api_url}/siswa/{$request->jurusan}/{$request->kelas}?page={$page}&perPage={$perPage}");
+        $response = Http::get("{$this->api_url}/siswa/{$request->jurusan}/{$request->kelas}?page={$page}&perPage={$perPage}&search={$search}");
 
         Session::put('page_jurusan', request()->fullUrl());
 
         if ($response->successful()) {
             
-            return view('induk.show-all', [
-                'siswa' => json_decode($response)->data->rows,
-                'status' => 'success',
-                'jurusan' => $request->jurusan,
-                'kelas' => $request->kelas,
-                'response' => json_decode($response),
-                'total' => json_decode($response)->data->count,
-                'title' => 'data-induk',
-                'active' => 'data-induk',
-            ]);
+            if(json_decode($response)->data->rows == []) {
+                
+                return view('induk.show-all', [
+                    'status' => 'Pencarian tidak ditemukan!',
+                    'jurusan' => $request->jurusan,
+                    'kelas' => $request->kelas,
+                    'response' => json_decode($response),
+                    'total' => json_decode($response)->data->count,
+                    'title' => 'data-induk',
+                    'active' => 'data-induk',
+                ]);
+
+            } else {
+
+                return view('induk.show-all', [
+                    'siswa' => json_decode($response)->data->rows,
+                    'status' => 'success',
+                    'jurusan' => $request->jurusan,
+                    'kelas' => $request->kelas,
+                    'response' => json_decode($response),
+                    'total' => json_decode($response)->data->count,
+                    'title' => 'data-induk',
+                    'active' => 'data-induk',
+                ]);
+
+            }
+
+            
 
         } else {
 
@@ -535,6 +587,7 @@ class ApiController extends Controller
 
         }
     }
+
 
     public function getRaportSiswa(Request $request) {
         $nis = $request->nis;
@@ -792,12 +845,13 @@ class ApiController extends Controller
         
         $page = $request->page;
         $perPage = $request->perPage;
+        $search = $request->search;
 
-        $response = Http::get("{$this->api_url}/mutasi/siswa-keluar?page={$page}&perPage={$perPage}");
+        $response = Http::get("{$this->api_url}/mutasi/siswa-keluar?page={$page}&perPage={$perPage}&search={$search}");
 
         if ($response->successful()) {
 
-            if (is_null(json_decode($response)->data->rows)) {
+            if (json_decode($response)->data->rows == []) {
 
                 return view('mutasi.siswa-keluar', [
                     'status' => 'success',
@@ -839,20 +893,36 @@ class ApiController extends Controller
 
         $page = $request->page;
         $perPage = $request->perPage;
+        $search = $request->search;
 
-        $response = Http::get("{$this->api_url}/mutasi/siswa-masuk?page={$page}&perPage={$perPage}");
+        $response = Http::get("{$this->api_url}/mutasi/siswa-masuk?page={$page}&perPage={$perPage}&search={$search}");
 
 
         if ($response->successful()) {
             
-            return view('mutasi.siswa-masuk', [
-                'mutasi' => json_decode($response)->data->rows,
-                'status' => 'success',
-                'response' => json_decode($response),
-                'total' => json_decode($response)->data->count,
-                'title' => 'Data Siswa Masuk',
-                'active' => 'rekap-siswa'
-            ]);
+            if(json_decode($response)->data->rows == []) {
+
+                return view('mutasi.siswa-masuk', [
+                    'status' => 'Pencarian tidak ditemukan!',
+                    'response' => json_decode($response),
+                    'total' => json_decode($response)->data->count,
+                    'title' => 'Data Siswa Masuk',
+                    'active' => 'rekap-siswa'
+                ]);
+
+            } else {
+
+                return view('mutasi.siswa-masuk', [
+                    'mutasi' => json_decode($response)->data->rows,
+                    'status' => 'success',
+                    'response' => json_decode($response),
+                    'total' => json_decode($response)->data->count,
+                    'title' => 'Data Siswa Masuk',
+                    'active' => 'rekap-siswa'
+                ]);
+
+            }
+
 
         } else {
 
