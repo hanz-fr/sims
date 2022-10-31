@@ -544,7 +544,7 @@ class ApiController extends Controller
 
         if ($response->successful()) {
             
-            return view('induk.show-rekap-nilai', [
+            return view('rekap-nilai.show-rekap-nilai', [
                 'title' => 'Rekap Nilai',
                 'active' => 'data-induk',
                 'status' => 'success',

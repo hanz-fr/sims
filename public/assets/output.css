@@ -995,6 +995,10 @@ video {
   margin: 0px;
 }
 
+.tw-m-auto {
+  margin: auto;
+}
+
 .tw-mx-10 {
   margin-left: 2.5rem;
   margin-right: 2.5rem;
@@ -3705,6 +3709,10 @@ table {
     margin-top: 2.5rem;
   }
 
+  .sm\:tw-mt-2 {
+    margin-top: 0.5rem;
+  }
+
   .sm\:tw-w-full {
     width: 100%;
   }
@@ -3866,6 +3874,11 @@ table {
   .lg\:tw-mx-auto {
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .lg\:tw-my-auto {
+    margin-top: auto;
+    margin-bottom: auto;
   }
 
   .lg\:tw-mt-4 {

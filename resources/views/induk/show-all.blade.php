@@ -47,15 +47,13 @@
     </div>
 
         <section class="tw-flex lg:tw-flex-row sm:tw-flex-col tw-justify-between sm:tw-flex-wrap sm:tw-gap-5">
-            <div class="tw-flex lg:tw-flex-row sm:tw-flex-col">
-
+            <div class="tw-flex">
                 <form action="/get-request"> 
                     <div class="relative tw-border-2 tw-rounded-lg focus:tw-ring-sims-400">
                         <input type="text" id="search-box" class="tw-py-1 tw-px-5 tw-border-none tw-rounded-md" onkeyup="sendSiswaRes(this.value)">
                         <i class="fa-solid fa-magnifying-glass tw-pr-5 tw-pl-3 tw-text-slate-600"></i>
                     </div>
                 </form>
-                <div class="tw-flex">
                     <div class="tw-text-base pt-1 tw-text-basic-700 tw-ml-4 tw-mr-2 tw-font-normal tw-font-pop">Show</div>
                     {{-- <div class="dropdown">
                         <button class="dropdown-toggle tw-bg-gray-300 tw-font-bold tw-py-1 tw-px-3 tw-rounded-xl tw-text" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -75,44 +73,43 @@
                     </select>
                     <div class="tw-text-base pt-1 tw-mx-2 tw-font-pop tw-font-normal tw-text-basic-700">Entries</div>
                 </div>
-
-            </div>
-            <div class="tw-flex">
-                <button type="button" data-modal-toggle="popup-modal" class="tw-bg-[#28A745] tw-text-white hover:tw-text-white hover:tw-bg-green-700 tw-font-pop tw-rounded-lg tw-px-5 tw-py-2">
-                    <i class="fa-solid fa-circle-plus tw-pr-3"></i>
-                    Tambah Data
-                </button>
-
-
-                <div id="popup-modal" tabindex="-1"
-                  class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full">
-                    <div class="relative p-4 w-full max-w-md h-full md:h-auto">
-                        <div class="tw-relative tw-bg-white tw-rounded-lg tw-shadow dark:tw-bg-slate-100 tw-font-pop">
-                            <button type="button"
-                              class="tw-absolute tw-top-3 tw-right-2.5 tw-text-gray-400 tw-bg-transparent hover:tw-bg-gray-200 hover:tw-text-gray-900 tw-rounded-lg tw-text-sm tw-p-1.5 tw-ml-auto tw-inline-flex tw-items-center"
-                              data-modal-toggle="popup-modal">
-                                <svg aria-hidden="true" class="tw-w-5 tw-h-5" fill="currentColor"
-                                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                      d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                      clip-rule="evenodd">
-                                    </path>
-                                </svg>
-                                <span class="sr-only">Close modal</span>
-                            </button>
-                            <div class="tw-p-6">
-                                <div class="tw-mb-8 tw-mt-5 tw-flex tw-justify-center tw-text-2xl tw-font-semibold tw-text-sims-400">
-                                    Add Data
-                                </div>
-                                <div class="tw-gap-3 tw-grid">
-                                    <a href="/tambah-data" data-modal-toggle="popup-modal"
-                                      class="tw-text-white tw-justify-center tw-bg-sims-400 tw-w-full hover:tw-bg-sims-500 hover:tw-text-white tw-font-medium tw-text-xl tw-inline-flex tw-items-center tw-py-8 tw-text-center">
-                                        Input Data
-                                    </a>
-                                    <a href="" data-modal-toggle="popup-modal"
-                                      class="tw-text-white tw-justify-center tw-bg-[#1D6F42] tw-w-full hover:tw-bg-green-800 hover:tw-text-white tw-font-medium tw-text-xl tw-inline-flex tw-items-center tw-py-8 tw-text-center">
-                                        Import data dari excel
-                                    </a>
+                <div class="tw-flex">
+                    <button type="button" data-modal-toggle="popup-modal" class="tw-bg-[#28A745] tw-text-white hover:tw-text-white hover:tw-bg-green-700 tw-font-pop tw-rounded-lg tw-px-5 tw-py-2">
+                        <i class="fa-solid fa-circle-plus tw-pr-3"></i>
+                        Tambah Data
+                    </button>
+    
+    
+                    <div id="popup-modal" tabindex="-1"
+                      class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full">
+                        <div class="relative p-4 w-full max-w-md h-full md:h-auto">
+                            <div class="tw-relative tw-bg-white tw-rounded-lg tw-shadow dark:tw-bg-slate-100 tw-font-pop">
+                                <button type="button"
+                                  class="tw-absolute tw-top-3 tw-right-2.5 tw-text-gray-400 tw-bg-transparent hover:tw-bg-gray-200 hover:tw-text-gray-900 tw-rounded-lg tw-text-sm tw-p-1.5 tw-ml-auto tw-inline-flex tw-items-center"
+                                  data-modal-toggle="popup-modal">
+                                    <svg aria-hidden="true" class="tw-w-5 tw-h-5" fill="currentColor"
+                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                          d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                          clip-rule="evenodd">
+                                        </path>
+                                    </svg>
+                                    <span class="sr-only">Close modal</span>
+                                </button>
+                                <div class="tw-p-6">
+                                    <div class="tw-mb-8 tw-mt-5 tw-flex tw-justify-center tw-text-2xl tw-font-semibold tw-text-sims-400">
+                                        Add Data
+                                    </div>
+                                    <div class="tw-gap-3 tw-grid">
+                                        <a href="/tambah-data" data-modal-toggle="popup-modal"
+                                          class="tw-text-white tw-justify-center tw-bg-sims-400 tw-w-full hover:tw-bg-sims-500 hover:tw-text-white tw-font-medium tw-text-xl tw-inline-flex tw-items-center tw-py-8 tw-text-center">
+                                            Input Data
+                                        </a>
+                                        <a href="" data-modal-toggle="popup-modal"
+                                          class="tw-text-white tw-justify-center tw-bg-[#1D6F42] tw-w-full hover:tw-bg-green-800 hover:tw-text-white tw-font-medium tw-text-xl tw-inline-flex tw-items-center tw-py-8 tw-text-center">
+                                            Import data dari excel
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

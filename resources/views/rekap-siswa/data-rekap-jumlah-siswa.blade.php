@@ -4,7 +4,7 @@
     <div class="tw-mx-10">
         <div class="tw-flex tw-justify-between tw-gap-5 tw-mt-8">
             <div class="tw-flex tw-flex-col">
-                <h4 class="tw-font-pop tw-font-bold tw-mt-6 tw-text-sims-400">Data Rekap Jumlah Siswa</h4>
+                <h4 class="title-main">Data Rekap Jumlah Siswa</h4>
             </div>
         </div>
 
@@ -12,7 +12,7 @@
             openTab: 1,
             activeClasses: 'tw-bg-white tw-border tw-border-b-white',
             inactiveClasses: 'tw-bg-gray-200 tw-border'
-        }" class="">
+            }" class="">
             <div class="tw-float-right">
                 <a href=""
                     class="tw-bg-sims-400 tw-text-white hover:tw-text-white tw-font-pop hover:tw-bg-sims-600 tw-px-5 tw-py-2 tw-rounded-lg tw-mr-5">Ekspor</a>
@@ -22,29 +22,25 @@
             <ul class="tw-flex mb-0 mt-4 tw--ml-6 tw-font-pop tw-text-xl">
                 <li @click="openTab = 1" :class="{ 'tw--mb-px': openTab === 1 }">
                     <button :class="openTab === 1 ? activeClasses : inactiveClasses"
-                        class="tw-rounded-t-2xl tw-text-gray-500 hover:tw-text-sims-400 tw-inline-block tw-py-2 tw-px-10 tw-font-semibold"
-                        href="#">
+                        class="tw-rounded-t-2xl tw-text-gray-500 hover:tw-text-sims-400 tw-inline-block tw-py-2 tw-px-10 tw-font-semibold">
                         Semua Kelas
                     </button>
                 </li>
                 <li @click="openTab = 2" :class="{ 'tw--mb-px': openTab === 2 }">
                     <button :class="openTab === 2 ? activeClasses : inactiveClasses"
-                        class="tw-rounded-t-2xl tw-text-gray-500 hover:tw-text-sims-400 tw-inline-block tw-py-2 tw-px-10 tw-font-semibold"
-                        href="#">
+                        class="tw-rounded-t-2xl tw-text-gray-500 hover:tw-text-sims-400 tw-inline-block tw-py-2 tw-px-10 tw-font-semibold">
                         X
                     </button>
                 </li>
                 <li @click="openTab = 3" :class="{ 'tw--mb-px': openTab === 3 }">
                     <button :class="openTab === 3 ? activeClasses : inactiveClasses"
-                        class="tw-rounded-t-2xl tw-text-gray-500 hover:tw-text-sims-400 tw-inline-block tw-py-2 tw-px-10 tw-font-semibold"
-                        href="#">
+                        class="tw-rounded-t-2xl tw-text-gray-500 hover:tw-text-sims-400 tw-inline-block tw-py-2 tw-px-10 tw-font-semibold">
                         XI
                     </button>
                 </li>
                 <li @click="openTab = 4" :class="{ 'tw--mb-px': openTab === 4 }">
                     <button :class="openTab === 4 ? activeClasses : inactiveClasses"
-                        class="tw-rounded-t-2xl tw-text-gray-500 hover:tw-text-sims-400 tw-inline-block tw-py-2 tw-px-10 tw-font-semibold"
-                        href="#">
+                        class="tw-rounded-t-2xl tw-text-gray-500 hover:tw-text-sims-400 tw-inline-block tw-py-2 tw-px-10 tw-font-semibold">
                         XII
                     </button>
                 </li>
