@@ -2,20 +2,10 @@
 
 @section('content')
 <div class="tw-mx-10">
-    <div class="tw-flex tw-justify-between tw-gap-5 tw-mt-8">
-        <div class="tw-flex tw-flex-col">
-            <h4 class="tw-font-pop tw-font-bold tw-mt-6 tw-mb-6 tw-text-sims-400">Data Siswa Tidak Naik Kelas</h4>
-        </div>
-
-        <!-- <div class="tw-flex tw-justify-center tw-items-center -tw-mb-8">
-            <a href=""><i class="fa-solid fa-print btn-export"></i></a>
-            <a href=""><i class="fa-solid fa-copy btn-export"></i></a>
-            <a href=""><i class="fa-solid fa-file-excel btn-export"></i></a>
-            <a href=""><i class="fa-solid fa-file-pdf btn-export"></i></a>
-        </div> -->
+    <div class="tw-flex tw-mt-8">
+        <h4 class="title-main">Data Siswa Tidak Naik Kelas</h4>
     </div>
-
-        <div class="tw-flex tw-justify-between sm:tw-flex-wrap sm:tw-gap-5">
+        <div class="tw-flex tw-justify-between tw-mt-3 sm:tw-flex-wrap sm:tw-gap-5">
             <div class="tw-flex">
                 <form action=""> 
                     <div class="relative tw-border-2 tw-rounded-lg focus:tw-ring-sims-400">
@@ -31,13 +21,12 @@
                     <option value="" class="tw-bg-white">100</option>
                 </select>
                 <div class="tw-text-base pt-1 tw-mx-2 tw-font-pop tw-font-normal tw-text-basic-700">Entries</div>
-
             </div>
-            <div class="tw-flex">
-                <a href=""><i class="fa-solid fa-print tw-text-xl tw-px-3 tw-py-1 tw-mx-2 tw-text-white tw-bg-sims-400 hover:tw-bg-[#3b7a7a] tw-border tw-rounded-lg"></i></a>
-                <a href=""><i class="fa-solid fa-copy tw-text-xl tw-px-3 tw-py-1 tw-mx-2 tw-text-white tw-bg-sims-400 hover:tw-bg-[#3b7a7a] tw-border tw-rounded-lg"></i></a>
-                <a href=""><i class="fa-solid fa-file-excel tw-text-xl tw-px-3 tw-py-1 tw-mx-2 tw-text-white tw-bg-sims-400 hover:tw-bg-[#3b7a7a] tw-border tw-rounded-lg"></i></a>
-                <a href=""><i class="fa-solid fa-file-pdf tw-text-xl tw-px-3 tw-py-1 tw-mx-2 tw-text-white tw-bg-sims-400 hover:tw-bg-[#3b7a7a] tw-border tw-rounded-lg"></i></a>
+            <div class="tw-flex md:tw-justify-center tw-items-center md:-tw-mb-8">
+                <a href=""><i class="fa-solid fa-print btn-export"></i></a>
+                <a href=""><i class="fa-solid fa-copy btn-export"></i></a>
+                <a href=""><i class="fa-solid fa-file-excel btn-export"></i></a>
+                <a href=""><i class="fa-solid fa-file-pdf btn-export"></i></a>
             </div>
         </div>
 

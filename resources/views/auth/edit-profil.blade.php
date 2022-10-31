@@ -4,7 +4,7 @@
 <div class="tw-m-10">
     <div x-data="{ openTab: 1, activeClasses: 'tw-text-sims-400', inactiveClasses: 'tw-text-gray-500'}" class="tw-flex lg:tw-flex-row sm:tw-flex-col tw-gap-5">
         <div class="lg:tw-w-1/5 sm:tw-w-full tw-bg-white tw-py-20 tw-px-10 tw-shadow-md tw-flex tw-flex-col">
-            <ul class="tw-flex tw-text-left mb-0 mt-3 tw--ml-6">
+            <ul class="tw-flex lg:tw-flex-col sm:tw-flex-row tw-text-left mb-0 mt-3 tw--ml-6">
                 <li @click="openTab = 1" :class="{ 'tw--mb-px': openTab === 1 }" class="tw--mb-px tw-mr-1">
                     <button :class="openTab === 1 ? activeClasses : inactiveClasses" class="hover:tw-text-sims-400 tw-text-lg tw-inline-block tw-py-2 tw-px-4 tw-font-semibold tw-font-pop" href="#">
                         <i class="fa-solid fa-address-card tw-mr-3 tw-text-lg"></i>Edit Profil

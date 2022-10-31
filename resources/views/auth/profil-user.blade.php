@@ -68,7 +68,7 @@
             </div>
 
             {{-- activity history --}}
-            <div class="lg:tw-w-2/5 sm:tw-w-full sm:tw-mt-3 lg:tw-mt-0 tw-bg-white tw-shadow-md tw-px-16 tw-pt-10 tw-pb-24 tw-font-pop">
+            <div class="lg:tw-w-2/5 sm:tw-w-full lg:tw-mt-0 tw-bg-white tw-shadow-md tw-px-16 tw-pt-10 tw-pb-24 tw-font-pop">
                 <h1 class="tw-text-3xl tw-font-bold tw-text-gray-300 tw-text-center tw-mb-20">Activity</h1>
                 <div class="tw-justify-between tw-flex">
                     <ul class="tw-list-none tw-text-xl tw-font-bold tw-text-admin-300 tw-flex tw-flex-col tw-gap-5">

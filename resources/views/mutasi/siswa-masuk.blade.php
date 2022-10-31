@@ -13,19 +13,22 @@
         </div>
     @else
         <div class="tw-mx-10">
-            <div class="tw-flex tw-justify-between tw-gap-5 tw-mt-8">
-                <div class="tw-flex tw-flex-col">
+            <div class="tw-flex lg:tw-flex-row sm:tw-flex-col tw-justify-between tw-mt-8">
+                <div class="tw-flex">
                     <h4 class="tw-font-pop tw-font-bold tw-mt-6 tw-text-sims-400">Data Siswa Masuk</h4>
                 </div>
-                <div class="tw-flex tw-justify-center tw-items-center">
-                    <a href=""><i class="fa-solid fa-print btn-export"></i></a>
-                    <a href=""><i class="fa-solid fa-copy btn-export"></i></a>
-                    <a href=""><i class="fa-solid fa-file-excel btn-export"></i></a>
-                    <a href=""><i class="fa-solid fa-file-pdf btn-export"></i></a>
+                <div>
+                    <div class="tw-flex md:tw-justify-center tw-items-center md:-tw-mb-8">
+                        <a href=""><i class="fa-solid fa-print btn-export"></i></a>
+                        <a href=""><i class="fa-solid fa-copy btn-export"></i></a>
+                        <a href=""><i class="fa-solid fa-file-excel btn-export"></i></a>
+                        <a href=""><i class="fa-solid fa-file-pdf btn-export"></i></a>
+                    </div>
                 </div>
             </div>
 
-            <div class="tw-flex tw-justify-between sm:tw-flex-wrap sm:tw-gap-5">
+
+            <div class="tw-flex tw-justify-between lg:tw-flex-row sm:tw-flex-col sm:tw-gap-5">
                 <div class="tw-flex">
                     <form action="/siswa-masuk">
                         <div class="relative tw-border-2 tw-rounded-lg focus:tw-ring-sims-400">
@@ -46,7 +49,7 @@
                     <a href="/create-mutasi-masuk"
                         class="tw-bg-[#28A745] tw-text-white hover:tw-text-white hover:tw-bg-green-700 tw-font-pop tw-rounded-lg tw-px-5 tw-py-2">
                         <i class="fa-solid fa-circle-plus tw-pr-3"></i>
-                        Tambah Data
+                            Tambah Data
                     </a>
                 </div>
             </div>
