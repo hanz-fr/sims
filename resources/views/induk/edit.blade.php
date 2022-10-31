@@ -29,7 +29,7 @@
   @endif
 
     <div class="tw-flex tw-flex-col tw-rounded-[35px] tw-bg-white tw-w-4/5 tw-p-8 tw-h-full tw-mx-auto tw-my-14 tw-shadow-lg">
-        <a href="/data-induk-siswa" class="tw-text-sims-400 tw-text-3xl tw-w-min hover:tw-text-sims-500"><i class="fa-solid fa-chevron-left"></i></a>
+        <a href="{{ url()->previous() }}" class="tw-text-sims-400 tw-text-3xl tw-w-min hover:tw-text-sims-500"><i class="fa-solid fa-chevron-left"></i></a>
         <h3 class="tw-font-pop tw-font-semibold tw-mt-6 tw-text-sims-400 tw-text-center">Edit Data Siswa</h3>
         
         <form method="POST" action="/api/siswa/update/{{ $siswa->nis_siswa }}" enctype="multipart/form-data"  
@@ -515,6 +515,43 @@
                     <input class="input-data" id="tanggal_ijazah_smk" type="date" name="tanggal_ijazah_smk" value="{{ $siswa->tgl_ijazah_smk }}">
                 </div>
             </div>
+
+            {{-- keterangan jasmani dan kesehatan siswa --}}
+            <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims-400">I.  Keterangan Jasmani dan Kesehatan Siswa</div>
+            <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
+                <div class="tw-w-full tw-px-3">
+                    <label class="label-input" for="berat_badan">
+                        Berat Badan   (.kg)
+                    </label>
+                    <input class="input-data" id="berat_badan" type="number" name="berat_badan" value="{{ $siswa->berat_badan }}">
+                </div>
+            </div>
+            <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
+                <div class="tw-w-full tw-px-3">
+                    <label class="label-input" for="tinggi_badan">
+                        Tinggi Badan   (.cm)
+                    </label>
+                    <input class="input-data" id="tinggi_badan" type="number" name="tinggi_badan" value="{{ $siswa->tinggi_badan }}">
+                </div>
+            </div>
+            <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
+                <div class="tw-w-full tw-px-3">
+                    <label class="label-input" for="lingkar_kepala">
+                        Lingkar Kepala   (.cm)
+                    </label>
+                    <input class="input-data" id="lingkar_kepala" type="number" name="lingkar_kepala" value="{{ $siswa->lingkar_kepala }}">
+                </div>
+            </div>
+            <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
+                <div class="tw-w-full tw-px-3">
+                    <label class="label-input" for="golongan_darah">
+                        Golongan Darah
+                    </label>
+                    <input class="input-data" id="golongan_darah" type="text" name="golongan_darah" value="{{ $siswa->golongan_darah }}">
+                </div>
+            </div>
+    
+
             {{-- keterangan lain2 --}}
             <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims-400">I.  Keterangan Lain-lain</div>
             <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">

@@ -484,6 +484,42 @@
                                                         {{ $siswa->keterangan_lain }}
                                                     </td>
                                                 </tr>
+                                                <tr class="tw-bg-gray-100 tw-border">
+                                                    <th scope="row"
+                                                        class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-whitespace-nowrap">
+                                                        Berat Badan
+                                                    </th>
+                                                    <td class="tw-py-4 tw-px-6">
+                                                        {{ $siswa->berat_badan }}
+                                                    </td>
+                                                </tr>
+                                                <tr class="tw-bg-gray-100 tw-border">
+                                                    <th scope="row"
+                                                        class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-whitespace-nowrap">
+                                                        Tinggi Badan
+                                                    </th>
+                                                    <td class="tw-py-4 tw-px-6">
+                                                        {{ $siswa->tinggi_badan }}
+                                                    </td>
+                                                </tr>
+                                                <tr class="tw-bg-gray-100 tw-border">
+                                                    <th scope="row"
+                                                        class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-whitespace-nowrap">
+                                                        Lingkar Kepala
+                                                    </th>
+                                                    <td class="tw-py-4 tw-px-6">
+                                                        {{ $siswa->lingkar_kepala }}
+                                                    </td>
+                                                </tr>
+                                                <tr class="tw-bg-gray-100 tw-border">
+                                                    <th scope="row"
+                                                        class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-whitespace-nowrap">
+                                                        Golongan Darah
+                                                    </th>
+                                                    <td class="tw-py-4 tw-px-6">
+                                                        {{ $siswa->golongan_darah }}
+                                                    </td>
+                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>
