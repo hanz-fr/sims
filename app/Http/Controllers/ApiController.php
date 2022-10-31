@@ -49,7 +49,6 @@ class ApiController extends Controller
                 'message' => 'Halaman yang kamu cari tidak dapat ditemukan :('
             ]);
         }
-
     }
 
     public function rekapSiswaDashboard() {
@@ -103,7 +102,6 @@ class ApiController extends Controller
                 'active' => 'data-induk',
                 'message' => 'Halaman yang kamu cari tidak dapat ditemukan :('
             ]);
-
         }
     }
 
@@ -657,14 +655,14 @@ class ApiController extends Controller
                 'tgl_meninggalkan_sekolah' => $request->tgl_meninggalkan_sekolah,
                 'alasan_meninggalkan_sekolah' => $request->alasan_meninggalkan_sekolah,
                 'foto' => $fileName,
-                'berat_badan' => null,
-                'tinggi_badan' => null,
-                'lingkar_kepala' => null,
-                'tgl_masuk' => null,
+                'berat_badan' => (int)$request->berat_badan,
+                'tinggi_badan' => (int)$request->tinggi_badan,
+                'lingkar_kepala' => (int)$request->lingkar_kepala,
+                'golongan_darah' => $request->golongan_darah,
+                'tgl_masuk' => $request->tgl_masuk,
                 'isAlumni' => false,
             ]);
 
-            return $response;
 
             $response->throw();
 
@@ -757,10 +755,10 @@ class ApiController extends Controller
             'tgl_meninggalkan_sekolah' => $request->tgl_meninggalkan_sekolah,
             'alasan_meninggalkan_sekolah' => $request->alasan_meninggalkan_sekolah,
             'foto' => $fileName,
-            'berat_badan' => null,
-            'tinggi_badan' => null,
-            'lingkar_kepala' => null,
-            'tgl_masuk' => null,
+            'berat_badan' => (int)$request->berat_badan,
+            'tinggi_badan' => (int)$request->tinggi_badan,
+            'lingkar_kepala' => (int)$request->lingkar_kepala,
+            'golongan_darah' => $request->golongan_darah,
             'isAlumni' => false,
         ]);
 
