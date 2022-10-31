@@ -485,6 +485,23 @@
             <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
                 <div class="tw-w-full tw-px-3">
                     <label class="label-input" for="nomor_ijazah_smk">
+                        Apakah siswa sudah lulus?
+                    </label>
+                    <div class="tw-flex tw-gap-3">
+                        <div class="tw-flex tw-items-center">
+                            <input id="default-radio-1" type="radio" name="default-radio" value="" class="tw-w-4 tw-h-4 tw-bg-gray-100 tw-border-gray-300 focus:tw-ring-2">
+                            <label for="default-radio-1" class="tw-ml-2 tw-text-sm tw-font-medium tw-text-basic-700">Ya</label>
+                        </div>
+                        <div class="tw-flex tw-items-center">
+                            <input id="default-radio-2" type="radio" name="default-radio" value="" class="tw-w-4 tw-h-4 tw-bg-gray-100 tw-border-gray-300 focus:tw-ring-2">
+                            <label for="default-radio-2" class="tw-ml-2 tw-text-sm tw-font-medium tw-text-basic-700">Tidak</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
+                <div class="tw-w-full tw-px-3">
+                    <label class="label-input" for="nomor_ijazah_smk">
                         Nomor Ijazah
                     </label>
                     <input class="input-data" id="nomor_ijazah_smk" type="text" name="nomor_ijazah_smk" value="{{ $siswa->no_ijazah_smk }}">
