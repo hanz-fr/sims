@@ -78,7 +78,7 @@
         </div>
         @else
         <div class="tw-flex tw-justify-center">
-            <div class="tw-w-1/3 tw-my-10">
+            <div class="tw-w-1/3 tw-my-28">
                 <img src="{{ URL::asset('assets/img/search-not-found.png') }}" class="-tw-mb-1" alt="g ada dek">
                 <div class="tw-font-pop tw-text-sims-500 tw-font-bold tw-text-3xl tw-text-center tw-mt-8">
                     Data tidak dapat ditemukan.

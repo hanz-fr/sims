@@ -19,7 +19,7 @@ class ApiController extends Controller
     /* GLOBAL VARIABLES */
     public function __construct()
     {
-        $this->api_url = 'https://fbee-103-139-10-44.ngrok.io'; // Ganti link NGROK disini
+        $this->api_url = '127.0.0.1:3000'; // Ganti link NGROK disini
     }
 
 
@@ -83,17 +83,30 @@ class ApiController extends Controller
 
     }
 
-    public function siswaTidakNaik() {
+    public function siswaTidakNaik(Request $request) {
 
-        $response = Http::get("{$this->api_url}/dashboard/siswa-tidak-naik");
+        $search = $request->search;
+        $response = Http::get("{$this->api_url}/dashboard/siswa-tidak-naik?search={$search}");
+
 
         if ($response->successful()) {
 
-            return view('rekap-siswa.data-tidak-naik', [
-                'title' => 'Data Tidak Naik Kelas',
-                'active' => 'data-induk',
-                'siswa' => json_decode($response)->result->rows
-            ]);
+            if(json_decode($response)->result->rows == []) {
+
+                return view('rekap-siswa.data-tidak-naik', [
+                    'title' => 'Data Tidak Naik Kelas',
+                    'active' => 'data-induk',                
+                ]);
+
+            } else {
+
+                return view('rekap-siswa.data-tidak-naik', [
+                    'title' => 'Data Tidak Naik Kelas',
+                    'active' => 'data-induk',
+                    'siswa' => json_decode($response)->result->rows
+                ]);
+
+            }
 
         } else {
 
@@ -225,25 +238,25 @@ class ApiController extends Controller
                 'alasan_tidak_naik' => $request->alasan_tidak_naik
             ]);
     
-    
-            for ($i = 0; $i < count($idMapelJurusan); $i++) {
-                $idNM = 'NM'.$RaportId.'-'.$idMapelJurusan[$i];
-                $nilaiMapel = Http::put("{$this->api_url}/nilai-mapel/{$idNM}", [
-                    'idMapelJurusan' => $idMapelJurusan[$i],
-                    'RaportId' => $RaportId,
-                    'nilai_pengetahuan' => (int)$nilai_pengetahuan[$i],
-                    'nilai_keterampilan' => (int)$nilai_keterampilan[$i],
-                    'kkm' => (int)$kkm[$i],
-                    'nilai_us_teori' => (int)$nilai_us_teori[$i],
-                    'nilai_us_praktek' => (int)$nilai_us_praktek[$i],
-                    'nilai_ukk_teori' => (int)$nilai_ukk_teori[$i],
-                    'nilai_ukk_praktek' => (int)$nilai_ukk_praktek[$i],
-                    'nilai_akm' => (int)$nilai_akm[$i],
-                ]);
+            if ($idMapelJurusan) {
+                for ($i = 0; $i < count($idMapelJurusan); $i++) {
+                    $idNM = 'NM'.$RaportId.'-'.$idMapelJurusan[$i];
+                    $nilaiMapel = Http::put("{$this->api_url}/nilai-mapel/{$idNM}", [
+                        'idMapelJurusan' => $idMapelJurusan[$i],
+                        'RaportId' => $RaportId,
+                        'nilai_pengetahuan' => (int)$nilai_pengetahuan[$i],
+                        'nilai_keterampilan' => (int)$nilai_keterampilan[$i],
+                        'kkm' => (int)$kkm[$i],
+                        'nilai_us_teori' => (int)$nilai_us_teori[$i],
+                        'nilai_us_praktek' => (int)$nilai_us_praktek[$i],
+                        'nilai_ukk_teori' => (int)$nilai_ukk_teori[$i],
+                        'nilai_ukk_praktek' => (int)$nilai_ukk_praktek[$i],
+                        'nilai_akm' => (int)$nilai_akm[$i],
+                    ]);
+                }
             }
     
             $response->throw();
-            $nilaiMapel->throw();
     
             return redirect('rekap-nilai/'.$request->nis_siswa)->with('success', 'Rekap nilai berhasil diupdate.');
         
@@ -333,23 +346,24 @@ class ApiController extends Controller
                 'alasan_tidak_naik' => $request->alasan_tidak_naik
             ]);
 
-            for ($i = 0; $i < count($idMapelJurusan); $i++) {
-                $nilaiMapel = Http::post("{$this->api_url}/nilai-mapel", [
-                    'idMapelJurusan' => $idMapelJurusan[$i],
-                    'RaportId' => $RaportId,
-                    'nilai_pengetahuan' => (int)$nilai_pengetahuan[$i],
-                    'nilai_keterampilan' => (int)$nilai_keterampilan[$i],
-                    'kkm' => (int)$kkm[$i],
-                    'nilai_us_teori' => (int)$nilai_us_teori[$i],
-                    'nilai_us_praktek' => (int)$nilai_us_praktek[$i],
-                    'nilai_ukk_teori' => (int)$nilai_ukk_teori[$i],
-                    'nilai_ukk_praktek' => (int)$nilai_ukk_praktek[$i],
-                    'nilai_akm' => (int)$nilai_akm[$i],
-                ]);
+            if ($idMapelJurusan) {
+                for ($i = 0; $i < count($idMapelJurusan); $i++) {
+                    $nilaiMapel = Http::post("{$this->api_url}/nilai-mapel", [
+                        'idMapelJurusan' => $idMapelJurusan[$i],
+                        'RaportId' => $RaportId,
+                        'nilai_pengetahuan' => (int)$nilai_pengetahuan[$i],
+                        'nilai_keterampilan' => (int)$nilai_keterampilan[$i],
+                        'kkm' => (int)$kkm[$i],
+                        'nilai_us_teori' => (int)$nilai_us_teori[$i],
+                        'nilai_us_praktek' => (int)$nilai_us_praktek[$i],
+                        'nilai_ukk_teori' => (int)$nilai_ukk_teori[$i],
+                        'nilai_ukk_praktek' => (int)$nilai_ukk_praktek[$i],
+                        'nilai_akm' => (int)$nilai_akm[$i],
+                    ]);
+                }
             }
 
             $response->throw();
-            $nilaiMapel->throw();
             
              /* Http::post("{$this->api_url}/raport/create/raport-n-nilai-mapel", [
                 'nis_siswa' => $nis_siswa,
