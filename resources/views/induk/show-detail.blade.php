@@ -235,7 +235,7 @@
                                                         Diterima di kelas
                                                     </th>
                                                     <td class="tw-py-4 tw-px-6">
-                                                        
+                                                        {{ $siswa->diterima_di_kelas }}
                                                     </td>
                                                 </tr>
                                                 <tr class="tw-bg-gray-100 tw-border">
@@ -493,7 +493,7 @@
                                                         {{ $siswa->berat_badan }}
                                                     </td>
                                                 </tr>
-                                                <tr class="tw-bg-gray-100 tw-border">
+                                                <tr class="tw-bg-white tw-border">
                                                     <th scope="row"
                                                         class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-whitespace-nowrap">
                                                         Tinggi Badan
@@ -511,7 +511,7 @@
                                                         {{ $siswa->lingkar_kepala }}
                                                     </td>
                                                 </tr>
-                                                <tr class="tw-bg-gray-100 tw-border">
+                                                <tr class="tw-bg-white tw-border">
                                                     <th scope="row"
                                                         class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-whitespace-nowrap">
                                                         Golongan Darah

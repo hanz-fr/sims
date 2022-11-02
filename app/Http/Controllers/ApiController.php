@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\File;
-use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Session;
 
 use function PHPUnit\Framework\isEmpty;
@@ -40,7 +40,13 @@ class ApiController extends Controller
                 'mapel' => json_decode($response)->mapel->count,
                 'jurusan' => json_decode($response)->jurusan->count,
                 'alumni' => json_decode($response)->alumni->count,
-                'siswaMasuk' => json_decode($response)->siswaMasuk->count
+                'siswaMasuk' => json_decode($response)->siswaMasuk->count,
+                'jumlahSiswaAKL' => json_decode($response)->jumlahSiswaAKL->count,
+                'jumlahSiswaDKV' => json_decode($response)->jumlahSiswaDKV->count,
+                'jumlahSiswaMPLB' => json_decode($response)->jumlahSiswaMPLB->count,
+                'jumlahSiswaPM' => json_decode($response)->jumlahSiswaPM->count,
+                'jumlahSiswaPPLG' => json_decode($response)->jumlahSiswaPPLG->count,
+                'jumlahSiswaTJKT' => json_decode($response)->jumlahSiswaTJKT->count,
             ]);
         } else {
             return view('induk.show-all', [
@@ -689,7 +695,7 @@ class ApiController extends Controller
                 'nis_siswa' => $request->nis,
                 'nisn_siswa' => $request->nisn,
                 'nama_siswa' => $request->nama,
-                'KelasId' =>  $request->kelas,
+                'KelasId' =>  $request->diterima_di_kelas,
                 'email_siswa' => $request->email,
                 'tmp_lahir' => $request->tmp_lahir,
                 'tgl_lahir' => $request->tgl_lahir,
@@ -703,6 +709,7 @@ class ApiController extends Controller
                 'thn_ijazah_smp' => $request->tahun_ijazah_smp,
                 'tgl_diterima' => $request->tgl_masuk,
                 'semester_diterima' => (int)$request->semester,
+                'diterima_di_kelas' => $request->diterima_di_kelas,
                 'alamat_siswa' => $request->alamat_siswa,
                 'sekolah_asal' => $request->nama_sekolah_asal,
                 'alamat_sekolah_asal' => $request->alamat_sekolah_asal,
@@ -789,7 +796,7 @@ class ApiController extends Controller
             'nis_siswa' => $request->nis,
             'nisn_siswa' => $request->nisn,
             'nama_siswa' => $request->nama,
-            'KelasId' =>  $request->kelas,
+            'KelasId' =>  $request->diterima_di_kelas,
             'email_siswa' => $request->email,
             'tmp_lahir' => $request->tmp_lahir,
             'tgl_lahir' => $request->tgl_lahir,
@@ -803,6 +810,7 @@ class ApiController extends Controller
             'thn_ijazah_smp' => $request->tahun_ijazah_smp,
             'tgl_diterima' => $request->tgl_masuk,
             'semester_diterima' => (int)$request->semester,
+            'diterima_di_kelas' => $request->diterima_di_kelas,
             'alamat_siswa' => $request->alamat_siswa,
             'sekolah_asal' => $request->nama_sekolah_asal,
             'alamat_sekolah_asal' => $request->alamat_sekolah_asal,
@@ -830,6 +838,8 @@ class ApiController extends Controller
         ]);
 
         $response->throw();
+
+        // return redirect('/data-induk')->with('success', 'Siswa updated successfully.');
 
         return redirect(Session('page_jurusan'))->with('success', 'Siswa updated successfully.');
     }

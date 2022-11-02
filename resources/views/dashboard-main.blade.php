@@ -197,30 +197,30 @@
             {{-- jumlah per jurusan --}}
             <section class="tw-bg-white tw-font-pop tw-shadow-md tw-flex tw-flex-col tw-my-5">
                 <div class="tw-px-10 tw-mt-10">
-                  <div class=" tw-text-gray-400 tw-font-bold">Persebaran Murid (?) SMKN 11</div>
+                  <div class=" tw-text-gray-400 tw-font-bold">Persebaran Murid SMKN 11</div>
                     <ul class="tw-flex tw-justify-center md:tw-gap-10 sm:tw-gap-2 tw-list-none tw-py-10">
                         <li class="tw-flex-row tw-text-center">
-                            <div class="tw-text-2xl tw-text-slate-200 tw-font-normal">-</div>
+                            <div class="tw-text-2xl tw-text-sims-400 tw-font-bold">{{ $jumlahSiswaAKL }}</div>
                             <div class=" tw-font-light tw-text-gray-400">AKL</div>
                         </li>
                         <li class="tw-flex-row tw-text-center">
-                            <div class="tw-text-2xl tw-text-slate-200 tw-font-normal">-</div>
+                            <div class="tw-text-2xl tw-text-sims-400 tw-font-bold">{{ $jumlahSiswaDKV }}</div>
                             <div class=" tw-font-light tw-text-gray-400">DKV</div>
                         </li>
                         <li class="tw-flex-row tw-text-center">
-                            <div class="tw-text-2xl tw-text-slate-200 tw-font-normal">-</div>
+                            <div class="tw-text-2xl tw-text-sims-400 tw-font-bold">{{ $jumlahSiswaMPLB }}</div>
                             <div class=" tw-font-light tw-text-gray-400">MPLB</div>
                         </li>
                         <li class="tw-flex-row tw-text-center">
-                            <div class="tw-text-2xl tw-text-slate-200 tw-font-normal">-</div>
+                            <div class="tw-text-2xl tw-text-sims-400 tw-font-bold">{{ $jumlahSiswaPM }}</div>
                             <div class=" tw-font-light tw-text-gray-400">PM</div>
                         </li>
                         <li class="tw-flex-row tw-text-center">
-                            <div class="tw-text-2xl tw-text-slate-200 tw-font-normal">-</div>
+                            <div class="tw-text-2xl tw-text-sims-400 tw-font-bold">{{ $jumlahSiswaPPLG }}</div>
                             <div class=" tw-font-light tw-text-gray-400">PPLG</div>
                         </li>
                         <li class="tw-flex-row tw-text-center">
-                            <div class="tw-text-2xl tw-text-slate-200 tw-font-normal">-</div>
+                            <div class="tw-text-2xl tw-text-sims-400 tw-font-bold">{{ $jumlahSiswaTJKT }}</div>
                             <div class=" tw-font-light tw-text-gray-400">TJKT</div>
                         </li>
                     </ul>

@@ -183,10 +183,10 @@
             <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims-400">B.  Diterima di sekolah ini</div>
             <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
                 <div class="tw-w-full tw-px-3">
-                    <label class="label-input" for="kelas">
+                    <label class="label-input" for="diterima_di_kelas">
                         Di kelas
                     </label>
-                    <select class="input-data" id="kelas" name="kelas">
+                    <select class="input-data" id="diterima_di_kelas" name="diterima_di_kelas">
                     <option selected value="{{ $siswa->KelasId }}">{{ $siswa->KelasId }}</option>
                     @foreach ($kelas as $k)
                     <option value="{{ $k->id }}">{{ $k->id }}</option>
