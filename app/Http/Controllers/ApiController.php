@@ -2,16 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Session;
-
-use function PHPUnit\Framework\isEmpty;
-use function PHPUnit\Framework\isNull;
+use Illuminate\Support\Facades\URL;
 
 class ApiController extends Controller
 {
@@ -20,6 +16,9 @@ class ApiController extends Controller
     public function __construct()
     {
         $this->api_url = '127.0.0.1:3000'; // Ganti link NGROK disini
+
+
+        $this->sims_url = 'http://127.0.0.1:8000'; // SIMS URL
     }
 
 
@@ -28,7 +27,7 @@ class ApiController extends Controller
     public function mainDashboard() 
     {
         $response = Http::get("{$this->api_url}/dashboard");
-
+        
         if ($response->successful()) {
 
             return view('dashboard-main', [
@@ -307,15 +306,6 @@ class ApiController extends Controller
                 $isNaik = false;
             }
 
-
-            /* $nis_siswa = $request->nis_siswa;
-            $semester = $request->semester;
-            $thn_ajaran = $request->thn_ajaran;
-            $sakit = $request->sakit;
-            $ijin = $request->ijin;
-            $alpa = $request->alpa;
-            $naikKelas = $request->naikKelas;
-            $tgl_kenaikan = $request->tgl_kenaikan; */
              
             $RaportId = 'RPT' . $request->nis_siswa . '-' . $request->semester;
             $idMapelJurusan = $request->idMapelJurusan;
@@ -370,28 +360,7 @@ class ApiController extends Controller
             }
 
             $response->throw();
-            
-             /* Http::post("{$this->api_url}/raport/create/raport-n-nilai-mapel", [
-                'nis_siswa' => $nis_siswa,
-                'semester' => $semester,
-                'RaportId' =>  $RaportId,
-                'thn_ajaran' => $thn_ajaran,
-                'sakit' => $sakit,
-                'ijin' => $ijin,
-                'alpa' => $alpa,
-                'isNaik' => $isNaik,
-                'naikKelas' => $request->naikKelas,
-                'tgl_kenaikan' => $request->tgl_kenaikan,
-                'idMapelJurusan' => $idMapelJurusan,
-                'nilai_pengetahuan' => $nilai_pengetahuan,
-                'nilai_keterampilan' => $nilai_keterampilan,
-                'kkm' => (int)$request->kkm,
-                'nilai_us_teori' => (int)$request->nilai_us_teori,
-                'nilai_us_teori' => (int)$request->nilai_us_praktek,
-                'nilai_ukk_teori' => (int)$request->nilai_ukk_teori,
-                'nilai_ukk_praktek' => (int)$request->nilai_ukk_praktek,
-                'nilai_akm' => (int)$request->nilai_akm,
-            ]); */
+
 
             return redirect('rekap-nilai/'.$request->nis_siswa)->with('success', 'Rekap nilai baru ditambahkan.');
         
@@ -748,6 +717,8 @@ class ApiController extends Controller
     public function editSiswa(Request $request, $nis)
     {
 
+        $prevURL = URL::previous();
+
         $response = Http::get("{$this->api_url}/siswa/{$nis}");
 
         $kelas = Http::get("{$this->api_url}/kelas");
@@ -758,7 +729,8 @@ class ApiController extends Controller
                 'active' => 'data-induk',
                 'kelas' => json_decode($kelas),
                 'siswa' => json_decode($response)->result,
-                'status' => 'success'
+                'status' => 'success',
+                'prevURL' => $prevURL,
             ]);
         } else {
             return view('induk.edit', [
@@ -773,6 +745,7 @@ class ApiController extends Controller
 
     public function updateSiswa(Request $request, $nis)
     {
+
 
         if ($request->file('foto')) {
             if ($file = $request->hasFile('foto')) {
@@ -839,9 +812,17 @@ class ApiController extends Controller
 
         $response->throw();
 
-        // return redirect('/data-induk')->with('success', 'Siswa updated successfully.');
+        // klo url sebelumnya data-induk, bakal redirect ke data-induk lagi
+        if($request->prevURL === "{$this->sims_url}/data-induk-siswa?perPage=10"){
 
-        return redirect(Session('page_jurusan'))->with('success', 'Siswa updated successfully.');
+            return redirect('/data-induk-siswa?perPage=10')->with('success', 'Siswa updated successfully.');
+            
+        // klo url nya selain data-induk, bakal redirect ke data-induk by jurusan
+        } else {
+            
+            return redirect(Session('page_jurusan'))->with('success', 'Siswa updated successfully.');
+        }
+
     }
 
     public function deleteSiswa($nis)
