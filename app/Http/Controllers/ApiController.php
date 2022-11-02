@@ -714,7 +714,7 @@ class ApiController extends Controller
     }
 
 
-    public function editSiswa(Request $request, $nis)
+    public function editSiswa($nis)
     {
 
         $prevURL = URL::previous();
