@@ -84,8 +84,8 @@ class UserController extends Controller
     // logout
     public function signOut() 
     {
-        // Session::flush();
         Auth::logout();
+        Session::flush();
         
 
         return redirect('login');
