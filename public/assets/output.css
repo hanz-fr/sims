@@ -1340,6 +1340,22 @@ video {
   margin-left: 0.25rem;
 }
 
+.-tw-mt-8 {
+  margin-top: -2rem;
+}
+
+.-tw-mt-2 {
+  margin-top: -0.5rem;
+}
+
+.-tw-mt-5 {
+  margin-top: -1.25rem;
+}
+
+.-tw-mt-4 {
+  margin-top: -1rem;
+}
+
 .tw-box-border {
   box-sizing: border-box;
 }
@@ -3866,10 +3882,6 @@ table {
 }
 
 @media (min-width: 1024px) {
-  .lg\:tw-float-right {
-    float: right;
-  }
-
   .lg\:tw-mx-auto {
     margin-left: auto;
     margin-right: auto;
@@ -3938,10 +3950,6 @@ table {
 
   .lg\:tw-flex-col {
     flex-direction: column;
-  }
-
-  .lg\:tw-justify-end {
-    justify-content: flex-end;
   }
 
   .lg\:tw-justify-between {

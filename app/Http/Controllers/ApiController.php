@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Session;
 
 class ApiController extends Controller
 {
@@ -15,7 +16,7 @@ class ApiController extends Controller
     /* GLOBAL VARIABLES */
     public function __construct()
     {
-        $this->api_url = 'https://e8dd-114-79-55-94.ap.ngrok.io'; // Ganti link NGROK disini
+        $this->api_url = 'https://5bbb-103-139-10-44.ap.ngrok.io'; // Ganti link NGROK disini
 
 
         $this->sims_url = 'http://127.0.0.1:8000'; // SIMS URL
@@ -90,6 +91,8 @@ class ApiController extends Controller
 
     public function siswaTidakNaik(Request $request) {
 
+        abort_if(Gate::allows('wali kelas'), 403);
+
         $search = $request->search;
         $response = Http::get("{$this->api_url}/dashboard/siswa-tidak-naik?search={$search}");
 
@@ -126,7 +129,7 @@ class ApiController extends Controller
 
     public function viewTambahNilaiMapel($nis) {
 
-
+        abort_if(Gate::denies('wali kelas'), 403);
 
         $siswa = Http::get("{$this->api_url}/siswa/{$nis}");
         $jurusanSiswa = json_decode($siswa)->result->kelas->JurusanId;
@@ -160,6 +163,8 @@ class ApiController extends Controller
 
     public function editRekapNilai($RaportId) {
 
+        abort_if(Gate::denies('wali kelas'), 403);
+
         $raport = Http::get("{$this->api_url}/raport/{$RaportId}");
         $nis_siswa = json_decode($raport)->result->nis_siswa;
         $siswa = Http::get("{$this->api_url}/siswa/{$nis_siswa}");
@@ -189,6 +194,8 @@ class ApiController extends Controller
 
     
     public function storeUpdateNilaiMapel(Request $request) {
+
+        abort_if(Gate::denies('wali kelas'), 403);
 
         $nis = $request->nis_siswa;
 
@@ -277,6 +284,7 @@ class ApiController extends Controller
 
     public function storeTambahNilaiMapel(Request $request) {
 
+        abort_if(Gate::denies('wali kelas'), 403);
 
         $nis = $request->nis_siswa;
 
@@ -373,6 +381,8 @@ class ApiController extends Controller
 
 
     public function deleteNilaiMapel($RaportId) {
+
+        abort_if(Gate::denies('wali kelas'), 403);
 
         Http::delete("{$this->api_url}/raport/{$RaportId}");
 
@@ -579,6 +589,9 @@ class ApiController extends Controller
 
 
     public function getRaportSiswa(Request $request) {
+
+        abort_if(Gate::allows('kesiswaan'), 403);
+
         $nis = $request->nis;
 
         $response = Http::get("{$this->api_url}/siswa/{$nis}");
@@ -607,6 +620,8 @@ class ApiController extends Controller
 
     public function createSiswa()
     {
+
+        abort_if(Gate::denies('tata usaha'), 403);
      
         $kelas = Http::get("{$this->api_url}/kelas");
 
@@ -619,6 +634,8 @@ class ApiController extends Controller
 
     public function storeSiswa(Request $request)
     {
+        
+        abort_if(Gate::denies('tata usaha'), 403);
 
         // validasi nis siswa jika sudah ada
         $nis = $request->nis;
@@ -717,6 +734,8 @@ class ApiController extends Controller
     public function editSiswa($nis)
     {
 
+        abort_if(Gate::denies('tata usaha'), 403);
+
         $prevURL = URL::previous();
 
         $response = Http::get("{$this->api_url}/siswa/{$nis}");
@@ -746,6 +765,7 @@ class ApiController extends Controller
     public function updateSiswa(Request $request, $nis)
     {
 
+        abort_if(Gate::denies('tata usaha'), 403);
 
         if ($request->file('foto')) {
             if ($file = $request->hasFile('foto')) {
@@ -847,6 +867,8 @@ class ApiController extends Controller
     /* API MUTASI */
 
     public function getAllMutasiKeluar(Request $request) {
+
+        abort_if(Gate::denies('rekap-siswa'), 403);
         
         $page = $request->page;
         $perPage = $request->perPage;
@@ -895,6 +917,8 @@ class ApiController extends Controller
 
 
     public function getAllMutasiMasuk(Request $request) {
+
+        abort_if(Gate::denies('rekap-siswa'), 403);
 
         $page = $request->page;
         $perPage = $request->perPage;
@@ -945,6 +969,8 @@ class ApiController extends Controller
 
     public function createMutasiKeluar() {
 
+        abort_if(Gate::denies('rekap-siswa'), 403);
+
         $kelas = Http::get("{$this->api_url}/kelas");
 
         return view('mutasi.create-mutasi-keluar', [
@@ -968,6 +994,8 @@ class ApiController extends Controller
 
 
     public function storeMutasiKeluar(Request $request) {
+
+        abort_if(Gate::denies('rekap-siswa'), 403);
 
         // validasi nis siswa jika sudah ada
         $nis = $request->nis_siswa;
@@ -1021,6 +1049,8 @@ class ApiController extends Controller
 
     public function storeMutasiMasuk(Request $request) {
 
+        abort_if(Gate::denies('rekap-siswa'), 403);
+
         // validasi nis siswa jika sudah ada
         $nis = $request->nis_siswa;
 
@@ -1072,6 +1102,8 @@ class ApiController extends Controller
 
     public function editMutasiKeluar(Request $request, $id) {
 
+        abort_if(Gate::denies('rekap-siswa'), 403);
+
         $response = Http::get("{$this->api_url}/mutasi/{$id}");
 
         if ($response->successful()) {
@@ -1098,6 +1130,8 @@ class ApiController extends Controller
     
     public function editMutasiMasuk(Request $request, $id) {
 
+        abort_if(Gate::denies('rekap-siswa'), 403);
+
         $response = Http::get("{$this->api_url}/mutasi/{$id}");
 
         if ($response->successful()) {
@@ -1122,6 +1156,8 @@ class ApiController extends Controller
     }
 
     public function updateMutasiKeluar(Request $request, $id) {
+
+        abort_if(Gate::denies('rekap-siswa'), 403);
 
         // validasi nis siswa jika sudah ada
         $nis = $request->nis_siswa;
@@ -1163,6 +1199,8 @@ class ApiController extends Controller
     }
 
     public function updateMutasiMasuk(Request $request, $id) {
+
+        abort_if(Gate::denies('rekap-siswa'), 403);
 
         // validasi nis siswa jika sudah ada
         $nis = $request->nis_siswa;
@@ -1206,6 +1244,8 @@ class ApiController extends Controller
     
     public function deleteMutasiKeluar($id) {
 
+        abort_if(Gate::denies('rekap-siswa'), 403);
+
         // validasi apakah id valid atau tidak
         $mutasiExist = Http::get("{$this->api_url}/mutasi/{$id}");
 
@@ -1228,6 +1268,8 @@ class ApiController extends Controller
     }
 
     public function deleteMutasiMasuk($id) {
+
+        abort_if(Gate::denies('rekap-siswa'), 403);
 
         // validasi apakah id valid atau tidak
         $mutasiExist = Http::get("{$this->api_url}/mutasi/{$id}");
@@ -1252,6 +1294,8 @@ class ApiController extends Controller
 
 
     public function rekapJumlahSiswa() {
+
+        abort_if(Gate::allows('wali kelas'), 403);
 
         $semuaKelas = Http::get("{$this->api_url}/kelas/siswa-per-kelas/all");
         $kelas10 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/10");

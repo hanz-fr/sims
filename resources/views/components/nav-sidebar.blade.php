@@ -21,14 +21,14 @@
                         <div x-show="open" x-transition:enter.duration.500ms x-transition:leave.duration.400ms class="tw-ml-5 tw-text-lg tw-font-medium tw-font-pop">Buku Induk</div>
                     </a>
                 </li>
-                @if (auth()->user()->role === 1 && 2)
+                @cannot('wali kelas')
                 <li class="tw-flex tw-text-sims-400 tw-cursor-pointer">
                     <a href="/rekap-siswa" class="{{ ($active === "rekap-siswa") ? 'tw-bg-sims-400 tw-text-white' : '' }} tw-p-5 hover:tw-bg-sims-400 hover:tw-text-white tw-h-16 tw-w-full tw-flex tw-transition-colors tw-duration-300">
                         <i class="fa-solid fa-users tw-text-xl"></i>
                         <div x-show="open" x-transition:enter.duration.500ms x-transition:leave.duration.400ms class="tw-ml-5 tw-text-lg tw-font-medium tw-font-pop">Rekap Siswa</div>
                     </a>
                 </li>
-                @endif
+                @endcannot
             </ul>
         </div>
     </aside>

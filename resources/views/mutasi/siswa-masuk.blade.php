@@ -17,14 +17,14 @@
                 <div class="tw-flex">
                     <h4 class="tw-font-pop tw-font-bold tw-mt-6 tw-text-sims-400">Data Siswa Masuk</h4>
                 </div>
-                <div>
-                    <div class="tw-flex md:tw-justify-center tw-items-center md:-tw-mb-8">
+                @can('rekap-siswa')
+                    <div class="tw-flex md:tw-justify-center tw-items-center">
                         <a href=""><i class="fa-solid fa-print btn-export"></i></a>
                         <a href=""><i class="fa-solid fa-copy btn-export"></i></a>
                         <a href=""><i class="fa-solid fa-file-excel btn-export"></i></a>
                         <a href=""><i class="fa-solid fa-file-pdf btn-export"></i></a>
                     </div>
-                </div>
+                @endcan
             </div>
 
 
@@ -45,6 +45,7 @@
                     </select>
                     <div class="tw-text-base pt-1 tw-mx-2 tw-font-pop tw-font-normal tw-text-basic-700">Entries</div>
                 </div>
+                @can('rekap-siswa')
                 <div class="flex">
                     <a href="/create-mutasi-masuk"
                         class="tw-bg-[#28A745] tw-text-white hover:tw-text-white hover:tw-bg-green-700 tw-font-pop tw-rounded-lg tw-px-5 tw-py-2">
@@ -52,6 +53,7 @@
                             Tambah Data
                     </a>
                 </div>
+                @endcan
             </div>
 
             @if(isset($mutasi))
@@ -80,6 +82,7 @@
                                 <td class="tw-py-4 tw-px-6 tw-border">{{ $m->diterima_di_kelas }}</td>
                                 <td class="tw-py-4 tw-px-6 tw-border">{{ $m->pindah_dari }}, {{ $m->alasan_mutasi }}</td>
                                 <td class="tw-flex tw-justify-center tw-my-2 tw-gap-2">
+                                    @can('rekap-siswa')                                      
                                     <a href="/edit-mutasi-masuk/{{ $m->id }}"
                                         class="tw-text-white tw-bg-kuning-500 hover:tw-bg-kuning-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                                         <i class="fa-solid fa-pen-to-square"></i></a>
@@ -145,6 +148,7 @@
                                             </div>
                                         </div>
                                     </form>
+                                    @endcan
                                 </td>
                             </tr>
                         @endforeach

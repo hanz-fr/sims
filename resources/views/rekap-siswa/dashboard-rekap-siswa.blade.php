@@ -359,9 +359,11 @@
     {{-- Rekap Data Jumlah Siswa --}}
     <div class="tw-flex lg:tw-flex-row sm:tw-flex-col tw-gap-8 tw-my-8">
       <div class="tw-bg-white tw-flex tw-flex-col tw-rounded-xl tw-pt-3 tw-pb-12 tw-px-16 tw-shadow-lg tw-font-pop tw-w-full">
+        @cannot('wali kelas')
         <div class="tw-float-right -tw-mr-8">
           <a href="/rekap-jumlah-siswa" class="tw-text-sims-400 hover:tw-text-sims-600 tw-pr-2 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
+        @endcannot
         <div class="tw-text-xl tw-text-sims-400 tw-font-bold tw-mb-1">Rekap Data Jumlah Siswa</div>
         <div class="tw-text-gray-400 tw-font-normal">Data Juli 2021</div>
         <div class="tw-flex tw-justify-between tw-mt-14">
@@ -385,13 +387,21 @@
         <div class="tw-text-sims-400 tw-text-center">
           <div class="tw-text-xl my-auto tw-ml-3 tw-font-bold tw-text-gray-500">Quick Access</div>
         </div>
-        <div class="tw-grid tw-grid-cols-2 tw-gap-8 tw-mt-8">
+        <div class="tw-grid tw-grid-cols-2 tw-gap-8 tw-mt-8 tw-items-center">
+          @can('rekap-siswa')
           <a href="/siswa-masuk" class="tw-group">
             <div class="tw-flex tw-flex-col tw-justify-center tw-text-center tw-border-2 tw-py-4 tw-bg-white tw-rounded-lg group-hover:tw-text-white group-hover:tw-bg-sims-400 tw-transition-all tw-duration-300">
               <div class="tw-text-2xl tw-text-sims-400 group-hover:tw-text-white"><i class="fa-solid fa-graduation-cap"></i></div>
               <div class="tw-text-base tw-text-gray-500 tw-font-normal tw-mt-3 group-hover:tw-text-white">Data Siswa Masuk</div>
             </div>
           </a>
+          <a href="/siswa-keluar" class="tw-group">
+            <div class="tw-flex tw-flex-col tw-justify-center tw-text-center tw-border-2 tw-py-4 tw-bg-white tw-rounded-lg group-hover:tw-text-white group-hover:tw-bg-sims-400 tw-transition-all tw-duration-300">
+              <div class="tw-text-2xl tw-text-sims-400 group-hover:tw-text-white"><i class="fa-solid fa-user-group"></i></div>
+              <div class="tw-text-base tw-text-gray-500 tw-font-normal tw-mt-3 group-hover:tw-text-white">Data Siswa Keluar</div>
+            </div>
+          </a>
+          @endcan
           <a href="/data-induk-siswa" class="tw-group">
             <div class="tw-flex tw-flex-col tw-justify-center tw-text-center tw-border-2 tw-py-4 tw-bg-white tw-rounded-lg group-hover:tw-text-white group-hover:tw-bg-sims-400 tw-transition-all tw-duration-300">
               <div class="tw-text-2xl tw-text-sims-400 group-hover:tw-text-white"><i class="fa-regular fa-book-open"></i></div>
@@ -402,12 +412,6 @@
             <div class="tw-flex tw-flex-col tw-justify-center tw-text-center tw-border-2 tw-py-4 tw-bg-white tw-rounded-lg group-hover:tw-text-white group-hover:tw-bg-sims-400 tw-transition-all tw-duration-300">
               <div class="tw-text-2xl tw-text-sims-400 group-hover:tw-text-white"><i class="fa-solid fa-clipboard-list"></i></div>
               <div class="tw-text-base tw-text-gray-500 tw-font-normal tw-mt-3 group-hover:tw-text-white">Data Siswa Tidak Naik Kelas</div>
-            </div>
-          </a>
-          <a href="/siswa-keluar" class="tw-group">
-            <div class="tw-flex tw-flex-col tw-justify-center tw-text-center tw-border-2 tw-py-4 tw-bg-white tw-rounded-lg group-hover:tw-text-white group-hover:tw-bg-sims-400 tw-transition-all tw-duration-300">
-              <div class="tw-text-2xl tw-text-sims-400 group-hover:tw-text-white"><i class="fa-solid fa-user-group"></i></div>
-              <div class="tw-text-base tw-text-gray-500 tw-font-normal tw-mt-3 group-hover:tw-text-white">Data Siswa Keluar</div>
             </div>
           </a>
         </div>

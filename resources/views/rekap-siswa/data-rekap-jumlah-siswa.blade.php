@@ -14,10 +14,15 @@
             inactiveClasses: 'tw-bg-gray-200 tw-border'
             }" class="">
             <div class="tw-float-right">
-                <a href=""
-                    class="tw-bg-sims-400 tw-text-white hover:tw-text-white tw-font-pop hover:tw-bg-sims-600 tw-px-5 tw-py-2 tw-rounded-lg tw-mr-5">Ekspor</a>
-                <a href=""
-                    class="tw-bg-sims-400 tw-text-white hover:tw-text-white tw-font-pop hover:tw-bg-sims-600 tw-px-5 tw-py-2 tw-rounded-lg">Impor</a>
+                @can('rekap-siswa')
+                <div class="tw-flex tw-items-center -tw-mt-4">
+                    <a href=""><i class="fa-solid fa-print btn-export"></i></a>
+                    <a href=""><i class="fa-solid fa-copy btn-export"></i></a>
+                    <a href=""><i class="fa-solid fa-file-excel btn-export"></i></a>
+                    <a href=""><i class="fa-solid fa-file-pdf btn-export"></i></a>
+                </div>
+                @endcan
+                {{-- <a href="" class="tw-bg-sims-400 tw-text-white hover:tw-text-white tw-font-pop hover:tw-bg-sims-600 tw-px-5 tw-py-2 tw-rounded-lg tw-mr-5">Ekspor</a> --}}
             </div>
             <ul class="tw-flex mb-0 mt-4 tw--ml-6 tw-font-pop tw-text-xl">
                 <li @click="openTab = 1" :class="{ 'tw--mb-px': openTab === 1 }">

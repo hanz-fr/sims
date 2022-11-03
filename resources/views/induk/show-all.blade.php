@@ -38,12 +38,14 @@
         </div>
         @endif --}}
 
+        @can('tata usaha')
         <div class="tw-flex md:tw-justify-center tw-items-center md:-tw-mb-8">
             <a href=""><i class="fa-solid fa-print btn-export"></i></a>
             <a href=""><i class="fa-solid fa-copy btn-export"></i></a>
             <a href=""><i class="fa-solid fa-file-excel btn-export"></i></a>
             <a href=""><i class="fa-solid fa-file-pdf btn-export"></i></a>
         </div>
+        @endcan
     </div>
 
         <section class="tw-flex lg:tw-flex-row sm:tw-flex-col tw-justify-between sm:tw-flex-wrap sm:tw-gap-5">
@@ -86,11 +88,11 @@
                 </div>
             </div>
             <div class="tw-flex">
+                @can('tata usaha')
                 <button type="button" data-modal-toggle="popup-modal" class="tw-bg-[#28A745] tw-text-white hover:tw-text-white hover:tw-bg-green-700 tw-font-pop tw-rounded-lg tw-px-5 tw-py-2">
                     <i class="fa-solid fa-circle-plus tw-pr-3"></i>
                     Tambah Data
                 </button>
-
 
                 <div id="popup-modal" tabindex="-1"
                   class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full">
@@ -126,6 +128,7 @@
                         </div>
                     </div>
                 </div>
+                @endcan
             </div>
         </section>
 
@@ -154,11 +157,11 @@
                         <td class="tw-py-4 tw-px-6 tw-border">{{ $s->jenis_kelamin }}</td>
                         <td class="tw-py-4 tw-px-6 tw-border">{{ $s->KelasId }}</td>
                         <td>
-                            @if (auth()->user() === 1 && 3 && 4)
+                            @cannot('kesiswaan')
                             <a href="/rekap-nilai/{{ $s->nis_siswa }}" class="tw-text-white tw-bg-sims-400 hover:tw-bg-sims-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-mr-1">
                                 <i class="fa-light fa-clipboard-list"></i>
                             </a>
-                            @endif
+                            @endcannot
                             @can('tata usaha')
                             <a href="/edit-siswa/{{ $s->nis_siswa }}" class="tw-text-white tw-bg-kuning-500 hover:tw-bg-kuning-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                                 <i class="fa-solid fa-pen-to-square"></i></a>

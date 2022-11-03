@@ -116,7 +116,7 @@
                       x-intersect:enter.half="setIndex(3)" x-transition.duration.500ms>
                         <div class="card-dashboard">
                             <div>
-                                <a href="/siswa-keluar" class="tw-text-sims-400 hover:tw-text-sims-600 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                <a href="/jurusan" class="tw-text-sims-400 hover:tw-text-sims-600 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                             </div>
                             <div class="sm:tw-px-12 md:tw-px-8">
                                 <div class="tw-flex tw-flex-row">
@@ -134,7 +134,7 @@
                       x-intersect:enter.half="setIndex(4)" x-transition.duration.500ms>
                         <div class="card-dashboard">
                             <div>
-                                <a href="/siswa-keluar" class="tw-text-sims-400 hover:tw-text-sims-600 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                <a href="/jurusan" class="tw-text-sims-400 hover:tw-text-sims-600 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                             </div>
                             <div class="sm:tw-px-12 md:tw-px-8">
                                 <div class="tw-flex tw-flex-row">
@@ -173,24 +173,28 @@
             <section class="tw-bg-white tw-w-full tw-items-center tw-justify-center tw-shadow-md tw-font-pop tw-border tw-mt-6 tw-flex tw-h-fit tw-py-10 tw-flex-col">
               <div class="tw-text-xl tw-text-gray-400 tw-font-bold tw-mb-10">Quick Access</div>
                 <div class="tw-flex lg:tw-flex-row sm:tw-flex-col tw-justify-between tw-gap-3 tw-p-2">
+                    @can('rekap-siswa')
                     <a href="/rekap-jumlah-siswa" class="tw-group">
                         <div class="tw-justify-center tw-flex lg:tw-flex-col sm:tw-flex-row tw-text-center tw-border-2 tw-p-6 tw-items-center tw-bg-white tw-rounded-lg group-hover:tw-text-white group-hover:tw-bg-sims-400 tw-transition-all tw-duration-300">
                             <div class="tw-text-4xl tw-text-sims-400 group-hover:tw-text-white"><i class="fa-solid fa-graduation-cap"></i></div>
                             <div class="tw-text-gray-500 tw-text-sm tw-font-normal lg:tw-mt-4 sm:tw-ml-4 group-hover:tw-text-white">Data Jumlah Siswa</div>
                         </div>
                     </a>
+                    @endcan
                     <a href="/data-induk-siswa?perPage=10" class="tw-group">
                         <div class="tw-justify-center tw-flex lg:tw-flex-col sm:tw-flex-row  tw-text-center tw-border-2 tw-p-6 tw-items-center tw-bg-white tw-rounded-lg group-hover:tw-bg-sims-400 group-hover:tw-text-white tw-transition-all tw-duration-300">
                             <div class="tw-text-4xl tw-text-sims-400 group-hover:tw-text-white"><i class="fa-regular fa-book-open"></i></div>
                             <div class="tw-text-gray-500 tw-text-sm tw-font-normal lg:tw-mt-4 sm:tw-ml-4 group-hover:tw-text-white">Data Induk Siswa</div>
                         </div>
                     </a>
+                    @can('rekap-siswa')
                     <a href="/siswa-keluar" class="tw-group">
                         <div class="tw-justify-center tw-flex lg:tw-flex-col sm:tw-flex-row  tw-text-center tw-border-2 tw-p-6 tw-items-center tw-bg-white tw-rounded-lg group-hover:tw-bg-sims-400 group-hover:tw-text-white  tw-transition-all tw-duration-300">
                             <div class="tw-text-4xl tw-text-sims-400 group-hover:tw-text-white"><i class="fa-solid fa-user-group"></i></div>
                             <div class="tw-text-gray-500 tw-text-sm tw-font-normal lg:tw-mt-4 sm:tw-ml-4 group-hover:tw-text-white">Data Perpindahan</div>
                         </div>
                     </a>
+                    @endcan
                 </div>
             </section>
 
