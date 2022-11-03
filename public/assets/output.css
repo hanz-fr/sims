@@ -1356,6 +1356,10 @@ video {
   margin-top: -1rem;
 }
 
+.tw-mt-28 {
+  margin-top: 7rem;
+}
+
 .tw-box-border {
   box-sizing: border-box;
 }
@@ -1934,6 +1938,11 @@ video {
 .tw-border-oren-300 {
   --tw-border-opacity: 1;
   border-color: rgb(255 183 160 / var(--tw-border-opacity));
+}
+
+.tw-border-sims-400 {
+  --tw-border-opacity: 1;
+  border-color: rgb(77 158 158 / var(--tw-border-opacity));
 }
 
 .tw-border-b-white {
