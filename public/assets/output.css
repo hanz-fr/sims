@@ -1120,11 +1120,6 @@ video {
   margin-right: 1.75rem;
 }
 
-.tw-my-20 {
-  margin-top: 5rem;
-  margin-bottom: 5rem;
-}
-
 .tw-mt-5 {
   margin-top: 1.25rem;
 }
@@ -2719,11 +2714,6 @@ video {
   color: rgb(255 163 134 / var(--tw-text-opacity));
 }
 
-.tw-text-slate-200 {
-  --tw-text-opacity: 1;
-  color: rgb(226 232 240 / var(--tw-text-opacity));
-}
-
 .tw-text-slate-600 {
   --tw-text-opacity: 1;
   color: rgb(71 85 105 / var(--tw-text-opacity));
@@ -3876,6 +3866,10 @@ table {
 }
 
 @media (min-width: 1024px) {
+  .lg\:tw-float-right {
+    float: right;
+  }
+
   .lg\:tw-mx-auto {
     margin-left: auto;
     margin-right: auto;
@@ -3944,6 +3938,10 @@ table {
 
   .lg\:tw-flex-col {
     flex-direction: column;
+  }
+
+  .lg\:tw-justify-end {
+    justify-content: flex-end;
   }
 
   .lg\:tw-justify-between {
