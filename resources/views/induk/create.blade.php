@@ -25,6 +25,8 @@
           @csrf
           @method('POST')
 
+            <input type="hidden" name="prevURL" value="{{ $prevURL }}">
+
             {{-- biodata --}}
             <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims-400">A.  Biodata Peserta Didik</div>
             <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
@@ -185,8 +187,7 @@
                     <label class="label-input" for="diterima_di_kelas">
                         Di kelas
                     </label>
-                    <select class="input-data" id="diterima_di_kelas" name="diterima_di_kelas">
-                    <option value="">-</option>
+                    <select class="input-data" id="diterima_di_kelas" name="diterima_di_kelas" required>
                     @if(old('kelas'))
                     <option value="{{ old('kelas') }}">{{ old('kelas') }}</option>
                     @endif
