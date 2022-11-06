@@ -10,7 +10,7 @@
             <section class="tw-px-8 tw-flex tw-pt-8 tw-rounded-xl tw-w-full tw-justify-between tw-bg-no-repeat" style="background-image: url('{{ URL::asset('assets/img/bg-hello.svg') }}')">
                 <div class="tw-text-white tw-font-pop tw-h-full">
                     <h1 class="tw-text-2xl">Halo, <span class="tw-font-bold">{{ auth()->user()->nama }}</span></h1>
-                    <p class="tw-font-bold">今日は何をしますか ?</p>
+                    <p class="tw-font-bold">ماذا تريد أن تفعل اليوم ?</p>
                 </div>
                 <div class="tw-flex">
                     <img src="{{ URL::asset('assets/img/halodek.svg') }}" class="tw-w-full tw-h-auto -tw-mb-1" alt="kerja woi">
@@ -20,8 +20,8 @@
             {{-- chart view --}}
             <section class="tw-bg-white tw-shadow-md tw-h-fit tw-px-10 tw-py-14 lg:tw-w-full sm:tw-w-full tw-mt-7">
                 <div class="tw-font-pop">
-                  <div class=" tw-text-gray-400 tw-font-bold">Data Jumlah Siswa SMKN 11</div>
-                    <div>
+                  <div class=" tw-text-gray-400 tw-font-bold">Grafik Jumlah Siswa SMKN 11</div>
+                    <div style="height: 400px">
                         <canvas id="myChart" class="tw-mt-4"></canvas>          
                     </div>          
                 </div>
@@ -240,34 +240,43 @@
 @push('scripts')
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-  // chart view dasbrot
-const labels = [
-  '-',
-  '-',
-  '-',
-  '-',
-];
+
 
 const data = {
-  labels: labels,
-  datasets: [{
-    label: 'Rekap Jumlah Siswa',
-    backgroundColor: '#4D9E9E',
-    borderColor: '#4D9E9E',
-    data: [{{ $siswa }}],
-  }]
+    datasets: [{
+        data: [{{ $jumlahSiswaX }}, {{ $jumlahSiswaXI }}, {{ $jumlahSiswaXII }}],
+        backgroundColor: ['rgba(144,194,194,1)','rgba(255,163,134,1)','rgba(149,187,232,1)'], 
+        hoverBackgroundColor: ['rgba(146, 212, 212,1)','rgba(255, 177, 153,1)','rgba(181, 215, 255)'], 
+        hoverBorderColor: ['rgba(146, 212, 212,1)','rgba(255, 177, 153,1)','rgba(181, 215, 255)'],
+        hoverOffset: 2
+    }],
+
+    // These labels appear in the legend and in the tooltips when hovering different arcs
+    labels: [
+        'Kelas X',
+        'Kelas XI',
+        'Kelas XII'
+    ]
 };
 
 const config = {
-  type: 'line',
+  type: 'pie',
   data: data,
-  options: {}
+  options: {  
+    responsive: true,
+    maintainAspectRatio: false,
+    layout: {
+            padding: {
+                bottom: 10
+            }
+        }
+  }
 };
 
 const myChart = new Chart(
     document.getElementById('myChart'),
     config
-  );
+);
 
 </script>
 @endpush
