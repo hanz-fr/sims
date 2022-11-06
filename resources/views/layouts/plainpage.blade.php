@@ -17,7 +17,7 @@
 
     {{-- icon --}}
     <link rel="stylesheet" href="{{ URL::asset('font-awesome/css/all.min.css') }}">
-    <title>SIMS | 404 Not Found</title>
+    <title>SIMS | @if($exception->getStatusCode() == '403') 403 Forbidden @elseif($exception->getStatusCode() == '404') 404 Not Found @endif</title>
 </head>
 <body>
     @yield('content')

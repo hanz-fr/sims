@@ -267,7 +267,8 @@ const config = {
     maintainAspectRatio: false,
     layout: {
             padding: {
-                bottom: 10
+                bottom: 10,
+                top: 20
             }
         }
   }

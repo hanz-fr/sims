@@ -1608,6 +1608,10 @@ video {
   width: 13rem;
 }
 
+.tw-w-20 {
+  width: 5rem;
+}
+
 .tw-max-w-3xl {
   max-width: 48rem;
 }
@@ -2408,6 +2412,11 @@ video {
   padding-right: 0.25rem;
 }
 
+.tw-px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
 .tw-pt-8 {
   padding-top: 2rem;
 }
@@ -2987,6 +2996,10 @@ video {
   transition-duration: 200ms;
 }
 
+.tw-duration-75 {
+  transition-duration: 75ms;
+}
+
 .tw-ease-in {
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
@@ -3306,6 +3319,11 @@ table {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.tw-group:hover .group-hover\:tw-text-sims-500 {
+  --tw-text-opacity: 1;
+  color: rgb(59 144 145 / var(--tw-text-opacity));
+}
+
 .tw-group:focus .group-focus\:tw-text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -3593,6 +3611,11 @@ table {
 .hover\:tw-text-admin-800:hover {
   --tw-text-opacity: 1;
   color: rgb(54 76 151 / var(--tw-text-opacity));
+}
+
+.hover\:tw-text-sims-700:hover {
+  --tw-text-opacity: 1;
+  color: rgb(40 90 93 / var(--tw-text-opacity));
 }
 
 .hover\:tw-shadow-lg:hover {
