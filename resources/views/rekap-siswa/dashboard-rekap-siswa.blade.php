@@ -388,7 +388,6 @@
           <div class="tw-text-xl my-auto tw-ml-3 tw-font-bold tw-text-gray-500">Quick Access</div>
         </div>
         <div class="tw-grid tw-grid-cols-2 tw-gap-8 tw-mt-8 tw-items-center">
-          @can('rekap-siswa')
           <a href="/siswa-masuk" class="tw-group">
             <div class="tw-flex tw-flex-col tw-justify-center tw-text-center tw-border-2 tw-py-4 tw-bg-white tw-rounded-lg group-hover:tw-text-white group-hover:tw-bg-sims-400 tw-transition-all tw-duration-300">
               <div class="tw-text-2xl tw-text-sims-400 group-hover:tw-text-white"><i class="fa-solid fa-graduation-cap"></i></div>
@@ -401,7 +400,6 @@
               <div class="tw-text-base tw-text-gray-500 tw-font-normal tw-mt-3 group-hover:tw-text-white">Data Siswa Keluar</div>
             </div>
           </a>
-          @endcan
           <a href="/data-induk-siswa" class="tw-group">
             <div class="tw-flex tw-flex-col tw-justify-center tw-text-center tw-border-2 tw-py-4 tw-bg-white tw-rounded-lg group-hover:tw-text-white group-hover:tw-bg-sims-400 tw-transition-all tw-duration-300">
               <div class="tw-text-2xl tw-text-sims-400 group-hover:tw-text-white"><i class="fa-regular fa-book-open"></i></div>
