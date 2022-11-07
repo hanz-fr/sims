@@ -3134,15 +3134,6 @@ a {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.35), transparent);
 }
 
-table {
-  counter-reset: tableCount;
-}
-
-.counterCell:before {
-  content: counter(tableCount);
-  counter-increment: tableCount;
-}
-
 .placeholder\:tw-text-gray-400::-moz-placeholder {
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
