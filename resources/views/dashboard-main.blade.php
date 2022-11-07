@@ -18,7 +18,7 @@
             </section>
 
             {{-- chart view --}}
-            <section class="tw-bg-white tw-shadow-md tw-h-fit tw-px-10 tw-py-14 lg:tw-w-full sm:tw-w-full tw-mt-7">
+            <section class="tw-bg-white tw-shadow-md tw-h-fit tw-px-10 tw-py-9 lg:tw-w-full sm:tw-w-full tw-mt-7">
                 <div class="tw-font-pop">
                   <div class=" tw-text-gray-400 tw-font-bold">Grafik Jumlah Siswa SMKN 11</div>
                     <div style="height: 400px">
