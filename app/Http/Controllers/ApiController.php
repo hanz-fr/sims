@@ -631,13 +631,15 @@ class ApiController extends Controller
      
         $kelas = Http::get("{$this->api_url}/kelas");
 
-        $prevURL = URL::previous();
+        $prevURL = parse_url(url()->previous(), PHP_URL_PATH);
+        $prevURLwithParams = URL::previous();
 
         return view('induk.create', [
             'title' => 'Create Siswa',
             'active' => 'data-induk',
             'kelas' => json_decode($kelas),
             'prevURL' => $prevURL,
+            'prevURLwithParams' => $prevURLwithParams
         ]);
     }
 
@@ -659,6 +661,15 @@ class ApiController extends Controller
 
             $message = json_decode($siswaExist);
 
+        }
+
+        if ($request->isAlumni === "true") {
+
+            $isAlumni = true;
+
+        } else {
+
+            $isAlumni = false;
         }
 
 
@@ -729,14 +740,14 @@ class ApiController extends Controller
                 'lingkar_kepala' => (int)$request->lingkar_kepala,
                 'golongan_darah' => $request->golongan_darah,
                 'tgl_masuk' => $request->tgl_masuk,
-                'isAlumni' => false,
+                'isAlumni' => $isAlumni,
             ]);
 
 
             $response->throw();
 
             // klo url sebelumnya data-induk, bakal redirect ke data-induk lagi
-            if($request->prevURL === "{$this->sims_url}/data-induk-siswa?perPage=10"){
+            if($request->prevURL === "/data-induk"){
 
                 return redirect('/data-induk-siswa?perPage=10')->with('success', 'Siswa created successfully.');
 
@@ -801,7 +812,7 @@ class ApiController extends Controller
             $fileName = $request->oldImage;
         }
 
-
+        $isAlumni = filter_var($request->isAlumni, FILTER_VALIDATE_BOOLEAN);
 
         $response = Http::put("{$this->api_url}/siswa/{$nis}", [
             'nis_siswa' => $request->nis,
@@ -845,7 +856,7 @@ class ApiController extends Controller
             'tinggi_badan' => (int)$request->tinggi_badan,
             'lingkar_kepala' => (int)$request->lingkar_kepala,
             'golongan_darah' => $request->golongan_darah,
-            'isAlumni' => false,
+            'isAlumni' => $isAlumni,
         ]);
 
         $response->throw();
