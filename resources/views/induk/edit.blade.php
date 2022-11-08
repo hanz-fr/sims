@@ -39,6 +39,7 @@
         
          {{-- PREV URL --}}
             <input type="hidden" name="prevURL" value="{{ $prevURL }}">
+            <input type="hidden" name="prevURLwithParams" value="{{ $prevURLwithParams }}">
 
 
           {{-- biodata --}}
@@ -491,14 +492,17 @@
                     <label class="label-input" for="nomor_ijazah_smk">
                         Apakah siswa sudah lulus?
                     </label>
-                    <div class="tw-flex tw-gap-3">
-                        <div class="tw-flex tw-items-center">
-                            <input id="default-radio-1" type="radio" name="default-radio" value="" class="tw-w-4 tw-h-4 tw-bg-gray-100 tw-border-gray-300 focus:tw-ring-2">
-                            <label for="default-radio-1" class="tw-ml-2 tw-text-sm tw-font-medium tw-text-basic-700">Ya</label>
-                        </div>
-                        <div class="tw-flex tw-items-center">
-                            <input id="default-radio-2" type="radio" name="default-radio" value="" class="tw-w-4 tw-h-4 tw-bg-gray-100 tw-border-gray-300 focus:tw-ring-2">
-                            <label for="default-radio-2" class="tw-ml-2 tw-text-sm tw-font-medium tw-text-basic-700">Tidak</label>
+                    <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
+                        <div class="tw-w-full tw-px-3">
+                            <select class="input-data" id="isAlumni" name="isAlumni" required>
+                            @if($siswa->isAlumni === true)
+                                <option value="true" selected>Sudah</option>
+                                <option value="false">Belum</option>
+                            @else
+                                <option value="true">Sudah</option>
+                                <option value="false" selected>Belum</option>
+                            @endif
+                            </select>
                         </div>
                     </div>
                 </div>

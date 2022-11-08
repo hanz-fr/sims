@@ -536,7 +536,6 @@ class ApiController extends Controller
 
         $response = Http::get("{$this->api_url}/siswa/{$request->jurusan}/{$request->kelas}?page={$page}&perPage={$perPage}&search={$search}");
 
-        Session::put('page_jurusan', request()->fullUrl());
 
         if ($response->successful()) {
             
@@ -696,13 +695,15 @@ class ApiController extends Controller
      
         $kelas = Http::get("{$this->api_url}/kelas");
 
-        $prevURL = URL::previous();
+        $prevURL = parse_url(url()->previous(), PHP_URL_PATH);
+        $prevURLwithParams = URL::previous();
 
         return view('induk.create', [
             'title' => 'Create Siswa',
             'active' => 'data-induk',
             'kelas' => json_decode($kelas),
             'prevURL' => $prevURL,
+            'prevURLwithParams' => $prevURLwithParams
         ]);
     }
 
@@ -724,6 +725,15 @@ class ApiController extends Controller
 
             $message = json_decode($siswaExist);
 
+        }
+
+        if ($request->isAlumni === "true") {
+
+            $isAlumni = true;
+
+        } else {
+
+            $isAlumni = false;
         }
 
 
@@ -794,14 +804,16 @@ class ApiController extends Controller
                 'lingkar_kepala' => (int)$request->lingkar_kepala,
                 'golongan_darah' => $request->golongan_darah,
                 'tgl_masuk' => $request->tgl_masuk,
-                'isAlumni' => false,
+                'isAlumni' => $isAlumni,
             ]);
 
 
             $response->throw();
 
-            // klo url sebelumnya data-induk, bakal redirect ke data-induk lagi
-            if($request->prevURL === "{$this->sims_url}/data-induk-siswa?perPage=10"){
+            return redirect($request->prevURLwithParams)->with('success', 'Data berhasil ditambahkan.');
+
+            /* // klo url sebelumnya data-induk, bakal redirect ke data-induk lagi
+            if($request->prevURL === "/data-induk"){
 
                 return redirect('/data-induk-siswa?perPage=10')->with('success', 'Siswa created successfully.');
 
@@ -809,7 +821,7 @@ class ApiController extends Controller
             } else {
 
                 return redirect(Session('page_jurusan'))->with('success', 'Siswa created successfully.');
-            }
+            } */
         }
     }
 
@@ -819,7 +831,8 @@ class ApiController extends Controller
 
         abort_if(Gate::denies('tata usaha'), 403);
 
-        $prevURL = URL::previous();
+        $prevURL = parse_url(url()->previous(), PHP_URL_PATH);
+        $prevURLwithParams = URL::previous();
 
         $response = Http::get("{$this->api_url}/siswa/{$nis}");
 
@@ -833,6 +846,7 @@ class ApiController extends Controller
                 'siswa' => json_decode($response)->result,
                 'status' => 'success',
                 'prevURL' => $prevURL,
+                'prevURLwithParams' => $prevURLwithParams
             ]);
         } else {
             return view('induk.edit', [
@@ -866,7 +880,7 @@ class ApiController extends Controller
             $fileName = $request->oldImage;
         }
 
-
+        $isAlumni = filter_var($request->isAlumni, FILTER_VALIDATE_BOOLEAN);
 
         $response = Http::put("{$this->api_url}/siswa/{$nis}", [
             'nis_siswa' => $request->nis,
@@ -910,12 +924,14 @@ class ApiController extends Controller
             'tinggi_badan' => (int)$request->tinggi_badan,
             'lingkar_kepala' => (int)$request->lingkar_kepala,
             'golongan_darah' => $request->golongan_darah,
-            'isAlumni' => false,
+            'isAlumni' => $isAlumni,
         ]);
 
         $response->throw();
 
-        // klo url sebelumnya data-induk, bakal redirect ke data-induk lagi
+        return redirect("{$request->prevURLwithParams}")->with('success', 'Data berhasil diubah.');
+
+        /* // klo url sebelumnya data-induk, bakal redirect ke data-induk lagi
         if($request->prevURL === "{$this->sims_url}/data-induk-siswa?perPage=10"){
 
             return redirect('/data-induk-siswa?perPage=10')->with('success', 'Siswa updated successfully.');
@@ -924,7 +940,7 @@ class ApiController extends Controller
         } else {
             
             return redirect(Session('page_jurusan'))->with('success', 'Siswa updated successfully.');
-        }
+        } */
 
     }
 
@@ -935,6 +951,7 @@ class ApiController extends Controller
         $siswa = Http::get("{$this->api_url}/siswa/{$nis}"); // get siswa with current nis
         $fotoSiswa = json_decode($siswa)->result->foto;
 
+
         if ($fotoSiswa) {
             File::delete('foto/' . $fotoSiswa);
         }
@@ -942,8 +959,9 @@ class ApiController extends Controller
         /* Delete siswa sesuai dengan nis yang direquest */
         Http::delete("{$this->api_url}/siswa/{$nis}");
 
+        return redirect("{$request->prevURLwithParams}")->with('success', 'Siswa berhasil dihapus.');
 
-        // klo url sebelumnya data-induk, bakal redirect ke data-induk lagi
+        /* // klo url sebelumnya data-induk, bakal redirect ke data-induk lagi
         if($request->prevURL === "{$this->sims_url}/data-induk-siswa?perPage=10"){
 
             return redirect('/data-induk-siswa?perPage=10')->with('success', 'Siswa deleted successfully.');
@@ -952,7 +970,7 @@ class ApiController extends Controller
         } else {
             
             return redirect(Session('page_jurusan'))->with('success', 'Siswa deleted successfully.');
-        }
+        } */
     }
 
 
