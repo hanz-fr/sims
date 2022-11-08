@@ -57,6 +57,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/siswa-masuk', [ApiController::class, 'getAllMutasiMasuk']);
     Route::get('/create-mutasi-masuk', [ApiController::class, 'createMutasiMasuk']);
     Route::get('/edit-mutasi-masuk/{id}', [ApiController::class, 'editMutasiMasuk']);
+    // Route::get('/export-excel', [ApiController::class, 'exportExcel']);
+    // Route::post('/view-pdf', [ApiController::class, 'viewPDF']);
+
 
     Route::post('/api/mutasi-masuk/store', [ApiController::class, 'storeMutasiMasuk']);
     Route::put('/api/mutasi-masuk/update/{id}', [ApiController::class, 'updateMutasiMasuk']);

@@ -21,6 +21,14 @@
                     <div class="tw-flex md:tw-justify-center tw-items-center">
                         <a href=""><i class="fa-solid fa-print btn-export"></i></a>
                         <a href=""><i class="fa-solid fa-copy btn-export"></i></a>
+                        {{-- <form action="/export-excel" method="POST" target="__blank">
+                            @csrf
+                            <button type="button"><i class="fa-solid fa-file-excel btn-export"></i></button>
+                        </form> --}}
+                        {{-- <form action="/view-pdf" method="POST" target="__blank">
+                            @csrf
+                            <button>view pedeep</button>
+                        </form> --}}
                         <a href=""><i class="fa-solid fa-file-excel btn-export"></i></a>
                         <a href=""><i class="fa-solid fa-file-pdf btn-export"></i></a>
                     </div>

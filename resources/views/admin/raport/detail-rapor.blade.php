@@ -79,7 +79,7 @@
                 </li>
             </ul>
             <div x-show="openTab === 1"
-                class="tw-py-4 tw-px-8 tw-text-admin-600 tw-grid tw-gap-x-2 tw-gap-y-4 tw-grid-cols-2 tw-justify-center tw-font-ubuntu tw-rounded-xl tw-shadow-md">
+                class="tw-py-6 tw-px-8 tw-text-admin-600 tw-grid tw-gap-x-2 tw-gap-y-4 tw-grid-cols-2 tw-justify-center tw-font-ubuntu tw-rounded-xl tw-shadow-md">
                 <div class="report-card-pills">
                     <p class="tw-font-bold tw-text-2xl">Tahun Ajaran:</p>
                     <p class="tw-font-medium tw-text-xl">2023-2024</p>
@@ -110,7 +110,7 @@
                 </div>
             </div>
             <div x-show="openTab === 2"
-                class="tw-py-4 tw-px-8 tw-text-admin-600 tw-grid tw-gap-x-2 tw-gap-y-4 tw-grid-cols-2 tw-justify-center tw-font-ubuntu tw-rounded-xl tw-shadow-md">
+                class="tw-py-6 tw-px-8 tw-text-admin-600 tw-grid tw-gap-x-2 tw-gap-y-4 tw-grid-cols-2 tw-justify-center tw-font-ubuntu tw-rounded-xl tw-shadow-md">
                 <div class="report-card-pills">
                     <p class="tw-font-bold tw-text-2xl">Tahun Ajaran:</p>
                     <p class="tw-font-medium tw-text-xl">2023-2024</p>
@@ -141,7 +141,7 @@
                 </div>
             </div>
             <div x-show="openTab === 3"
-                class="tw-py-4 tw-px-8 tw-text-admin-600 tw-grid tw-gap-x-2 tw-gap-y-4 tw-grid-cols-2 tw-justify-center tw-font-ubuntu tw-rounded-xl tw-shadow-md">
+                class="tw-py-6 tw-px-8 tw-text-admin-600 tw-grid tw-gap-x-2 tw-gap-y-4 tw-grid-cols-2 tw-justify-center tw-font-ubuntu tw-rounded-xl tw-shadow-md">
                 <div class="report-card-pills">
                     <p class="tw-font-bold tw-text-2xl">Tahun Ajaran:</p>
                     <p class="tw-font-medium tw-text-xl">2023-2024</p>
@@ -172,7 +172,7 @@
                 </div>
             </div>
             <div x-show="openTab === 4"
-                class="tw-py-4 tw-px-8 tw-text-admin-600 tw-grid tw-gap-x-2 tw-gap-y-4 tw-grid-cols-2 tw-justify-center tw-font-ubuntu tw-rounded-xl tw-shadow-md">
+                class="tw-py-6 tw-px-8 tw-text-admin-600 tw-grid tw-gap-x-2 tw-gap-y-4 tw-grid-cols-2 tw-justify-center tw-font-ubuntu tw-rounded-xl tw-shadow-md">
                 <div class="report-card-pills">
                     <p class="tw-font-bold tw-text-2xl">Tahun Ajaran:</p>
                     <p class="tw-font-medium tw-text-xl">2023-2024</p>
@@ -203,7 +203,7 @@
                 </div>
             </div>
             <div x-show="openTab === 5"
-                class="tw-py-4 tw-px-8 tw-text-admin-600 tw-grid tw-gap-x-2 tw-gap-y-4 tw-grid-cols-2 tw-justify-center tw-font-ubuntu tw-rounded-xl tw-shadow-md">
+                class="tw-py-6 tw-px-8 tw-text-admin-600 tw-grid tw-gap-x-2 tw-gap-y-4 tw-grid-cols-2 tw-justify-center tw-font-ubuntu tw-rounded-xl tw-shadow-md">
                 <div class="report-card-pills">
                     <p class="tw-font-bold tw-text-2xl">Tahun Ajaran:</p>
                     <p class="tw-font-medium tw-text-xl">2023-2024</p>
@@ -234,7 +234,7 @@
                 </div>
             </div>
             <div x-show="openTab === 6"
-                class="tw-py-4 tw-px-8 tw-text-admin-600 tw-grid tw-gap-x-2 tw-gap-y-4 tw-grid-cols-2 tw-justify-center tw-font-ubuntu tw-rounded-xl tw-shadow-md">
+                class="tw-py-6 tw-px-8 tw-text-admin-600 tw-grid tw-gap-x-2 tw-gap-y-4 tw-grid-cols-2 tw-justify-center tw-font-ubuntu tw-rounded-xl tw-shadow-md">
                 <div class="report-card-pills">
                     <p class="tw-font-bold tw-text-2xl">Tahun Ajaran:</p>
                     <p class="tw-font-medium tw-text-xl">2023-2024</p>
