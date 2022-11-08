@@ -8,7 +8,8 @@ use Maatwebsite\Excel\Concerns\FromView;
 use Maatwebsite\Excel\Concerns\Exportable;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 
-class MutasiMasukExport implements FromView, ShouldAutoSize
+
+class MutasiKeluarExport implements FromView, ShouldAutoSize
 {
 
     use Exportable;
@@ -17,7 +18,7 @@ class MutasiMasukExport implements FromView, ShouldAutoSize
 
     public function __construct()
     {
-        $this->mutasi = Http::get("https://82a1-103-139-10-81.ap.ngrok.io/mutasi/siswa-masuk");
+        $this->mutasi = Http::get("https://82a1-103-139-10-81.ap.ngrok.io/mutasi/siswa-keluar");
     }
 
     /**
@@ -25,7 +26,7 @@ class MutasiMasukExport implements FromView, ShouldAutoSize
     */
     public function view(): View
     {
-        return view('mutasi.pdf.mutasi-masuk', [
+        return view('mutasi.pdf.mutasi-keluar', [
             'mutasi' => json_decode($this->mutasi)->data->rows,
         ]);
     }

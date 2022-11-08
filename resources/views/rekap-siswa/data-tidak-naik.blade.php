@@ -23,10 +23,10 @@
                 <div class="tw-text-base pt-1 tw-mx-2 tw-font-pop tw-font-normal tw-text-basic-700">Entries</div>
             </div>
             <div class="tw-flex md:tw-justify-center tw-items-center md:-tw-mb-8">
-                <a href=""><i class="fa-solid fa-print btn-export"></i></a>
+                <a href="" title="Print"><i class="fa-solid fa-print btn-export"></i></a>
                 <a href=""><i class="fa-solid fa-copy btn-export"></i></a>
-                <a href=""><i class="fa-solid fa-file-excel btn-export"></i></a>
-                <a href=""><i class="fa-solid fa-file-pdf btn-export"></i></a>
+                <a href="" title="Export ke Excel"><i class="fa-solid fa-file-excel btn-export"></i></a>
+                <a href="" title="Export ke PDF"><i class="fa-solid fa-file-pdf btn-export"></i></a>
             </div>
         </div>
 

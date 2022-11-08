@@ -2,12 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use PDF;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use App\Exports\DataIndukExport;
+use App\Exports\MutasiMasukExport;
+use App\Exports\MutasiKeluarExport;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Http;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Session;
 
 class ApiController extends Controller
@@ -16,7 +21,7 @@ class ApiController extends Controller
     /* GLOBAL VARIABLES */
     public function __construct()
     {
-        $this->api_url = '127.0.0.1:3000'; // Ganti link NGROK disini
+        $this->api_url = 'https://82a1-103-139-10-81.ap.ngrok.io'; // Ganti link NGROK disini
 
 
         $this->sims_url = 'http://127.0.0.1:8000'; // SIMS URL
@@ -432,6 +437,28 @@ class ApiController extends Controller
         }
     }
 
+    // public function exportAlumniPDF() {
+
+    //     $response = Http::get("{$this->api_url}/dashboard/alumni");
+
+    //     $pdf = PDF::loadView('induk.pdf.alumni', [
+    //         'alumni' => json_decode($response)->result
+    //     ]);
+
+    //     return $pdf->download('alumni.pdf');
+
+    // }
+
+    // public function printAlumni() {
+
+    //     $response = Http::get("{$this->api_url}/");
+
+    //     return view('induk.pdf.alumni', [
+    //         'alumni' => json_decode($response)
+    //     ]);
+
+    // }
+
 
     /* API SISWA */
 
@@ -554,6 +581,44 @@ class ApiController extends Controller
 
         }
 
+    }
+
+
+    public function exportDataIndukPDF() {
+
+        $response = Http::get("{$this->api_url}/siswa/{$request->jurusan}/{$request->kelas}??page=1&perPage=100");
+
+        $pdf = PDF::loadView('induk.pdf.data-induk', [
+            'siswa' => json_decode($response)->data->rows
+        ]);
+
+        $daftarnama = 'daftar_nama_buku_induk_'.date('Y-m-d_H-i-s').'.pdf';
+
+        return $pdf->download($daftarnama);
+
+    }
+
+
+    public function printDataInduk() {
+
+        $response = Http::get("{$this->api_url}/siswa?page=1&perPage=100");
+
+        return view('induk.pdf.data-induk', [
+            'siswa' => json_decode($response)->data->rows
+        ]);
+
+    }
+
+
+    public function exportDataIndukExcel() {
+
+        ob_end_clean();
+        ob_start();
+
+        $daftarnama = 'daftar_nama_buku_induk_'.date('Y-m-d_H-i-s').'.xlsx';
+
+        return Excel::download(new DataIndukExport, $daftarnama);
+        
     }
 
 
@@ -942,7 +1007,6 @@ class ApiController extends Controller
         }
     }
 
-
     public function getAllMutasiMasuk(Request $request) {
 
         abort_if(Gate::denies('rekap-siswa'), 403);
@@ -1317,6 +1381,82 @@ class ApiController extends Controller
             ]);
 
         }
+    }
+
+
+    public function exportMutasiMasukExcel() {
+
+        ob_end_clean();
+        ob_start();
+
+        $laporan = 'laporan_mutasi_masuk_'.date('Y-m-d_H-i-s').'.xlsx';
+
+        return Excel::download(new MutasiMasukExport, $laporan);
+        
+    }
+
+
+    public function exportMutasiKeluarExcel() {
+
+        ob_end_clean();
+        ob_start();
+
+        $laporan = 'laporan_mutasi_keluar_'.date('Y-m-d_H-i-s').'.xlsx';
+
+        return Excel::download(new MutasiKeluarExport, $laporan);
+        
+    }
+
+
+    public function exportMutasiMasukPDF() {
+
+        $response = Http::get("{$this->api_url}/mutasi/siswa-masuk");
+
+        $pdf = PDF::loadView('mutasi.pdf.mutasi-masuk', [
+            'mutasi' => json_decode($response)->data->rows
+        ]);
+
+        $laporan = 'laporan_mutasi_masuk_'.date('Y-m-d_H-i-s').'.pdf';
+
+        return $pdf->download($laporan);
+
+    }
+
+
+    public function exportMutasiKeluarPDF() {
+
+        $response = Http::get("{$this->api_url}/mutasi/siswa-keluar");
+
+        $pdf = PDF::loadView('mutasi.pdf.mutasi-keluar', [
+            'mutasi' => json_decode($response)->data->rows
+        ]);
+
+        $laporan = 'laporan_mutasi_keluar_'.date('Y-m-d_H-i-s').'.pdf';
+
+        return $pdf->download($laporan);
+
+    }
+
+
+    public function printMutasiMasuk() {
+
+        $response = Http::get("{$this->api_url}/mutasi/siswa-masuk");
+
+        return view('mutasi.pdf.mutasi-masuk', [
+            'mutasi' => json_decode($response)->data->rows
+        ]);
+
+    }
+
+
+    public function printMutasiKeluar() {
+
+        $response = Http::get("{$this->api_url}/mutasi/siswa-masuk");
+
+        return view('mutasi.pdf.mutasi-keluar', [
+            'mutasi' => json_decode($response)->data->rows
+        ]);
+
     }
 
 

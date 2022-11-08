@@ -27,10 +27,10 @@
 
         @can('tata usaha')
         <div class="tw-flex md:tw-justify-center tw-items-center md:-tw-mb-8">
-            <a href=""><i class="fa-solid fa-print btn-export"></i></a>
-            <a href=""><i class="fa-solid fa-copy btn-export"></i></a>
-            <a href=""><i class="fa-solid fa-file-excel btn-export"></i></a>
-            <a href=""><i class="fa-solid fa-file-pdf btn-export"></i></a>
+            <a href="/data-induk-print" title="Print"><i class="fa-solid fa-print btn-export"></i></a>
+            <button id="copy_btn" type="button" value="copy"><i class="fa-solid fa-copy btn-export"></i></button>
+            <a href="/data-induk-excel" title="Export ke Excel"><i class="fa-solid fa-file-excel btn-export"></i></a>
+            <a href="/data-induk-pdf/{{ $jurusan }}/{{ $kelas }}" title="Export ke PDF"><i class="fa-solid fa-file-pdf btn-export"></i></a>
         </div>
         @endcan
     </div>
@@ -245,5 +245,21 @@
           return false;
       });
     });
+
+    var copyBtn = document.querySelector('#copy_btn');
+
+    copyBtn.addEventListener('click', function () {
+
+    var urlField = document.querySelector('table');
+   
+    var range = document.createRange();  
+
+    range.selectNode(urlField);
+
+    window.getSelection().addRange(range);
+   
+    document.execCommand('copy');
+}, 
+false);
 </script>
 @endpush

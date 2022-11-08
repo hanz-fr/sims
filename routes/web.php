@@ -39,6 +39,10 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/api/siswa/update/{nis}', [ApiController::class, 'updateSiswa']);
     Route::delete('/api/siswa/delete/{nis}', [ApiController::class, 'deleteSiswa']);
 
+    Route::get('/data-induk-pdf/{jurusan}/{kelas}', [ApiController::class, 'exportDataIndukPDF']);
+    Route::get('/data-induk-print', [ApiController::class, 'printDataInduk']);
+    Route::get('/data-induk-excel', [ApiController::class, 'exportDataIndukExcel']);
+
     Route::get('/get-request', [ApiController::class, 'getRequest']);
 
 
@@ -53,12 +57,18 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/api/mutasi-keluar/update/{id}', [ApiController::class, 'updateMutasiKeluar']);
     Route::delete('/api/mutasi-keluar/delete/{id}', [ApiController::class, 'deleteMutasiKeluar']);
 
+    Route::get('/mutasi-keluar-excel', [ApiController::class, 'exportMutasiKeluarExcel']);
+    Route::get('/mutasi-keluar-pdf', [ApiController::class, 'exportMutasiKeluarPDF']);
+    Route::get('/mutasi-keluar-print', [ApiController::class, 'printMutasiKeluar']);
+
     // siswa-masuk
     Route::get('/siswa-masuk', [ApiController::class, 'getAllMutasiMasuk']);
     Route::get('/create-mutasi-masuk', [ApiController::class, 'createMutasiMasuk']);
     Route::get('/edit-mutasi-masuk/{id}', [ApiController::class, 'editMutasiMasuk']);
-    // Route::get('/export-excel', [ApiController::class, 'exportExcel']);
-    // Route::post('/view-pdf', [ApiController::class, 'viewPDF']);
+
+    Route::get('/mutasi-masuk-excel', [ApiController::class, 'exportMutasiMasukExcel']);
+    Route::get('/mutasi-masuk-pdf', [ApiController::class, 'exportMutasiMasukPDF']);
+    Route::get('/mutasi-masuk-print', [ApiController::class, 'printMutasiMasuk']);
 
 
     Route::post('/api/mutasi-masuk/store', [ApiController::class, 'storeMutasiMasuk']);
@@ -99,7 +109,8 @@ Route::middleware(['auth'])->group(function () {
     /* ALUMNI */
 
     Route::get('/data-alumni', [ApiController::class, 'viewAlumni']);
-
+    // Route::get('/alumni-pdf', [ApiController::class, 'exportAlumniPDF']);
+    // Route::get('/alumni-print', [ApiController::class, 'printAlumni']);
 
 
     /* REKAP SISWA */

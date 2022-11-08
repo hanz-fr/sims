@@ -16,10 +16,10 @@
             <div class="tw-float-right">
                 @can('rekap-siswa')
                 <div class="tw-flex tw-items-center -tw-mt-4">
-                    <a href=""><i class="fa-solid fa-print btn-export"></i></a>
+                    <a href="" title="Print"><i class="fa-solid fa-print btn-export"></i></a>
                     <a href=""><i class="fa-solid fa-copy btn-export"></i></a>
-                    <a href=""><i class="fa-solid fa-file-excel btn-export"></i></a>
-                    <a href=""><i class="fa-solid fa-file-pdf btn-export"></i></a>
+                    <a href="" title="Export ke Excel"><i class="fa-solid fa-file-excel btn-export"></i></a>
+                    <a href="" title="Export ke PDF"><i class="fa-solid fa-file-pdf btn-export"></i></a>
                 </div>
                 @endcan
                 {{-- <a href="" class="tw-bg-sims-400 tw-text-white hover:tw-text-white tw-font-pop hover:tw-bg-sims-600 tw-px-5 tw-py-2 tw-rounded-lg tw-mr-5">Ekspor</a> --}}
