@@ -26,6 +26,7 @@
           @method('POST')
 
             <input type="hidden" name="prevURL" value="{{ $prevURL }}">
+            <input type="hidden" name="prevURLwithParams" value="{{ $prevURLwithParams }}">
 
             {{-- biodata --}}
             <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims-400">A.  Biodata Peserta Didik</div>

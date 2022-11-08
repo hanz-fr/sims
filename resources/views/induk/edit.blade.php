@@ -39,6 +39,7 @@
         
          {{-- PREV URL --}}
             <input type="hidden" name="prevURL" value="{{ $prevURL }}">
+            <input type="hidden" name="prevURLwithParams" value="{{ $prevURLwithParams }}">
 
 
           {{-- biodata --}}

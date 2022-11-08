@@ -37,6 +37,9 @@
                         <form action="/api/siswa/delete/{{ $siswa->nis_siswa }}" method="POST">
                             @csrf
                             @method('DELETE')
+
+                            <input type="hidden" name="prevURLwithParams" value="{{ URL::previous() }}">
+
                             <button type="button" data-modal-toggle="popup-modal"
                                 class="tw-text-white tw-text-sm tw-bg-red-400 hover:tw-bg-red-500 hover:tw-text-white tw-rounded-lg tw-py-2 tw-px-3">
                                 <i class="fa-solid fa-trash mr-2"></i> Delete

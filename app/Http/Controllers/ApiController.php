@@ -16,7 +16,7 @@ class ApiController extends Controller
     /* GLOBAL VARIABLES */
     public function __construct()
     {
-        $this->api_url = 'https://3cc1-103-148-113-86.ap.ngrok.io'; // Ganti link NGROK disini
+        $this->api_url = '127.0.0.1:3000'; // Ganti link NGROK disini
 
 
         $this->sims_url = 'http://127.0.0.1:8000'; // SIMS URL
@@ -509,7 +509,6 @@ class ApiController extends Controller
 
         $response = Http::get("{$this->api_url}/siswa/{$request->jurusan}/{$request->kelas}?page={$page}&perPage={$perPage}&search={$search}");
 
-        Session::put('page_jurusan', request()->fullUrl());
 
         if ($response->successful()) {
             
@@ -746,7 +745,9 @@ class ApiController extends Controller
 
             $response->throw();
 
-            // klo url sebelumnya data-induk, bakal redirect ke data-induk lagi
+            return redirect($request->prevURLwithParams)->with('success', 'Data berhasil ditambahkan.');
+
+            /* // klo url sebelumnya data-induk, bakal redirect ke data-induk lagi
             if($request->prevURL === "/data-induk"){
 
                 return redirect('/data-induk-siswa?perPage=10')->with('success', 'Siswa created successfully.');
@@ -755,7 +756,7 @@ class ApiController extends Controller
             } else {
 
                 return redirect(Session('page_jurusan'))->with('success', 'Siswa created successfully.');
-            }
+            } */
         }
     }
 
@@ -765,7 +766,8 @@ class ApiController extends Controller
 
         abort_if(Gate::denies('tata usaha'), 403);
 
-        $prevURL = URL::previous();
+        $prevURL = parse_url(url()->previous(), PHP_URL_PATH);
+        $prevURLwithParams = URL::previous();
 
         $response = Http::get("{$this->api_url}/siswa/{$nis}");
 
@@ -779,6 +781,7 @@ class ApiController extends Controller
                 'siswa' => json_decode($response)->result,
                 'status' => 'success',
                 'prevURL' => $prevURL,
+                'prevURLwithParams' => $prevURLwithParams
             ]);
         } else {
             return view('induk.edit', [
@@ -861,7 +864,9 @@ class ApiController extends Controller
 
         $response->throw();
 
-        // klo url sebelumnya data-induk, bakal redirect ke data-induk lagi
+        return redirect("{$request->prevURLwithParams}")->with('success', 'Data berhasil diubah.');
+
+        /* // klo url sebelumnya data-induk, bakal redirect ke data-induk lagi
         if($request->prevURL === "{$this->sims_url}/data-induk-siswa?perPage=10"){
 
             return redirect('/data-induk-siswa?perPage=10')->with('success', 'Siswa updated successfully.');
@@ -870,7 +875,7 @@ class ApiController extends Controller
         } else {
             
             return redirect(Session('page_jurusan'))->with('success', 'Siswa updated successfully.');
-        }
+        } */
 
     }
 
@@ -881,6 +886,7 @@ class ApiController extends Controller
         $siswa = Http::get("{$this->api_url}/siswa/{$nis}"); // get siswa with current nis
         $fotoSiswa = json_decode($siswa)->result->foto;
 
+
         if ($fotoSiswa) {
             File::delete('foto/' . $fotoSiswa);
         }
@@ -888,8 +894,9 @@ class ApiController extends Controller
         /* Delete siswa sesuai dengan nis yang direquest */
         Http::delete("{$this->api_url}/siswa/{$nis}");
 
+        return redirect("{$request->prevURLwithParams}")->with('success', 'Siswa berhasil dihapus.');
 
-        // klo url sebelumnya data-induk, bakal redirect ke data-induk lagi
+        /* // klo url sebelumnya data-induk, bakal redirect ke data-induk lagi
         if($request->prevURL === "{$this->sims_url}/data-induk-siswa?perPage=10"){
 
             return redirect('/data-induk-siswa?perPage=10')->with('success', 'Siswa deleted successfully.');
@@ -898,7 +905,7 @@ class ApiController extends Controller
         } else {
             
             return redirect(Session('page_jurusan'))->with('success', 'Siswa deleted successfully.');
-        }
+        } */
     }
 
 

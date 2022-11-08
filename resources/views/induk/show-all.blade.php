@@ -41,8 +41,8 @@
                 @if( ! empty($jurusan) && ! empty($kelas))
                 <form action="/data-induk-siswa/{{ $jurusan }}/{{ $kelas }}"> 
                     <div class="relative tw-border-2 tw-rounded-lg focus:tw-ring-sims-400">
-                        @if(isset($_GET['page']) || isset($_GET['perPage']))
-                        <input name="page" value="{{ $_GET['page'] }}" type="hidden">
+                        @if(isset($_GET['perPage']))
+                        <input name="page" value="1" type="hidden">
                         <input name="perPage" value="{{ $_GET['perPage'] }}" type="hidden">
                         @else
                         <input name="page" value="1" type="hidden">
@@ -55,8 +55,8 @@
                 @else
                 <form action="/data-induk-siswa"> 
                     <div class="relative tw-border-2 tw-rounded-lg focus:tw-ring-sims-400">
-                        @if(isset($_GET['page']) || isset($_GET['perPage']))
-                        <input name="page" value="{{ $_GET['page'] }}" type="hidden">
+                        @if(isset($_GET['perPage']))
+                        <input name="page" value="1" type="hidden">
                         <input name="perPage" value="{{ $_GET['perPage'] }}" type="hidden">
                         @else
                         <input name="page" value="1" type="hidden">
