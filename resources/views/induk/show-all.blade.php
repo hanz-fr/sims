@@ -25,19 +25,6 @@
             @endif
         </div>
 
-        {{-- @if(session()->has('success'))
-        <div id="alert-2" class="tw-flex tw-p-4 tw-mt-4 tw-w-full tw-my-5 tw-mx-10 tw-bg-green-200 tw-rounded-lg" role="alert">
-          <svg class="tw-my-auto tw-flex-shrink-0 tw-w-5 tw-h-5 tw-text-green-700" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-          <div class="tw-ml-3 tw-text-sm tw-font-medium tw-text-green-700 tw-my-auto">
-            <div class="tw-font-bold tw-text-lg tw-flex">Success</div>  {{ session('success') }}
-          </div>
-          <button type="button" class="tw-ml-auto -tw-mx-1.5 tw-my-auto tw-bg-green-200 tw-text-green-500 tw-rounded-lg focus:tw-ring-2 focus:tw-ring-green-400 tw-p-1.5 hover:tw-bg-green-200 tw-inline-flex tw-h-8 tw-w-8 dark:tw-bg-green-300 dark:tw-text-green-600 dark:hover:tw-bg-green-400" data-dismiss-target="#alert-2" aria-label="Close">
-            <span class="sr-only">Close</span>
-            <svg class="tw-w-5 tw-h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-          </button>
-        </div>
-        @endif --}}
-
         @can('tata usaha')
         <div class="tw-flex md:tw-justify-center tw-items-center md:-tw-mb-8">
             <a href=""><i class="fa-solid fa-print btn-export"></i></a>
@@ -68,22 +55,35 @@
                 @endif
                 <div class="tw-flex">
                     <div class="tw-text-base pt-1 tw-text-basic-700 tw-ml-4 tw-mr-2 tw-font-normal tw-font-pop">Show</div>
-                    {{-- <div class="dropdown">
-                        <button class="dropdown-toggle tw-bg-gray-300 tw-font-bold tw-py-1 tw-px-3 tw-rounded-xl tw-text" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        10
-                        </button>
-                        <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">25</a></li>
-                        <li><a class="dropdown-item" href="#">50</a></li>
-                        <li><a class="dropdown-item" href="#">100</a></li>
-                        </ul>
-                    </div> --}}
-                    <select name="" id="" class="tw-bg-gray-300 tw-font-bold tw-px-7 tw-rounded-xl tw-text tw-mb-2 tw-border-none">
-                        <option value="" class="tw-bg-white">10</option>
-                        <option value="" class="tw-bg-white">25</option>
-                        <option value="" class="tw-bg-white">50</option>
-                        <option value="" class="tw-bg-white">100</option>
+                    @if( ! empty($jurusan) && ! empty($kelas))
+                    <select name="show-data-perpage" id="show-data-perpage" class="tw-bg-gray-300 tw-font-bold tw-px-7 tw-rounded-xl tw-text tw-mb-2 tw-border-none">
+                        @if(!empty($_GET['page']))
+                            <option value="/data-induk-siswa/{{ $jurusan }}/{{ $kelas }}?page={{ $_GET['page'] }}&perPage=10&search=" @isset($_GET['perPage']) @if( $_GET['perPage'] === '10') selected @endif @endisset class="tw-bg-white">10</option>
+                            <option value="/data-induk-siswa/{{ $jurusan }}/{{ $kelas }}?page={{ $_GET['page'] }}&perPage=25&search=" @isset($_GET['perPage']) @if( $_GET['perPage'] === '25') selected @endif @endisset class="tw-bg-white">25</option>
+                            <option value="/data-induk-siswa/{{ $jurusan }}/{{ $kelas }}?page={{ $_GET['page'] }}&perPage=50&search=" @isset($_GET['perPage']) @if( $_GET['perPage'] === '50') selected @endif @endisset class="tw-bg-white">50</option>
+                            <option value="/data-induk-siswa/{{ $jurusan }}/{{ $kelas }}?page={{ $_GET['page'] }}&perPage=100&search=" @isset($_GET['perPage']) @if( $_GET['perPage'] === '100') selected @endif @endisset class="tw-bg-white">100</option>
+                        @else
+                            <option value="/data-induk-siswa/{{ $jurusan }}/{{ $kelas }}?perPage=10&search=" @isset($_GET['perPage']) @if( $_GET['perPage'] === '10') selected @endif @endisset class="tw-bg-white">10</option>
+                            <option value="/data-induk-siswa/{{ $jurusan }}/{{ $kelas }}?perPage=25&search=" @isset($_GET['perPage']) @if( $_GET['perPage'] === '25') selected @endif @endisset class="tw-bg-white">25</option>
+                            <option value="/data-induk-siswa/{{ $jurusan }}/{{ $kelas }}?perPage=50&search=" @isset($_GET['perPage']) @if( $_GET['perPage'] === '50') selected @endif @endisset class="tw-bg-white">50</option>
+                            <option value="/data-induk-siswa/{{ $jurusan }}/{{ $kelas }}?perPage=100&search=" @isset($_GET['perPage']) @if( $_GET['perPage'] === '100') selected @endif @endisset class="tw-bg-white">100</option>
+                        @endif
                     </select>
+                    @else
+                    <select name="show-data-perpage" id="show-data-perpage" class="tw-bg-gray-300 tw-font-bold tw-px-7 tw-rounded-xl tw-text tw-mb-2 tw-border-none">
+                        @if(!empty($_GET['page']))
+                            <option value="/data-induk-siswa?page={{ $_GET['page'] }}&perPage=10&search=" @isset($_GET['perPage']) @if( $_GET['perPage'] === '10') selected @endif @endisset class="tw-bg-white">10</option>
+                            <option value="/data-induk-siswa?page={{ $_GET['page'] }}&perPage=25&search=" @isset($_GET['perPage']) @if( $_GET['perPage'] === '25') selected @endif @endisset class="tw-bg-white">25</option>
+                            <option value="/data-induk-siswa?page={{ $_GET['page'] }}&perPage=50&search=" @isset($_GET['perPage']) @if( $_GET['perPage'] === '50') selected @endif @endisset class="tw-bg-white">50</option>
+                            <option value="/data-induk-siswa?page={{ $_GET['page'] }}&perPage=100&search=" @isset($_GET['perPage']) @if( $_GET['perPage'] === '100') selected @endif @endisset class="tw-bg-white">100</option>
+                        @else
+                            <option value="/data-induk-siswa?perPage=10&search=" @isset($_GET['perPage']) @if( $_GET['perPage'] === '10') selected @endif @endisset class="tw-bg-white">10</option>
+                            <option value="/data-induk-siswa?perPage=25&search=" @isset($_GET['perPage']) @if( $_GET['perPage'] === '25') selected @endif @endisset class="tw-bg-white">25</option>
+                            <option value="/data-induk-siswa?perPage=50&search=" @isset($_GET['perPage']) @if( $_GET['perPage'] === '50') selected @endif @endisset class="tw-bg-white">50</option>
+                            <option value="/data-induk-siswa?perPage=100&search=" @isset($_GET['perPage']) @if( $_GET['perPage'] === '100') selected @endif @endisset class="tw-bg-white">100</option>
+                        @endif
+                    </select>
+                    @endif
                     <div class="tw-text-base pt-1 tw-mx-2 tw-font-pop tw-font-normal tw-text-basic-700">Entries</div>
                 </div>
             </div>
@@ -150,7 +150,7 @@
                     @foreach ($siswa as $s)
                         
                     <tr class="tw-bg-white tw-border">
-                        <td class="counterCell tw-py-4 tw-px-6 tw-border">{{ $s->id }}</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">{{ $s->id }}</td>
                         <td class="tw-py-4 tw-px-6 tw-border">{{ $s->nis_siswa }}</td>
                         <td class="tw-py-4 tw-px-6 tw-border">{{ $s->nisn_siswa }}</td>
                         <td class="tw-py-4 tw-px-6 tw-border">{{ $s->nama_siswa }}</td>
@@ -232,5 +232,18 @@
     alert("jQuery is working perfectly.");
     });      
 });
+</script>
+
+<script>
+    $(function(){
+      // bind change event to select
+      $('#show-data-perpage').on('change', function () {
+          var url = $(this).val(); // get selected value
+          if (url) { // require a URL
+              window.location = url; // redirect
+          }
+          return false;
+      });
+    });
 </script>
 @endpush
