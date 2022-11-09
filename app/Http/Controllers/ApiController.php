@@ -114,7 +114,9 @@ class ApiController extends Controller
 
                 return view('rekap-siswa.data-tidak-naik', [
                     'title' => 'Data Tidak Naik Kelas',
-                    'active' => 'data-induk',                
+                    'active' => 'data-induk',      
+                    'response' => json_decode($response),
+                    'total' => json_decode($response)->data->count,          
                 ]);
 
             } else {
@@ -420,7 +422,9 @@ class ApiController extends Controller
                 return view('induk.show-alumni', [
                     'title' => 'Data Alumni',
                     'active' => 'data-induk',
-                    'status' => 'error'
+                    'status' => 'error',
+                    'response' => json_decode($response),
+                    'total' => json_decode($response)->data->count,
                 ]);
 
             } else {
@@ -1111,10 +1115,13 @@ class ApiController extends Controller
 
         $kelas = Http::get("{$this->api_url}/kelas");
 
+        $prevURL = URL::previous();
+
         return view('mutasi.create-mutasi-keluar', [
             'title' => 'Create Mutasi Keluar',
             'active' => 'rekap-siswa',
             'kelas' => json_decode($kelas),
+            'prevURL' => $prevURL,
         ]);
     }
 
@@ -1123,10 +1130,13 @@ class ApiController extends Controller
 
         $kelas = Http::get("{$this->api_url}/kelas");
 
+        $prevURL = URL::previous();
+
         return view('mutasi.create-mutasi-masuk', [
             'title' => 'Create Mutasi Masuk',
             'active' => 'rekap-siswa',
             'kelas' => json_decode($kelas),
+            'prevURL' => $prevURL,
         ]);
     }
 
@@ -1221,7 +1231,7 @@ class ApiController extends Controller
             ]);
 
             if ($response->successful()) {
-                return redirect('/siswa-masuk')->with('success', 'Mutasi created successfully.');
+                return redirect("{$request->prevURL}")->with('success', 'Mutasi created successfully.');
             } 
 
             if ($response->clientError()) {
@@ -1244,6 +1254,8 @@ class ApiController extends Controller
 
         $response = Http::get("{$this->api_url}/mutasi/{$id}");
 
+        $prevURL = URL::previous();
+
         if ($response->successful()) {
 
             $kelas = Http::get("{$this->api_url}/kelas");
@@ -1253,7 +1265,8 @@ class ApiController extends Controller
                 'active' => 'rekap-siswa',
                 'mutasi' => json_decode($response)->result,
                 'status' => 'success',
-                'kelas' => json_decode($kelas)
+                'kelas' => json_decode($kelas),
+                'prevURL' => $prevURL,
             ]);
         } else {
             return view('mutasi.edit-mutasi-keluar', [
@@ -1272,6 +1285,8 @@ class ApiController extends Controller
 
         $response = Http::get("{$this->api_url}/mutasi/{$id}");
 
+        $prevURL = URL::previous();
+
         if ($response->successful()) {
 
             $kelas = Http::get("{$this->api_url}/kelas");
@@ -1281,7 +1296,8 @@ class ApiController extends Controller
                 'active' => 'rekap-siswa',
                 'mutasi' => json_decode($response)->result,
                 'status' => 'success',
-                'kelas' => json_decode($kelas)
+                'kelas' => json_decode($kelas),
+                'prevURL' => $prevURL,
             ]);
         } else {
             return view('mutasi.edit-mutasi-masuk', [
@@ -1327,7 +1343,7 @@ class ApiController extends Controller
     
             $response->throw();
 
-            return redirect('/siswa-keluar')->with('success', 'Mutasi updated successfully.');
+            return redirect("{$request->prevURL}")->with('success', 'Mutasi updated successfully.');
     
         } else {
             
@@ -1342,6 +1358,8 @@ class ApiController extends Controller
 
         // validasi nis siswa jika sudah ada
         $nis = $request->nis_siswa;
+
+        $prevURL = URL::previous();
 
         $siswaExist = Http::get("{$this->api_url}/siswa/{$nis}");
 
@@ -1370,7 +1388,7 @@ class ApiController extends Controller
     
             $response->throw();
 
-            return redirect('/siswa-masuk')->with('success', 'Mutasi updated successfully.');
+            return redirect("{$request->prevURL}")->with('success', 'Mutasi updated successfully.');
     
         } else {
             

@@ -1,6 +1,13 @@
 @extends('layouts.main')
 
 @section('content')
+<style>
+    .no-spin::-webkit-inner-spin-button, .no-spin::-webkit-outer-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0 !important;
+    }
+</style>
+
 <div class="tw-mx-10">
     <div class="tw-flex tw-mt-8">
         <h4 class="title-main">Data Siswa Tidak Naik Kelas</h4>
@@ -83,23 +90,43 @@
             </table>
         </div>
         {{-- pagination --}}
-        <div class="tw-float-right tw-py-5 tw-px-3">
-            @if($response->to >= $total)
-            <a class="tw-text-gray-300 tw-bg-[#2f5555] hover:tw-text-gray-300 tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-regular fa-arrow-right"></i></a>
+        <div class="tw-flex tw-justify-center tw-rounded-b-lg">
+            
+            @if($response->prev_page_url)
+            <div class="tw-float-right tw-py-5">
+                <a href="{{ $response->prev_page_url }}" class="tw-transition-all tw-text-sims-400 hover:tw-bg-sims-400 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-solid fa-chevron-left"></i></a>
+            </div>
             @else
-            <a href="{{ $response->next_page_url }}" class="tw-text-white tw-bg-sims-400 hover:tw-bg-sims-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-regular fa-arrow-right"></i></a>
+            <div class="tw-float-right tw-py-5">
+                <a class="tw-text-sims-600 hover:tw-text-sims-600 tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-solid fa-chevron-left"></i></a>
+            </div>
             @endif
-          </div>
 
-          @if($response->prev_page_url)
-          <div class="tw-float-right tw-py-5">
-            <a href="{{ $response->prev_page_url }}" class="tw-text-white tw-bg-sims-400 hover:tw-bg-sims-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-regular fa-arrow-left"></i></a>
-          </div>
-          @else
-          <div class="tw-float-right tw-py-5">
-            <a class="tw-text-gray-300 tw-bg-[#2f5555] hover:tw-text-gray-300 tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-regular fa-arrow-left"></i></a>
-          </div>
-          @endif
+            <div class="tw-py-3 tw-my-auto tw-h-min tw-flex tw-justify-center">
+                <form action="/data-tidak-naik" class="tw-text-center">
+
+                    @if(isset($_GET['perPage']))
+                    <input name="perPage" value="{{ $_GET['perPage'] }}" type="hidden">
+                    @endif
+
+                    @if(isset($_GET['search']))
+                    <input name="search" value="{{ $_GET['search'] }}" type="hidden">
+                    @endif
+
+
+                    <input type="number" name="page" class="tw-bg-white tw-border tw-border-slate-200 tw-w-1/2 tw-font-pop tw-font-medium tw-text-slate-500 tw-rounded-md tw-text-center focus:tw-ring-gray-200 focus:tw-border-gray-200 no-spin" min="1" @if(isset($_GET['page'])) value="{{ $_GET['page'] }}" @endif>
+                </form>
+            </div>
+            
+            <div class="tw-float-right tw-py-5">
+            @if($response->to >= $total)
+            <a class="tw-text-sims-600 hover:tw-text-sims-600 tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-solid fa-chevron-right"></i></a>
+            @else
+            <a href="{{ $response->next_page_url }}" class="tw-transition-all tw-text-sims-400 hover:tw-bg-sims-400 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-solid fa-chevron-right"></i></a>
+            @endif
+            </div>
+
+        </div>
         @else
             <div class="tw-flex tw-justify-center">
                 <div class="tw-w-1/3 tw-my-28">
@@ -108,6 +135,44 @@
                         Data tidak dapat ditemukan.
                     </div>
                 </div>
+            </div>
+            {{-- pagination --}}
+            <div class="tw-flex tw-justify-center tw-rounded-b-lg">
+
+                @if($response->prev_page_url)
+                <div class="tw-float-right tw-py-5">
+                    <a href="{{ $response->prev_page_url }}" class="tw-transition-all tw-text-sims-400 hover:tw-bg-sims-400 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-solid fa-chevron-left"></i></a>
+                </div>
+                @else
+                <div class="tw-float-right tw-py-5">
+                    <a class="tw-text-sims-600 hover:tw-text-sims-600 tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-solid fa-chevron-left"></i></a>
+                </div>
+                @endif
+
+                <div class="tw-py-3 tw-my-auto tw-h-min tw-flex tw-justify-center">
+                    <form action="/data-tidak-naik" class="tw-text-center">
+
+                        @if(isset($_GET['perPage']))
+                        <input name="perPage" value="{{ $_GET['perPage'] }}" type="hidden">
+                        @endif
+
+                        @if(isset($_GET['search']))
+                        <input name="search" value="{{ $_GET['search'] }}" type="hidden">
+                        @endif
+
+
+                        <input type="number" name="page" class="tw-bg-white tw-border tw-border-slate-200 tw-w-1/2 tw-font-pop tw-font-medium tw-text-slate-500 tw-rounded-md tw-text-center focus:tw-ring-gray-200 focus:tw-border-gray-200 no-spin" min="1" @if(isset($_GET['page'])) value="{{ $_GET['page'] }}" @endif>
+                    </form>
+                </div>
+
+                <div class="tw-float-right tw-py-5">
+                @if($response->to >= $total)
+                <a class="tw-text-sims-600 hover:tw-text-sims-600 tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-solid fa-chevron-right"></i></a>
+                @else
+                <a href="{{ $response->next_page_url }}" class="tw-transition-all tw-text-sims-400 hover:tw-bg-sims-400 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-solid fa-chevron-right"></i></a>
+                @endif
+                </div>
+
             </div>
         @endif
     </div>
