@@ -445,17 +445,17 @@ class ApiController extends Controller
         }
     }
 
-    // public function exportAlumniPDF() {
+    public function exportAlumniPDF() {
 
-    //     $response = Http::get("{$this->api_url}/dashboard/alumni");
+        $response = Http::get("{$this->api_url}/dashboard/alumni");
 
-    //     $pdf = PDF::loadView('induk.pdf.alumni', [
-    //         'alumni' => json_decode($response)->result
-    //     ]);
+        $pdf = PDF::loadView('induk.pdf.alumni', [
+            'alumni' => json_decode($response)->data->rows
+        ]);
 
-    //     return $pdf->download('alumni.pdf');
+        return $pdf->download('alumni.pdf');
 
-    // }
+    }
 
     // public function printAlumni() {
 

@@ -33,12 +33,12 @@
         @foreach ($alumni as $a)
             <tr>
                 <td></td>
-                <td>{{ $m->nis_siswa }}</td>
-                <td>{{ $m->nisn_siswa }}</td>
-                <td>{{ $m->nama_siswa }}</td>
-                <td>{{ $m->jenis_kelamin }}</td>
-                <td>{{ $m->jenis_kelamin }}</td>
-                <td>{{ $m->KelasId }}, {{ $m->alasan_mutasi }}</td>
+                <td>{{ $a->nis_siswa }}</td>
+                <td>{{ $a->nisn_siswa }}</td>
+                <td>{{ $a->nama_siswa }}</td>
+                <td>{{ $a->jenis_kelamin }}</td>
+                <td>{{ $a->jenis_kelamin }}</td>
+                <td>{{ $a->KelasId }}</td>
             </tr>
         @endforeach
     </table>
