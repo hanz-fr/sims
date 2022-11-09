@@ -27,10 +27,10 @@
 
         @can('tata usaha')
         <div class="tw-flex md:tw-justify-center tw-items-center md:-tw-mb-8">
-            <a href="/data-induk-print" title="Print"><i class="fa-solid fa-print btn-export"></i></a>
-            <button id="copy_btn" type="button" value="copy"><i class="fa-solid fa-copy btn-export"></i></button>
-            <a href="/data-induk-excel" title="Export ke Excel"><i class="fa-solid fa-file-excel btn-export"></i></a>
-            <a href="/data-induk-pdf/{{ $jurusan }}/{{ $kelas }}" title="Export ke PDF"><i class="fa-solid fa-file-pdf btn-export"></i></a>
+            <a href=""><i class="fa-solid fa-print btn-export"></i></a>
+            <a href=""><i class="fa-solid fa-copy btn-export"></i></a>
+            <a href=""><i class="fa-solid fa-file-excel btn-export"></i></a>
+            <a href=""><i class="fa-solid fa-file-pdf btn-export"></i></a>
         </div>
         @endcan
     </div>
@@ -41,8 +41,8 @@
                 @if( ! empty($jurusan) && ! empty($kelas))
                 <form action="/data-induk-siswa/{{ $jurusan }}/{{ $kelas }}"> 
                     <div class="relative tw-border-2 tw-rounded-lg focus:tw-ring-sims-400">
-                        @if(isset($_GET['perPage']))
-                        <input name="page" value="1" type="hidden">
+                        @if(isset($_GET['page']) || isset($_GET['perPage']))
+                        <input name="page" value="{{ $_GET['page'] }}" type="hidden">
                         <input name="perPage" value="{{ $_GET['perPage'] }}" type="hidden">
                         @else
                         <input name="page" value="1" type="hidden">
@@ -55,8 +55,8 @@
                 @else
                 <form action="/data-induk-siswa"> 
                     <div class="relative tw-border-2 tw-rounded-lg focus:tw-ring-sims-400">
-                        @if(isset($_GET['perPage']))
-                        <input name="page" value="1" type="hidden">
+                        @if(isset($_GET['page']) || isset($_GET['perPage']))
+                        <input name="page" value="{{ $_GET['page'] }}" type="hidden">
                         <input name="perPage" value="{{ $_GET['perPage'] }}" type="hidden">
                         @else
                         <input name="page" value="1" type="hidden">
@@ -287,21 +287,5 @@
           return false;
       });
     });
-
-    var copyBtn = document.querySelector('#copy_btn');
-
-    copyBtn.addEventListener('click', function () {
-
-    var urlField = document.querySelector('table');
-   
-    var range = document.createRange();  
-
-    range.selectNode(urlField);
-
-    window.getSelection().addRange(range);
-   
-    document.execCommand('copy');
-}, 
-false);
 </script>
 @endpush

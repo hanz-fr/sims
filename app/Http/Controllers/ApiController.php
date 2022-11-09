@@ -21,7 +21,7 @@ class ApiController extends Controller
     /* GLOBAL VARIABLES */
     public function __construct()
     {
-        $this->api_url = 'https://82a1-103-139-10-81.ap.ngrok.io'; // Ganti link NGROK disini
+        $this->api_url = '127.0.0.1:3000'; // Ganti link NGROK disini
 
 
         $this->sims_url = 'http://127.0.0.1:8000'; // SIMS URL
@@ -583,7 +583,7 @@ class ApiController extends Controller
     }
 
 
-    public function exportDataIndukPDF() {
+    public function exportDataIndukPDF(Request $request) {
 
         $response = Http::get("{$this->api_url}/siswa/{$request->jurusan}/{$request->kelas}??page=1&perPage=100");
 

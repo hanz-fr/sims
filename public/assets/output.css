@@ -2567,6 +2567,10 @@ video {
   text-align: end;
 }
 
+.tw-align-middle {
+  vertical-align: middle;
+}
+
 .tw-font-pop {
   font-family: Poppins, sans-serif;
 }
