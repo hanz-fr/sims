@@ -13,7 +13,7 @@
         <div class="tw-rounded-xl tw-font-ubuntu tw-overflow-hidden tw-shadow-md tw-mt-14">
             <div class="tw-flex tw-bg-[#5A6C7C] ">
                 <div class="tw-flex tw-text-slate-400 tw-mr-8 tw-m-0 tw-bg-none">
-                    <img src="{{ asset('/foto/633abb3763a14nekopara.gif') }}" alt=""
+                    <img src="{{ asset('/foto/63359448821a7pp.jpg') }}" alt=""
                         class="tw-w-52 tw-object-contain">
                 </div>
                 <div class="tw-flex tw-flex-col tw-text-white tw-py-8 tw-px-8">
