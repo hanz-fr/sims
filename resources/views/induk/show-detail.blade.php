@@ -28,10 +28,14 @@
                     <div>{{ $siswa->nama_siswa }}</div>
                     <div>{{ $siswa->nis_siswa }} / {{ $siswa->nisn_siswa }}</div>
                     <div>{{ $siswa->kelas->id }} / {{ $siswa->kelas->jurusan }}</div>
-                    <div class="tw-flex tw-gap-2 tw-justify-center tw-align-middle">
-                        <i class="fa-solid fa-graduation-cap" ></i>
-                        <div class="tw-font-pop tw-text-sm tw-text-sims-500">Alumni</div>
+                    @if($siswa->isAlumni === true)
+                    <div class="tw-flex tw-gap-2 tw-justify-center tw-my-3">
+                        <div class="tw-text-sims-400">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <div class="tw-font-pop tw-text-sm tw-text-sims-500 tw-my-auto">Alumni</div>
                     </div>
+                    @endif
                 </div>
 
                 {{-- data siswa n rekap nilai --}}

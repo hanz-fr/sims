@@ -22,6 +22,10 @@ class ApiController extends Controller
     public function __construct()
     {
         $this->api_url = 'https://4630-103-148-113-86.ap.ngrok.io'; // Ganti link NGROK disini
+<<<<<<< HEAD
+=======
+
+>>>>>>> da2ea0757bf3e68ebca924c5dec6660653afa6aa
 
         $this->sims_url = 'http://127.0.0.1:8000'; // SIMS URL
     }
