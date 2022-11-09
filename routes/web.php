@@ -115,7 +115,7 @@ Route::middleware(['auth'])->group(function () {
     /* ALUMNI */
 
     Route::get('/data-alumni', [ApiController::class, 'viewAlumni']);
-    // Route::get('/alumni-pdf', [ApiController::class, 'exportAlumniPDF']);
+    Route::get('/alumni-pdf', [ApiController::class, 'exportAlumniPDF']);
     // Route::get('/alumni-print', [ApiController::class, 'printAlumni']);
 
 
