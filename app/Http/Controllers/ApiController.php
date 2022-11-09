@@ -21,7 +21,11 @@ class ApiController extends Controller
     /* GLOBAL VARIABLES */
     public function __construct()
     {
+<<<<<<< HEAD
         $this->api_url = '127.0.0.1:3000'; // Ganti link NGROK disini
+=======
+        $this->api_url = 'https://4630-103-148-113-86.ap.ngrok.io'; // Ganti link NGROK disini
+>>>>>>> 26ab0182041a084209dfbc03651868e0ac47be54
 
 
         $this->sims_url = 'http://127.0.0.1:8000'; // SIMS URL
@@ -588,6 +592,8 @@ class ApiController extends Controller
         $response = Http::get("{$this->api_url}/siswa/{$request->jurusan}/{$request->kelas}??page=1&perPage=100");
 
         $pdf = PDF::loadView('induk.pdf.data-induk', [
+            'jurusan' => $request->jurusan,
+            'kelas' => $request->kelas,
             'siswa' => json_decode($response)->data->rows
         ]);
 
@@ -598,11 +604,13 @@ class ApiController extends Controller
     }
 
 
-    public function printDataInduk() {
+    public function printDataInduk(Request $request) {
 
-        $response = Http::get("{$this->api_url}/siswa?page=1&perPage=100");
+        $response = Http::get("{$this->api_url}/siswa/{$request->jurusan}/{$request->kelas}??page=1&perPage=100");
 
         return view('induk.pdf.data-induk', [
+            'jurusan' => $request->jurusan,
+            'kelas' => $request->kelas,
             'siswa' => json_decode($response)->data->rows
         ]);
 

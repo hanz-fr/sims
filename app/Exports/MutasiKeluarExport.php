@@ -18,7 +18,7 @@ class MutasiKeluarExport implements FromView, ShouldAutoSize
 
     public function __construct()
     {
-        $this->mutasi = Http::get("https://82a1-103-139-10-81.ap.ngrok.io/mutasi/siswa-keluar");
+        $this->mutasi = Http::get("https://4630-103-148-113-86.ap.ngrok.io/mutasi/siswa-keluar");
     }
 
     /**
