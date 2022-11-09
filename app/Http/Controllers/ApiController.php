@@ -101,13 +101,16 @@ class ApiController extends Controller
 
         abort_if(Gate::allows('wali kelas'), 403);
 
+        $page = $request->page;
+        $perPage = $request->perPage;
         $search = $request->search;
-        $response = Http::get("{$this->api_url}/dashboard/siswa-tidak-naik?search={$search}");
+
+        $response = Http::get("{$this->api_url}/dashboard/siswa-tidak-naik?page={$page}&perPage={$perPage}&search={$search}");
 
 
         if ($response->successful()) {
 
-            if(json_decode($response)->result->rows == []) {
+            if(json_decode($response)->data->rows == []) {
 
                 return view('rekap-siswa.data-tidak-naik', [
                     'title' => 'Data Tidak Naik Kelas',
@@ -119,7 +122,9 @@ class ApiController extends Controller
                 return view('rekap-siswa.data-tidak-naik', [
                     'title' => 'Data Tidak Naik Kelas',
                     'active' => 'data-induk',
-                    'siswa' => json_decode($response)->result->rows
+                    'siswa' => json_decode($response)->data->rows,
+                    'response' => json_decode($response),
+                    'total' => json_decode($response)->data->count,
                 ]);
 
             }
@@ -402,13 +407,15 @@ class ApiController extends Controller
 
     public function viewAlumni(Request $request) {
 
+        $page = $request->page;
+        $perPage = $request->perPage;
         $search = $request->search;
 
-        $response = Http::get("{$this->api_url}/dashboard/alumni/get?search={$search}");;
+        $response = Http::get("{$this->api_url}/dashboard/alumni/get?page={$page}&perPage={$perPage}&search={$search}");;
 
         if($response->successful()) {
 
-            if (json_decode($response)->result == []) {
+            if (json_decode($response)->data->rows == []) {
 
                 return view('induk.show-alumni', [
                     'title' => 'Data Alumni',
@@ -421,7 +428,9 @@ class ApiController extends Controller
                 return view('induk.show-alumni', [
                     'title' => 'Data Alumni',
                     'active' => 'data-induk',
-                    'alumni' => json_decode($response)->result
+                    'alumni' => json_decode($response)->data->rows,
+                    'response' => json_decode($response),
+                    'total' => json_decode($response)->data->count,
                 ]);
 
             }

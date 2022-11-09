@@ -44,17 +44,13 @@
 
         <section class="tw-flex lg:tw-flex-row sm:tw-flex-col tw-justify-between sm:tw-flex-wrap sm:tw-gap-5">
             <div class="tw-flex lg:tw-flex-row sm:tw-flex-col">
-
                 @if( ! empty($jurusan) && ! empty($kelas))
                 <form action="/data-induk-siswa/{{ $jurusan }}/{{ $kelas }}"> 
                     <div class="relative tw-border-2 tw-rounded-lg focus:tw-ring-sims-400">
-                        @if(isset($_GET['page']) || isset($_GET['perPage']))
-                        <input name="page" value="{{ $_GET['page'] }}" type="hidden">
-                        <input name="perPage" value="{{ $_GET['perPage'] }}" type="hidden">
-                        @else
-                        <input name="page" value="1" type="hidden">
-                        <input name="perPage" value="10" type="hidden">
-                        @endif
+                        
+                        <input name="page" value="@if(isset($_GET['page'])) {{ $_GET['page'] }} @else 1 @endif" type="hidden">
+                        <input name="perPage" value="@if(isset($_GET['perPage'])) {{ $_GET['perPage'] }} @else 1 @endif" type="hidden">
+                        
                         <input type="text" id="search" name="search" class="tw-py-1 tw-px-5 tw-border-none tw-rounded-md" value="{{ request()->search }}">
                         <i class="fa-solid fa-magnifying-glass tw-pr-5 tw-pl-3 tw-text-slate-600"></i>
                     </div>
@@ -62,13 +58,10 @@
                 @else
                 <form action="/data-induk-siswa"> 
                     <div class="relative tw-border-2 tw-rounded-lg focus:tw-ring-sims-400">
-                        @if(isset($_GET['page']) || isset($_GET['perPage']))
-                        <input name="page" value="{{ $_GET['page'] }}" type="hidden">
-                        <input name="perPage" value="{{ $_GET['perPage'] }}" type="hidden">
-                        @else
-                        <input name="page" value="1" type="hidden">
-                        <input name="perPage" value="10" type="hidden">
-                        @endif
+                        
+                        <input name="page" value="@if(isset($_GET['page'])) {{ $_GET['page'] }} @else 1 @endif" type="hidden">
+                        <input name="perPage" value="@if(isset($_GET['perPage'])) {{ $_GET['perPage'] }} @else 1 @endif" type="hidden">
+
                         <input type="text" id="search" name="search" class="tw-py-1 tw-px-5 tw-border-none tw-rounded-md" value="{{ request()->search }}">
                         <i class="fa-solid fa-magnifying-glass tw-pr-5 tw-pl-3 tw-text-slate-600"></i>
                     </div>
