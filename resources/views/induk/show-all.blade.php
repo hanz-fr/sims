@@ -284,6 +284,24 @@
 </script>
 
 <script>
+    var copyBtn = document.querySelector('#copy_btn');
+
+    copyBtn.addEventListener('click', function () {
+
+    var urlField = document.querySelector('table');
+    
+    var range = document.createRange();  
+
+    range.selectNode(urlField);
+
+    window.getSelection().addRange(range);
+    
+    document.execCommand('copy');
+}, 
+false);
+</script>
+
+<script>
     $(function(){
       // bind change event to select
       $('#show-data-perpage').on('change', function () {
