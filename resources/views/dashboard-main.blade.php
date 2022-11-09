@@ -148,23 +148,7 @@
                         </div>
                     </div>
 
-                    <div x-init="$dispatch('register', {id: 6})"  
-                      x-intersect:enter.half="setIndex(5)" x-transition.duration.500ms>
-                        <div class="card-dashboard">
-                            <div>
-                                <a href="/rekap-jumlah-siswa" class="tw-text-sims-400 hover:tw-text-sims-600 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                            </div>
-                            <div class="sm:tw-px-12 md:tw-px-4">
-                                <div class="tw-flex tw-flex-row">
-                                    <div class="tw-text-5xl tw-text-[#FFA386]"><i class="fa-solid fa-user"></i></div>
-                                <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">{{ $siswa }}</div>
-                                </div>
-                            </div>
-                            <div class="/rekap-jumlah-siswa"> 
-                                <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Jumlah Siswa</div>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
             </section>
             {{-- end of card carousel --}}
