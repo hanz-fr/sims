@@ -39,9 +39,15 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/api/siswa/update/{nis}', [ApiController::class, 'updateSiswa']);
     Route::delete('/api/siswa/delete/{nis}', [ApiController::class, 'deleteSiswa']);
 
+    Route::get('/data-induk-pdf', [ApiController::class, 'exportDataIndukPDF']);
     Route::get('/data-induk-pdf/{jurusan}/{kelas}', [ApiController::class, 'exportDataIndukPDF']);
+
     Route::get('/data-induk-print', [ApiController::class, 'printDataInduk']);
+    Route::get('/data-induk-print/{jurusan}/{kelas}', [ApiController::class, 'printDataInduk']);
+    
     Route::get('/data-induk-excel', [ApiController::class, 'exportDataIndukExcel']);
+    Route::get('/data-induk-excel/{jurusan}/{kelas}', [ApiController::class, 'exportDataIndukExcel']);
+
 
     Route::get('/get-request', [ApiController::class, 'getRequest']);
 
