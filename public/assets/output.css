@@ -1600,6 +1600,14 @@ video {
   width: 13rem;
 }
 
+.tw-w-\[400px\] {
+  width: 400px;
+}
+
+.tw-w-\[450px\] {
+  width: 450px;
+}
+
 .tw-max-w-3xl {
   max-width: 48rem;
 }
@@ -1674,6 +1682,10 @@ video {
 
 .tw-grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.tw-grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .tw-flex-row {
@@ -1759,6 +1771,15 @@ video {
 
 .tw-gap-y-4 {
   row-gap: 1rem;
+}
+
+.tw-gap-y-5 {
+  row-gap: 1.25rem;
+}
+
+.tw-gap-x-8 {
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
 }
 
 .tw-space-y-3 > :not([hidden]) ~ :not([hidden]) {
