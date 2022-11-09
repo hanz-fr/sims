@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use PDF;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use App\Exports\AlumniExport;
 use App\Exports\DataIndukExport;
 use App\Exports\MutasiMasukExport;
 use App\Exports\MutasiKeluarExport;
@@ -445,27 +446,43 @@ class ApiController extends Controller
         }
     }
 
+
     public function exportAlumniPDF() {
 
-        $response = Http::get("{$this->api_url}/dashboard/alumni");
+        $response = Http::get("{$this->api_url}/dashboard/alumni/get");
 
         $pdf = PDF::loadView('induk.pdf.alumni', [
             'alumni' => json_decode($response)->data->rows
         ]);
 
-        return $pdf->download('alumni.pdf');
+        $dataalumni = 'data_alumni_tahun_'.date('Y').'.pdf';
+
+        return $pdf->download($dataalumni);
 
     }
 
-    // public function printAlumni() {
+    
+    public function printAlumni() {
 
-    //     $response = Http::get("{$this->api_url}/");
+        $response = Http::get("{$this->api_url}/dashboard/alumni/get");
 
-    //     return view('induk.pdf.alumni', [
-    //         'alumni' => json_decode($response)
-    //     ]);
+        return view('induk.pdf.alumni', [
+            'alumni' => json_decode($response)->data->rows
+        ]);
 
-    // }
+    }
+
+
+    public function exportAlumniExcel() {
+
+        ob_end_clean();
+        ob_start();
+
+        $dataalumni = 'data_alumni_tahun_'.date('Y').'.xlsx';
+
+        return Excel::download(new AlumniExport, $dataalumni);
+
+    }
 
 
     /* API SISWA */

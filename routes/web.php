@@ -116,7 +116,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/data-alumni', [ApiController::class, 'viewAlumni']);
     Route::get('/alumni-pdf', [ApiController::class, 'exportAlumniPDF']);
-    // Route::get('/alumni-print', [ApiController::class, 'printAlumni']);
+    Route::get('/alumni-print', [ApiController::class, 'printAlumni']);
+    Route::get('/alumni-excel', [ApiController::class, 'exportAlumniExcel']);
 
 
     /* REKAP SISWA */
