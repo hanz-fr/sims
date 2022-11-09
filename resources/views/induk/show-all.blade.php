@@ -200,16 +200,16 @@
                         <td class="tw-py-4 tw-px-6 tw-border">{{ $s->KelasId }}</td>
                         <td>
                             @cannot('kesiswaan')
-                            <a href="/rekap-nilai/{{ $s->nis_siswa }}" class="tw-text-white tw-bg-sims-400 hover:tw-bg-sims-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-mr-1">
+                            <a href="/rekap-nilai/{{ $s->nis_siswa }}" class="tw-text-white tw-bg-sims-400 hover:tw-bg-sims-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-mr-1" title="Rekap Nilai">
                                 <i class="fa-light fa-clipboard-list"></i>
                             </a>
                             @endcannot
                             @can('tata usaha')
-                            <a href="/edit-siswa/{{ $s->nis_siswa }}" class="tw-text-white tw-bg-kuning-500 hover:tw-bg-kuning-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
+                            <a href="/edit-siswa/{{ $s->nis_siswa }}" class="tw-text-white tw-bg-kuning-500 hover:tw-bg-kuning-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3" title="Edit Data Siswa">
                                 <i class="fa-solid fa-pen-to-square"></i></a>
                             </a>
                             @endcan
-                            <a href="/detail/{{ $s->nis_siswa }}" class="tw-text-white tw-bg-gray-500 hover:tw-bg-gray-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
+                            <a href="/detail/{{ $s->nis_siswa }}" class="tw-text-white tw-bg-gray-500 hover:tw-bg-gray-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3" title="Detail Data ">
                                 <i class="fa-solid fa-eye"></i>
                             </a>
                         </td>
@@ -274,6 +274,24 @@
     alert("jQuery is working perfectly.");
     });      
 });
+</script>
+
+<script>
+    var copyBtn = document.querySelector('#copy_btn');
+
+    copyBtn.addEventListener('click', function () {
+
+    var urlField = document.querySelector('table');
+    
+    var range = document.createRange();  
+
+    range.selectNode(urlField);
+
+    window.getSelection().addRange(range);
+    
+    document.execCommand('copy');
+}, 
+false);
 </script>
 
 <script>

@@ -21,8 +21,7 @@ class ApiController extends Controller
     /* GLOBAL VARIABLES */
     public function __construct()
     {
-        $this->api_url = '127.0.0.1:3000'; // Ganti link NGROK disini
-
+        $this->api_url = 'https://4630-103-148-113-86.ap.ngrok.io'; // Ganti link NGROK disini
 
         $this->sims_url = 'http://127.0.0.1:8000'; // SIMS URL
     }
@@ -142,7 +141,7 @@ class ApiController extends Controller
 
     public function viewTambahNilaiMapel($nis) {
 
-        abort_if(Gate::denies('wali kelas'), 403);
+        abort_if(Gate::denies('rekap-nilai'), 403);
 
         $siswa = Http::get("{$this->api_url}/siswa/{$nis}");
         $jurusanSiswa = json_decode($siswa)->result->kelas->JurusanId;
@@ -176,7 +175,7 @@ class ApiController extends Controller
 
     public function editRekapNilai($RaportId) {
 
-        abort_if(Gate::denies('wali kelas'), 403);
+        abort_if(Gate::denies('rekap-nilai'), 403);
 
         $raport = Http::get("{$this->api_url}/raport/{$RaportId}");
         $nis_siswa = json_decode($raport)->result->nis_siswa;
@@ -208,7 +207,7 @@ class ApiController extends Controller
     
     public function storeUpdateNilaiMapel(Request $request) {
 
-        abort_if(Gate::denies('wali kelas'), 403);
+        abort_if(Gate::denies('rekap-nilai'), 403);
 
         $nis = $request->nis_siswa;
 
@@ -297,7 +296,7 @@ class ApiController extends Controller
 
     public function storeTambahNilaiMapel(Request $request) {
 
-        abort_if(Gate::denies('wali kelas'), 403);
+        abort_if(Gate::denies('rekap-nilai'), 403);
 
         $nis = $request->nis_siswa;
 
@@ -395,7 +394,7 @@ class ApiController extends Controller
 
     public function deleteNilaiMapel($RaportId) {
 
-        abort_if(Gate::denies('wali kelas'), 403);
+        abort_if(Gate::denies('rekap-nilai'), 403);
 
         Http::delete("{$this->api_url}/raport/{$RaportId}");
 

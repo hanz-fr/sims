@@ -15,7 +15,7 @@
                     <a href="" class="tw-bg-sims-400 tw-text-white hover:tw-text-white tw-font-pop hover:tw-bg-sims-600 tw-px-5 tw-py-2 tw-rounded-lg">Export</a>                        
                     @endcannot
                     
-                    @can('wali kelas')
+                    @can('rekap-nilai')
                     <button type="button" data-modal-toggle="popup-modal" class="tw-bg-sims-400 tw-text-white hover:tw-text-white  tw-font-pop hover:tw-bg-sims-600 tw-px-5 tw-py-2 tw-rounded-lg">Tambah Rekap Nilai +</button>
 
                     <div id="popup-modal" tabindex="-1"

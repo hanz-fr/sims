@@ -35,5 +35,9 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('rekap-siswa', function($user){
             return in_array($user->role, [1, 2]);
         });
+
+        Gate::define('rekap-nilai', function($user){
+            return in_array($user->role, [1, 4]);
+        });
     }
 }
