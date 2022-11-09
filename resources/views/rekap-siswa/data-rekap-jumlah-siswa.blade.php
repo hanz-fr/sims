@@ -17,7 +17,7 @@
                 @can('rekap-siswa')
                 <div class="tw-flex tw-items-center -tw-mt-4">
                     <a href="" title="Print"><i class="fa-solid fa-print btn-export"></i></a>
-                    <a href=""><i class="fa-solid fa-copy btn-export"></i></a>
+                    <button id="copy_btn" type="button" value="copy"><i class="fa-solid fa-copy btn-export"></i></button>
                     <a href="" title="Export ke Excel"><i class="fa-solid fa-file-excel btn-export"></i></a>
                     <a href="" title="Export ke PDF"><i class="fa-solid fa-file-pdf btn-export"></i></a>
                 </div>
@@ -54,13 +54,11 @@
                 <table class="tw-w-full tw-text-sm tw-text-center">
                     <thead class="tw-text-md tw-bg-gray-100 tw-text-basic-700 tw-border tw-font-pop">
                         <tr>
-                            <th scope="col" rowspan="2" class="tw-py-3 tw-px-6 tw-border-r">KELAS</th>
-                            <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border-r">JUMLAH SISWA AWAL BULAN
-                            </th>
-                            <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border-r">JUMLAH SISWA KELUAR</th>
-                            <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border-r">JUMLAH SISWA MASUK</th>
-                            <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border-r">JUMLAH SISWA AKHIR BULAN
-                            </th>
+                            <th scope="col" rowspan="2" class="tw-py-3 tw-px-6 tw-border">KELAS</th>
+                            <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border">JUMLAH SISWA AWAL BULAN</th>
+                            <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border">JUMLAH SISWA KELUAR</th>
+                            <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border">JUMLAH SISWA MASUK</th>
+                            <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border">JUMLAH SISWA AKHIR BULAN</th>
                         </tr>
                         <tr>
                             <th class="tw-border tw-py-3 tw-px-6">P</th>
@@ -157,7 +155,7 @@
                         @endforeach
                     </tbody>
                     <tfoot>
-                        <th>JUMLAH SISWA</th>
+                        <th class="tw-border">JUMLAH SISWA</th>
                         <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_p }}</th>
                         <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_l }}</th>
                         <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa }}</th>
@@ -178,12 +176,10 @@
                     <thead class="tw-text-md tw-bg-gray-100 tw-text-basic-700 tw-border tw-font-pop">
                         <tr>
                             <th scope="col" rowspan="2" class="tw-py-3 tw-px-6 tw-border-r">KELAS</th>
-                            <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border-r">JUMLAH SISWA AWAL BULAN
-                            </th>
+                            <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border-r">JUMLAH SISWA AWAL BULAN</th>
                             <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border-r">JUMLAH SISWA KELUAR</th>
                             <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border-r">JUMLAH SISWA MASUK</th>
-                            <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border-r">JUMLAH SISWA AKHIR BULAN
-                            </th>
+                            <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border-r">JUMLAH SISWA AKHIR BULAN</th>
                         </tr>
                         <tr>
                             <th class="tw-border tw-py-3 tw-px-6">P</th>
@@ -270,7 +266,7 @@
                         @endforeach
                     </tbody>
                     <tfoot>
-                        <th>JUMLAH SISWA</th>
+                        <th class="tw-border">JUMLAH SISWA</th>
                         <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_p_X }}</th>
                         <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_l_X }}</th>
                         <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_X }}</th>
@@ -291,13 +287,10 @@
                     <thead class="tw-text-md tw-bg-gray-100 tw-text-basic-700 tw-border tw-font-pop">
                         <tr>
                             <th scope="col" rowspan="2" class="tw-py-3 tw-px-6 tw-border-r">KELAS</th>
-                            <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border-r">JUMLAH SISWA AWAL BULAN
-                            </th>
-                            <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border-r">JUMLAH SISWA KELUAR
-                            </th>
+                            <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border-r">JUMLAH SISWA AWAL BULAN</th>
+                            <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border-r">JUMLAH SISWA KELUAR</th>
                             <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border-r">JUMLAH SISWA MASUK</th>
-                            <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border-r">JUMLAH SISWA AKHIR
-                                BULAN</th>
+                            <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border-r">JUMLAH SISWA AKHIR BULAN</th>
                         </tr>
                         <tr>
                             <th class="tw-border tw-py-3 tw-px-6">P</th>
@@ -382,7 +375,7 @@
                         @endforeach
                     </tbody>
                     <tfoot>
-                        <th>JUMLAH SISWA</th>
+                        <th class="tw-border">JUMLAH SISWA</th>
                         <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_p_XI }}</th>
                         <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_l_XI }}</th>
                         <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_XI }}</th>
@@ -402,14 +395,11 @@
                 <table class="tw-w-full tw-text-sm tw-text-center">
                     <thead class="tw-text-md tw-bg-gray-100 tw-text-basic-700 tw-border tw-font-pop">
                         <tr>
-                            <th scope="col" rowspan="2" class="tw-py-3 tw-px-6 tw-border-r">KELAS</th>
-                            <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border-r">JUMLAH SISWA AWAL BULAN
-                            </th>
-                            <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border-r">JUMLAH SISWA KELUAR
-                            </th>
-                            <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border-r">JUMLAH SISWA MASUK</th>
-                            <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border-r">JUMLAH SISWA AKHIR
-                                BULAN</th>
+                            <th scope="col" rowspan="2" class="tw-py-3 tw-px-6 tw-border">KELAS</th>
+                            <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border">JUMLAH SISWA AWAL BULAN</th>
+                            <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border">JUMLAH SISWA KELUAR</th>
+                            <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border">JUMLAH SISWA MASUK</th>
+                            <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border">JUMLAH SISWA AKHIR BULAN</th>
                         </tr>
                         <tr>
                             <th class="tw-border tw-py-3 tw-px-6">P</th>
@@ -496,7 +486,7 @@
                         @endforeach
                     </tbody>
                     <tfoot>
-                        <th>JUMLAH SISWA</th>
+                        <th class="tw-border">JUMLAH SISWA</th>
                         <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_p_XII }}</th>
                         <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_l_XII }}</th>
                         <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_XII }}</th>
@@ -515,3 +505,23 @@
         </div>
     </div>
 @endsection
+
+@push('scripts')
+    <script>
+        var copyBtn = document.querySelector('#copy_btn');
+    
+        copyBtn.addEventListener('click', function () {
+
+        var urlField = document.querySelector('table');
+        
+        var range = document.createRange();  
+
+        range.selectNode(urlField);
+
+        window.getSelection().addRange(range);
+        
+        document.execCommand('copy');
+    }, 
+    false);
+    </script>
+@endpush
