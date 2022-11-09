@@ -23,7 +23,6 @@ class ApiController extends Controller
     {
         $this->api_url = 'https://4630-103-148-113-86.ap.ngrok.io'; // Ganti link NGROK disini
 
-
         $this->sims_url = 'http://127.0.0.1:8000'; // SIMS URL
     }
 
