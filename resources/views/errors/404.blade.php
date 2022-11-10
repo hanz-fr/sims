@@ -10,7 +10,7 @@
                 <div class="tw-border-l-8 tw-border-sims-400">
                     <div class="tw-font-pop tw-text-sims-400 tw-my-5 tw-text-5xl tw-font-bold tw-mx-10">SIMS</div>
                     <div class="tw-font-pop tw-text-gray-300 tw-my-5 tw-text-7xl tw-mx-10 tw-font-bold">404 NOT FOUND</div>
-                    <div class="tw-font-pop tw-text-gray-300 tw-my-5 tw-text-2xl tw-mx-10 tw-font-normal">halaman nya ga ada kids 😘</div>
+                    <div class="tw-font-pop tw-text-gray-300 tw-my-5 tw-text-2xl tw-mx-10 tw-font-normal">Halaman yang kamu cari tidak dapat ditemukan</div>
                 </div>
                 <div class="tw-flex lg:tw-flex-row sm:tw-flex-col tw-justify-between tw-my-auto tw-gap-3 tw-p-2">
                     <a href="/jurusan" class="tw-group">
