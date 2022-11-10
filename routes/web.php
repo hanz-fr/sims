@@ -21,7 +21,7 @@ use App\Http\Controllers\ForgotPasswordController;
 */
 
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth', 'revalidate'])->group(function () {
 
     /* MAIN DASHBOARD */
 

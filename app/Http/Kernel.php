@@ -73,5 +73,6 @@ class Kernel extends HttpKernel
         'kurikulum' => isKurikulum::class,
         'wali_kelas' => isWaliKelas::class,
         'admin' => Admin::class,
+        'revalidate' => \App\Http\Middleware\RevalidateBackHistory::class,
     ];
 }
