@@ -89,9 +89,9 @@
                     </tr>
                 </thead>
                 <tbody class="tw-text-base">
-                    @foreach ($alumni as $a)
+                    @foreach ($alumni as $key => $a)
                     <tr class="tw-bg-white tw-border">
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">{{ $key + 1 }}</td>
                         <td class="tw-py-4 tw-px-6 tw-border">{{ $a->nis_siswa }}</td>
                         <td class="tw-py-4 tw-px-6 tw-border">{{ $a->nisn_siswa }}</td>
                         <td class="tw-py-4 tw-px-6 tw-border">{{ $a->nama_siswa }}</td>
