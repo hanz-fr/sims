@@ -42,6 +42,9 @@
         <form action="/api/mutasi-masuk/store" method="POST">
         @csrf
         @method('POST')
+
+            <input type="hidden" name="prevURL" id="prevURL" value="{{ $prevURL }}">
+
             <div class="tw-flex tw-flex-col tw-space-y-6">
                 <div class="tw-mx-auto md:tw-w-2/3 sm:tw-w-1/2">
                     <label class="label-input" for="nis_siswa">
