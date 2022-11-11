@@ -19,6 +19,7 @@
                             <div class="tw-text-gray-500 tw-text-sm tw-text-center tw-font-normal group-hover:tw-text-white tw-mt-4">Jurusan</div>
                         </div>
                     </a>
+                    @can('rekap-siswa')
                     <a href="/rekap-jumlah-siswa" class="tw-group">
                         <div
                             class="tw-justify-center tw-flex lg:tw-flex-col sm:tw-flex-row tw-text-center tw-border-2 tw-p-6 tw-items-center tw-bg-white tw-rounded-lg group-hover:tw-text-white group-hover:tw-bg-sims-400 tw-transition-all tw-duration-300">
@@ -29,6 +30,7 @@
                                 Data Jumlah Siswa</div>
                         </div>
                     </a>
+                    @endcan
                     <a href="/data-induk-siswa?perPage=10" class="tw-group">
                         <div
                             class="tw-justify-center tw-flex lg:tw-flex-col sm:tw-flex-row  tw-text-center tw-border-2 tw-p-6 tw-items-center tw-bg-white tw-rounded-lg group-hover:tw-bg-sims-400 group-hover:tw-text-white tw-transition-all tw-duration-300">
@@ -39,6 +41,7 @@
                                 Data Induk Siswa</div>
                         </div>
                     </a>
+                    @can('rekap-siswa')
                     <a href="/siswa-keluar" class="tw-group">
                         <div
                             class="tw-justify-center tw-flex lg:tw-flex-col sm:tw-flex-row  tw-text-center tw-border-2 tw-p-6 tw-items-center tw-bg-white tw-rounded-lg group-hover:tw-bg-sims-400 group-hover:tw-text-white  tw-transition-all tw-duration-300">
@@ -49,6 +52,7 @@
                                 Data Perpindahan</div>
                         </div>
                     </a>
+                    @endcan
                 </div>
             </div>
         </div>

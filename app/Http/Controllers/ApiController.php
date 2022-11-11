@@ -22,7 +22,7 @@ class ApiController extends Controller
     /* GLOBAL VARIABLES */
     public function __construct()
     {
-        $this->api_url = 'https://b972-103-148-113-86.ap.ngrok.io'; // Ganti link NGROK disini
+        $this->api_url = 'https://d0da-103-139-10-81.ap.ngrok.io'; // Ganti link NGROK disini
 
         $this->sims_url = 'http://127.0.0.1:8000'; // SIMS URL
     }
@@ -691,6 +691,25 @@ class ApiController extends Controller
     }
 
 
+    public function exportDataSiswaPDF(Request $request) {
+
+        $nis = $request->nis;
+
+        $response = Http::get("{$this->api_url}/siswa/{$nis}");
+
+        $getSiswaBirthDate = json_decode($response)->result->tgl_lahir;
+        $tgl_lahir_siswa = Carbon::parse($getSiswaBirthDate)->translatedFormat('l d F Y');
+
+        $pdf = PDF::loadView('induk.pdf.data-induk-detail', [
+            'siswa' => json_decode($response)->result,
+            'tgl_lahir_siswa' => $tgl_lahir_siswa,
+        ]);
+
+        $daftarnama = 'daftar_nama_buku_induk_'.date('Y-m-d_H-i-s').'.pdf';
+
+        return $pdf->download($daftarnama);
+
+    }
 
 
     public function getRaportSiswa(Request $request) {
@@ -723,27 +742,6 @@ class ApiController extends Controller
         }
     }
 
-
-    // public function exportDataSiswaPDF(Request $request) {
-
-    //     $nis = $request->nis;
-
-    //     $response = Http::get("{$this->api_url}/siswa/{$nis}");
-
-    //     $getSiswaBirthDate = json_decode($response)->result->tgl_lahir;
-    //     $tgl_lahir_siswa = Carbon::parse($getSiswaBirthDate)->translatedFormat('l d F Y');
-
-    //     $pdf = PDF::loadView('induk.pdf.data-induk-detail', [
-    //         'jurusan' => $request->jurusan,
-    //         'kelas' => $request->kelas,
-    //         'siswa' => json_decode($response)->data->rows
-    //     ]);
-
-    //     $daftarnama = 'daftar_nama_buku_induk_'.date('Y-m-d_H-i-s').'.pdf';
-
-    //     return $pdf->download($daftarnama);
-
-    // }
 
     public function createSiswa()
     {
