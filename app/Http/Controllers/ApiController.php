@@ -16,13 +16,15 @@ use Illuminate\Support\Facades\Http;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Session;
 
+use function PHPUnit\Framework\isEmpty;
+
 class ApiController extends Controller
 {
 
     /* GLOBAL VARIABLES */
     public function __construct()
     {
-        $this->api_url = 'https://b972-103-148-113-86.ap.ngrok.io'; // Ganti link NGROK disini
+        $this->api_url = '127.0.0.1:3000'; // Ganti link NGROK disini
 
         $this->sims_url = 'http://127.0.0.1:8000'; // SIMS URL
     }
@@ -669,12 +671,25 @@ class ApiController extends Controller
             $getSiswaBirthDate = json_decode($response)->result->tgl_lahir;
             $tgl_lahir_siswa = Carbon::parse($getSiswaBirthDate)->translatedFormat('l d F Y');
             
+            // initialize variables for createdAt & updatedAt
+            $createdAt = '';
+            $updatedAt = '';
+
+            // Parse createdAt & updatedAt
+            if (! empty(json_decode($response)->result->createdAt)) {
+                $createdAt = Carbon::parse(json_decode($response)->result->createdAt)->translatedFormat('l d F Y');
+            }
+            if (! empty(json_decode($response)->result->updatedAt)) {
+                $updatedAt = Carbon::parse(json_decode($response)->result->updatedAt)->translatedFormat('l d F Y');
+            }
 
             return view('induk.show-detail', [
                 'title' => 'Data Siswa',
                 'active' => 'data-induk',
                 'status' => 'success',
                 'siswa' => json_decode($response)->result,
+                'updatedAt' => $updatedAt,
+                'createdAt' => $createdAt,
                 'tgl_lahir_siswa' => $tgl_lahir_siswa,
                 'prevURL' => $prevURL
             ]);
@@ -868,17 +883,6 @@ class ApiController extends Controller
             $response->throw();
 
             return redirect($request->prevURLwithParams)->with('success', 'Data berhasil ditambahkan.');
-
-            /* // klo url sebelumnya data-induk, bakal redirect ke data-induk lagi
-            if($request->prevURL === "/data-induk"){
-
-                return redirect('/data-induk-siswa?perPage=10')->with('success', 'Siswa created successfully.');
-
-            // klo url nya selain data-induk, bakal redirect ke data-induk by jurusan
-            } else {
-
-                return redirect(Session('page_jurusan'))->with('success', 'Siswa created successfully.');
-            } */
         }
     }
 
@@ -988,17 +992,6 @@ class ApiController extends Controller
 
         return redirect("{$request->prevURLwithParams}")->with('success', 'Data berhasil diubah.');
 
-        /* // klo url sebelumnya data-induk, bakal redirect ke data-induk lagi
-        if($request->prevURL === "{$this->sims_url}/data-induk-siswa?perPage=10"){
-
-            return redirect('/data-induk-siswa?perPage=10')->with('success', 'Siswa updated successfully.');
-            
-        // klo url nya selain data-induk, bakal redirect ke data-induk by jurusan
-        } else {
-            
-            return redirect(Session('page_jurusan'))->with('success', 'Siswa updated successfully.');
-        } */
-
     }
 
     public function deleteSiswa(Request $request, $nis)
@@ -1017,17 +1010,6 @@ class ApiController extends Controller
         Http::delete("{$this->api_url}/siswa/{$nis}");
 
         return redirect("{$request->prevURLwithParams}")->with('success', 'Siswa berhasil dihapus.');
-
-        /* // klo url sebelumnya data-induk, bakal redirect ke data-induk lagi
-        if($request->prevURL === "{$this->sims_url}/data-induk-siswa?perPage=10"){
-
-            return redirect('/data-induk-siswa?perPage=10')->with('success', 'Siswa deleted successfully.');
-            
-        // klo url nya selain data-induk, bakal redirect ke data-induk by jurusan
-        } else {
-            
-            return redirect(Session('page_jurusan'))->with('success', 'Siswa deleted successfully.');
-        } */
     }
 
 
