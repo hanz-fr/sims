@@ -1120,11 +1120,14 @@ video {
   margin-right: 1.75rem;
 }
 
+<<<<<<< HEAD
 .tw-mx-1 {
   margin-left: 0.25rem;
   margin-right: 0.25rem;
 }
 
+=======
+>>>>>>> b8db6b44bfad7dadaff2cecb21707a1ef2579b22
 .tw-mt-5 {
   margin-top: 1.25rem;
 }
@@ -1473,10 +1476,13 @@ video {
   height: 138px;
 }
 
+<<<<<<< HEAD
 .tw-h-2 {
   height: 0.5rem;
 }
 
+=======
+>>>>>>> b8db6b44bfad7dadaff2cecb21707a1ef2579b22
 .tw-w-full {
   width: 100%;
 }
