@@ -23,6 +23,7 @@
     {{-- icon --}}
     <link rel="stylesheet" href="{{ URL::asset('font-awesome/css/all.min.css') }}">
     <title>SIMS | {{ $title }}</title>
+
 </head>
 
 <body class="tw-bg-back">
