@@ -20,8 +20,8 @@ use App\Http\Controllers\ForgotPasswordController;
 |
 */
 
-
-Route::middleware(['auth', 'revalidate'])->group(function () {
+/* ROUTE USER */
+Route::middleware(['auth:web', 'revalidate'])->group(function () {
 
     /* MAIN DASHBOARD */
 
@@ -144,10 +144,28 @@ Route::middleware(['auth', 'revalidate'])->group(function () {
 
 
 
-/* ROUTE ADMIN */
+/* ROUTE SUPER ADMIN */
+Route::middleware(['auth:admin', 'revalidate'])->group(function () {
 
-Route::middleware(['admin'])->group(function () {
+    /* ADMIN DASHBOARD */
+    Route::get('admin/dashboard', function () {
+        return view('admin.dashboard', [
+            'title' => 'Dashboard Admin',
+            'active' => 'admin'
+        ]);
+    })->name('admin.dashboard');
 
+    // DATABASE DASHBOARD
+    Route::get('/database', function () {
+        return view('admin.dashboard-database', [
+            'title' => 'Database',
+            'active' => 'database'
+        ]);
+    });
+    
+    /* ACCOUNT MANAGEMENT */
+    Route::resource('account', AccountController::class);
+    
     /* ADMIN KELAS */
     Route::get('/all-kelas', function () {
         return view('admin.kelas.show-all-kelas', [
@@ -177,28 +195,6 @@ Route::middleware(['admin'])->group(function () {
         ]);
     });
 
-    /* ADMIN LOGIN */
-    Route::get('/admin', [AdminController::class, 'index'])->name('login.admin');
-    Route::post('/login-admin', [AdminController::class, 'authenticate']);
-
-    /* ADMIN DASHBOARD */
-    Route::get('/dashboard', function () {
-        return view('admin.dashboard', [
-            'title' => 'Dashboard Admin',
-            'active' => 'admin'
-        ]);
-    });
-
-    // DATABASE DASHBOARD
-    Route::get('/database', function () {
-        return view('admin.dashboard-database', [
-            'title' => 'Database',
-            'active' => 'database'
-        ]);
-    });
-
-    /* ACCOUNT MANAGEMENT */
-    Route::resource('account', AccountController::class);
 
     /* 
     APEL JURUSAN */
@@ -433,6 +429,11 @@ Route::middleware(['admin'])->group(function () {
 
     Route::get('/search', [ApiController::class, 'search']);
 });
+
+    /* ADMIN LOGIN */
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin.login');
+    Route::post('/login-admin', [AdminController::class, 'handleLogin']);
+    Route::get('/admin/logout', [AdminController::class, 'logout']);
 
 
 // ROUTE USER SIMS (LOGIN & REGISTER)

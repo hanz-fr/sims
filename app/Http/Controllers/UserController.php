@@ -15,20 +15,21 @@ use Illuminate\Support\Facades\Session;
 class UserController extends Controller
 {
     // registrasi
-    public function registration()
-    {
+    public function registration() {
+        
         return view('auth.register', [
             'title' => 'Registrasi Akun'
         ]);
+
     }
 
-    public function register(Request $request)
-    {  
+    public function register(Request $request) {
+
         $request->validate([
             'nip'      => 'required|unique:users|min:9|max:18',
             'nama'     => 'required',
             'email'    => 'required|email|unique:users',
-            'role'    => 'required',
+            'role'     => 'required',
             'password' => 'required|min:6',
         ]);
         
@@ -39,25 +40,27 @@ class UserController extends Controller
             'role'    => $request->role,
             'password' => Hash::make($request->password),
         ]);
+
         $user->save();
          
         return view("auth.login", [
             'title'  => 'Akun berhasil dibuat',
             'status' => 'success'
         ]);
+
     }
     
-    // login
-    public function index()
-    {
+    // show login form
+    public function index() {
+
         return view('auth.login', [
             'title'  => 'Log In',
             'status' => ''
         ]);
+
     }
 
-    public function authenticate(Request $request)
-    {
+    public function authenticate(Request $request) {
 
         $request->validate([
             'nip'      => 'required|min:9|max:18',
@@ -82,18 +85,20 @@ class UserController extends Controller
     }
 
     // logout
-    public function signOut() 
-    {
+    public function signOut() {
+
         Auth::logout();
         
         Session::flush(); // delete session after logout
 
         return redirect('login');
+
     }
-    
-    // profile
-    public function show() 
-    {
+
+
+    // show profile
+    public function show() {
+
         $user = User::findOrFail(Auth::id());
 
         return view('auth.profil-user', [
@@ -101,10 +106,13 @@ class UserController extends Controller
             'active' => ''
         ], 
         compact('user'));
+
     }
 
-    public function edit() 
-    {
+
+    // edit profile
+    public function edit() {
+
         $user = User::findOrFail(Auth::id());
 
         return view('auth.edit-profil', [
@@ -112,10 +120,13 @@ class UserController extends Controller
             'active' => ''
         ], 
         compact('user'));
+
     }
 
-    public function update(Request $request, User $user, $id)
-    {
+
+    // update profile
+    public function update(Request $request, User $user, $id) {
+
         $this->validate($request,[
             'nip'   => 'required|min:9|max:18',
             'nama'  => 'required',
@@ -127,91 +138,85 @@ class UserController extends Controller
         $user->update($request->all());
 
         return redirect()->route('profile')->with('success','Data berhasil Di Update');
+
     }
 
-    public function changePassword(Request $request) 
-    {
-    #Validation
+
+    // change password 
+    public function changePassword(Request $request)  {
+        
         $request->validate([
         'old_password' => 'required',
         'new_password' => 'required|confirmed',
+        'new_password_confirmation' => 'required|same:new_password'
         ]);
 
-    #Match The Old Password
-        if(!Hash::check($request->old_password, auth()->user()->password)){
+        if(!Hash::check($request->old_password, auth()->user()->password)) {
             return back()->with("error", "Old Password Doesn't match!");
         }
 
-    #Update the new Password
         User::whereId(auth()->user()->id)->update([
         'password' => Hash::make($request->new_password)
         ]);
 
         return back()->with('success', 'Password changed successfully!');
+
     }
 
-          /**
-       * Write code on Method
-       *
-       * @return response()
-       */
-      public function showForgetPasswordForm()
-      {
+
+    // forget password
+      public function showForgetPasswordForm() {
+
          return view('auth.forgot-password', [
             'title' => 'Forgot Password',
             'status' => ''
          ]);
+
       }
   
-      /**
-       * Write code on Method
-       *
-       * @return response()
-       */
-      public function submitForgetPasswordForm(Request $request)
-      {
-          $request->validate([
-              'email' => 'required|email|exists:users',
-          ]);
+
+    public function submitForgetPasswordForm(Request $request) {
+
+        $request->validate([
+            'email' => 'required|email|exists:users',
+        ]);
   
-          $token = Str::random(64);
+        $token = Str::random(64);
   
-          DB::table('password_resets')->insert([
-              'email' => $request->email, 
-              'token' => $token, 
-              'created_at' => Carbon::now()
-            ]);
+        DB::table('password_resets')->insert([
+            'email' => $request->email, 
+            'token' => $token, 
+            'created_at' => Carbon::now()
+        ]);
   
-          Mail::send('auth.email.forget-password', ['token' => $token, 'title' => 'Email'], function($message) use($request){
-              $message->to($request->email);
-              $message->subject('Reset Password');
-          });
+        Mail::send('auth.email.forget-password', [
+            'token' => $token, 
+            'title' => 'Email'
+        ], function($message) use($request) {
+            $message->to($request->email);
+            $message->subject('Reset Password');
+        });
   
-          return view("auth.forgot-password", [
+        return view("auth.forgot-password", [
             'title'  => 'Email Sent',
             'status' => 'message'
         ]);
+
       }
 
-      /**
-       * Write code on Method
-       *
-       * @return response()
-       */
+
       public function showResetPasswordForm($token) { 
+
          return view('auth.reset-password', [
             'token' => $token,
             'title' => 'Reset your password'
         ]);
+
       }
   
-      /**
-       * Write code on Method
-       *
-       * @return response()
-       */
-      public function submitResetPasswordForm(Request $request)
-      {
+
+      public function submitResetPasswordForm(Request $request) {
+
         $this->validate($request, [
             'email' => 'required',
             'password' => 'required|min:6',
@@ -224,7 +229,10 @@ class UserController extends Controller
             $user->save();
             return redirect()->route('login')->with('success', 'Password has been changed');
         }
+
         return redirect()->route('update.password')->with('failed', 'Failed! something went wrong');
+
     }
+
 }
 

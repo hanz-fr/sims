@@ -26,7 +26,7 @@
       <div class="tw-w-64 tw-h-screen tw-sticky tw-py-4 tw-px-3 tw-bg-[#454F58] tw-justify-between tw-flex tw-flex-col">
          <div class="">
             <a href="/dashboard" class="tw-items-center tw-flex tw-flex-col tw-gap-3 tw-pl-2.5 tw-mb-5 tw-mt-8">
-               <img src="assets/img/logo-admin.svg" class="tw-mr-3 tw-h-9">
+               <img src="{{ URL::asset('assets/img/logo-admin.svg') }}" class="tw-mr-3 tw-h-9">
                <span class="tw-self-center tw-text-2xl tw-font-semibold tw-whitespace-nowrap tw-font-pop tw-text-gray-100">SIMS Admin</span>
             </a>
             <ul class="tw-space-y-3 tw-font-ubuntu tw-mt-20">
@@ -54,7 +54,7 @@
             <hr class="tw-bg-[#b2fefe] tw-mb-2 tw-mx-5">
             <div x-data="{ isActive: false, open: false }">
                <div x-show="open" x-transition.duration.90ms class="tw-my-2 tw-font-ubuntu tw-font-bold tw-justify-center tw-text-center" role="menu" arial-label="Components">
-                  <a href="#" role="menuitem" class="nav-item-admin tw-justify-center tw-font-bold tw-transition-colors tw-duration-200 tw-text-center">
+                  <a href="/admin/logout" role="menuitem" class="nav-item-admin tw-justify-center tw-font-bold tw-transition-colors tw-duration-200 tw-text-center">
                   Logout
                   </a>
               </div>
