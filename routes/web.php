@@ -39,7 +39,9 @@ Route::middleware(['auth', 'revalidate'])->group(function () {
     Route::put('/api/siswa/update/{nis}', [ApiController::class, 'updateSiswa']);
     Route::delete('/api/siswa/delete/{nis}', [ApiController::class, 'deleteSiswa']);
 
+    Route::get('/data-siswa-excel/{nis}', [ApiController::class, 'exportDataSiswaExcel']);
     Route::get('/data-siswa-pdf/{nis}', [ApiController::class, 'exportDataSiswaPDF']);
+    Route::get('/data-siswa-print/{nis}', [ApiController::class, 'exportDataSiswaPDF']);
 
     Route::get('/data-induk-pdf', [ApiController::class, 'exportDataIndukPDF']);
     Route::get('/data-induk-pdf/{jurusan}/{kelas}', [ApiController::class, 'exportDataIndukPDF']);

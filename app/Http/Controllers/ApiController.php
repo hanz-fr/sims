@@ -706,27 +706,6 @@ class ApiController extends Controller
     }
 
 
-    public function exportDataSiswaPDF(Request $request) {
-
-        $nis = $request->nis;
-
-        $response = Http::get("{$this->api_url}/siswa/{$nis}");
-
-        $getSiswaBirthDate = json_decode($response)->result->tgl_lahir;
-        $tgl_lahir_siswa = Carbon::parse($getSiswaBirthDate)->translatedFormat('l d F Y');
-
-        $pdf = PDF::loadView('induk.pdf.data-induk-detail', [
-            'siswa' => json_decode($response)->result,
-            'tgl_lahir_siswa' => $tgl_lahir_siswa,
-        ]);
-
-        $daftarnama = 'daftar_nama_buku_induk_'.date('Y-m-d_H-i-s').'.pdf';
-
-        return $pdf->download($daftarnama);
-
-    }
-
-
     public function getRaportSiswa(Request $request) {
 
         abort_if(Gate::allows('kesiswaan'), 403);
@@ -1009,6 +988,56 @@ class ApiController extends Controller
 
         return redirect("{$request->prevURLwithParams}")->with('success', 'Siswa berhasil dihapus.');
     }
+
+
+    public function exportDataSiswaPDF(Request $request) {
+
+        $nis = $request->nis;
+
+        $response = Http::get("{$this->api_url}/siswa/{$nis}");
+
+        $getSiswaBirthDate = json_decode($response)->result->tgl_lahir;
+        $tgl_lahir_siswa = Carbon::parse($getSiswaBirthDate)->translatedFormat('l d F Y');
+
+        $pdf = PDF::loadView('induk.pdf.data-induk-detail', [
+            'siswa' => json_decode($response)->result,
+            'tgl_lahir_siswa' => $tgl_lahir_siswa,
+        ]);
+
+        $daftarnama = 'daftar_nama_buku_induk_'.date('Y-m-d_H-i-s').'.pdf';
+
+        return $pdf->download($daftarnama);
+
+    }
+
+
+    public function printDataSiswa(Request $request) {
+
+        $nis = $request->nis;
+
+        $response = Http::get("{$this->api_url}/siswa/{$nis}");
+
+        $getSiswaBirthDate = json_decode($response)->result->tgl_lahir;
+        $tgl_lahir_siswa = Carbon::parse($getSiswaBirthDate)->translatedFormat('l d F Y');
+
+        return view('induk.pdf.data-induk-detail', [
+            'siswa' => json_decode($response)->result,
+            'tgl_lahir_siswa' => $tgl_lahir_siswa,
+        ]);
+
+    }
+
+
+    // public function exportDataSiswaExcel() {
+
+    //     ob_end_clean();
+    //     ob_start();
+
+    //     $datasiswa = 'data_siswa_'.date('Y-m-d_H-i-s').'.xlsx';
+
+    //     return Excel::download(new DataSiswaExport, $datasiswa);
+
+    // }
 
 
     /* API MUTASI */
