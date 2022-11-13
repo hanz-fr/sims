@@ -1130,6 +1130,11 @@ video {
   margin-right: 1.5rem;
 }
 
+.tw-mx-1 {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
 .tw-mt-5 {
   margin-top: 1.25rem;
 }
@@ -2976,6 +2981,31 @@ video {
 .tw-text-gray-800 {
   --tw-text-opacity: 1;
   color: rgb(31 41 55 / var(--tw-text-opacity));
+}
+
+.tw-text-zinc-300 {
+  --tw-text-opacity: 1;
+  color: rgb(212 212 216 / var(--tw-text-opacity));
+}
+
+.tw-text-zinc-400 {
+  --tw-text-opacity: 1;
+  color: rgb(161 161 170 / var(--tw-text-opacity));
+}
+
+.tw-text-neutral-300 {
+  --tw-text-opacity: 1;
+  color: rgb(212 212 212 / var(--tw-text-opacity));
+}
+
+.tw-text-neutral-400 {
+  --tw-text-opacity: 1;
+  color: rgb(163 163 163 / var(--tw-text-opacity));
+}
+
+.tw-text-stone-300 {
+  --tw-text-opacity: 1;
+  color: rgb(214 211 209 / var(--tw-text-opacity));
 }
 
 .tw-underline {
