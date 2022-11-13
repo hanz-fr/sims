@@ -16,18 +16,25 @@
             {{-- foto profil --}}
             <div class="tw-flex sm:tw-flex-col md:tw-flex-row tw-font-pop">
                 <div
-                    class="md:tw-w-[30%] sm:tw-w-full tw-text-center tw-text-basic-700 tw-text-xl tw-font-pop tw-font-semibold tw-m-9">
+                    class="md:tw-w-[30%] tw-bg-white tw-shadow-lg tw-rounded-lg sm:tw-w-full tw-text-center tw-text-basic-700 tw-text-xl tw-font-pop tw-font-semibold tw-m-9">
                     @if ($siswa->foto)
                         <img src="{{ asset('foto/' . $siswa->foto) }}" alt="Pas Foto" srcset=""
-                            class="tw-rounded-xl tw-mb-10 tw-w-48 tw-h-52 tw-border tw-border-slate-400 tw-mx-auto md:tw-mt-20 sm:tw-mt-10">
+                            class="tw-rounded-xl tw-mb-8 tw-w-48 tw-h-52 tw-border tw-border-slate-400 tw-mx-auto md:tw-mt-20 sm:tw-mt-10">
                     @else
                         <img src="https://cdn.nerdschalk.com/wp-content/uploads/2020/09/how-to-remove-profile-picture-on-zoom-12.png?width=1000?height=100"
                             alt="Pas Foto" srcset=""
-                            class="tw-rounded-xl tw-mb-10 tw-w-48 tw-h-52 tw-border tw-border-slate-400 tw-mx-auto md:tw-mt-20 sm:tw-mt-10">
+                            class="tw-rounded-xl tw-mb-8 tw-w-48 tw-h-52 tw-border tw-border-slate-400 tw-mx-auto md:tw-mt-20 sm:tw-mt-10">
                     @endif
-                    <div>{{ $siswa->nama_siswa }}</div>
-                    <div>{{ $siswa->nis_siswa }} / {{ $siswa->nisn_siswa }}</div>
-                    <div>{{ $siswa->kelas->id }} / {{ $siswa->kelas->jurusan }}</div>
+
+                    <div class="tw-rounded-lg tw-py-5">
+                        <div class="tw-font-pop tw-text-sims-500 tw-text-xl tw-mb-3 tw-px-6">{{ $siswa->nama_siswa }}</div>
+                        <div>
+                            <div class="tw-font-pop tw-text-gray-400 tw-text-base tw-font-normal">{{ $siswa->nis_siswa }} / {{ $siswa->nisn_siswa }}</div>
+                            <div class="tw-font-pop tw-text-gray-400 tw-text-base tw-font-normal">{{ $siswa->kelas->jurusan }}</div>
+                            <div class="tw-font-pop tw-text-gray-400 tw-text-base tw-font-normal">{{ $siswa->kelas->id }}</div>
+                        </div>
+                    </div>
+
                     @if($siswa->isAlumni === true)
                     <div class="tw-flex tw-gap-2 tw-justify-center tw-my-3">
                         <div class="tw-text-sims-400">
