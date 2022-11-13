@@ -30,6 +30,8 @@ class DataIndukExport implements FromView, ShouldAutoSize
     {
         return view('induk.pdf.data-induk', [
             'siswa' => json_decode($this->siswa)->data->rows,
+            'jurusan' => $request->jurusan,
+            'kelas' => $request->kelas
         ]);
 
     }

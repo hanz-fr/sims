@@ -624,7 +624,10 @@ class ApiController extends Controller
             'siswa' => json_decode($response)->data->rows
         ]);
 
-        $daftarnama = 'daftar_nama_buku_induk_'.date('Y-m-d_H-i-s').'.pdf';
+        $jurusan = $request->jurusan;
+        $kelas = $request->kelas;
+
+        $daftarnama = 'daftar_nama_buku_induk_'.$kelas.$jurusan.'.pdf';
 
         return $pdf->download($daftarnama);
 
@@ -649,7 +652,7 @@ class ApiController extends Controller
         ob_end_clean();
         ob_start();
 
-        $daftarnama = 'daftar_nama_buku_induk_'.date('Y-m-d_H-i-s').'.xlsx';
+        $daftarnama = 'daftar_nama_buku_induk_'.$kelas.'.xlsx';
 
         return Excel::download(new DataIndukExport, $daftarnama);
         
@@ -999,12 +1002,15 @@ class ApiController extends Controller
         $getSiswaBirthDate = json_decode($response)->result->tgl_lahir;
         $tgl_lahir_siswa = Carbon::parse($getSiswaBirthDate)->translatedFormat('l d F Y');
 
+
         $pdf = PDF::loadView('induk.pdf.data-induk-detail', [
             'siswa' => json_decode($response)->result,
             'tgl_lahir_siswa' => $tgl_lahir_siswa,
         ]);
 
-        $daftarnama = 'daftar_nama_buku_induk_'.date('Y-m-d_H-i-s').'.pdf';
+        $nama = json_decode($response)->result->nama_siswa;
+
+        $daftarnama = 'data_induk_'.$nama.'.pdf';
 
         return $pdf->download($daftarnama);
 
@@ -1026,18 +1032,6 @@ class ApiController extends Controller
         ]);
 
     }
-
-
-    // public function exportDataSiswaExcel() {
-
-    //     ob_end_clean();
-    //     ob_start();
-
-    //     $datasiswa = 'data_siswa_'.date('Y-m-d_H-i-s').'.xlsx';
-
-    //     return Excel::download(new DataSiswaExport, $datasiswa);
-
-    // }
 
 
     /* API MUTASI */
@@ -1590,6 +1584,12 @@ class ApiController extends Controller
             ]);
         }
     }
+
+
+    public function exportRekapJumlahPDF() {
+
+
+    } 
 
 
     /* API LIVESEARCH (TESTING) */

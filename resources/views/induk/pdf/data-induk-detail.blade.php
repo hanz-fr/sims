@@ -48,6 +48,10 @@
     align-items: center;
   }
 
+	th {
+		text-align: left;
+	}
+
   </style>
 </head>
 <body>
@@ -101,11 +105,11 @@
 		</tr>
 		<tr>
 			<th>Agama</th>
-			<td>{{ $siswa->agama }}</td>
+			<td>: {{ $siswa->agama }}</td>
 		</tr>
 		<tr>
 			<th>Anak Ke</th>
-			<td>{{ $siswa->anak_ke }}</td>
+			<td>: {{ $siswa->anak_ke }}</td>
 		</tr>
 		<tr>
 			<th>Status dalam Keluarga</th>
@@ -123,7 +127,7 @@
 		</tr>
 		<tr>
 			<th></th>
-			<td>: No.Telp/HP {{ $siswa->no_telp_siswa }}</td>
+			<td>No.Telp/HP : {{ $siswa->no_telp_siswa }}</td>
 		</tr>
 		<tr>
 			<th>Alamat e-mail</th>
@@ -195,7 +199,7 @@
 		</tr>
 		<tr>
 			<th></th>
-			<td>:No. Telp/HP {{ $siswa->no_telp_ortu }}</td>
+			<td>No. Telp/HP : {{ $siswa->no_telp_ortu }}</td>
 		</tr>
 		<tr>
 			<th></th>

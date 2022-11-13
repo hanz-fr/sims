@@ -1120,14 +1120,6 @@ video {
   margin-right: 1.75rem;
 }
 
-<<<<<<< HEAD
-.tw-mx-1 {
-  margin-left: 0.25rem;
-  margin-right: 0.25rem;
-}
-
-=======
->>>>>>> b8db6b44bfad7dadaff2cecb21707a1ef2579b22
 .tw-mt-5 {
   margin-top: 1.25rem;
 }
@@ -1476,13 +1468,6 @@ video {
   height: 138px;
 }
 
-<<<<<<< HEAD
-.tw-h-2 {
-  height: 0.5rem;
-}
-
-=======
->>>>>>> b8db6b44bfad7dadaff2cecb21707a1ef2579b22
 .tw-w-full {
   width: 100%;
 }
@@ -1577,6 +1562,10 @@ video {
   width: max-content;
 }
 
+.tw-w-auto {
+  width: auto;
+}
+
 .tw-w-1\/3 {
   width: 33.333333%;
 }
@@ -1623,10 +1612,6 @@ video {
 
 .tw-w-52 {
   width: 13rem;
-}
-
-.tw-w-auto {
-  width: auto;
 }
 
 .tw-max-w-3xl {
@@ -2095,11 +2080,6 @@ video {
   background-color: rgb(255 193 7 / var(--tw-bg-opacity));
 }
 
-.tw-bg-danger-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(248 59 59 / var(--tw-bg-opacity));
-}
-
 .tw-bg-red-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(248 113 113 / var(--tw-bg-opacity));
@@ -2153,6 +2133,11 @@ video {
 .tw-bg-slate-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(226 232 240 / var(--tw-bg-opacity));
+}
+
+.tw-bg-danger-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 59 59 / var(--tw-bg-opacity));
 }
 
 .tw-bg-sims-500 {
@@ -2218,11 +2203,6 @@ video {
 .tw-bg-\[\#95BBE8\] {
   --tw-bg-opacity: 1;
   background-color: rgb(149 187 232 / var(--tw-bg-opacity));
-}
-
-.tw-bg-sims-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(127 201 198 / var(--tw-bg-opacity));
 }
 
 .tw-bg-admin-login {
@@ -2618,10 +2598,6 @@ video {
 
 .tw-text-end {
   text-align: end;
-}
-
-.tw-align-middle {
-  vertical-align: middle;
 }
 
 .tw-font-pop {
@@ -3281,11 +3257,6 @@ input:checked + .slider:before {
   border-bottom-left-radius: 0.375rem;
 }
 
-.checked\:tw-bg-sims-400:checked {
-  --tw-bg-opacity: 1;
-  background-color: rgb(77 158 158 / var(--tw-bg-opacity));
-}
-
 .invalid\:tw-text-pink-700:invalid {
   --tw-text-opacity: 1;
   color: rgb(190 24 93 / var(--tw-text-opacity));
@@ -3426,32 +3397,6 @@ input:checked + .slider:before {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.tw-peer:checked ~ .peer-checked\:tw-bg-sims-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(59 144 145 / var(--tw-bg-opacity));
-}
-
-.tw-peer:checked ~ .peer-checked\:tw-bg-sims-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(127 201 198 / var(--tw-bg-opacity));
-}
-
-.tw-peer:checked ~ .peer-checked\:tw-bg-red-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(252 165 165 / var(--tw-bg-opacity));
-}
-
-.tw-peer:checked ~ .peer-checked\:after\:tw-bg-sims-500::after {
-  content: var(--tw-content);
-  --tw-bg-opacity: 1;
-  background-color: rgb(59 144 145 / var(--tw-bg-opacity));
-}
-
-.tw-peer:active ~ .peer-active\:tw-bg-sims-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(127 201 198 / var(--tw-bg-opacity));
-}
-
 .hover\:-tw-translate-y-1:hover {
   --tw-translate-y: -0.25rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -3581,11 +3526,6 @@ input:checked + .slider:before {
   background-color: rgb(226 148 0 / var(--tw-bg-opacity));
 }
 
-.hover\:tw-bg-danger-700:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(193 20 20 / var(--tw-bg-opacity));
-}
-
 .hover\:tw-bg-red-500:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(239 68 68 / var(--tw-bg-opacity));
@@ -3609,6 +3549,11 @@ input:checked + .slider:before {
 .hover\:tw-bg-\[\#3F7373\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(63 115 115 / var(--tw-bg-opacity));
+}
+
+.hover\:tw-bg-danger-700:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(193 20 20 / var(--tw-bg-opacity));
 }
 
 .hover\:tw-bg-salmon-500:hover {
@@ -3742,11 +3687,6 @@ input:checked + .slider:before {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.active\:tw-bg-sims-300:active {
-  --tw-bg-opacity: 1;
-  background-color: rgb(127 201 198 / var(--tw-bg-opacity));
-}
-
 @media (prefers-color-scheme: dark) {
   .dark\:tw-border-gray-600 {
     --tw-border-opacity: 1;
@@ -3815,11 +3755,6 @@ input:checked + .slider:before {
   .dark\:focus\:tw-ring-gray-600:focus {
     --tw-ring-opacity: 1;
     --tw-ring-color: rgb(75 85 99 / var(--tw-ring-opacity));
-  }
-
-  .tw-peer:checked ~ .dark\:peer-checked\:tw-bg-sims-300 {
-    --tw-bg-opacity: 1;
-    background-color: rgb(127 201 198 / var(--tw-bg-opacity));
   }
 
   .dark\:hover\:tw-bg-red-300:hover {
