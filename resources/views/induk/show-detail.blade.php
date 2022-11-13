@@ -32,6 +32,9 @@
                             <div class="tw-font-pop tw-text-gray-400 tw-text-base tw-font-normal">{{ $siswa->nis_siswa }} / {{ $siswa->nisn_siswa }}</div>
                             <div class="tw-font-pop tw-text-gray-400 tw-text-base tw-font-normal">{{ $siswa->kelas->jurusan }}</div>
                             <div class="tw-font-pop tw-text-gray-400 tw-text-base tw-font-normal">{{ $siswa->kelas->id }}</div>
+                            <div class="tw-font-pop tw-text-gray-400 tw-text-xs tw-font-normal tw-mt-10">Dibuat pada tanggal : {{ $createdAt }}</div>
+                            <div class="tw-font-pop tw-text-gray-400 tw-text-xs tw-font-normal">Update terakhir : {{ $updatedAt }}</div>
+                            
                         </div>
                     </div>
 
