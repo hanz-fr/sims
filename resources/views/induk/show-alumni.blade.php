@@ -57,6 +57,128 @@
                 </select>
                 <div class="tw-text-base pt-1 tw-mx-2 tw-font-pop tw-font-normal tw-text-basic-700">Entries</div>
 
+                <div class="tw-flex tw-mx-5 tw-my-auto">
+                    <button data-modal-toggle="filter-popup-modal" class="hover:tw-text-sims-500 tw-text-slate-700 tw-transition-all tw-ease-in-out">
+                        <i class="tw-text-xl  fa-solid fa-sliders-simple"></i>
+                    </button>
+
+                    {{-- FILTERS POPUP MODAL --}}
+                    <div id="filter-popup-modal" tabindex="-1"class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full">
+                        <div class="relative p-4 w-full max-w-lg h-full md:h-auto">
+                            <div class="tw-relative tw-bg-white tw-rounded-lg tw-shadow dark:tw-bg-slate-100 tw-font-pop">
+                                <button type="button"
+                                  class="tw-absolute tw-top-3 tw-right-2.5 tw-text-gray-400 tw-bg-transparent hover:tw-bg-gray-200 hover:tw-text-gray-900 tw-rounded-lg tw-text-sm tw-p-1.5 tw-ml-auto tw-inline-flex tw-items-center"
+                                  data-modal-toggle="filter-popup-modal">
+                                    <svg aria-hidden="true" class="tw-w-5 tw-h-5" fill="currentColor"
+                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                          d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                          clip-rule="evenodd">
+                                        </path>
+                                    </svg>
+                                    <span class="sr-only">Close modal</span>
+                                </button>
+                                <div class="tw-p-6">
+                                    <form action="/get-request">
+                                    @csrf
+                                    <div class="tw-flex tw-justify-center tw-font-pop tw-text-sims-500 tw-text-xl tw-font-bold">Filters</div>
+                                    <div class="tw-border-b tw-border-sims-400 tw-w-full tw-my-5"></div>
+
+                                    {{-- search query --}}
+                                    <div class="tw-font-pop tw-text-sm tw-font-bold tw-text-gray-400">Search Query</div>
+                                    <div class="tw-flex tw-justify-between tw-mt-3">
+                                        <div class="tw-flex tw-my-3">
+                                            <div class="tw-text-xs tw-font-pop tw-text-gray-400 tw-mx-2 tw-my-auto">NIS</div>
+                                            <label for="default-toggle-nis" class="inline-flex relative items-center cursor-pointer">
+                                              <input type="checkbox" name="nis_siswa" value="true" id="default-toggle-nis" class="sr-only peer">
+                                              <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+                                            </label>
+                                        </div>
+                                        <div class="tw-flex tw-my-3">
+                                            <div class="tw-text-xs tw-font-pop tw-text-gray-400 tw-mx-2 tw-my-auto">NISN</div>
+                                            <label for="default-toggle-nisn" class="inline-flex relative items-center cursor-pointer">
+                                              <input type="checkbox" name="nisn_siswa" value="true" id="default-toggle-nisn" class="sr-only peer">
+                                              <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+                                            </label>
+                                        </div>
+                                        <div class="tw-flex tw-my-3">
+                                            <div class="tw-text-xs tw-font-pop tw-text-gray-400 tw-mx-2 tw-my-auto">Nama Peserta Didik</div>
+                                            <label for="default-toggle-peserta-didik" class="inline-flex relative items-center cursor-pointer">
+                                              <input type="checkbox" name="nama_siswa" value="true" id="default-toggle-peserta-didik" class="sr-only peer">
+                                              <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="tw-flex tw-gap-3">
+                                        <div class="tw-flex tw-my-3">
+                                            <div class="tw-text-xs tw-font-pop tw-text-gray-400 tw-mx-2 tw-my-auto">Gender</div>
+                                            <label for="default-toggle-gender" class="inline-flex relative items-center cursor-pointer">
+                                              <input type="checkbox" name="jenis_kelamin" value="true" id="default-toggle-gender" class="sr-only peer">
+                                              <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+                                            </label>
+                                        </div>
+                                        <div class="tw-flex tw-my-3">
+                                            <div class="tw-text-xs tw-font-pop tw-text-gray-400 tw-mx-2 tw-my-auto">Kelas</div>
+                                            <label for="default-toggle-kelas" class="inline-flex relative items-center cursor-pointer">
+                                              <input type="checkbox" name="KelasId" value="true" id="default-toggle-kelas" class="sr-only peer">
+                                              <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    {{-- end of search query --}}
+
+
+                                    {{-- sort by --}}
+                                    <div class="tw-font-pop tw-text-sm tw-font-bold tw-text-gray-400 tw-mt-6">Sort By</div>
+                                    <div class="tw-flex tw-justify-between tw-my-3">
+                                        <div class="tw-w-full">
+                                            <select class="input-data tw-text-sm tw-mr-5" id="sort-by" name="sort-by" required>
+                                                <option value="nis_siswa">NIS</option>
+                                                <option value="nisn_siswa">NISN</option>
+                                                <option value="nama_siswa">Nama Peserta Didik</option>
+                                                <option value="jenis_kelamin">Gender</option>
+                                                <option value="KelasId">Kelas</option>
+                                            </select>
+                                        </div>
+                                        <div class="tw-flex tw-my-auto tw-gap-3 tw-justify-center tw-mx-auto tw-ml-5">
+                                            <div class="tw-flex tw-gap-1">
+                                                <label for="ascending" class="tw-font-pop tw-text-sm tw-text-gray-400">Ascending</label>
+                                                <input class="tw-my-auto tw-bg-gray-200 focus:ring-0 focus:ring-offset-0" style="height:15px; width:15px; border: none" type="radio" id="ascending" name="sort" value="ASC" checked>
+                                            </div>
+                                            <div class="tw-flex tw-gap-1">
+                                                <label for="descending" class="tw-font-pop tw-text-sm tw-text-gray-400">Descending</label>
+                                                <input class="tw-my-auto tw-bg-gray-200 focus:ring-0 focus:ring-offset-0" style="height:15px; width:15px; border: none" type="radio" id="descending" name="sort" value="DESC">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{-- end of sort by --}}
+
+                                    
+                                    {{-- data per periodik --}}
+                                    <div class="tw-font-pop tw-text-sm tw-font-bold tw-text-gray-400 tw-mt-12">Data per Periodik</div>
+                                    <div class="tw-flex tw-justify-between tw-mt-5 tw-mx-5">
+                                        <div>
+                                            <div class="tw-text-xs tw-mb-2 tw-font-pop tw-font-normal tw-text-gray-400">Dari tanggal</div>
+                                            <input class="input-data tw-text-sm tw-font-pop" id="dibuatTglDari" name="dibuatTglDari" type="date" placeholder="dd/mm/yyyy">
+                                        </div>
+                                        <div>
+                                            <div class="tw-text-xs tw-mb-2 tw-font-pop tw-font-normal tw-text-gray-400">Ke tanggal</div>
+                                            <input class="input-data tw-text-sm tw-font-pop" id="dibuatTglKe" name="dibuatTglKe" type="date" placeholder="dd/mm/yyyy">
+                                        </div>
+                                    </div>
+                                    {{-- end of data per periodik --}}
+
+                                    <div class="tw-flex tw-justify-end tw-mt-10">
+                                        <button type="submit" class="tw-bg-sims-400 tw-text-sm tw-text-white tw-py-2 tw-px-4 tw-rounded-lg hover:tw-bg-sims-500 tw-transition-all">Simpan</button>
+                                    </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             {{-- <div class="tw-flex">
                 <a href="" class="tw-bg-[#28A745] tw-text-white hover:tw-text-white hover:tw-bg-green-700 tw-font-pop tw-rounded-lg tw-px-5 tw-py-2">
