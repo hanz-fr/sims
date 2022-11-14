@@ -188,8 +188,8 @@
             </div> --}}
             @can('rekap-siswa')
             <div class="tw-flex tw-justify-center tw-items-center -tw-mb-8">
-                <a href="/alumni-print" title="Print"><i class="fa-solid fa-print btn-export"></i></a>
-                <button id="copy_btn" type="button" value="copy"><i class="fa-solid fa-copy btn-export"></i></button>
+                <a href="/alumni-print" target="__blank" title="Print"><i class="fa-solid fa-print btn-export"></i></a>
+                <button id="copy_btn" title="Copy Data" type="button" value="copy"><i class="fa-solid fa-copy btn-export"></i></button>
                 <a href="/alumni-excel" title="Export ke Excel"><i class="fa-solid fa-file-excel btn-export"></i></a>
                 <a href="/alumni-pdf" title="Export ke PDF"><i class="fa-solid fa-file-pdf btn-export"></i></a>
             </div>

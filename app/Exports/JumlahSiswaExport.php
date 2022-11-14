@@ -13,6 +13,8 @@ class JumlahSiswaExport implements FromView, ShouldAutoSize
 
     use Exportable;
 
+    private $url;
+
     private $semuaKelas;
 
     private $kelas10;
@@ -21,7 +23,7 @@ class JumlahSiswaExport implements FromView, ShouldAutoSize
 
     public function __contruct() {
 
-        $this->url = 'https://25b0-114-79-49-109.ap.ngrok.io';
+        $this->url = 'https://ffaf-114-79-55-233.ap.ngrok.io';
 
         $this->semuaKelas = Http::get("{$this->url}/kelas/siswa-per-kelas/all");
         $this->kelas10 = Http::get("{$this->url}/kelas/siswa-per-kelas/10");

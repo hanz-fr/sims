@@ -20,7 +20,9 @@ class DataIndukExport implements FromView, ShouldAutoSize
     {
         $request = request();
 
-        $this->siswa = Http::get("https://25b0-114-79-49-109.ap.ngrok.io/siswa/{$request->jurusan}/{$request->kelas}??page=1&perPage=100");
+        $this->url = 'https://ffaf-114-79-55-233.ap.ngrok.io';
+
+        $this->siswa = Http::get("{$this->url}/siswa/{$request->jurusan}/{$request->kelas}??page=1&perPage=100");
     }
 
     /**
@@ -28,6 +30,8 @@ class DataIndukExport implements FromView, ShouldAutoSize
     */
     public function view(): View
     {
+        
+        $request = request();
         
         return view('induk.pdf.data-induk', [
             'siswa' => json_decode($this->siswa)->data->rows,

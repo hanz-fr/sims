@@ -25,7 +25,7 @@ class ApiController extends Controller
     /* GLOBAL VARIABLES */
     public function __construct()
     {
-        $this->api_url = 'https://25b0-114-79-49-109.ap.ngrok.io'; // Ganti link NGROK disini
+        $this->api_url = 'https://ffaf-114-79-55-233.ap.ngrok.io'; // Ganti link NGROK disini
 
         $this->sims_url = 'http://127.0.0.1:8000'; // SIMS URL
     }
@@ -64,7 +64,7 @@ class ApiController extends Controller
         } else {
             return view('induk.show-all', [
                 'status' => 'error',
-                'title' => 'data-induk',
+                'title' => 'Data Induk',
                 'active' => 'data-induk',
                 'message' => 'Halaman yang kamu cari tidak dapat ditemukan :('
             ]);
@@ -94,7 +94,7 @@ class ApiController extends Controller
 
             return view('induk.show-all', [
                 'status' => 'error',
-                'title' => 'data-induk',
+                'title' => 'Data Induk',
                 'active' => 'data-induk',
                 'message' => 'Halaman yang kamu cari tidak dapat ditemukan :('
             ]);
@@ -140,7 +140,7 @@ class ApiController extends Controller
 
             return view('induk.show-all', [
                 'status' => 'error',
-                'title' => 'data-induk',
+                'title' => 'Data Induk',
                 'active' => 'data-induk',
                 'message' => 'Halaman yang kamu cari tidak dapat ditemukan :('
             ]);
@@ -195,7 +195,7 @@ class ApiController extends Controller
     
             return view('induk.show-all', [
                 'status' => 'error',
-                'title' => 'data-induk',
+                'title' => 'Data Induk',
                 'active' => 'data-induk',
                 'message' => 'Halaman yang kamu cari tidak dapat ditemukan :('
             ]);
@@ -448,7 +448,7 @@ class ApiController extends Controller
         } else {
             return view('induk.show-all', [
                 'status' => 'error',
-                'title' => 'data-induk',
+                'title' => 'Data Alumni',
                 'active' => 'data-induk',
                 'message' => 'Halaman yang kamu cari tidak dapat ditemukan :('
             ]);
@@ -513,7 +513,7 @@ class ApiController extends Controller
                     'status' => 'Pencarian tidak ditemukan!',
                     'response' => json_decode($response),
                     'total' => json_decode($response)->data->count,
-                    'title' => 'data-induk',
+                    'title' => 'Data Induk',
                     'active' => 'data-induk',
                 ]);
 
@@ -525,7 +525,7 @@ class ApiController extends Controller
                     'status' => 'success',
                     'response' => json_decode($response),
                     'total' => json_decode($response)->data->count,
-                    'title' => 'data-induk',
+                    'title' => 'Data Induk',
                     'active' => 'data-induk',
                 ]);
 
@@ -537,7 +537,7 @@ class ApiController extends Controller
             return view('induk.show-all', [
                 'response' => $response,
                 'status' => 'error',
-                'title' => 'data-induk',
+                'title' => 'Data Induk',
                 'active' => 'data-induk',
                 'message' => 'Halaman yang kamu cari tidak dapat ditemukan :('
             ]);
@@ -581,7 +581,7 @@ class ApiController extends Controller
                     'kelas' => $request->kelas,
                     'response' => json_decode($response),
                     'total' => json_decode($response)->data->count,
-                    'title' => 'data-induk',
+                    'title' => 'Data Induk',
                     'active' => 'data-induk',
                 ]);
 
@@ -594,7 +594,7 @@ class ApiController extends Controller
                     'kelas' => $request->kelas,
                     'response' => json_decode($response),
                     'total' => json_decode($response)->data->count,
-                    'title' => 'data-induk',
+                    'title' => 'Data Induk',
                     'active' => 'data-induk',
                 ]);
 
@@ -607,7 +607,7 @@ class ApiController extends Controller
             return view('induk.show-all', [
                 'response' => $response,
                 'status' => 'error',
-                'title' => 'data-induk',
+                'title' => 'Data Induk',
                 'active' => 'data-induk',
                 'message' => 'Halaman yang kamu cari tidak dapat ditemukan :('
             ]);
@@ -1581,7 +1581,7 @@ class ApiController extends Controller
             return view('induk.show-all', [
                 'response' => $semuaKelas,
                 'status' => 'error',
-                'title' => 'data-induk',
+                'title' => 'Data Induk',
                 'active' => 'rekap-siswa',
                 'message' => 'Halaman yang kamu cari tidak dapat ditemukan :('
             ]);

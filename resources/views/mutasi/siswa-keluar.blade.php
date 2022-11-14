@@ -26,8 +26,8 @@
                 </div>
                 @can('rekap-siswa')
                 <div class="tw-flex md:tw-justify-center tw-items-center">
-                    <a href="/mutasi-keluar-print" title="Print"><i class="fa-solid fa-print btn-export"></i></a>
-                    <button id="copy_btn" type="button" value="copy"><i class="fa-solid fa-copy btn-export"></i></button>
+                    <a href="/mutasi-keluar-print" target="__blank" title="Print"><i class="fa-solid fa-print btn-export"></i></a>
+                    <button id="copy_btn" title="Copy Data" type="button" value="copy"><i class="fa-solid fa-copy btn-export"></i></button>
                     <a href="/mutasi-keluar-excel" title="Export ke Excel"><i class="fa-solid fa-file-excel btn-export"></i></a>
                     <a href="/mutasi-keluar-pdf" title="Export ke PDF"><i class="fa-solid fa-file-pdf btn-export"></i></a>
                 </div>
