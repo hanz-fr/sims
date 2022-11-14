@@ -19,13 +19,17 @@
 
             {{-- chart view --}}
             <section class="tw-bg-white tw-shadow-md tw-h-fit tw-px-10 tw-py-9 lg:tw-w-full sm:tw-w-full tw-mt-7">
-                <div class="tw-font-pop">
-                  <div class=" tw-text-gray-400 tw-font-bold">Grafik Jumlah Siswa SMKN 11</div>
+                <div class="tw-font-pop tw-text-gray-400 tw-font-bold">Grafik Jumlah Siswa SMKN 11</div>
+                <div class="tw-font-pop tw-flex tw-gap-10">
                     <div style="height: 400px">
                         <canvas id="myChart" class="tw-mt-4"></canvas>          
-                    </div>          
+                    </div>   
+                    <div>
+                        <canvas id="chart" class="tw-mt-4"></canvas>
+                    </div>       
                 </div>
             </section>
+
 
         </div>
 
@@ -241,6 +245,41 @@
 
 @push('scripts')
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const ctx = document.getElementById('chart');
+    const chart = new Chart(ctx, {
+        type: 'polarArea',
+        data: {
+            labels: ['Siswa Masuk', 'Siswa Keluar', 'Siswa Tidak Naik'],
+            datasets: [{
+                label: '# of Votes',
+                data: [{{ $siswaMasuk }}, {{ $siswaKeluar }}, {{ $siswaTdkNaik }}],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scale: {
+                ticks: {
+                    precision: 0
+                }
+            }
+        },
+    });
+</script>
+
+
 <script>
 
 

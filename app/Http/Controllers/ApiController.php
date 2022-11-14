@@ -48,6 +48,8 @@ class ApiController extends Controller
                 'jurusan' => json_decode($response)->jurusan->count,
                 'alumni' => json_decode($response)->alumni->count,
                 'siswaMasuk' => json_decode($response)->siswaMasuk->count,
+                'siswaKeluar' => json_decode($response)->siswaKeluar->count,
+                'siswaTdkNaik' => json_decode($response)->siswaTdkNaik->count,
                 'jumlahSiswaX' =>  json_decode($response)->jumlahSiswaX->count,
                 'jumlahSiswaXI' =>  json_decode($response)->jumlahSiswaXI->count,
                 'jumlahSiswaXII' =>  json_decode($response)->jumlahSiswaXII->count,
@@ -683,7 +685,7 @@ class ApiController extends Controller
                 $createdAt = Carbon::parse(json_decode($response)->result->createdAt)->translatedFormat('l d F Y');
             }
             if (! empty(json_decode($response)->result->updatedAt)) {
-                $updatedAt = Carbon::parse(json_decode($response)->result->updatedAt)->translatedFormat('l d F Y');
+                $updatedAt = Carbon::parse(json_decode($response)->result->updatedAt)->diffForHumans();
             }
 
             return view('induk.show-detail', [
