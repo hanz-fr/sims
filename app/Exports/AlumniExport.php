@@ -17,7 +17,7 @@ class AlumniExport implements FromView, ShouldAutoSize
 
     public function __construct()
     {
-        $this->alumni = Http::get("https://4630-103-148-113-86.ap.ngrok.io/dashboard/alumni/get");
+        $this->alumni = Http::get("https://25b0-114-79-49-109.ap.ngrok.io/dashboard/alumni/get");
     }
 
     /**

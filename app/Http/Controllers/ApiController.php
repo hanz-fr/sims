@@ -24,7 +24,7 @@ class ApiController extends Controller
     /* GLOBAL VARIABLES */
     public function __construct()
     {
-        $this->api_url = '127.0.0.1:3000'; // Ganti link NGROK disini
+        $this->api_url = 'https://25b0-114-79-49-109.ap.ngrok.io'; // Ganti link NGROK disini
 
         $this->sims_url = 'http://127.0.0.1:8000'; // SIMS URL
     }
@@ -652,7 +652,7 @@ class ApiController extends Controller
         ob_end_clean();
         ob_start();
 
-        $daftarnama = 'daftar_nama_buku_induk_'.$kelas.'.xlsx';
+        $daftarnama = 'daftar_nama_buku_induk_'.date('Y-m-d_H-i-s').'.xlsx';
 
         return Excel::download(new DataIndukExport, $daftarnama);
         
@@ -1010,9 +1010,9 @@ class ApiController extends Controller
 
         $nama = json_decode($response)->result->nama_siswa;
 
-        $daftarnama = 'data_induk_'.$nama.'.pdf';
+        $datasiswa = 'data_induk_'.$nama.'.pdf';
 
-        return $pdf->download($daftarnama);
+        return $pdf->download($datasiswa);
 
     }
 
@@ -1588,6 +1588,21 @@ class ApiController extends Controller
 
     public function exportRekapJumlahPDF() {
 
+        $semuaKelas = Http::get("{$this->api_url}/kelas/siswa-per-kelas/all");
+        $kelas10 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/10");
+        $kelas11 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/11");
+        $kelas12 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/12");
+
+        $pdf = PDF::loadView('induk.pdf.rekap-jumlah-siswa', [
+            'semua_kelas' => json_decode($semuaKelas)->result,
+            'kelas10' => json_decode($kelas10)->result,
+            'kelas11' => json_decode($kelas11)->result,
+            'kelas12' => json_decode($kelas12)->result
+        ]);
+
+        $datajumlah = 'data_rekap_jumlah_siswa_'.date('Y-m-d_H-i-s').'.pdf';
+
+        return $pdf->download($datajumlah);
 
     } 
 
