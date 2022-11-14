@@ -32,7 +32,7 @@
 
   .pas-foto {
     text-align: center;
-	display: flex;
+	  display: flex;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -43,9 +43,9 @@
     display: flex;
     flex-direction: row;
     margin-bottom: 30px;
-    gap: 80px;
     justify-content: center;
     align-items: center;
+		justify-items: center;
   }
 
 	th {
@@ -56,27 +56,35 @@
 </head>
 <body>
 <!-- <h4>NIS/NISN</h3> -->
+	<table style="width: 100%;">
+		<tbody>
+			<tr>
+				<td class="foto-foto">
+					<div class="pas-foto">
+						{{-- <h3 style="text-align: center;">SMKN 11 <br> BANDUNG</h3> --}}
+						<div class="foto">
+							<h4>PAS Photo</h4>
+							<h4>3 X 4</h4>
+							<h4>Waktu Masuk <br> Sekolah</h4>
+						</div>
+					</div>
+				</td>
+				<td class="foto-foto">
+					<div class="pas-foto">
+						{{-- <h3 style="text-align: center;">SMKN 11 <br> BANDUNG</h3> --}}
+						<div class="foto">
+							<h4>PAS Photo</h4>
+							<h4>3 X 4</h4>
+							<h4>Waktu Keluar <br> Sekolah</h4>
+						</div>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
 <div class="foto-foto">
-  <div class="pas-foto">
-    <h3>SMKN 11 <br> BANDUNG</h3>
-	@if ($siswa->foto)
-		<img src="{{ asset('foto/' . $siswa->foto) }}" alt="Pas Foto" srcset="" class="foto">
-	@else
-    <div class="foto">
-      <h4>PAS Photo</h4>
-      <h4>3 X 4</h4>
-      <h4>Waktu Masuk <br> Sekolah</h4>
-    </div>
-	@endif
-  </div>
-  {{-- <div class="pas-foto">
-    <h3>SMKN 11 <br> BANDUNG</h3>
-    <div class="foto">
-      <h4>PAS Photo</h4>
-      <h4>3 X 4</h4>
-      <h4>Waktu Keluar <br> Sekolah</h4>
-    </div>
-  </div> --}}
+
+
 </div>
 <table>
 	<tbody style="text-align: left;">
