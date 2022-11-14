@@ -1130,6 +1130,14 @@ video {
   margin-right: 1.75rem;
 }
 
+.tw-mt-5 {
+  margin-top: 1.25rem;
+}
+
+.tw-mr-1 {
+  margin-right: 0.25rem;
+}
+
 .tw-mt-8 {
   margin-top: 2rem;
 }
@@ -1164,14 +1172,6 @@ video {
 
 .tw-mt-10 {
   margin-top: 2.5rem;
-}
-
-.tw-mt-5 {
-  margin-top: 1.25rem;
-}
-
-.tw-mr-1 {
-  margin-right: 0.25rem;
 }
 
 .tw-ml-16 {
@@ -1838,12 +1838,12 @@ video {
   white-space: nowrap;
 }
 
-.tw-rounded-xl {
-  border-radius: 0.75rem;
-}
-
 .tw-rounded-lg {
   border-radius: 0.5rem;
+}
+
+.tw-rounded-xl {
+  border-radius: 0.75rem;
 }
 
 .tw-rounded-3xl {
@@ -1980,14 +1980,14 @@ video {
   border-bottom-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
-.tw-bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
 .tw-bg-gray-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+
+.tw-bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 .tw-bg-gray-500 {
@@ -2277,29 +2277,9 @@ video {
   padding: 1.75rem;
 }
 
-.tw-px-8 {
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
-.tw-px-10 {
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
-}
-
-.tw-py-9 {
-  padding-top: 2.25rem;
-  padding-bottom: 2.25rem;
-}
-
 .tw-py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
-}
-
-.tw-py-10 {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
 }
 
 .tw-px-6 {
@@ -2320,6 +2300,26 @@ video {
 .tw-px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
+}
+
+.tw-px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.tw-px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+.tw-py-9 {
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
+}
+
+.tw-py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 
 .tw-py-1 {
@@ -2611,19 +2611,14 @@ video {
   font-family: ubuntu;
 }
 
-.tw-text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
 .tw-text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
 
-.tw-text-5xl {
-  font-size: 3rem;
-  line-height: 1;
+.tw-text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 .tw-text-xl {
@@ -2631,14 +2626,19 @@ video {
   line-height: 1.75rem;
 }
 
+.tw-text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.tw-text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+
 .tw-text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
-}
-
-.tw-text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
 }
 
 .tw-text-3xl {
@@ -2704,6 +2704,11 @@ video {
   line-height: 1.25rem;
 }
 
+.tw-text-basic-700 {
+  --tw-text-opacity: 1;
+  color: rgb(62 62 62 / var(--tw-text-opacity));
+}
+
 .tw-text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -2747,11 +2752,6 @@ video {
 .tw-text-indigo-400 {
   --tw-text-opacity: 1;
   color: rgb(129 140 248 / var(--tw-text-opacity));
-}
-
-.tw-text-basic-700 {
-  --tw-text-opacity: 1;
-  color: rgb(62 62 62 / var(--tw-text-opacity));
 }
 
 .tw-text-slate-600 {
@@ -3227,7 +3227,8 @@ input:checked + .slider:before {
 }
 
 input[type="radio"]:checked {
-  background-color: rgb(77, 158, 158)
+  background-color: rgb(77, 158, 158);
+  accent-color: rgb(77, 158, 158);
 }
 
 /* Rounded sliders */
@@ -3624,14 +3625,14 @@ input[type="radio"]:checked {
   background-color: rgb(74 133 205 / var(--tw-bg-opacity));
 }
 
-.hover\:tw-text-sims-600:hover {
-  --tw-text-opacity: 1;
-  color: rgb(45 114 116 / var(--tw-text-opacity));
-}
-
 .hover\:tw-text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.hover\:tw-text-sims-600:hover {
+  --tw-text-opacity: 1;
+  color: rgb(45 114 116 / var(--tw-text-opacity));
 }
 
 .hover\:tw-text-sims-400:hover {

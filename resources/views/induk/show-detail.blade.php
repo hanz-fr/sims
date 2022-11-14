@@ -43,7 +43,7 @@
                 <div class="md:tw-w-3/5 sm:tw-w-full">
                     <div class="tw-float-right tw-flex tw-gap-2">
                         <a href="/data-siswa-print/{{ $siswa->nis_siswa }}" target="__blank" class="tw-bg-sims-400 tw-text-white hover:tw-text-white tw-font-pop tw-text-sm hover:tw-bg-sims-600 tw-px-5 tw-py-2 tw-rounded-lg">Print</a>
-                        <a href="/data-siswa-pdf/{{ $siswa->nis_siswa }}" target="__blank" class="tw-bg-sims-400 tw-text-white hover:tw-text-white tw-font-pop tw-text-sm hover:tw-bg-sims-600 tw-px-5 tw-py-2 tw-rounded-lg">Export PDF</a>
+                        <a href="/data-siswa-pdf/{{ $siswa->nis_siswa }}" class="tw-bg-sims-400 tw-text-white hover:tw-text-white tw-font-pop tw-text-sm hover:tw-bg-sims-600 tw-px-5 tw-py-2 tw-rounded-lg">Export PDF</a>
                         @can('tata usaha')
                         <form action="/api/siswa/delete/{{ $siswa->nis_siswa }}" method="POST">
                             @csrf

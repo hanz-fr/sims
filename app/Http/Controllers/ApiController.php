@@ -7,6 +7,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Exports\AlumniExport;
 use App\Exports\DataIndukExport;
+use App\Exports\JumlahSiswaExport;
 use App\Exports\MutasiMasukExport;
 use App\Exports\MutasiKeluarExport;
 use Illuminate\Support\Facades\URL;
@@ -14,9 +15,9 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Http;
 use Maatwebsite\Excel\Facades\Excel;
-use Illuminate\Support\Facades\Session;
 
 use function PHPUnit\Framework\isEmpty;
+use Illuminate\Support\Facades\Session;
 
 class ApiController extends Controller
 {
@@ -24,7 +25,7 @@ class ApiController extends Controller
     /* GLOBAL VARIABLES */
     public function __construct()
     {
-        $this->api_url = 'https://25b0-114-79-49-109.ap.ngrok.io'; // Ganti link NGROK disini
+        $this->api_url = 'https://ffaf-114-79-55-233.ap.ngrok.io'; // Ganti link NGROK disini
 
         $this->sims_url = 'http://127.0.0.1:8000'; // SIMS URL
     }
@@ -63,7 +64,7 @@ class ApiController extends Controller
         } else {
             return view('induk.show-all', [
                 'status' => 'error',
-                'title' => 'data-induk',
+                'title' => 'Data Induk',
                 'active' => 'data-induk',
                 'message' => 'Halaman yang kamu cari tidak dapat ditemukan :('
             ]);
@@ -93,7 +94,7 @@ class ApiController extends Controller
 
             return view('induk.show-all', [
                 'status' => 'error',
-                'title' => 'data-induk',
+                'title' => 'Data Induk',
                 'active' => 'data-induk',
                 'message' => 'Halaman yang kamu cari tidak dapat ditemukan :('
             ]);
@@ -139,7 +140,7 @@ class ApiController extends Controller
 
             return view('induk.show-all', [
                 'status' => 'error',
-                'title' => 'data-induk',
+                'title' => 'Data Induk',
                 'active' => 'data-induk',
                 'message' => 'Halaman yang kamu cari tidak dapat ditemukan :('
             ]);
@@ -194,7 +195,7 @@ class ApiController extends Controller
     
             return view('induk.show-all', [
                 'status' => 'error',
-                'title' => 'data-induk',
+                'title' => 'Data Induk',
                 'active' => 'data-induk',
                 'message' => 'Halaman yang kamu cari tidak dapat ditemukan :('
             ]);
@@ -447,7 +448,7 @@ class ApiController extends Controller
         } else {
             return view('induk.show-all', [
                 'status' => 'error',
-                'title' => 'data-induk',
+                'title' => 'Data Alumni',
                 'active' => 'data-induk',
                 'message' => 'Halaman yang kamu cari tidak dapat ditemukan :('
             ]);
@@ -512,7 +513,7 @@ class ApiController extends Controller
                     'status' => 'Pencarian tidak ditemukan!',
                     'response' => json_decode($response),
                     'total' => json_decode($response)->data->count,
-                    'title' => 'data-induk',
+                    'title' => 'Data Induk',
                     'active' => 'data-induk',
                 ]);
 
@@ -524,7 +525,7 @@ class ApiController extends Controller
                     'status' => 'success',
                     'response' => json_decode($response),
                     'total' => json_decode($response)->data->count,
-                    'title' => 'data-induk',
+                    'title' => 'Data Induk',
                     'active' => 'data-induk',
                 ]);
 
@@ -536,7 +537,7 @@ class ApiController extends Controller
             return view('induk.show-all', [
                 'response' => $response,
                 'status' => 'error',
-                'title' => 'data-induk',
+                'title' => 'Data Induk',
                 'active' => 'data-induk',
                 'message' => 'Halaman yang kamu cari tidak dapat ditemukan :('
             ]);
@@ -580,7 +581,7 @@ class ApiController extends Controller
                     'kelas' => $request->kelas,
                     'response' => json_decode($response),
                     'total' => json_decode($response)->data->count,
-                    'title' => 'data-induk',
+                    'title' => 'Data Induk',
                     'active' => 'data-induk',
                 ]);
 
@@ -593,7 +594,7 @@ class ApiController extends Controller
                     'kelas' => $request->kelas,
                     'response' => json_decode($response),
                     'total' => json_decode($response)->data->count,
-                    'title' => 'data-induk',
+                    'title' => 'Data Induk',
                     'active' => 'data-induk',
                 ]);
 
@@ -606,7 +607,7 @@ class ApiController extends Controller
             return view('induk.show-all', [
                 'response' => $response,
                 'status' => 'error',
-                'title' => 'data-induk',
+                'title' => 'Data Induk',
                 'active' => 'data-induk',
                 'message' => 'Halaman yang kamu cari tidak dapat ditemukan :('
             ]);
@@ -1580,7 +1581,7 @@ class ApiController extends Controller
             return view('induk.show-all', [
                 'response' => $semuaKelas,
                 'status' => 'error',
-                'title' => 'data-induk',
+                'title' => 'Data Induk',
                 'active' => 'rekap-siswa',
                 'message' => 'Halaman yang kamu cari tidak dapat ditemukan :('
             ]);
@@ -1595,7 +1596,7 @@ class ApiController extends Controller
         $kelas11 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/11");
         $kelas12 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/12");
 
-        $pdf = PDF::loadView('induk.pdf.rekap-jumlah-siswa', [
+        $pdf = PDF::loadView('rekap-siswa.pdf.rekap-jumlah-siswa', [
             'semua_kelas' => json_decode($semuaKelas)->result,
             'kelas10' => json_decode($kelas10)->result,
             'kelas11' => json_decode($kelas11)->result,
@@ -1606,7 +1607,36 @@ class ApiController extends Controller
 
         return $pdf->download($datajumlah);
 
+    }
+    
+    
+    public function printRekapJumlah() {
+
+        $semuaKelas = Http::get("{$this->api_url}/kelas/siswa-per-kelas/all");
+        $kelas10 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/10");
+        $kelas11 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/11");
+        $kelas12 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/12");
+
+        return view('rekap-siswa.pdf.rekap-jumlah-siswa', [
+            'semua_kelas' => json_decode($semuaKelas)->result,
+            'kelas10' => json_decode($kelas10)->result,
+            'kelas11' => json_decode($kelas11)->result,
+            'kelas12' => json_decode($kelas12)->result
+        ]);
+
     } 
+
+    
+    public function exportRekapJumlahExcel() {
+
+        ob_end_clean();
+        ob_start();
+
+        $datajumlah = 'data_rekap_jumlah_siswa_'.date('Y-m-d_H-i-s').'.xlsx';
+
+        return Excel::download(new JumlahSiswaExport, $datajumlah);
+
+    }
 
 
     /* API LIVESEARCH (TESTING) */
