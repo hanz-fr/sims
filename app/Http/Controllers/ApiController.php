@@ -7,6 +7,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Exports\AlumniExport;
 use App\Exports\DataIndukExport;
+use App\Exports\JumlahSiswaExport;
 use App\Exports\MutasiMasukExport;
 use App\Exports\MutasiKeluarExport;
 use Illuminate\Support\Facades\URL;
@@ -14,9 +15,9 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Http;
 use Maatwebsite\Excel\Facades\Excel;
-use Illuminate\Support\Facades\Session;
 
 use function PHPUnit\Framework\isEmpty;
+use Illuminate\Support\Facades\Session;
 
 class ApiController extends Controller
 {
@@ -1595,7 +1596,7 @@ class ApiController extends Controller
         $kelas11 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/11");
         $kelas12 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/12");
 
-        $pdf = PDF::loadView('induk.pdf.rekap-jumlah-siswa', [
+        $pdf = PDF::loadView('rekap-siswa.pdf.rekap-jumlah-siswa', [
             'semua_kelas' => json_decode($semuaKelas)->result,
             'kelas10' => json_decode($kelas10)->result,
             'kelas11' => json_decode($kelas11)->result,
@@ -1606,7 +1607,36 @@ class ApiController extends Controller
 
         return $pdf->download($datajumlah);
 
+    }
+    
+    
+    public function printRekapJumlah() {
+
+        $semuaKelas = Http::get("{$this->api_url}/kelas/siswa-per-kelas/all");
+        $kelas10 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/10");
+        $kelas11 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/11");
+        $kelas12 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/12");
+
+        return view('rekap-siswa.pdf.rekap-jumlah-siswa', [
+            'semua_kelas' => json_decode($semuaKelas)->result,
+            'kelas10' => json_decode($kelas10)->result,
+            'kelas11' => json_decode($kelas11)->result,
+            'kelas12' => json_decode($kelas12)->result
+        ]);
+
     } 
+
+    
+    public function exportRekapJumlahExcel() {
+
+        ob_end_clean();
+        ob_start();
+
+        $datajumlah = 'data_rekap_jumlah_siswa_'.date('Y-m-d_H-i-s').'.xlsx';
+
+        return Excel::download(new JumlahSiswaExport, $datajumlah);
+
+    }
 
 
     /* API LIVESEARCH (TESTING) */

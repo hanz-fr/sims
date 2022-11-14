@@ -100,6 +100,8 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
     Route::get('/rekap-jumlah-siswa', [ApiController::class, 'rekapJumlahSiswa']);
 
     Route::get('/rekap-jumlah-siswa-pdf', [ApiController::class, 'exportRekapJumlahPDF']);
+    Route::get('/rekap-jumlah-siswa-print', [ApiController::class, 'printRekapJumlah']);
+    Route::get('/rekap-jumlah-siswa-excel', [ApiController::class, 'exportRekapJumlahExcel']);
 
     /* GET DATA INDUK BY JURUSAN */
 
