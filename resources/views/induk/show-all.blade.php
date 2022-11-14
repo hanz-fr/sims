@@ -55,9 +55,6 @@
                 <form action="/data-induk-siswa/{{ $jurusan }}/{{ $kelas }}"> 
                     <div class="relative tw-border-2 tw-rounded-lg focus:tw-ring-sims-400">
 
-                        <input name="page" value="1" type="hidden">
-                        <input name="perPage" value="@if(isset($_GET['perPage'])) {{ $_GET['perPage'] }} @else 10 @endif" type="hidden">
-
                         <input type="text" id="search" name="search" class="tw-py-1 tw-px-5 tw-border-none tw-rounded-md" value="{{ request()->search }}">
                         <i class="fa-solid fa-magnifying-glass tw-pr-5 tw-pl-3 tw-text-slate-600"></i>
                     </div>
@@ -159,7 +156,19 @@
                                     </button>
                                     <div class="tw-p-6">
                                         <form action="/get-request">
-                                        @csrf
+
+                                        @if(isset($_GET['perPage']))
+                                        <input type="hidden" name="perPage" value="{{ $_GET['perPage'] }}"> 
+                                        @endif
+
+                                        @if(isset($_GET['page']))
+                                        <input type="hidden" name="page" value="{{ $_GET['page'] }}"> 
+                                        @endif
+
+                                        @if(isset($_GET['search']))
+                                        <input type="hidden" name="search" value="{{ $_GET['search'] }}"> 
+                                        @endif
+
                                         <div class="tw-flex tw-justify-center tw-font-pop tw-text-sims-500 tw-text-xl tw-font-bold">Filters</div>
                                         <div class="tw-border-b tw-border-sims-400 tw-w-full tw-my-5"></div>
 
@@ -212,7 +221,7 @@
                                         <div class="tw-font-pop tw-text-sm tw-font-bold tw-text-gray-400 tw-mt-6">Sort By</div>
                                         <div class="tw-flex tw-justify-between tw-my-3">
                                             <div class="tw-w-full">
-                                                <select class="input-data tw-text-sm tw-mr-5" id="sort-by" name="sort-by" required>
+                                                <select class="input-data tw-text-sm tw-mr-5" id="sort_by" name="sort_by" required>
                                                     <option value="nis_siswa">NIS</option>
                                                     <option value="nisn_siswa">NISN</option>
                                                     <option value="nama_siswa">Nama siswa</option>
