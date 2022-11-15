@@ -264,7 +264,7 @@
                 @can('tata usaha')
                 <button type="button" data-modal-toggle="popup-modal" class="tw-bg-[#28A745] tw-text-white hover:tw-text-white hover:tw-bg-green-700 tw-font-pop tw-rounded-lg tw-px-5 tw-py-2">
                     <i class="fa-solid fa-circle-plus tw-pr-3"></i>
-                    Tambah Data
+                    Tambah Batak
                 </button>
 
                 <div id="popup-modal" tabindex="-1"
