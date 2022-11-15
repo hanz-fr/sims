@@ -37,7 +37,7 @@ class UserController extends Controller
             'nip'      => $request->nip,
             'nama'     => $request->nama,
             'email'    => $request->email,
-            'role'    => $request->role,
+            'role'     => $request->role,
             'password' => Hash::make($request->password),
         ]);
 
@@ -67,19 +67,19 @@ class UserController extends Controller
             'password' => 'required|min:6',
         ]);
 
-        // $remember_me = $request->has('remember_me') ? true : false;
+        $remember_me = $request->has('remember') ? true : false;
    
         $credentials = $request->only('nip', 'password');
 
-        if (Auth::attempt($credentials)) {
+        if (Auth::attempt($credentials, $remember_me)) {
             // $request->session()->regenerate();
 
             return redirect()->intended('/')->with('success', 'Signed In');
         }
 
-        // if($request->get('remember')):
-        //     Auth::setRememberDuration(43200); // equivalent to 1 month
-        // endif;
+        if($request->get('remember')):
+            Auth::setRememberDuration(43200); // equivalent to 1 month
+        endif;
   
         return redirect("login")->with('error', 'Login details are not valid');
     }

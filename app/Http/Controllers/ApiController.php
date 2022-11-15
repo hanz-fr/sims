@@ -25,7 +25,7 @@ class ApiController extends Controller
     /* GLOBAL VARIABLES */
     public function __construct()
     {
-        $this->api_url = 'https://ffaf-114-79-55-233.ap.ngrok.io'; // Ganti link NGROK disini
+        $this->api_url = 'https://0036-103-139-10-142.ap.ngrok.io'; // Ganti link NGROK disini
 
         $this->sims_url = 'http://127.0.0.1:8000'; // SIMS URL
     }
@@ -1591,7 +1591,7 @@ class ApiController extends Controller
 
     public function exportRekapJumlahPDF() {
 
-        $semuaKelas = Http::get("{$this->api_url}/kelas/siswa-per-kelas/all");
+        $semuaKelas = Http::get("https://ffaf-114-79-55-233.ap.ngrok.io/kelas/siswa-per-kelas/all");
         $kelas10 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/10");
         $kelas11 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/11");
         $kelas12 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/12");
