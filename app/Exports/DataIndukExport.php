@@ -20,7 +20,7 @@ class DataIndukExport implements FromView, ShouldAutoSize
     {
         $request = request();
 
-        $this->url = 'https://ffaf-114-79-55-233.ap.ngrok.io';
+        $this->url = 'hhttps://e503-103-139-10-81.ap.ngrok.io';
 
         $this->siswa = Http::get("{$this->url}/siswa/{$request->jurusan}/{$request->kelas}??page=1&perPage=100");
     }

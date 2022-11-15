@@ -6,13 +6,13 @@
 		font-family: Arial, sans-serif;
 		}
 
-	#data {
+	table {
 		border-collapse: collapse;
 		width: 100%;
 		font-size: 12px
 	}
 
-	#data td, #data th {
+	table td, table th {
 		border: 1px solid black;
 		padding: 10px 7px;
 		color: black;
@@ -25,7 +25,7 @@
 	<h4 style="font-weight: 500; text-align: center; font-family:Arial, Helvetica, sans-serif">DATA REKAP JUMLAH SISWA</h4>
 
 	<h4 style="font-weight: 500; text-align: left; font-family:Arial, Helvetica, sans-serif">DATA JUMLAH SISWA X</h4>
-	<table id="data">
+	<table>
 		<thead>
 				<tr>
 						<th scope="col" rowspan="2">KELAS</th>
@@ -125,7 +125,7 @@
 
 <h4 style="font-weight: 500; text-align: left; font-family:Arial, Helvetica, sans-serif">DATA JUMLAH SISWA XII</h4>
 
-<table id="data">
+<table>
 	<thead>
 			<tr>
 					<th scope="col" rowspan="2">KELAS</th>
@@ -222,7 +222,7 @@
 </table>
 
 <h4 style="font-weight: 500; text-align: left; font-family:Arial, Helvetica, sans-serif">DATA JUMLAH SISWA XII</h4>
-<table id="data">
+<table>
 	<thead>
 			<tr>
 					<th scope="col" rowspan="2">KELAS</th>
@@ -321,7 +321,7 @@
 </table>
 
 <h4 style="font-weight: 500; text-align: left; font-family:Arial, Helvetica, sans-serif">DATA JUMLAH SISWA KESELURUHAN</h4>
-	<table id="data">
+	<table>
 		<thead>
 			<tr>
 				<th scope="col" rowspan="2">KELAS</th>

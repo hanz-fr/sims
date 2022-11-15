@@ -618,11 +618,6 @@ video {
   color: rgb(156 163 175 / var(--tw-text-opacity));
 }
 
-.login-input:invalid {
-  --tw-text-opacity: 1;
-  color: rgb(190 24 93 / var(--tw-text-opacity));
-}
-
 .login-input:focus {
   --tw-border-opacity: 1;
   border-color: rgb(77 158 158 / var(--tw-border-opacity));
@@ -641,13 +636,6 @@ video {
 
 .login-input:focus::placeholder {
   visibility: hidden;
-}
-
-.login-input:focus:invalid {
-  --tw-border-opacity: 1;
-  border-color: rgb(190 24 93 / var(--tw-border-opacity));
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(190 24 93 / var(--tw-ring-opacity));
 }
 
 .label-input {
@@ -1242,6 +1230,10 @@ video {
   margin-right: 0px;
 }
 
+.tw-ml-1 {
+  margin-left: 0.25rem;
+}
+
 .tw-mb-12 {
   margin-bottom: 3rem;
 }
@@ -1356,10 +1348,6 @@ video {
 
 .-tw-mb-10 {
   margin-bottom: -2.5rem;
-}
-
-.tw-ml-1 {
-  margin-left: 0.25rem;
 }
 
 .tw-box-border {
@@ -1710,10 +1698,6 @@ video {
 
 .tw-place-items-center {
   place-items: center;
-}
-
-.tw-items-start {
-  align-items: flex-start;
 }
 
 .tw-items-center {
@@ -3227,6 +3211,11 @@ input:checked + .slider:before {
 }
 
 input[type="radio"]:checked {
+  background-color: rgb(77, 158, 158);
+  accent-color: rgb(77, 158, 158);
+}
+
+input[type="checkbox"]:checked {
   background-color: rgb(77, 158, 158);
   accent-color: rgb(77, 158, 158);
 }
