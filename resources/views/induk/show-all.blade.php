@@ -58,6 +58,16 @@
                         <input name="page" value="1" type="hidden">
                         <input name="perPage" value="10" type="hidden">
 
+                        @if(isset($_GET['nis_siswa'])) <input name="nis_siswa" value="{{ $_GET['nis_siswa'] }}" type="hidden"> @endif
+                        @if(isset($_GET['nisn_siswa'])) <input name="nisn_siswa" value="{{ $_GET['nisn_siswa'] }}" type="hidden"> @endif
+                        @if(isset($_GET['nama_siswa'])) <input name="nama_siswa" value="{{ $_GET['nama_siswa'] }}" type="hidden"> @endif
+                        @if(isset($_GET['jenis_kelamin'])) <input name="jenis_kelamin" value="{{ $_GET['jenis_kelamin'] }}" type="hidden"> @endif
+                        @if(isset($_GET['KelasId'])) <input name="KelasId" value="{{ $_GET['KelasId'] }}" type="hidden"> @endif
+                        @if(isset($_GET['sort_by'])) <input name="sort_by" value="{{ $_GET['sort_by'] }}" type="hidden"> @endif
+                        @if(isset($_GET['sort'])) <input name="sort" value="{{ $_GET['sort'] }}" type="hidden"> @endif
+                        @if(isset($_GET['dibuatTglDari'])) <input name="dibuatTglDari" value="{{ $_GET['dibuatTglDari'] }}" type="hidden"> @endif
+                        @if(isset($_GET['dibuatTglKe'])) <input name="dibuatTglKe" value="{{ $_GET['dibuatTglKe'] }}" type="hidden"> @endif
+
                         <input type="text" id="search" name="search" class="tw-py-1 tw-px-5 tw-border-none tw-rounded-md" value="{{ request()->search }}">
                         <i class="fa-solid fa-magnifying-glass tw-pr-5 tw-pl-3 tw-text-slate-600"></i>
                     </div>
@@ -127,7 +137,12 @@
                                         <span class="sr-only">Close modal</span>
                                     </button>
                                     <div class="tw-p-6">
+
+                                        @if( ! empty($jurusan) && ! empty($kelas))
+                                        <form action="/data-induk-siswa/{{ $jurusan }}/{{ $kelas }}">
+                                        @else
                                         <form action="/data-induk-siswa">
+                                        @endif
 
                                         @if(isset($_GET['page']))
                                         <input type="hidden" name="page" value="{{ $_GET['page'] }}"> 
@@ -264,7 +279,7 @@
                 @can('tata usaha')
                 <button type="button" data-modal-toggle="popup-modal" class="tw-bg-[#28A745] tw-text-white hover:tw-text-white hover:tw-bg-green-700 tw-font-pop tw-rounded-lg tw-px-5 tw-py-2">
                     <i class="fa-solid fa-circle-plus tw-pr-3"></i>
-                    Tambah Batak
+                    Tambah Data
                 </button>
 
                 <div id="popup-modal" tabindex="-1"

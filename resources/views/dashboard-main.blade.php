@@ -250,19 +250,21 @@
     const chart = new Chart(ctx, {
         type: 'polarArea',
         data: {
-            labels: ['Siswa Masuk', 'Siswa Keluar', 'Siswa Tidak Naik'],
+            labels: ['Masuk', 'Keluar', 'Tidak Naik', 'Alumni'],
             datasets: [{
                 label: '# of Votes',
-                data: [{{ $siswaMasuk }}, {{ $siswaKeluar }}, {{ $siswaTdkNaik }}],
+                data: [{{ $siswaMasuk }}, {{ $siswaKeluar }}, {{ $siswaTdkNaik }}, {{ $alumni }}],
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
                     'rgba(255, 206, 86, 0.2)',
+                    'rgba(207, 209, 207, 0.5)',
                 ],
                 borderColor: [
-                    'rgba(255, 99, 132, 1)',
                     'rgba(54, 162, 235, 1)',
+                    'rgba(255, 99, 132, 1)',
                     'rgba(255, 206, 86, 1)',
+                    'rgba(207, 209, 207, 1)',
                 ],
                 borderWidth: 1
             }]
