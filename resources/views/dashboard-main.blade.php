@@ -20,7 +20,7 @@
             {{-- chart view --}}
             <section class="tw-bg-white tw-shadow-md tw-h-fit tw-px-10 tw-py-9 lg:tw-w-full sm:tw-w-full tw-mt-7">
                 <div class="tw-font-pop tw-text-gray-400 tw-font-bold">Grafik Jumlah Siswa SMKN 11</div>
-                <div class="tw-font-pop tw-flex tw-gap-10 tw-justify-center tw-items-centerpa">
+                <div class="tw-font-pop tw-flex tw-justify-around">
                     <div style="height: 400px">
                         <canvas id="myChart" class="tw-mt-4"></canvas>          
                     </div>   
@@ -250,19 +250,21 @@
     const chart = new Chart(ctx, {
         type: 'polarArea',
         data: {
-            labels: ['Siswa Masuk', 'Siswa Keluar', 'Siswa Tidak Naik'],
+            labels: ['Masuk', 'Keluar', 'Tidak Naik', 'Alumni'],
             datasets: [{
                 label: '# of Votes',
-                data: [{{ $siswaMasuk }}, {{ $siswaKeluar }}, {{ $siswaTdkNaik }}],
+                data: [{{ $siswaMasuk }}, {{ $siswaKeluar }}, {{ $siswaTdkNaik }}, {{ $alumni }}],
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
                     'rgba(255, 206, 86, 0.2)',
+                    'rgba(207, 209, 207, 0.5)',
                 ],
                 borderColor: [
-                    'rgba(255, 99, 132, 1)',
                     'rgba(54, 162, 235, 1)',
+                    'rgba(255, 99, 132, 1)',
                     'rgba(255, 206, 86, 1)',
+                    'rgba(207, 209, 207, 1)',
                 ],
                 borderWidth: 1
             }]

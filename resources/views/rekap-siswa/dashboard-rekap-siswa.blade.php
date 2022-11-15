@@ -447,7 +447,13 @@ const data = {
 const config = {
   type: 'line',
   data: data,
-  options: {}
+  options: {
+    scale: {
+      ticks: {
+          precision: 0
+      }
+    }
+  }
 };
 
 const myChart = new Chart(

@@ -25,7 +25,7 @@ class ApiController extends Controller
     /* GLOBAL VARIABLES */
     public function __construct()
     {
-        $this->api_url = 'https://0036-103-139-10-142.ap.ngrok.io'; // Ganti link NGROK disini
+        $this->api_url = '127.0.0.1:3000'; // Ganti link NGROK disini
 
         $this->sims_url = 'http://127.0.0.1:8000'; // SIMS URL
     }
@@ -417,8 +417,17 @@ class ApiController extends Controller
         $page = $request->page;
         $perPage = $request->perPage;
         $search = $request->search;
+        $nis_siswa = $request->nis_siswa;
+        $nisn_siswa = $request->nisn_siswa;
+        $nama_siswa = $request->nama_siswa;
+        $jenis_kelamin = $request->jenis_kelamin;
+        $KelasId = $request->KelasId;
+        $sort_by = $request->sort_by;
+        $sort = $request->sort;
+        $dibuatTglDari = $request->dibuatTglDari;
+        $dibuatTglKe = $request->dibuatTglKe;
 
-        $response = Http::get("{$this->api_url}/dashboard/alumni/get?page={$page}&perPage={$perPage}&search={$search}");;
+        $response = Http::get("{$this->api_url}/dashboard/alumni/get?page={$page}&perPage={$perPage}&search={$search}&nis_siswa={$nis_siswa}&nisn_siswa={$nisn_siswa}&nama_siswa={$nama_siswa}&jenis_kelamin={$jenis_kelamin}&KelasId={$KelasId}&sort_by={$sort_by}&sort={$sort}&dibuatTglDari={$dibuatTglDari}&dibuatTglKe{$dibuatTglKe}");
 
         if($response->successful()) {
 
@@ -502,8 +511,17 @@ class ApiController extends Controller
         $page = $request->page;
         $perPage = $request->perPage;
         $search = $request->search;
+        $nis_siswa = $request->nis_siswa;
+        $nisn_siswa = $request->nisn_siswa;
+        $nama_siswa = $request->nama_siswa;
+        $jenis_kelamin = $request->jenis_kelamin;
+        $KelasId = $request->KelasId;
+        $sort_by = $request->sort_by;
+        $sort = $request->sort;
+        $dibuatTglDari = $request->dibuatTglDari;
+        $dibuatTglKe = $request->dibuatTglKe;
 
-        $response = Http::get("{$this->api_url}/siswa?page={$page}&perPage={$perPage}&search={$search}");
+        $response = Http::get("{$this->api_url}/siswa?page={$page}&perPage={$perPage}&search={$search}&nis_siswa={$nis_siswa}&nisn_siswa={$nisn_siswa}&nama_siswa={$nama_siswa}&jenis_kelamin={$jenis_kelamin}&KelasId={$KelasId}&sort_by={$sort_by}&sort={$sort}&dibuatTglDari={$dibuatTglDari}&dibuatTglKe{$dibuatTglKe}");
 
         if ($response->successful()) {
             
@@ -567,8 +585,18 @@ class ApiController extends Controller
         $page = $request->page;
         $perPage = $request->perPage;
         $search = $request->search;
+        $nis_siswa = $request->nis_siswa;
+        $nisn_siswa = $request->nisn_siswa;
+        $nama_siswa = $request->nama_siswa;
+        $jenis_kelamin = $request->jenis_kelamin;
+        $KelasId = $request->KelasId;
+        $sort_by = $request->sort_by;
+        $sort = $request->sort;
+        $dibuatTglDari = $request->dibuatTglDari;
+        $dibuatTglKe = $request->dibuatTglKe;
 
-        $response = Http::get("{$this->api_url}/siswa/{$request->jurusan}/{$request->kelas}?page={$page}&perPage={$perPage}&search={$search}");
+
+        $response = Http::get("{$this->api_url}/siswa/{$request->jurusan}/{$request->kelas}?page={$page}&perPage={$perPage}&search={$search}&nis_siswa={$nis_siswa}&nisn_siswa={$nisn_siswa}&nama_siswa={$nama_siswa}&jenis_kelamin={$jenis_kelamin}&KelasId={$KelasId}&sort_by={$sort_by}&sort={$sort}&dibuatTglDari={$dibuatTglDari}&dibuatTglKe{$dibuatTglKe}");
 
 
         if ($response->successful()) {

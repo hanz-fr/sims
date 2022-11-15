@@ -1728,10 +1728,6 @@ video {
   gap: 2rem;
 }
 
-.tw-gap-10 {
-  gap: 2.5rem;
-}
-
 .tw-gap-4 {
   gap: 1rem;
 }
@@ -1758,6 +1754,10 @@ video {
 
 .tw-gap-1 {
   gap: 0.25rem;
+}
+
+.tw-gap-10 {
+  gap: 2.5rem;
 }
 
 .tw-gap-20 {
