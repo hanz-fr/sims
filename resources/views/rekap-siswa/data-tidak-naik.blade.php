@@ -138,10 +138,6 @@
                                                     Tempat Lahir (selected)
                                                     @elseif($_GET['sort_by'] == 'tgl_lahir')
                                                     Tanggal Lahir (selected)
-                                                    @elseif($_GET['sort_by'] == 'tinggal_di_Kelas')
-                                                    Tinggal di Kelas (selected)
-                                                    @elseif($_GET['sort_by'] == 'alasan_tidak_naik')
-                                                    Alasan (selected)
                                                     @endif
                                                 </option>
                                                 @endif
@@ -149,8 +145,6 @@
                                                 <option value="nama_siswa">Nama Peserta Didik</option>
                                                 <option value="tmp_lahir">Tempat Lahir</option>
                                                 <option value="tgl_lahir">Tanggal Lahir</option>
-                                                <option value="tinggal_di_kelas">Tinggal di Kelas</option>
-                                                <option value="alasan_tidak_naik">Alasan</option>
                                             </select>
                                         </div>
                                         <div class="tw-flex tw-my-auto tw-gap-3 tw-justify-center tw-mx-auto tw-ml-5">
@@ -172,11 +166,11 @@
                                     <div class="tw-flex tw-justify-between tw-mt-5 tw-mx-5">
                                         <div>
                                             <div class="tw-text-xs tw-mb-2 tw-font-pop tw-font-normal tw-text-gray-400">Dari tanggal</div>
-                                            <input class="input-data tw-text-sm tw-font-pop" id="dibuatTglDari" name="dibuatTglDari" type="date" placeholder="dd/mm/yyyy">
+                                            <input class="input-data tw-text-sm tw-font-pop" id="dibuatTglDari" name="dibuatTglDari" type="date" placeholder="dd/mm/yyyy" @if(isset($_GET['dibuatTglDari'])) value="{{ $_GET['dibuatTglDari'] }}" @endif>
                                         </div>
                                         <div>
                                             <div class="tw-text-xs tw-mb-2 tw-font-pop tw-font-normal tw-text-gray-400">Ke tanggal</div>
-                                            <input class="input-data tw-text-sm tw-font-pop" id="dibuatTglKe" name="dibuatTglKe" type="date" placeholder="dd/mm/yyyy">
+                                            <input class="input-data tw-text-sm tw-font-pop" id="dibuatTglKe" name="dibuatTglKe" type="date" placeholder="dd/mm/yyyy" @if(isset($_GET['dibuatTglKe'])) value="{{ $_GET['dibuatTglKe'] }}" @endif>
                                         </div>
                                     </div>
                                     {{-- end of data per periodik --}}
@@ -200,7 +194,7 @@
             </div>
         </div>
 
-        @if(isset($siswa))
+        @if(isset($raport))
         <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl tw-mt-5">
             <table class="tw-w-full tw-text-sm tw-text-center">
                 <thead class="tw-text-md tw-bg-gray-100 tw-text-basic-700 tw-border tw-font-pop">
@@ -213,15 +207,13 @@
                     </tr>
                 </thead>
                 <tbody class="tw-text-base">
-                    @foreach ($siswa as $s)
+                    @foreach ($raport as $r)
                     <tr class="tw-bg-white tw-border">
                         <td class="tw-py-4 tw-px-6 tw-border">-</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">{{ $s->nama_siswa }}</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">{{ $s->tmp_lahir }}, {{ $s->tgl_lahir }}</td>
-                        @foreach($s->raport as $r)
+                        <td class="tw-py-4 tw-px-6 tw-border">{{ $r->siswa->nama_siswa }}</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">{{ $r->siswa->tmp_lahir }}, {{ $r->siswa->tgl_lahir }}</td>
                         <td class="tw-py-4 tw-px-6 tw-border">{{ $r->tinggal_di_Kelas }}</td>
                         <td class="tw-py-4 tw-px-6 tw-border">{{ $r->alasan_tidak_naik }}</td>
-                        @endforeach
                     </tr>
                     @endforeach
                 </tbody>
