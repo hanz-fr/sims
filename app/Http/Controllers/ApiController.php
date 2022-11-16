@@ -159,6 +159,17 @@ class ApiController extends Controller
         
     }
 
+    public function exportDataTidakNaikPDF(Request $request) {
+        $response = Http::get("{$this->api_url}/dashboard/siswa-tidak-naik??perPage=1&perPage=100");
+
+        $pdf = PDF::loadView('induk.pdf.tidak-naik', [
+            'siswa' => json_decode($response)->data->rows
+        ]);
+
+        $tidaknaik = 'daftar_nama_tidak_naik_.pdf';
+        return $pdf->download($tidaknaik);
+    }
+
     public function viewTambahNilaiMapel($nis) {
 
         abort_if(Gate::denies('rekap-nilai'), 403);
