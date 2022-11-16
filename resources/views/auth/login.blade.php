@@ -91,7 +91,7 @@
                         <li class="tw-flex tw-justify-between">
                             <div class="tw-flex">
                                 <div class="tw-flex tw-items-center tw-h-5">
-                                    <input id="remember" name="remember" type="checkbox" class="tw-w-4 tw-h-4 tw-bg-gray-50 tw-rounded tw-border tw-border-gray-500 focus:ring-3 focus:tw-ring-sims-400" required>
+                                    <input id="remember" name="remember" type="checkbox" class="tw-w-4 tw-h-4 tw-bg-gray-50 tw-rounded tw-border tw-border-gray-500 focus:ring-3 focus:tw-ring-sims-400">
                                 </div>
                                 <label for="remember" class="tw-ml-1 tw-text-sm tw-font-medium tw-text-sims-400">Remember me</label>
                             </div>

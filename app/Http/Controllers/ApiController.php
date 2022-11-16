@@ -11,11 +11,12 @@ use App\Exports\JumlahSiswaExport;
 use App\Exports\MutasiMasukExport;
 use App\Exports\MutasiKeluarExport;
 use Illuminate\Support\Facades\URL;
+use App\Exports\DataTidakNaikExport;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Http;
-use Maatwebsite\Excel\Facades\Excel;
 
+use Maatwebsite\Excel\Facades\Excel;
 use function PHPUnit\Framework\isEmpty;
 use Illuminate\Support\Facades\Session;
 
@@ -25,7 +26,7 @@ class ApiController extends Controller
     /* GLOBAL VARIABLES */
     public function __construct()
     {
-        $this->api_url = '127.0.0.1:3000'; // Ganti link NGROK disini
+        $this->api_url = 'https://d625-103-148-113-86.ap.ngrok.io'; // Ganti link NGROK disini
 
         $this->sims_url = 'http://127.0.0.1:8000'; // SIMS URL
     }
@@ -154,6 +155,46 @@ class ApiController extends Controller
                 'message' => 'Halaman yang kamu cari tidak dapat ditemukan :('
             ]);
         }
+    }
+
+    public function exportDataTidakNaikExcel() {
+
+        ob_end_clean();
+        ob_start();
+
+        $tidaknaik = 'daftar_nama_tidak_naik_'.date('Y-m-d_H-i-s').'.xlsx';
+
+        return Excel::download(new DataTidakNaikExport, $tidaknaik);
+        
+    }
+
+    public function exportDataTidakNaikPDF() {
+
+        $response = Http::get("{$this->api_url}/dashboard/siswa-tidak-naik");
+
+        $tidaknaik = 'daftar_nama_tidak_naik_'.date('Y-m-d_H-i-s').'.xlsx';
+
+        $pdf = PDF::loadView('induk.pdf.tidak-naik', [
+            'siswa' => json_decode($response)->data->rows
+        ]);
+
+        $tidaknaik = 'data_tidak_naik_kelas_periode'.date('Y-m-d_H-i-s').'.pdf';
+
+        return $pdf->download($tidaknaik);
+        
+    }
+
+
+    public function printDataTidakNaik() {
+
+        $response = Http::get("{$this->api_url}/dashboard/siswa-tidak-naik");
+
+        $tidaknaik = 'daftar_nama_tidak_naik_'.date('Y-m-d_H-i-s').'.xlsx';
+
+        return view('induk.pdf.tidak-naik', [
+            'siswa' => json_decode($response)->data->rows,
+        ]);
+        
     }
 
     public function viewTambahNilaiMapel($nis) {
@@ -777,6 +818,37 @@ class ApiController extends Controller
             ]);
 
         }
+    }
+
+
+    public function printRekapNilai(Request $request) {
+
+        $nis = $request->nis;
+
+        $response = Http::get("{$this->api_url}/siswa/{$nis}");
+
+        return view('rekap-nilai.pdf.rekap-nilai', [
+            'siswa' => json_decode($response)->result,
+        ]);
+
+    }
+
+    public function exportRekapNilaiPDF(Request $request) {
+
+        $nis = $request->nis;
+
+        $response = Http::get("{$this->api_url}/siswa/{$nis}");
+
+        $pdf = PDF::loadView('rekap-nilai.pdf.rekap-nilai', [
+            'siswa' => json_decode($response)->result,
+        ]);
+
+        $nama = json_decode($response)->result->nama_siswa;
+
+        $rekapnilai = 'rekap_nilai_siswa_'.$nama.'.pdf';
+
+        return $pdf->download($rekapnilai);
+
     }
 
 

@@ -51,7 +51,6 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
     Route::get('/data-induk-excel', [ApiController::class, 'exportDataIndukExcel']);
     Route::get('/data-induk-excel/{jurusan}/{kelas}', [ApiController::class, 'exportDataIndukExcel']);
 
-
     Route::get('/get-request', [ApiController::class, 'getRequest']);
 
 
@@ -93,6 +92,9 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
     Route::post('/api/raport/tambah-nilai', [ApiController::class, 'storeTambahNilaiMapel']);
     Route::put('/api/raport/update-nilai', [ApiController::class, 'storeUpdateNilaiMapel']);
     Route::delete('/api/raport/delete/{RaportId}', [ApiController::class, 'deleteNilaiMapel']);
+
+    Route::get('/rekap-nilai-print/{nis}', [ApiController::class, 'printRekapNilai']);
+    Route::get('/rekap-nilai-pdf/{nis}', [ApiController::class, 'exportRekapNilaiPDF']);
     
 
     /* REKAP DATA SISWA */
@@ -134,6 +136,10 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
     /* DATA TIDAK NAIK KELAS */
 
     Route::get('/data-tidak-naik', [ApiController::class, 'siswaTidakNaik']);
+
+    Route::get('/data-tidak-naik-excel', [ApiController::class, 'exportDataTidakNaikExcel']);
+    Route::get('/data-tidak-naik-pdf', [ApiController::class, 'exportDataTidakNaikPDF']);
+    Route::get('/data-tidak-naik-print', [ApiController::class, 'printDataTidakNaik']);
 
 
     /* PROFILE */
