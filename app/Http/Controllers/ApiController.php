@@ -812,6 +812,37 @@ class ApiController extends Controller
     }
 
 
+    public function printRekapNilai(Request $request) {
+
+        $nis = $request->nis;
+
+        $response = Http::get("{$this->api_url}/siswa/{$nis}");
+
+        return view('rekap-nilai.pdf.rekap-nilai', [
+            'siswa' => json_decode($response)->result,
+        ]);
+
+    }
+
+    public function exportRekapNilaiPDF(Request $request) {
+
+        $nis = $request->nis;
+
+        $response = Http::get("{$this->api_url}/siswa/{$nis}");
+
+        $pdf = PDF::loadView('rekap-nilai.pdf.rekap-nilai', [
+            'siswa' => json_decode($response)->result,
+        ]);
+
+        $nama = json_decode($response)->result->nama_siswa;
+
+        $rekapnilai = 'rekap_nilai_siswa_'.$nama.'.pdf';
+
+        return $pdf->download($rekapnilai);
+
+    }
+
+
     public function createSiswa()
     {
 
