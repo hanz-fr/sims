@@ -6,12 +6,11 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Http;
 use Maatwebsite\Excel\Concerns\FromView;
 use Maatwebsite\Excel\Concerns\Exportable;
+use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 
-
-class DataIndukExport implements FromView, ShouldAutoSize
+class DataTidakNaikExport implements FromView, ShouldAutoSize
 {
-
     use Exportable;
 
     private $siswa;
@@ -20,24 +19,17 @@ class DataIndukExport implements FromView, ShouldAutoSize
     {
         $request = request();
 
-        $this->url = '127.0.0.1:3000';
+        $this->api_url = '127.0.0.1:3000';
 
-        $this->siswa = Http::get("{$this->url}/siswa/{$request->jurusan}/{$request->kelas}??page=1&perPage=100");
+        $this->siswa = Http::get("{$this->api_url}/dashboard/siswa-tidak-naik??perPage=1&perPage=100");
     }
-
     /**
     * @return \Illuminate\Support\View
     */
     public function view(): View
     {
-        
-        $request = request();
-        
-        return view('induk.pdf.data-induk', [
-            'siswa' => json_decode($this->siswa)->data->rows,
-            'jurusan' => $request->jurusan,
-            'kelas' => $request->kelas
+        return view('induk.pdf.tidak-naik', [
+            'siswa' => json_decode($this->siswa)->data->rows
         ]);
-
     }
 }

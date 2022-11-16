@@ -11,11 +11,12 @@ use App\Exports\JumlahSiswaExport;
 use App\Exports\MutasiMasukExport;
 use App\Exports\MutasiKeluarExport;
 use Illuminate\Support\Facades\URL;
+use App\Exports\DataTidakNaikExport;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Http;
-use Maatwebsite\Excel\Facades\Excel;
 
+use Maatwebsite\Excel\Facades\Excel;
 use function PHPUnit\Framework\isEmpty;
 use Illuminate\Support\Facades\Session;
 
@@ -145,6 +146,17 @@ class ApiController extends Controller
                 'message' => 'Halaman yang kamu cari tidak dapat ditemukan :('
             ]);
         }
+    }
+
+    public function exportDataTidakNaikExcel() {
+
+        ob_end_clean();
+        ob_start();
+
+        $tidaknaik = 'daftar_nama_tidak_naik_'.date('Y-m-d_H-i-s').'.xlsx';
+
+        return Excel::download(new DataTidakNaikExport, $tidaknaik);
+        
     }
 
     public function viewTambahNilaiMapel($nis) {
@@ -427,7 +439,7 @@ class ApiController extends Controller
         $dibuatTglDari = $request->dibuatTglDari;
         $dibuatTglKe = $request->dibuatTglKe;
 
-        $response = Http::get("{$this->api_url}/dashboard/alumni/get?page={$page}&perPage={$perPage}&search={$search}&nis_siswa={$nis_siswa}&nisn_siswa={$nisn_siswa}&nama_siswa={$nama_siswa}&jenis_kelamin={$jenis_kelamin}&KelasId={$KelasId}&sort_by={$sort_by}&sort={$sort}&dibuatTglDari={$dibuatTglDari}&dibuatTglKe{$dibuatTglKe}");
+        $response = Http::get("{$this->api_url}/dashboard/alumni/get?page={$page}&perPage={$perPage}&search={$search}&nis_siswa={$nis_siswa}&nisn_siswa={$nisn_siswa}&nama_siswa={$nama_siswa}&jenis_kelamin={$jenis_kelamin}&KelasId={$KelasId}&sort_by={$sort_by}&sort={$sort}&dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}");
 
         if($response->successful()) {
 
@@ -521,7 +533,7 @@ class ApiController extends Controller
         $dibuatTglDari = $request->dibuatTglDari;
         $dibuatTglKe = $request->dibuatTglKe;
 
-        $response = Http::get("{$this->api_url}/siswa?page={$page}&perPage={$perPage}&search={$search}&nis_siswa={$nis_siswa}&nisn_siswa={$nisn_siswa}&nama_siswa={$nama_siswa}&jenis_kelamin={$jenis_kelamin}&KelasId={$KelasId}&sort_by={$sort_by}&sort={$sort}&dibuatTglDari={$dibuatTglDari}&dibuatTglKe{$dibuatTglKe}");
+        $response = Http::get("{$this->api_url}/siswa?page={$page}&perPage={$perPage}&search={$search}&nis_siswa={$nis_siswa}&nisn_siswa={$nisn_siswa}&nama_siswa={$nama_siswa}&jenis_kelamin={$jenis_kelamin}&KelasId={$KelasId}&sort_by={$sort_by}&sort={$sort}&dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}");
 
         if ($response->successful()) {
             
@@ -596,7 +608,7 @@ class ApiController extends Controller
         $dibuatTglKe = $request->dibuatTglKe;
 
 
-        $response = Http::get("{$this->api_url}/siswa/{$request->jurusan}/{$request->kelas}?page={$page}&perPage={$perPage}&search={$search}&nis_siswa={$nis_siswa}&nisn_siswa={$nisn_siswa}&nama_siswa={$nama_siswa}&jenis_kelamin={$jenis_kelamin}&KelasId={$KelasId}&sort_by={$sort_by}&sort={$sort}&dibuatTglDari={$dibuatTglDari}&dibuatTglKe{$dibuatTglKe}");
+        $response = Http::get("{$this->api_url}/siswa/{$request->jurusan}/{$request->kelas}?page={$page}&perPage={$perPage}&search={$search}&nis_siswa={$nis_siswa}&nisn_siswa={$nisn_siswa}&nama_siswa={$nama_siswa}&jenis_kelamin={$jenis_kelamin}&KelasId={$KelasId}&sort_by={$sort_by}&sort={$sort}&dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}");
 
 
         if ($response->successful()) {
