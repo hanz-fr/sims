@@ -109,8 +109,17 @@ class ApiController extends Controller
         $page = $request->page;
         $perPage = $request->perPage;
         $search = $request->search;
+        $nama_siswa = $request->nama_siswa;
+        $tinggal_di_Kelas = $request->tinggal_di_kelas;
+        $alasan_tidak_naik = $request->alasan_tidak_naik;
+        $tmp_lahir = $request->tmp_lahir;
+        $tgl_lahir = $request->tgl_lahir;
+        $sort_by = $request->sort_by;
+        $sort = $request->sort;
+        $dibuatTglDari = $request->dibuatTglDari;
+        $dibuatTglKe = $request->dibuatTglKe;
 
-        $response = Http::get("{$this->api_url}/dashboard/siswa-tidak-naik?page={$page}&perPage={$perPage}&search={$search}");
+        $response = Http::get("{$this->api_url}/dashboard/siswa-tidak-naik?page={$page}&perPage={$perPage}&search={$search}&nama_siswa={$nama_siswa}&tinggal_di_Kelas={$tinggal_di_Kelas}&alasan_tidak_naik={$alasan_tidak_naik}&tmp_lahir={$tmp_lahir}&tgl_lahir={$tgl_lahir}&sort={$sort}&sort_by={$sort_by}&dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}");
 
 
         if ($response->successful()) {

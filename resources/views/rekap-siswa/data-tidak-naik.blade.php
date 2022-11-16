@@ -20,37 +20,26 @@
                         <input name="page" value="1" type="hidden">
                         <input name="perPage" value="10" type="hidden">
 
+                        @if(isset($_GET['nama_siswa'])) <input name="nama_siswa" value="{{ $_GET['nama_siswa'] }}" type="hidden"> @endif
+                        @if(isset($_GET['tinggal_di_Kelas'])) <input name="tinggal_di_Kelas" value="{{ $_GET['tinggal_di_Kelas'] }}" type="hidden"> @endif
+                        @if(isset($_GET['alasan_tidak_naik'])) <input name="alasan_tidak_naik" value="{{ $_GET['alasan_tidak_naik'] }}" type="hidden"> @endif
+                        @if(isset($_GET['tmp_lahir'])) <input name="tmp_lahir" value="{{ $_GET['tmp_lahir'] }}" type="hidden"> @endif
+                        @if(isset($_GET['tgl_lahir'])) <input name="tgl_lahir" value="{{ $_GET['tgl_lahir'] }}" type="hidden"> @endif
+                        @if(isset($_GET['sort_by'])) <input name="sort_by" value="{{ $_GET['sort_by'] }}" type="hidden"> @endif
+                        @if(isset($_GET['sort'])) <input name="sort" value="{{ $_GET['sort'] }}" type="hidden"> @endif
+                        @if(isset($_GET['dibuatTglDari'])) <input name="dibuatTglDari" value="{{ $_GET['dibuatTglDari'] }}" type="hidden"> @endif
+                        @if(isset($_GET['dibuatTglKe'])) <input name="dibuatTglKe" value="{{ $_GET['dibuatTglKe'] }}" type="hidden"> @endif
+
                         <input type="text" id="search" name="search" class="tw-py-1 tw-px-5 tw-border-none tw-rounded-md" value="{{ request()->search }}">
                         <i class="fa-solid fa-magnifying-glass tw-pr-5 tw-pl-3 tw-text-slate-600"></i>
                     </div>
                 </form>
                 <div class="tw-text-base pt-1 tw-text-basic-700 tw-ml-4 tw-mr-2 tw-font-normal tw-font-pop">Show</div>
                 <select name="show-data-perpage" id="show-data-perpage" class="tw-bg-gray-300 tw-font-bold tw-px-7 tw-rounded-xl tw-text tw-mb-2 tw-border-none">
-                    @if(!empty($_GET['page']))
-                        @if(isset($_GET['search']))
-                        <option value="/data-tidak-naik?page={{ $_GET['page'] }}&perPage=10&search={{ $_GET['search'] }}" @isset($_GET['perPage']) @if( $_GET['perPage'] === '10') selected @endif @endisset class="tw-bg-white">10</option>
-                        <option value="/data-tidak-naik?page={{ $_GET['page'] }}&perPage=25&search={{ $_GET['search'] }}" @isset($_GET['perPage']) @if( $_GET['perPage'] === '25') selected @endif @endisset class="tw-bg-white">25</option>
-                        <option value="/data-tidak-naik?page={{ $_GET['page'] }}&perPage=50&search={{ $_GET['search'] }}" @isset($_GET['perPage']) @if( $_GET['perPage'] === '50') selected @endif @endisset class="tw-bg-white">50</option>
-                        <option value="/data-tidak-naik?page={{ $_GET['page'] }}&perPage=100&search={{ $_GET['search'] }}" @isset($_GET['perPage']) @if( $_GET['perPage'] === '100') selected @endif @endisset class="tw-bg-white">100</option>
-                        @else
-                        <option value="/data-tidak-naik?page={{ $_GET['page'] }}&perPage=10&search=" @isset($_GET['perPage']) @if( $_GET['perPage'] === '10') selected @endif @endisset class="tw-bg-white">10</option>
-                        <option value="/data-tidak-naik?page={{ $_GET['page'] }}&perPage=25&search=" @isset($_GET['perPage']) @if( $_GET['perPage'] === '25') selected @endif @endisset class="tw-bg-white">25</option>
-                        <option value="/data-tidak-naik?page={{ $_GET['page'] }}&perPage=50&search=" @isset($_GET['perPage']) @if( $_GET['perPage'] === '50') selected @endif @endisset class="tw-bg-white">50</option>
-                        <option value="/data-tidak-naik?page={{ $_GET['page'] }}&perPage=100&search=" @isset($_GET['perPage']) @if( $_GET['perPage'] === '100') selected @endif @endisset class="tw-bg-white">100</option>
-                        @endif
-                    @else
-                        @if(isset($_GET['search']))
-                        <option value="/data-tidak-naik?perPage=10&search={{ $_GET['search'] }}" @isset($_GET['perPage']) @if( $_GET['perPage'] === '10') selected @endif @endisset class="tw-bg-white">10</option>
-                        <option value="/data-tidak-naik?perPage=25&search={{ $_GET['search'] }}" @isset($_GET['perPage']) @if( $_GET['perPage'] === '25') selected @endif @endisset class="tw-bg-white">25</option>
-                        <option value="/data-tidak-naik?perPage=50&search={{ $_GET['search'] }}" @isset($_GET['perPage']) @if( $_GET['perPage'] === '50') selected @endif @endisset class="tw-bg-white">50</option>
-                        <option value="/data-tidak-naik?perPage=100&search={{ $_GET['search'] }}" @isset($_GET['perPage']) @if( $_GET['perPage'] === '100') selected @endif @endisset class="tw-bg-white">100</option>
-                        @else
-                        <option value="/data-tidak-naik?perPage=10&search=" @isset($_GET['perPage']) @if( $_GET['perPage'] === '10') selected @endif @endisset class="tw-bg-white">10</option>
-                        <option value="/data-tidak-naik?perPage=25&search=" @isset($_GET['perPage']) @if( $_GET['perPage'] === '25') selected @endif @endisset class="tw-bg-white">25</option>
-                        <option value="/data-tidak-naik?perPage=50&search=" @isset($_GET['perPage']) @if( $_GET['perPage'] === '50') selected @endif @endisset class="tw-bg-white">50</option>
-                        <option value="/data-tidak-naik?perPage=100&search=" @isset($_GET['perPage']) @if( $_GET['perPage'] === '100') selected @endif @endisset class="tw-bg-white">100</option>
-                        @endif
-                    @endif
+                    <option value="/data-tidak-naik?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=10&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&tinggal_di_Kelas=@isset($_GET['tinggal_di_Kelas']){{ $_GET['tinggal_di_Kelas'] }}@endisset&alasan_tidak_naik=@isset($_GET['alasan_tidak_naik']){{ $_GET['alasan_tidak_naik'] }}@endisset&tmp_lahir=@isset($_GET['tmp_lahir']){{ $_GET['tmp_lahir'] }}@endisset&tgl_lahir=@isset($_GET['tgl_lahir']){{ $_GET['tgl_lahir'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '10') selected @endif @endisset class="tw-bg-white">10</option>
+                    <option value="/data-tidak-naik?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=25&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&tinggal_di_Kelas=@isset($_GET['tinggal_di_Kelas']){{ $_GET['tinggal_di_Kelas'] }}@endisset&alasan_tidak_naik=@isset($_GET['alasan_tidak_naik']){{ $_GET['alasan_tidak_naik'] }}@endisset&tmp_lahir=@isset($_GET['tmp_lahir']){{ $_GET['tmp_lahir'] }}@endisset&tgl_lahir=@isset($_GET['tgl_lahir']){{ $_GET['tgl_lahir'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '25') selected @endif @endisset class="tw-bg-white">25</option>
+                    <option value="/data-tidak-naik?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=50&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&tinggal_di_Kelas=@isset($_GET['tinggal_di_Kelas']){{ $_GET['tinggal_di_Kelas'] }}@endisset&alasan_tidak_naik=@isset($_GET['alasan_tidak_naik']){{ $_GET['alasan_tidak_naik'] }}@endisset&tmp_lahir=@isset($_GET['tmp_lahir']){{ $_GET['tmp_lahir'] }}@endisset&tgl_lahir=@isset($_GET['tgl_lahir']){{ $_GET['tgl_lahir'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '50') selected @endif @endisset class="tw-bg-white">50</option>
+                    <option value="/data-tidak-naik?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=100&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&tinggal_di_Kelas=@isset($_GET['tinggal_di_Kelas']){{ $_GET['tinggal_di_Kelas'] }}@endisset&alasan_tidak_naik=@isset($_GET['alasan_tidak_naik']){{ $_GET['alasan_tidak_naik'] }}@endisset&tmp_lahir=@isset($_GET['tmp_lahir']){{ $_GET['tmp_lahir'] }}@endisset&tgl_lahir=@isset($_GET['tgl_lahir']){{ $_GET['tgl_lahir'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '100') selected @endif @endisset class="tw-bg-white">100</option>
                 </select>
                 <div class="tw-text-base pt-1 tw-mx-2 tw-font-pop tw-font-normal tw-text-basic-700">Entries</div>
             
@@ -76,8 +65,18 @@
                                     <span class="sr-only">Close modal</span>
                                 </button>
                                 <div class="tw-p-6">
-                                    <form action="/get-request">
-                                    @csrf
+                                    <form action="/data-tidak-naik">
+
+                                    @if(isset($_GET['page']))
+                                    <input type="hidden" name="page" value="{{ $_GET['page'] }}"> 
+                                    @endif
+                                    @if(isset($_GET['perPage']))
+                                    <input type="hidden" name="perPage" value="{{ $_GET['perPage'] }}"> 
+                                    @endif
+                                    @if(isset($_GET['search']))
+                                    <input type="hidden" name="search" value="{{ $_GET['search'] }}"> 
+                                    @endif
+
                                     <div class="tw-flex tw-justify-center tw-font-pop tw-text-sims-500 tw-text-xl tw-font-bold">Filters</div>
                                     <div class="tw-border-b tw-border-sims-400 tw-w-full tw-my-5"></div>
 
@@ -87,21 +86,21 @@
                                         <div class="tw-flex tw-my-3">
                                             <div class="tw-text-xs tw-font-pop tw-text-gray-400 tw-mx-2 tw-my-auto">Nama Peserta Didik</div>
                                             <label for="default-toggle-nama-peserta-didik" class="inline-flex relative items-center cursor-pointer">
-                                              <input type="checkbox" name="nama_siswa" value="true" id="default-toggle-nama-peserta-didik" class="sr-only peer">
+                                              <input type="checkbox" name="nama_siswa" value="true" id="default-toggle-nama-peserta-didik" class="sr-only peer" @isset($_GET['nama_siswa']) @if($_GET['nama_siswa'] === "true") checked @endif @endisset>
                                               <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
                                             </label>
                                         </div>
                                         <div class="tw-flex tw-my-3">
                                             <div class="tw-text-xs tw-font-pop tw-text-gray-400 tw-mx-2 tw-my-auto">Tinggal di Kelas</div>
                                             <label for="default-toggle-tinggal-di-kelas" class="inline-flex relative items-center cursor-pointer">
-                                              <input type="checkbox" name="tinggal_di_Kelas" value="true" id="default-toggle-tinggal-di-kelas" class="sr-only peer">
+                                              <input type="checkbox" name="tinggal_di_Kelas" value="true" id="default-toggle-tinggal-di-kelas" class="sr-only peer" @isset($_GET['tinggal_di_Kelas']) @if($_GET['tinggal_di_Kelas'] === "true") checked @endif @endisset>
                                               <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
                                             </label>
                                         </div>
                                         <div class="tw-flex tw-my-3">
                                             <div class="tw-text-xs tw-font-pop tw-text-gray-400 tw-mx-2 tw-my-auto">Alasan</div>
                                             <label for="default-toggle-alasan" class="inline-flex relative items-center cursor-pointer">
-                                              <input type="checkbox" name="alasan_tidak_naik" value="true" id="default-toggle-alasan" class="sr-only peer">
+                                              <input type="checkbox" name="alasan_tidak_naik" value="true" id="default-toggle-alasan" class="sr-only peer" @isset($_GET['alasan_tidak_naik']) @if($_GET['alasan_tidak_naik'] === "true") checked @endif @endisset>
                                               <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
                                             </label>
                                         </div>
@@ -111,14 +110,14 @@
                                         <div class="tw-flex tw-my-3">
                                             <div class="tw-text-xs tw-font-pop tw-text-gray-400 tw-mx-2 tw-my-auto">Tempat Lahir</div>
                                             <label for="default-toggle-tempat-lahir" class="inline-flex relative items-center cursor-pointer">
-                                              <input type="checkbox" name="tmp_lahir" value="true" id="default-toggle-tempat-lahir" class="sr-only peer">
+                                              <input type="checkbox" name="tmp_lahir" value="true" id="default-toggle-tempat-lahir" class="sr-only peer" @isset($_GET['tmp_lahir']) @if($_GET['tmp_lahir'] === "true") checked @endif @endisset>
                                               <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
                                             </label>
                                         </div>
                                         <div class="tw-flex tw-my-3">
                                             <div class="tw-text-xs tw-font-pop tw-text-gray-400 tw-mx-2 tw-my-auto">Tanggal Lahir</div>
                                             <label for="default-toggle-tanggal-lahir" class="inline-flex relative items-center cursor-pointer">
-                                              <input type="checkbox" name="tgl_lahir" value="true" id="default-toggle-tanggal-lahir" class="sr-only peer">
+                                              <input type="checkbox" name="tgl_lahir" value="true" id="default-toggle-tanggal-lahir" class="sr-only peer" @isset($_GET['tgl_lahir']) @if($_GET['tgl_lahir'] === "true") checked @endif @endisset>
                                               <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
                                             </label>
                                         </div>
@@ -130,7 +129,23 @@
                                     <div class="tw-font-pop tw-text-sm tw-font-bold tw-text-gray-400 tw-mt-6">Sort By</div>
                                     <div class="tw-flex tw-justify-between tw-my-3">
                                         <div class="tw-w-full">
-                                            <select class="input-data tw-text-sm tw-mr-5" id="sort-by" name="sort-by" required>
+                                            <select class="input-data tw-text-sm tw-mr-5" id="sort_by" name="sort_by" required>
+                                                @if(isset($_GET['sort_by']))
+                                                <option value="{{ $_GET['sort_by'] }}">
+                                                    @if($_GET['sort_by'] == 'nama_siswa')
+                                                    Nama Peserta Didik (selected)
+                                                    @elseif($_GET['sort_by'] == 'tmp_lahir')
+                                                    Tempat Lahir (selected)
+                                                    @elseif($_GET['sort_by'] == 'tgl_lahir')
+                                                    Tanggal Lahir (selected)
+                                                    @elseif($_GET['sort_by'] == 'tinggal_di_Kelas')
+                                                    Tinggal di Kelas (selected)
+                                                    @elseif($_GET['sort_by'] == 'alasan_tidak_naik')
+                                                    Alasan (selected)
+                                                    @endif
+                                                </option>
+                                                @endif
+                                                
                                                 <option value="nama_siswa">Nama Peserta Didik</option>
                                                 <option value="tmp_lahir">Tempat Lahir</option>
                                                 <option value="tgl_lahir">Tanggal Lahir</option>
@@ -141,11 +156,11 @@
                                         <div class="tw-flex tw-my-auto tw-gap-3 tw-justify-center tw-mx-auto tw-ml-5">
                                             <div class="tw-flex tw-gap-1">
                                                 <label for="ascending" class="tw-font-pop tw-text-sm tw-text-gray-400">Ascending</label>
-                                                <input class="tw-my-auto tw-bg-gray-200 focus:ring-0 focus:ring-offset-0" style="height:15px; width:15px; border: none" type="radio" id="ascending" name="sort" value="ASC" checked>
+                                                <input class="tw-my-auto tw-bg-gray-200 focus:ring-0 focus:ring-offset-0" style="height:15px; width:15px; border: none" type="radio" id="ascending" name="sort" value="ASC" @isset($_GET['sort']) @if($_GET['sort'] == "ASC") ? checked : @endif @endisset>
                                             </div>
                                             <div class="tw-flex tw-gap-1">
                                                 <label for="descending" class="tw-font-pop tw-text-sm tw-text-gray-400">Descending</label>
-                                                <input class="tw-my-auto tw-bg-gray-200 focus:ring-0 focus:ring-offset-0" style="height:15px; width:15px; border: none" type="radio" id="descending" name="sort" value="DESC">
+                                                <input class="tw-my-auto tw-bg-gray-200 focus:ring-0 focus:ring-offset-0" style="height:15px; width:15px; border: none" type="radio" id="descending" name="sort" value="DESC" @isset($_GET['sort']) @if($_GET['sort'] == "DESC") ? checked : @endif @endisset>
                                             </div>
                                         </div>
                                     </div>
@@ -236,7 +251,16 @@
                     <input name="search" value="{{ $_GET['search'] }}" type="hidden">
                     @endif
 
-
+                    @if(isset($_GET['nama_siswa'])) <input name="nama_siswa" value="{{ $_GET['nama_siswa'] }}" type="hidden"> @endif
+                    @if(isset($_GET['tinggal_di_Kelas'])) <input name="tinggal_di_Kelas" value="{{ $_GET['tinggal_di_Kelas'] }}" type="hidden"> @endif
+                    @if(isset($_GET['alasan_tidak_naik'])) <input name="alasan_tidak_naik" value="{{ $_GET['alasan_tidak_naik'] }}" type="hidden"> @endif
+                    @if(isset($_GET['tmp_lahir'])) <input name="tmp_lahir" value="{{ $_GET['tmp_lahir'] }}" type="hidden"> @endif
+                    @if(isset($_GET['tgl_lahir'])) <input name="tgl_lahir" value="{{ $_GET['tgl_lahir'] }}" type="hidden"> @endif
+                    @if(isset($_GET['sort_by'])) <input name="sort_by" value="{{ $_GET['sort_by'] }}" type="hidden"> @endif
+                    @if(isset($_GET['sort'])) <input name="sort" value="{{ $_GET['sort'] }}" type="hidden"> @endif
+                    @if(isset($_GET['dibuatTglDari'])) <input name="dibuatTglDari" value="{{ $_GET['dibuatTglDari'] }}" type="hidden"> @endif
+                    @if(isset($_GET['dibuatTglKe'])) <input name="dibuatTglKe" value="{{ $_GET['dibuatTglKe'] }}" type="hidden"> @endif
+                    
                     <input type="number" name="page" class="tw-bg-white tw-border tw-border-slate-200 tw-w-1/2 tw-font-pop tw-font-medium tw-text-slate-500 tw-rounded-md tw-text-center focus:tw-ring-gray-200 focus:tw-border-gray-200 no-spin" min="1" @if(isset($_GET['page'])) value="{{ $_GET['page'] }}" @endif>
                 </form>
             </div>
