@@ -17,11 +17,12 @@ class DataTidakNaikExport implements FromView, ShouldAutoSize
 
     public function __construct()
     {
-        $request = request();
+        // $request = request();
 
-        $this->api_url = '127.0.0.1:3000';
+        $this->api_url = 'https://d625-103-148-113-86.ap.ngrok.io';
 
         $this->siswa = Http::get("{$this->api_url}/dashboard/siswa-tidak-naik??perPage=1&perPage=100");
+        
     }
     /**
     * @return \Illuminate\Support\View

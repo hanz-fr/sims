@@ -51,8 +51,6 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
     Route::get('/data-induk-excel', [ApiController::class, 'exportDataIndukExcel']);
     Route::get('/data-induk-excel/{jurusan}/{kelas}', [ApiController::class, 'exportDataIndukExcel']);
 
-    ROute::get('/data-tidak-naik-excel', [ApiController::class, 'exportDataTidakNaikExcel']);
-
     Route::get('/get-request', [ApiController::class, 'getRequest']);
 
 
@@ -135,6 +133,10 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
     /* DATA TIDAK NAIK KELAS */
 
     Route::get('/data-tidak-naik', [ApiController::class, 'siswaTidakNaik']);
+
+    Route::get('/data-tidak-naik-excel', [ApiController::class, 'exportDataTidakNaikExcel']);
+    Route::get('/data-tidak-naik-pdf', [ApiController::class, 'exportDataTidakNaikPDF']);
+    Route::get('/data-tidak-naik-print', [ApiController::class, 'printDataTidakNaik']);
 
 
     /* PROFILE */

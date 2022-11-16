@@ -26,7 +26,7 @@ class ApiController extends Controller
     /* GLOBAL VARIABLES */
     public function __construct()
     {
-        $this->api_url = '127.0.0.1:3000'; // Ganti link NGROK disini
+        $this->api_url = 'https://d625-103-148-113-86.ap.ngrok.io'; // Ganti link NGROK disini
 
         $this->sims_url = 'http://127.0.0.1:8000'; // SIMS URL
     }
@@ -156,6 +156,35 @@ class ApiController extends Controller
         $tidaknaik = 'daftar_nama_tidak_naik_'.date('Y-m-d_H-i-s').'.xlsx';
 
         return Excel::download(new DataTidakNaikExport, $tidaknaik);
+        
+    }
+
+    public function exportDataTidakNaikPDF() {
+
+        $response = Http::get("{$this->api_url}/dashboard/siswa-tidak-naik");
+
+        $tidaknaik = 'daftar_nama_tidak_naik_'.date('Y-m-d_H-i-s').'.xlsx';
+
+        $pdf = PDF::loadView('induk.pdf.tidak-naik', [
+            'siswa' => json_decode($response)->data->rows
+        ]);
+
+        $tidaknaik = 'data_tidak_naik_kelas_periode'.date('Y-m-d_H-i-s').'.pdf';
+
+        return $pdf->download($tidaknaik);
+        
+    }
+
+
+    public function printDataTidakNaik() {
+
+        $response = Http::get("{$this->api_url}/dashboard/siswa-tidak-naik");
+
+        $tidaknaik = 'daftar_nama_tidak_naik_'.date('Y-m-d_H-i-s').'.xlsx';
+
+        return view('induk.pdf.tidak-naik', [
+            'siswa' => json_decode($response)->data->rows,
+        ]);
         
     }
 
