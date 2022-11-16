@@ -769,10 +769,10 @@
                             </th>
                         </tr>
                         <tr class="tw-border">
-                        <th class="tw-border tw-py-3 tw-px-6">T</th>
-                        <th class="tw-border tw-py-3 tw-px-6">P</th>
-                        <th class="tw-border tw-py-3 tw-px-6">T</th>
-                        <th class="tw-border tw-py-3 tw-px-6">P</th>
+                            <th class="tw-border tw-py-3 tw-px-6">T</th>
+                            <th class="tw-border tw-py-3 tw-px-6">P</th>
+                            <th class="tw-border tw-py-3 tw-px-6">T</th>
+                            <th class="tw-border tw-py-3 tw-px-6">P</th>
                         </tr>
                     </thead>
                     <tbody class="tw-text-base text-center">

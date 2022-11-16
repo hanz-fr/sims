@@ -344,18 +344,18 @@
                         <td class="tw-py-4 tw-px-6 tw-border">{{ $s->nama_siswa }}</td>
                         <td class="tw-py-4 tw-px-6 tw-border">{{ $s->jenis_kelamin }}</td>
                         <td class="tw-py-4 tw-px-6 tw-border">{{ $s->KelasId }}</td>
-                        <td>
+                        <td class="tw-flex tw-justify-center tw-gap-3 tw-py-2">
                             @cannot('kesiswaan')
-                            <a href="/rekap-nilai/{{ $s->nis_siswa }}" class="tw-text-white tw-bg-sims-400 hover:tw-bg-sims-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-mr-1" title="Rekap Nilai">
+                            <a href="/rekap-nilai/{{ $s->nis_siswa }}" class="tw-text-white tw-bg-sims-400 tw-justify-center tw-items-center hover:tw-bg-sims-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-w-12" title="Rekap Nilai">
                                 <i class="fa-light fa-clipboard-list"></i>
                             </a>
                             @endcannot
                             @can('tata usaha')
-                            <a href="/edit-siswa/{{ $s->nis_siswa }}" class="tw-text-white tw-bg-kuning-500 hover:tw-bg-kuning-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3" title="Edit Data Siswa">
-                                <i class="fa-solid fa-pen-to-square"></i></a>
+                            <a href="/edit-siswa/{{ $s->nis_siswa }}" class="tw-text-white tw-bg-kuning-500 hover:tw-bg-kuning-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-w-12" title="Edit Data Siswa">
+                                <i class="fa-solid fa-pen-to-square"></i>
                             </a>
                             @endcan
-                            <a href="/detail/{{ $s->nis_siswa }}" class="tw-text-white tw-bg-gray-500 hover:tw-bg-gray-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3" title="Detail Data ">
+                            <a href="/detail/{{ $s->nis_siswa }}" class="tw-text-white tw-bg-gray-500 hover:tw-bg-gray-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-w-12" title="Detail Data">
                                 <i class="fa-solid fa-eye"></i>
                             </a>
                         </td>
