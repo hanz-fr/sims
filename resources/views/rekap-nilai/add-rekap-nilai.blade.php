@@ -52,7 +52,13 @@
                     
                     <div>
                         <span class="tw-font-pop tw-mx-3 tw-font-lg tw-font-bold tw-mt-5 tw-text-sims-400">Naik ke Kelas</span>
-                        <input type="text" class="input-account" name="naikKelas">
+                        <select class="input-account" name="naikKelas" id="naikKelas">
+                            <option selected value="">-</option>
+                            
+                            @foreach ($kelas as $k)
+                            <option value="{{ $k->id }}">{{ $k->id }}</option>
+                            @endforeach
+                        </select>
                     </div>
                     
                     <div>
@@ -69,7 +75,15 @@
                     
                     <div>
                         <span class="tw-font-pop tw-mx-3 tw-font-lg tw-font-bold tw-mt-5 tw-text-sims-400">Tinggal di Kelas</span>
-                        <input type="text" placeholder="" class="input-account" name="tinggal_di_kelas">
+
+                        <select class="input-account" name="tinggal_di_kelas" id="tinggal_di_kelas">
+                            <option value="">-</option>
+
+                            @foreach($kelas as $k)
+                            <option value="{{ $k->id }}">{{ $k->id }}</option>
+                            @endforeach 
+                        </select>
+
                     </div>
                     
                     <div>

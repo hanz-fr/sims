@@ -203,6 +203,7 @@ class ApiController extends Controller
 
         $siswa = Http::get("{$this->api_url}/siswa/{$nis}");
         $jurusanSiswa = json_decode($siswa)->result->kelas->JurusanId;
+        $kelas = Http::get("{$this->api_url}/kelas/siswa-per-kelas/all");
         $mapel = Http::get("{$this->api_url}/mapel-jurusan/get/by-jurusan/$jurusanSiswa"); // get mapel by jurusan siswa
 
         if ($nis) {
@@ -222,6 +223,7 @@ class ApiController extends Controller
                 'active' => 'data-induk',
                 'siswa' =>  json_decode($siswa)->result,
                 'mapel' => json_decode($mapel),
+                'kelas' => json_decode($kelas)->result,
             ]); 
 
         } else {
@@ -238,6 +240,7 @@ class ApiController extends Controller
         $raport = Http::get("{$this->api_url}/raport/{$RaportId}");
         $nis_siswa = json_decode($raport)->result->nis_siswa;
         $siswa = Http::get("{$this->api_url}/siswa/{$nis_siswa}");
+        $kelas = Http::get("{$this->api_url}/kelas/siswa-per-kelas/all");
         $jurusanSiswa = json_decode($siswa)->result->kelas->JurusanId;
         $mapel = Http::get("{$this->api_url}/mapel-jurusan/get/by-jurusan/$jurusanSiswa"); // get mapel by jurusan siswa
 
@@ -256,6 +259,7 @@ class ApiController extends Controller
                 'active' => 'data-induk',
                 'siswa' =>  json_decode($siswa)->result,
                 'mapel' => json_decode($mapel),
+                'kelas' => json_decode($kelas)->result,
                 'raport' => json_decode($raport)->result,
                 'nilaiMapel' => json_decode($raport)->result->NilaiMapel,
             ]);

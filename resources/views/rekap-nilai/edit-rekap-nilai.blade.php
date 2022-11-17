@@ -59,7 +59,17 @@
                     
                     <div>
                         <span class="tw-font-pop tw-mx-3 tw-font-lg tw-font-bold tw-mt-5 tw-text-sims-400">Naik ke Kelas</span>
-                        <input type="text" placeholder="Kelas..." class="input-account" name="naikKelas" value="{{ $raport->naikKelas }}">
+                        <select class="input-account" name="naikKelas" id="naikKelas">
+                            <option value="">-</option>
+                            
+                            @isset($raport->naikKelas)
+                            <option selected value="{{ $raport->naikKelas }}">{{ $raport->naikKelas }}</option>
+                            @endisset
+
+                            @foreach ($kelas as $k)
+                            <option value="{{ $k->id }}">{{ $k->id }}</option>
+                            @endforeach
+                        </select>
                     </div>
                     
                     <div>
@@ -75,7 +85,18 @@
                     
                     <div>
                         <span class="tw-font-pop tw-mx-3 tw-font-lg tw-font-bold tw-mt-5 tw-text-sims-400">Tinggal di Kelas</span>
-                        <input type="text" placeholder="" class="input-account" name="tinggal_di_kelas" value="{{ $raport->tinggal_di_Kelas }}">
+                        <select class="input-account" name="tinggal_di_kelas" id="tinggal_di_kelas">
+
+                            <option value="">-</option>
+
+                            @isset($raport->tinggal_di_Kelas)
+                            <option selected value="{{ $raport->tinggal_di_Kelas }}">{{ $raport->tinggal_di_Kelas }}</option>
+                            @endisset
+
+                            @foreach($kelas as $k)
+                            <option value="{{ $k->id }}">{{ $k->id }}</option>
+                            @endforeach 
+                        </select>
                     </div>
                     
                     <div>
