@@ -63,6 +63,9 @@ a {
   .card-dashboard {
     @apply tw-px-4 tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-bg-white tw-w-56;
   }
+  .without-ring {
+    @apply focus:ring-0 focus:ring-offset-0;
+  }
 }
 
 .snap {
