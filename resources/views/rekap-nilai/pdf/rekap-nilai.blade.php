@@ -50,6 +50,14 @@
   </style>
 </head>
 <body>
+
+    <div style="display:flex; flex-direction: row; justify-content: space-between;">
+        <div></div>
+        <h4 style="font-weight: bold; text-align: center; font-family:Arial, Helvetica, sans-serif">HASIL PENCAPAIAN KOMPETENSI PESERTA DIDIK</h4>
+        <h4 style="font-weight: bold; text-align: center; font-family:Arial, Helvetica, sans-serif">Program Kompetensi Keahlian: </h4>
+    </div>
+
+
     <table>
         <thead>
             <tr>
@@ -83,22 +91,22 @@
             </tr>
             <tr>
                 <th colspan="2">
-                    Semester: 
+                    Semester: 1
                 </th>
                 <th colspan="2">
-                    Semester: 
+                    Semester: 2
                 </th>
                 <th colspan="2">
-                    Semester: 
+                    Semester: 3
                 </th>
                 <th colspan="2">
-                    Semester: 
+                    Semester: 4
                 </th>
                 <th colspan="2">
-                    Semester: 
+                    Semester: 5
                 </th>
                 <th colspan="2">
-                    Semester: 
+                    Semester: 6
                 </th>
             </tr>
             <tr>
@@ -145,74 +153,381 @@
             </tr>
         </thead>
             <tbody>
+
+                {{-- nilai --}}
                 <tr>
                     <th scope="row" colspan="3">
-                        {{ $nm->MapelJurusan->MapelId }}
+                        MapelId
                     </th>
                     <td>
-                    {{ $nm->nilai_pengetahuan }}
+                        0
                     </td>
                     <td>
-                    {{ $nm->nilai_keterampilan }}
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <th scope="row" colspan="3">
+                        MapelId
+                    </th>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <th scope="row" colspan="3">
+                        MapelId
+                    </th>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <th scope="row" colspan="3">
+                        MapelId
+                    </th>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                </tr>
+                {{-- end nilai --}}
+                
+                {{-- absen --}}
+                <tr>
+                    <th scope="row" rowspan="4" colspan="2">
+                        Absen
+                    </th>
+                    <td>
+                        Sakit (hari)
+                    </td>
+                    <td colspan="2">
+
+                    </td>
+                    <td colspan="2">
+
+                    </td>
+                    <td colspan="2">
+
+                    </td>
+                    <td colspan="2">
+
+                    </td>
+                    <td colspan="2">
+
+                    </td>
+                    <td colspan="2">
+
+                    </td>
+                    <td rowspan="7" colspan="4">
+
                     </td>
                 </tr>
 
                 <tr>
-                <th scope="row" rowspan="4" colspan="2">
-                    Absen
-                </th>
-                <td>
-                    Sakit (hari)
-                </td>
-                <td colspan="2">
-                </td>
+                    <td>
+                        Ijin (hari)
+                    </td>
+                    <td colspan="2">
+
+                    </td>
+                    <td colspan="2">
+
+                    </td>
+                    <td colspan="2">
+
+                    </td>
+                    <td colspan="2">
+
+                    </td>
+                    <td colspan="2">
+
+                    </td>
+                    <td colspan="2">
+
+                    </td>
                 </tr>
+
                 <tr>
-                <td>
-                    Ijin (hari)
-                </td>
-                <td colspan="2">
-                </td>
+                    <td>
+                        Alpa (hari)
+                    </td>
+                    <td colspan="2">
+
+                    </td>
+                    <td colspan="2">
+
+                    </td>
+                    <td colspan="2">
+
+                    </td>
+                    <td colspan="2">
+
+                    </td>
+                    <td colspan="2">
+
+                    </td>
+                    <td colspan="2">
+
+                    </td>
                 </tr>
+
                 <tr>
-                <td>
-                    Alpa (hari)
-                </td>
-                <td colspan="2">
-                </td>
+                    <td>
+                        Jumlah (hari)
+                    </td>
+                    <td colspan="2">
+
+                    </td>
+                    <td colspan="2">
+
+                    </td>
+                    <td colspan="2">
+
+                    </td>
+                    <td colspan="2">
+
+                    </td>
+                    <td colspan="2">
+
+                    </td>
+                    <td colspan="2">
+
+                    </td>
                 </tr>
+                {{-- end absen --}}
+
+                {{-- status akhir tahun --}}
                 <tr>
-                <td>
-                    Jumlah (hari)
-                </td>
-                <td colspan="2">
-                </td>
+                    <th scope="row" rowspan="3" colspan="2">
+                        Status Akhir Tahun
+                    </th>
+                    <td>
+                        Status Kenaikan
+                    </td>
+                    <td colspan="4">
+                        
+                    </td>
+                    <td colspan="4">
+                        
+                    </td>
+                    <td colspan="4">
+                        
+                    </td>
                 </tr>
+
                 <tr>
-                <th scope="row" rowspan="3" colspan="2">
-                    Status Akhir Tahun
-                </th>
-                <td>
-                    Status Kenaikan
-                </td>
-                <td colspan="2">
-                </td>
+                    <td>
+                        Naik ke
+                    </td>
+                    <td colspan="4">
+
+                    </td>
+                    <td colspan="4">
+                            
+                    </td>
+                    <td colspan="4">
+                        
+                    </td>
                 </tr>
+                
                 <tr>
-                <td>
-                    Naik ke
-                </td>
-                <td colspan="2">
-                </td>
+                    <td>
+                        Tanggal Kenaikan
+                    </td>
+                    <td colspan="4">
+
+                    </td>
+                    <td colspan="4">
+                            
+                    </td>
+                    <td colspan="4">
+                        
+                    </td> 
                 </tr>
-                <tr>
-                <td>
-                    Tanggal Kenaikan
-                </td>
-                <td colspan="2">
-                </td> 
-                </tr>
-        </tbody>
+            </tbody>
     </table>
 </body>
 </html>

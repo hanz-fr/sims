@@ -11,26 +11,25 @@ use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 
 class DataTidakNaikExport implements FromView, ShouldAutoSize
 {
-    use Exportable;
 
-    private $siswa;
+    use Exportable;
 
     public function __construct()
     {
-        // $request = request();
 
         $this->api_url = '127.0.0.1:3000';
 
-        $this->siswa = Http::get("{$this->api_url}/dashboard/siswa-tidak-naik??perPage=1&perPage=100");
-        
     }
     /**
     * @return \Illuminate\Support\View
     */
     public function view(): View
     {
+
+        $siswa = Http::get("{$this->api_url}/dashboard/siswa-tidak-naik??perPage=1&perPage=100");
+
         return view('induk.pdf.tidak-naik', [
-            'siswa' => json_decode($this->siswa)->data->rows
+            'siswa' => json_decode($siswa)->data->rows
         ]);
     }
 }

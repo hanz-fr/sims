@@ -15,7 +15,6 @@ use App\Exports\DataTidakNaikExport;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Http;
-
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\DetailDataIndukExport;
 use function PHPUnit\Framework\isEmpty;
@@ -27,7 +26,7 @@ class ApiController extends Controller
     /* GLOBAL VARIABLES */
     public function __construct()
     {
-        $this->api_url = '127.0.0.1:3000'; // Ganti link NGROK disini
+        $this->api_url = 'https://d625-103-148-113-86.ap.ngrok.io'; // Ganti link NGROK disini
 
         $this->sims_url = 'http://127.0.0.1:8000'; // SIMS URL
     }
@@ -111,8 +110,17 @@ class ApiController extends Controller
         $page = $request->page;
         $perPage = $request->perPage;
         $search = $request->search;
+        $nama_siswa = $request->nama_siswa;
+        $tinggal_di_Kelas = $request->tinggal_di_kelas;
+        $alasan_tidak_naik = $request->alasan_tidak_naik;
+        $tmp_lahir = $request->tmp_lahir;
+        $tgl_lahir = $request->tgl_lahir;
+        $sort_by = $request->sort_by;
+        $sort = $request->sort;
+        $dibuatTglDari = $request->dibuatTglDari;
+        $dibuatTglKe = $request->dibuatTglKe;
 
-        $response = Http::get("{$this->api_url}/dashboard/siswa-tidak-naik?page={$page}&perPage={$perPage}&search={$search}");
+        $response = Http::get("{$this->api_url}/dashboard/siswa-tidak-naik?page={$page}&perPage={$perPage}&search={$search}&nama_siswa={$nama_siswa}&tinggal_di_Kelas={$tinggal_di_Kelas}&alasan_tidak_naik={$alasan_tidak_naik}&tmp_lahir={$tmp_lahir}&tgl_lahir={$tgl_lahir}&sort={$sort}&sort_by={$sort_by}&dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}");
 
 
         if ($response->successful()) {
@@ -131,7 +139,7 @@ class ApiController extends Controller
                 return view('rekap-siswa.data-tidak-naik', [
                     'title' => 'Data Tidak Naik Kelas',
                     'active' => 'data-induk',
-                    'siswa' => json_decode($response)->data->rows,
+                    'raport' => json_decode($response)->data->rows,
                     'response' => json_decode($response),
                     'total' => json_decode($response)->data->count,
                 ]);
@@ -195,6 +203,7 @@ class ApiController extends Controller
 
         $siswa = Http::get("{$this->api_url}/siswa/{$nis}");
         $jurusanSiswa = json_decode($siswa)->result->kelas->JurusanId;
+        $kelas = Http::get("{$this->api_url}/kelas/siswa-per-kelas/all");
         $mapel = Http::get("{$this->api_url}/mapel-jurusan/get/by-jurusan/$jurusanSiswa"); // get mapel by jurusan siswa
 
         if ($nis) {
@@ -214,6 +223,7 @@ class ApiController extends Controller
                 'active' => 'data-induk',
                 'siswa' =>  json_decode($siswa)->result,
                 'mapel' => json_decode($mapel),
+                'kelas' => json_decode($kelas)->result,
             ]); 
 
         } else {
@@ -230,6 +240,7 @@ class ApiController extends Controller
         $raport = Http::get("{$this->api_url}/raport/{$RaportId}");
         $nis_siswa = json_decode($raport)->result->nis_siswa;
         $siswa = Http::get("{$this->api_url}/siswa/{$nis_siswa}");
+        $kelas = Http::get("{$this->api_url}/kelas/siswa-per-kelas/all");
         $jurusanSiswa = json_decode($siswa)->result->kelas->JurusanId;
         $mapel = Http::get("{$this->api_url}/mapel-jurusan/get/by-jurusan/$jurusanSiswa"); // get mapel by jurusan siswa
 
@@ -248,6 +259,7 @@ class ApiController extends Controller
                 'active' => 'data-induk',
                 'siswa' =>  json_decode($siswa)->result,
                 'mapel' => json_decode($mapel),
+                'kelas' => json_decode($kelas)->result,
                 'raport' => json_decode($raport)->result,
                 'nilaiMapel' => json_decode($raport)->result->NilaiMapel,
             ]);
@@ -819,6 +831,53 @@ class ApiController extends Controller
             ]);
 
         }
+    }
+
+
+    public function printRekapNilai(Request $request) {
+
+        $nis = $request->nis;
+
+        $response = Http::get("{$this->api_url}/siswa/{$nis}");
+
+        return view('rekap-nilai.pdf.rekap-nilai', [
+            'siswa' => json_decode($response)->result,
+        ]);
+
+    }
+
+    public function exportRekapNilaiPDF(Request $request) {
+
+        $nis = $request->nis;
+
+        $response = Http::get("{$this->api_url}/siswa/{$nis}");
+
+        $pdf = PDF::loadView('rekap-nilai.pdf.rekap-nilai', [
+            'siswa' => json_decode($response)->result,
+        ]);
+
+        $nama = json_decode($response)->result->nama_siswa;
+
+        $rekapnilai = 'rekap_nilai_siswa_'.$nama.'.pdf';
+
+        return $pdf->download($rekapnilai);
+
+    }
+
+    public function exportRekapNilaiExcel() {
+
+        ob_end_clean();
+        ob_start();
+
+        $nis = $request->nis;
+
+        $response = Http::get("{$this->api_url}/siswa/{$nis}");
+
+        $nama = json_decode($response)->result->nama_siswa;
+
+        $rekapnilai = 'rekap_nilai_siswa_'.$nama.'.xlsx';
+
+        return Excel::download(new RekapNilaiExport, $rekapnilai);
     }
 
 
@@ -1670,7 +1729,7 @@ class ApiController extends Controller
 
     public function exportRekapJumlahPDF() {
 
-        $semuaKelas = Http::get("https://ffaf-114-79-55-233.ap.ngrok.io/kelas/siswa-per-kelas/all");
+        $semuaKelas = Http::get("{$this->api_url}/kelas/siswa-per-kelas/all");
         $kelas10 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/10");
         $kelas11 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/11");
         $kelas12 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/12");
