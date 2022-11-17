@@ -50,24 +50,63 @@
   </style>
 </head>
 <body>
+
+    <div style="display:flex; flex-direction: row; justify-content: space-between;">
+        <div></div>
+        <h4 style="font-weight: bold; text-align: center; font-family:Arial, Helvetica, sans-serif">HASIL PENCAPAIAN KOMPETENSI PESERTA DIDIK</h4>
+        <h4 style="font-weight: bold; text-align: center; font-family:Arial, Helvetica, sans-serif">Program Kompetensi Keahlian: </h4>
+    </div>
+
+
     <table>
         <thead>
             <tr>
-                {{-- @foreach (collect($siswa->raport)->where('semester', 1) as $rp) --}}
-                <th scope="col" rowspan="4" colspan="3">
+                <th scope="col" rowspan="3" colspan="3">
                     Nama Mapel
                 </th>
-            </tr>
-
-            @foreach ($siswa->raport as $rp)
-            <tr>
-                <th scope="col" colspan="2">
-                    Tahun Pelajaran: {{ $rp->thn_ajaran }}
+                <th colspan="2">
+                    Tahun Pelajaran: 
+                </th>
+                <th colspan="2">
+                    Tahun Pelajaran: 
+                </th>
+                <th colspan="2">
+                    Tahun Pelajaran: 
+                </th>
+                <th colspan="2">
+                    Tahun Pelajaran: 
+                </th>
+                <th colspan="2">
+                    Tahun Pelajaran: 
+                </th>
+                <th colspan="2">
+                    Tahun Pelajaran: 
+                </th>
+                <th scope="col" rowspan="2" colspan="2">
+                    US
+                </th>
+                <th scope="col" rowspan="2" colspan="2">
+                    UKK
                 </th>
             </tr>
             <tr>
                 <th colspan="2">
-                    Semester: {{ $rp->semester }}   
+                    Semester: 1
+                </th>
+                <th colspan="2">
+                    Semester: 2
+                </th>
+                <th colspan="2">
+                    Semester: 3
+                </th>
+                <th colspan="2">
+                    Semester: 4
+                </th>
+                <th colspan="2">
+                    Semester: 5
+                </th>
+                <th colspan="2">
+                    Semester: 6
                 </th>
             </tr>
             <tr>
@@ -77,82 +116,370 @@
                 <th scope="col">
                     Keterampilan
                 </th>
+                <th scope="col">
+                    Pengetahuan
+                </th>
+                <th scope="col">
+                    Keterampilan
+                </th>
+                <th scope="col">
+                    Pengetahuan
+                </th>
+                <th scope="col">
+                    Keterampilan
+                </th>
+                <th scope="col">
+                    Pengetahuan
+                </th>
+                <th scope="col">
+                    Keterampilan
+                </th>
+                <th scope="col">
+                    Pengetahuan
+                </th>
+                <th scope="col">
+                    Keterampilan
+                </th>
+                <th scope="col">
+                    Pengetahuan
+                </th>
+                <th scope="col">
+                    Keterampilan
+                </th>
+                <th>T</th>
+                <th>P</th>
+                <th>T</th>
+                <th>P</th>
             </tr>
-            @endforeach
         </thead>
             <tbody>
-                @foreach ($siswa->raport as $rp)
-                @foreach ($rp->NilaiMapel as $nm)
+
+                {{-- nilai --}}
                 <tr>
                     <th scope="row" colspan="3">
-                        {{ $nm->MapelJurusan->MapelId }}
+                        MapelId
                     </th>
                     <td>
-                        {{ $nm->nilai_pengetahuan }}
+                        0
                     </td>
                     <td>
-                        {{ $nm->nilai_keterampilan }}
+                        0
                     </td>
-                </tr>
-                @endforeach
-                @endforeach
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
 
-                @foreach (collect($siswa->raport)->where('semester', 2) as $rp)
-                @foreach ($rp->NilaiMapel as $nm)
+                </tr>
+
                 <tr>
-                    {{-- <th scope="row" colspan="3">
-                        {{ $nm->MapelJurusan->MapelId }}
-                    </th> --}}
+                    <th scope="row" colspan="3">
+                        MapelId
+                    </th>
                     <td>
-                        {{ $nm->nilai_pengetahuan }}
+                        0
                     </td>
                     <td>
-                        {{ $nm->nilai_keterampilan }}
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <th scope="row" colspan="3">
+                        MapelId
+                    </th>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <th scope="row" colspan="3">
+                        MapelId
+                    </th>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        0
                     </td>
                 </tr>
-                @endforeach
-                @endforeach
+                {{-- end nilai --}}
+                
+                {{-- absen --}}
                 <tr>
-                <th scope="row" rowspan="4" colspan="2">
-                    Absen
-                </th>
-                <td>
-                    Sakit (hari)
-                </td>
-                @foreach ($siswa->raport as $rp)
-                <td colspan="2">
-                    {{ $rp->sakit }}
-                </td>
-                @endforeach
+                    <th scope="row" rowspan="4" colspan="2">
+                        Absen
+                    </th>
+                    <td>
+                        Sakit (hari)
+                    </td>
+                    <td colspan="2">
+
+                    </td>
+                    <td colspan="2">
+
+                    </td>
+                    <td colspan="2">
+
+                    </td>
+                    <td colspan="2">
+
+                    </td>
+                    <td colspan="2">
+
+                    </td>
+                    <td colspan="2">
+
+                    </td>
+                    <td rowspan="7" colspan="4">
+
+                    </td>
                 </tr>
+
                 <tr>
                     <td>
                         Ijin (hari)
                     </td>
                     <td colspan="2">
-                        {{ $rp->ijin }}
+
+                    </td>
+                    <td colspan="2">
+
+                    </td>
+                    <td colspan="2">
+
+                    </td>
+                    <td colspan="2">
+
+                    </td>
+                    <td colspan="2">
+
+                    </td>
+                    <td colspan="2">
+
                     </td>
                 </tr>
+
                 <tr>
                     <td>
                         Alpa (hari)
                     </td>
-                    @foreach ($siswa->raport as $rp)
                     <td colspan="2">
-                        {{ $rp->alpa }}
+
                     </td>
-                    @endforeach
+                    <td colspan="2">
+
+                    </td>
+                    <td colspan="2">
+
+                    </td>
+                    <td colspan="2">
+
+                    </td>
+                    <td colspan="2">
+
+                    </td>
+                    <td colspan="2">
+
+                    </td>
                 </tr>
+
                 <tr>
                     <td>
                         Jumlah (hari)
                     </td>
-                    @foreach ($siswa->raport as $rp)
                     <td colspan="2">
-                        {{ $rp->sakit + $rp->ijin + $rp->alpa  }}
+
                     </td>
-                    @endforeach
+                    <td colspan="2">
+
+                    </td>
+                    <td colspan="2">
+
+                    </td>
+                    <td colspan="2">
+
+                    </td>
+                    <td colspan="2">
+
+                    </td>
+                    <td colspan="2">
+
+                    </td>
                 </tr>
+                {{-- end absen --}}
+
+                {{-- status akhir tahun --}}
                 <tr>
                     <th scope="row" rowspan="3" colspan="2">
                         Status Akhir Tahun
@@ -160,44 +487,47 @@
                     <td>
                         Status Kenaikan
                     </td>
-                    @foreach ($siswa->raport as $rp)
                     <td colspan="4">
-                        @if($rp->isNaik == true)
-                        Naik
-                        @elseif($rp->isNaik == false)
-                        Tidak naik
-                        @else
-                        -
-                        @endif
+                        
                     </td>
-                    @endforeach
+                    <td colspan="4">
+                        
+                    </td>
+                    <td colspan="4">
+                        
+                    </td>
                 </tr>
+
                 <tr>
                     <td>
                         Naik ke
                     </td>
-                    @foreach ($siswa->raport as $rp)
                     <td colspan="4">
-                        {{ $rp->naikKelas }}
+
                     </td>
-                    @endforeach
+                    <td colspan="4">
+                            
+                    </td>
+                    <td colspan="4">
+                        
+                    </td>
                 </tr>
+                
                 <tr>
                     <td>
                         Tanggal Kenaikan
                     </td>
-                    @foreach ($siswa->raport as $rp)
                     <td colspan="4">
-                        {{ $rp->tgl_kenaikan }}
+
+                    </td>
+                    <td colspan="4">
+                            
+                    </td>
+                    <td colspan="4">
+                        
                     </td> 
-                @endforeach
-
                 </tr>
-        </tbody>
+            </tbody>
     </table>
-
-    <script type="text/javascript">
-        window.print();
-    </script>
 </body>
 </html>

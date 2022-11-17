@@ -1715,7 +1715,7 @@ class ApiController extends Controller
 
     public function exportRekapJumlahPDF() {
 
-        $semuaKelas = Http::get("https://ffaf-114-79-55-233.ap.ngrok.io/kelas/siswa-per-kelas/all");
+        $semuaKelas = Http::get("{$this->api_url}/kelas/siswa-per-kelas/all");
         $kelas10 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/10");
         $kelas11 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/11");
         $kelas12 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/12");
