@@ -7,6 +7,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Exports\AlumniExport;
 use App\Exports\DataIndukExport;
+use App\Exports\RekapNilaiExport;
 use App\Exports\JumlahSiswaExport;
 use App\Exports\MutasiMasukExport;
 use App\Exports\MutasiKeluarExport;
@@ -16,6 +17,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Http;
 use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\DetailDataIndukExport;
 use function PHPUnit\Framework\isEmpty;
 use Illuminate\Support\Facades\Session;
 
@@ -173,7 +175,7 @@ class ApiController extends Controller
 
         $tidaknaik = 'daftar_nama_tidak_naik_'.date('Y-m-d_H-i-s').'.xlsx';
 
-        $pdf = PDF::loadView('induk.pdf.tidak-naik', [
+        $pdf = PDF::loadView('rekap-siswa.pdf.tidak-naik', [
             'siswa' => json_decode($response)->data->rows
         ]);
 
@@ -190,7 +192,7 @@ class ApiController extends Controller
 
         $tidaknaik = 'daftar_nama_tidak_naik_'.date('Y-m-d_H-i-s').'.xlsx';
 
-        return view('induk.pdf.tidak-naik', [
+        return view('rekap-siswa.pdf.tidak-naik', [
             'siswa' => json_decode($response)->data->rows,
         ]);
         
@@ -743,6 +745,15 @@ class ApiController extends Controller
         
     }
 
+    public function exportDetailDataIndukExcel(Request $request) {
+        ob_end_clean();
+        ob_start();
+
+        $detailsiswa = 'daftar_detail_nama_buku_induk_'.date('Y-m-d_H-i-s').'.xlsx';
+
+        return Excel::download(new DetailDataIndukExport($request->nis), $detailsiswa);
+    }
+
 
     public function getSiswa(Request $request)
     {
@@ -880,7 +891,7 @@ class ApiController extends Controller
 
     }
 
-    public function exportRekapNilaiExcel() {
+    public function exportRekapNilaiExcel(Request $request) {
 
         ob_end_clean();
         ob_start();
@@ -894,6 +905,7 @@ class ApiController extends Controller
         $rekapnilai = 'rekap_nilai_siswa_'.$nama.'.xlsx';
 
         return Excel::download(new RekapNilaiExport, $rekapnilai);
+
     }
 
 

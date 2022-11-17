@@ -17,7 +17,7 @@ class DataTidakNaikExport implements FromView, ShouldAutoSize
     public function __construct()
     {
 
-        $this->api_url = 'https://9393-103-148-113-86.ap.ngrok.io';
+        $this->api_url = '127.0.0.1:3000';
 
     }
     /**
@@ -28,7 +28,7 @@ class DataTidakNaikExport implements FromView, ShouldAutoSize
 
         $siswa = Http::get("{$this->api_url}/dashboard/siswa-tidak-naik??perPage=1&perPage=100");
 
-        return view('induk.pdf.tidak-naik', [
+        return view('rekap-siswa.pdf.tidak-naik', [
             'siswa' => json_decode($siswa)->data->rows
         ]);
     }
