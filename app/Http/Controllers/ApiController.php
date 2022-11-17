@@ -25,7 +25,7 @@ class ApiController extends Controller
     /* GLOBAL VARIABLES */
     public function __construct()
     {
-        $this->api_url = 'https://9393-103-148-113-86.ap.ngrok.io'; // Ganti link NGROK disini
+        $this->api_url = '127.0.0.1:3000'; // Ganti link NGROK disini
 
         $this->sims_url = 'http://127.0.0.1:8000'; // SIMS URL
     }
@@ -138,7 +138,7 @@ class ApiController extends Controller
                 return view('rekap-siswa.data-tidak-naik', [
                     'title' => 'Data Tidak Naik Kelas',
                     'active' => 'data-induk',
-                    'siswa' => json_decode($response)->data->rows,
+                    'raport' => json_decode($response)->data->rows,
                     'response' => json_decode($response),
                     'total' => json_decode($response)->data->count,
                 ]);
