@@ -93,6 +93,7 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
     Route::put('/api/raport/update-nilai', [ApiController::class, 'storeUpdateNilaiMapel']);
     Route::delete('/api/raport/delete/{RaportId}', [ApiController::class, 'deleteNilaiMapel']);
 
+    Route::get('/rekap-nilai-excel/{nis}', [ApiController::class, 'exportRekapNilaiExcel']);
     Route::get('/rekap-nilai-print/{nis}', [ApiController::class, 'printRekapNilai']);
     Route::get('/rekap-nilai-pdf/{nis}', [ApiController::class, 'exportRekapNilaiPDF']);
     

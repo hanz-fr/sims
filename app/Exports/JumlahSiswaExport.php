@@ -19,10 +19,10 @@ class JumlahSiswaExport implements FromView, ShouldAutoSize
     public function view() : View
     {
         
-        $semuaKelas = Http::get("https://0036-103-139-10-142.ap.ngrok.io/kelas/siswa-per-kelas/all");
-        $kelas10 = Http::get("https://0036-103-139-10-142.ap.ngrok.io/kelas/siswa-per-kelas/10");
-        $kelas11 = Http::get("https://0036-103-139-10-142.ap.ngrok.io/kelas/siswa-per-kelas/11");
-        $kelas12 = Http::get("https://0036-103-139-10-142.ap.ngrok.io/kelas/siswa-per-kelas/12");
+        $semuaKelas = Http::get("https://9393-103-148-113-86.ap.ngrok.io/kelas/siswa-per-kelas/all");
+        $kelas10 = Http::get("https://9393-103-148-113-86.ap.ngrok.io/kelas/siswa-per-kelas/10");
+        $kelas11 = Http::get("https://9393-103-148-113-86.ap.ngrok.io/kelas/siswa-per-kelas/11");
+        $kelas12 = Http::get("https://9393-103-148-113-86.ap.ngrok.io/kelas/siswa-per-kelas/12");
 
         return view('rekap-siswa.pdf.rekap-jumlah-siswa', [
             'semua_kelas' => json_decode($semuaKelas)->result,
