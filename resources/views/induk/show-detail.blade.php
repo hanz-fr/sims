@@ -70,7 +70,7 @@
                                                 class="tw-text-white tw-justify-center tw-bg-sims-400 tw-w-full hover:tw-bg-sims-500 hover:tw-text-white tw-font-medium tw-text-xl tw-inline-flex tw-items-center tw-py-8 tw-text-center">
                                                   Print data&nbsp;&nbsp;<i class="fa-solid fa-print tw-text-2xl"></i>
                                               </a>
-                                              <a href=""
+                                              <a href="/detail-data-induk/{{ $siswa->nis_siswa }}"
                                                 class="tw-text-white tw-justify-center tw-bg-[#1D6F42] tw-w-full hover:tw-bg-green-800 hover:tw-text-white tw-font-medium tw-text-xl tw-inline-flex tw-items-center tw-py-8 tw-text-center">
                                                   Export data ke Excel&nbsp;&nbsp;<i class="fa-solid fa-file-excel tw-text-2xl"></i>
                                               </a>
