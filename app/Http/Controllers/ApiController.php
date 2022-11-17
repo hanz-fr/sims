@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Http;
 use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\DetailDataIndukExport;
 use function PHPUnit\Framework\isEmpty;
 use Illuminate\Support\Facades\Session;
 
@@ -26,7 +27,7 @@ class ApiController extends Controller
     /* GLOBAL VARIABLES */
     public function __construct()
     {
-        $this->api_url = 'https://9393-103-148-113-86.ap.ngrok.io'; // Ganti link NGROK disini
+        $this->api_url = 'https://d625-103-148-113-86.ap.ngrok.io'; // Ganti link NGROK disini
 
         $this->sims_url = 'http://127.0.0.1:8000'; // SIMS URL
     }
@@ -203,6 +204,7 @@ class ApiController extends Controller
 
         $siswa = Http::get("{$this->api_url}/siswa/{$nis}");
         $jurusanSiswa = json_decode($siswa)->result->kelas->JurusanId;
+        $kelas = Http::get("{$this->api_url}/kelas/siswa-per-kelas/all");
         $mapel = Http::get("{$this->api_url}/mapel-jurusan/get/by-jurusan/$jurusanSiswa"); // get mapel by jurusan siswa
 
         if ($nis) {
@@ -222,6 +224,7 @@ class ApiController extends Controller
                 'active' => 'data-induk',
                 'siswa' =>  json_decode($siswa)->result,
                 'mapel' => json_decode($mapel),
+                'kelas' => json_decode($kelas)->result,
             ]); 
 
         } else {
@@ -238,6 +241,7 @@ class ApiController extends Controller
         $raport = Http::get("{$this->api_url}/raport/{$RaportId}");
         $nis_siswa = json_decode($raport)->result->nis_siswa;
         $siswa = Http::get("{$this->api_url}/siswa/{$nis_siswa}");
+        $kelas = Http::get("{$this->api_url}/kelas/siswa-per-kelas/all");
         $jurusanSiswa = json_decode($siswa)->result->kelas->JurusanId;
         $mapel = Http::get("{$this->api_url}/mapel-jurusan/get/by-jurusan/$jurusanSiswa"); // get mapel by jurusan siswa
 
@@ -256,6 +260,7 @@ class ApiController extends Controller
                 'active' => 'data-induk',
                 'siswa' =>  json_decode($siswa)->result,
                 'mapel' => json_decode($mapel),
+                'kelas' => json_decode($kelas)->result,
                 'raport' => json_decode($raport)->result,
                 'nilaiMapel' => json_decode($raport)->result->NilaiMapel,
             ]);
@@ -737,6 +742,15 @@ class ApiController extends Controller
 
         return Excel::download(new DataIndukExport, $daftarnama);
         
+    }
+
+    public function exportDetailDataIndukExcel(Request $request) {
+        ob_end_clean();
+        ob_start();
+
+        $detailsiswa = 'daftar_detail_nama_buku_induk_'.date('Y-m-d_H-i-s').'.xlsx';
+
+        return Excel::download(new DetailDataIndukExport($request->nis), $detailsiswa);
     }
 
 
