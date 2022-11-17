@@ -32,9 +32,9 @@
             <th>SK MUTASI</th>
             <th>ALASAN</th>
         </tr>
-        @foreach ($mutasi as $m)
+        @foreach ($mutasi as $key => $m)
             <tr>
-                <td></td>
+                <td>{{ $key + 1 }}</td>
                 <td>{{ $m->nama_siswa }}</td>
                 <td>{{ $m->nis_siswa }}</td>
                 <td>{{ $m->keluar_di_kelas }}</td>

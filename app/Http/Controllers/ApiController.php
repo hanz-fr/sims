@@ -7,6 +7,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Exports\AlumniExport;
 use App\Exports\DataIndukExport;
+use App\Exports\RekapNilaiExport;
 use App\Exports\JumlahSiswaExport;
 use App\Exports\MutasiMasukExport;
 use App\Exports\MutasiKeluarExport;
@@ -173,7 +174,7 @@ class ApiController extends Controller
 
         $tidaknaik = 'daftar_nama_tidak_naik_'.date('Y-m-d_H-i-s').'.xlsx';
 
-        $pdf = PDF::loadView('induk.pdf.tidak-naik', [
+        $pdf = PDF::loadView('rekap-siswa.pdf.tidak-naik', [
             'siswa' => json_decode($response)->data->rows
         ]);
 
@@ -190,7 +191,7 @@ class ApiController extends Controller
 
         $tidaknaik = 'daftar_nama_tidak_naik_'.date('Y-m-d_H-i-s').'.xlsx';
 
-        return view('induk.pdf.tidak-naik', [
+        return view('rekap-siswa.pdf.tidak-naik', [
             'siswa' => json_decode($response)->data->rows,
         ]);
         
@@ -850,7 +851,7 @@ class ApiController extends Controller
 
     }
 
-    public function exportRekapNilaiExcel() {
+    public function exportRekapNilaiExcel(Request $request) {
 
         ob_end_clean();
         ob_start();
@@ -864,6 +865,7 @@ class ApiController extends Controller
         $rekapnilai = 'rekap_nilai_siswa_'.$nama.'.xlsx';
 
         return Excel::download(new RekapNilaiExport, $rekapnilai);
+
     }
 
 

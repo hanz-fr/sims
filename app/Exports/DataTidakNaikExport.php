@@ -28,7 +28,7 @@ class DataTidakNaikExport implements FromView, ShouldAutoSize
 
         $siswa = Http::get("{$this->api_url}/dashboard/siswa-tidak-naik??perPage=1&perPage=100");
 
-        return view('induk.pdf.tidak-naik', [
+        return view('rekap-siswa.pdf.tidak-naik', [
             'siswa' => json_decode($siswa)->data->rows
         ]);
     }

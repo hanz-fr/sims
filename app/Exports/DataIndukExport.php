@@ -8,7 +8,6 @@ use Maatwebsite\Excel\Concerns\FromView;
 use Maatwebsite\Excel\Concerns\Exportable;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 
-
 class DataIndukExport implements FromView, ShouldAutoSize
 {
 
