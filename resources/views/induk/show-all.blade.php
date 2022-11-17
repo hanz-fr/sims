@@ -116,8 +116,8 @@
 
                     {{-- FILTERS POPUP --}}
                     <div class="tw-flex tw-mx-5 tw-my-auto">
-                        <button data-modal-toggle="filter-popup-modal" class="hover:tw-text-sims-500 tw-text-slate-700 tw-transition-all tw-ease-in-out">
-                            <i class="tw-text-xl  fa-solid fa-sliders-simple"></i>
+                        <button data-modal-toggle="filter-popup-modal" class="tw-font-pop tw-text-md tw-font-medium tw-my-auto tw-py-auto tw-px-5 tw-py-2 tw-rounded-lg hover:tw-text-sims-500 tw-bg-white tw-text-slate-700 tw-transition-all tw-ease-in-out">
+                            Filters  <i class="tw-text-xl tw-ml-5 fa-solid fa-sliders-simple"></i>
                         </button>
 
                         {{-- FILTERS POPUP MODAL --}}
@@ -206,7 +206,7 @@
 
 
                                         {{-- sort by --}}
-                                        <div class="tw-font-pop tw-text-sm tw-font-bold tw-text-gray-400 tw-mt-6">Sort By</div>
+                                        <div class="tw-font-pop tw-text-sm tw-font-bold tw-text-gray-400 tw-mt-6">Urutkan berdasarkan</div>
                                         <div class="tw-flex tw-justify-between tw-my-3">
                                             <div class="tw-w-full">
                                                 <select class="input-data tw-text-sm tw-mr-5" id="sort_by" name="sort_by" required>

@@ -25,7 +25,7 @@ class ApiController extends Controller
     /* GLOBAL VARIABLES */
     public function __construct()
     {
-        $this->api_url = 'https://9393-103-148-113-86.ap.ngrok.io'; // Ganti link NGROK disini
+        $this->api_url = '127.0.0.1:3000'; // Ganti link NGROK disini
 
         $this->sims_url = 'http://127.0.0.1:8000'; // SIMS URL
     }
@@ -205,6 +205,7 @@ class ApiController extends Controller
         $kelas = Http::get("{$this->api_url}/kelas/siswa-per-kelas/all");
         $mapel = Http::get("{$this->api_url}/mapel-jurusan/get/by-jurusan/$jurusanSiswa"); // get mapel by jurusan siswa
 
+        
         if ($nis) {
 
             $message = json_decode($siswa)->message;
@@ -829,9 +830,34 @@ class ApiController extends Controller
         $nis = $request->nis;
 
         $response = Http::get("{$this->api_url}/siswa/{$nis}");
+        $nis = json_decode($response)->result->nis_siswa;
+        $jurusanSiswa = json_decode($response)->result->kelas->JurusanId;
+        $mapel = Http::get("{$this->api_url}/mapel-jurusan/get/by-jurusan/$jurusanSiswa");
+        
+        $raportId = "RPT{$nis}";
+
+        $raport01 = Http::get("{$this->api_url}/nilai-mapel/get-by/{$raportId}-1");
+        $raport02 = Http::get("{$this->api_url}/nilai-mapel/get-by/{$raportId}-2");
+        $raport03 = Http::get("{$this->api_url}/nilai-mapel/get-by/{$raportId}-3");
+        $raport04 = Http::get("{$this->api_url}/nilai-mapel/get-by/{$raportId}-4");
+        $raport05 = Http::get("{$this->api_url}/nilai-mapel/get-by/{$raportId}-5");
+        $raport06 = Http::get("{$this->api_url}/nilai-mapel/get-by/{$raportId}-6");
+
+        /* return json_decode($raport01)->rows; */
+
+
 
         return view('rekap-nilai.pdf.rekap-nilai', [
             'siswa' => json_decode($response)->result,
+            'raport1' => json_decode($response)->result->raport[0],
+            'raport2' => json_decode($response)->result->raport[1],
+            'mapel' => json_decode($mapel),
+            'raport01' => json_decode($raport01)->rows,
+            'raport02' => json_decode($raport02)->rows,
+            'raport03' => json_decode($raport03)->rows,
+            'raport04' => json_decode($raport04)->rows,
+            'raport05' => json_decode($raport05)->rows,
+            'raport06' => json_decode($raport06)->rows,
         ]);
 
     }
