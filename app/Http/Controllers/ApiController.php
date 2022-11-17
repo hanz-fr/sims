@@ -15,7 +15,6 @@ use App\Exports\DataTidakNaikExport;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Http;
-
 use Maatwebsite\Excel\Facades\Excel;
 use function PHPUnit\Framework\isEmpty;
 use Illuminate\Support\Facades\Session;
@@ -26,7 +25,7 @@ class ApiController extends Controller
     /* GLOBAL VARIABLES */
     public function __construct()
     {
-        $this->api_url = '127.0.0.1:3000'; // Ganti link NGROK disini
+        $this->api_url = 'https://9393-103-148-113-86.ap.ngrok.io'; // Ganti link NGROK disini
 
         $this->sims_url = 'http://127.0.0.1:8000'; // SIMS URL
     }
@@ -853,6 +852,22 @@ class ApiController extends Controller
 
         return $pdf->download($rekapnilai);
 
+    }
+
+    public function exportRekapNilaiExcel() {
+
+        ob_end_clean();
+        ob_start();
+
+        $nis = $request->nis;
+
+        $response = Http::get("{$this->api_url}/siswa/{$nis}");
+
+        $nama = json_decode($response)->result->nama_siswa;
+
+        $rekapnilai = 'rekap_nilai_siswa_'.$nama.'.xlsx';
+
+        return Excel::download(new RekapNilaiExport, $rekapnilai);
     }
 
 
@@ -1704,7 +1719,7 @@ class ApiController extends Controller
 
     public function exportRekapJumlahPDF() {
 
-        $semuaKelas = Http::get("https://ffaf-114-79-55-233.ap.ngrok.io/kelas/siswa-per-kelas/all");
+        $semuaKelas = Http::get("{$this->api_url}/kelas/siswa-per-kelas/all");
         $kelas10 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/10");
         $kelas11 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/11");
         $kelas12 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/12");

@@ -13,13 +13,11 @@ class AlumniExport implements FromView, ShouldAutoSize
 
     use Exportable;
 
-    private $alumni;
-
     public function __construct()
     {
-        $this->url = 'https://ffaf-114-79-55-233.ap.ngrok.io';
+        
+        $this->url = 'https://9393-103-148-113-86.ap.ngrok.io';
 
-        $this->alumni = Http::get("{$this->url}/dashboard/alumni/get");
     }
 
     /**
@@ -27,8 +25,11 @@ class AlumniExport implements FromView, ShouldAutoSize
     */
     public function view(): View
     {
+
+        $alumni = Http::get("{$this->url}/dashboard/alumni/get");
+
         return view('induk.pdf.alumni', [
-            'alumni' => json_decode($this->alumni)->data->rows,
+            'alumni' => json_decode($alumni)->data->rows,
         ]);
     }
 }

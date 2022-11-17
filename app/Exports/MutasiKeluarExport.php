@@ -19,9 +19,8 @@ class MutasiKeluarExport implements FromView, ShouldAutoSize
     public function __construct()
     {
 
-        $this->url = 'https://ffaf-114-79-55-233.ap.ngrok.io';
+        $this->url = 'https://9393-103-148-113-86.ap.ngrok.io';
         
-        $this->mutasi = Http::get("{$this->url}/mutasi/siswa-keluar");
     }
 
     /**
@@ -29,8 +28,11 @@ class MutasiKeluarExport implements FromView, ShouldAutoSize
     */
     public function view(): View
     {
+
+        $mutasi = Http::get("{$this->url}/mutasi/siswa-keluar");
+
         return view('mutasi.pdf.mutasi-keluar', [
-            'mutasi' => json_decode($this->mutasi)->data->rows,
+            'mutasi' => json_decode($mutasi)->data->rows,
         ]);
     }
 }
