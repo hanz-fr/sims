@@ -43,146 +43,157 @@
                 </select>
                 <div class="tw-text-base pt-1 tw-mx-2 tw-font-pop tw-font-normal tw-text-basic-700">Entries</div>
             
-                <div class="tw-flex tw-mx-5 tw-my-auto">
-                    <button data-modal-toggle="filter-popup-modal" class="hover:tw-text-sims-500 tw-text-slate-700 tw-transition-all tw-ease-in-out">
-                        <i class="tw-text-xl  fa-solid fa-sliders-simple"></i>
-                    </button>
+                <div class="tw-flex tw-mx-1 tw-my-auto">
+                    
+                    {{-- FILTER DROPDOWN --}}
+                    <button id="dropdownToggleButton" data-dropdown-toggle="filter-dd" class="tw-text-sims-500 hover:tw-text-white tw-font-pop focus:tw-ring-0 focus:tw-outline-none tw-font-medium tw-rounded-lg tw-text-sm tw-px-4 tw-py-1 tw-ml-2 tw-text-center tw-inline-flex tw-items-center dark:tw-bg-white dark:hover:tw-bg-sims-500 tw-shadow-md tw-transition-all tw-ease-in-out" type="button">Filters <i class="tw-text-xl tw-ml-5 fa-duotone fa-sliders-simple"></i></button>
 
-                    {{-- FILTERS POPUP MODAL --}}
-                    <div id="filter-popup-modal" tabindex="-1"class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full">
-                        <div class="relative p-4 w-full max-w-xl h-full md:h-auto">
-                            <div class="tw-relative tw-bg-white tw-rounded-lg tw-shadow dark:tw-bg-slate-100 tw-font-pop">
-                                <button type="button"
-                                  class="tw-absolute tw-top-3 tw-right-2.5 tw-text-gray-400 tw-bg-transparent hover:tw-bg-gray-200 hover:tw-text-gray-900 tw-rounded-lg tw-text-sm tw-p-1.5 tw-ml-auto tw-inline-flex tw-items-center"
-                                  data-modal-toggle="filter-popup-modal">
-                                    <svg aria-hidden="true" class="tw-w-5 tw-h-5" fill="currentColor"
-                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd"
-                                          d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                          clip-rule="evenodd">
-                                        </path>
-                                    </svg>
-                                    <span class="sr-only">Close modal</span>
-                                </button>
-                                <div class="tw-p-6">
-                                    <form action="/data-tidak-naik">
+                    <!-- filter menu -->
+                    <div id="filter-dd" class="hidden tw-z-10 tw-w-72 tw-bg-white tw-rounded tw-divide-y tw-divide-gray-100 tw-shadow-md">
+                        <div class="tw-font-pop tw-text-xs tw-text-gray-400 tw-my-2 tw-mx-5">Cari berdasarkan...</div>
+                        <form action="/data-tidak-naik">
 
-                                    @if(isset($_GET['page']))
-                                    <input type="hidden" name="page" value="{{ $_GET['page'] }}"> 
-                                    @endif
-                                    @if(isset($_GET['perPage']))
-                                    <input type="hidden" name="perPage" value="{{ $_GET['perPage'] }}"> 
-                                    @endif
-                                    @if(isset($_GET['search']))
-                                    <input type="hidden" name="search" value="{{ $_GET['search'] }}"> 
-                                    @endif
+                        @if(isset($_GET['page']))
+                        <input type="hidden" name="page" value="{{ $_GET['page'] }}"> 
+                        @endif
+                        @if(isset($_GET['perPage']))
+                        <input type="hidden" name="perPage" value="{{ $_GET['perPage'] }}"> 
+                        @endif
+                        @if(isset($_GET['search']))
+                        <input type="hidden" name="search" value="{{ $_GET['search'] }}"> 
+                        @endif
+                        
+                        @if(isset($_GET['dibuatTglDari'])) <input name="dibuatTglDari" value="{{ $_GET['dibuatTglDari'] }}" type="hidden"> @endif
+                        @if(isset($_GET['dibuatTglKe'])) <input name="dibuatTglKe" value="{{ $_GET['dibuatTglKe'] }}" type="hidden"> @endif
 
-                                    <div class="tw-flex tw-justify-center tw-font-pop tw-text-sims-500 tw-text-xl tw-font-bold">Filters</div>
-                                    <div class="tw-border-b tw-border-sims-400 tw-w-full tw-my-5"></div>
-
-                                    {{-- search query --}}
-                                    <div class="tw-font-pop tw-text-sm tw-font-bold tw-text-gray-400">Search Query</div>
-                                    <div class="tw-flex tw-justify-between tw-mt-3">
-                                        <div class="tw-flex tw-my-3">
-                                            <div class="tw-text-xs tw-font-pop tw-text-gray-400 tw-mx-2 tw-my-auto">Nama Peserta Didik</div>
-                                            <label for="default-toggle-nama-peserta-didik" class="inline-flex relative items-center cursor-pointer">
-                                              <input type="checkbox" name="nama_siswa" value="true" id="default-toggle-nama-peserta-didik" class="sr-only peer" @isset($_GET['nama_siswa']) @if($_GET['nama_siswa'] === "true") checked @endif @endisset>
-                                              <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-                                            </label>
-                                        </div>
-                                        <div class="tw-flex tw-my-3">
-                                            <div class="tw-text-xs tw-font-pop tw-text-gray-400 tw-mx-2 tw-my-auto">Tinggal di Kelas</div>
-                                            <label for="default-toggle-tinggal-di-kelas" class="inline-flex relative items-center cursor-pointer">
-                                              <input type="checkbox" name="tinggal_di_Kelas" value="true" id="default-toggle-tinggal-di-kelas" class="sr-only peer" @isset($_GET['tinggal_di_Kelas']) @if($_GET['tinggal_di_Kelas'] === "true") checked @endif @endisset>
-                                              <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-                                            </label>
-                                        </div>
-                                        <div class="tw-flex tw-my-3">
-                                            <div class="tw-text-xs tw-font-pop tw-text-gray-400 tw-mx-2 tw-my-auto">Alasan</div>
-                                            <label for="default-toggle-alasan" class="inline-flex relative items-center cursor-pointer">
-                                              <input type="checkbox" name="alasan_tidak_naik" value="true" id="default-toggle-alasan" class="sr-only peer" @isset($_GET['alasan_tidak_naik']) @if($_GET['alasan_tidak_naik'] === "true") checked @endif @endisset>
-                                              <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-                                            </label>
-                                        </div>
-                                    </div>
-
-                                    <div class="tw-flex tw-gap-3">
-                                        <div class="tw-flex tw-my-3">
-                                            <div class="tw-text-xs tw-font-pop tw-text-gray-400 tw-mx-2 tw-my-auto">Tempat Lahir</div>
-                                            <label for="default-toggle-tempat-lahir" class="inline-flex relative items-center cursor-pointer">
-                                              <input type="checkbox" name="tmp_lahir" value="true" id="default-toggle-tempat-lahir" class="sr-only peer" @isset($_GET['tmp_lahir']) @if($_GET['tmp_lahir'] === "true") checked @endif @endisset>
-                                              <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-                                            </label>
-                                        </div>
-                                        <div class="tw-flex tw-my-3">
-                                            <div class="tw-text-xs tw-font-pop tw-text-gray-400 tw-mx-2 tw-my-auto">Tanggal Lahir</div>
-                                            <label for="default-toggle-tanggal-lahir" class="inline-flex relative items-center cursor-pointer">
-                                              <input type="checkbox" name="tgl_lahir" value="true" id="default-toggle-tanggal-lahir" class="sr-only peer" @isset($_GET['tgl_lahir']) @if($_GET['tgl_lahir'] === "true") checked @endif @endisset>
-                                              <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    {{-- end of search query --}}
-
-
-                                    {{-- sort by --}}
-                                    <div class="tw-font-pop tw-text-sm tw-font-bold tw-text-gray-400 tw-mt-6">Sort By</div>
-                                    <div class="tw-flex tw-justify-between tw-my-3">
-                                        <div class="tw-w-full">
-                                            <select class="input-data tw-text-sm tw-mr-5" id="sort_by" name="sort_by" required>
-                                                @if(isset($_GET['sort_by']))
-                                                <option value="{{ $_GET['sort_by'] }}">
-                                                    @if($_GET['sort_by'] == 'nama_siswa')
-                                                    Nama Peserta Didik (selected)
-                                                    @elseif($_GET['sort_by'] == 'tmp_lahir')
-                                                    Tempat Lahir (selected)
-                                                    @elseif($_GET['sort_by'] == 'tgl_lahir')
-                                                    Tanggal Lahir (selected)
-                                                    @endif
-                                                </option>
-                                                @endif
-                                                
-                                                <option value="nama_siswa">Nama Peserta Didik</option>
-                                                <option value="tmp_lahir">Tempat Lahir</option>
-                                                <option value="tgl_lahir">Tanggal Lahir</option>
-                                            </select>
-                                        </div>
-                                        <div class="tw-flex tw-my-auto tw-gap-3 tw-justify-center tw-mx-auto tw-ml-5">
-                                            <div class="tw-flex tw-gap-1">
-                                                <label for="ascending" class="tw-font-pop tw-text-sm tw-text-gray-400">Ascending</label>
-                                                <input class="tw-my-auto tw-bg-gray-200 focus:ring-0 focus:ring-offset-0" style="height:15px; width:15px; border: none" type="radio" id="ascending" name="sort" value="ASC" @isset($_GET['sort']) @if($_GET['sort'] == "ASC") ? checked : @endif @endisset>
-                                            </div>
-                                            <div class="tw-flex tw-gap-1">
-                                                <label for="descending" class="tw-font-pop tw-text-sm tw-text-gray-400">Descending</label>
-                                                <input class="tw-my-auto tw-bg-gray-200 focus:ring-0 focus:ring-offset-0" style="height:15px; width:15px; border: none" type="radio" id="descending" name="sort" value="DESC" @isset($_GET['sort']) @if($_GET['sort'] == "DESC") ? checked : @endif @endisset>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {{-- end of sort by --}}
-
-                                    
-                                    {{-- data per periodik --}}
-                                    <div class="tw-font-pop tw-text-sm tw-font-bold tw-text-gray-400 tw-mt-12">Data per Periodik</div>
-                                    <div class="tw-flex tw-justify-between tw-mt-5 tw-mx-5">
-                                        <div>
-                                            <div class="tw-text-xs tw-mb-2 tw-font-pop tw-font-normal tw-text-gray-400">Dari tanggal</div>
-                                            <input class="input-data tw-text-sm tw-font-pop" id="dibuatTglDari" name="dibuatTglDari" type="date" placeholder="dd/mm/yyyy" @if(isset($_GET['dibuatTglDari'])) value="{{ $_GET['dibuatTglDari'] }}" @endif>
-                                        </div>
-                                        <div>
-                                            <div class="tw-text-xs tw-mb-2 tw-font-pop tw-font-normal tw-text-gray-400">Ke tanggal</div>
-                                            <input class="input-data tw-text-sm tw-font-pop" id="dibuatTglKe" name="dibuatTglKe" type="date" placeholder="dd/mm/yyyy" @if(isset($_GET['dibuatTglKe'])) value="{{ $_GET['dibuatTglKe'] }}" @endif>
-                                        </div>
-                                    </div>
-                                    {{-- end of data per periodik --}}
-
-                                    <div class="tw-flex tw-justify-end tw-mt-10">
-                                        <button type="submit" class="tw-bg-sims-400 tw-text-sm tw-text-white tw-py-2 tw-px-4 tw-rounded-lg hover:tw-bg-sims-500 tw-transition-all">Simpan</button>
-                                    </div>
-
-                                    </form>
+                        <ul class="tw-p-3 tw-space-y-1 tw-text-sm tw-text-gray-700" aria-labelledby="dropdownToggleButton">
+                            <li>
+                                <div class="tw-flex tw-p-2 tw-rounded hover:tw-bg-gray-100 tw-transition-all tw-ease-in-out">
+                                  <label class="tw-inline-flex tw-relative tw-items-center tw-w-full tw-cursor-pointer">
+                                    <input type="checkbox" value="true" name="nama_siswa" class="tw-sr-only tw-peer focus:tw-ring-0 focus:tw-ring-offset-0" @isset($_GET['nama_siswa']) @if($_GET['nama_siswa'] === "true") checked @endif @endisset>
+                                    <div class="tw-w-9 tw-h-5 tw-bg-gray-200 peer-focus:tw-outline-none tw-rounded-full tw-peer peer-checked:after:tw-translate-x-full peer-checked:after:tw-border-white after:tw-content-[''] after:tw-absolute after:tw-top-[2px] after:tw-left-[2px] after:tw-bg-white after:tw-border-gray-300 after:tw-border after:tw-rounded-full after:tw-h-4 after:tw-w-4 after:tw-transition-all peer-checked:tw-bg-sims-400"></div>
+                                    <span class="tw-ml-3 tw-text-xs tw-font-medium tw-text-gray-500 dark:text-gray-300">Nama Siswa</span>
+                                  </label>
                                 </div>
+                            </li>
+                            <li>
+                                <div class="tw-flex tw-p-2 tw-rounded hover:tw-bg-gray-100 tw-transition-all tw-ease-in-out">
+                                  <label class="tw-inline-flex tw-relative tw-items-center tw-w-full tw-cursor-pointer">
+                                    <input type="checkbox" value="true" name="tmp_lahir" class="tw-sr-only tw-peer focus:tw-ring-0 focus:tw-ring-offset-0" @isset($_GET['tmp_lahir']) @if($_GET['tmp_lahir'] === "true") checked @endif @endisset>
+                                    <div class="tw-w-9 tw-h-5 tw-bg-gray-200 peer-focus:tw-outline-none tw-rounded-full tw-peer peer-checked:after:tw-translate-x-full peer-checked:after:tw-border-white after:tw-content-[''] after:tw-absolute after:tw-top-[2px] after:tw-left-[2px] after:tw-bg-white after:tw-border-gray-300 after:tw-border after:tw-rounded-full after:tw-h-4 after:tw-w-4 after:tw-transition-all peer-checked:tw-bg-sims-400"></div>
+                                    <span class="tw-ml-3 tw-text-xs tw-font-medium tw-text-gray-500 dark:text-gray-300">Tempat Lahir</span>
+                                  </label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="tw-flex tw-p-2 tw-rounded hover:tw-bg-gray-100 tw-transition-all tw-ease-in-out">
+                                  <label class="tw-inline-flex tw-relative tw-items-center tw-w-full tw-cursor-pointer">
+                                    <input type="checkbox" value="true" name="tgl_lahir" class="tw-sr-only tw-peer focus:tw-ring-0 focus:tw-ring-offset-0" @isset($_GET['tgl_lahir']) @if($_GET['tgl_lahir'] === "true") checked @endif @endisset>
+                                    <div class="tw-w-9 tw-h-5 tw-bg-gray-200 peer-focus:tw-outline-none tw-rounded-full tw-peer peer-checked:after:tw-translate-x-full peer-checked:after:tw-border-white after:tw-content-[''] after:tw-absolute after:tw-top-[2px] after:tw-left-[2px] after:tw-bg-white after:tw-border-gray-300 after:tw-border after:tw-rounded-full after:tw-h-4 after:tw-w-4 after:tw-transition-all peer-checked:tw-bg-sims-400"></div>
+                                    <span class="tw-ml-3 tw-text-xs tw-font-medium tw-text-gray-500 dark:text-gray-300">Tanggal Lahir</span>
+                                  </label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="tw-flex tw-p-2 tw-rounded hover:tw-bg-gray-100 tw-transition-all tw-ease-in-out">
+                                  <label class="tw-inline-flex tw-relative tw-items-center tw-w-full tw-cursor-pointer">
+                                    <input type="checkbox" value="true" name="tinggal_di_Kelas" class="tw-sr-only tw-peer focus:tw-ring-0 focus:tw-ring-offset-0" @isset($_GET['tinggal_di_Kelas']) @if($_GET['tinggal_di_Kelas'] === "true") checked @endif @endisset>
+                                    <div class="tw-w-9 tw-h-5 tw-bg-gray-200 peer-focus:tw-outline-none tw-rounded-full tw-peer peer-checked:after:tw-translate-x-full peer-checked:after:tw-border-white after:tw-content-[''] after:tw-absolute after:tw-top-[2px] after:tw-left-[2px] after:tw-bg-white after:tw-border-gray-300 after:tw-border after:tw-rounded-full after:tw-h-4 after:tw-w-4 after:tw-transition-all peer-checked:tw-bg-sims-400"></div>
+                                    <span class="tw-ml-3 tw-text-xs tw-font-medium tw-text-gray-500 dark:text-gray-300">Tinggal di Kelas</span>
+                                  </label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="tw-flex tw-p-2 tw-rounded hover:tw-bg-gray-100 tw-transition-all tw-ease-in-out">
+                                  <label class="tw-inline-flex tw-relative tw-items-center tw-w-full tw-cursor-pointer">
+                                    <input type="checkbox" value="true" name="alasan_tidak_naik" class="tw-sr-only tw-peer focus:tw-ring-0 focus:tw-ring-offset-0" @isset($_GET['alasan_tidak_naik']) @if($_GET['alasan_tidak_naik'] === "true") checked @endif @endisset>
+                                    <div class="tw-w-9 tw-h-5 tw-bg-gray-200 peer-focus:tw-outline-none tw-rounded-full tw-peer peer-checked:after:tw-translate-x-full peer-checked:after:tw-border-white after:tw-content-[''] after:tw-absolute after:tw-top-[2px] after:tw-left-[2px] after:tw-bg-white after:tw-border-gray-300 after:tw-border after:tw-rounded-full after:tw-h-4 after:tw-w-4 after:tw-transition-all peer-checked:tw-bg-sims-400"></div>
+                                    <span class="tw-ml-3 tw-text-xs tw-font-medium tw-text-gray-500 dark:text-gray-300">Alasan</span>
+                                  </label>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="tw-border-t tw-border-gray-100 tw-mb-3"></div>
+
+                        <div class="tw-font-pop tw-text-xs tw-text-gray-400 tw-my-2 tw-mx-5">Urutkan berdasarkan...</div>
+                        <div class="tw-mx-5 tw-flex tw-justify-center">
+                            <select class="input-data tw-text-xs" id="sort_by" name="sort_by" required>
+                                
+                                // tampilkan option yg di select berdasarkan parameter sort_by
+                                @if(isset($_GET['sort_by']))
+                                <option value="{{ $_GET['sort_by'] }}">
+                                    @if($_GET['sort_by'] == 'nama_siswa')
+                                    Nama Peserta Didik (selected)
+                                    @elseif($_GET['sort_by'] == 'tmp_lahir')
+                                    Tempat Lahir (selected)
+                                    @elseif($_GET['sort_by'] == 'tgl_lahir')
+                                    Tanggal Lahir (selected)
+                                    @endif
+                                </option>
+                                @endif
+
+                                <option value="nama_siswa">Nama Peserta Didik</option>
+                                <option value="tmp_lahir">Tempat Lahir</option>
+                                <option value="tgl_lahir">Tanggal Lahir</option>
+                            </select>
+                        </div>
+                        <div class="tw-flex tw-my-5 tw-gap-3 tw-justify-center tw-mx-auto">
+                            <div class="tw-flex tw-gap-1">
+                                <label for="ascending" class="tw-font-pop tw-text-xs tw-text-gray-400">Naik</label>
+                                <input class="tw-my-auto tw-bg-gray-200 focus:ring-0 focus:ring-offset-0" style="height:15px; width:15px; border: none" type="radio" id="ascending" name="sort" value="ASC" @isset($_GET['sort']) @if($_GET['sort'] == "ASC") ? checked : @endif @endisset>
+                            </div>
+                            <div class="tw-flex tw-gap-1">
+                                <label for="descending" class="tw-font-pop tw-text-xs tw-text-gray-400">Menurun</label>
+                                <input class="tw-my-auto tw-bg-gray-200 focus:ring-0 focus:ring-offset-0" style="height:15px; width:15px; border: none" type="radio" id="descending" name="sort" value="DESC" @isset($_GET['sort']) @if($_GET['sort'] == "DESC") ? checked : @endif @endisset>
                             </div>
                         </div>
+
+                        <div class="tw-flex tw-justify-center">
+                            <button type="submit" class="tw-w-full tw-rounded-lg tw-mx-3 tw-font-pop tw-text-white tw-text-sm tw-font-medium tw-mb-2 tw-py-2 tw-bg-sims-400 hover:tw-bg-sims-500 tw-transition-all tw-ease-in-out">Simpan</button>
+                        </div>
+                        </form>
+                    </div>
+                    <!-- end filter menu -->
+
+
+                    {{-- DATA PERIODIK DROPDOWN --}}
+                    <button id="dropdownToggleButton" data-dropdown-toggle="periodik-dd" class="tw-text-sims-400 hover:tw-text-white tw-font-pop focus:tw-ring-0 focus:tw-outline-none tw-font-medium tw-rounded-lg tw-text-sm tw-px-4 tw-py-1 tw-ml-4 tw-text-center tw-inline-flex tw-items-center dark:tw-bg-white dark:hover:tw-bg-sims-500 tw-shadow-md tw-transition-all tw-ease-in-out" type="button">Data Periodik <i class="fa-duotone fa-calendar tw-ml-4"></i></button>
+                
+                    <div id="periodik-dd" class="hidden tw-z-10 tw-w-auto tw-bg-white tw-rounded tw-divide-y tw-divide-gray-100 tw-shadow-md">
+                        <form action="/data-tidak-naik" class="tw-text-center">
+                            
+                            @if(isset($_GET['perPage']))
+                            <input name="perPage" value="{{ $_GET['perPage'] }}" type="hidden">
+                            @endif
+
+                            @if(isset($_GET['search']))
+                            <input name="search" value="{{ $_GET['search'] }}" type="hidden">
+                            @endif
+
+                            @if(isset($_GET['nama_siswa'])) <input name="nama_siswa" value="{{ $_GET['nama_siswa'] }}" type="hidden"> @endif
+                            @if(isset($_GET['tinggal_di_Kelas'])) <input name="tinggal_di_Kelas" value="{{ $_GET['tinggal_di_Kelas'] }}" type="hidden"> @endif
+                            @if(isset($_GET['alasan_tidak_naik'])) <input name="alasan_tidak_naik" value="{{ $_GET['alasan_tidak_naik'] }}" type="hidden"> @endif
+                            @if(isset($_GET['tmp_lahir'])) <input name="tmp_lahir" value="{{ $_GET['tmp_lahir'] }}" type="hidden"> @endif
+                            @if(isset($_GET['tgl_lahir'])) <input name="tgl_lahir" value="{{ $_GET['tgl_lahir'] }}" type="hidden"> @endif
+                            @if(isset($_GET['sort_by'])) <input name="sort_by" value="{{ $_GET['sort_by'] }}" type="hidden"> @endif
+                            @if(isset($_GET['sort'])) <input name="sort" value="{{ $_GET['sort'] }}" type="hidden"> @endif
+
+                            
+                            <div class="tw-flex tw-gap-3 tw-justify-between tw-mt-5 tw-mx-5">
+                                <div>
+                                    <div class="tw-text-xs tw-mb-2 tw-font-pop tw-font-normal tw-text-gray-400">Dari tanggal</div>
+                                    <input class="input-data tw-text-xs tw-font-pop" id="dibuatTglDari" name="dibuatTglDari" type="date" placeholder="dd/mm/yyyy" @if(isset($_GET['dibuatTglDari'])) value="{{ $_GET['dibuatTglDari'] }}" @endif>
+                                </div>
+                                <div>
+                                    <div class="tw-text-xs tw-mb-2 tw-font-pop tw-font-normal tw-text-gray-400">Ke tanggal</div>
+                                    <input class="input-data tw-text-xs tw-font-pop" id="dibuatTglKe" name="dibuatTglKe" type="date" placeholder="dd/mm/yyyy" @if(isset($_GET['dibuatTglKe'])) value="{{ $_GET['dibuatTglKe'] }}" @endif>
+                                </div>
+                            </div>
+                            <div class="tw-flex tw-justify-center tw-mt-3">
+                                <button type="submit" class="tw-w-full tw-rounded-lg tw-mx-3 tw-font-pop tw-text-white tw-text-sm tw-font-medium tw-mb-2 tw-py-2 tw-bg-sims-400 hover:tw-bg-sims-500 tw-transition-all tw-ease-in-out">Simpan</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
