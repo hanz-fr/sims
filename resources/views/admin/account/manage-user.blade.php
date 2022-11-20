@@ -112,7 +112,7 @@
           </div>
       </form>
 
-        <a href="/account/create" class="tw-bg-admin-300 tw-py-4 tw-px-6 tw-rounded-lg"><i class="fa-regular fa-square-plus tw-mr-4 tw-text-xl"></i>Create new account</a>
+        <a href="/admin/account/create" class="tw-bg-admin-300 tw-py-4 tw-px-6 tw-rounded-lg"><i class="fa-regular fa-square-plus tw-mr-4 tw-text-xl"></i>Create new account</a>
       </div>
     </section>
 
@@ -159,7 +159,7 @@
                 @endif
                 </td>
                 <td class="tw-p-6">
-                  <a href="/account/{{ $u->id }}" class="tw-text-white tw-bg-admin-300 hover:tw-bg-admin-600 tw-rounded-lg tw-text-xl tw-py-2 tw-px-7">
+                  <a href="/admin/account/{{ $u->id }}" class="tw-text-white tw-bg-admin-300 hover:tw-bg-admin-600 tw-rounded-lg tw-text-xl tw-py-2 tw-px-7">
                       View
                   </a>
                 </td>

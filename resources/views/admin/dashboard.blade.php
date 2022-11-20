@@ -22,7 +22,7 @@
          <ul class="list-unstyled tw-flex tw-gap-5">
             <li class="card-account">
                <div class="tw-justify-end tw-flex tw-p-2">
-                  <a href="/create-account">
+                  <a href="/admin/account/create">
                      <i class="fa-solid fa-square-plus tw-text-admin-300 tw-text-2xl"></i>
                   </a>
                </div>
@@ -37,7 +37,7 @@
             </li>
             <li class="card-account">
                <div class="tw-justify-end tw-flex tw-p-2">
-                  <a href="/create-account">
+                  <a href="/admin/account/create">
                      <i class="fa-solid fa-square-plus tw-text-admin-300 tw-text-2xl"></i>
                   </a>
                </div>
@@ -52,7 +52,7 @@
             </li>
             <li class="card-account">
                <div class="tw-justify-end tw-flex tw-p-2">
-                  <a href="/create-account">
+                  <a href="/admin/account/create">
                      <i class="fa-solid fa-square-plus tw-text-admin-300 tw-text-2xl"></i>
                   </a>
                </div>
@@ -67,7 +67,7 @@
             </li>
             <li class="card-account">
                <div class="tw-justify-end tw-flex tw-p-2">
-                  <a href="/create-account">
+                  <a href="/admin/account/create">
                      <i class="fa-solid fa-square-plus tw-text-admin-300 tw-text-2xl"></i>
                   </a>
                </div>
@@ -95,7 +95,7 @@
                   <div class="tw-flex tw-bg-[#90C2C2] tw-font-ubuntu tw-text-white tw-rounded-xl tw-gap-8 tw-py-16 tw-px-12">
                      <div class="tw-flex tw-flex-col">
                         <i class="fa-solid fa-shapes tw-text-5xl tw-mx-auto"></i>
-                        <div class="tw-font-medium tw-text-xl">Jurusan</div>
+                        <div class="tw-font-medium tw-text-xl tw-text-center">Siswa</div>
                      </div>
                      <div class="tw-flex tw-items-center">
                         <div class="tw-font-medium tw-text-4xl">20</div>
@@ -119,14 +119,16 @@
                         </tr>
                         </tbody>
                      </table>
-                     <div class="card-data-btn">Manage</div>
+                     <a href="/admin/siswa">
+                        <div class="card-data-btn">Manage</div>
+                     </a>
                   </div>
                </li>
                <li class="card-data">
                   <div class="tw-flex tw-bg-[#90C2C2] tw-font-ubuntu tw-text-white tw-rounded-xl tw-gap-8 tw-py-16 tw-px-12">
                      <div class="tw-flex tw-flex-col">
                         <i class="fa-solid fa-shapes tw-text-5xl tw-mx-auto"></i>
-                        <div class="tw-font-medium tw-text-xl">Jurusan</div>
+                        <div class="tw-font-medium tw-text-xl tw-text-center">Kelas</div>
                      </div>
                      <div class="tw-flex tw-items-center">
                         <div class="tw-font-medium tw-text-4xl">20</div>
@@ -150,14 +152,16 @@
                         </tr>
                         </tbody>
                      </table>
-                     <div class="card-data-btn">Manage</div>
+                     <a href="/admin/kelas">
+                        <div class="card-data-btn">Manage</div>
+                     </a>
                   </div>
                </li>
                <li class="card-data">
                   <div class="tw-flex tw-bg-[#90C2C2] tw-font-ubuntu tw-text-white tw-rounded-xl tw-gap-8 tw-py-16 tw-px-12">
                      <div class="tw-flex tw-flex-col">
                         <i class="fa-solid fa-shapes tw-text-5xl tw-mx-auto"></i>
-                        <div class="tw-font-medium tw-text-xl">Jurusan</div>
+                        <div class="tw-font-medium tw-text-xl tw-text-center">Jurusan</div>
                      </div>
                      <div class="tw-flex tw-items-center">
                         <div class="tw-font-medium tw-text-4xl">20</div>
@@ -181,14 +185,16 @@
                         </tr>
                         </tbody>
                      </table>
-                     <div class="card-data-btn">Manage</div>
+                     <a href="/admin/jurusan">
+                        <div class="card-data-btn">Manage</div>
+                     </a>
                   </div>
                </li>
                <li class="card-data">
                   <div class="tw-flex tw-bg-[#90C2C2] tw-font-ubuntu tw-text-white tw-rounded-xl tw-gap-8 tw-py-16 tw-px-12">
                      <div class="tw-flex tw-flex-col">
                         <i class="fa-solid fa-shapes tw-text-5xl tw-mx-auto"></i>
-                        <div class="tw-font-medium tw-text-xl">Jurusan</div>
+                        <div class="tw-font-medium tw-text-xl tw-text-center">MaPel</div>
                      </div>
                      <div class="tw-flex tw-items-center">
                         <div class="tw-font-medium tw-text-4xl">20</div>
@@ -212,14 +218,16 @@
                         </tr>
                         </tbody>
                      </table>
-                     <div class="card-data-btn">Manage</div>
+                     <a href="/admin/mata-pelajaran">
+                        <div class="card-data-btn">Manage</div>
+                     </a>
                   </div>
                </li>
                <li class="card-data">
                   <div class="tw-flex tw-bg-[#90C2C2] tw-font-ubuntu tw-text-white tw-rounded-xl tw-gap-8 tw-py-16 tw-px-12">
                      <div class="tw-flex tw-flex-col">
                         <i class="fa-solid fa-shapes tw-text-5xl tw-mx-auto"></i>
-                        <div class="tw-font-medium tw-text-xl">Jurusan</div>
+                        <div class="tw-font-medium tw-text-xl tw-text-center">MaPel Jurusan</div>
                      </div>
                      <div class="tw-flex tw-items-center">
                         <div class="tw-font-medium tw-text-4xl">20</div>
@@ -243,14 +251,16 @@
                         </tr>
                         </tbody>
                      </table>
-                     <div class="card-data-btn">Manage</div>
+                     <a href="/admin/mapel-jurusan">
+                        <div class="card-data-btn">Manage</div>
+                     </a>
                   </div>
                </li>
                <li class="card-data">
                   <div class="tw-flex tw-bg-[#90C2C2] tw-font-ubuntu tw-text-white tw-rounded-xl tw-gap-8 tw-py-16 tw-px-12">
                      <div class="tw-flex tw-flex-col">
                         <i class="fa-solid fa-shapes tw-text-5xl tw-mx-auto"></i>
-                        <div class="tw-font-medium tw-text-xl">Jurusan</div>
+                        <div class="tw-font-medium tw-text-xl tw-text-center">Mutasi</div>
                      </div>
                      <div class="tw-flex tw-items-center">
                         <div class="tw-font-medium tw-text-4xl">20</div>
@@ -274,7 +284,75 @@
                         </tr>
                         </tbody>
                      </table>
-                     <div class="card-data-btn">Manage</div>
+                     <a href="/admin/mutasi">
+                        <div class="card-data-btn">Manage</div>
+                     </a>
+                  </div>
+               </li>
+               <li class="card-data">
+                  <div class="tw-flex tw-bg-[#90C2C2] tw-font-ubuntu tw-text-white tw-rounded-xl tw-gap-8 tw-py-16 tw-px-12">
+                     <div class="tw-flex tw-flex-col">
+                        <i class="fa-solid fa-shapes tw-text-5xl tw-mx-auto"></i>
+                        <div class="tw-font-medium tw-text-xl tw-text-center">Rapor</div>
+                     </div>
+                     <div class="tw-flex tw-items-center">
+                        <div class="tw-font-medium tw-text-4xl">20</div>
+                        <div class="tw-text-sm tw-ml-2">total <br> data</div>
+                     </div>
+                  </div>
+                  <div class="tw-flex tw-flex-col tw-px-7 tw-py-7">
+                     <table>
+                        <tbody class="tw-text-left tw-font-ubuntu tw-text-[#B4B8BC] tw-font-bold">
+                        <tr>
+                           <th class="tw-font-normal tw-pb-1.5">latest data created</th>
+                           <td class="tw-text-white tw-text-right tw-pl-3">2 days ago</td>
+                        </tr>
+                        <tr>
+                           <th class="tw-font-normal tw-pb-1.5">recent activity</th>
+                           <td class="tw-text-white tw-text-right">create</td>
+                        </tr>
+                        <tr>
+                           <th class="tw-font-normal">latest data</th>
+                           <td class="tw-text-white tw-text-right">TKJ</td>
+                        </tr>
+                        </tbody>
+                     </table>
+                     <a href="/admin/rapor">
+                        <div class="card-data-btn">Manage</div>
+                     </a>
+                  </div>
+               </li>
+               <li class="card-data">
+                  <div class="tw-flex tw-bg-[#90C2C2] tw-font-ubuntu tw-text-white tw-rounded-xl tw-gap-8 tw-py-16 tw-px-12">
+                     <div class="tw-flex tw-flex-col">
+                        <i class="fa-solid fa-shapes tw-text-5xl tw-mx-auto"></i>
+                        <div class="tw-font-medium tw-text-xl tw-text-center">Nilai Mapel</div>
+                     </div>
+                     <div class="tw-flex tw-items-center">
+                        <div class="tw-font-medium tw-text-4xl">20</div>
+                        <div class="tw-text-sm tw-ml-2">total <br> data</div>
+                     </div>
+                  </div>
+                  <div class="tw-flex tw-flex-col tw-px-7 tw-py-7">
+                     <table>
+                        <tbody class="tw-text-left tw-font-ubuntu tw-text-[#B4B8BC] tw-font-bold">
+                        <tr>
+                           <th class="tw-font-normal tw-pb-1.5">latest data created</th>
+                           <td class="tw-text-white tw-text-right tw-pl-3">2 days ago</td>
+                        </tr>
+                        <tr>
+                           <th class="tw-font-normal tw-pb-1.5">recent activity</th>
+                           <td class="tw-text-white tw-text-right">create</td>
+                        </tr>
+                        <tr>
+                           <th class="tw-font-normal">latest data</th>
+                           <td class="tw-text-white tw-text-right">TKJ</td>
+                        </tr>
+                        </tbody>
+                     </table>
+                     <a href="/admin/nilai-mapel">
+                        <div class="card-data-btn">Manage</div>
+                     </a>
                   </div>
                </li>
             </ul>

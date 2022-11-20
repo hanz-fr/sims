@@ -17,7 +17,7 @@
             </div>
         </form>
         <div class="">
-                <a href="#" class="tw-text-lg tw-px-3 tw-py-1 tw-mx-2 tw-text-white tw-bg-sims-400 hover:tw-bg-[#3b7a7a] tw-border tw-rounded-lg tw-font-pop">Add New Siswa
+                <a href="/admin/siswa/create" class="tw-text-lg tw-px-3 tw-py-1 tw-mx-2 tw-text-white tw-bg-sims-400 hover:tw-bg-[#3b7a7a] tw-border tw-rounded-lg tw-font-pop">Add New Siswa
                     <i class="tw-ml-1 fa-solid fa-square-plus" ></i>
                 </a>
         </div>
@@ -57,7 +57,7 @@
                                 class="tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                                 <i class="fa-solid fa-trash-can-xmark tw-text-red-500"></i>
                             </a>
-                            <a href="/detail-siswa-admin"
+                            <a href="/admin/siswa-detail"
                                 class="tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                                 <i class="fa-solid fa-eye tw-text-[#95BBE8]"></i>
                             </a>

@@ -4,7 +4,7 @@
 
 <div class="tw-mx-10 tw-w-screen">
     <div class="tw-flex tw-mt-8">
-        <a href="/all-kelas"><i class="fa-solid fa-chevron-left tw-text-2xl tw-text-gray-400 hover:tw-text-gray-600"></i></a>
+        <a href="/admin/kelas"><i class="fa-solid fa-chevron-left tw-text-2xl tw-text-gray-400 hover:tw-text-gray-600"></i></a>
         <i class="fa-solid fa-shapes tw-text-sims-300 tw-text-2xl tw-ml-3"></i>
         <div class="tw-text-2xl tw-ml-3 tw-font-pop tw-font-semibold tw-text-gray-300">Edit Kelas</div>
     </div>
@@ -40,7 +40,7 @@
 
     <div class="tw-flex tw-justify-end tw-mt-5">
         <div class="tw-flex tw-gap-5 tw-font-ubuntu tw-text-white tw-font-medium tw-mb-5">
-          <a href="" class="tw-bg-green-400 hover:tw-bg-green-600 tw-py-4 tw-px-16 tw-rounded-lg">Edit Class</a>
+          <a href="/admin/kelas/edit" class="tw-bg-green-400 hover:tw-bg-green-600 tw-py-4 tw-px-16 tw-rounded-lg">Edit Kelas</a>
         </div>
     </div>
 </div>

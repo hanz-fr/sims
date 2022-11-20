@@ -29,7 +29,7 @@
             </div>
         </form>
         <div class="tw-flex tw-justify-end">
-                <a href="/tambah-kelas-admin" class=" tw-text-white tw-bg-sims-400 hover:tw-bg-[#3b7a7a] tw-border tw-rounded-lg tw-px-4"><i class="fa-solid fa-circle-plus tw-text-xl tw-px-1 tw-py-1"></i>Add Kelas  </a>
+                <a href="/kelas/create" class=" tw-text-white tw-bg-sims-400 hover:tw-bg-[#3b7a7a] tw-border tw-rounded-lg tw-px-4"><i class="fa-solid fa-circle-plus tw-text-xl tw-px-1 tw-py-1"></i>Add Kelas  </a>
             </div>
         <!-- <div class="tw-text-base pt-1 tw-text-basic-700 tw-ml-4 tw-mr-2 tw-font-normal tw-font-pop">Show</div>
         <div class="dropdown">
@@ -65,7 +65,7 @@
                         <td class="tw-py-4 tw-px-6 tw-border">1</td>
                         <td class="tw-py-4 tw-px-6 tw-border">X PPLG 1</td>
                         <td class="tw-py-2 tw-px-4 tw-border">
-                            <a href="/edit-kelas-admin"
+                            <a href="/admin/kelas/edit"
                                 class="tw-text-white tw-bg-yellow-400 hover:tw-bg-[#D3A007] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                                 <i class="fa-solid fa-pen-to-square"></i></a>
                             </a>
@@ -82,7 +82,7 @@
                         <td class="tw-py-4 tw-px-6 tw-border">1</td>
                         <td class="tw-py-4 tw-px-6 tw-border">XI PPLG 1</td>
                         <td class="tw-py-2 tw-px-4 tw-border">
-                            <a href="/edit-kelas-admin"
+                            <a href="/admin/kelas/edit"
                                 class="tw-text-white tw-bg-yellow-400 hover:tw-bg-[#D3A007] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                                 <i class="fa-solid fa-pen-to-square"></i></a>
                             </a>
@@ -99,7 +99,7 @@
                         <td class="tw-py-4 tw-px-6 tw-border">2</td>
                         <td class="tw-py-4 tw-px-6 tw-border">XI PPLG 2</td>
                         <td class="tw-py-2 tw-px-4 tw-border">
-                            <a href="/edit-kelas-admin"
+                            <a href="/admin/kelas/edit"
                                 class="tw-text-white tw-bg-yellow-400 hover:tw-bg-[#D3A007] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                                 <i class="fa-solid fa-pen-to-square"></i></a>
                             </a>
@@ -116,7 +116,7 @@
                         <td class="tw-py-4 tw-px-6 tw-border">1</td>
                         <td class="tw-py-4 tw-px-6 tw-border">XII RPL 1</td>
                         <td class="tw-py-2 tw-px-4 tw-border">
-                            <a href="/edit-kelas-admin"
+                            <a href="/admin/kelas/edit"
                                 class="tw-text-white tw-bg-yellow-400 hover:tw-bg-[#D3A007] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                                 <i class="fa-solid fa-pen-to-square"></i></a>
                             </a>
@@ -133,7 +133,7 @@
                         <td class="tw-py-4 tw-px-6 tw-border">2</td>
                         <td class="tw-py-4 tw-px-6 tw-border">XII RPL 2</td>
                         <td class="tw-py-2 tw-px-4 tw-border">
-                            <a href="/edit-kelas-admin"
+                            <a href="/admin/kelas/edit"
                                 class="tw-text-white tw-bg-yellow-400 hover:tw-bg-[#D3A007] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                                 <i class="fa-solid fa-pen-to-square"></i></a>
                             </a>

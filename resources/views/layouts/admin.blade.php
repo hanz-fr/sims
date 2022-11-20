@@ -31,19 +31,19 @@
             </a>
             <ul class="tw-space-y-3 tw-font-ubuntu tw-mt-20">
                <li>
-                  <a href="/dashboard" class="{{ ($active === "admin") ? 'tw-bg-[#5A6C7C] tw-text-white' : '' }} nav-item-admin tw-transition-colors tw-duration-300">
+                  <a href="/admin/dashboard" class="{{ ($active === "admin") ? 'tw-bg-[#5A6C7C] tw-text-white' : '' }} nav-item-admin tw-transition-colors tw-duration-300">
                   <i class="fa-regular fa-browser tw-text-[#B2FEFE] tw-text-2xl"></i>
                      <span class="tw-ml-3 tw-font-bold tw-text-lg">Dashboard</span>
                   </a>
                </li>
                <li>
-               <a href="/database" class="{{ ($active === "database") ? 'tw-bg-[#5A6C7C] tw-text-white' : '' }} nav-item-admin tw-transition-colors tw-duration-300">
+               <a href="/admin/database" class="{{ ($active === "database") ? 'tw-bg-[#5A6C7C] tw-text-white' : '' }} nav-item-admin tw-transition-colors tw-duration-300">
                   <i class="fa-regular fa-database tw-text-[#B2FEFE] tw-text-2xl"></i>
                   <span class="tw-ml-3 tw-font-bold tw-text-lg">Database</span>
                </a>
             </li>
             <li>
-               <a href="/account" class="{{ ($active === "account") ? 'tw-bg-[#5A6C7C] tw-text-white' : '' }} nav-item-admin tw-transition-colors tw-duration-300">
+               <a href="/admin/account" class="{{ ($active === "account") ? 'tw-bg-[#5A6C7C] tw-text-white' : '' }} nav-item-admin tw-transition-colors tw-duration-300">
                <i class="fa-solid fa-user tw-text-[#B2FEFE] tw-text-2xl"></i>
                <span class="tw-ml-3 tw-font-bold tw-text-lg">Account</span>
                </a>

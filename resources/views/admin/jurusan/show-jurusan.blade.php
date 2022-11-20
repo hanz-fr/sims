@@ -35,7 +35,7 @@
                     <td class="tw-pb-6 tw-px-5 tw-py-7 tw-border-b">Lorem ipsum, dolor sit....</td>
                     <td class="tw-pb-6 tw-px-5 tw-py-7 tw-border-b">12 February 2023</td>
                     <td class="tw-pb-6 tw-px-5 tw-py-7 tw-border-b">
-                      <a href="/show-detail-jurusan" class="tw-text-white tw-bg-admin-300 hover:tw-bg-admin-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-7 tw-mr-1">
+                      <a href="/admin/detail-jurusan" class="tw-text-white tw-bg-admin-300 hover:tw-bg-admin-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-7 tw-mr-1">
                           View
                       </a>
                     </td>
@@ -47,7 +47,7 @@
                     <td class="tw-pb-6 tw-px-5 tw-py-7 tw-border-b">Lorem ipsum, dolor sit....</td>
                     <td class="tw-pb-6 tw-px-5 tw-py-7 tw-border-b">12 February 2023</td>
                     <td class="tw-pb-6 tw-px-5 tw-py-7 tw-border-b">
-                      <a href="/show-detail-jurusan" class="tw-text-white tw-bg-admin-300 hover:tw-bg-admin-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-7 tw-mr-1">
+                      <a href="/admin/detail-jurusan" class="tw-text-white tw-bg-admin-300 hover:tw-bg-admin-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-7 tw-mr-1">
                           View
                       </a>
                     </td>
@@ -59,7 +59,7 @@
                     <td class="tw-pb-6 tw-px-5 tw-py-7 tw-border-b">Lorem ipsum, dolor sit....</td>
                     <td class="tw-pb-6 tw-px-5 tw-py-7 tw-border-b">12 February 2023</td>
                     <td class="tw-pb-6 tw-px-5 tw-py-7 tw-border-b">
-                      <a href="/show-detail-jurusan" class="tw-text-white tw-bg-admin-300 hover:tw-bg-admin-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-7 tw-mr-1">
+                      <a href="/admin/detail-jurusan" class="tw-text-white tw-bg-admin-300 hover:tw-bg-admin-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-7 tw-mr-1">
                           View
                       </a>
                     </td>
@@ -71,7 +71,7 @@
                     <td class="tw-pb-6 tw-px-5 tw-py-7 tw-border-b">Lorem ipsum, dolor sit....</td>
                     <td class="tw-pb-6 tw-px-5 tw-py-7 tw-border-b">12 February 2023</td>
                     <td class="tw-pb-6 tw-px-5 tw-py-7 tw-border-b">
-                      <a href="/show-detail-jurusan" class="tw-text-white tw-bg-admin-300 hover:tw-bg-admin-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-7 tw-mr-1">
+                      <a href="/admin/detail-jurusan" class="tw-text-white tw-bg-admin-300 hover:tw-bg-admin-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-7 tw-mr-1">
                           View
                       </a>
                     </td>
@@ -83,7 +83,7 @@
                     <td class="tw-pb-6 tw-px-5 tw-py-7 tw-border-b">Lorem ipsum, dolor sit....</td>
                     <td class="tw-pb-6 tw-px-5 tw-py-7 tw-border-b">12 February 2023</td>
                     <td class="tw-pb-6 tw-px-5 tw-py-7 tw-border-b">
-                      <a href="/show-detail-jurusan" class="tw-text-white tw-bg-admin-300 hover:tw-bg-admin-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-7 tw-mr-1">
+                      <a href="/admin/detail-jurusan" class="tw-text-white tw-bg-admin-300 hover:tw-bg-admin-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-7 tw-mr-1">
                           View
                       </a>
                     </td>
