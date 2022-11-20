@@ -252,7 +252,7 @@
         data: {
             labels: ['Masuk', 'Keluar', 'Tidak Naik', 'Alumni'],
             datasets: [{
-                label: '# of Votes',
+                label: 'Jumlah ',
                 data: [{{ $siswaMasuk }}, {{ $siswaKeluar }}, {{ $siswaTdkNaik }}, {{ $alumni }}],
                 backgroundColor: [
                     'rgba(54, 162, 235, 0.2)',

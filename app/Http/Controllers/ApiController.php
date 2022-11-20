@@ -27,7 +27,7 @@ class ApiController extends Controller
     /* GLOBAL VARIABLES */
     public function __construct()
     {
-        $this->api_url = '127.0.0.1:3000'; // Ganti link NGROK disini
+        $this->api_url = 'https://bc93-103-139-10-37.ngrok.io'; // Ganti link NGROK disini
 
         $this->sims_url = 'http://127.0.0.1:8000'; // SIMS URL
     }
@@ -1212,6 +1212,7 @@ class ApiController extends Controller
         $page = $request->page;
         $perPage = $request->perPage;
         $search = $request->search;
+        
 
         $response = Http::get("{$this->api_url}/mutasi/siswa-keluar?page={$page}&perPage={$perPage}&search={$search}");
 
@@ -1261,8 +1262,19 @@ class ApiController extends Controller
         $page = $request->page;
         $perPage = $request->perPage;
         $search = $request->search;
+        $nama_siswa = $request->nama_siswa;
+        $nis_siswa = $request->nis_siswa;
+        $jenis_kelamin = $request->jenis_kelamin;
+        $tgl_mutasi = $request->tgl_mutasi;
+        $diterima_di_kelas = $request->diterima_di_kelas;
+        $pindah_dari = $request->pindah_dari;
+        $alasan_mutasi = $request->alasan_mutasi;
+        $sort_by = $request->sort_by;
+        $sort = $request->sort;
+        $tglMasukDari = $request->tglMasukDari;
+        $tglMasukKe = $request->tglMasukKe;
 
-        $response = Http::get("{$this->api_url}/mutasi/siswa-masuk?page={$page}&perPage={$perPage}&search={$search}");
+        $response = Http::get("{$this->api_url}/mutasi/siswa-masuk?page={$page}&perPage={$perPage}&search={$search}&nama_siswa={$nama_siswa}&nis_siswa={$nis_siswa}&jenis_kelamin={$jenis_kelamin}&tgl_mutasi={$tgl_mutasi}&diterima_di_kelas={$diterima_di_kelas}&pindah_dari={$pindah_dari}&alasan_mutasi={$alasan_mutasi}&sort_by={$sort_by}&sort={$sort}&tglMasukDari={$tglMasukDari}&tglMasukKe={$tglMasukKe}");
 
 
         if ($response->successful()) {

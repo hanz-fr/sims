@@ -311,6 +311,17 @@
                         @endif
 
 
+                        @if(isset($_GET['nama_siswa'])) <input name="nama_siswa" value="{{ $_GET['nama_siswa'] }}" type="hidden"> @endif
+                        @if(isset($_GET['tinggal_di_Kelas'])) <input name="tinggal_di_Kelas" value="{{ $_GET['tinggal_di_Kelas'] }}" type="hidden"> @endif
+                        @if(isset($_GET['alasan_tidak_naik'])) <input name="alasan_tidak_naik" value="{{ $_GET['alasan_tidak_naik'] }}" type="hidden"> @endif
+                        @if(isset($_GET['tmp_lahir'])) <input name="tmp_lahir" value="{{ $_GET['tmp_lahir'] }}" type="hidden"> @endif
+                        @if(isset($_GET['tgl_lahir'])) <input name="tgl_lahir" value="{{ $_GET['tgl_lahir'] }}" type="hidden"> @endif
+                        @if(isset($_GET['sort_by'])) <input name="sort_by" value="{{ $_GET['sort_by'] }}" type="hidden"> @endif
+                        @if(isset($_GET['sort'])) <input name="sort" value="{{ $_GET['sort'] }}" type="hidden"> @endif
+                        @if(isset($_GET['dibuatTglDari'])) <input name="dibuatTglDari" value="{{ $_GET['dibuatTglDari'] }}" type="hidden"> @endif
+                        @if(isset($_GET['dibuatTglKe'])) <input name="dibuatTglKe" value="{{ $_GET['dibuatTglKe'] }}" type="hidden"> @endif
+
+
                         <input type="number" name="page" class="tw-bg-white tw-border tw-border-slate-200 tw-w-1/2 tw-font-pop tw-font-medium tw-text-slate-500 tw-rounded-md tw-text-center focus:tw-ring-gray-200 focus:tw-border-gray-200 no-spin" min="1" @if(isset($_GET['page'])) value="{{ $_GET['page'] }}" @endif>
                     </form>
                 </div>
