@@ -3,7 +3,7 @@
 @section('content')
     <div class="tw-mx-10 tw-w-screen">
         <div class="tw-flex tw-mt-8">
-            <a href="/rapor">
+            <a href="/admin/rapor">
                 <i class="fa-solid fa-chevron-left tw-text-2xl tw-text-gray-300 hover:tw-text-gray-600"></i>
             </a>
             <div class="tw-text-2xl tw-ml-3 tw-font-pop tw-font-semibold tw-text-gray-300">Detail Rapor
@@ -267,7 +267,7 @@
         </div>
 
         <div class="tw-mt-5 tw-flex tw-gap-4 tw-justify-end tw-font-ubuntu tw-pb-10">
-            <a href="/edit-rapor"
+            <a href="/admin/rapor/edit"
                 class="tw-bg-[#FFCF86] hover:tw-bg-[#ffba51] tw-text-black tw-px-7 tw-py-3 tw-rounded-lg">
                 Edit Rapor
             </a>

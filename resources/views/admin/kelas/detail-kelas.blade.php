@@ -3,7 +3,7 @@
 
 <div class="tw-mx-10 tw-w-screen">
     <div class="tw-flex tw-mt-8">
-        <a href="/all-kelas"><i class="fa-solid fa-chevron-left tw-text-2xl tw-text-gray-400 hover:tw-text-gray-600"></i></a>
+        <a href="/admin/kelas"><i class="fa-solid fa-chevron-left tw-text-2xl tw-text-gray-400 hover:tw-text-gray-600"></i></a>
         <i class="fa-solid fa-shapes tw-text-sims-300 tw-text-2xl tw-ml-3"></i>
         <div class="tw-text-2xl tw-ml-3 tw-font-pop tw-font-semibold tw-text-gray-300">Detail Kelas</div>
     </div>
@@ -43,7 +43,7 @@
             @method('DELETE') --}}
             <button type="submit" class="tw-py-4 tw-px-16">Delete kelas</button>
           </form>
-          <a href="" class="tw-bg-[#FFCF86] hover:tw-bg-[#ffba51] tw-py-4 tw-px-16 tw-rounded-lg">Edit kelas</a>
+          <a href="/admin/kelas/edit" class="tw-bg-[#FFCF86] hover:tw-bg-[#ffba51] tw-py-4 tw-px-16 tw-rounded-lg">Edit kelas</a>
         </div>
       </div>
 </div>

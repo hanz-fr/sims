@@ -6,7 +6,7 @@
 
     {{-- title --}}
     <section class="tw-flex tw-gap-4">
-      <a href="/database">
+      <a href="/admin/database">
         <i class="fa-solid fa-chevron-left tw-text-gray-400 tw-text-2xl"></i>
       </a>
       <i class="fa-solid fa-user-group tw-text-admin-300 tw-text-2xl"></i>
@@ -15,14 +15,10 @@
 
     {{-- data siswa keluar table --}}
     <section class="tw-bg-white tw-rounded-xl tw-w-full shadow-cs tw-p-7 tw-flex tw-flex-col">
-      <div class="tw-flex tw-w-full">
-        <i class="fa-solid fa-arrow-right-from-bracket tw-text-[#90C2C2] tw-text-xl"></i>
-        <div class="tw-text-lg tw-ml-3 tw-font-pop tw-font-semibold tw-text-gray-300">Data Mutasi Keluar</div>
-     </div>
 
      <div class="tw-mx-3">
       <div class="tw-flex tw-justify-between tw-mt-10 tw-w-full">
-        <a href="/add-mutasi-keluar   " class="tw-bg-admin-300 hover:tw-bg-admin-400 tw-text-white tw-font-ubuntu tw-py-2.5 tw-text-sm tw-px-6 tw-rounded-lg tw-h-fit tw-items-center tw-flex"><i class="fa-regular fa-square-plus tw-mr-4 tw-text-xl"></i>Add new Mutasi</a>
+        <a href="/admin/mutasi/create" class="tw-bg-admin-300 hover:tw-bg-admin-400 tw-text-white tw-font-ubuntu tw-py-2.5 tw-text-sm tw-px-6 tw-rounded-lg tw-h-fit tw-items-center tw-flex"><i class="fa-regular fa-square-plus tw-mr-4 tw-text-xl"></i>Add new Mutasi</a>
        <div class="tw-flex tw-mb-5">
           <input type="text" class="tw-px-4 tw-rounded-xl tw-border tw-border-gray-300 focus:tw-shadow-sm focus:tw-shadow-admin-300 focus:tw-border-admin-300 focus:tw-outline-none tw-py-2 tw-w-80">
           <button class="tw-px-5 -tw-ml-4 tw-rounded-xl tw-text-white tw-bg-admin-300">
@@ -32,16 +28,14 @@
        </div>
   
       <div class="tw-overflow-x-auto tw-relative tw-mt-5">
-        <table class="tw-w-full tw-font-medium tw-text-sm tw-text-center tw-font-ubuntu">
+        <table class="tw-w-full tw-font-medium tw-text-center tw-font-ubuntu">
             <thead class="tw-text-md tw-bg-[#5A6C7C] tw-text-white tw-font-medium">
                 <tr>
                     <th scope="col" class="tw-py-3 tw-px-6">Nama</th>
                     <th scope="col" class="tw-py-3 tw-px-6">Nomor Induk</th>
                     <th scope="col" class="tw-py-3 tw-px-6">Gender</th>
-                    <th scope="col" class="tw-py-3 tw-px-6">Keluar di Kelas</th>
-                    <th scope="col" class="tw-py-3 tw-px-6">Tanggal Keluar</th>
-                    <th scope="col" class="tw-py-3 tw-px-6">SK Mutasi</th>
                     <th scope="col" class="tw-py-3 tw-px-6">Alasan</th>
+                    <th scope="col" class="tw-py-3 tw-px-6">Tanggal Mutasi</th>
                     <th scope="col" class="tw-py-3 tw-px-6">Created</th>
                     <th scope="col" class="tw-py-3 tw-px-6">Action</th>
                 </tr>
@@ -51,121 +45,131 @@
                     <td class="tw-py-4 tw-px-4">Jonathan Doe</td>
                     <td class="tw-py-4 tw-px-4">2009381728</td>
                     <td class="tw-py-4 tw-px-4">L</td>
-                    <td class="tw-py-4 tw-px-4">X RPL 2</td>
-                    <td class="tw-py-4 tw-px-4">10 September 2023</td>
-                    <td class="tw-py-4 tw-px-4">CadisdikwilVII/2022</td>
                     <td class="tw-py-4 tw-px-4">Cape naik tangga</td>
                     <td class="tw-py-4 tw-px-4">14 September 2022</td>
-                    <td class="tw-py-4 tw-px-4 tw-text-xl tw-flex tw-gap-3">
-                      <a href="" class="tw-text-warning-300 hover:tw-text-warning-400"><i class="fa-solid fa-pen-to-square"></i></a>
+                    <td class="tw-py-4 tw-px-4">17 September 2022</td>
+                    <td class="tw-py-4 tw-justify-center tw-items-center tw-text-xl tw-flex tw-gap-3">
+                      <a href="/admin/mutasi/edit" class="tw-text-warning-300 hover:tw-text-warning-400"><i class="fa-solid fa-pen-to-square"></i></a>
                       <a href="" class="tw-text-danger-400 hover:tw-text-danger-500"><i class="fa-regular fa-trash-can"></i></a>
-                      <a href="" class="tw-text-admin-300 hover:tw-text-admin-400"><i class="fa-solid fa-eye"></i></a>
+                      <a href="/admin/detail-mutasi" class="tw-text-admin-300 hover:tw-text-admin-400"><i class="fa-solid fa-eye"></i></a>
                     </td>
                 </tr>
                 <tr>
                   <td class="tw-py-4 tw-px-4">Jonathan Doe</td>
                   <td class="tw-py-4 tw-px-4">2009381728</td>
                   <td class="tw-py-4 tw-px-4">L</td>
-                  <td class="tw-py-4 tw-px-4">X RPL 2</td>
-                  <td class="tw-py-4 tw-px-4">10 September 2023</td>
-                  <td class="tw-py-4 tw-px-4">CadisdikwilVII/2022</td>
                   <td class="tw-py-4 tw-px-4">Cape naik tangga</td>
                   <td class="tw-py-4 tw-px-4">14 September 2022</td>
-                  <td class="tw-py-4 tw-px-4 tw-text-xl tw-flex tw-gap-3">
-                    <a href="" class="tw-text-warning-300 hover:tw-text-warning-400"><i class="fa-solid fa-pen-to-square"></i></a>
+                  <td class="tw-py-4 tw-px-4">17 September 2022</td>
+                  <td class="tw-py-4 tw-justify-center tw-items-center tw-text-xl tw-flex tw-gap-3">
+                    <a href="/admin/mutasi/edit" class="tw-text-warning-300 hover:tw-text-warning-400"><i class="fa-solid fa-pen-to-square"></i></a>
                     <a href="" class="tw-text-danger-400 hover:tw-text-danger-500"><i class="fa-regular fa-trash-can"></i></a>
-                    <a href="" class="tw-text-admin-300 hover:tw-text-admin-400"><i class="fa-solid fa-eye"></i></a>
+                    <a href="/admin/detail-mutasi" class="tw-text-admin-300 hover:tw-text-admin-400"><i class="fa-solid fa-eye"></i></a>
                   </td>
                 </tr>
                 <tr>
-                  <td class="tw-py-4 tw-px-4">Jonathan Doe</td>
-                  <td class="tw-py-4 tw-px-4">2009381728</td>
-                  <td class="tw-py-4 tw-px-4">L</td>
-                  <td class="tw-py-4 tw-px-4">X RPL 2</td>
-                  <td class="tw-py-4 tw-px-4">10 September 2023</td>
-                  <td class="tw-py-4 tw-px-4">CadisdikwilVII/2022</td>
-                  <td class="tw-py-4 tw-px-4">Cape naik tangga</td>
-                  <td class="tw-py-4 tw-px-4">14 September 2022</td>
-                  <td class="tw-py-4 tw-px-4 tw-text-xl tw-flex tw-gap-3">
-                    <a href="" class="tw-text-warning-300 hover:tw-text-warning-400"><i class="fa-solid fa-pen-to-square"></i></a>
+                    <td class="tw-py-4 tw-px-4">Jonathan Doe</td>
+                    <td class="tw-py-4 tw-px-4">2009381728</td>
+                    <td class="tw-py-4 tw-px-4">L</td>
+                    <td class="tw-py-4 tw-px-4">Cape naik tangga</td>
+                    <td class="tw-py-4 tw-px-4">14 September 2022</td>
+                    <td class="tw-py-4 tw-px-4">17 September 2022</td>
+                    <td class="tw-py-4 tw-justify-center tw-items-center tw-text-xl tw-flex tw-gap-3">
+                    <a href="/admin/mutasi/edit" class="tw-text-warning-300 hover:tw-text-warning-400"><i class="fa-solid fa-pen-to-square"></i></a>
                     <a href="" class="tw-text-danger-400 hover:tw-text-danger-500"><i class="fa-regular fa-trash-can"></i></a>
-                    <a href="" class="tw-text-admin-300 hover:tw-text-admin-400"><i class="fa-solid fa-eye"></i></a>
-                  </td>
+                    <a href="/admin/detail-mutasi" class="tw-text-admin-300 hover:tw-text-admin-400"><i class="fa-solid fa-eye"></i></a>
+                    </td>
                 </tr>
                 <tr>
-                  <td class="tw-py-4 tw-px-4">Jonathan Doe</td>
-                  <td class="tw-py-4 tw-px-4">2009381728</td>
-                  <td class="tw-py-4 tw-px-4">L</td>
-                  <td class="tw-py-4 tw-px-4">X RPL 2</td>
-                  <td class="tw-py-4 tw-px-4">10 September 2023</td>
-                  <td class="tw-py-4 tw-px-4">CadisdikwilVII/2022</td>
-                  <td class="tw-py-4 tw-px-4">Cape naik tangga</td>
-                  <td class="tw-py-4 tw-px-4">14 September 2022</td>
-                  <td class="tw-py-4 tw-px-4 tw-text-xl tw-flex tw-gap-3">
-                    <a href="" class="tw-text-warning-300 hover:tw-text-warning-400"><i class="fa-solid fa-pen-to-square"></i></a>
-                    <a href="" class="tw-text-danger-400 hover:tw-text-danger-500"><i class="fa-regular fa-trash-can"></i></a>
-                    <a href="" class="tw-text-admin-300 hover:tw-text-admin-400"><i class="fa-solid fa-eye"></i></a>
-                  </td>
+                    <td class="tw-py-4 tw-px-4">Jonathan Doe</td>
+                    <td class="tw-py-4 tw-px-4">2009381728</td>
+                    <td class="tw-py-4 tw-px-4">L</td>
+                    <td class="tw-py-4 tw-px-4">Cape naik tangga</td>
+                    <td class="tw-py-4 tw-px-4">14 September 2022</td>
+                    <td class="tw-py-4 tw-px-4">17 September 2022</td>
+                    <td class="tw-py-4 tw-justify-center tw-items-center tw-text-xl tw-flex tw-gap-3">
+                      <a href="/admin/mutasi/edit" class="tw-text-warning-300 hover:tw-text-warning-400"><i class="fa-solid fa-pen-to-square"></i></a>
+                      <a href="" class="tw-text-danger-400 hover:tw-text-danger-500"><i class="fa-regular fa-trash-can"></i></a>
+                      <a href="/admin/detail-mutasi" class="tw-text-admin-300 hover:tw-text-admin-400"><i class="fa-solid fa-eye"></i></a>
+                    </td>
                 </tr>
                 <tr>
-                  <td class="tw-py-4 tw-px-4">Jonathan Doe</td>
-                  <td class="tw-py-4 tw-px-4">2009381728</td>
-                  <td class="tw-py-4 tw-px-4">L</td>
-                  <td class="tw-py-4 tw-px-4">X RPL 2</td>
-                  <td class="tw-py-4 tw-px-4">10 September 2023</td>
-                  <td class="tw-py-4 tw-px-4">CadisdikwilVII/2022</td>
-                  <td class="tw-py-4 tw-px-4">Cape naik tangga</td>
-                  <td class="tw-py-4 tw-px-4">14 September 2022</td>
-                  <td class="tw-py-4 tw-px-4 tw-text-xl tw-flex tw-gap-3">
-                    <a href="" class="tw-text-warning-300 hover:tw-text-warning-400"><i class="fa-solid fa-pen-to-square"></i></a>
-                    <a href="" class="tw-text-danger-400 hover:tw-text-danger-500"><i class="fa-regular fa-trash-can"></i></a>
-                    <a href="" class="tw-text-admin-300 hover:tw-text-admin-400"><i class="fa-solid fa-eye"></i></a>
-                  </td>
+                    <td class="tw-py-4 tw-px-4">Jonathan Doe</td>
+                    <td class="tw-py-4 tw-px-4">2009381728</td>
+                    <td class="tw-py-4 tw-px-4">L</td>
+                    <td class="tw-py-4 tw-px-4">Cape naik tangga</td>
+                    <td class="tw-py-4 tw-px-4">14 September 2022</td>
+                    <td class="tw-py-4 tw-px-4">17 September 2022</td>
+                    <td class="tw-py-4 tw-justify-center tw-items-center tw-text-xl tw-flex tw-gap-3">
+                      <a href="/admin/mutasi/edit" class="tw-text-warning-300 hover:tw-text-warning-400"><i class="fa-solid fa-pen-to-square"></i></a>
+                      <a href="" class="tw-text-danger-400 hover:tw-text-danger-500"><i class="fa-regular fa-trash-can"></i></a>
+                      <a href="/admin/detail-mutasi" class="tw-text-admin-300 hover:tw-text-admin-400"><i class="fa-solid fa-eye"></i></a>
+                    </td>
                 </tr>
                 <tr>
-                  <td class="tw-py-4 tw-px-4">Jonathan Doe</td>
-                  <td class="tw-py-4 tw-px-4">2009381728</td>
-                  <td class="tw-py-4 tw-px-4">L</td>
-                  <td class="tw-py-4 tw-px-4">X RPL 2</td>
-                  <td class="tw-py-4 tw-px-4">10 September 2023</td>
-                  <td class="tw-py-4 tw-px-4">CadisdikwilVII/2022</td>
-                  <td class="tw-py-4 tw-px-4">Cape naik tangga</td>
-                  <td class="tw-py-4 tw-px-4">14 September 2022</td>
-                  <td class="tw-py-4 tw-px-4 tw-text-xl tw-flex tw-gap-3">
-                    <a href="" class="tw-text-warning-300 hover:tw-text-warning-400"><i class="fa-solid fa-pen-to-square"></i></a>
-                    <a href="" class="tw-text-danger-400 hover:tw-text-danger-500"><i class="fa-regular fa-trash-can"></i></a>
-                    <a href="" class="tw-text-admin-300 hover:tw-text-admin-400"><i class="fa-solid fa-eye"></i></a>
-                  </td>
+                    <td class="tw-py-4 tw-px-4">Jonathan Doe</td>
+                    <td class="tw-py-4 tw-px-4">2009381728</td>
+                    <td class="tw-py-4 tw-px-4">L</td>
+                    <td class="tw-py-4 tw-px-4">Cape naik tangga</td>
+                    <td class="tw-py-4 tw-px-4">14 September 2022</td>
+                    <td class="tw-py-4 tw-px-4">17 September 2022</td>
+                    <td class="tw-py-4 tw-justify-center tw-items-center tw-text-xl tw-flex tw-gap-3">
+                      <a href="/admin/mutasi/edit" class="tw-text-warning-300 hover:tw-text-warning-400"><i class="fa-solid fa-pen-to-square"></i></a>
+                      <a href="" class="tw-text-danger-400 hover:tw-text-danger-500"><i class="fa-regular fa-trash-can"></i></a>
+                      <a href="/admin/detail-mutasi" class="tw-text-admin-300 hover:tw-text-admin-400"><i class="fa-solid fa-eye"></i></a>
+                    </td>
                 </tr>
                 <tr>
-                  <td class="tw-py-4 tw-px-4">Jonathan Doe</td>
-                  <td class="tw-py-4 tw-px-4">2009381728</td>
-                  <td class="tw-py-4 tw-px-4">L</td>
-                  <td class="tw-py-4 tw-px-4">X RPL 2</td>
-                  <td class="tw-py-4 tw-px-4">10 September 2023</td>
-                  <td class="tw-py-4 tw-px-4">CadisdikwilVII/2022</td>
-                  <td class="tw-py-4 tw-px-4">Cape naik tangga</td>
-                  <td class="tw-py-4 tw-px-4">14 September 2022</td>
-                  <td class="tw-py-4 tw-px-4 tw-text-xl tw-flex tw-gap-3">
-                    <a href="" class="tw-text-warning-300 hover:tw-text-warning-400"><i class="fa-solid fa-pen-to-square"></i></a>
-                    <a href="" class="tw-text-danger-400 hover:tw-text-danger-500"><i class="fa-regular fa-trash-can"></i></a>
-                    <a href="" class="tw-text-admin-300 hover:tw-text-admin-400"><i class="fa-solid fa-eye"></i></a>
-                  </td>
+                    <td class="tw-py-4 tw-px-4">Jonathan Doe</td>
+                    <td class="tw-py-4 tw-px-4">2009381728</td>
+                    <td class="tw-py-4 tw-px-4">L</td>
+                    <td class="tw-py-4 tw-px-4">Cape naik tangga</td>
+                    <td class="tw-py-4 tw-px-4">14 September 2022</td>
+                    <td class="tw-py-4 tw-px-4">17 September 2022</td>
+                    <td class="tw-py-4 tw-justify-center tw-items-center tw-text-xl tw-flex tw-gap-3">
+                      <a href="/admin/mutasi/edit" class="tw-text-warning-300 hover:tw-text-warning-400"><i class="fa-solid fa-pen-to-square"></i></a>
+                      <a href="" class="tw-text-danger-400 hover:tw-text-danger-500"><i class="fa-regular fa-trash-can"></i></a>
+                      <a href="/admin/detail-mutasi" class="tw-text-admin-300 hover:tw-text-admin-400"><i class="fa-solid fa-eye"></i></a>
+                    </td>
                 </tr>
                 <tr>
-                  <td class="tw-py-4 tw-px-4">Jonathan Doe</td>
-                  <td class="tw-py-4 tw-px-4">2009381728</td>
-                  <td class="tw-py-4 tw-px-4">L</td>
-                  <td class="tw-py-4 tw-px-4">X RPL 2</td>
-                  <td class="tw-py-4 tw-px-4">10 September 2023</td>
-                  <td class="tw-py-4 tw-px-4">CadisdikwilVII/2022</td>
-                  <td class="tw-py-4 tw-px-4">Cape naik tangga</td>
-                  <td class="tw-py-4 tw-px-4">14 September 2022</td>
-                  <td class="tw-py-4 tw-px-4 tw-text-xl tw-flex tw-gap-3">
-                    <a href="" class="tw-text-warning-300 hover:tw-text-warning-400"><i class="fa-solid fa-pen-to-square"></i></a>
-                    <a href="" class="tw-text-danger-400 hover:tw-text-danger-500"><i class="fa-regular fa-trash-can"></i></a>
-                    <a href="" class="tw-text-admin-300 hover:tw-text-admin-400"><i class="fa-solid fa-eye"></i></a>
-                  </td>
+                    <td class="tw-py-4 tw-px-4">Jonathan Doe</td>
+                    <td class="tw-py-4 tw-px-4">2009381728</td>
+                    <td class="tw-py-4 tw-px-4">L</td>
+                    <td class="tw-py-4 tw-px-4">Cape naik tangga</td>
+                    <td class="tw-py-4 tw-px-4">14 September 2022</td>
+                    <td class="tw-py-4 tw-px-4">17 September 2022</td>
+                    <td class="tw-py-4 tw-justify-center tw-items-center tw-text-xl tw-flex tw-gap-3">
+                      <a href="/admin/mutasi/edit" class="tw-text-warning-300 hover:tw-text-warning-400"><i class="fa-solid fa-pen-to-square"></i></a>
+                      <a href="" class="tw-text-danger-400 hover:tw-text-danger-500"><i class="fa-regular fa-trash-can"></i></a>
+                      <a href="/admin/detail-mutasi" class="tw-text-admin-300 hover:tw-text-admin-400"><i class="fa-solid fa-eye"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tw-py-4 tw-px-4">Jonathan Doe</td>
+                    <td class="tw-py-4 tw-px-4">2009381728</td>
+                    <td class="tw-py-4 tw-px-4">L</td>
+                    <td class="tw-py-4 tw-px-4">Cape naik tangga</td>
+                    <td class="tw-py-4 tw-px-4">14 September 2022</td>
+                    <td class="tw-py-4 tw-px-4">17 September 2022</td>
+                    <td class="tw-py-4 tw-justify-center tw-items-center tw-text-xl tw-flex tw-gap-3">
+                      <a href="/admin/mutasi/edit" class="tw-text-warning-300 hover:tw-text-warning-400"><i class="fa-solid fa-pen-to-square"></i></a>
+                      <a href="" class="tw-text-danger-400 hover:tw-text-danger-500"><i class="fa-regular fa-trash-can"></i></a>
+                      <a href="/admin/detail-mutasi" class="tw-text-admin-300 hover:tw-text-admin-400"><i class="fa-solid fa-eye"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tw-py-4 tw-px-4">Jonathan Doe</td>
+                    <td class="tw-py-4 tw-px-4">2009381728</td>
+                    <td class="tw-py-4 tw-px-4">L</td>
+                    <td class="tw-py-4 tw-px-4">Cape naik tangga</td>
+                    <td class="tw-py-4 tw-px-4">14 September 2022</td>
+                    <td class="tw-py-4 tw-px-4">17 September 2022</td>
+                    <td class="tw-py-4 tw-justify-center tw-items-center tw-text-xl tw-flex tw-gap-3">
+                      <a href="/admin/mutasi/edit" class="tw-text-warning-300 hover:tw-text-warning-400"><i class="fa-solid fa-pen-to-square"></i></a>
+                      <a href="" class="tw-text-danger-400 hover:tw-text-danger-500"><i class="fa-regular fa-trash-can"></i></a>
+                      <a href="/admin/detail-mutasi" class="tw-text-admin-300 hover:tw-text-admin-400"><i class="fa-solid fa-eye"></i></a>
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -174,171 +178,6 @@
       <div class="tw-flex tw-justify-end tw-gap-5 tw-mt-5">
         <a href="" class="tw-bg-admin-300 hover:tw-bg-admin-400 tw-py-2 tw-px-6 tw-text-white tw-rounded-lg">Prev</a>
         <a href="" class="tw-bg-admin-300 hover:tw-bg-admin-400 tw-py-2 tw-px-6 tw-text-white tw-rounded-lg">Next</a>
-      </div>
-     </div>
-    </section>
-
-    {{-- data siswa masuk table --}}
-    <section class="tw-bg-white tw-mb-8 tw-rounded-xl tw-w-full shadow-cs tw-p-7 tw-flex tw-flex-col">
-      <div class="tw-flex tw-w-full">
-        <i class="fa-solid fa-arrow-right-to-bracket tw-text-oren-400 tw-text-xl"></i>
-        <div class="tw-text-lg tw-ml-3 tw-font-pop tw-font-semibold tw-text-gray-300">Data Mutasi Masuk</div>
-     </div>
-
-     <div class="tw-mx-3">
-      <div class="tw-flex tw-justify-between tw-mt-10 tw-w-full">
-        <a href="/add-mutasi-masuk" class="tw-bg-oren-400 hover:tw-bg-oren-300 tw-text-white tw-font-ubuntu tw-py-2.5 tw-text-sm tw-px-6 tw-rounded-lg tw-h-fit tw-items-center tw-flex"><i class="fa-regular fa-square-plus tw-mr-4 tw-text-xl"></i>Add new Mutasi</a>
-       <div class="tw-flex tw-mb-5">
-          <input type="text" class="tw-px-4 tw-rounded-xl tw-border tw-border-gray-300 focus:tw-shadow-sm focus:tw-shadow-admin-300 focus:tw-border-admin-300 focus:tw-outline-none tw-py-2 tw-w-80">
-          <button class="tw-px-5 -tw-ml-4 tw-rounded-xl tw-text-white tw-bg-oren-400">
-            <i class="fa-regular fa-magnifying-glass"></i>
-          </button>
-       </div>
-       </div>
-  
-      <div class="tw-overflow-x-auto tw-relative tw-mt-5">
-        <table class="tw-w-full tw-font-medium tw-text-sm tw-text-center tw-font-ubuntu">
-            <thead class="tw-text-md tw-bg-[#5A6C7C] tw-text-white tw-font-medium">
-                <tr>
-                    <th scope="col" class="tw-py-3 tw-px-6">Nama</th>
-                    <th scope="col" class="tw-py-3 tw-px-6">Nomor Induk</th>
-                    <th scope="col" class="tw-py-3 tw-px-6">Gender</th>
-                    <th scope="col" class="tw-py-3 tw-px-6">Keluar di Kelas</th>
-                    <th scope="col" class="tw-py-3 tw-px-6">Tanggal Keluar</th>
-                    <th scope="col" class="tw-py-3 tw-px-6">SK Mutasi</th>
-                    <th scope="col" class="tw-py-3 tw-px-6">Alasan</th>
-                    <th scope="col" class="tw-py-3 tw-px-6">Created</th>
-                    <th scope="col" class="tw-py-3 tw-px-6">Action</th>
-                </tr>
-            </thead>
-            <tbody class="tw-bg-white tw-text-silver-400">   
-                <tr>
-                    <td class="tw-py-4 tw-px-4">Jonathan Doe</td>
-                    <td class="tw-py-4 tw-px-4">2009381728</td>
-                    <td class="tw-py-4 tw-px-4">L</td>
-                    <td class="tw-py-4 tw-px-4">X RPL 2</td>
-                    <td class="tw-py-4 tw-px-4">10 September 2023</td>
-                    <td class="tw-py-4 tw-px-4">CadisdikwilVII/2022</td>
-                    <td class="tw-py-4 tw-px-4">Cape naik tangga</td>
-                    <td class="tw-py-4 tw-px-4">14 September 2022</td>
-                    <td class="tw-py-4 tw-px-4 tw-text-xl tw-flex tw-gap-3">
-                      <a href="" class="tw-text-warning-300 hover:tw-text-warning-400"><i class="fa-solid fa-pen-to-square"></i></a>
-                      <a href="" class="tw-text-danger-400 hover:tw-text-danger-500"><i class="fa-regular fa-trash-can"></i></a>
-                      <a href="" class="tw-text-admin-300 hover:tw-text-admin-400"><i class="fa-solid fa-eye"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                  <td class="tw-py-4 tw-px-4">Jonathan Doe</td>
-                  <td class="tw-py-4 tw-px-4">2009381728</td>
-                  <td class="tw-py-4 tw-px-4">L</td>
-                  <td class="tw-py-4 tw-px-4">X RPL 2</td>
-                  <td class="tw-py-4 tw-px-4">10 September 2023</td>
-                  <td class="tw-py-4 tw-px-4">CadisdikwilVII/2022</td>
-                  <td class="tw-py-4 tw-px-4">Cape naik tangga</td>
-                  <td class="tw-py-4 tw-px-4">14 September 2022</td>
-                  <td class="tw-py-4 tw-px-4 tw-text-xl tw-flex tw-gap-3">
-                    <a href="" class="tw-text-warning-300 hover:tw-text-warning-400"><i class="fa-solid fa-pen-to-square"></i></a>
-                    <a href="" class="tw-text-danger-400 hover:tw-text-danger-500"><i class="fa-regular fa-trash-can"></i></a>
-                    <a href="" class="tw-text-admin-300 hover:tw-text-admin-400"><i class="fa-solid fa-eye"></i></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tw-py-4 tw-px-4">Jonathan Doe</td>
-                  <td class="tw-py-4 tw-px-4">2009381728</td>
-                  <td class="tw-py-4 tw-px-4">L</td>
-                  <td class="tw-py-4 tw-px-4">X RPL 2</td>
-                  <td class="tw-py-4 tw-px-4">10 September 2023</td>
-                  <td class="tw-py-4 tw-px-4">CadisdikwilVII/2022</td>
-                  <td class="tw-py-4 tw-px-4">Cape naik tangga</td>
-                  <td class="tw-py-4 tw-px-4">14 September 2022</td>
-                  <td class="tw-py-4 tw-px-4 tw-text-xl tw-flex tw-gap-3">
-                    <a href="" class="tw-text-warning-300 hover:tw-text-warning-400"><i class="fa-solid fa-pen-to-square"></i></a>
-                    <a href="" class="tw-text-danger-400 hover:tw-text-danger-500"><i class="fa-regular fa-trash-can"></i></a>
-                    <a href="" class="tw-text-admin-300 hover:tw-text-admin-400"><i class="fa-solid fa-eye"></i></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tw-py-4 tw-px-4">Jonathan Doe</td>
-                  <td class="tw-py-4 tw-px-4">2009381728</td>
-                  <td class="tw-py-4 tw-px-4">L</td>
-                  <td class="tw-py-4 tw-px-4">X RPL 2</td>
-                  <td class="tw-py-4 tw-px-4">10 September 2023</td>
-                  <td class="tw-py-4 tw-px-4">CadisdikwilVII/2022</td>
-                  <td class="tw-py-4 tw-px-4">Cape naik tangga</td>
-                  <td class="tw-py-4 tw-px-4">14 September 2022</td>
-                  <td class="tw-py-4 tw-px-4 tw-text-xl tw-flex tw-gap-3">
-                    <a href="" class="tw-text-warning-300 hover:tw-text-warning-400"><i class="fa-solid fa-pen-to-square"></i></a>
-                    <a href="" class="tw-text-danger-400 hover:tw-text-danger-500"><i class="fa-regular fa-trash-can"></i></a>
-                    <a href="" class="tw-text-admin-300 hover:tw-text-admin-400"><i class="fa-solid fa-eye"></i></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tw-py-4 tw-px-4">Jonathan Doe</td>
-                  <td class="tw-py-4 tw-px-4">2009381728</td>
-                  <td class="tw-py-4 tw-px-4">L</td>
-                  <td class="tw-py-4 tw-px-4">X RPL 2</td>
-                  <td class="tw-py-4 tw-px-4">10 September 2023</td>
-                  <td class="tw-py-4 tw-px-4">CadisdikwilVII/2022</td>
-                  <td class="tw-py-4 tw-px-4">Cape naik tangga</td>
-                  <td class="tw-py-4 tw-px-4">14 September 2022</td>
-                  <td class="tw-py-4 tw-px-4 tw-text-xl tw-flex tw-gap-3">
-                    <a href="" class="tw-text-warning-300 hover:tw-text-warning-400"><i class="fa-solid fa-pen-to-square"></i></a>
-                    <a href="" class="tw-text-danger-400 hover:tw-text-danger-500"><i class="fa-regular fa-trash-can"></i></a>
-                    <a href="" class="tw-text-admin-300 hover:tw-text-admin-400"><i class="fa-solid fa-eye"></i></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tw-py-4 tw-px-4">Jonathan Doe</td>
-                  <td class="tw-py-4 tw-px-4">2009381728</td>
-                  <td class="tw-py-4 tw-px-4">L</td>
-                  <td class="tw-py-4 tw-px-4">X RPL 2</td>
-                  <td class="tw-py-4 tw-px-4">10 September 2023</td>
-                  <td class="tw-py-4 tw-px-4">CadisdikwilVII/2022</td>
-                  <td class="tw-py-4 tw-px-4">Cape naik tangga</td>
-                  <td class="tw-py-4 tw-px-4">14 September 2022</td>
-                  <td class="tw-py-4 tw-px-4 tw-text-xl tw-flex tw-gap-3">
-                    <a href="" class="tw-text-warning-300 hover:tw-text-warning-400"><i class="fa-solid fa-pen-to-square"></i></a>
-                    <a href="" class="tw-text-danger-400 hover:tw-text-danger-500"><i class="fa-regular fa-trash-can"></i></a>
-                    <a href="" class="tw-text-admin-300 hover:tw-text-admin-400"><i class="fa-solid fa-eye"></i></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tw-py-4 tw-px-4">Jonathan Doe</td>
-                  <td class="tw-py-4 tw-px-4">2009381728</td>
-                  <td class="tw-py-4 tw-px-4">L</td>
-                  <td class="tw-py-4 tw-px-4">X RPL 2</td>
-                  <td class="tw-py-4 tw-px-4">10 September 2023</td>
-                  <td class="tw-py-4 tw-px-4">CadisdikwilVII/2022</td>
-                  <td class="tw-py-4 tw-px-4">Cape naik tangga</td>
-                  <td class="tw-py-4 tw-px-4">14 September 2022</td>
-                  <td class="tw-py-4 tw-px-4 tw-text-xl tw-flex tw-gap-3">
-                    <a href="" class="tw-text-warning-300 hover:tw-text-warning-400"><i class="fa-solid fa-pen-to-square"></i></a>
-                    <a href="" class="tw-text-danger-400 hover:tw-text-danger-500"><i class="fa-regular fa-trash-can"></i></a>
-                    <a href="" class="tw-text-admin-300 hover:tw-text-admin-400"><i class="fa-solid fa-eye"></i></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="tw-py-4 tw-px-4">Jonathan Doe</td>
-                  <td class="tw-py-4 tw-px-4">2009381728</td>
-                  <td class="tw-py-4 tw-px-4">L</td>
-                  <td class="tw-py-4 tw-px-4">X RPL 2</td>
-                  <td class="tw-py-4 tw-px-4">10 September 2023</td>
-                  <td class="tw-py-4 tw-px-4">CadisdikwilVII/2022</td>
-                  <td class="tw-py-4 tw-px-4">Cape naik tangga</td>
-                  <td class="tw-py-4 tw-px-4">14 September 2022</td>
-                  <td class="tw-py-4 tw-px-4 tw-text-xl tw-flex tw-gap-3">
-                    <a href="" class="tw-text-warning-300 hover:tw-text-warning-400"><i class="fa-solid fa-pen-to-square"></i></a>
-                    <a href="" class="tw-text-danger-400 hover:tw-text-danger-500"><i class="fa-regular fa-trash-can"></i></a>
-                    <a href="" class="tw-text-admin-300 hover:tw-text-admin-400"><i class="fa-solid fa-eye"></i></a>
-                  </td>
-                </tr>
-            </tbody>
-        </table>
-      </div>
-
-      <div class="tw-flex tw-justify-end tw-gap-5 tw-mt-5">
-        <a href="" class="tw-bg-oren-400 hover:tw-bg-oren-300 tw-py-2 tw-px-6 tw-items-center tw-flex tw-text-white tw-rounded-lg">Prev</a>
-        <a href="" class="tw-bg-oren-400 hover:tw-bg-oren-300 tw-py-2 tw-px-6 tw-items-center tw-flex tw-text-white tw-rounded-lg">Next</a>
       </div>
      </div>
     </section>

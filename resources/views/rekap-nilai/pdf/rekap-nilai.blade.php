@@ -64,9 +64,11 @@
                 <th scope="col" rowspan="3" colspan="3">
                     Nama Mapel
                 </th>
+                @foreach ($siswa->raport as $rp)
                 <th colspan="2">
-                    Tahun Pelajaran: 
+                    Tahun Pelajaran: {{ $rp->thn_ajaran }}
                 </th>
+                @endforeach
                 <th colspan="2">
                     Tahun Pelajaran: 
                 </th>
@@ -90,9 +92,11 @@
                 </th>
             </tr>
             <tr>
+                @foreach ($siswa->raport as $rp)
                 <th colspan="2">
-                    Semester: 1
+                    Semester: {{ $rp->semester }}
                 </th>
+                @endforeach
                 <th colspan="2">
                     Semester: 2
                 </th>
@@ -279,9 +283,17 @@
                     <td>
                         Status Kenaikan
                     </td>
+                    @foreach ($siswa->raport as $rp)
                     <td colspan="4">
-                        
+                        @if($rp->isNaik == true)
+                        Naik
+                        @elseif($rp->isNaik == false)
+                        Tidak naik
+                        @else
+                        -
+                        @endif
                     </td>
+                    @endforeach
                     <td colspan="4">
                         
                     </td>
@@ -294,9 +306,11 @@
                     <td>
                         Naik ke
                     </td>
+                    @foreach ($siswa->raport as $rp)
                     <td colspan="4">
-
+                        {{ $rp->naikKelas }}
                     </td>
+                    @endforeach
                     <td colspan="4">
                             
                     </td>
@@ -309,9 +323,11 @@
                     <td>
                         Tanggal Kenaikan
                     </td>
+                    @foreach ($siswa->raport as $rp)
                     <td colspan="4">
-
-                    </td>
+                        {{ $rp->tgl_kenaikan }}
+                    </td> 
+                    @endforeach
                     <td colspan="4">
                             
                     </td>

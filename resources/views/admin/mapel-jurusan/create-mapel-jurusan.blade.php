@@ -3,7 +3,7 @@
 @section('content')
     <div class="tw-mx-10 tw-w-screen">
         <div class="tw-flex tw-mt-8">
-            <a href="/mata-pelajaran-jurusan">
+            <a href="/admin/mapel-jurusan">
                 <i class="fa-solid fa-chevron-left tw-text-2xl tw-text-gray-300 hover:tw-text-gray-600"></i>
             </a>
             <div class="tw-text-2xl tw-ml-3 tw-font-pop tw-font-semibold tw-text-gray-300">Create Mata Pelajaran Jurusan
