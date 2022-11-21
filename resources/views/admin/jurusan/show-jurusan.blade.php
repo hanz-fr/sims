@@ -2,10 +2,13 @@
 @section('content')
 
 <div class="tw-mx-10 tw-w-screen">
-    <div class="tw-flex tw-mt-8">
-        <i class="fa-solid fa-shapes tw-text-sims-300 tw-text-2xl"></i>
-        <div class="tw-text-2xl tw-ml-3 tw-font-pop tw-font-semibold tw-text-gray-300">Jurusan</div>
-    </div>
+  <section class="tw-flex tw-gap-3 mt-8">
+    <a href="/admin/database">
+      <i class="fa-solid fa-chevron-left tw-text-gray-400 tw-text-2xl"></i>
+    </a>
+    <i class="fa-solid fa-shapes tw-text-sims-300 tw-text-2xl"></i>
+    <div class="tw-text-2xl tw-font-pop tw-font-semibold tw-text-gray-300">Jurusan</div>
+  </section>
     <div class="tw-flex tw-flex-col tw-bg-white shadow-cs tw-py-8 tw-px-16 tw-rounded-xl tw-w-full tw-mb-8 tw-mt-14 ">
         <div class="tw-flex tw-justify-end">
           <div class="tw-flex tw-mb-14">

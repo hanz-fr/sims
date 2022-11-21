@@ -2,9 +2,13 @@
 
 @section('content')
     <div class="tw-mx-10 tw-w-screen">
-        <div class="tw-flex tw-mt-8">
-            <div class="tw-text-2xl tw-ml-3 tw-font-pop tw-font-semibold tw-text-gray-300">Rapor</div>
-        </div>
+        <section class="tw-flex tw-gap-3 mt-8">
+            <a href="/admin/database">
+              <i class="fa-solid fa-chevron-left tw-text-gray-400 tw-text-2xl"></i>
+            </a>
+            <i class="fa-solid fa-shapes tw-text-sims-300 tw-text-2xl"></i>
+            <div class="tw-text-2xl tw-font-pop tw-font-semibold tw-text-gray-300">Rapor</div>
+          </section>
         <div class="tw-flex tw-flex-col tw-bg-white shadow-cs tw-py-8 tw-px-16 tw-rounded-xl tw-w-full tw-mb-8 tw-mt-10">
             <div class="tw-flex tw-justify-between tw-mb-8">
                 <div class="tw-flex">
@@ -17,7 +21,7 @@
                     <a href="/admin/rapor/create"
                         class="tw-bg-admin-300 tw-text-white hover:tw-text-white hover:tw-bg-admin-600  tw-font-ubuntu tw-font-bold tw-rounded-lg tw-px-5 tw-py-2">
                         <i class="fa-solid fa-circle-plus tw-pr-3"></i>
-                        Tambah Rapor
+                        Add Rapor
                     </a>
                 </div>
             </div>
@@ -42,8 +46,8 @@
                             <td class="tw-py-6 tw-px-5 tw-border-b">7</td>
                             <td class="tw-py-6 tw-px-5 tw-border-b">
                                 <a href="/admin/detail-rapor"
-                                    class="tw-bg-blue-300 hover:tw-bg-blue-500 tw-text-white tw-px-7 tw-py-3 tw-rounded-lg">
-                                    Lihat
+                                    class="tw-bg-admin-300 hover:tw-bg-admin-600 tw-text-white tw-px-7 tw-py-3 tw-rounded-lg">
+                                    View
                                 </a>
                             </td>
                         </tr>
@@ -54,8 +58,8 @@
                             <td class="tw-py-6 tw-px-5 tw-border-b">7</td>
                             <td class="tw-py-6 tw-px-5 tw-border-b">
                                 <a href="/admin/detail-rapor"
-                                    class="tw-bg-blue-300 hover:tw-bg-blue-500 tw-text-white tw-px-7 tw-py-3 tw-rounded-lg">
-                                    Lihat
+                                    class="tw-bg-admin-300 hover:tw-bg-admin-600 tw-text-white tw-px-7 tw-py-3 tw-rounded-lg">
+                                    View
                                 </a>
                             </td>
                         </tr>
@@ -66,8 +70,8 @@
                             <td class="tw-py-6 tw-px-5 tw-border-b">7</td>
                             <td class="tw-py-6 tw-px-5 tw-border-b">
                                 <a href="/admin/detail-rapor"
-                                    class="tw-bg-blue-300 hover:tw-bg-blue-500 tw-text-white tw-px-7 tw-py-3 tw-rounded-lg">
-                                    Lihat
+                                    class="tw-bg-admin-300 hover:tw-bg-admin-600 tw-text-white tw-px-7 tw-py-3 tw-rounded-lg">
+                                    View
                                 </a>
                             </td>
                         </tr>
@@ -78,8 +82,8 @@
                             <td class="tw-py-6 tw-px-5 tw-border-b">7</td>
                             <td class="tw-py-6 tw-px-5 tw-border-b">
                                 <a href="/admin/detail-rapor"
-                                    class="tw-bg-blue-300 hover:tw-bg-blue-500 tw-text-white tw-px-7 tw-py-3 tw-rounded-lg">
-                                    Lihat
+                                    class="tw-bg-admin-300 hover:tw-bg-admin-600 tw-text-white tw-px-7 tw-py-3 tw-rounded-lg">
+                                    View
                                 </a>
                             </td>
                         </tr>
@@ -90,8 +94,8 @@
                             <td class="tw-py-6 tw-px-5 tw-border-b">7</td>
                             <td class="tw-py-6 tw-px-5 tw-border-b">
                                 <a href="/admin/detail-rapor"
-                                    class="tw-bg-blue-300 hover:tw-bg-blue-500 tw-text-white tw-px-7 tw-py-3 tw-rounded-lg">
-                                    Lihat
+                                    class="tw-bg-admin-300 hover:tw-bg-admin-600 tw-text-white tw-px-7 tw-py-3 tw-rounded-lg">
+                                    View
                                 </a>
                             </td>
                         </tr>
@@ -102,8 +106,8 @@
                             <td class="tw-py-6 tw-px-5 tw-border-b">7</td>
                             <td class="tw-py-6 tw-px-5 tw-border-b">
                                 <a href="/admin/detail-rapor"
-                                    class="tw-bg-blue-300 hover:tw-bg-blue-500 tw-text-white tw-px-7 tw-py-3 tw-rounded-lg">
-                                    Lihat
+                                    class="tw-bg-admin-300 hover:tw-bg-admin-600 tw-text-white tw-px-7 tw-py-3 tw-rounded-lg">
+                                    View
                                 </a>
                             </td>
                         </tr>
@@ -114,8 +118,8 @@
                             <td class="tw-py-6 tw-px-5 tw-border-b">7</td>
                             <td class="tw-py-6 tw-px-5 tw-border-b">
                                 <a href="/admin/detail-rapor"
-                                    class="tw-bg-blue-300 hover:tw-bg-blue-500 tw-text-white tw-px-7 tw-py-3 tw-rounded-lg">
-                                    Lihat
+                                    class="tw-bg-admin-300 hover:tw-bg-admin-600 tw-text-white tw-px-7 tw-py-3 tw-rounded-lg">
+                                    View
                                 </a>
                             </td>
                         </tr>
@@ -126,8 +130,8 @@
                             <td class="tw-py-6 tw-px-5 tw-border-b">7</td>
                             <td class="tw-py-6 tw-px-5 tw-border-b">
                                 <a href="/admin/detail-rapor"
-                                    class="tw-bg-blue-300 hover:tw-bg-blue-500 tw-text-white tw-px-7 tw-py-3 tw-rounded-lg">
-                                    Lihat
+                                    class="tw-bg-admin-300 hover:tw-bg-admin-600 tw-text-white tw-px-7 tw-py-3 tw-rounded-lg">
+                                    View
                                 </a>
                             </td>
                         </tr>

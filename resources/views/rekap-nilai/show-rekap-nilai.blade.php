@@ -114,9 +114,6 @@
                             <th scope="col" class="tw-py-3 tw-px-6">
                                 Keterampilan
                             </th>
-                            <th scope="col" class="tw-py-3 tw-px-6">
-                                KKM
-                            </th>
                         </tr>
                     </thead>
                     <tbody class="tw-text-base text-center">
@@ -133,9 +130,9 @@
                                 <td class="tw-py-4 tw-px-6">
                                 {{ $nm->nilai_keterampilan }}
                                 </td>
-                                <td class="tw-py-4 tw-px-6">
+                                {{-- <td class="tw-py-4 tw-px-6">
                                 {{ $nm->kkm }}
-                                </td>
+                                </td> --}}
                             </tr>
                         @endforeach
                             <tr>
@@ -244,9 +241,6 @@
                             <th scope="col" class="tw-py-3 tw-px-6">
                             Keterampilan
                             </th>
-                            <th scope="col" class="tw-py-3 tw-px-6">
-                            KKM
-                            </th>
                         </tr>
                     </thead>
                     <tbody class="tw-text-base text-center">
@@ -263,9 +257,9 @@
                         <td class="tw-py-4 tw-px-6">
                         {{ $nm->nilai_keterampilan }}
                         </td>
-                        <td class="tw-py-4 tw-px-6">
+                        {{-- <td class="tw-py-4 tw-px-6">
                         {{ $nm->kkm }}
-                        </td>
+                        </td> --}}
                     </tr>
                     @endforeach
                         <tr>
@@ -374,9 +368,6 @@
                             <th scope="col" class="tw-py-3 tw-px-6">
                             Keterampilan
                             </th>
-                            <th scope="col" class="tw-py-3 tw-px-6">
-                            KKM
-                            </th>
                         </tr>
                     </thead>
                     <tbody class="tw-text-base text-center">
@@ -393,9 +384,9 @@
                         <td class="tw-py-4 tw-px-6">
                         {{ $nm->nilai_keterampilan }}
                         </td>
-                        <td class="tw-py-4 tw-px-6">
+                        {{-- <td class="tw-py-4 tw-px-6">
                         {{ $nm->kkm }}
-                        </td>
+                        </td> --}}
                     </tr>
                     @endforeach
                         <tr>
@@ -498,9 +489,6 @@
                             <th scope="col" class="tw-py-3 tw-px-6">
                             Keterampilan
                             </th>
-                            <th scope="col" class="tw-py-3 tw-px-6">
-                            KKM
-                            </th>
                         </tr>
                     </thead>
                     <tbody class="tw-text-base text-center">
@@ -517,9 +505,9 @@
                         <td class="tw-py-4 tw-px-6">
                         {{ $nm->nilai_keterampilan }}
                         </td>
-                        <td class="tw-py-4 tw-px-6">
+                        {{-- <td class="tw-py-4 tw-px-6">
                         {{ $nm->kkm }}
-                        </td>
+                        </td> --}}
                     </tr>
                     @endforeach
                         <tr>
@@ -628,9 +616,6 @@
                             <th scope="col" class="tw-py-3 tw-px-6">
                             Keterampilan
                             </th>
-                            <th scope="col" class="tw-py-3 tw-px-6">
-                            KKM
-                            </th>
                         </tr>
                     </thead>
                     <tbody class="tw-text-base text-center">
@@ -647,9 +632,9 @@
                         <td class="tw-py-4 tw-px-6">
                         {{ $nm->nilai_keterampilan }}
                         </td>
-                        <td class="tw-py-4 tw-px-6">
+                        {{-- <td class="tw-py-4 tw-px-6">
                         {{ $nm->kkm }}
-                        </td>
+                        </td> --}}
                     </tr>
                     @endforeach
                         <tr>
@@ -758,9 +743,6 @@
                             <th scope="col" rowspan="2" class="tw-py-3 tw-px-6">
                             Keterampilan
                             </th>
-                            <th scope="col" rowspan="2" class="tw-py-3 tw-px-6">
-                            KKM
-                            </th>
                             <th scope="col" colspan="2" class="tw-py-3 tw-px-6">
                             US
                             </th>
@@ -783,9 +765,9 @@
                                 class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
                                 {{ $nm->MapelJurusan->MapelId }}
                             </th>
-                            <td class="tw-py-4 tw-px-6">
+                            {{-- <td class="tw-py-4 tw-px-6">
                                 {{ $nm->kkm }}
-                            </td>
+                            </td> --}}
                             <td class="tw-py-4 tw-px-6">
                                 {{ $nm->nilai_pengetahuan }}
                             </td>

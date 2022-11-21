@@ -18,13 +18,13 @@
 
      <div class="tw-mx-3">
       <div class="tw-flex tw-justify-between tw-mt-10 tw-w-full">
-        <a href="/admin/mutasi/create" class="tw-bg-admin-300 hover:tw-bg-admin-400 tw-text-white tw-font-ubuntu tw-py-2.5 tw-text-sm tw-px-6 tw-rounded-lg tw-h-fit tw-items-center tw-flex"><i class="fa-regular fa-square-plus tw-mr-4 tw-text-xl"></i>Add new Mutasi</a>
-       <div class="tw-flex tw-mb-5">
+        <div class="tw-flex tw-mb-5">
           <input type="text" class="tw-px-4 tw-rounded-xl tw-border tw-border-gray-300 focus:tw-shadow-sm focus:tw-shadow-admin-300 focus:tw-border-admin-300 focus:tw-outline-none tw-py-2 tw-w-80">
           <button class="tw-px-5 -tw-ml-4 tw-rounded-xl tw-text-white tw-bg-admin-300">
             <i class="fa-regular fa-magnifying-glass"></i>
           </button>
        </div>
+        <a href="/admin/mutasi/create" class="tw-bg-admin-300 hover:tw-bg-admin-400 tw-text-white tw-font-ubuntu tw-py-2.5 tw-text-sm tw-px-6 tw-rounded-lg tw-h-fit tw-items-center tw-flex"><i class="fa-regular fa-square-plus tw-mr-4 tw-text-xl"></i>Add new Mutasi</a>
        </div>
   
       <div class="tw-overflow-x-auto tw-relative tw-mt-5">
