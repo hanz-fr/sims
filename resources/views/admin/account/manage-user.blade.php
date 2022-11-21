@@ -19,7 +19,7 @@
           <h5 class="tw-font-bold tw-mt-2">Staff TU</h5>
         </div>
         <div class="tw-items-center tw-flex">
-        <h3 class="text-5xl tw-font-bold tw-mb-2">4</h3>
+        <h3 class="text-5xl tw-font-bold tw-mb-2">{{ $tatausaha }}</h3>
         </div>
       </div>
       <div class="tw-flex tw-gap-8 tw-text-salmon-400">
@@ -28,7 +28,7 @@
           <h5 class="tw-font-bold tw-mt-2">Kesiswaan</h5>
         </div>
         <div class="tw-items-center tw-flex">
-        <h3 class="text-5xl tw-font-bold tw-mb-2">2</h3>
+        <h3 class="text-5xl tw-font-bold tw-mb-2">{{ $kesiswaan }}</h3>
         </div>
       </div>
       <div class="tw-flex tw-gap-8 tw-text-oren-400">
@@ -37,7 +37,7 @@
           <h5 class="tw-font-bold tw-mt-2">Walikelas</h5>
         </div>
         <div class="tw-items-center tw-flex">
-        <h3 class="text-5xl tw-font-bold tw-mb-2">6</h3>
+        <h3 class="text-5xl tw-font-bold tw-mb-2">{{ $walikelas }}</h3>
         </div>
       </div>
       <div class="tw-flex tw-gap-8 tw-text-gray-400">
@@ -46,7 +46,7 @@
           <h5 class="tw-font-bold tw-mt-2">Kurikulum</h5>
         </div>
         <div class="tw-items-center tw-flex">
-        <h3 class="text-5xl tw-font-bold tw-mb-2">1</h3>
+        <h3 class="text-5xl tw-font-bold tw-mb-2">{{ $kurikulum }}</h3>
         </div>
       </div>
       <div class="tw-flex tw-gap-8 tw-text-pixie-300">
@@ -55,7 +55,7 @@
           <h5 class="tw-font-bold tw-mt-2">Admin</h5>
         </div>
         <div class="tw-items-center tw-flex">
-        <h3 class="text-5xl tw-font-bold tw-mb-2">1</h3>
+        <h3 class="text-5xl tw-font-bold tw-mb-2">{{ $admin }}</h3>
         </div>
       </div>
     </section>
@@ -64,7 +64,7 @@
     <section class="tw-flex tw-bg-white tw-rounded-xl shadow-cs tw-w-full tw-justify-between tw-py-10 tw-px-12">
       <div class="tw-text-gray-300 tw-text-2xl tw-font-semibold tw-font-pop tw-items-center tw-flex">All Account</div>
       <div class="tw-flex tw-gap-5 tw-font-ubuntu tw-text-white tw-font-medium">
-        <form action="" method="POST">
+        <form action="{{ route('account.destroy-all') }}" method="POST">
           @csrf
           @method('DELETE')
           <button type="button" data-modal-toggle="popup-modal"
@@ -143,7 +143,7 @@
               <tr class="tw-border-b">
                 <td class="tw-p-6">{{ $u->nip }}</td>
                 <td class="tw-p-6">{{ $u->nama }}</td>
-                <td class="tw-p-6">{{ $u->created_at }}</td>
+                <td class="tw-p-6">{{ $u->created_at->format('l d F Y') }}</td>
                 <td class="tw-p-6">
                 @if ($u->role === 1)
                   Tata Usaha

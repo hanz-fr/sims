@@ -176,6 +176,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin', 'revalidate']]
     
 
     /* ACCOUNT MANAGEMENT */
+    Route::delete('/account/destroy-all', [AccountController::class, 'destroyAll'])->name('account.destroy-all');
     Route::resource('/account', AccountController::class);
 
 

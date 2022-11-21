@@ -118,44 +118,44 @@
                 <div class="tw-flex tw-flex-col tw-gap-8">
                     <div>
                         <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-slate-400">Nilai Pengetahuan</span>
-                        <input type="number" max="100" min="1" name="nilai_pengetahuan[]" id="nilai_pengetahuan" placeholder="" class="input-account">
+                        <input type="number" max="100" min="0" name="nilai_pengetahuan[]" id="nilai_pengetahuan" placeholder="" class="input-account">
                     </div>
 
                     <div>
                         <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-slate-400">Nilai Keterampilan</span>
-                        <input type="number" max="100" min="1" name="nilai_keterampilan[]" id="nilai_keterampilan" placeholder="" class="input-account">
+                        <input type="number" max="100" min="0" name="nilai_keterampilan[]" id="nilai_keterampilan" placeholder="" class="input-account">
                     </div>
 
                     <div>
                         <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-slate-400">AKM</span>
-                        <input type="number" max="100" min="1" name="nilai_akm[]" id="nilai_akm" placeholder="" class="input-account">
+                        <input type="number" max="100" min="0" name="nilai_akm[]" id="nilai_akm" placeholder="" class="input-account">
                     </div>
                     {{-- <div>
                         <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-slate-400">KKM</span>
-                        <input type="number" max="100" min="1" name="kkm[]" id="kkm" placeholder="" class="input-account">
+                        <input type="number" max="100" min="0" name="kkm[]" id="kkm" placeholder="" class="input-account">
                     </div> --}}
                 </div>
                 <div class="tw-flex tw-flex-col tw-gap-8">
                     <div>
                         <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-slate-400">Nilai US Teori</span>
-                        <input type="number" max="100" min="1" name="nilai_us_teori[]" id="nilai_us_teori" placeholder="" class="input-account">
+                        <input type="number" max="100" min="0" name="nilai_us_teori[]" id="nilai_us_teori" placeholder="" class="input-account">
                     </div>
 
                     <div>
                         <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-slate-400">Nilai US Praktek</span>
-                        <input type="number" max="100" min="1" name="nilai_us_praktek[]" id="nilai_us_praktek" placeholder="" class="input-account">
+                        <input type="number" max="100" min="0" name="nilai_us_praktek[]" id="nilai_us_praktek" placeholder="" class="input-account">
                     </div>
 
                 </div>
                 <div class="tw-flex tw-flex-col tw-gap-8">
                     <div>
                         <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-slate-400">Nilai UKK Teori</span>
-                        <input type="number" max="100" min="1" name="nilai_ukk_teori[]" id="nilai_ukk_teori" placeholder="" class="input-account">
+                        <input type="number" max="100" min="0" name="nilai_ukk_teori[]" id="nilai_ukk_teori" placeholder="" class="input-account">
                     </div>
 
                     <div>
                         <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-slate-400">Nilai UKK Praktek</span>
-                        <input type="number" max="100" min="1" name="nilai_ukk_praktek[]" id="nilai_ukk_praktek" placeholder="" class="input-account">
+                        <input type="number" max="100" min="0" name="nilai_ukk_praktek[]" id="nilai_ukk_praktek" placeholder="" class="input-account">
                     </div>
                 </div>
 

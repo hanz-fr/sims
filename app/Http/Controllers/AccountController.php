@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\User;
+use App\Models\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -13,15 +15,27 @@ class AccountController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        // $tatausaha = User::where('role',1)->count();
+    public function index() {
+
+        $tatausaha = User::where('role',1)->count();
+        $kesiswaan = User::where('role',2)->count();
+        $kurikulum = User::where('role',3)->count();
+        $walikelas = User::where('role',4)->count();
+        $admin = Admin::all()->count();
+
         $user = User::all();
+
         return view('admin.account.manage-user', [
-            'title' => 'Manage User SIMS',
-            'active' => 'account'
-        ],
-        compact('user'));
+            'title'     => 'Manage User SIMS',
+            'active'    => 'account',
+            'user'      => $user,
+            'admin'     => $admin,
+            'tatausaha' => $tatausaha,
+            'kesiswaan' => $kesiswaan,
+            'kurikulum' => $kurikulum,
+            'walikelas' => $walikelas
+        ]);
+
     }
 
     /**
@@ -29,8 +43,8 @@ class AccountController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create() {
+
         return view('admin.account.create', [
             'title' => 'Create Account',
             'active' => 'account'
@@ -43,13 +57,13 @@ class AccountController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
+
         $request->validate([
             'nip'      => 'required|unique:users|min:9|max:18',
             'nama'     => 'required',
             'email'    => 'required|email|unique:users',
-            'role'    => 'required',
+            'role'     => 'required',
             'password' => 'required|min:6',
         ]);
         
@@ -57,12 +71,14 @@ class AccountController extends Controller
             'nip'      => $request->nip,
             'nama'     => $request->nama,
             'email'    => $request->email,
-            'role'    => $request->role,
+            'role'     => $request->role,
             'password' => Hash::make($request->password),
         ]);
+
         $user->save();
          
         return redirect()->route('account.index')->with('success','Account created successfully');
+
     }
 
     /**
@@ -71,15 +87,16 @@ class AccountController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
+    public function show($id) {
+
         $user = User::find($id);
 
         return view('admin.account.show-detail', [
             'title' => 'Account Details',
-            'active' => 'account'
-        ],
-        compact('user'));
+            'active' => 'account',
+            'user' => $user
+        ]);
+
     }
 
     /**
@@ -94,9 +111,9 @@ class AccountController extends Controller
 
         return view('admin.account.edit', [
             'title' => 'Edit Account',
-            'active' => 'manage-user'
-        ],
-        compact('user'));
+            'active' => 'manage-user',
+            'user' => $user
+        ]);
     }
 
     /**
@@ -106,8 +123,8 @@ class AccountController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id) {
+
         $this->validate($request,[
             'nip'   => 'required|min:9|max:18',
             'nama'  => 'required',
@@ -119,6 +136,7 @@ class AccountController extends Controller
         $user->update($request->all());
 
         return redirect()->route('account.index')->with('success','Account has been updated successfully');
+
     }
 
     /**
@@ -127,11 +145,21 @@ class AccountController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
+    public function destroy($id) {
+
         $user = User::find($id);
+
         $user->delete();
+
         return redirect()->route('account.index')->with('success','Account has been deleted successfully');
+
+    }
+
+    public function destroyAll() {
+
+        User::truncate(); 
+
+        return redirect()->route('account.index')->with('success','All account has been deleted successfully');
     }
 }
  
