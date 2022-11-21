@@ -127,9 +127,13 @@
                     </div>
 
                     <div>
+                        <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-slate-400">AKM</span>
+                        <input type="number" max="100" min="1" name="nilai_akm[]" id="nilai_akm" placeholder="" class="input-account">
+                    </div>
+                    {{-- <div>
                         <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-slate-400">KKM</span>
                         <input type="number" max="100" min="1" name="kkm[]" id="kkm" placeholder="" class="input-account">
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="tw-flex tw-flex-col tw-gap-8">
                     <div>
@@ -142,10 +146,6 @@
                         <input type="number" max="100" min="1" name="nilai_us_praktek[]" id="nilai_us_praktek" placeholder="" class="input-account">
                     </div>
 
-                    <div>
-                        <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-slate-400">AKM</span>
-                        <input type="number" max="100" min="1" name="nilai_akm[]" id="nilai_akm" placeholder="" class="input-account">
-                    </div>
                 </div>
                 <div class="tw-flex tw-flex-col tw-gap-8">
                     <div>

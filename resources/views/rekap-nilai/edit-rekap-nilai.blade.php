@@ -140,9 +140,14 @@
                     </div>
 
                     <div>
+                        <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-slate-400">AKM</span>
+                        <input type="number" min="1" max="100" name="nilai_akm[]" id="nilai_akm" placeholder="" class="input-account" value="{{ $nm->nilai_akm }}">
+                    </div>
+
+                    {{-- <div>
                         <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-slate-400">KKM</span>
                         <input type="number" min="1" max="100" name="kkm[]" id="kkm" placeholder="" class="input-account" value="{{ $nm->kkm }}">
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="tw-flex tw-flex-col tw-gap-8">
                     <div>
@@ -153,11 +158,6 @@
                     <div>
                         <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-slate-400">Nilai US Praktek</span>
                         <input type="number" min="1" max="100" name="nilai_us_praktek[]" id="nilai_us_praktek" placeholder="" class="input-account" value="{{ $nm->nilai_us_praktek }}">
-                    </div>
-
-                    <div>
-                        <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-slate-400">AKM</span>
-                        <input type="number" min="1" max="100" name="nilai_akm[]" id="nilai_akm" placeholder="" class="input-account" value="{{ $nm->nilai_akm }}">
                     </div>
                 </div>
                 <div class="tw-flex tw-flex-col tw-gap-8">
