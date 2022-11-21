@@ -55,7 +55,8 @@
             <div x-data="{ isActive: false, open: false }">
                <div x-show="open" x-transition.duration.90ms class="tw-my-2 tw-font-ubuntu tw-font-bold tw-justify-center tw-text-center" role="menu" arial-label="Components">
                   <a href="/admin/logout" role="menuitem" class="nav-item-admin tw-justify-center tw-font-bold tw-transition-colors tw-duration-200 tw-text-center">
-                  Logout
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                     &nbsp;&nbsp;Logout
                   </a>
               </div>
                <a href="#"

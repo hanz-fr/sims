@@ -69,7 +69,7 @@
                     Tahun Pelajaran: {{ $rp->thn_ajaran }}
                 </th>
                 @endforeach
-                <th colspan="2">
+                {{-- <th colspan="2">
                     Tahun Pelajaran: 
                 </th>
                 <th colspan="2">
@@ -83,7 +83,7 @@
                 </th>
                 <th colspan="2">
                     Tahun Pelajaran: 
-                </th>
+                </th> --}}
                 <th scope="col" rowspan="2" colspan="2">
                     US
                 </th>
@@ -97,7 +97,7 @@
                     Semester: {{ $rp->semester }}
                 </th>
                 @endforeach
-                <th colspan="2">
+                {{-- <th colspan="2">
                     Semester: 2
                 </th>
                 <th colspan="2">
@@ -111,7 +111,7 @@
                 </th>
                 <th colspan="2">
                     Semester: 6
-                </th>
+                </th> --}}
             </tr>
             <tr>
                 <th scope="col">

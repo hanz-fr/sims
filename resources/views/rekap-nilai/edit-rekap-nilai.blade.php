@@ -131,44 +131,44 @@
                 <div class="tw-flex tw-flex-col tw-gap-8">
                     <div>
                         <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-slate-400">Nilai Pengetahuan</span>
-                        <input type="number" min="1" max="100" name="nilai_pengetahuan[]" id="nilai_pengetahuan" placeholder="" class="input-account" value="{{ $nm->nilai_pengetahuan }}">
+                        <input type="number" min="0" max="100" name="nilai_pengetahuan[]" id="nilai_pengetahuan" placeholder="" class="input-account" value="{{ $nm->nilai_pengetahuan }}">
                     </div>
 
                     <div>
                         <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-slate-400">Nilai Keterampilan</span>
-                        <input type="number" min="1" max="100" name="nilai_keterampilan[]" id="nilai_keterampilan" placeholder="" class="input-account" value="{{ $nm->nilai_keterampilan }}">
+                        <input type="number" min="0" max="100" name="nilai_keterampilan[]" id="nilai_keterampilan" placeholder="" class="input-account" value="{{ $nm->nilai_keterampilan }}">
                     </div>
 
                     <div>
                         <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-slate-400">AKM</span>
-                        <input type="number" min="1" max="100" name="nilai_akm[]" id="nilai_akm" placeholder="" class="input-account" value="{{ $nm->nilai_akm }}">
+                        <input type="number" min="0" max="100" name="nilai_akm[]" id="nilai_akm" placeholder="" class="input-account" value="{{ $nm->nilai_akm }}">
                     </div>
 
                     {{-- <div>
                         <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-slate-400">KKM</span>
-                        <input type="number" min="1" max="100" name="kkm[]" id="kkm" placeholder="" class="input-account" value="{{ $nm->kkm }}">
+                        <input type="number" min="0" max="100" name="kkm[]" id="kkm" placeholder="" class="input-account" value="{{ $nm->kkm }}">
                     </div> --}}
                 </div>
                 <div class="tw-flex tw-flex-col tw-gap-8">
                     <div>
                         <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-slate-400">Nilai US Teori</span>
-                        <input type="number" min="1" max="100" name="nilai_us_teori[]" id="nilai_us_teori" placeholder="" class="input-account" value="{{ $nm->nilai_us_teori }}">
+                        <input type="number" min="0" max="100" name="nilai_us_teori[]" id="nilai_us_teori" placeholder="" class="input-account" value="{{ $nm->nilai_us_teori }}">
                     </div>
 
                     <div>
                         <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-slate-400">Nilai US Praktek</span>
-                        <input type="number" min="1" max="100" name="nilai_us_praktek[]" id="nilai_us_praktek" placeholder="" class="input-account" value="{{ $nm->nilai_us_praktek }}">
+                        <input type="number" min="0" max="100" name="nilai_us_praktek[]" id="nilai_us_praktek" placeholder="" class="input-account" value="{{ $nm->nilai_us_praktek }}">
                     </div>
                 </div>
                 <div class="tw-flex tw-flex-col tw-gap-8">
                     <div>
                         <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-slate-400">Nilai UKK Teori</span>
-                        <input type="number" min="1" max="100" name="nilai_ukk_teori[]" id="nilai_ukk_teori" placeholder="" class="input-account" value="{{ $nm->nilai_ukk_teori }}">
+                        <input type="number" min="0" max="100" name="nilai_ukk_teori[]" id="nilai_ukk_teori" placeholder="" class="input-account" value="{{ $nm->nilai_ukk_teori }}">
                     </div>
 
                     <div>
                         <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-slate-400">Nilai UKK Praktek</span>
-                        <input type="number" min="1" max="100" name="nilai_ukk_praktek[]" id="nilai_ukk_praktek" placeholder="" class="input-account" value="{{ $nm->nilai_ukk_praktek }}">
+                        <input type="number" min="0" max="100" name="nilai_ukk_praktek[]" id="nilai_ukk_praktek" placeholder="" class="input-account" value="{{ $nm->nilai_ukk_praktek }}">
                     </div>
                 </div>
 

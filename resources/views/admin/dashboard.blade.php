@@ -30,7 +30,7 @@
                   <i class="fa-solid fa-user tw-text-6xl"></i>
                   <div class="card-account-title">Staff TU</div>
                   <div class="tw-font-ubuntu tw-font-medium tw-text-gray-300 -tw-mt-1">2 account</div>
-                  <a href="/show-detail">
+                  <a href="/admin/account">
                      <div class="card-account-btn">View</div>
                   </a>
                </div>
@@ -45,7 +45,7 @@
                   <i class="fa-solid fa-user tw-text-6xl"></i>
                   <div class="card-account-title">Kesiswaan</div>
                   <div class="tw-font-ubuntu tw-font-medium tw-text-gray-300 -tw-mt-1">2 account</div>
-                  <a href="/show-detail">
+                  <a href="/admin/account">
                      <div class="card-account-btn">View</div>
                   </a>
                </div>
@@ -60,7 +60,7 @@
                   <i class="fa-solid fa-user tw-text-6xl"></i>
                   <div class="card-account-title">Wali Kelas</div>
                   <div class="tw-font-ubuntu tw-font-medium tw-text-gray-300 -tw-mt-1">2 account</div>
-                  <a href="/show-detail">
+                  <a href="/admin/account">
                      <div class="card-account-btn">View</div>
                   </a>
                </div>
@@ -75,7 +75,7 @@
                   <i class="fa-solid fa-user tw-text-6xl"></i>
                   <div class="card-account-title">Kurikulum</div>
                   <div class="tw-font-ubuntu tw-font-medium tw-text-gray-300 -tw-mt-1">2 account</div>
-                  <a href="/show-detail">
+                  <a href="/admin/account">
                      <div class="card-account-btn">View</div>
                   </a>
                </div>
@@ -84,7 +84,7 @@
       </section>
       
       {{-- data management --}}
-      <section class="shadow-cs tw-bg-white tw-px-8 tw-py-7 tw-w-full">
+      <section class="shadow-cs tw-bg-white tw-px-8 tw-py-7 tw-mt-8 tw-w-full">
          <div class="tw-flex">
             <i class="fa-regular fa-sliders tw-text-[#90C2C2] tw-text-xl"></i>
             <div class="tw-text-xl tw-ml-3 tw-font-pop tw-font-semibold tw-text-gray-400">Data Management</div>

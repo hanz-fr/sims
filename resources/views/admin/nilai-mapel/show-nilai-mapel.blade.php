@@ -18,10 +18,9 @@
                     </button>
                 </div>
                 <div class="tw-flex ">
-                    <a href="/admin/rapor/create"
-                        class="tw-bg-admin-300 tw-text-white hover:tw-text-white hover:tw-bg-admin-600  tw-font-ubuntu tw-font-bold tw-rounded-lg tw-px-5 tw-py-2">
-                        <i class="fa-solid fa-circle-plus tw-pr-3"></i>
-                        Add Nilai Mapel
+                    <a href="/admin/nilai-mapel/create" class="tw-bg-admin-300 hover:tw-bg-admin-400 tw-text-white tw-font-ubuntu tw-py-2.5 tw-text-sm tw-px-6 tw-rounded-lg tw-h-fit tw-items-center tw-flex">
+                        <i class="fa-regular fa-square-plus tw-mr-4 tw-text-xl"></i>
+                            Add New Nilai Mapel
                     </a>
                 </div>
             </div>
@@ -30,102 +29,20 @@
                 <table class=" tw-w-full tw-text-center">
                     <thead class="tw-text-lg tw-font-pop tw-text-white tw-bg-[#5A6C7C]">
                         <tr>
-                            <th scope="col" class="tw-py-3 tw-px-6">ID MAPEL</th>
-                            <th scope="col" class="tw-py-3 tw-px-6">ID RAPOR</th>
+                            <th scope="col" class="tw-py-3 tw-px-6">NIS</th>
                             <th scope="col" class="tw-py-3 tw-px-6">Nama Siswa</th>
+                            <th scope="col" class="tw-py-3 tw-px-6">ID KELAS</th>
+                            <th scope="col" class="tw-py-3 tw-px-6">ID RAPOR</th>
                             <th scope="col" class="tw-py-3 tw-px-6">Created</th>         
-                            <th scope="col" class="tw-py-3 tw-px-6">Action</th>
+                            <th scope="col" class="tw-py-3 tw-px-6"></th>
                         </tr>
                     </thead>
                     <tbody class="tw-text-sm">
                         <tr class="tw-bg-white tw-text-[#B4B8BC] tw-font-bold text-lg tw-font-ubuntu">
-                            <td class="tw-py-6 tw-px-5 tw-border-b">RPR981</td>
-                            <td class="tw-py-6 tw-px-5 tw-border-b">RPR981</td>
+                            <td class="tw-py-6 tw-px-5 tw-border-b">201019210391</td>
                             <td class="tw-py-6 tw-px-5 tw-border-b">Baharudin Sharon</td>
-                            <td class="tw-py-6 tw-px-5 tw-border-b">30 February 2023</td>
-                            <td class="tw-py-6 tw-px-5 tw-border-b">
-                                <a href="/admin/detail-nilai-mapel"
-                                    class="tw-bg-admin-300 hover:tw-bg-admin-600 tw-text-white tw-px-7 tw-py-3 tw-rounded-lg">
-                                    View
-                                </a>
-                            </td>
-                        </tr>
-                        <tr class="tw-bg-white tw-text-[#B4B8BC] tw-font-bold text-lg tw-font-ubuntu">
+                            <td class="tw-py-6 tw-px-5 tw-border-b">XIRPL2</td>
                             <td class="tw-py-6 tw-px-5 tw-border-b">RPR981</td>
-                            <td class="tw-py-6 tw-px-5 tw-border-b">RPR981</td>
-                            <td class="tw-py-6 tw-px-5 tw-border-b">Baharudin Sharon</td>
-                            <td class="tw-py-6 tw-px-5 tw-border-b">30 February 2023</td>
-                            <td class="tw-py-6 tw-px-5 tw-border-b">
-                                <a href="/admin/detail-nilai-mapel"
-                                    class="tw-bg-admin-300 hover:tw-bg-admin-600 tw-text-white tw-px-7 tw-py-3 tw-rounded-lg">
-                                    View
-                                </a>
-                            </td>
-                        </tr>
-                        <tr class="tw-bg-white tw-text-[#B4B8BC] tw-font-bold text-lg tw-font-ubuntu">
-                            <td class="tw-py-6 tw-px-5 tw-border-b">RPR981</td>
-                            <td class="tw-py-6 tw-px-5 tw-border-b">RPR981</td>
-                            <td class="tw-py-6 tw-px-5 tw-border-b">Baharudin Sharon</td>
-                            <td class="tw-py-6 tw-px-5 tw-border-b">30 February 2023</td>
-                            <td class="tw-py-6 tw-px-5 tw-border-b">
-                                <a href="/admin/detail-nilai-mapel"
-                                    class="tw-bg-admin-300 hover:tw-bg-admin-600 tw-text-white tw-px-7 tw-py-3 tw-rounded-lg">
-                                    View
-                                </a>
-                            </td>
-                        </tr>
-                        <tr class="tw-bg-white tw-text-[#B4B8BC] tw-font-bold text-lg tw-font-ubuntu">
-                            <td class="tw-py-6 tw-px-5 tw-border-b">RPR981</td>
-                            <td class="tw-py-6 tw-px-5 tw-border-b">RPR981</td>
-                            <td class="tw-py-6 tw-px-5 tw-border-b">Baharudin Sharon</td>
-                            <td class="tw-py-6 tw-px-5 tw-border-b">30 February 2023</td>
-                            <td class="tw-py-6 tw-px-5 tw-border-b">
-                                <a href="/admin/detail-nilai-mapel"
-                                    class="tw-bg-admin-300 hover:tw-bg-admin-600 tw-text-white tw-px-7 tw-py-3 tw-rounded-lg">
-                                    View
-                                </a>
-                            </td>
-                        </tr>
-                        <tr class="tw-bg-white tw-text-[#B4B8BC] tw-font-bold text-lg tw-font-ubuntu">
-                            <td class="tw-py-6 tw-px-5 tw-border-b">RPR981</td>
-                            <td class="tw-py-6 tw-px-5 tw-border-b">RPR981</td>
-                            <td class="tw-py-6 tw-px-5 tw-border-b">Baharudin Sharon</td>
-                            <td class="tw-py-6 tw-px-5 tw-border-b">30 February 2023</td>
-                            <td class="tw-py-6 tw-px-5 tw-border-b">
-                                <a href="/admin/detail-nilai-mapel"
-                                    class="tw-bg-admin-300 hover:tw-bg-admin-600 tw-text-white tw-px-7 tw-py-3 tw-rounded-lg">
-                                    View
-                                </a>
-                            </td>
-                        </tr>
-                        <tr class="tw-bg-white tw-text-[#B4B8BC] tw-font-bold text-lg tw-font-ubuntu">
-                            <td class="tw-py-6 tw-px-5 tw-border-b">RPR981</td>
-                            <td class="tw-py-6 tw-px-5 tw-border-b">RPR981</td>
-                            <td class="tw-py-6 tw-px-5 tw-border-b">Baharudin Sharon</td>
-                            <td class="tw-py-6 tw-px-5 tw-border-b">30 February 2023</td>
-                            <td class="tw-py-6 tw-px-5 tw-border-b">
-                                <a href="/admin/detail-nilai-mapel"
-                                    class="tw-bg-admin-300 hover:tw-bg-admin-600 tw-text-white tw-px-7 tw-py-3 tw-rounded-lg">
-                                    View
-                                </a>
-                            </td>
-                        </tr>
-                        <tr class="tw-bg-white tw-text-[#B4B8BC] tw-font-bold text-lg tw-font-ubuntu">
-                            <td class="tw-py-6 tw-px-5 tw-border-b">RPR981</td>
-                            <td class="tw-py-6 tw-px-5 tw-border-b">RPR981</td>
-                            <td class="tw-py-6 tw-px-5 tw-border-b">Baharudin Sharon</td>
-                            <td class="tw-py-6 tw-px-5 tw-border-b">30 February 2023</td>
-                            <td class="tw-py-6 tw-px-5 tw-border-b">
-                                <a href="/admin/detail-nilai-mapel"
-                                    class="tw-bg-admin-300 hover:tw-bg-admin-600 tw-text-white tw-px-7 tw-py-3 tw-rounded-lg">
-                                    View
-                                </a>
-                            </td>
-                        </tr>
-                        <tr class="tw-bg-white tw-text-[#B4B8BC] tw-font-bold text-lg tw-font-ubuntu">
-                            <td class="tw-py-6 tw-px-5 tw-border-b">RPR981</td>
-                            <td class="tw-py-6 tw-px-5 tw-border-b">RPR981</td>
-                            <td class="tw-py-6 tw-px-5 tw-border-b">Baharudin Sharon</td>
                             <td class="tw-py-6 tw-px-5 tw-border-b">30 February 2023</td>
                             <td class="tw-py-6 tw-px-5 tw-border-b">
                                 <a href="/admin/detail-nilai-mapel"

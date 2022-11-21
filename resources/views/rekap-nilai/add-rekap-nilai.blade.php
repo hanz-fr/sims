@@ -79,8 +79,6 @@
                 </div>
             </div>
 
-            <div class="tw-flex tw-justify-center">
-                <div class="card-data-bright tw-flex tw-flex-col tw-w-11/12 tw-my-5">
 
                     <div class="tw-flex tw-justify-center tw-gap-10 tw-mx-5 tw-px-20 tw-my-5 tw-py-10">
 
@@ -127,46 +125,48 @@
                     </div>
                 </div>
 
-                <div class="tw-flex tw-gap-10">
-                    {{-- COLUMN 1 --}}
-                    <div class="tw-flex tw-flex-col tw-gap-8">
-                        <div>
-                            <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-xs tw-text-slate-400">Nilai Pengetahuan</span>
-                            <input type="number" max="100" min="1" name="nilai_pengetahuan[]" id="nilai_pengetahuan" placeholder="" class="tw-block tw-text-gray-400 tw-w-full tw-font-pop tw-border tw-border-[#E3E3E3] tw-mt-2 tw-rounded-md tw-py-3 tw-px-8 tw-bg-white focus:tw-shadow-sm focus:tw-shadow-admin-300 focus:tw-border-admin-300 focus:tw-outline-none tw-text-xs">
-                        </div>
-
-                        <div>
-                            <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-xs tw-text-slate-400">Nilai Keterampilan</span>
-                            <input type="number" max="100" min="1" name="nilai_keterampilan[]" id="nilai_keterampilan" placeholder="" class="tw-block tw-text-gray-400 tw-w-full tw-font-pop tw-border tw-border-[#E3E3E3] tw-mt-2 tw-rounded-md tw-py-3 tw-px-8 tw-bg-white focus:tw-shadow-sm focus:tw-shadow-admin-300 focus:tw-border-admin-300 focus:tw-outline-none tw-text-xs">
-                        </div>
-
-                        {{-- <div>
-                            <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-xs tw-text-slate-400">KKM</span>
-                            <input type="number" max="100" min="1" name="kkm[]" id="kkm" placeholder="" class="tw-block tw-text-gray-400 tw-w-full tw-font-pop tw-border tw-border-[#E3E3E3] tw-mt-2 tw-rounded-md tw-py-3 tw-px-8 tw-bg-white focus:tw-shadow-sm focus:tw-shadow-admin-300 focus:tw-border-admin-300 focus:tw-outline-none tw-text-xs">
-                        </div> --}}
+                {{-- COLUMN 1 --}}
+                <div class="tw-flex tw-flex-col tw-gap-8">
+                    <div>
+                        <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-slate-400">Nilai Pengetahuan</span>
+                        <input type="number" max="100" min="0" name="nilai_pengetahuan[]" id="nilai_pengetahuan" placeholder="" class="input-account">
                     </div>
-                    <div class="tw-flex tw-flex-col tw-gap-8">
-                        <div>
-                            <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-xs tw-text-slate-400">Nilai US Teori</span>
-                            <input type="number" max="100" min="1" name="nilai_us_teori[]" id="nilai_us_teori" placeholder="" class="tw-block tw-text-gray-400 tw-w-full tw-font-pop tw-border tw-border-[#E3E3E3] tw-mt-2 tw-rounded-md tw-py-3 tw-px-8 tw-bg-white focus:tw-shadow-sm focus:tw-shadow-admin-300 focus:tw-border-admin-300 focus:tw-outline-none tw-text-xs">
-                        </div>
 
-                        <div>
-                            <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-xs tw-text-slate-400">Nilai US Praktek</span>
-                            <input type="number" max="100" min="1" name="nilai_us_praktek[]" id="nilai_us_praktek" placeholder="" class="tw-block tw-text-gray-400 tw-w-full tw-font-pop tw-border tw-border-[#E3E3E3] tw-mt-2 tw-rounded-md tw-py-3 tw-px-8 tw-bg-white focus:tw-shadow-sm focus:tw-shadow-admin-300 focus:tw-border-admin-300 focus:tw-outline-none tw-text-xs">
-                        </div>
-
+                    <div>
+                        <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-slate-400">Nilai Keterampilan</span>
+                        <input type="number" max="100" min="0" name="nilai_keterampilan[]" id="nilai_keterampilan" placeholder="" class="input-account">
                     </div>
-                    <div class="tw-flex tw-flex-col tw-gap-8">
-                        <div>
-                            <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-xs tw-text-slate-400">Nilai UKK Teori</span>
-                            <input type="number" max="100" min="1" name="nilai_ukk_teori[]" id="nilai_ukk_teori" placeholder="" class="tw-block tw-text-gray-400 tw-w-full tw-font-pop tw-border tw-border-[#E3E3E3] tw-mt-2 tw-rounded-md tw-py-3 tw-px-8 tw-bg-white focus:tw-shadow-sm focus:tw-shadow-admin-300 focus:tw-border-admin-300 focus:tw-outline-none tw-text-xs">
-                        </div>
 
-                        <div>
-                            <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-xs tw-text-slate-400">Nilai UKK Praktek</span>
-                            <input type="number" max="100" min="1" name="nilai_ukk_praktek[]" id="nilai_ukk_praktek" placeholder="" class="tw-block tw-text-gray-400 tw-w-full tw-font-pop tw-border tw-border-[#E3E3E3] tw-mt-2 tw-rounded-md tw-py-3 tw-px-8 tw-bg-white focus:tw-shadow-sm focus:tw-shadow-admin-300 focus:tw-border-admin-300 focus:tw-outline-none tw-text-xs">
-                        </div>
+                    <div>
+                        <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-slate-400">AKM</span>
+                        <input type="number" max="100" min="0" name="nilai_akm[]" id="nilai_akm" placeholder="" class="input-account">
+                    </div>
+                    {{-- <div>
+                        <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-slate-400">KKM</span>
+                        <input type="number" max="100" min="0" name="kkm[]" id="kkm" placeholder="" class="input-account">
+                    </div> --}}
+                </div>
+                <div class="tw-flex tw-flex-col tw-gap-8">
+                    <div>
+                        <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-slate-400">Nilai US Teori</span>
+                        <input type="number" max="100" min="0" name="nilai_us_teori[]" id="nilai_us_teori" placeholder="" class="input-account">
+                    </div>
+
+                    <div>
+                        <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-slate-400">Nilai US Praktek</span>
+                        <input type="number" max="100" min="0" name="nilai_us_praktek[]" id="nilai_us_praktek" placeholder="" class="input-account">
+                    </div>
+
+                </div>
+                <div class="tw-flex tw-flex-col tw-gap-8">
+                    <div>
+                        <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-slate-400">Nilai UKK Teori</span>
+                        <input type="number" max="100" min="0" name="nilai_ukk_teori[]" id="nilai_ukk_teori" placeholder="" class="input-account">
+                    </div>
+
+                    <div>
+                        <span class="tw-font-pop tw-mx-3 tw-font-medium tw-text-slate-400">Nilai UKK Praktek</span>
+                        <input type="number" max="100" min="0" name="nilai_ukk_praktek[]" id="nilai_ukk_praktek" placeholder="" class="input-account">
                     </div>
                 </div>
 
