@@ -1122,6 +1122,11 @@ video {
   margin-right: 1.75rem;
 }
 
+.tw-mx-12 {
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
 .tw-mt-5 {
   margin-top: 1.25rem;
 }
@@ -2000,11 +2005,6 @@ video {
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
 
-.tw-border-oren-300 {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 183 160 / var(--tw-border-opacity));
-}
-
 .tw-border-b-white {
   --tw-border-opacity: 1;
   border-bottom-color: rgb(255 255 255 / var(--tw-border-opacity));
@@ -2222,11 +2222,6 @@ video {
 .tw-bg-warning-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(255 207 134 / var(--tw-bg-opacity));
-}
-
-.tw-bg-oren-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 163 134 / var(--tw-bg-opacity));
 }
 
 .tw-bg-\[\#95BBE8\] {
@@ -2450,11 +2445,6 @@ video {
 .tw-px-28 {
   padding-left: 7rem;
   padding-right: 7rem;
-}
-
-.tw-px-1 {
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
 }
 
 .tw-pt-8 {
@@ -2929,9 +2919,14 @@ video {
   color: rgb(127 201 198 / var(--tw-text-opacity));
 }
 
-.tw-text-oren-300 {
+.tw-text-yellow-400 {
   --tw-text-opacity: 1;
-  color: rgb(255 183 160 / var(--tw-text-opacity));
+  color: rgb(250 204 21 / var(--tw-text-opacity));
+}
+
+.tw-text-\[\#95BBE8\] {
+  --tw-text-opacity: 1;
+  color: rgb(149 187 232 / var(--tw-text-opacity));
 }
 
 .tw-text-warning-300 {
@@ -2954,11 +2949,6 @@ video {
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
-.tw-text-\[\#95BBE8\] {
-  --tw-text-opacity: 1;
-  color: rgb(149 187 232 / var(--tw-text-opacity));
-}
-
 .tw-text-\[\#DBDBDB\] {
   --tw-text-opacity: 1;
   color: rgb(219 219 219 / var(--tw-text-opacity));
@@ -2974,9 +2964,9 @@ video {
   color: rgb(90 108 124 / var(--tw-text-opacity));
 }
 
-.tw-text-yellow-400 {
+.tw-text-silver-500 {
   --tw-text-opacity: 1;
-  color: rgb(250 204 21 / var(--tw-text-opacity));
+  color: rgb(154 154 154 / var(--tw-text-opacity));
 }
 
 .tw-underline {
@@ -3721,11 +3711,6 @@ input[type="checkbox"]:checked {
   background-color: rgb(22 163 74 / var(--tw-bg-opacity));
 }
 
-.hover\:tw-bg-\[\#3b7a7a\]:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(59 122 122 / var(--tw-bg-opacity));
-}
-
 .hover\:tw-bg-salmon-300:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(255 161 176 / var(--tw-bg-opacity));
@@ -3734,11 +3719,6 @@ input[type="checkbox"]:checked {
 .hover\:tw-bg-warning-400:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(254 164 57 / var(--tw-bg-opacity));
-}
-
-.hover\:tw-bg-oren-300:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 183 160 / var(--tw-bg-opacity));
 }
 
 .hover\:tw-bg-slate-200:hover {
