@@ -16,7 +16,7 @@ class RekapNilaiExport implements FromView, ShouldAutoSize
     public function __construct()
     {
         
-        $this->url = 'https://9393-103-148-113-86.ap.ngrok.io';
+        $this->url = 'https://0d71-103-148-113-86.ap.ngrok.io';
     }
     /**
     * @return \Illuminate\Support\View
