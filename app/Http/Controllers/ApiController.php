@@ -32,7 +32,7 @@ class ApiController extends Controller
     public function __construct()
     {
 
-        $this->api_url = 'https://0d71-103-148-113-86.ap.ngrok.io'; // Ganti link NGROK disini
+        $this->api_url = '127.0.0.1:3000'; // Ganti link NGROK disini
 
 
         $this->sims_url = 'http://127.0.0.1:8000'; // SIMS URL
@@ -340,12 +340,10 @@ class ApiController extends Controller
                         'RaportId' => $RaportId,
                         'nilai_pengetahuan' => (int)$nilai_pengetahuan[$i],
                         'nilai_keterampilan' => (int)$nilai_keterampilan[$i],
-                        'kkm' => (int)$kkm[$i],
                         'nilai_us_teori' => (int)$nilai_us_teori[$i],
                         'nilai_us_praktek' => (int)$nilai_us_praktek[$i],
                         'nilai_ukk_teori' => (int)$nilai_ukk_teori[$i],
                         'nilai_ukk_praktek' => (int)$nilai_ukk_praktek[$i],
-                        'nilai_akm' => (int)$nilai_akm[$i],
                     ]);
                 }
             }
@@ -381,7 +379,6 @@ class ApiController extends Controller
             $message = json_decode($siswaExist);
 
         }
-
 
         if ($message == 'Displaying siswa with nis : ' . $nis) {
 
@@ -439,12 +436,10 @@ class ApiController extends Controller
                         'RaportId' => $RaportId,
                         'nilai_pengetahuan' => (int)$nilai_pengetahuan[$i],
                         'nilai_keterampilan' => (int)$nilai_keterampilan[$i],
-                        'kkm' => (int)$kkm[$i],
                         'nilai_us_teori' => (int)$nilai_us_teori[$i],
                         'nilai_us_praktek' => (int)$nilai_us_praktek[$i],
                         'nilai_ukk_teori' => (int)$nilai_ukk_teori[$i],
                         'nilai_ukk_praktek' => (int)$nilai_ukk_praktek[$i],
-                        'nilai_akm' => (int)$nilai_akm[$i],
                     ]);
                 }
             }
@@ -866,8 +861,6 @@ class ApiController extends Controller
 
         return view('rekap-nilai.pdf.rekap-nilai', [
             'siswa' => json_decode($response)->result,
-            'raport1' => json_decode($response)->result->raport[0],
-            'raport2' => json_decode($response)->result->raport[1],
             'mapel' => json_decode($mapel),
             'raport01' => json_decode($raport01)->rows,
             'raport02' => json_decode($raport02)->rows,
