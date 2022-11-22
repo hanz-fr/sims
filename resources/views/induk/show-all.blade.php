@@ -313,78 +313,77 @@
                                     </button>
 
                                     <div id="popup-data" tabindex="-1"
-                                    class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 md:h-full">
-                                      <div class="relative p-4 w-full max-w-md h-full md:h-auto">
-                                          <div class="tw-relative tw-mb-5 tw-bg-white tw-rounded-lg tw-shadow dark:tw-bg-slate-100 tw-font-pop">
-                                              <button type="button"
-                                                class="tw-absolute tw-top-3 tw-right-2.5 tw-text-gray-400 tw-bg-transparent hover:tw-bg-gray-200 hover:tw-text-gray-900 tw-rounded-lg tw-text-sm tw-p-1.5 tw-ml-auto tw-inline-flex tw-items-center"
-                                                data-modal-toggle="popup-data">
-                                                  <svg aria-hidden="true" class="tw-w-5 tw-h-5" fill="currentColor"
-                                                      viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                                      <path fill-rule="evenodd"
-                                                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                                        clip-rule="evenodd">
-                                                      </path>
-                                                  </svg>
-                                                  <span class="sr-only">Close modal</span>
-                                              </button>
-                                              <div class="tw-p-8">
-                  
-                                                      <div x-data="{ files: null }" id="FileUpload" class="">
-                                                          <label class="tw-flex tw-flex-col tw-w-full tw-h-56 tw-border-4 tw-border-admin-200 tw-border-dashed tw-justify-center tw-items-center hover:tw-bg-gray-100 hover:tw-border-gray-300 tw-px-10" for="">
-                                                            <input type="file" multiple
-                                                                 class="tw-absolute tw-outline-none tw-opacity-0"
-                                                                 x-on:change="files = $event.target.files; console.log($event.target.files);"
-                                                                 x-on:dragover="$el.classList.add('active')" x-on:dragleave="$el.classList.remove('active')" x-on:drop="$el.classList.remove('active')"
-                                                              >
-                                                          
-                                                              <template x-if="files !== null">
-                                                                  <div class="tw-flex tw-flex-col tw-space-y-1">
-                                                                      <template x-for="(_,index) in Array.from({ length: files.length })">
-                                                                          <div class="tw-flex tw-flex-row tw-items-center tw-space-x-2">
-                                                                              <template x-if="files[index].type.includes('audio/')"><i class="far fa-file-audio fa-fw"></i></template>
-                                                                              <template x-if="files[index].type.includes('application/')"><i class="far fa-file-alt fa-fw"></i></template>
-                                                                              <template x-if="files[index].type.includes('image/')"><i class="far fa-file-image fa-fw"></i></template>
-                                                                              <template x-if="files[index].type.includes('video/')"><i class="far fa-file-video fa-fw"></i></template>
-                                                                              <span class="tw-font-medium tw-text-gray-400" x-text="files[index].name">Uploading</span>
-                                                                              <span class="tw-text-xs tw-self-end tw-text-gray-400" x-text="filesize(files[index].size)">...</span>
-                                                                          </div>
-                                                                      </template>
-                                                                  </div>
-                                                              </template>
-                                                              <template x-if="files === null">
-                                                                  <div class="tw-flex tw-flex-col tw-space-y-2 tw-items-center tw-justify-center">
-                                                                    <svg  @click="show=false" xmlns="http://www.w3.org/2000/svg" class="tw-w-8 tw-h-8 tw-text-gray-400 group-hover:tw-text-gray-600"
-                                                                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                                        d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                                                                  </svg>
-                                                                      <p class="tw-text-gray-700">Drag your files here or click in this area.</p>
-                                                                  </div>
-                                                              </template>
-                                                        </label>
-                                                        <div class="tw-grid tw-gap-3 tw-mt-3">
-                                                            <button type="submit" class="tw-w-full tw-px-5 tw-py-2 tw-text-white tw-bg-sims-400 hover:tw-bg-sims-300 tw-rounded tw-shadow-xl">Import</button>
-                                                            <button type="button" data-modal-toggle="popup-data" class="tw-w-full tw-px-5 tw-py-2 tw-text-white tw-bg-gray-500 hover:tw-bg-gray-400 tw-rounded tw-shadow-xl">Batal</button>
-                                                      </div>
-                                                      </div>
-                  
-                                                  </div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-
-
-
+                                      class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 md:h-full">
+                                        <div class="relative p-4 w-full max-w-md h-full md:h-auto">
+                                            <div class="tw-relative tw-mb-5 tw-bg-white tw-rounded-lg tw-shadow dark:tw-bg-slate-100 tw-font-pop">
+                                                <button type="button"
+                                                    class="tw-absolute tw-top-1.5 tw-right-1.5 tw-text-gray-400 tw-bg-transparent hover:tw-bg-gray-200 hover:tw-text-gray-900 tw-rounded-lg tw-text-sm tw-p-1.5 tw-ml-auto tw-inline-flex tw-items-center"
+                                                    data-modal-toggle="popup-data">
+                                                    <svg aria-hidden="true" class="tw-w-5 tw-h-5" fill="currentColor"
+                                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd"
+                                                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                                            clip-rule="evenodd">
+                                                        </path>
+                                                    </svg>
+                                                    <span class="sr-only">Close modal</span>
+                                                </button>
+                                                <div class="tw-px-8 tw-pb-6 tw-pt-10">
+                    
+                                                    <div x-data="{ files: null }" id="FileUpload" class="">
+                                                        <form action="/api/siswa/import" method="post" enctype="multipart/form-data">
+                                                            @csrf
+                                                            <label class="tw-flex tw-flex-col tw-w-full tw-h-56 tw-border-4 tw-border-admin-200 tw-border-dashed tw-justify-center tw-items-center hover:tw-bg-gray-100 hover:tw-border-gray-300 tw-px-10" for="">
+                                                                <input type="file" name="uploaded_file" multiple
+                                                                    class="tw-absolute tw-outline-none tw-top-10 tw-bottom-32 tw-opacity-0"
+                                                                    x-on:change="files = $event.target.files; console.log($event.target.files);"
+                                                                    x-on:dragover="$el.classList.add('active')" x-on:dragleave="$el.classList.remove('active')" x-on:drop="$el.classList.remove('active')"
+                                                                >
+                                                            
+                                                                <template x-if="files !== null">
+                                                                    <div class="tw-flex tw-flex-col tw-space-y-1">
+                                                                        <template x-for="(_,index) in Array.from({ length: files.length })">
+                                                                            <div class="tw-flex tw-flex-row tw-items-center tw-space-x-2">
+                                                                                <template x-if="files[index].type.includes('audio/')"><i class="far fa-file-audio fa-fw"></i></template>
+                                                                                <template x-if="files[index].type.includes('application/')"><i class="far fa-file-alt fa-fw"></i></template>
+                                                                                <template x-if="files[index].type.includes('image/')"><i class="far fa-file-image fa-fw"></i></template>
+                                                                                <template x-if="files[index].type.includes('video/')"><i class="far fa-file-video fa-fw"></i></template>
+                                                                                <span class="tw-font-medium tw-text-gray-400" x-text="files[index].name">Uploading</span>
+                                                                                <span class="tw-text-xs tw-self-end tw-text-gray-400" x-text="filesize(files[index].size)">...</span>
+                                                                            </div>
+                                                                        </template>
+                                                                    </div>
+                                                                </template>
+                                                                <template x-if="files === null">
+                                                                    <div class="tw-flex tw-flex-col tw-space-y-2 tw-items-center tw-justify-center">
+                                                                        <svg  @click="show=false" xmlns="http://www.w3.org/2000/svg" class="tw-w-8 tw-h-8 tw-text-gray-400 group-hover:tw-text-gray-600"
+                                                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                                            d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                                                                    </svg>
+                                                                        <p class="tw-text-gray-700">Drag your files here or click in this area.</p>
+                                                                    </div>
+                                                                </template>
+                                                            </label>
+                                                            <div class="tw-grid tw-gap-3 tw-mt-3">
+                                                                <button type="submit" class="tw-w-full tw-px-5 tw-py-2 tw-text-white tw-bg-sims-400 hover:tw-bg-sims-300 tw-rounded tw-shadow-xl">Import</button>
+                                                                <button type="button" data-modal-toggle="popup-data" class="tw-w-full tw-px-5 tw-py-2 tw-text-white tw-bg-gray-500 hover:tw-bg-gray-400 tw-rounded tw-shadow-xl">Batal</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                @endcan
             </div>
-        </section>
+            @endcan
+        </div>
+    </section>
 
         @if(isset($siswa))
         <section class="tw-overflow-x-auto tw-relative tw-shadow-md tw-rounded-top-xl tw-mt-5">

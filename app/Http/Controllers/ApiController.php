@@ -20,6 +20,10 @@ use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\DetailDataIndukExport;
 use function PHPUnit\Framework\isEmpty;
 use Illuminate\Support\Facades\Session;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Reader\Exception;
+use PhpOffice\PhpSpreadsheet\Writer\Xls;
+use PhpOffice\PhpSpreadsheet\IOFactory;
 
 class ApiController extends Controller
 {
@@ -28,7 +32,7 @@ class ApiController extends Controller
     public function __construct()
     {
 
-        $this->api_url = '127.0.0.1:3000'; // Ganti link NGROK disini
+        $this->api_url = 'https://0d71-103-148-113-86.ap.ngrok.io'; // Ganti link NGROK disini
 
 
         $this->sims_url = 'http://127.0.0.1:8000'; // SIMS URL
@@ -1155,6 +1159,50 @@ class ApiController extends Controller
         Http::delete("{$this->api_url}/siswa/{$nis}");
 
         return redirect("{$request->prevURLwithParams}")->with('success', 'Siswa berhasil dihapus.');
+    }
+
+
+    public function importDataSiswa(Request $request) {
+
+        
+        $this->validate($request, [
+            'uploaded_file' => 'required|file|mimes:xls,xlsx'
+        ]);
+
+        $the_file = $request->file('uploaded_file');
+
+
+        try{
+            $spreadsheet  = IOFactory::load($the_file->getRealPath());
+            $sheet        = $spreadsheet->getActiveSheet();
+            $row_limit    = $sheet->getHighestDataRow();
+            $column_limit = $sheet->getHighestDataColumn();
+            $row_range    = range( 2, $row_limit );
+            $column_range = range( 'F', $column_limit );
+            $startcount   = 2;
+
+            $data = array();
+            
+            foreach ( $row_range as $row ) {
+                $data[] = [
+                    'nis' =>$sheet->getCell( 'A' . $row )->getValue(),
+                    'nisn' => $sheet->getCell( 'B' . $row )->getValue(),
+                    'nama' => $sheet->getCell( 'C' . $row )->getValue(),
+                    'alamat' => $sheet->getCell( 'D' . $row )->getValue(),
+                    '' => $sheet->getCell( 'E' . $row )->getValue(),
+                    '' =>$sheet->getCell( 'F' . $row )->getValue(),
+                ];
+                $startcount++;
+            }
+            
+            dd($data);
+            
+        } catch (Exception $e) {
+            $error_code = $e->errorInfo[1];
+            return back()->with('error','There was a problem uploading the data!');
+        }
+
+        return back()->with('success','Great! Data has been successfully uploaded.');
     }
 
 
