@@ -306,12 +306,11 @@ class ApiController extends Controller
             $idMapelJurusan = $request->idMapelJurusan;
             $nilai_pengetahuan = $request->nilai_pengetahuan;
             $nilai_keterampilan = $request->nilai_keterampilan;
-            $kkm = $request->kkm;
             $nilai_us_teori = $request->nilai_us_teori;
             $nilai_us_praktek = $request->nilai_us_praktek;
             $nilai_ukk_teori = $request->nilai_ukk_teori;
             $nilai_ukk_praktek = $request->nilai_ukk_praktek;
-            $nilai_akm = $request->nilai_akm;
+/*             $nilai_akm = $request->nilai_akm; */
             
     
             $response = Http::put("{$this->api_url}/raport/{$RaportId}", [
@@ -336,12 +335,11 @@ class ApiController extends Controller
                         'RaportId' => $RaportId,
                         'nilai_pengetahuan' => (int)$nilai_pengetahuan[$i],
                         'nilai_keterampilan' => (int)$nilai_keterampilan[$i],
-                        'kkm' => (int)$kkm[$i],
                         'nilai_us_teori' => (int)$nilai_us_teori[$i],
                         'nilai_us_praktek' => (int)$nilai_us_praktek[$i],
                         'nilai_ukk_teori' => (int)$nilai_ukk_teori[$i],
                         'nilai_ukk_praktek' => (int)$nilai_ukk_praktek[$i],
-                        'nilai_akm' => (int)$nilai_akm[$i],
+/*                         'nilai_akm' => (int)$nilai_akm[$i], */
                     ]);
                 }
             }
@@ -397,12 +395,11 @@ class ApiController extends Controller
             $idMapelJurusan = $request->idMapelJurusan;
             $nilai_pengetahuan = $request->nilai_pengetahuan;
             $nilai_keterampilan = $request->nilai_keterampilan;
-            $kkm = $request->kkm;
             $nilai_us_teori = $request->nilai_us_teori;
             $nilai_us_praktek = $request->nilai_us_praktek;
             $nilai_ukk_teori = $request->nilai_ukk_teori;
             $nilai_ukk_praktek = $request->nilai_ukk_praktek;
-            $nilai_akm = $request->nilai_akm;
+            /* $nilai_akm = $request->nilai_akm; */
 
 
             // RaportId check
@@ -435,18 +432,16 @@ class ApiController extends Controller
                         'RaportId' => $RaportId,
                         'nilai_pengetahuan' => (int)$nilai_pengetahuan[$i],
                         'nilai_keterampilan' => (int)$nilai_keterampilan[$i],
-                        'kkm' => (int)$kkm[$i],
                         'nilai_us_teori' => (int)$nilai_us_teori[$i],
                         'nilai_us_praktek' => (int)$nilai_us_praktek[$i],
                         'nilai_ukk_teori' => (int)$nilai_ukk_teori[$i],
                         'nilai_ukk_praktek' => (int)$nilai_ukk_praktek[$i],
-                        'nilai_akm' => (int)$nilai_akm[$i],
+                        /* 'nilai_akm' => (int)$nilai_akm[$i], */
                     ]);
                 }
             }
 
             $response->throw();
-
 
             return redirect('rekap-nilai/'.$request->nis_siswa)->with('success', 'Rekap nilai baru ditambahkan.');
         
@@ -846,7 +841,8 @@ class ApiController extends Controller
         $nis = json_decode($response)->result->nis_siswa;
         $jurusanSiswa = json_decode($response)->result->kelas->JurusanId;
         $mapel = Http::get("{$this->api_url}/mapel-jurusan/get/by-jurusan/$jurusanSiswa");
-        
+
+
         $raportId = "RPT{$nis}";
 
         $raport01 = Http::get("{$this->api_url}/nilai-mapel/get-by/{$raportId}-1");
@@ -859,11 +855,9 @@ class ApiController extends Controller
         /* return json_decode($raport01)->rows; */
 
 
-
         return view('rekap-nilai.pdf.rekap-nilai', [
             'siswa' => json_decode($response)->result,
             'raport1' => json_decode($response)->result->raport[0],
-            'raport2' => json_decode($response)->result->raport[1],
             'mapel' => json_decode($mapel),
             'raport01' => json_decode($raport01)->rows,
             'raport02' => json_decode($raport02)->rows,
