@@ -391,7 +391,7 @@
             <table class="tw-w-full tw-text-sm tw-text-center">
                 <thead class="tw-bg-gray-100 tw-text-basic-700 tw-border tw-font-pop">
                     <tr>
-                        <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">ID</th>
+                        {{-- <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">ID</th> --}}
                         <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">NIS</th>
                         <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">NISN</th>
                         <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">NAMA PESERTA DIDIK</th>
@@ -404,7 +404,7 @@
                     @foreach ($siswa as $s)
                         
                     <tr class="tw-bg-white tw-border">
-                        <td class="tw-py-4 tw-px-6 tw-border">{{ $s->id }}</td>
+                        {{-- <td class="tw-py-4 tw-px-6 tw-border">{{ $s->id }}</td> --}}
                         <td class="tw-py-4 tw-px-6 tw-border">{{ $s->nis_siswa }}</td>
                         <td class="tw-py-4 tw-px-6 tw-border">{{ $s->nisn_siswa }}</td>
                         <td class="tw-py-4 tw-px-6 tw-border">{{ $s->nama_siswa }}</td>

@@ -42,174 +42,29 @@
                             
                             <input name="page" value="1" type="hidden">
                             <input name="perPage" value="10" type="hidden">
+                            <input type="text" name="search" id="search" class="tw-py-1 tw-px-5 tw-border-none tw-rounded-md" value="{{ request()->search }}">
 
                             @if(isset($_GET['nama_siswa'])) <input name="nama_siswa" value="{{ $_GET['nama_siswa'] }}" type="hidden"> @endif
                             @if(isset($_GET['nis_siswa'])) <input name="nis_siswa" value="{{ $_GET['nis_siswa'] }}" type="hidden"> @endif
                             @if(isset($_GET['jenis_kelamin'])) <input name="jenis_kelamin" value="{{ $_GET['jenis_kelamin'] }}" type="hidden"> @endif
-                            @if(isset($_GET['tgl_masuk'])) <input name="tgl_masuk" value="{{ $_GET['tgl_masuk'] }}" type="hidden"> @endif
+                            @if(isset($_GET['tgl_mutasi'])) <input name="tgl_mutasi" value="{{ $_GET['tgl_mutasi'] }}" type="hidden"> @endif
                             @if(isset($_GET['diterima_di_kelas'])) <input name="diterima_di_kelas" value="{{ $_GET['diterima_di_kelas'] }}" type="hidden"> @endif
                             @if(isset($_GET['pindah_dari'])) <input name="pindah_dari" value="{{ $_GET['pindah_dari'] }}" type="hidden"> @endif
                             @if(isset($_GET['alasan_mutasi'])) <input name="alasan_mutasi" value="{{ $_GET['alasan_mutasi'] }}" type="hidden"> @endif
-                            @if(isset($_GET['tglMasukDari'])) <input name="tglMasukDari" value="{{ $_GET['tglMasukDari'] }}" type="hidden"> @endif
-                            @if(isset($_GET['tglMasukKe'])) <input name="tglMasukKe" value="{{ $_GET['tglMasukKe'] }}" type="hidden"> @endif
+                            @if(isset($_GET['tgl_masuk_dari'])) <input name="tgl_masuk_dari" value="{{ $_GET['tgl_masuk_dari'] }}" type="hidden"> @endif
+                            @if(isset($_GET['tgl_masuk_ke'])) <input name="tgl_masuk_ke" value="{{ $_GET['tgl_masuk_ke'] }}" type="hidden"> @endif
 
-                            <input type="text" name="search" id="search" class="tw-py-1 tw-px-5 tw-border-none tw-rounded-md" value="{{ request()->search }}">
                             <i class="fa-solid fa-magnifying-glass tw-pr-5 tw-pl-3 tw-text-slate-600"></i>
                         </div>
                     </form>
                     <div class="tw-text-base pt-1 tw-text-basic-700 tw-ml-4 tw-mr-2 tw-font-normal tw-font-pop">Show</div>
                     <select name="show-data-perpage" id="show-data-perpage" class="tw-bg-gray-300 tw-font-bold tw-px-7 tw-rounded-xl tw-text tw-mb-2 tw-border-none">
-                        <option value="/siswa-masuk?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=10&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&nis_siswa=@isset($_GET['nis_siswa']){{ $_GET['nis_siswa'] }}@endisset&jenis_kelamin=@isset($_GET['jenis_kelamin']){{ $_GET['jenis_kelamin'] }}@endisset&tgl_mutasi=@isset($_GET['tgl_mutasi']){{ $_GET['tgl_mutasi'] }}@endisset&diterima_di_kelas=@isset($_GET['diterima_di_kelas']){{ $_GET['diterima_di_kelas'] }}@endisset&pindah_dari=@isset($_GET['pindah_dari']){{ $_GET['pindah_dari'] }}&alasan_mutasi=@isset($_GET['alasan_mutasi']){{ $_GET['alasan_mutasi'] }}&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset&tglMasukDari=@isset($_GET['tglMasukDari']){{ $_GET['tglMasukDari'] }}@endisset&tglMasukKe=@isset($_GET['tglMasukKe']){{ $_GET['tglMasukKe'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '10') selected @endif @endisset class="tw-bg-white">10</option>
-                        <option value="/siswa-masuk?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=25&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&nis_siswa=@isset($_GET['nis_siswa']){{ $_GET['nis_siswa'] }}@endisset&jenis_kelamin=@isset($_GET['jenis_kelamin']){{ $_GET['jenis_kelamin'] }}@endisset&tgl_mutasi=@isset($_GET['tgl_mutasi']){{ $_GET['tgl_mutasi'] }}@endisset&diterima_di_kelas=@isset($_GET['diterima_di_kelas']){{ $_GET['diterima_di_kelas'] }}@endisset&pindah_dari=@isset($_GET['pindah_dari']){{ $_GET['pindah_dari'] }}&alasan_mutasi=@isset($_GET['alasan_mutasi']){{ $_GET['alasan_mutasi'] }}&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset&tglMasukDari=@isset($_GET['tglMasukDari']){{ $_GET['tglMasukDari'] }}@endisset&tglMasukKe=@isset($_GET['tglMasukKe']){{ $_GET['tglMasukKe'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '25') selected @endif @endisset class="tw-bg-white">25</option>
-                        <option value="/siswa-masuk?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=50&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&nis_siswa=@isset($_GET['nis_siswa']){{ $_GET['nis_siswa'] }}@endisset&jenis_kelamin=@isset($_GET['jenis_kelamin']){{ $_GET['jenis_kelamin'] }}@endisset&tgl_mutasi=@isset($_GET['tgl_mutasi']){{ $_GET['tgl_mutasi'] }}@endisset&diterima_di_kelas=@isset($_GET['diterima_di_kelas']){{ $_GET['diterima_di_kelas'] }}@endisset&pindah_dari=@isset($_GET['pindah_dari']){{ $_GET['pindah_dari'] }}&alasan_mutasi=@isset($_GET['alasan_mutasi']){{ $_GET['alasan_mutasi'] }}&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset&tglMasukDari=@isset($_GET['tglMasukDari']){{ $_GET['tglMasukDari'] }}@endisset&tglMasukKe=@isset($_GET['tglMasukKe']){{ $_GET['tglMasukKe'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '50') selected @endif @endisset class="tw-bg-white">50</option>
-                        <option value="/siswa-masuk?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=100&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&nis_siswa=@isset($_GET['nis_siswa']){{ $_GET['nis_siswa'] }}@endisset&jenis_kelamin=@isset($_GET['jenis_kelamin']){{ $_GET['jenis_kelamin'] }}@endisset&tgl_mutasi=@isset($_GET['tgl_mutasi']){{ $_GET['tgl_mutasi'] }}@endisset&diterima_di_kelas=@isset($_GET['diterima_di_kelas']){{ $_GET['diterima_di_kelas'] }}@endisset&pindah_dari=@isset($_GET['pindah_dari']){{ $_GET['pindah_dari'] }}&alasan_mutasi=@isset($_GET['alasan_mutasi']){{ $_GET['alasan_mutasi'] }}&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset&tglMasukDari=@isset($_GET['tglMasukDari']){{ $_GET['tglMasukDari'] }}@endisset&tglMasukKe=@isset($_GET['tglMasukKe']){{ $_GET['tglMasukKe'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '100') selected @endif @endisset class="tw-bg-white">100</option>
+                        <option value="/siswa-masuk?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=10&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&nis_siswa=@isset($_GET['nis_siswa']){{ $_GET['nis_siswa'] }}@endisset&jenis_kelamin=@isset($_GET['jenis_kelamin']){{ $_GET['jenis_kelamin'] }}@endisset&tgl_mutasi=@isset($_GET['tgl_mutasi']){{ $_GET['tgl_mutasi'] }}@endisset&diterima_di_kelas=@isset($_GET['diterima_di_kelas']){{ $_GET['diterima_di_kelas'] }}@endisset&pindah_dari=@isset($_GET['pindah_dari']){{ $_GET['pindah_dari'] }}@endisset&alasan_mutasi=@isset($_GET['alasan_mutasi']){{ $_GET['alasan_mutasi'] }}@endisset&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset&tgl_masuk_dari=@isset($_GET['tgl_masuk_dari']){{ $_GET['tgl_masuk_dari'] }}@endisset&tgl_masuk_ke=@isset($_GET['tgl_masuk_ke']){{ $_GET['tgl_masuk_ke'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '10') selected @endif @endisset class="tw-bg-white">10</option>
+                        <option value="/siswa-masuk?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=25&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&nis_siswa=@isset($_GET['nis_siswa']){{ $_GET['nis_siswa'] }}@endisset&jenis_kelamin=@isset($_GET['jenis_kelamin']){{ $_GET['jenis_kelamin'] }}@endisset&tgl_mutasi=@isset($_GET['tgl_mutasi']){{ $_GET['tgl_mutasi'] }}@endisset&diterima_di_kelas=@isset($_GET['diterima_di_kelas']){{ $_GET['diterima_di_kelas'] }}@endisset&pindah_dari=@isset($_GET['pindah_dari']){{ $_GET['pindah_dari'] }}@endisset&alasan_mutasi=@isset($_GET['alasan_mutasi']){{ $_GET['alasan_mutasi'] }}@endisset&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset&tgl_masuk_dari=@isset($_GET['tgl_masuk_dari']){{ $_GET['tgl_masuk_dari'] }}@endisset&tgl_masuk_ke=@isset($_GET['tgl_masuk_ke']){{ $_GET['tgl_masuk_ke'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '25') selected @endif @endisset class="tw-bg-white">25</option>
+                        <option value="/siswa-masuk?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=50&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&nis_siswa=@isset($_GET['nis_siswa']){{ $_GET['nis_siswa'] }}@endisset&jenis_kelamin=@isset($_GET['jenis_kelamin']){{ $_GET['jenis_kelamin'] }}@endisset&tgl_mutasi=@isset($_GET['tgl_mutasi']){{ $_GET['tgl_mutasi'] }}@endisset&diterima_di_kelas=@isset($_GET['diterima_di_kelas']){{ $_GET['diterima_di_kelas'] }}@endisset&pindah_dari=@isset($_GET['pindah_dari']){{ $_GET['pindah_dari'] }}@endisset&alasan_mutasi=@isset($_GET['alasan_mutasi']){{ $_GET['alasan_mutasi'] }}@endisset&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset&tgl_masuk_dari=@isset($_GET['tgl_masuk_dari']){{ $_GET['tgl_masuk_dari'] }}@endisset&tgl_masuk_ke=@isset($_GET['tgl_masuk_ke']){{ $_GET['tgl_masuk_ke'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '50') selected @endif @endisset class="tw-bg-white">50</option>
+                        <option value="/siswa-masuk?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=100&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&nis_siswa=@isset($_GET['nis_siswa']){{ $_GET['nis_siswa'] }}@endisset&jenis_kelamin=@isset($_GET['jenis_kelamin']){{ $_GET['jenis_kelamin'] }}@endisset&tgl_mutasi=@isset($_GET['tgl_mutasi']){{ $_GET['tgl_mutasi'] }}@endisset&diterima_di_kelas=@isset($_GET['diterima_di_kelas']){{ $_GET['diterima_di_kelas'] }}@endisset&pindah_dari=@isset($_GET['pindah_dari']){{ $_GET['pindah_dari'] }}@endisset&alasan_mutasi=@isset($_GET['alasan_mutasi']){{ $_GET['alasan_mutasi'] }}@endisset&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset&tgl_masuk_dari=@isset($_GET['tgl_masuk_dari']){{ $_GET['tgl_masuk_dari'] }}@endisset&tgl_masuk_ke=@isset($_GET['tgl_masuk_ke']){{ $_GET['tgl_masuk_ke'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '100') selected @endif @endisset class="tw-bg-white">100</option>
                     </select>
                     <div class="tw-text-base pt-1 tw-mx-2 tw-font-pop tw-font-normal tw-text-basic-700">Entries</div>
-                
-                    {{-- FILTERS POPUP --}}
-                    <div class="tw-flex tw-mx-5 tw-my-auto">
-                        <button data-modal-toggle="filter-popup-modal" class="hover:tw-text-sims-500 tw-text-slate-700 tw-transition-all tw-ease-in-out">
-                            <i class="tw-text-xl  fa-solid fa-sliders-simple"></i>
-                        </button>
-
-                        {{-- FILTERS POPUP MODAL --}}
-                        <div id="filter-popup-modal" tabindex="-1"class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full">
-                            <div class="relative p-4 w-full max-w-xl h-full md:h-auto">
-                                <div class="tw-relative tw-bg-white tw-rounded-lg tw-shadow dark:tw-bg-slate-100 tw-font-pop">
-                                    <button type="button"
-                                      class="tw-absolute tw-top-3 tw-right-2.5 tw-text-gray-400 tw-bg-transparent hover:tw-bg-gray-200 hover:tw-text-gray-900 tw-rounded-lg tw-text-sm tw-p-1.5 tw-ml-auto tw-inline-flex tw-items-center"
-                                      data-modal-toggle="filter-popup-modal">
-                                        <svg aria-hidden="true" class="tw-w-5 tw-h-5" fill="currentColor"
-                                            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd"
-                                              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                              clip-rule="evenodd">
-                                            </path>
-                                        </svg>
-                                        <span class="sr-only">Close modal</span>
-                                    </button>
-                                    <div class="tw-p-6">
-                                        <form action="/get-request">
-                                        @csrf
-                                        <div class="tw-flex tw-justify-center tw-font-pop tw-text-sims-500 tw-text-xl tw-font-bold">Filters</div>
-                                        <div class="tw-border-b tw-border-sims-400 tw-w-full tw-my-5"></div>
-
-                                        {{-- search query --}}
-                                        <div class="tw-font-pop tw-text-sm tw-font-bold tw-text-gray-400">Search Query</div>
-                                        <div class="tw-flex tw-justify-between tw-mt-3">
-                                            <div class="tw-flex tw-my-3">
-                                                <div class="tw-text-xs tw-font-pop tw-text-gray-400 tw-mx-2 tw-my-auto">Nama Peserta Didik</div>
-                                                <label for="default-toggle-nama-peserta-didik" class="inline-flex relative items-center cursor-pointer">
-                                                  <input type="checkbox" name="nama_siswa" value="true" id="default-toggle-nama-peserta-didik" class="sr-only peer">
-                                                  <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-                                                </label>
-                                            </div>
-                                            <div class="tw-flex tw-my-3">
-                                                <div class="tw-text-xs tw-font-pop tw-text-gray-400 tw-mx-2 tw-my-auto">Nomor Induk</div>
-                                                <label for="default-toggle-nomor-induk" class="inline-flex relative items-center cursor-pointer">
-                                                  <input type="checkbox" name="nis_siswa" value="true" id="default-toggle-nomor-induk" class="sr-only peer">
-                                                  <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-                                                </label>
-                                            </div>
-                                            <div class="tw-flex tw-my-3">
-                                                <div class="tw-text-xs tw-font-pop tw-text-gray-400 tw-mx-2 tw-my-auto">Gender</div>
-                                                <label for="default-toggle-gender" class="inline-flex relative items-center cursor-pointer">
-                                                  <input type="checkbox" name="jenis_kelamin" value="true" id="default-toggle-gender" class="sr-only peer">
-                                                  <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-                                                </label>
-                                            </div>
-                                        </div>
-
-                                        <div class="tw-flex tw-gap-3">
-                                            <div class="tw-flex tw-my-3">
-                                                <div class="tw-text-xs tw-font-pop tw-text-gray-400 tw-mx-2 tw-my-auto">Tanggal Masuk</div>
-                                                <label for="default-toggle-masuk" class="inline-flex relative items-center cursor-pointer">
-                                                  <input type="checkbox" name="tgl_mutasi" value="true" id="default-toggle-masuk" class="sr-only peer">
-                                                  <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-                                                </label>
-                                            </div>
-                                            <div class="tw-flex tw-my-3">
-                                                <div class="tw-text-xs tw-font-pop tw-text-gray-400 tw-mx-2 tw-my-auto">Diterima di Kelas</div>
-                                                <label for="default-toggle-diterima-di-kelas" class="inline-flex relative items-center cursor-pointer">
-                                                  <input type="checkbox" name="diterima_di_kelas" value="true" id="default-toggle-diterima-di-kelas" class="sr-only peer">
-                                                  <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-                                                </label>
-                                            </div>
-                                            <div class="tw-flex tw-my-3">
-                                                <div class="tw-text-xs tw-font-pop tw-text-gray-400 tw-mx-2 tw-my-auto">Pindah dari</div>
-                                                <label for="default-toggle-pindah-dari" class="inline-flex relative items-center cursor-pointer">
-                                                  <input type="checkbox" name="pindah_dari" value="true" id="default-toggle-pindah-dari" class="sr-only peer">
-                                                  <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-                                                </label>
-                                            </div>
-                                            
-                                        </div>
-
-                                        <div class="tw-flex tw-gap-3">
-                                            <div class="tw-flex tw-my-3">
-                                                <div class="tw-text-xs tw-font-pop tw-text-gray-400 tw-mx-2 tw-my-auto">Alasan</div>
-                                                <label for="default-toggle-alasan" class="inline-flex relative items-center cursor-pointer">
-                                                  <input type="checkbox" name="alasan_mutasi" value="true" id="default-toggle-alasan" class="sr-only peer">
-                                                  <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        {{-- end of search query --}}
-
-
-                                        {{-- sort by --}}
-                                        <div class="tw-font-pop tw-text-sm tw-font-bold tw-text-gray-400 tw-mt-6">Sort By</div>
-                                        <div class="tw-flex tw-justify-between tw-my-3">
-                                            <div class="tw-w-full">
-                                                <select class="input-data tw-text-sm tw-mr-5" id="sort-by" name="sort-by" required>
-                                                    <option value="nama_siswa">Nama Peserta Didik</option>
-                                                    <option value="nis_siswa">Nomor Induk</option>
-                                                    <option value="jenis_kelamin">Gender</option>
-                                                    <option value="tgl_mutasi">Tanggal Masuk</option>
-                                                    <option value="diterima_di_kelas">Diterima di Kelas</option>
-                                                    <option value="pindah_dari">Pindah dari</option>
-                                                    <option value="alasan_mutasi">Alasan</option>
-                                                </select>
-                                            </div>
-                                            <div class="tw-flex tw-my-auto tw-gap-3 tw-justify-center tw-mx-auto tw-ml-5">
-                                                <div class="tw-flex tw-gap-1">
-                                                    <label for="ascending" class="tw-font-pop tw-text-sm tw-text-gray-400">Ascending</label>
-                                                    <input class="tw-my-auto tw-bg-gray-200 focus:ring-0 focus:ring-offset-0" style="height:15px; width:15px; border: none" type="radio" id="ascending" name="sort" value="ASC" checked>
-                                                </div>
-                                                <div class="tw-flex tw-gap-1">
-                                                    <label for="descending" class="tw-font-pop tw-text-sm tw-text-gray-400">Descending</label>
-                                                    <input class="tw-my-auto tw-bg-gray-200 focus:ring-0 focus:ring-offset-0" style="height:15px; width:15px; border: none" type="radio" id="descending" name="sort" value="DESC">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        {{-- end of sort by --}}
-
-                                        
-                                        {{-- data per periodik --}}
-                                        <div class="tw-font-pop tw-text-sm tw-font-bold tw-text-gray-400 tw-mt-12">Data per Periodik</div>
-                                        <div class="tw-flex tw-justify-between tw-mt-5 tw-mx-5">
-                                            <div>
-                                                <div class="tw-text-xs tw-mb-2 tw-font-pop tw-font-normal tw-text-gray-400">Dari tanggal</div>
-                                                <input class="input-data tw-text-sm tw-font-pop" id="tgl_masuk_dari" name="tgl_masuk_dari" type="date" placeholder="dd/mm/yyyy">
-                                            </div>
-                                            <div>
-                                                <div class="tw-text-xs tw-mb-2 tw-font-pop tw-font-normal tw-text-gray-400">Ke tanggal</div>
-                                                <input class="input-data tw-text-sm tw-font-pop" id="tgl_masuk_ke" name="tgl_masuk_ke" type="date" placeholder="dd/mm/yyyy">
-                                            </div>
-                                        </div>
-                                        {{-- end of data per periodik --}}
-
-                                        <div class="tw-flex tw-justify-end tw-mt-10">
-                                            <button type="submit" class="tw-bg-sims-400 tw-text-sm tw-text-white tw-py-2 tw-px-4 tw-rounded-lg hover:tw-bg-sims-500 tw-transition-all">Simpan</button>
-                                        </div>
-
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
 
                     {{-- FILTER DROPDOWN --}}
                     <button id="dropdownToggleButton" data-dropdown-toggle="filter-dd" class="tw-text-sims-500 hover:tw-text-white tw-font-pop focus:tw-ring-0 focus:tw-outline-none tw-font-medium tw-rounded-lg tw-text-sm tw-px-4 tw-py-1 tw-ml-2 tw-text-center tw-inline-flex tw-items-center dark:tw-bg-white dark:hover:tw-bg-sims-500 tw-shadow-md tw-transition-all tw-ease-in-out" type="button">Filters <i class="tw-text-xl tw-ml-5 fa-duotone fa-sliders-simple"></i></button>
@@ -300,14 +155,11 @@
                         <div class="tw-font-pop tw-text-xs tw-text-gray-400 tw-my-2 tw-mx-5">Urutkan berdasarkan...</div>
                         <div class="tw-mx-5 tw-flex tw-justify-center">
                             <select class="input-data tw-text-xs" id="sort_by" name="sort_by" required>
-
                                 // tampilkan option yg di select berdasarkan parameter sort_by
                                 @if(isset($_GET['sort_by']))
                                 <option value="{{ $_GET['sort_by'] }}">
                                     @if($_GET['sort_by'] == 'nama_siswa')
                                     Nama Peserta Didik (selected)
-                                    @elseif($_GET['sort_by'] == 'nis_siswa')
-                                    NIS (selected)
                                     @elseif($_GET['sort_by'] == 'jenis_kelamin')
                                     Gender (selected)
                                     @elseif($_GET['sort_by'] == 'tgl_mutasi')
@@ -316,18 +168,14 @@
                                     Diterima di Kelas (selected)
                                     @elseif($_GET['sort_by'] == 'pindah_dari')
                                     Pindah dari (selected)
-                                    @elseif($_GET['sort_by'] == 'alasan_mutasi')
-                                    Alasan (selected)
                                     @endif
                                 </option>
                                 @endif
                                 <option value="nama_siswa">Nama Peserta Didik</option>
-                                <option value="nis_siswa">NIS</option>
                                 <option value="jenis_kelamin">Gender</option>
                                 <option value="tgl_mutasi">Tanggal Masuk</option>
                                 <option value="diterima_di_kelas">Diterima di Kelas</option>
                                 <option value="pindah_dari">Pindah dari</option>
-                                <option value="alasan_mutasi">Alasan</option>
                             </select>
                         </div>
                         <div class="tw-flex tw-my-5 tw-gap-3 tw-justify-center tw-mx-auto">
@@ -344,8 +192,8 @@
                             <button type="submit" class="tw-w-full tw-rounded-lg tw-mx-3 tw-font-pop tw-text-white tw-text-sm tw-font-medium tw-mb-2 tw-py-2 tw-bg-sims-400 hover:tw-bg-sims-500 tw-transition-all tw-ease-in-out">Simpan</button>
                         </div>
 
-                        @if(isset($_GET['tglMasukDari'])) <input name="tglMasukDari" value="{{ $_GET['tglMasukDari'] }}" type="hidden"> @endif
-                        @if(isset($_GET['tglMasukKe'])) <input name="tglMasukKe" value="{{ $_GET['tglMasukKe'] }}" type="hidden"> @endif
+                        @if(isset($_GET['tgl_masuk_dari'])) <input name="tgl_masuk_dari" value="{{ $_GET['tgl_masuk_dari'] }}" type="hidden"> @endif
+                        @if(isset($_GET['tgl_masuk_ke'])) <input name="tgl_masuk_ke" value="{{ $_GET['tgl_masuk_ke'] }}" type="hidden"> @endif
                         </form>
                     </div>
                     <!-- end filter menu -->
@@ -368,7 +216,7 @@
                             @if(isset($_GET['nama_siswa'])) <input name="nama_siswa" value="{{ $_GET['nama_siswa'] }}" type="hidden"> @endif
                             @if(isset($_GET['nis_siswa'])) <input name="nis_siswa" value="{{ $_GET['nis_siswa'] }}" type="hidden"> @endif
                             @if(isset($_GET['jenis_kelamin'])) <input name="jenis_kelamin" value="{{ $_GET['jenis_kelamin'] }}" type="hidden"> @endif
-                            @if(isset($_GET['tgl_masuk'])) <input name="tgl_masuk" value="{{ $_GET['tgl_masuk'] }}" type="hidden"> @endif
+                            @if(isset($_GET['tgl_mutasi'])) <input name="tgl_mutasi" value="{{ $_GET['tgl_mutasi'] }}" type="hidden"> @endif
                             @if(isset($_GET['diterima_di_kelas'])) <input name="diterima_di_kelas" value="{{ $_GET['diterima_di_kelas'] }}" type="hidden"> @endif
                             @if(isset($_GET['pindah_dari'])) <input name="pindah_dari" value="{{ $_GET['pindah_dari'] }}" type="hidden"> @endif
                             @if(isset($_GET['alasan_mutasi'])) <input name="alasan_mutasi" value="{{ $_GET['alasan_mutasi'] }}" type="hidden"> @endif
@@ -377,11 +225,11 @@
                             <div class="tw-flex tw-gap-3 tw-justify-between tw-mt-5 tw-mx-5">
                                 <div>
                                     <div class="tw-text-xs tw-mb-2 tw-font-pop tw-font-normal tw-text-gray-400">Dari tanggal</div>
-                                    <input class="input-data tw-text-xs tw-font-pop" id="tglMasukDari" name="tglMasukDari" type="date" placeholder="dd/mm/yyyy" @if(isset($_GET['tglMasukDari'])) value="{{ $_GET['tglMasukDari'] }}" @endif>
+                                    <input class="input-data tw-text-xs tw-font-pop" id="tgl_masuk_dari" name="tgl_masuk_dari" type="date" placeholder="dd/mm/yyyy" @if(isset($_GET['tgl_masuk_dari'])) value="{{ $_GET['tgl_masuk_dari'] }}" @endif>
                                 </div>
                                 <div>
                                     <div class="tw-text-xs tw-mb-2 tw-font-pop tw-font-normal tw-text-gray-400">Ke tanggal</div>
-                                    <input class="input-data tw-text-xs tw-font-pop" id="tglMasukKe" name="tglMasukKe" type="date" placeholder="dd/mm/yyyy" @if(isset($_GET['tglMasukKe'])) value="{{ $_GET['tglMasukKe'] }}" @endif>
+                                    <input class="input-data tw-text-xs tw-font-pop" id="tgl_masuk_ke" name="tgl_masuk_ke" type="date" placeholder="dd/mm/yyyy" @if(isset($_GET['tgl_masuk_ke'])) value="{{ $_GET['tgl_masuk_ke'] }}" @endif>
                                 </div>
                             </div>
                             <div class="tw-flex tw-justify-center tw-mt-3">
@@ -517,6 +365,7 @@
 
                 <div class="tw-py-3 tw-my-auto tw-h-min tw-flex tw-justify-center">
                     <form action="/siswa-masuk" class="tw-text-center">
+                        <input type="number" name="page" class="tw-bg-white tw-border tw-border-slate-200 tw-w-1/2 tw-font-pop tw-font-medium tw-text-slate-500 tw-rounded-md tw-text-center focus:tw-ring-gray-200 focus:tw-border-gray-200 no-spin" min="1" @if(isset($_GET['page'])) value="{{ $_GET['page'] }}" @endif>
 
                         @if(isset($_GET['perPage']))
                         <input name="perPage" value="{{ $_GET['perPage'] }}" type="hidden">
@@ -530,14 +379,13 @@
                         @if(isset($_GET['nama_siswa'])) <input name="nama_siswa" value="{{ $_GET['nama_siswa'] }}" type="hidden"> @endif
                         @if(isset($_GET['nis_siswa'])) <input name="nis_siswa" value="{{ $_GET['nis_siswa'] }}" type="hidden"> @endif
                         @if(isset($_GET['jenis_kelamin'])) <input name="jenis_kelamin" value="{{ $_GET['jenis_kelamin'] }}" type="hidden"> @endif
-                        @if(isset($_GET['tgl_masuk'])) <input name="tgl_masuk" value="{{ $_GET['tgl_masuk'] }}" type="hidden"> @endif
+                        @if(isset($_GET['tgl_mutasi'])) <input name="tgl_mutasi" value="{{ $_GET['tgl_mutasi'] }}" type="hidden"> @endif
                         @if(isset($_GET['diterima_di_kelas'])) <input name="diterima_di_kelas" value="{{ $_GET['diterima_di_kelas'] }}" type="hidden"> @endif
                         @if(isset($_GET['pindah_dari'])) <input name="pindah_dari" value="{{ $_GET['pindah_dari'] }}" type="hidden"> @endif
                         @if(isset($_GET['alasan_mutasi'])) <input name="alasan_mutasi" value="{{ $_GET['alasan_mutasi'] }}" type="hidden"> @endif
-                        @if(isset($_GET['tglMasukDari'])) <input name="tglMasukDari" value="{{ $_GET['tglMasukDari'] }}" type="hidden"> @endif
-                        @if(isset($_GET['tglMasukKe'])) <input name="tglMasukKe" value="{{ $_GET['tglMasukKe'] }}" type="hidden"> @endif
+                        @if(isset($_GET['tgl_masuk_dari'])) <input name="tgl_masuk_dari" value="{{ $_GET['tgl_masuk_dari'] }}" type="hidden"> @endif
+                        @if(isset($_GET['tgl_masuk_ke'])) <input name="tgl_masuk_ke" value="{{ $_GET['tgl_masuk_ke'] }}" type="hidden"> @endif
 
-                        <input type="number" name="page" class="tw-bg-white tw-border tw-border-slate-200 tw-w-1/2 tw-font-pop tw-font-medium tw-text-slate-500 tw-rounded-md tw-text-center focus:tw-ring-gray-200 focus:tw-border-gray-200 no-spin" min="1" @if(isset($_GET['page'])) value="{{ $_GET['page'] }}" @endif>
                     </form>
                 </div>
 
@@ -575,6 +423,7 @@
 
                 <div class="tw-py-3 tw-my-auto tw-h-min tw-flex tw-justify-center">
                     <form action="/siswa-masuk" class="tw-text-center">
+                        <input type="number" name="page" class="tw-bg-white tw-border tw-border-slate-200 tw-w-1/2 tw-font-pop tw-font-medium tw-text-slate-500 tw-rounded-md tw-text-center focus:tw-ring-gray-200 focus:tw-border-gray-200 no-spin" min="1" @if(isset($_GET['page'])) value="{{ $_GET['page'] }}" @endif>
 
                         @if(isset($_GET['perPage']))
                         <input name="perPage" value="{{ $_GET['perPage'] }}" type="hidden">
@@ -587,14 +436,13 @@
                         @if(isset($_GET['nama_siswa'])) <input name="nama_siswa" value="{{ $_GET['nama_siswa'] }}" type="hidden"> @endif
                         @if(isset($_GET['nis_siswa'])) <input name="nis_siswa" value="{{ $_GET['nis_siswa'] }}" type="hidden"> @endif
                         @if(isset($_GET['jenis_kelamin'])) <input name="jenis_kelamin" value="{{ $_GET['jenis_kelamin'] }}" type="hidden"> @endif
-                        @if(isset($_GET['tgl_masuk'])) <input name="tgl_masuk" value="{{ $_GET['tgl_masuk'] }}" type="hidden"> @endif
+                        @if(isset($_GET['tgl_mutasi'])) <input name="tgl_mutasi" value="{{ $_GET['tgl_mutasi'] }}" type="hidden"> @endif
                         @if(isset($_GET['diterima_di_kelas'])) <input name="diterima_di_kelas" value="{{ $_GET['diterima_di_kelas'] }}" type="hidden"> @endif
                         @if(isset($_GET['pindah_dari'])) <input name="pindah_dari" value="{{ $_GET['pindah_dari'] }}" type="hidden"> @endif
                         @if(isset($_GET['alasan_mutasi'])) <input name="alasan_mutasi" value="{{ $_GET['alasan_mutasi'] }}" type="hidden"> @endif
-                        @if(isset($_GET['tglMasukDari'])) <input name="tglMasukDari" value="{{ $_GET['tglMasukDari'] }}" type="hidden"> @endif
-                        @if(isset($_GET['tglMasukKe'])) <input name="tglMasukKe" value="{{ $_GET['tglMasukKe'] }}" type="hidden"> @endif
+                        @if(isset($_GET['tgl_masuk_dari'])) <input name="tgl_masuk_dari" value="{{ $_GET['tgl_masuk_dari'] }}" type="hidden"> @endif
+                        @if(isset($_GET['tgl_masuk_ke'])) <input name="tgl_masuk_ke" value="{{ $_GET['tgl_masuk_ke'] }}" type="hidden"> @endif
 
-                        <input type="number" name="page" class="tw-bg-white tw-border tw-border-slate-200 tw-w-1/2 tw-font-pop tw-font-medium tw-text-slate-500 tw-rounded-md tw-text-center focus:tw-ring-gray-200 focus:tw-border-gray-200 no-spin" min="1" @if(isset($_GET['page'])) value="{{ $_GET['page'] }}" @endif>
                     </form>
                 </div>
 
@@ -605,7 +453,6 @@
                 <a href="{{ $response->next_page_url }}" class="tw-transition-all tw-text-sims-400 hover:tw-bg-sims-400 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-solid fa-chevron-right"></i></a>
                 @endif
                 </div>
-
             </div>
             @endif
         </div>

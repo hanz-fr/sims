@@ -153,11 +153,23 @@
                                     Nama Peserta Didik (selected)
                                     @elseif($_GET['sort_by'] == 'nis_siswa')
                                     Nomor Induk (selected)
+                                    @elseif($_GET['sort_by'] == 'keluar_di_kelas')
+                                    Keluar di Kelas (selected)
+                                    @elseif($_GET['sort_by'] == 'tgl_mutasi')
+                                    Tanggal Keluar (selected)
+                                    @elseif($_GET['sort_by'] == 'sk_mutasi')
+                                    SK Mutasi (selected)
+                                    @elseif($_GET['sort_by'] == 'alasan_mutasi')
+                                    Alasan Mutasi (selected)
                                     @endif
                                 </option>
                                 @endif
                                 <option value="nama_siswa">Nama Peserta Didik</option>
                                 <option value="nis_siswa">Nomor Induk</option>
+                                <option value="keluar_di_kelas">Keluar di Kelas</option>
+                                <option value="tgl_mutasi">Tanggal Keluar</option>
+                                <option value="sk_mutasi">SK Mutasi</option>
+                                <option value="alasan_mutasi">Alasan Mutasi</option>
                             </select>
                         </div>
                         <div class="tw-flex tw-my-5 tw-gap-3 tw-justify-center tw-mx-auto">
