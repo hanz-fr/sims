@@ -69,9 +69,6 @@
                     Tahun Pelajaran: {{ $rp->thn_ajaran }}
                 </th>
                 @endforeach
-                {{-- <th colspan="2">
-                    Tahun Pelajaran: 
-                </th>
                 <th colspan="2">
                     Tahun Pelajaran: 
                 </th>
@@ -83,7 +80,10 @@
                 </th>
                 <th colspan="2">
                     Tahun Pelajaran: 
-                </th> --}}
+                </th>
+                <th colspan="2">
+                    Tahun Pelajaran: 
+                </th>
                 <th scope="col" rowspan="2" colspan="2">
                     US
                 </th>
@@ -97,7 +97,7 @@
                     Semester: {{ $rp->semester }}
                 </th>
                 @endforeach
-                {{-- <th colspan="2">
+                <th colspan="2">
                     Semester: 2
                 </th>
                 <th colspan="2">
@@ -111,7 +111,7 @@
                 </th>
                 <th colspan="2">
                     Semester: 6
-                </th> --}}
+                </th>
             </tr>
             <tr>
                 <th scope="col">
@@ -157,15 +157,147 @@
             </tr>
         </thead>
             <tbody>
-
-                @foreach ($raport1->NilaiMapel as $nm)
+                @foreach ($mapel as $m)
                 <tr>
-                    {{-- @foreach ($r[0] as $item)
-                        
-                        @endforeach --}}
-                        <th scope="row" colspan="3">
-                            
-                        </th>
+                    <th scope="row" colspan="3">
+                            {{ $m->MapelId }}
+                    </th>
+
+                    <!-- SEMESTER 1 -->
+                    @foreach (collect($siswa->raport)->where('semester', 1) as $rp)
+                    @foreach (collect($rp->NilaiMapel)->where('idMapelJurusan', $m->mapelJurusanId) as $nm)
+                    <td>
+                    {{ $nm->nilai_pengetahuan }}
+                    </td>
+                    <td>
+                    {{ $nm->nilai_keterampilan }}
+                    </td>
+                    @endforeach
+                    @endforeach
+
+                    @if(collect($siswa->raport)->where('semester', 1)->isEmpty())
+                    <td></td>
+                    <td></td>
+                    @endif
+
+                    <!-- SEMESTER 2 -->
+                    @foreach (collect($siswa->raport)->where('semester', 2) as $rp)
+                    @foreach (collect($rp->NilaiMapel)->where('idMapelJurusan', $m->mapelJurusanId) as $nm)
+                    <td>
+                    {{ $nm->nilai_pengetahuan }}
+                    </td>
+                    <td>
+                    {{ $nm->nilai_keterampilan }}
+                    </td>
+                    @endforeach
+                    @endforeach
+
+                    @if(collect($siswa->raport)->where('semester', 2)->isEmpty())
+                    <td></td>
+                    <td></td>
+                    @endif
+
+                    <!-- SEMESTER 3 -->
+                    @foreach (collect($siswa->raport)->where('semester', 3) as $rp)
+                    @foreach (collect($rp->NilaiMapel)->where('idMapelJurusan', $m->mapelJurusanId) as $nm)
+                    <td>
+                    {{ $nm->nilai_pengetahuan }}
+                    </td>
+                    <td>
+                    {{ $nm->nilai_keterampilan }}
+                    </td>
+                    @endforeach
+                    @endforeach
+
+                    @if(collect($siswa->raport)->where('semester', 3)->isEmpty())
+                    <td></td>
+                    <td></td>
+                    @endif
+
+                    <!-- SEMESTER 4 -->
+                    @foreach (collect($siswa->raport)->where('semester', 4) as $rp)
+                    @foreach (collect($rp->NilaiMapel)->where('idMapelJurusan', $m->mapelJurusanId) as $nm)
+                    <td>
+                    {{ $nm->nilai_pengetahuan }}
+                    </td>
+                    <td>
+                    {{ $nm->nilai_keterampilan }}
+                    </td>
+                    @endforeach
+                    @endforeach
+
+                    @if(collect($siswa->raport)->where('semester', 4)->isEmpty())
+                    <td></td>
+                    <td></td>
+                    @endif
+
+                    <!-- SEMESTER 5 -->
+                    @foreach (collect($siswa->raport)->where('semester', 5) as $rp)
+                    @foreach (collect($rp->NilaiMapel)->where('idMapelJurusan', $m->mapelJurusanId) as $nm)
+                    <td>
+                    {{ $nm->nilai_pengetahuan }}
+                    </td>
+                    <td>
+                    {{ $nm->nilai_keterampilan }}
+                    </td>
+                    @endforeach
+                    @endforeach
+
+                    @if(collect($siswa->raport)->where('semester', 5)->isEmpty())
+                    <td></td>
+                    <td></td>
+                    @endif
+
+                    <!-- SEMESTER 6 -->
+                    @foreach (collect($siswa->raport)->where('semester', 6) as $rp)
+                    @foreach (collect($rp->NilaiMapel)->where('idMapelJurusan', $m->mapelJurusanId) as $nm)
+                    <td>
+                    {{ $nm->nilai_pengetahuan }}
+                    </td>
+                    <td>
+                    {{ $nm->nilai_keterampilan }}
+                    </td>
+                    @endforeach
+                    @endforeach
+
+                    @if(collect($siswa->raport)->where('semester', 6)->isEmpty())
+                    <td></td>
+                    <td></td>
+                    @endif
+
+                    <!-- US -->
+                    @foreach (collect($siswa->raport)->where('semester', 6) as $rp)
+                    @foreach (collect($rp->NilaiMapel)->where('idMapelJurusan', $m->mapelJurusanId) as $nm)
+                    <td>
+                    {{ $nm->nilai_us_teori }}
+                    </td>
+                    <td>
+                    {{ $nm->nilai_us_praktek }}
+                    </td>
+                    @endforeach
+                    @endforeach
+
+                    @if(collect($siswa->raport)->where('semester', 6)->isEmpty())
+                    <td></td>
+                    <td></td>
+                    @endif
+
+                    <!-- UKK -->
+                    @foreach (collect($siswa->raport)->where('semester', 6) as $rp)
+                    @foreach (collect($rp->NilaiMapel)->where('idMapelJurusan', $m->mapelJurusanId) as $nm)
+                    <td>
+                    {{ $nm->nilai_ukk_teori }}
+                    </td>
+                    <td>
+                    {{ $nm->nilai_ukk_praktek }}
+                    </td>
+                    @endforeach
+                    @endforeach
+
+                    @if(collect($siswa->raport)->where('semester', 6)->isEmpty())
+                    <td></td>
+                    <td></td>
+                    @endif
                 </tr>
                 @endforeach
 
@@ -179,24 +311,79 @@
                     <td>
                         Sakit (hari)
                     </td>
-                    <td colspan="2">
 
-                    </td>
+                    <!-- Semester 1 -->
+                    @foreach (collect($siswa->raport)->where('semester', 1) as $rp)
                     <td colspan="2">
-
+                        {{ $rp->sakit }}
                     </td>
+                    @endforeach
+
+                    @if (collect($siswa->raport)->where('semester', 1)->isEmpty())
+                    <td colspan="2"></td>
+                    @endif
+
+
+                    <!-- Semester 2 -->
+                    @foreach (collect($siswa->raport)->where('semester', 2) as $rp)
                     <td colspan="2">
-
+                        {{ $rp->sakit }}
                     </td>
+                    @endforeach
+
+                    @if (collect($siswa->raport)->where('semester', 2)->isEmpty())
+                    <td colspan="2"></td>
+                    @endif
+
+
+                    <!-- Semester 3 -->
+                    @foreach (collect($siswa->raport)->where('semester', 3) as $rp)
                     <td colspan="2">
-
+                        {{ $rp->sakit }}
                     </td>
+                    @endforeach
+
+                    @if (collect($siswa->raport)->where('semester', 3)->isEmpty())
+                    <td colspan="2"></td>
+                    @endif
+
+                    
+                    <!-- Semester 4 -->
+                    @foreach (collect($siswa->raport)->where('semester', 4) as $rp)
                     <td colspan="2">
-
+                        {{ $rp->sakit }}
                     </td>
+                    @endforeach
+
+                    @if (collect($siswa->raport)->where('semester', 4)->isEmpty())
+                    <td colspan="2"></td>
+                    @endif
+
+
+                    <!-- Semester 5 -->
+                    @foreach (collect($siswa->raport)->where('semester', 5) as $rp)
                     <td colspan="2">
-
+                        {{ $rp->sakit }}
                     </td>
+                    @endforeach
+
+                    @if (collect($siswa->raport)->where('semester', 5)->isEmpty())
+                    <td colspan="2"></td>
+                    @endif
+
+
+                    <!-- Semester 6 -->
+                    @foreach (collect($siswa->raport)->where('semester', 6) as $rp)
+                    <td colspan="2">
+                        {{ $rp->sakit }}
+                    </td>
+                    @endforeach
+
+                    @if (collect($siswa->raport)->where('semester', 6)->isEmpty())
+                    <td colspan="2"></td>
+                    @endif
+
+                    <!-- Catatan -->
                     <td rowspan="7" colspan="4">
 
                     </td>
@@ -206,72 +393,228 @@
                     <td>
                         Ijin (hari)
                     </td>
+                    <!-- Semester 1 -->
+                    @foreach (collect($siswa->raport)->where('semester', 1) as $rp)
                     <td colspan="2">
-
+                        {{ $rp->ijin }}
                     </td>
+                    @endforeach
+
+                    @if (collect($siswa->raport)->where('semester', 1)->isEmpty())
+                    <td colspan="2"></td>
+                    @endif
+
+
+                    <!-- Semester 2 -->
+                    @foreach (collect($siswa->raport)->where('semester', 2) as $rp)
                     <td colspan="2">
-
+                        {{ $rp->ijin }}
                     </td>
+                    @endforeach
+
+                    @if (collect($siswa->raport)->where('semester', 2)->isEmpty())
+                    <td colspan="2"></td>
+                    @endif
+
+
+                    <!-- Semester 3 -->
+                    @foreach (collect($siswa->raport)->where('semester', 3) as $rp)
                     <td colspan="2">
-
+                        {{ $rp->ijin }}
                     </td>
+                    @endforeach
+
+                    @if (collect($siswa->raport)->where('semester', 3)->isEmpty())
+                    <td colspan="2"></td>
+                    @endif
+
+                    
+                    <!-- Semester 4 -->
+                    @foreach (collect($siswa->raport)->where('semester', 4) as $rp)
                     <td colspan="2">
-
+                        {{ $rp->ijin }}
                     </td>
+                    @endforeach
+
+                    @if (collect($siswa->raport)->where('semester', 4)->isEmpty())
+                    <td colspan="2"></td>
+                    @endif
+
+
+                    <!-- Semester 5 -->
+                    @foreach (collect($siswa->raport)->where('semester', 5) as $rp)
                     <td colspan="2">
-
+                        {{ $rp->ijin }}
                     </td>
+                    @endforeach
+
+                    @if (collect($siswa->raport)->where('semester', 5)->isEmpty())
+                    <td colspan="2"></td>
+                    @endif
+
+
+                    <!-- Semester 6 -->
+                    @foreach (collect($siswa->raport)->where('semester', 6) as $rp)
                     <td colspan="2">
-
+                        {{ $rp->ijin }}
                     </td>
+                    @endforeach
+
+                    @if (collect($siswa->raport)->where('semester', 6)->isEmpty())
+                    <td colspan="2"></td>
+                    @endif
                 </tr>
 
                 <tr>
                     <td>
                         Alpa (hari)
                     </td>
+                    <!-- Semester 1 -->
+                    @foreach (collect($siswa->raport)->where('semester', 1) as $rp)
                     <td colspan="2">
-
+                        {{ $rp->alpa }}
                     </td>
+                    @endforeach
+
+                    @if (collect($siswa->raport)->where('semester', 1)->isEmpty())
+                    <td colspan="2"></td>
+                    @endif
+
+
+                    <!-- Semester 2 -->
+                    @foreach (collect($siswa->raport)->where('semester', 2) as $rp)
                     <td colspan="2">
-
+                        {{ $rp->alpa }}
                     </td>
+                    @endforeach
+
+                    @if (collect($siswa->raport)->where('semester', 2)->isEmpty())
+                    <td colspan="2"></td>
+                    @endif
+
+
+                    <!-- Semester 3 -->
+                    @foreach (collect($siswa->raport)->where('semester', 3) as $rp)
                     <td colspan="2">
-
+                        {{ $rp->alpa }}
                     </td>
+                    @endforeach
+
+                    @if (collect($siswa->raport)->where('semester', 3)->isEmpty())
+                    <td colspan="2"></td>
+                    @endif
+
+                    
+                    <!-- Semester 4 -->
+                    @foreach (collect($siswa->raport)->where('semester', 4) as $rp)
                     <td colspan="2">
-
+                        {{ $rp->alpa }}
                     </td>
+                    @endforeach
+
+                    @if (collect($siswa->raport)->where('semester', 4)->isEmpty())
+                    <td colspan="2"></td>
+                    @endif
+
+
+                    <!-- Semester 5 -->
+                    @foreach (collect($siswa->raport)->where('semester', 5) as $rp)
                     <td colspan="2">
-
+                        {{ $rp->alpa }}
                     </td>
+                    @endforeach
+
+                    @if (collect($siswa->raport)->where('semester', 5)->isEmpty())
+                    <td colspan="2"></td>
+                    @endif
+
+
+                    <!-- Semester 6 -->
+                    @foreach (collect($siswa->raport)->where('semester', 6) as $rp)
                     <td colspan="2">
-
+                        {{ $rp->alpa }}
                     </td>
+                    @endforeach
+
+                    @if (collect($siswa->raport)->where('semester', 6)->isEmpty())
+                    <td colspan="2"></td>
+                    @endif
                 </tr>
 
                 <tr>
                     <td>
                         Jumlah (hari)
                     </td>
+                    <!-- Semester 1 -->
+                    @foreach (collect($siswa->raport)->where('semester', 1) as $rp)
                     <td colspan="2">
-
+                        {{ $rp->sakit + $rp->ijin + $rp->alpa }}
                     </td>
+                    @endforeach
+
+                    @if (collect($siswa->raport)->where('semester', 1)->isEmpty())
+                    <td colspan="2"></td>
+                    @endif
+
+
+                    <!-- Semester 2 -->
+                    @foreach (collect($siswa->raport)->where('semester', 2) as $rp)
                     <td colspan="2">
-
+                        {{ $rp->sakit + $rp->ijin + $rp->alpa }}
                     </td>
+                    @endforeach
+
+                    @if (collect($siswa->raport)->where('semester', 2)->isEmpty())
+                    <td colspan="2"></td>
+                    @endif
+
+
+                    <!-- Semester 3 -->
+                    @foreach (collect($siswa->raport)->where('semester', 3) as $rp)
                     <td colspan="2">
-
+                        {{ $rp->sakit + $rp->ijin + $rp->alpa }}
                     </td>
+                    @endforeach
+
+                    @if (collect($siswa->raport)->where('semester', 3)->isEmpty())
+                    <td colspan="2"></td>
+                    @endif
+
+                    
+                    <!-- Semester 4 -->
+                    @foreach (collect($siswa->raport)->where('semester', 4) as $rp)
                     <td colspan="2">
-
+                        {{ $rp->sakit + $rp->ijin + $rp->alpa }}
                     </td>
+                    @endforeach
+
+                    @if (collect($siswa->raport)->where('semester', 4)->isEmpty())
+                    <td colspan="2"></td>
+                    @endif
+
+
+                    <!-- Semester 5 -->
+                    @foreach (collect($siswa->raport)->where('semester', 5) as $rp)
                     <td colspan="2">
-
+                        {{ $rp->sakit + $rp->ijin + $rp->alpa }}
                     </td>
+                    @endforeach
+
+                    @if (collect($siswa->raport)->where('semester', 5)->isEmpty())
+                    <td colspan="2"></td>
+                    @endif
+
+
+                    <!-- Semester 6 -->
+                    @foreach (collect($siswa->raport)->where('semester', 6) as $rp)
                     <td colspan="2">
-
+                        {{ $rp->sakit + $rp->ijin + $rp->alpa }}
                     </td>
+                    @endforeach
+
+                    @if (collect($siswa->raport)->where('semester', 6)->isEmpty())
+                    <td colspan="2"></td>
+                    @endif
                 </tr>
                 {{-- end absen --}}
 
@@ -283,7 +626,9 @@
                     <td>
                         Status Kenaikan
                     </td>
-                    @foreach ($siswa->raport as $rp)
+
+                    <!-- per semester 2 -->
+                    @foreach (collect($siswa->raport)->where('semester', 2) as $rp)
                     <td colspan="4">
                         @if($rp->isNaik == true)
                         Naik
@@ -294,46 +639,120 @@
                         @endif
                     </td>
                     @endforeach
+
+                    @if (collect($siswa->raport)->where('semester', 2)->isEmpty())
+                    <td colspan="4"></td>
+                    @endif
+
+                    <!-- per semester 4 -->
+                    @foreach (collect($siswa->raport)->where('semester', 4) as $rp)
                     <td colspan="4">
-                        
+                        @if($rp->isNaik == true)
+                        Naik
+                        @elseif($rp->isNaik == false)
+                        Tidak naik
+                        @else
+                        -
+                        @endif
                     </td>
+                    @endforeach
+
+                    @if (collect($siswa->raport)->where('semester', 4)->isEmpty())
+                    <td colspan="4"></td>
+                    @endif
+
+                    <!-- per semester 6 -->
+                    @foreach (collect($siswa->raport)->where('semester', 6) as $rp)
                     <td colspan="4">
-                        
+                        @if($rp->isNaik == true)
+                        Naik
+                        @elseif($rp->isNaik == false)
+                        Tidak naik
+                        @else
+                        -
+                        @endif
                     </td>
+                    @endforeach
+
+                    @if (collect($siswa->raport)->where('semester', 6)->isEmpty())
+                    <td colspan="4"></td>
+                    @endif
                 </tr>
 
                 <tr>
                     <td>
                         Naik ke
                     </td>
-                    @foreach ($siswa->raport as $rp)
+                    <!-- per semester 2 -->
+                    @foreach (collect($siswa->raport)->where('semester', 2) as $rp)
                     <td colspan="4">
                         {{ $rp->naikKelas }}
                     </td>
                     @endforeach
+
+                    @if (collect($siswa->raport)->where('semester', 2)->isEmpty())
+                    <td colspan="4"></td>
+                    @endif
+
+                    <!-- per semester 4 -->
+                    @foreach (collect($siswa->raport)->where('semester', 4) as $rp)
                     <td colspan="4">
-                            
+                        {{ $rp->naikKelas }}
                     </td>
+                    @endforeach
+
+                    @if (collect($siswa->raport)->where('semester', 4)->isEmpty())
+                    <td colspan="4"></td>
+                    @endif
+
+                    <!-- per semester 6 -->
+                    @foreach (collect($siswa->raport)->where('semester', 6) as $rp)
                     <td colspan="4">
-                        
+                        {{ $rp->naikKelas }}
                     </td>
+                    @endforeach
+
+                    @if (collect($siswa->raport)->where('semester', 6)->isEmpty())
+                    <td colspan="4"></td>
+                    @endif
                 </tr>
                 
                 <tr>
                     <td>
                         Tanggal Kenaikan
                     </td>
-                    @foreach ($siswa->raport as $rp)
+                    <!-- per semester 2 -->
+                    @foreach (collect($siswa->raport)->where('semester', 2) as $rp)
                     <td colspan="4">
                         {{ $rp->tgl_kenaikan }}
-                    </td> 
-                    @endforeach
-                    <td colspan="4">
-                            
                     </td>
+                    @endforeach
+
+                    @if (collect($siswa->raport)->where('semester', 2)->isEmpty())
+                    <td colspan="4"></td>
+                    @endif
+
+                    <!-- per semester 4 -->
+                    @foreach (collect($siswa->raport)->where('semester', 4) as $rp)
                     <td colspan="4">
-                        
-                    </td> 
+                        {{ $rp->tgl_kenaikan }}
+                    </td>
+                    @endforeach
+
+                    @if (collect($siswa->raport)->where('semester', 4)->isEmpty())
+                    <td colspan="4"></td>
+                    @endif
+
+                    <!-- per semester 6 -->
+                    @foreach (collect($siswa->raport)->where('semester', 6) as $rp)
+                    <td colspan="4">
+                        {{ $rp->tgl_kenaikan }}
+                    </td>
+                    @endforeach
+
+                    @if (collect($siswa->raport)->where('semester', 6)->isEmpty())
+                    <td colspan="4"></td>
+                    @endif
                 </tr>
             </tbody>
     </table>
