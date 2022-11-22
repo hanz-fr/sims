@@ -747,12 +747,14 @@ class ApiController extends Controller
     }
 
     public function exportDetailDataIndukExcel(Request $request) {
+
         ob_end_clean();
         ob_start();
 
         $detailsiswa = 'daftar_detail_nama_buku_induk_'.date('Y-m-d_H-i-s').'.xlsx';
 
         return Excel::download(new DetailDataIndukExport($request->nis), $detailsiswa);
+        
     }
 
 
@@ -904,7 +906,7 @@ class ApiController extends Controller
             'raport04' => json_decode($raport04)->rows,
             'raport05' => json_decode($raport05)->rows,
             'raport06' => json_decode($raport06)->rows,
-        ]);
+        ])->setPaper('a3', 'landscape');
 
         $nama = json_decode($response)->result->nama_siswa;
 
