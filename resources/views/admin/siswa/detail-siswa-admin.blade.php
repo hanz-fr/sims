@@ -9,7 +9,7 @@
             <i class="fa-solid fa-users tw-text-2xl tw-ml-2 tw-text-[#95BBE8]"></i>
             <h4 class="tw-font-pop tw-font-bold tw-ml-2 tw-text-[#DBDBDB]">Detail Siswa</h4>
       </div>
-            <li class="card-data-white">
+            <div class="card-data-white">
                   <div class="tw-flex tw-bg-[#5A6C7C] tw-font-ubuntu tw-text-white tw-rounded-xl tw-gap-8 tw-py-16 tw-px-12">
                      <div class="tw-flex tw-flex-col">
                         <i class="fa-solid fa-user tw-text-7xl tw-mx-5"></i>
@@ -30,7 +30,7 @@
                         </tbody>
                     </table>
                   </div>
-            </li>
+            </div>
 
          <div class="tw-mb-5">
             <li class="card-data-white tw-mb-10">
