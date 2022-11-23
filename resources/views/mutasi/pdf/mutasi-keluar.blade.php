@@ -19,7 +19,9 @@
   </style>
 </head>
 <body>
-  <h4 style="font-weight: 500; text-align: center;">DATA SISWA KELUAR</h4>
+  <table style="margin: auto">
+    <td><h4 style="font-weight: 500; text-align: center;">DATA SISWA KELUAR</h4></td>
+  </table>
   {{-- <h5>Periode: </h5> --}}
 
     <table id="data">

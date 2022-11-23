@@ -105,22 +105,22 @@
 						<?php $sum_total_siswa_l_akhir_X += $k10->jumlahSiswaLaki - $k10->siswaLakiKeluar + $k10->siswaLakiMasuk; ?>
 						<?php $sum_total_siswa_akhir_X += $k10->jumlahSiswaPerempuan - $k10->siswaPerempuanKeluar + $k10->siswaPerempuanMasuk + $k10->jumlahSiswaLaki - $k10->siswaLakiKeluar + $k10->siswaLakiMasuk; ?>
 				@endforeach
+				<tr>
+					<th>JUMLAH SISWA</th>
+					<th>{{ $sum_total_siswa_p_X }}</th>
+					<th>{{ $sum_total_siswa_l_X }}</th>
+					<th>{{ $sum_total_siswa_X }}</th>
+					<th>{{ $sum_total_siswa_p_keluar_X }}</th>
+					<th>{{ $sum_total_siswa_l_keluar_X }}</th>
+					<th>{{ $sum_total_siswa_keluar_X }}</th>
+					<th>{{ $sum_total_siswa_p_masuk_X }}</th>
+					<th>{{ $sum_total_siswa_l_masuk_X }}</th>
+					<th>{{ $sum_total_siswa_masuk_X }}</th>
+					<th>{{ $sum_total_siswa_p_akhir_X }}</th>
+					<th>{{ $sum_total_siswa_l_akhir_X }}</th>
+					<th>{{ $sum_total_siswa_akhir_X }}</th>
+				</tr>
 		</tbody>
-		<tfoot>
-				<th>JUMLAH SISWA</th>
-				<th>{{ $sum_total_siswa_p_X }}</th>
-				<th>{{ $sum_total_siswa_l_X }}</th>
-				<th>{{ $sum_total_siswa_X }}</th>
-				<th>{{ $sum_total_siswa_p_keluar_X }}</th>
-				<th>{{ $sum_total_siswa_l_keluar_X }}</th>
-				<th>{{ $sum_total_siswa_keluar_X }}</th>
-				<th>{{ $sum_total_siswa_p_masuk_X }}</th>
-				<th>{{ $sum_total_siswa_l_masuk_X }}</th>
-				<th>{{ $sum_total_siswa_masuk_X }}</th>
-				<th>{{ $sum_total_siswa_p_akhir_X }}</th>
-				<th>{{ $sum_total_siswa_l_akhir_X }}</th>
-				<th>{{ $sum_total_siswa_akhir_X }}</th>
-		</tfoot>
 </table>
 
 <h4 style="font-weight: 500; text-align: left; font-family:Arial, Helvetica, sans-serif">DATA JUMLAH SISWA XII</h4>
@@ -203,8 +203,7 @@
 					<?php $sum_total_siswa_l_akhir_XI += $k11->jumlahSiswaLaki - $k11->siswaLakiKeluar + $k11->siswaLakiMasuk; ?>
 					<?php $sum_total_siswa_akhir_XI += $k11->jumlahSiswaPerempuan - $k11->siswaPerempuanKeluar + $k11->siswaPerempuanMasuk + $k11->jumlahSiswaLaki - $k11->siswaLakiKeluar + $k11->siswaLakiMasuk; ?>
 			@endforeach
-	</tbody>
-	<tfoot>
+	<tr>
 			<th>JUMLAH SISWA</th>
 			<th>{{ $sum_total_siswa_p_XI }}</th>
 			<th>{{ $sum_total_siswa_l_XI }}</th>
@@ -218,7 +217,8 @@
 			<th>{{ $sum_total_siswa_p_akhir_XI }}</th>
 			<th>{{ $sum_total_siswa_l_akhir_XI }}</th>
 			<th>{{ $sum_total_siswa_akhir_XI }}</th>
-	</tfoot>
+	</tr>
+	</tbody>
 </table>
 
 <h4 style="font-weight: 500; text-align: left; font-family:Arial, Helvetica, sans-serif">DATA JUMLAH SISWA XII</h4>
@@ -302,8 +302,7 @@
 					<?php $sum_total_siswa_l_akhir_XII += $k12->jumlahSiswaLaki - $k12->siswaLakiKeluar + $k12->siswaLakiMasuk; ?>
 					<?php $sum_total_siswa_akhir_XII += $k12->jumlahSiswaPerempuan - $k12->siswaPerempuanKeluar + $k12->siswaPerempuanMasuk + $k12->jumlahSiswaLaki - $k12->siswaLakiKeluar + $k12->siswaLakiMasuk; ?>
 			@endforeach
-	</tbody>
-	<tfoot>
+	<tr>
 			<th>JUMLAH SISWA</th>
 			<th>{{ $sum_total_siswa_p_XII }}</th>
 			<th>{{ $sum_total_siswa_l_XII }}</th>
@@ -317,7 +316,8 @@
 			<th>{{ $sum_total_siswa_p_akhir_XII }}</th>
 			<th>{{ $sum_total_siswa_l_akhir_XII }}</th>
 			<th>{{ $sum_total_siswa_akhir_XII }}</th>
-	</tfoot>
+	</tr>
+</tbody>
 </table>
 
 <h4 style="font-weight: 500; text-align: left; font-family:Arial, Helvetica, sans-serif">DATA JUMLAH SISWA KESELURUHAN</h4>
@@ -400,9 +400,8 @@
 				<?php $sum_total_siswa_l_akhir += $k->jumlahSiswaLaki - $k->siswaLakiKeluar + $k->siswaLakiMasuk; ?>
 				<?php $sum_total_siswa_akhir += $k->jumlahSiswaPerempuan - $k->siswaPerempuanKeluar + $k->siswaPerempuanMasuk + $k->jumlahSiswaLaki - $k->siswaLakiKeluar + $k->siswaLakiMasuk; ?>
 			@endforeach
-		</tbody>
 
-		<tfoot>
+		<tr>
 			<th>JUMLAH SISWA</th>
 			<th>{{ $sum_total_siswa_p }}</th>
 			<th>{{ $sum_total_siswa_l }}</th>
@@ -416,7 +415,9 @@
 			<th>{{ $sum_total_siswa_p_akhir }}</th>
 			<th>{{ $sum_total_siswa_l_akhir }}</th>
 			<th>{{ $sum_total_siswa_akhir }}</th>
-		</tfoot>
+		</tr>
+
+	</tbody>
 	</table>
 
 	<script type="text/javascript">

@@ -218,9 +218,9 @@
                     </tr>
                 </thead>
                 <tbody class="tw-text-base">
-                    @foreach ($raport as $r)
+                    @foreach ($raport as $key => $r)
                     <tr class="tw-bg-white tw-border">
-                        <td class="tw-py-4 tw-px-6 tw-border">-</td>
+                        <td class="tw-py-4 tw-px-6 tw-border">{{ $key + 1 }}</td>
                         <td class="tw-py-4 tw-px-6 tw-border">{{ $r->siswa->nama_siswa }}</td>
                         <td class="tw-py-4 tw-px-6 tw-border">{{ $r->siswa->tmp_lahir }}, {{ $r->siswa->tgl_lahir }}</td>
                         <td class="tw-py-4 tw-px-6 tw-border">{{ $r->tinggal_di_Kelas }}</td>

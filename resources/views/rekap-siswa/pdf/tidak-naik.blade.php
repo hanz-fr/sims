@@ -39,7 +39,7 @@
           @foreach ($siswa as $key => $s)
           <tr>
               <td>{{ $key + 1 }}</td>
-              <td>{{ $s->nama_siswa }}</td>
+              <td>{{ $s->nama_siswa }}</td>/
               <td>{{ $s->tmp_lahir }}, {{ $s->tgl_lahir }}</td>
               @foreach($s->raport as $r)
               <td>{{ $r->tinggal_di_Kelas }}</td>
