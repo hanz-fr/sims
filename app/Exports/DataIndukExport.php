@@ -49,6 +49,9 @@ class DataIndukExport implements FromView, ShouldAutoSize, WithEvents
         return [
             AfterSheet::class => function(AfterSheet $event) {
                 $event->sheet->getDelegate()->mergeCells('A1:F1');
+                $event->sheet->getDelegate()->getStyle('A1')
+                ->getAlignment()
+                ->setHorizontal(Alignment::HORIZONTAL_CENTER_CONTINUOUS);
                 
                 $event->sheet->getDelegate()->getStyle('A2:F102')->applyFromArray([
                     'borders' => [

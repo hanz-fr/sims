@@ -20,7 +20,7 @@ class AlumniExport implements FromView, ShouldAutoSize, WithEvents
     public function __construct()
     {
         
-        $this->url = 'https://9393-103-148-113-86.ap.ngrok.io';
+        $this->url = 'https://d197-103-139-10-189.ngrok.io';
 
     }
 
@@ -45,8 +45,11 @@ class AlumniExport implements FromView, ShouldAutoSize, WithEvents
         return [
             AfterSheet::class => function(AfterSheet $event) {
                 $event->sheet->getDelegate()->mergeCells('A1:G1');
+                $event->sheet->getDelegate()->getStyle('A1')
+                ->getAlignment()
+                ->setHorizontal(Alignment::HORIZONTAL_CENTER_CONTINUOUS);
                 
-                $event->sheet->getDelegate()->getStyle('A2:G10')->applyFromArray([
+                $event->sheet->getDelegate()->getStyle('A2:G12')->applyFromArray([
                     'borders' => [
                         'allBorders' => [
                             'borderStyle' => Border::BORDER_THIN,

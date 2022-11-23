@@ -18,6 +18,7 @@ class DataTidakNaikExport implements FromView, ShouldAutoSize, WithEvents
 
     use Exportable;
 
+
     public function __construct()
     {
 
@@ -33,7 +34,7 @@ class DataTidakNaikExport implements FromView, ShouldAutoSize, WithEvents
         $siswa = Http::get("{$this->api_url}/dashboard/siswa-tidak-naik??perPage=1&perPage=100");
 
         return view('rekap-siswa.pdf.tidak-naik', [
-            'siswa' => json_decode($siswa)->data->rows
+            'raport' => json_decode($siswa)->data->rows
         ]);
     }
 
@@ -44,9 +45,12 @@ class DataTidakNaikExport implements FromView, ShouldAutoSize, WithEvents
     {
         return [
             AfterSheet::class => function(AfterSheet $event) {
-                $event->sheet->getDelegate()->mergeCells('A1:G1');
+                $event->sheet->getDelegate()->mergeCells('A1:E1');
+                $event->sheet->getDelegate()->getStyle('A1')
+                ->getAlignment()
+                ->setHorizontal(Alignment::HORIZONTAL_CENTER_CONTINUOUS);
                 
-                $event->sheet->getDelegate()->getStyle('A2:G10')->applyFromArray([
+                $event->sheet->getDelegate()->getStyle('A2:E10')->applyFromArray([
                     'borders' => [
                         'allBorders' => [
                             'borderStyle' => Border::BORDER_THIN,
