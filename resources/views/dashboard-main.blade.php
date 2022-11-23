@@ -33,7 +33,7 @@
 
         </div>
 
-        <div class="lg:tw-w-[710px] sm:tw-w-full tw-h-full">
+        <div class="lg:tw-w-[900px] sm:tw-w-full tw-h-full">
 
             {{-- carousel info --}}
             <section x-data="{

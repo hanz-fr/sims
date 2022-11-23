@@ -50,7 +50,7 @@
                     <label class="label-input" for="nis_siswa">
                         NIS
                     </label>
-                    <input value="{{ old('nis_siswa') }}" @error('nis_siswa') is-invalid @enderror class="input-data tw-w-full" id="nis_siswa" name="nis_siswa" type="text" maxlength="10" required>
+                    <input value="{{ old('nis_siswa') }}" @error('nis_siswa') is-invalid @enderror class="input-data-minimal tw-w-full" id="nis_siswa" name="nis_siswa" type="text" maxlength="10" required>
                     @error('nis')
                         <small class="tw-text-red-500">{{ $message }}</small>
                     @enderror
@@ -59,7 +59,7 @@
                     <label class="label-input" for="nama_siswa">
                         Nama Siswa
                     </label>
-                    <input value="{{ old('nama_siswa') }}" @error('nama_siswa') is-invalid @enderror class="input-data tw-w-full" id="nama_siswa" name="nama_siswa" type="text" required>
+                    <input value="{{ old('nama_siswa') }}" @error('nama_siswa') is-invalid @enderror class="input-data-minimal tw-w-full" id="nama_siswa" name="nama_siswa" type="text" required>
                     @error('nama_siswa')
                         <small class="tw-text-red-500">{{ $message }}</small>
                     @enderror
@@ -68,7 +68,7 @@
                     <label class="label-input" for="jenis_kelamin">
                         Jenis Kelamin
                     </label>
-                    <select class="input-data" id="jenis_kelamin" name="jenis_kelamin" required>
+                    <select class="input-data-minimal" id="jenis_kelamin" name="jenis_kelamin" required>
                         @if(old('jenis_kelamin') == 'L')
                         <option selected value="{{ old('jenis_kelamin') }}">Laki-laki</option>
                         <option value="P">Perempuan</option>
@@ -86,7 +86,7 @@
                     <label class="label-input" for="alasan_mutasi">
                         Alasan Mutasi
                     </label>
-                    <input value="{{ old('alasan_mutasi') }}" @error('alasan_mutasi') is-invalid @enderror class="input-data tw-w-full" id="alasan_mutasi" name="alasan_mutasi" type="text">
+                    <input value="{{ old('alasan_mutasi') }}" @error('alasan_mutasi') is-invalid @enderror class="input-data-minimal tw-w-full" id="alasan_mutasi" name="alasan_mutasi" type="text">
                     @error('alasan_mutasi')
                         <small class="tw-text-red-500">{{ $message }}</small>
                     @enderror
@@ -95,7 +95,7 @@
                     <label class="label-input" for="keluar_di_kelas">
                         Keluar di Kelas
                     </label>
-                    <select class="input-data" id="keluar_di_kelas" name="keluar_di_kelas">
+                    <select class="input-data-minimal" id="keluar_di_kelas" name="keluar_di_kelas">
                         <option value="">-</option>
                         @if(old('kelas'))
                         <option value="{{ old('kelas') }}">{{ old('kelas') }}</option>
@@ -109,7 +109,7 @@
                     <label class="label-input" for="pindah_ke">
                         Pindah Ke
                     </label>
-                    <input value="{{ old('pindah_ke') }}"  @error('pindah_ke') is-invalid @enderror class="input-data tw-w-full" id="pindah_ke" name="pindah_ke" type="text">
+                    <input value="{{ old('pindah_ke') }}"  @error('pindah_ke') is-invalid @enderror class="input-data-minimal tw-w-full" id="pindah_ke" name="pindah_ke" type="text">
                     @error('pindah_ke')
                         <small class="tw-text-red-500">{{ $message }}</small>
                     @enderror
@@ -118,7 +118,7 @@
                     <label class="label-input" for="tgl_mutasi">
                         Tanggal Mutasi
                     </label>
-                    <input value="{{ old('tgl_mutasi') }}" @error('tgl_mutasi') is-invalid @enderror class="input-data tw-w-full" id="tgl_mutasi" name="tgl_mutasi" type="date" required>
+                    <input value="{{ old('tgl_mutasi') }}" @error('tgl_mutasi') is-invalid @enderror class="input-data-minimal tw-w-full" id="tgl_mutasi" name="tgl_mutasi" type="date" required>
                     @error('tgl_mutasi')
                         <small class="tw-text-red-500">{{ $message }}</small>
                     @enderror
@@ -127,7 +127,7 @@
                     <label class="label-input" for="sk_mutasi">
                         Surat Mutasi
                     </label>
-                    <input value="{{ old('sk_mutasi') }}" @error('sk_mutasi') is-invalid @enderror class="input-data tw-w-full" id="sk_mutasi" name="sk_mutasi" type="text">
+                    <input value="{{ old('sk_mutasi') }}" @error('sk_mutasi') is-invalid @enderror class="input-data-minimal tw-w-full" id="sk_mutasi" name="sk_mutasi" type="text">
                     @error('sk_mutasi')
                         <small class="tw-text-red-500">{{ $message }}</small>
                     @enderror

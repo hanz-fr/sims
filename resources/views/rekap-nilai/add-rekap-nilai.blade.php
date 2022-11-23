@@ -111,10 +111,13 @@
                 </div>
             </div>
 
+            @if($mapel === [])
             
+            @else
             <div class="tw-text-center tw-font-pop tw-font-bold tw-text-sims-400 tw-text-2xl tw-mt-32 tw-mx-6">
                 Nilai Mapel
             </div>
+            @endif
             @foreach ($mapel as $m)
             <div class="tw-flex tw-justify-center">
             <div class="card-data-bright tw-flex tw-justify-between tw-gap-10 tw-w-4/6 tw-mx-5 tw-my-10 tw-py-20 tw-px-10">

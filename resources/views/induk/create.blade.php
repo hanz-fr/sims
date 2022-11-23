@@ -35,7 +35,7 @@
                     <label class="label-input" for="nis">
                         NIS
                     </label>
-                    <input value="{{ old('nis') }}" @error('nis_siswa') is-invalid @enderror class="input-data tw-w-full" id="nis" name="nis" type="text" maxlength="10" required>
+                    <input value="{{ old('nis') }}" @error('nis_siswa') is-invalid @enderror class="input-data-minimal tw-w-full" id="nis" name="nis" type="text" maxlength="10" required>
                     @error('nis_siswa')
                         <small class="tw-text-red-500">{{ $message }}</small>
                     @enderror
@@ -44,7 +44,7 @@
                     <label class="label-input" for="nisn">
                         NISN
                     </label>
-                    <input value="{{ old('nisn') }}" @error('nisn') is-invalid @enderror class="input-data tw-w-full" id="nisn" name="nisn" type="text" maxlength="10" required>
+                    <input value="{{ old('nisn') }}" @error('nisn') is-invalid @enderror class="input-data-minimal tw-w-full" id="nisn" name="nisn" type="text" maxlength="10" required>
                     @error('nisn')
                         <small class="tw-text-red-500">{{ $message }}</small>
                     @enderror
@@ -65,7 +65,7 @@
                     <label class="label-input" for="nama">
                         Nama Peserta Didik
                     </label>
-                    <input value="{{ old('nama') }}" @error('nama') is-invalid @enderror class="input-data" id="nama" type="text" name="nama" required>
+                    <input value="{{ old('nama') }}" @error('nama') is-invalid @enderror class="input-data-minimal" id="nama" type="text" name="nama" required>
                     @error('nama')
                         <small class="tw-text-red-500">{{ $message }}</small>
                     @enderror
@@ -76,7 +76,7 @@
                     <label class="label-input" for="tmp_lahir">
                         Tempat Lahir
                     </label>
-                    <input value="{{ old('tmp_lahir') }}" @error('tmp_lahir') is-invalid @enderror class="input-data" id="tmp_lahir" name="tmp_lahir" type="text" required>
+                    <input value="{{ old('tmp_lahir') }}" @error('tmp_lahir') is-invalid @enderror class="input-data-minimal" id="tmp_lahir" name="tmp_lahir" type="text" required>
                     @error('tmp_lahir')
                         <small class="tw-text-red-500">{{ $message }}</small>
                     @enderror
@@ -85,7 +85,7 @@
                     <label class="label-input" for="tgl_lahir">
                         Tanggal Lahir
                     </label>
-                    <input value="{{ old('tgl_lahir') }}" @error('tgl_lahir') is-invalid @enderror class="input-data" id="tgl_lahir" name="tgl_lahir" type="date" placeholder="dd/mm/yyyy" required>
+                    <input value="{{ old('tgl_lahir') }}" @error('tgl_lahir') is-invalid @enderror class="input-data-minimal" id="tgl_lahir" name="tgl_lahir" type="date" placeholder="dd/mm/yyyy" required>
                     @error('tgl_lahir')
                         <small class="tw-text-red-500">{{ $message }}</small>
                     @enderror
@@ -96,7 +96,7 @@
                     <label class="label-input" for="agama">
                         Agama
                     </label>
-                    <input value="{{ old('agama') }}" @error('agama') is-invalid @enderror class="input-data" id="agama" type="text" name="agama" required>
+                    <input value="{{ old('agama') }}" @error('agama') is-invalid @enderror class="input-data-minimal" id="agama" type="text" name="agama" required>
                     @error('agama')
                         <small class="tw-text-red-500">{{ $message }}</small>
                     @enderror
@@ -107,13 +107,13 @@
                     <label class="label-input" for="anak_ke">
                         Anak-Ke
                     </label>
-                    <input value="{{ old('anak_ke') }}" class="input-data" id="anak_ke" name="anak_ke" type="number" max="99" min="1" required>
+                    <input value="{{ old('anak_ke') }}" class="input-data-minimal" id="anak_ke" name="anak_ke" type="number" max="99" min="1" required>
                 </div>
                 <div class="tw-w-full md:tw-w-1/2 tw-px-3">
                     <label class="label-input" for="jenis_kelamin">
                         Jenis Kelamin
                     </label>
-                    <select class="input-data" id="jenis_kelamin" name="jenis_kelamin" required>
+                    <select class="input-data-minimal" id="jenis_kelamin" name="jenis_kelamin" required>
                         @if(old('jenis_kelamin') == 'L')
                         <option selected value="{{ old('jenis_kelamin') }}">Laki-laki</option>
                         <option value="P">Perempuan</option>
@@ -133,7 +133,7 @@
                     <label class="label-input" for="status">
                         Status dalam keluarga
                     </label>
-                    <select class="input-data" id="status" name="status">
+                    <select class="input-data-minimal" id="status" name="status">
                         <option selected value="">Pilih</option>
                         @if(old('status'))
                         <option value="{{ old('status') }}">
@@ -157,7 +157,7 @@
                     <label class="label-input" for="alamat_siswa">
                         Alamat Peserta Didik
                     </label>
-                    <textarea class="input-data" id="alamat_siswa" type="text" name="alamat_siswa" required>{{ old('alamat_siswa') }}</textarea>
+                    <textarea class="input-data-minimal" id="alamat_siswa" type="text" name="alamat_siswa" required>{{ old('alamat_siswa') }}</textarea>
                     @error('alamat_siswa')
                         <small class="tw-text-red-500">{{ $message }}</small>
                     @enderror
@@ -168,7 +168,7 @@
                     <label class="label-input" for="no_telp">
                         No. HP
                     </label>
-                    <input value="{{ old('no_telp') }}" @error('no_telp') is-invalid @enderror class="input-data" id="no_telp" type="text" name="no_telp" required  maxlength="20">
+                    <input value="{{ old('no_telp') }}" @error('no_telp') is-invalid @enderror class="input-data-minimal" id="no_telp" type="text" name="no_telp" required  maxlength="20">
                     @error('no_telp')
                         <small class="tw-text-red-500">{{ $message }}</small>
                     @enderror
@@ -177,18 +177,18 @@
                     <label class="label-input" for="email">
                         Alamat Email
                     </label>
-                    <input value="{{ old('email') }}" class="input-data" id="email" type="email" name="email">
+                    <input value="{{ old('email') }}" class="input-data-minimal" id="email" type="email" name="email">
                 </div>
             </div>
 
             {{-- section B, Diterima di sekolah ini --}}
-            <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims-400">B.  Diterima di sekolah ini</div>
+            <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-mb-8 tw-mt-24 tw-text-sims-400">B.  Diterima di sekolah ini</div>
             <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
                 <div class="tw-w-full tw-px-3">
                     <label class="label-input" for="diterima_di_kelas">
                         Di kelas
                     </label>
-                    <select class="input-data" id="diterima_di_kelas" name="diterima_di_kelas" required>
+                    <select class="input-data-minimal" id="diterima_di_kelas" name="diterima_di_kelas" required>
                     @if(old('kelas'))
                     <option value="{{ old('kelas') }}">{{ old('kelas') }}</option>
                     @endif
@@ -203,7 +203,7 @@
                     <label class="label-input" for="tgl_masuk">
                         Pada Tanggal
                     </label>
-                    <input class="input-data" id="tgl_masuk" type="date" name="tgl_masuk">
+                    <input class="input-data-minimal" id="tgl_masuk" type="date" name="tgl_masuk">
                 </div>
             </div>
             <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
@@ -211,18 +211,18 @@
                     <label class="label-input" for="semester">
                         Semester
                     </label>
-                    <input class="input-data" id="semester" type="number" name="semester">
+                    <input class="input-data-minimal" id="semester" type="number" name="semester">
                 </div>
             </div>
 
             {{-- sekolah asal --}}
-            <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims-400">C.  Sekolah Asal</div>
+            <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-mb-8 tw-mt-24 tw-text-sims-400">C.  Sekolah Asal</div>
             <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
                 <div class="tw-w-full tw-px-3">
                     <label class="label-input" for="nama_sekolah_asal">
                         Nama Sekolah
                     </label>
-                    <input class="input-data" @error('nama_sekolah_asal') is-invalid @enderror id="nama_sekolah_asal" type="text" name="nama_sekolah_asal" required>
+                    <input class="input-data-minimal" @error('nama_sekolah_asal') is-invalid @enderror id="nama_sekolah_asal" type="text" name="nama_sekolah_asal" required>
                     @error('nama_sekolah_asal')
                     <small class="tw-text-red-500">{{ $message }}</small>
                     @enderror
@@ -233,18 +233,18 @@
                     <label class="label-input" for="alamat_sekolah_asal">
                         Alamat Sekolah
                     </label>
-                    <input class="input-data" id="alamat_sekolah_asal" type="text" name="alamat_sekolah_asal" required>
+                    <input class="input-data-minimal" id="alamat_sekolah_asal" type="text" name="alamat_sekolah_asal" required>
                 </div>
             </div>
 
             {{-- ijazah smp --}}
-            <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims-400">D.  Ijazah SMP/MTs</div>
+            <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-mb-8 tw-mt-24 tw-text-sims-400">D.  Ijazah SMP/MTs</div>
             <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
                 <div class="tw-w-full tw-px-3">
                     <label class="label-input" for="nomor_ijazah_smp">
                         Nomor Ijazah SMP
                     </label>
-                    <input class="input-data" id="nomor_ijazah_smp" type="text" name="nomor_ijazah_smp">
+                    <input class="input-data-minimal" id="nomor_ijazah_smp" type="text" name="nomor_ijazah_smp">
                 </div>
             </div>
             <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
@@ -252,17 +252,17 @@
                     <label class="label-input" for="tahun_ijazah_smp">
                         Tahun Ijazah SMP
                     </label>
-                    <input class="input-data" id="tahun_ijazah_smp" type="text" name="tahun_ijazah_smp" max="10">
+                    <input class="input-data-minimal" id="tahun_ijazah_smp" type="text" name="tahun_ijazah_smp" max="10">
                 </div>
             </div>
 
-            <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims-400">E.  SKHUN SMP/Mts</div>
+            <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-mb-8 tw-mt-24 tw-text-sims-400">E.  SKHUN SMP/Mts</div>
             <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
                 <div class="tw-w-full tw-px-3">
                     <label class="label-input" for="nomor_skhun">
                         Nomor SKHUN
                     </label>
-                    <input class="input-data" id="nomor_skhun" type="text" name="nomor_skhun">
+                    <input class="input-data-minimal" id="nomor_skhun" type="text" name="nomor_skhun">
                 </div>
             </div>
             <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
@@ -270,12 +270,12 @@
                     <label class="label-input" for="tahun_skhun">
                         Tahun SKHUN
                     </label>
-                    <input class="input-data" id="tahun_skhun" type="text" name="tahun_skhun">
+                    <input class="input-data-minimal" id="tahun_skhun" type="text" name="tahun_skhun">
                 </div>
             </div>
             
 
-            <div x-data="{ openTab: 0}" class="tw-my-8">
+            <div x-data="{ openTab: 0}" class="tw-mb-8 tw-mt-24">
                 <label class="label-input tw-text-xl">
                     Apakah Siswa memiliki orang tua?
                 </label>
@@ -298,7 +298,7 @@
                             <label class="label-input" for="nama_ayah">
                                 Nama Ayah
                             </label>
-                            <input class="input-data" id="nama_ayah" type="text" name="nama_ayah">
+                            <input class="input-data-minimal" id="nama_ayah" type="text" name="nama_ayah">
                         </div>
                     </div>
                     <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
@@ -306,7 +306,7 @@
                             <label class="label-input" for="nama_ibu">
                                 Nama Ibu
                             </label>
-                            <input class="input-data" id="nama_ibu" type="text" name="nama_ibu">
+                            <input class="input-data-minimal" id="nama_ibu" type="text" name="nama_ibu">
                         </div>
                     </div>
                     <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
@@ -314,7 +314,7 @@
                             <label class="label-input" for="alamat_ortu">
                                 Alamat
                             </label>
-                            <textarea class="input-data" id="alamat_ortu" name="alamat_ortu"></textarea>
+                            <textarea class="input-data-minimal" id="alamat_ortu" name="alamat_ortu"></textarea>
                         </div>
                     </div>
                     <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
@@ -322,13 +322,13 @@
                             <label class="label-input" for="no_telp_ortu">
                                 No.Telp/HP
                             </label>
-                            <input class="input-data" id="no_telp_ortu" type="text" name="no_telp_ortu" maxlength="20">
+                            <input class="input-data-minimal" id="no_telp_ortu" type="text" name="no_telp_ortu" maxlength="20">
                         </div>
                         <div class="tw-w-full md:tw-w-1/2 tw-px-3">
                             <label class="label-input" for="email_ortu">
                                 Email
                             </label>
-                            <input class="input-data" id="email_ortu" type="email_ortu" name="email_ortu">
+                            <input class="input-data-minimal" id="email_ortu" type="email_ortu" name="email_ortu">
                         </div>
                     </div>
                 </div>
@@ -342,7 +342,7 @@
                             <label class="label-input" for="nama_wali">
                                 Nama Wali
                             </label>
-                            <input class="input-data" id="nama_wali" type="text" name="nama_wali">
+                            <input class="input-data-minimal" id="nama_wali" type="text" name="nama_wali">
                         </div>
                     </div>
                     <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
@@ -350,7 +350,7 @@
                             <label class="label-input" for="alamat_wali">
                                 Alamat
                             </label>
-                            <textarea class="input-data" id="alamat_wali" type="text" name="alamat_wali"></textarea>
+                            <textarea class="input-data-minimal" id="alamat_wali" type="text" name="alamat_wali"></textarea>
                         </div>
                     </div>
                     <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
@@ -358,7 +358,7 @@
                             <label class="label-input" for="no_telp_wali">
                                 No. Telp/HP
                             </label>
-                            <input class="input-data" id="no_telp_wali" type="text" name="no_telp_wali"  maxlength="20">
+                            <input class="input-data-minimal" id="no_telp_wali" type="text" name="no_telp_wali"  maxlength="20">
                         </div>
                     </div>
                     <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
@@ -366,7 +366,7 @@
                             <label class="label-input" for="pekerjaan_wali_2">
                                 Pekerjaan Wali
                             </label>
-                            <input class="input-data" id="pekerjaan_wali_2" type="text" name="pekerjaan_wali">
+                            <input class="input-data-minimal" id="pekerjaan_wali_2" type="text" name="pekerjaan_wali">
                         </div>
                     </div>
                 </div>
@@ -374,13 +374,13 @@
 
 
             {{-- meninggalkan sekolah --}}
-            <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims-400">G.  Meninggalkan Sekolah</div>
+            <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-mb-8 tw-mt-24 tw-text-sims-400">G.  Meninggalkan Sekolah</div>
             <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
                 <div class="tw-w-full tw-px-3">
                     <label class="label-input" for="tgl_meninggalkan_sekolah">
                         Tanggal
                     </label>
-                    <input class="input-data" id="tgl_meninggalkan_sekolah" type="date" name="tgl_meninggalkan_sekolah">
+                    <input class="input-data-minimal" id="tgl_meninggalkan_sekolah" type="date" name="tgl_meninggalkan_sekolah">
                 </div>
             </div>
             <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
@@ -388,20 +388,20 @@
                     <label class="label-input" for="alasan_meninggalkan_sekolah">
                         Alasan
                     </label>
-                    <input class="input-data" id="alasan_meninggalkan_sekolah" type="text" name="alasan_meninggalkan_sekolah">
+                    <input class="input-data-minimal" id="alasan_meninggalkan_sekolah" type="text" name="alasan_meninggalkan_sekolah">
                 </div>
             </div>
 
             {{-- tamat di sekolah ini --}}
-            <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims-400">H.  Tamat di Sekolah ini</div>
+            <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-mb-8 tw-mt-24 tw-text-sims-400">H.  Tamat di Sekolah ini</div>
             <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
                 <div class="tw-w-full tw-px-3">
                     <label class="label-input" for="nomor_ijazah_smk">
                         Apakah siswa sudah lulus?
                     </label>
-                    <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
+                    <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-2">
                         <div class="tw-w-full tw-px-3">
-                            <select class="input-data" id="isAlumni" name="isAlumni" required>
+                            <select class="input-data-minimal" id="isAlumni" name="isAlumni" required>
                                 <option [ngValue]="true">Sudah</option>
                                 <option [ngValue]="false">Belum</option>
                             </select>
@@ -414,7 +414,7 @@
                     <label class="label-input" for="nomor_ijazah_smk">
                         Nomor Ijazah
                     </label>
-                    <input class="input-data" id="nomor_ijazah_smk" type="text" name="nomor_ijazah_smk">
+                    <input class="input-data-minimal" id="nomor_ijazah_smk" type="text" name="nomor_ijazah_smk">
                 </div>
             </div>
             <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
@@ -422,18 +422,18 @@
                     <label class="label-input" for="tanggal_ijazah_smk">
                         Tanggal Ijazah
                     </label>
-                    <input class="input-data" id="tanggal_ijazah_smk" type="date" name="tanggal_ijazah_smk">
+                    <input class="input-data-minimal" id="tanggal_ijazah_smk" type="date" name="tanggal_ijazah_smk">
                 </div>
             </div>
             
             {{-- keterangan jasmani dan kesehatan siswa --}}
-            <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims-400">I.  Keterangan Jasmani dan Kesehatan Siswa</div>
+            <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-mb-8 tw-mt-24 tw-text-sims-400">I.  Keterangan Jasmani dan Kesehatan Siswa</div>
             <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
                 <div class="tw-w-full tw-px-3">
                     <label class="label-input" for="berat_badan">
                         Berat Badan   (.kg)
                     </label>
-                    <input class="input-data" id="berat_badan" type="number" name="berat_badan">
+                    <input class="input-data-minimal" id="berat_badan" type="number" name="berat_badan">
                 </div>
             </div>
             <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
@@ -441,7 +441,7 @@
                     <label class="label-input" for="tinggi_badan">
                         Tinggi Badan   (.cm)
                     </label>
-                    <input class="input-data" id="tinggi_badan" type="number" name="tinggi_badan">
+                    <input class="input-data-minimal" id="tinggi_badan" type="number" name="tinggi_badan">
                 </div>
             </div>
             <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
@@ -449,7 +449,7 @@
                     <label class="label-input" for="lingkar_kepala">
                         Lingkar Kepala   (.cm)
                     </label>
-                    <input class="input-data" id="lingkar_kepala" type="number" name="lingkar_kepala">
+                    <input class="input-data-minimal" id="lingkar_kepala" type="number" name="lingkar_kepala">
                 </div>
             </div>
             <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
@@ -457,18 +457,18 @@
                     <label class="label-input" for="golongan_darah">
                         Golongan Darah
                     </label>
-                    <input class="input-data" id="golongan_darah" type="text" name="golongan_darah">
+                    <input class="input-data-minimal" id="golongan_darah" type="text" name="golongan_darah">
                 </div>
             </div>
             {{-- keterangan lain2 --}}
-            <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims-400">J.  Keterangan Lain-lain</div>
+            <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-mb-8 tw-mt-24 tw-text-sims-400">J.  Keterangan Lain-lain</div>
             <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
                 <div class="tw-w-full tw-px-3">
-                    <textarea class="input-data" id="keterangan_lain" type="text" name="keterangan_lain"></textarea>
+                    <textarea class="input-data-minimal" id="keterangan_lain" type="text" name="keterangan_lain"></textarea>
                 </div>
             </div>
             {{-- rekap nilai --}}
-            <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims-400">K. Rekap Nilai</div>
+            <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-mb-8 tw-mt-24 tw-text-sims-400">K. Rekap Nilai</div>
             <div class="tw-flex tw-flex-col">
                 <a href="/rekap-nilai" class="tw-py-2 tw-border tw-w-fit tw-border-gray-600 tw-px-6 hover:tw-text-sims-400 tw-text-gray-600 tw-rounded-md tw-bg-white tw-font-medium">View & Edit</a>
                 <button type="submit" class="tw-bg-[#1D6F42] tw-w-fit tw-mt-4 tw-font-medium tw-text-white tw-py-3 tw-px-5 tw-rounded-lg">Upload dari excel</button>

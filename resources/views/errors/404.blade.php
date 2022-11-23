@@ -12,7 +12,7 @@
                     <div class="tw-font-pop tw-text-gray-300 tw-my-5 tw-text-7xl tw-mx-10 tw-font-bold">404 NOT FOUND</div>
                     <div class="tw-font-pop tw-text-gray-300 tw-my-5 tw-text-2xl tw-mx-10 tw-font-normal">Halaman yang kamu cari tidak dapat ditemukan</div>
                 </div>
-                <div class="tw-flex lg:tw-flex-row sm:tw-flex-col tw-justify-between tw-my-auto tw-gap-3 tw-p-2">
+                {{-- <div class="tw-flex lg:tw-flex-row sm:tw-flex-col tw-justify-between tw-my-auto tw-gap-3 tw-p-2">
                     <a href="/data-induk-siswa?perPage=10" class="tw-group">
                         <div
                             class="tw-justify-center tw-flex lg:tw-flex-col sm:tw-flex-row  tw-text-center tw-border-2 tw-py-6 tw-px-10 tw-items-center tw-bg-white tw-rounded-lg group-hover:tw-bg-sims-400 group-hover:tw-text-white tw-transition-all tw-duration-300">
@@ -31,6 +31,40 @@
                             class="tw-justify-center tw-flex lg:tw-flex-col sm:tw-flex-row  tw-text-center tw-border-2 tw-py-6 tw-px-10 tw-items-center tw-bg-white tw-rounded-lg group-hover:tw-bg-sims-400 group-hover:tw-text-white tw-transition-all tw-duration-300">
                             <div class="tw-text-4xl tw-text-sims-400 group-hover:tw-text-white"><i class="fa-regular fa-book-open"></i></div>
                             <div class="tw-text-gray-500 tw-text-sm tw-font-normal lg:tw-mt-4 sm:tw-ml-4 group-hover:tw-text-white">Jurusan</div>
+                        </div>
+                    </a>
+                </div> --}}
+
+                <!-- -->
+                <div class="tw-flex lg:tw-flex-row sm:tw-flex-col tw-justify-between tw-my-auto tw-gap-3 tw-p-2">
+                    
+                    <!-- Data Induk Siswa -->
+                    <a href="/data-induk-siswa?page=1&perPage=10">
+                        <div class="tw-border-2 tw-border-slate-200 tw-rounded-lg tw-px-8 tw-py-7 tw-text-sims-400 hover:tw-text-white hover:tw-bg-sims-400 tw-transition-all tw-ease-in-out">
+                            <div class="tw-flex tw-flex-col tw-gap-5 tw-text-center">
+                                <i class="fa-solid fa-users tw-text-4xl"></i>
+                                Data Induk Siswa
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Dashboard -->
+                    <a href="/">
+                        <div class="tw-border-2 tw-border-slate-200 tw-rounded-lg tw-px-12 tw-py-7 tw-text-sims-400 hover:tw-text-white hover:tw-bg-sims-400 tw-transition-all tw-ease-in-out">
+                            <div class="tw-flex tw-flex-col tw-gap-5 tw-text-center">
+                                <i class="fa-solid fa-columns tw-text-4xl"></i>
+                                Dashboard
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Jurusan -->
+                    <a href="/jurusan">
+                        <div class="tw-border-2 tw-border-slate-200 tw-rounded-lg tw-px-14 tw-py-7 tw-text-sims-400 hover:tw-text-white hover:tw-bg-sims-400 tw-transition-all tw-ease-in-out">
+                            <div class="tw-flex tw-flex-col tw-gap-5 tw-text-center">
+                                <i class="fa-solid fa-book-open tw-text-4xl"></i>
+                                Jurusan
+                            </div>
                         </div>
                     </a>
                 </div>

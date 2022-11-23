@@ -83,6 +83,101 @@ class ApiController extends Controller
 
         $response = Http::get("{$this->api_url}/dashboard");
 
+        $current_date = Carbon::now()->toDateString();
+
+        $current_date_parsed = Carbon::parse($current_date)->translatedFormat('l d F Y');
+
+        $current_month = Carbon::now()->month;
+
+        $current_year = Carbon::now()->year;
+
+
+        /* ngl, this is probably the worst way */
+        $akhirJanuari =  Carbon::createFromFormat('m/d/Y', "01/01/$current_year")->lastOfMonth()->format('Y-m-d');
+        $akhirFebruari = Carbon::createFromFormat('m/d/Y', "02/01/$current_year")->lastOfMonth()->format('Y-m-d');
+        $akhirMaret = Carbon::createFromFormat('m/d/Y', "03/01/$current_year")->lastOfMonth()->format('Y-m-d');
+        $akhirApril = Carbon::createFromFormat('m/d/Y', "04/01/$current_year")->lastOfMonth()->format('Y-m-d');
+        $akhirMei = Carbon::createFromFormat('m/d/Y', "05/01/$current_year")->lastOfMonth()->format('Y-m-d');
+        $akhirJuni = Carbon::createFromFormat('m/d/Y', "06/01/$current_year")->lastOfMonth()->format('Y-m-d');
+        $akhirJuli = Carbon::createFromFormat('m/d/Y', "07/01/$current_year")->lastOfMonth()->format('Y-m-d');
+        $akhirAgustus = Carbon::createFromFormat('m/d/Y', "08/01/$current_year")->lastOfMonth()->format('Y-m-d');
+        $akhirSeptember = Carbon::createFromFormat('m/d/Y', "09/01/$current_year")->lastOfMonth()->format('Y-m-d');
+        $akhirOktober = Carbon::createFromFormat('m/d/Y', "10/01/$current_year")->lastOfMonth()->format('Y-m-d');
+        $akhirNovember = Carbon::createFromFormat('m/d/Y', "11/01/$current_year")->lastOfMonth()->format('Y-m-d');
+        $akhirDesember = Carbon::createFromFormat('m/d/Y', "12/01/$current_year")->lastOfMonth()->format('Y-m-d');
+
+
+        $siswaMasukJanuari = Http::get("{$this->api_url}/dashboard/siswaMasukByMonth/get/{$current_year}-01-01/{$akhirJanuari}");
+        $siswaMasukFebruari = Http::get("{$this->api_url}/dashboard/siswaMasukByMonth/get/{$current_year}-02-01/{$akhirFebruari}");
+        $siswaMasukMaret = Http::get("{$this->api_url}/dashboard/siswaMasukByMonth/get/{$current_year}-03-01/{$akhirMaret}");
+        $siswaMasukApril = Http::get("{$this->api_url}/dashboard/siswaMasukByMonth/get/{$current_year}-04-01/{$akhirApril}");
+        $siswaMasukMei = Http::get("{$this->api_url}/dashboard/siswaMasukByMonth/get/{$current_year}-05-01/{$akhirMei}");
+        $siswaMasukJuni = Http::get("{$this->api_url}/dashboard/siswaMasukByMonth/get/{$current_year}-06-01/{$akhirJuni}");
+        $siswaMasukJuli = Http::get("{$this->api_url}/dashboard/siswaMasukByMonth/get/{$current_year}-07-01/{$akhirJuli}");
+        $siswaMasukAgustus = Http::get("{$this->api_url}/dashboard/siswaMasukByMonth/get/{$current_year}-08-01/{$akhirAgustus}");
+        $siswaMasukSeptember = Http::get("{$this->api_url}/dashboard/siswaMasukByMonth/get/{$current_year}-09-01/{$akhirSeptember}");
+        $siswaMasukOktober = Http::get("{$this->api_url}/dashboard/siswaMasukByMonth/get/{$current_year}-10-01/{$akhirOktober}");
+        $siswaMasukNovember = Http::get("{$this->api_url}/dashboard/siswaMasukByMonth/get/{$current_year}-11-01/{$akhirNovember}");
+        $siswaMasukDesember = Http::get("{$this->api_url}/dashboard/siswaMasukByMonth/get/{$current_year}-12-01/{$akhirDesember}");
+
+
+        $siswaKeluarJanuari = Http::get("{$this->api_url}/dashboard/siswaKeluarByMonth/get/{$current_year}-01-01/{$akhirJanuari}");
+        $siswaKeluarFebruari = Http::get("{$this->api_url}/dashboard/siswaKeluarByMonth/get/{$current_year}-02-01/{$akhirFebruari}");
+        $siswaKeluarMaret = Http::get("{$this->api_url}/dashboard/siswaKeluarByMonth/get/{$current_year}-03-01/{$akhirMaret}");
+        $siswaKeluarApril = Http::get("{$this->api_url}/dashboard/siswaKeluarByMonth/get/{$current_year}-04-01/{$akhirApril}");
+        $siswaKeluarMei = Http::get("{$this->api_url}/dashboard/siswaKeluarByMonth/get/{$current_year}-05-01/{$akhirMei}");
+        $siswaKeluarJuni = Http::get("{$this->api_url}/dashboard/siswaKeluarByMonth/get/{$current_year}-06-01/{$akhirJuni}");
+        $siswaKeluarJuli = Http::get("{$this->api_url}/dashboard/siswaKeluarByMonth/get/{$current_year}-07-01/{$akhirJuli}");
+        $siswaKeluarAgustus = Http::get("{$this->api_url}/dashboard/siswaKeluarByMonth/get/{$current_year}-08-01/{$akhirAgustus}");
+        $siswaKeluarSeptember = Http::get("{$this->api_url}/dashboard/siswaKeluarByMonth/get/{$current_year}-09-01/{$akhirSeptember}");
+        $siswaKeluarOktober = Http::get("{$this->api_url}/dashboard/siswaKeluarByMonth/get/{$current_year}-10-01/{$akhirOktober}");
+        $siswaKeluarNovember = Http::get("{$this->api_url}/dashboard/siswaKeluarByMonth/get/{$current_year}-11-01/{$akhirNovember}");
+        $siswaKeluarDesember = Http::get("{$this->api_url}/dashboard/siswaKeluarByMonth/get/{$current_year}-12-01/{$akhirDesember}");
+
+        switch($current_month) {
+
+            case(1): 
+                $current_month = 'Januari';
+                break;
+            case(2): 
+                $current_month = 'Februari';
+                break;
+            case(3): 
+                $current_month = 'Maret';
+                break;
+            case(4): 
+                $current_month = 'April';
+                break;
+            case(5): 
+                $current_month = 'Mei';
+                break;
+            case(6): 
+                $current_month = 'Juni';
+                break;
+            case(7): 
+                $current_month = 'Juli';
+                break;
+            case(8): 
+                $current_month = 'Agustus';
+                break;
+            case(9): 
+                $current_month = 'September';
+                break;
+            case(10): 
+                $current_month = 'Oktober';
+                break;
+            case(11): 
+                $current_month = 'November';
+                break;
+            case(12): 
+                $current_month = 'Desember';
+                break;
+            
+            default:
+                $current_month = 'Undefined';
+
+        }
+
         if ($response->successful()) {
 
             return view('rekap-siswa.dashboard-rekap-siswa', [
@@ -95,7 +190,39 @@ class ApiController extends Controller
                 'siswaKeluar' => json_decode($response)->mutasi->count,
                 'jumlahSiswaX' => json_decode($response)->jumlahSiswaX->count,
                 'jumlahSiswaXI' => json_decode($response)->jumlahSiswaXI->count,
-                'jumlahSiswaXII' => json_decode($response)->jumlahSiswaXII->count
+                'jumlahSiswaXII' => json_decode($response)->jumlahSiswaXII->count,
+                'current_month' => $current_month,
+                'current_year' => $current_year,
+                'current_date' => $current_date,
+                'current_date_parsed' => $current_date_parsed,
+
+                /* SISWA MASUK */
+                'siswaMasukJan' => json_decode($siswaMasukJanuari)->count ,
+                'siswaMasukFeb' => json_decode($siswaMasukFebruari)->count ,
+                'siswaMasukMar' => json_decode($siswaMasukMaret)->count ,
+                'siswaMasukApr' => json_decode($siswaMasukApril)->count ,
+                'siswaMasukMei' => json_decode($siswaMasukMei)->count ,
+                'siswaMasukJun' => json_decode($siswaMasukJuni)->count ,
+                'siswaMasukJul' => json_decode($siswaMasukJuli)->count ,
+                'siswaMasukAgu' => json_decode($siswaMasukAgustus)->count ,
+                'siswaMasukSep' => json_decode($siswaMasukSeptember)->count ,
+                'siswaMasukOkt' => json_decode($siswaMasukOktober)->count ,
+                'siswaMasukNov' => json_decode($siswaMasukNovember)->count ,
+                'siswaMasukDes' => json_decode($siswaMasukDesember)->count ,
+
+                /* SISWA KELUAR */
+                'siswaKeluarJan' => json_decode($siswaKeluarJanuari)->count ,
+                'siswaKeluarFeb' => json_decode($siswaKeluarFebruari)->count ,
+                'siswaKeluarMar' => json_decode($siswaKeluarMaret)->count ,
+                'siswaKeluarApr' => json_decode($siswaKeluarApril)->count ,
+                'siswaKeluarMei' => json_decode($siswaKeluarMei)->count ,
+                'siswaKeluarJun' => json_decode($siswaKeluarJuni)->count ,
+                'siswaKeluarJul' => json_decode($siswaKeluarJuli)->count ,
+                'siswaKeluarAgu' => json_decode($siswaKeluarAgustus)->count ,
+                'siswaKeluarSep' => json_decode($siswaKeluarSeptember)->count ,
+                'siswaKeluarOkt' => json_decode($siswaKeluarOktober)->count ,
+                'siswaKeluarNov' => json_decode($siswaKeluarNovember)->count ,
+                'siswaKeluarDes' => json_decode($siswaKeluarDesember)->count ,
             ]);
 
         } else {
@@ -213,7 +340,7 @@ class ApiController extends Controller
         $kelas = Http::get("{$this->api_url}/kelas/siswa-per-kelas/all");
         $mapel = Http::get("{$this->api_url}/mapel-jurusan/get/by-jurusan/$jurusanSiswa"); // get mapel by jurusan siswa
 
-        
+
         if ($nis) {
 
             $message = json_decode($siswa)->message;

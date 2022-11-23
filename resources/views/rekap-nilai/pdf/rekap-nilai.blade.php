@@ -157,7 +157,7 @@
             </tr>
             <tr>
 
-                {{--// DO NOT CHANGE //--}}
+                 {{-- DO NOT CHANGE --}}
 
                 @foreach (collect($siswa->raport)->where('semester', 1) as $rp)
                 <th colspan="2">
@@ -236,7 +236,7 @@
                 </th>
                 @endif
 
-                {{--// DO NOT CHANGE //--}}
+               {{-- DO NOT CHANGE --}}
             </tr>
             <tr>
                 <th scope="col">
