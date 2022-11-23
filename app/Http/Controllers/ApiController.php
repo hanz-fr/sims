@@ -32,7 +32,7 @@ class ApiController extends Controller
     public function __construct()
     {
 
-        $this->api_url = '127.0.0.1:3000'; // Ganti link NGROK disini
+        $this->api_url = 'https://d197-103-139-10-189.ngrok.io'; // Ganti link NGROK disini
 
 
         $this->sims_url = 'http://127.0.0.1:8000'; // SIMS URL
@@ -309,7 +309,7 @@ class ApiController extends Controller
         $tidaknaik = 'daftar_nama_tidak_naik_'.date('Y-m-d_H-i-s').'.xlsx';
 
         $pdf = PDF::loadView('rekap-siswa.pdf.tidak-naik', [
-            'siswa' => json_decode($response)->data->rows
+            'raport' => json_decode($response)->data->rows
         ]);
 
         $tidaknaik = 'data_tidak_naik_kelas_periode'.date('Y-m-d_H-i-s').'.pdf';
@@ -326,7 +326,7 @@ class ApiController extends Controller
         $tidaknaik = 'daftar_nama_tidak_naik_'.date('Y-m-d_H-i-s').'.xlsx';
 
         return view('rekap-siswa.pdf.tidak-naik', [
-            'siswa' => json_decode($response)->data->rows,
+            'raport' => json_decode($response)->data->rows
         ]);
         
     }

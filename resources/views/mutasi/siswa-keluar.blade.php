@@ -31,6 +31,8 @@
                     <a href="/mutasi-keluar-excel" title="Export ke Excel"><i class="fa-solid fa-file-excel btn-export"></i></a>
                     <a href="/mutasi-keluar-pdf" title="Export ke PDF"><i class="fa-solid fa-file-pdf btn-export"></i></a>
                 </div>
+
+                
                 @endcan
             </div>
 
