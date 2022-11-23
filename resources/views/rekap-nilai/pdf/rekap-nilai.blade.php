@@ -156,26 +156,87 @@
                 </th>
             </tr>
             <tr>
-                @foreach ($siswa->raport as $rp)
+
+                {{--// DO NOT CHANGE //--}}
+
+                @foreach (collect($siswa->raport)->where('semester', 1) as $rp)
                 <th colspan="2">
                     Semester: {{ $rp->semester }}
                 </th>
                 @endforeach
+
+                @if(collect($siswa->raport)->where('semester', 1)->isEmpty())
                 <th colspan="2">
-                    Semester: 2
+                    Semester :
                 </th>
+                @endif
+
+
+                @foreach (collect($siswa->raport)->where('semester', 2) as $rp)
                 <th colspan="2">
-                    Semester: 3
+                    Semester: {{ $rp->semester }}
                 </th>
+                @endforeach
+
+                @if(collect($siswa->raport)->where('semester', 2)->isEmpty())
                 <th colspan="2">
-                    Semester: 4
+                    Semester :
                 </th>
+                @endif
+
+
+                @foreach (collect($siswa->raport)->where('semester', 3) as $rp)
                 <th colspan="2">
-                    Semester: 5
+                    Semester: {{ $rp->semester }}
                 </th>
+                @endforeach
+
+                @if(collect($siswa->raport)->where('semester', 3)->isEmpty())
                 <th colspan="2">
-                    Semester: 6
+                    Semester :
                 </th>
+                @endif
+
+
+                @foreach (collect($siswa->raport)->where('semester', 4) as $rp)
+                <th colspan="2">
+                    Semester: {{ $rp->semester }}
+                </th>
+                @endforeach
+
+                @if(collect($siswa->raport)->where('semester', 4)->isEmpty())
+                <th colspan="2">
+                    Semester :
+                </th>
+                @endif
+
+                
+                @foreach (collect($siswa->raport)->where('semester', 5) as $rp)
+                <th colspan="2">
+                    Semester: {{ $rp->semester }}
+                </th>
+                @endforeach
+
+                @if(collect($siswa->raport)->where('semester', 5)->isEmpty())
+                <th colspan="2">
+                    Semester :
+                </th>
+                @endif
+
+
+                @foreach (collect($siswa->raport)->where('semester', 6) as $rp)
+                <th colspan="2">
+                    Semester: {{ $rp->semester }}
+                </th>
+                @endforeach
+
+                @if(collect($siswa->raport)->where('semester', 6)->isEmpty())
+                <th colspan="2">
+                    Semester :
+                </th>
+                @endif
+
+                {{--// DO NOT CHANGE //--}}
             </tr>
             <tr>
                 <th scope="col">
