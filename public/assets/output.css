@@ -1318,10 +1318,6 @@ video {
   margin-top: 8rem;
 }
 
-.tw-mr-32 {
-  margin-right: 8rem;
-}
-
 .tw-ml-10 {
   margin-left: 2.5rem;
 }
@@ -1376,6 +1372,10 @@ video {
 
 .-tw-mb-10 {
   margin-bottom: -2.5rem;
+}
+
+.tw-mr-32 {
+  margin-right: 8rem;
 }
 
 .tw-box-border {
@@ -2241,11 +2241,6 @@ video {
 .tw-bg-back {
   --tw-bg-opacity: 1;
   background-color: rgb(244 244 244 / var(--tw-bg-opacity));
-}
-
-.tw-bg-slate-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
 }
 
 .tw-bg-sims-500 {
