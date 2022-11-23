@@ -32,7 +32,7 @@ class ApiController extends Controller
     public function __construct()
     {
 
-        $this->api_url = 'https://0d71-103-148-113-86.ap.ngrok.io'; // Ganti link NGROK disini
+        $this->api_url = 'https://d386-103-148-113-86.ap.ngrok.io'; // Ganti link NGROK disini
 
 
         $this->sims_url = 'http://127.0.0.1:8000'; // SIMS URL
@@ -1195,7 +1195,6 @@ class ApiController extends Controller
 
 
     public function importDataSiswa(Request $request) {
-
         
         $this->validate($request, [
             'uploaded_file' => 'required|file|mimes:xls,xlsx'
@@ -1210,31 +1209,67 @@ class ApiController extends Controller
             $row_limit    = $sheet->getHighestDataRow();
             $column_limit = $sheet->getHighestDataColumn();
             $row_range    = range( 2, $row_limit );
-            $column_range = range( 'F', $column_limit );
+            $column_range = range( 'AQ', $column_limit );
             $startcount   = 2;
-
-            $data = array();
             
             foreach ( $row_range as $row ) {
-                $data[] = [
-                    'nis' =>$sheet->getCell( 'A' . $row )->getValue(),
-                    'nisn' => $sheet->getCell( 'B' . $row )->getValue(),
-                    'nama' => $sheet->getCell( 'C' . $row )->getValue(),
-                    'alamat' => $sheet->getCell( 'D' . $row )->getValue(),
-                    '' => $sheet->getCell( 'E' . $row )->getValue(),
-                    '' =>$sheet->getCell( 'F' . $row )->getValue(),
-                ];
+                $response = Http::post("{$this->api_url}/siswa", [
+                    'nis_siswa'                   => $sheet->getCell( 'A' . $row )->getValue(),
+                    'nisn_siswa'                  => $sheet->getCell( 'B' . $row )->getValue(),
+                    'nama_siswa'                  => $sheet->getCell( 'C' . $row )->getValue(),
+                    'KelasId'                     => $sheet->getCell( 'D' . $row )->getValue(),
+                    'email_siswa'                 => $sheet->getCell( 'E' . $row )->getValue(),
+                    'tmp_lahir'                   => $sheet->getCell( 'F' . $row )->getValue(),
+                    'tgl_lahir'                   => $sheet->getCell( 'G' . $row )->getValue(),
+                    'jenis_kelamin'               => $sheet->getCell( 'H' . $row )->getValue(),
+                    'agama'                       => $sheet->getCell( 'I' . $row )->getValue(),
+                    'no_ijazah_smk'               => $sheet->getCell( 'J' . $row )->getValue(),
+                    'no_ijazah_smp'               => $sheet->getCell( 'K' . $row )->getValue(),
+                    'tgl_ijazah_smk'              => $sheet->getCell( 'L' . $row )->getValue(),
+                    'no_skhun_smp'                => $sheet->getCell( 'M' . $row )->getValue(),
+                    'thn_skhun_smp'               => $sheet->getCell( 'N' . $row )->getValue(),
+                    'thn_ijazah_smp'              => $sheet->getCell( 'O' . $row )->getValue(),
+                    'tgl_diterima'                => $sheet->getCell( 'P' . $row )->getValue(),
+                    'semester_diterima'           => $sheet->getCell( 'Q' . $row )->getValue(),
+                    'diterima_di_kelas'           => $sheet->getCell( 'R' . $row )->getValue(),
+                    'alamat_siswa'                => $sheet->getCell( 'S' . $row )->getValue(),
+                    'sekolah_asal'                => $sheet->getCell( 'T' . $row )->getValue(),
+                    'alamat_sekolah_asal'         => $sheet->getCell( 'U' . $row )->getValue(),
+                    'anak_ke'                     => $sheet->getCell( 'V' . $row )->getValue(),
+                    'status'                      => $sheet->getCell( 'W' . $row )->getValue(),
+                    'keterangan_lain'             => $sheet->getCell( 'X' . $row )->getValue(),
+                    'no_telp_siswa'               => $sheet->getCell( 'Y' . $row )->getValue(),
+                    'nama_ayah'                   => $sheet->getCell( 'Z' . $row )->getValue(),
+                    'nama_ibu'                    => $sheet->getCell( 'AA' . $row )->getValue(),
+                    'alamat_ortu'                 => $sheet->getCell( 'AB' . $row )->getValue(),
+                    'no_telp_ortu'                => $sheet->getCell( 'AC' . $row )->getValue(),
+                    'email_ortu'                  => $sheet->getCell( 'AD' . $row )->getValue(),
+                    'nama_wali'                   => $sheet->getCell( 'AE' . $row )->getValue(),
+                    'alamat_wali'                 => $sheet->getCell( 'AF' . $row )->getValue(),
+                    'no_telp_wali'                => $sheet->getCell( 'AG' . $row )->getValue(),
+                    'pekerjaan_wali'              => $sheet->getCell( 'AH' . $row )->getValue(),
+                    'tgl_meninggalkan_sekolah'    => $sheet->getCell( 'AI' . $row )->getValue(),
+                    'alasan_meninggalkan_sekolah' => $sheet->getCell( 'AJ' . $row )->getValue(),
+                    'foto'                        => $sheet->getCell( 'AK' . $row )->getValue(),
+                    'berat_badan'                 => $sheet->getCell( 'AL' . $row )->getValue(),
+                    'tinggi_badan'                => $sheet->getCell( 'AM' . $row )->getValue(),
+                    'lingkar_kepala'              => $sheet->getCell( 'AN' . $row )->getValue(),
+                    'golongan_darah'              => $sheet->getCell( 'AO' . $row )->getValue(),
+                    'tgl_masuk'                   => $sheet->getCell( 'AP' . $row )->getValue(),
+                    'isAlumni'                    => $sheet->getCell( 'AQ' . $row )->getValue(),
+                ]);
                 $startcount++;
             }
             
-            dd($data);
+            $response->throw();
             
         } catch (Exception $e) {
             $error_code = $e->errorInfo[1];
             return back()->with('error','There was a problem uploading the data!');
         }
 
-        return back()->with('success','Great! Data has been successfully uploaded.');
+        return back()->with('success','Great! Data has been successfully imported.');
+
     }
 
 

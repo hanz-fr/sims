@@ -382,7 +382,6 @@
                 </div>
             </div>
             @endcan
-        </div>
     </section>
 
         @if(isset($siswa))
@@ -520,6 +519,7 @@
             </div>
         </div>
     </div>
+</div>
 
 @endif
 @endsection
