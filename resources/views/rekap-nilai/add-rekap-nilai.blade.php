@@ -121,7 +121,7 @@
                 
                 <div class="tw-px-5 tw-rounded-lg tw-bg-gray-100 tw-w-2/6">
                     <div class="tw-mt-5">
-                    <span class="tw-font-pop tw-mt-5 tw-text-gray-400 tw-font-bold">Mapel</span>
+                    <span class="tw-font-pop tw-mt-5 tw-text-gray-400 tw-font-bold">Mata Pelajaran</span>
                     <select name="idMapelJurusan[]" id="idMapelJurusan" class="input-account tw-px-10">
                     <option value="{{ $m->mapelJurusanId }}">{{ $m->MapelId }}</option>
                     </select>
