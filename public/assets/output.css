@@ -2298,6 +2298,16 @@ video {
   background-color: rgb(149 187 232 / var(--tw-bg-opacity));
 }
 
+.tw-bg-slate-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
+}
+
+.tw-bg-slate-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(148 163 184 / var(--tw-bg-opacity));
+}
+
 .tw-bg-admin-login {
   background-image: url('./img/bg-admin.svg');
 }
