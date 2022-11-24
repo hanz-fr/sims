@@ -71,7 +71,7 @@
                                 <div class="sm:tw-px-12 md:tw-px-8 tw-mt-7">
                                     <div class="tw-flex tw-flex-row">
                                         <div class="tw-text-5xl tw-text-[#FF869C]"><i class="fa-solid fa-user"></i></div>
-                                        <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">{{ $mutasi }}</div>
+                                        <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">{{ $siswaKeluar }}</div>
                                     </div>
                                 </div>
                                 <div> 
@@ -254,6 +254,10 @@
                             <div class="tw-text-2xl tw-text-sims-400 tw-font-bold">{{ $jumlahSiswaTJKT }}</div>
                             <div class=" tw-font-light tw-text-gray-400">TJKT</div>
                         </li>
+                        <li class="tw-flex-row tw-text-center">
+                            <div class="tw-text-2xl tw-text-sims-400 tw-font-bold">{{ $jumlahSiswaMLOG }}</div>
+                            <div class=" tw-font-light tw-text-gray-400">MLOG</div>
+                        </li>
                     </ul>
                 </div>
             </section>
@@ -337,7 +341,7 @@ const config = {
     },
     elements: {
         arc: {
-          borderWidth: 0.3, // <-- Set this to derired value
+          borderWidth: 0.6, // <-- Set this to derired value
           borderColor: '#ffffff'
         }
     }
