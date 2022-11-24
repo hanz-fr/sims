@@ -32,7 +32,7 @@ class ApiController extends Controller
     public function __construct()
     {
 
-        $this->api_url = 'https://d197-103-139-10-189.ngrok.io'; // Ganti link NGROK disini
+        $this->api_url = '127.0.0.1:3000'; // Ganti link NGROK disini
 
 
         $this->sims_url = 'http://127.0.0.1:8000'; // SIMS URL
@@ -1625,11 +1625,17 @@ class ApiController extends Controller
                 'sk_mutasi' => $request->sk_mutasi
             ]);
 
-            if ($response->successful()) {
+            $response2 = Http::put("{$this->api_url}/siswa/{$nis}", [
+                'tgl_meninggalkan_sekolah' => $request->tgl_mutasi,
+                'alasan_meninggalkan_sekolah' => $request->alasan_mutasi, 
+            ]);
+
+
+            if ($response->successful() || $response2->successfull()) {
                 return redirect('/siswa-keluar')->with('success', 'Mutasi created successfully.');
             } 
 
-            if ($response->clientError()) {
+            if ($response->clientError() || $response2->clientError()) {
                 return redirect('/create-mutasi-keluar')->with('error-mutasi', 'Mutasi dengan NIS tersebut sudah terdaftar.');
             }
 
@@ -1789,8 +1795,15 @@ class ApiController extends Controller
                 'tgl_mutasi' => $request->tgl_mutasi,
                 'sk_mutasi' => $request->sk_mutasi
             ]);
+
+            $response2 = Http::put("{$this->api_url}/siswa/{$nis}", [
+                'tgl_meninggalkan_sekolah' => $request->tgl_mutasi,
+                'alasan_meninggalkan_sekolah' => $request->alasan_mutasi, 
+            ]);
     
             $response->throw();
+
+            $response2->throw();
 
             return redirect("{$request->prevURL}")->with('success', 'Mutasi updated successfully.');
     
