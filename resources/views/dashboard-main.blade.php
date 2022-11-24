@@ -18,7 +18,7 @@
             </section>
 
             {{-- chart view --}}
-            <section class="tw-bg-white tw-shadow-md tw-h-fit tw-px-10 tw-py-9 lg:tw-w-full sm:tw-w-full tw-mt-7">
+            <section class="tw-bg-white tw-shadow-lg tw-h-fit tw-px-10 tw-py-9 lg:tw-w-full sm:tw-w-full tw-mt-7">
                 <div class="tw-font-pop tw-text-gray-400 tw-font-bold">Grafik Jumlah Siswa SMKN 11</div>
                 <div class="tw-font-pop tw-flex tw-justify-around">
                     <div style="height: 400px">
@@ -64,119 +64,121 @@
 
                     <div x-init="$dispatch('register', {id: 1})"  
                       x-intersect:enter.half="setIndex(0)" x-transition.duration.500ms>
-                        <div class="card-dashboard">
-                            <div>
-                                <a href="/siswa-keluar" class="tw-text-sims-400 hover:tw-text-sims-600 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                            </div>
-                            <div class="sm:tw-px-12 md:tw-px-8">
-                                <div class="tw-flex tw-flex-row">
-                                    <div class="tw-text-5xl tw-text-[#FF869C]"><i class="fa-solid fa-user"></i></div>
-                                    <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">{{ $mutasi }}</div>
+                      @can('rekap-siswa')
+                        <a href="/siswa-keluar">
+                      @endcan
+                            <div class="card-dashboard tw-transition-all hover:tw-shadow-lg">
+                                <div class="sm:tw-px-12 md:tw-px-8 tw-mt-7">
+                                    <div class="tw-flex tw-flex-row">
+                                        <div class="tw-text-5xl tw-text-[#FF869C]"><i class="fa-solid fa-user"></i></div>
+                                        <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">{{ $mutasi }}</div>
+                                    </div>
+                                </div>
+                                <div> 
+                                    <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Siswa yang keluar</div>
                                 </div>
                             </div>
-                            <div> 
-                                <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Siswa yang keluar</div>
-                            </div>
-                        </div>
+                        </a>
                     </div>
 
                     <div x-init="$dispatch('register', {id: 2})"  
                       x-intersect:enter.half="setIndex(1)" x-transition.duration.500ms>
-                      <div class="card-dashboard">
-                          <div>
-                              <a href="/rekap-jumlah-siswa" class="tw-text-sims-400 hover:tw-text-sims-600 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                          </div>
-                          <div class="sm:tw-px-12 md:tw-px-4">
-                              <div class="tw-flex tw-flex-row">
-                                  <div class="tw-text-5xl tw-text-[#FFA386]"><i class="fa-solid fa-user"></i></div>
-                              <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">{{ $siswa }}</div>
-                              </div>
-                          </div>
-                          <div class="/rekap-jumlah-siswa"> 
-                              <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Jumlah Siswa</div>
-                          </div>
-                      </div>
+                      @cannot('wali kelas')
+                        <a href="/rekap-jumlah-siswa">
+                      @endcannot
+                            <div class="card-dashboard tw-transition-all hover:tw-shadow-lg">
+                                <div class="sm:tw-px-12 md:tw-px-4 tw-mt-7">
+                                    <div class="tw-flex tw-flex-row">
+                                        <div class="tw-text-5xl tw-text-[#FFA386]"><i class="fa-solid fa-user"></i></div>
+                                    <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">{{ $siswa }}</div>
+                                    </div>
+                                </div>
+                                <div class="/rekap-jumlah-siswa"> 
+                                    <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Jumlah Siswa</div>
+                                </div>
+                            </div>
+                        </a>
                     </div>
 
                     <div x-init="$dispatch('register', {id: 3})"  
                       x-intersect:enter.half="setIndex(2)" x-transition.duration.500ms>
-                        <div class="card-dashboard">
-                            <div>
-                                <a href="/siswa-masuk" class="tw-text-sims-400 hover:tw-text-sims-600 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                            </div>
-                            <div class="sm:tw-px-12 md:tw-px-8">
-                                <div class="tw-flex tw-flex-row">
-                                    <div class="tw-text-5xl tw-text-[#6fc5bb]"><i class="fa-solid fa-user"></i></div>
-                                    <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">{{ $siswaMasuk }}</div>
+                      @can('rekap-siswa')
+                        <a href="/siswa-masuk">
+                      @endcan
+                            <div class="card-dashboard tw-transition-all hover:tw-shadow-lg">
+                                <div class="sm:tw-px-12 md:tw-px-8 tw-mt-7">
+                                    <div class="tw-flex tw-flex-row">
+                                        <div class="tw-text-5xl tw-text-[#6fc5bb]"><i class="fa-solid fa-user"></i></div>
+                                        <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">{{ $siswaMasuk }}</div>
+                                    </div>
+                                </div>
+                                <div> 
+                                    <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Siswa Masuk</div>
                                 </div>
                             </div>
-                            <div> 
-                                <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Siswa Masuk</div>
-                            </div>
-                        </div>
+                        </a>
                     </div>
 
                     <div x-init="$dispatch('register', {id: 4})"  
                       x-intersect:enter.half="setIndex(3)" x-transition.duration.500ms>
-                        <div class="card-dashboard">
-                            <div>
-                                <a href="/data-alumni" class="tw-text-sims-400 hover:tw-text-sims-600 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                            </div>
-                            <div class="sm:tw-px-12 md:tw-px-8">
-                                <div class="tw-flex tw-flex-row">
-                                    <div class="tw-text-5xl tw-text-gray-400"><i class="fa-solid fa-user-graduate"></i></div>
-                                    <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">{{ $alumni }}</div>
+                      @can('rekap-siswa')
+                        <a href="/data-alumni">
+                      @endcan
+                            <div class="card-dashboard tw-transition-all hover:tw-shadow-lg">
+                                <div class="sm:tw-px-12 md:tw-px-8 tw-mt-7">
+                                    <div class="tw-flex tw-flex-row">
+                                        <div class="tw-text-5xl tw-text-gray-400"><i class="fa-solid fa-user-graduate"></i></div>
+                                        <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">{{ $alumni }}</div>
+                                    </div>
+                                </div>
+                                <div> 
+                                    <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Alumni</div>
                                 </div>
                             </div>
-                            <div> 
-                                <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Alumni</div>
-                            </div>
-                        </div>
+                        </a>
                     </div>
 
                     <div x-init="$dispatch('register', {id: 5})"  
                       x-intersect:enter.half="setIndex(4)" x-transition.duration.500ms>
-                        <div class="card-dashboard">
-                            <div>
-                                <a href="/rekap-jumlah-siswa" class="tw-text-sims-400 hover:tw-text-sims-600 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                            </div>
-                            <div class="sm:tw-px-12 md:tw-px-8">
-                                <div class="tw-flex tw-flex-row">
-                                    <div class="tw-text-5xl tw-text-sky-400"><i class="fa-solid fa-chalkboard-user"></i></div>
-                                    <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">{{ $kelas }}</div>
+                      @cannot('wali kelas')
+                        <a href="/rekap-jumlah-siswa">
+                      @endcannot
+                            <div class="card-dashboard tw-transition-all hover:tw-shadow-lg">
+                                <div class="sm:tw-px-12 md:tw-px-8 tw-mt-7">
+                                    <div class="tw-flex tw-flex-row">
+                                        <div class="tw-text-5xl tw-text-sky-400"><i class="fa-solid fa-chalkboard-user"></i></div>
+                                        <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">{{ $kelas }}</div>
+                                    </div>
+                                </div>
+                                <div> 
+                                    <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Kelas</div>
                                 </div>
                             </div>
-                            <div> 
-                                <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Kelas</div>
-                            </div>
-                        </div>
+                        </a>
                     </div>
 
                     <div x-init="$dispatch('register', {id: 6})"  
                       x-intersect:enter.half="setIndex(5)" x-transition.duration.500ms>
-                        <div class="card-dashboard">
-                            <div>
-                                <a href="/jurusan" class="tw-text-sims-400 hover:tw-text-sims-600 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                            </div>
-                            <div class="sm:tw-px-12 md:tw-px-8">
-                                <div class="tw-flex tw-flex-row">
-                                    <div class="tw-text-5xl tw-text-indigo-400"><i class="fa-solid fa-shapes"></i></div>
-                                    <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">{{ $jurusan }}</div>
+                        <a href="/jurusan">
+                            <div class="card-dashboard tw-transition-all hover:tw-shadow-lg">
+                                <div class="sm:tw-px-12 md:tw-px-8 tw-mt-7">
+                                    <div class="tw-flex tw-flex-row">
+                                        <div class="tw-text-5xl tw-text-indigo-400"><i class="fa-solid fa-shapes"></i></div>
+                                        <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">{{ $jurusan }}</div>
+                                    </div>
+                                </div>
+                                <div> 
+                                    <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Jurusan</div>
                                 </div>
                             </div>
-                            <div> 
-                                <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Jurusan</div>
-                            </div>
-                        </div>
+                        </a>
                     </div>
-
-
                 </div>
             </section>
             {{-- end of card carousel --}}
             
             {{-- quick access --}}
-            <section class="tw-bg-white tw-w-full tw-items-center tw-justify-center tw-shadow-md tw-font-pop tw-border tw-mt-6 tw-flex tw-h-fit tw-py-10 tw-flex-col">
+            <section class="tw-bg-white tw-w-full tw-items-center tw-justify-center tw-shadow-lg tw-font-pop tw-border tw-mt-6 tw-flex tw-h-fit tw-py-10 tw-flex-col">
               <div class="tw-text-xl tw-text-gray-400 tw-font-bold tw-mb-10">Quick Access</div>
                 <div class="tw-flex lg:tw-flex-row sm:tw-flex-col tw-justify-between tw-gap-3 tw-p-2">
                     @can('rekap-siswa')
@@ -205,7 +207,7 @@
             </section>
 
             {{-- jumlah per jurusan --}}
-            <section class="tw-bg-white tw-font-pop tw-shadow-md tw-flex tw-flex-col tw-my-5">
+            <section class="tw-bg-white tw-font-pop tw-shadow-lg tw-flex tw-flex-col tw-my-5">
                 <div class="tw-px-10 tw-mt-10">
                   <div class=" tw-text-gray-400 tw-font-bold">Persebaran Murid SMKN 11</div>
                     <ul class="tw-flex tw-justify-center md:tw-gap-10 sm:tw-gap-2 tw-list-none tw-py-10">
