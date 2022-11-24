@@ -198,6 +198,7 @@
                 </div>
             </div>
             <div class="tw-flex md:tw-justify-center tw-items-center md:-tw-mb-8">
+                @cannot('wali kelas')
                 <button type="button" data-modal-toggle="export-print" title="Export ke print"><i class="fa-solid fa-print btn-export"></i></button>
                     
                 <div id="export-print" tabindex="-1"
@@ -318,6 +319,7 @@
                         </div>
                     </div>
                 </div>
+                @endcannot
             </div>
         </div>
 
