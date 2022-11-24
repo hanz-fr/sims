@@ -18,7 +18,7 @@
                     <div class="tw-mb-16">
                         <label for="semester" class="tw-font-bold tw-text-lg tw-flex tw-mb-2 tw-text-admin-300">Semester</label>
                         <select name="semester" id=""
-                        class="tw-border-[#E3E3E3] tw-text-gray-400 tw-border tw-w-[500px] tw-flex  tw-rounded-2xl tw-py-4 tw-px-6 focus:tw-outline-admin-300">HAI
+                        class="tw-border-[#E3E3E3] tw-text-gray-400 tw-border tw-w-full tw-flex  tw-rounded-2xl tw-py-4 tw-px-6 focus:tw-outline-admin-300">HAI
                         <option value="1" selected>1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
