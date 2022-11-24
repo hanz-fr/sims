@@ -1185,6 +1185,16 @@ video {
   margin-right: 1.75rem;
 }
 
+.tw-my-16 {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.tw-mx-32 {
+  margin-left: 8rem;
+  margin-right: 8rem;
+}
+
 .tw-mt-5 {
   margin-top: 1.25rem;
 }
@@ -2345,6 +2355,16 @@ video {
   background-color: rgb(149 187 232 / var(--tw-bg-opacity));
 }
 
+.tw-bg-slate-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
+}
+
+.tw-bg-slate-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(203 213 225 / var(--tw-bg-opacity));
+}
+
 .tw-bg-admin-login {
   background-image: url('./img/bg-admin.svg');
 }
@@ -3070,6 +3090,16 @@ video {
 .tw-text-slate-100 {
   --tw-text-opacity: 1;
   color: rgb(241 245 249 / var(--tw-text-opacity));
+}
+
+.tw-text-gray-900 {
+  --tw-text-opacity: 1;
+  color: rgb(17 24 39 / var(--tw-text-opacity));
+}
+
+.tw-text-slate-200 {
+  --tw-text-opacity: 1;
+  color: rgb(226 232 240 / var(--tw-text-opacity));
 }
 
 .tw-underline {

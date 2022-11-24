@@ -24,6 +24,7 @@ use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Reader\Exception;
 use PhpOffice\PhpSpreadsheet\Writer\Xls;
 use PhpOffice\PhpSpreadsheet\IOFactory;
+use Illuminate\Support\Facades\Auth;
 
 class ApiController extends Controller
 {
@@ -36,6 +37,7 @@ class ApiController extends Controller
 
 
         $this->sims_url = 'http://127.0.0.1:8000'; // SIMS URL
+    
     }
 
 
@@ -238,6 +240,21 @@ class ApiController extends Controller
 
     }
 
+
+    public function viewHistory(Request $request) {
+
+        $history = Http::get("{$this->api_url}/history");
+
+        return view('history.index', [
+            'title' => 'History',
+            'active' => 'history',
+            'history' => json_decode($history)->rows,
+        ]);
+
+    }
+
+
+
     public function siswaTidakNaik(Request $request) {
 
         abort_if(Gate::allows('wali kelas'), 403);
@@ -299,6 +316,16 @@ class ApiController extends Controller
 
         $tidaknaik = 'daftar_nama_tidak_naik_'.date('Y-m-d_H-i-s').'.xlsx';
 
+        $user = Auth::user();
+
+        Http::post("{$this->api_url}/history", [
+        
+            'activityName' => 'Export Data Tidak Naik',
+            'activityAuthor' => "$user->nama",
+            'activityDesc' => "$user->nama mengexport data siswa tidak naik dengan tipe file excel."
+        
+        ]);
+
         return Excel::download(new DataTidakNaikExport, $tidaknaik);
         
     }
@@ -314,6 +341,16 @@ class ApiController extends Controller
         ]);
 
         $tidaknaik = 'data_tidak_naik_kelas_periode_'.date('Y-m-d_H-i-s').'.pdf';
+
+        $user = Auth::user();
+
+        Http::post("{$this->api_url}/history", [
+        
+            'activityName' => 'Export Data Tidak Naik',
+            'activityAuthor' => "$user->nama",
+            'activityDesc' => "$user->nama mengexport data siswa tidak naik dengan tipe file PDF."
+        
+        ]);
 
         return $pdf->download($tidaknaik);
         
@@ -478,6 +515,16 @@ class ApiController extends Controller
     
             $response->throw();
     
+            $user = Auth::user();
+
+            Http::post("{$this->api_url}/history", [
+            
+                'activityName' => 'Update Rekap Nilai',
+                'activityAuthor' => "$user->nama",
+                'activityDesc' => "$user->nama mengupdate data rekap nilai dengan NIS : $request->nis_siswa"
+            
+            ]);
+
             return redirect('rekap-nilai/'.$request->nis_siswa)->with('success', 'Rekap nilai berhasil diupdate.');
         
         } else {
@@ -574,6 +621,15 @@ class ApiController extends Controller
 
             $response->throw();
 
+            $user = Auth::user();
+
+            Http::post("{$this->api_url}/history", [
+            
+                'activityName' => 'Create Rekap Nilai',
+                'activityAuthor' => "$user->nama",
+                'activityDesc' => "$user->nama menambah data rekap nilai dengan NIS : $request->nis_siswa"
+            
+            ]);
 
             return redirect('rekap-nilai/'.$request->nis_siswa)->with('success', 'Rekap nilai baru ditambahkan.');
         
@@ -590,6 +646,16 @@ class ApiController extends Controller
         abort_if(Gate::denies('rekap-nilai'), 403);
 
         Http::delete("{$this->api_url}/raport/{$RaportId}");
+
+        $user = Auth::user();
+
+        Http::post("{$this->api_url}/history", [
+        
+            'activityName' => 'Update Rekap Nilai',
+            'activityAuthor' => "$user->nama",
+            'activityDesc' => "$user->nama menghapus data rekap nilai dengan id : $RaportId"
+        
+        ]);
 
         return redirect()->back()->with('success', 'Rekap nilai berhasil dihapus.');
 
@@ -660,6 +726,16 @@ class ApiController extends Controller
 
         $dataalumni = 'data_alumni_tahun_'.date('Y').'.pdf';
 
+        $user = Auth::user();
+
+        Http::post("{$this->api_url}/history", [
+        
+            'activityName' => 'Export Data Alumni',
+            'activityAuthor' => "$user->nama",
+            'activityDesc' => "$user->nama mengexport data alumni dengan tipe file PDF."
+        
+        ]);
+
         return $pdf->download($dataalumni);
 
     }
@@ -683,6 +759,16 @@ class ApiController extends Controller
 
         $dataalumni = 'data_alumni_tahun_'.date('Y').'.xlsx';
 
+        $user = Auth::user();
+
+        Http::post("{$this->api_url}/history", [
+        
+            'activityName' => 'Export Data Alumni',
+            'activityAuthor' => "$user->nama",
+            'activityDesc' => "$user->nama mengexport data alumni dengan tipe file excel."
+        
+        ]);
+        
         return Excel::download(new AlumniExport, $dataalumni);
 
     }
@@ -845,6 +931,14 @@ class ApiController extends Controller
 
         $daftarnama = 'daftar_nama_buku_induk_'.$kelas.$jurusan.'.pdf';
 
+        $user = Auth::user();
+
+        Http::post("{$this->api_url}/history", [
+            'activityName' => 'Export Data Induk',
+            'activityAuthor' => "$user->nama",
+            'activityDesc' => "$user->nama mengexport data induk dengan tipe file PDF."
+        ]);
+
         return $pdf->download($daftarnama);
 
     }
@@ -870,6 +964,16 @@ class ApiController extends Controller
 
         $daftarnama = 'daftar_nama_buku_induk_'.date('Y-m-d_H-i-s').'.xlsx';
 
+        $user = Auth::user();
+
+        Http::post("{$this->api_url}/history", [
+        
+            'activityName' => 'Export Data Induk',
+            'activityAuthor' => "$user->nama",
+            'activityDesc' => "$user->nama mengexport data induk dengan tipe file excel."
+        
+        ]);
+
         return Excel::download(new DataIndukExport, $daftarnama);
         
     }
@@ -880,6 +984,16 @@ class ApiController extends Controller
         ob_start();
 
         $detailsiswa = 'daftar_detail_nama_buku_induk_'.date('Y-m-d_H-i-s').'.xlsx';
+
+        $user = Auth::user();
+
+        Http::post("{$this->api_url}/history", [
+        
+            'activityName' => 'Export Detail Data Induk',
+            'activityAuthor' => "$user->nama",
+            'activityDesc' => "$user->nama mengexport detail data induk dengan tipe file excel."
+        
+        ]);
 
         return Excel::download(new DetailDataIndukExport($request->nis), $detailsiswa);
         
@@ -1040,6 +1154,16 @@ class ApiController extends Controller
 
         $rekapnilai = 'rekap_nilai_siswa_'.$nama.'.pdf';
 
+        $user = Auth::user();
+
+        Http::post("{$this->api_url}/history", [
+        
+            'activityName' => 'Export Rekap Nilai',
+            'activityAuthor' => "$user->nama",
+            'activityDesc' => "$user->nama mengexport data rekap nilai dengan tipe file PDF."
+        
+        ]);
+        
         return $pdf->download($rekapnilai);
 
     }
@@ -1056,6 +1180,16 @@ class ApiController extends Controller
         $nama = json_decode($response)->result->nama_siswa;
 
         $rekapnilai = 'rekap_nilai_siswa_'.$nama.'.xlsx';
+
+        $user = Auth::user();
+
+        Http::post("{$this->api_url}/history", [
+        
+            'activityName' => 'Export Rekap Nilai',
+            'activityAuthor' => "$user->nama",
+            'activityDesc' => "$user->nama mengexport data rekap nilai dengan tipe file excel."
+        
+        ]);
 
         return Excel::download(new RekapNilaiExport, $rekapnilai);
 
@@ -1088,6 +1222,7 @@ class ApiController extends Controller
 
         // validasi nis siswa jika sudah ada
         $nis = $request->nis;
+
 
         $siswaExist = Http::get("{$this->api_url}/siswa/{$nis}");
 
@@ -1183,6 +1318,14 @@ class ApiController extends Controller
 
 
             $response->throw();
+
+            $user = Auth::user();
+
+            Http::post("{$this->api_url}/history", [
+                'activityName' => 'Create Data Siswa',
+                'activityAuthor' => "$user->nama",
+                'activityDesc' => "$user->nama membuat data siswa baru dengan NIS : $request->nis"
+            ]);
 
             return redirect($request->prevURLwithParams)->with('success', 'Data berhasil ditambahkan.');
         }
@@ -1292,6 +1435,14 @@ class ApiController extends Controller
 
         $response->throw();
 
+        $user = Auth::user();
+
+        Http::post("{$this->api_url}/history", [
+            'activityName' => 'Update Data Siswa',
+            'activityAuthor' => "$user->nama",
+            'activityDesc' => "$user->nama mengupdate data siswa dengan NIS : $request->nis"
+        ]);
+
         return redirect("{$request->prevURLwithParams}")->with('success', 'Data berhasil diubah.');
 
     }
@@ -1310,6 +1461,14 @@ class ApiController extends Controller
 
         /* Delete siswa sesuai dengan nis yang direquest */
         Http::delete("{$this->api_url}/siswa/{$nis}");
+
+        $user = Auth::user();
+
+        Http::post("{$this->api_url}/history", [
+            'activityName' => 'Delete Data Siswa',
+            'activityAuthor' => "$user->nama",
+            'activityDesc' => "$user->nama menghapus data siswa dengan NIS : $request->nis"
+        ]);
 
         return redirect("{$request->prevURLwithParams}")->with('success', 'Siswa berhasil dihapus.');
     }
@@ -1383,6 +1542,14 @@ class ApiController extends Controller
             }
             
             $response->throw();
+
+            $user = Auth::user();
+
+            Http::post("{$this->api_url}/history", [
+                'activityName' => 'Import Data Siswa',
+                'activityAuthor' => "$user->nama",
+                'activityDesc' => "$user->nama mengimport data siswa dengan tipe file excel."
+            ]);
             
         } catch (Exception $e) {
             $error_code = $e->errorInfo[1];
@@ -1412,6 +1579,14 @@ class ApiController extends Controller
         $nama = json_decode($response)->result->nama_siswa;
 
         $datasiswa = 'data_induk_'.$nama.'.pdf';
+
+        $user = Auth::user();
+
+        Http::post("{$this->api_url}/history", [
+            'activityName' => 'Export Data Siswa',
+            'activityAuthor' => "$user->nama",
+            'activityDesc' => "$user->nama mengexport data siswa dengan tipe file PDF."
+        ]);
 
         return $pdf->download($datasiswa);
 
@@ -1633,6 +1808,17 @@ class ApiController extends Controller
 
 
             if ($response->successful() || $response2->successfull()) {
+
+                $user = Auth::user();
+
+                Http::post("{$this->api_url}/history", [
+                
+                    'activityName' => 'Create Mutasi Keluar',
+                    'activityAuthor' => "$user->nama",
+                    'activityDesc' => "$user->nama membuat mutasi keluar dengan SK Mutasi : $request->sk_mutasi"
+                
+                ]);
+
                 return redirect('/siswa-keluar')->with('success', 'Mutasi created successfully.');
             } 
 
@@ -1687,6 +1873,16 @@ class ApiController extends Controller
             ]);
 
             if ($response->successful()) {
+                $user = Auth::user();
+
+                Http::post("{$this->api_url}/history", [
+                
+                    'activityName' => 'Create Mutasi Masuk',
+                    'activityAuthor' => "$user->nama",
+                    'activityDesc' => "$user->nama membuat mutasi masuk dengan SK Mutasi : $request->sk_mutasi"
+                
+                ]);
+
                 return redirect("{$request->prevURL}")->with('success', 'Mutasi created successfully.');
             } 
 
@@ -1807,6 +2003,16 @@ class ApiController extends Controller
 
             $response2->throw();
 
+            $user = Auth::user();
+
+            Http::post("{$this->api_url}/history", [
+            
+                'activityName' => 'Update Mutasi Keluar',
+                'activityAuthor' => "$user->nama",
+                'activityDesc' => "$user->nama mengupdate mutasi keluar dengan SK Mutasi : $request->sk_mutasi"
+            
+            ]);
+
             return redirect("{$request->prevURL}")->with('success', 'Mutasi updated successfully.');
     
         } else {
@@ -1852,6 +2058,16 @@ class ApiController extends Controller
     
             $response->throw();
 
+            $user = Auth::user();
+
+            Http::post("{$this->api_url}/history", [
+            
+                'activityName' => 'Update Mutasi Masuk',
+                'activityAuthor' => "$user->nama",
+                'activityDesc' => "$user->nama mengupdate mutasi masuk dengan SK Mutasi : $request->sk_mutasi"
+            
+            ]);
+
             return redirect("{$request->prevURL}")->with('success', 'Mutasi updated successfully.');
     
         } else {
@@ -1869,9 +2085,21 @@ class ApiController extends Controller
         // validasi apakah id valid atau tidak
         $mutasiExist = Http::get("{$this->api_url}/mutasi/{$id}");
 
+        $sk_mutasi = json_decode($mutasiExist)->sk_mutasi;
+
         if (json_decode($mutasiExist)->message) {
 
             Http::delete("{$this->api_url}/mutasi/{$id}");
+
+            $user = Auth::user();
+
+            Http::post("{$this->api_url}/history", [
+            
+                'activityName' => 'Delete Mutasi Keluar',
+                'activityAuthor' => "$user->nama",
+                'activityDesc' => "$user->nama menghapus data mutasi keluar dengan SK : $sk_mutasi"
+            
+            ]);
 
             return redirect('/siswa-keluar')->with('success', 'Mutasi deleted successfully.');
 
@@ -1894,9 +2122,21 @@ class ApiController extends Controller
         // validasi apakah id valid atau tidak
         $mutasiExist = Http::get("{$this->api_url}/mutasi/{$id}");
 
+        $sk_mutasi = json_decode($mutasiExist)->sk_mutasi;
+
         if (json_decode($mutasiExist)->message) {
 
             Http::delete("{$this->api_url}/mutasi/{$id}");
+
+            $user = Auth::user();
+
+            Http::post("{$this->api_url}/history", [
+            
+                'activityName' => 'Delete Mutasi Masuk',
+                'activityAuthor' => "$user->nama",
+                'activityDesc' => "$user->nama menghapus data mutasi masuk dengan SK : $sk_mutasi"
+            
+            ]);
 
             return redirect('/siswa-masuk')->with('success', 'Mutasi deleted successfully.');
 
@@ -1920,6 +2160,16 @@ class ApiController extends Controller
 
         $laporan = 'laporan_mutasi_masuk_'.date('Y-m-d_H-i-s').'.xlsx';
 
+        $user = Auth::user();
+
+        Http::post("{$this->api_url}/history", [
+        
+            'activityName' => 'Export Mutasi Masuk',
+            'activityAuthor' => "$user->nama",
+            'activityDesc' => "$user->nama mengexport data mutasi masuk dengan tipe file excel."
+        
+        ]);
+
         return Excel::download(new MutasiMasukExport, $laporan);
         
     }
@@ -1931,6 +2181,16 @@ class ApiController extends Controller
         ob_start();
 
         $laporan = 'laporan_mutasi_keluar_'.date('Y-m-d_H-i-s').'.xlsx';
+
+        $user = Auth::user();
+
+        Http::post("{$this->api_url}/history", [
+        
+            'activityName' => 'Export Mutasi Keluar',
+            'activityAuthor' => "$user->nama",
+            'activityDesc' => "$user->nama mengexport data mutasi keluar dengan tipe file excel."
+        
+        ]);
 
         return Excel::download(new MutasiKeluarExport, $laporan);
         
@@ -1947,6 +2207,16 @@ class ApiController extends Controller
 
         $laporan = 'laporan_mutasi_masuk_'.date('Y-m-d_H-i-s').'.pdf';
 
+        $user = Auth::user();
+
+        Http::post("{$this->api_url}/history", [
+        
+            'activityName' => 'Export Mutasi Masuk',
+            'activityAuthor' => "$user->nama",
+            'activityDesc' => "$user->nama mengexport data mutasi masuk dengan tipe file PDF."
+        
+        ]);
+
         return $pdf->download($laporan);
 
     }
@@ -1961,6 +2231,16 @@ class ApiController extends Controller
         ]);
 
         $laporan = 'laporan_mutasi_keluar_'.date('Y-m-d_H-i-s').'.pdf';
+
+        $user = Auth::user();
+
+        Http::post("{$this->api_url}/history", [
+        
+            'activityName' => 'Export Mutasi Keluar',
+            'activityAuthor' => "$user->nama",
+            'activityDesc' => "$user->nama mengexport data mutasi keluar dengan tipe file PDF."
+        
+        ]);
 
         return $pdf->download($laporan);
 
@@ -2039,6 +2319,16 @@ class ApiController extends Controller
 
         $datajumlah = 'data_rekap_jumlah_siswa_'.date('Y-m-d_H-i-s').'.pdf';
 
+        $user = Auth::user();
+
+        Http::post("{$this->api_url}/history", [
+        
+            'activityName' => 'Export Rekap Jumlah Siswa',
+            'activityAuthor' => "$user->nama",
+            'activityDesc' => "$user->nama mengexport data rekap jumlah siswa dengan tipe file PDF."
+        
+        ]);
+
         return $pdf->download($datajumlah);
 
     }
@@ -2068,6 +2358,16 @@ class ApiController extends Controller
 
         $datajumlah = 'data_rekap_jumlah_siswa_'.date('Y-m-d_H-i-s').'.xlsx';
 
+        $user = Auth::user();
+
+        Http::post("{$this->api_url}/history", [
+        
+            'activityName' => 'Export Rekap Jumlah Siswa',
+            'activityAuthor' => "$user->nama",
+            'activityDesc' => "$user->nama mengexport data rekap jumlah siswa dengan tipe file excel."
+        
+        ]);
+        
         return Excel::download(new JumlahSiswaExport, $datajumlah);
 
     }

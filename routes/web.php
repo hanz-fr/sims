@@ -35,6 +35,7 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
     Route::get('/tambah-data', [ApiController::class, 'createSiswa']);
     Route::get('/edit-siswa/{nis}', [ApiController::class, 'editSiswa']);
 
+    // CRUD //
     Route::post('/api/siswa', [ApiController::class, 'storeSiswa']);
     Route::put('/api/siswa/update/{nis}', [ApiController::class, 'updateSiswa']);
     Route::delete('/api/siswa/delete/{nis}', [ApiController::class, 'deleteSiswa']);
@@ -72,19 +73,22 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
     Route::get('/mutasi-keluar-pdf', [ApiController::class, 'exportMutasiKeluarPDF']);
     Route::get('/mutasi-keluar-print', [ApiController::class, 'printMutasiKeluar']);
 
+
+    
     // siswa-masuk
     Route::get('/siswa-masuk', [ApiController::class, 'getAllMutasiMasuk']);
     Route::get('/create-mutasi-masuk', [ApiController::class, 'createMutasiMasuk']);
     Route::get('/edit-mutasi-masuk/{id}', [ApiController::class, 'editMutasiMasuk']);
+
+    Route::post('/api/mutasi-masuk/store', [ApiController::class, 'storeMutasiMasuk']);
+    Route::put('/api/mutasi-masuk/update/{id}', [ApiController::class, 'updateMutasiMasuk']);
+    Route::delete('/api/mutasi-masuk/delete/{id}', [ApiController::class, 'deleteMutasiMasuk']);
 
     Route::get('/mutasi-masuk-excel', [ApiController::class, 'exportMutasiMasukExcel']);
     Route::get('/mutasi-masuk-pdf', [ApiController::class, 'exportMutasiMasukPDF']);
     Route::get('/mutasi-masuk-print', [ApiController::class, 'printMutasiMasuk']);
 
 
-    Route::post('/api/mutasi-masuk/store', [ApiController::class, 'storeMutasiMasuk']);
-    Route::put('/api/mutasi-masuk/update/{id}', [ApiController::class, 'updateMutasiMasuk']);
-    Route::delete('/api/mutasi-masuk/delete/{id}', [ApiController::class, 'deleteMutasiMasuk']);
 
 
      /* REKAP NILAI */
@@ -151,6 +155,12 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
     Route::get('/edit-profile', [UserController::class, 'edit']);
     Route::post('/update-profile/{id}', [UserController::class, 'update']);
     Route::post('/change-password', [UserController::class, 'changePassword']);
+
+
+
+    /* HISTORY PAGE */
+    Route::get('/history', [ApiController::class, 'viewHistory'])->name('history');   
+
 });
 
 
