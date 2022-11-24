@@ -294,6 +294,8 @@ class ApiController extends Controller
 
     public function exportDataTidakNaikExcel(Request $request) {
 
+        abort_if(Gate::allows('wali kelas'), 403);
+
         ob_end_clean();
         ob_start();
 
@@ -307,6 +309,8 @@ class ApiController extends Controller
     }
 
     public function exportDataTidakNaikPDF(Request $request) {
+
+        abort_if(Gate::allows('wali kelas'), 403);
 
         $dibuatTglDari = $request->dibuatTglDari;
         $dibuatTglKe = $request->dibuatTglKe;
@@ -329,6 +333,8 @@ class ApiController extends Controller
 
 
     public function printDataTidakNaik(Request $request) {
+
+        abort_if(Gate::allows('wali kelas'), 403);
 
         $dibuatTglDari = $request->dibuatTglDari;
         $dibuatTglKe = $request->dibuatTglKe;
@@ -665,6 +671,8 @@ class ApiController extends Controller
 
     public function exportAlumniPDF(Request $request) {
 
+        abort_if(Gate::denies('rekap-siswa'), 403);
+
         $dibuatTglDari = $request->dibuatTglDari;
         $dibuatTglKe = $request->dibuatTglKe;
 
@@ -688,6 +696,8 @@ class ApiController extends Controller
     
     public function printAlumni(Request $request) {
 
+        abort_if(Gate::denies('rekap-siswa'), 403);
+
         $dibuatTglDari = $request->dibuatTglDari;
         $dibuatTglKe = $request->dibuatTglKe;
 
@@ -706,6 +716,8 @@ class ApiController extends Controller
 
 
     public function exportAlumniExcel(Request $request) {
+
+        abort_if(Gate::denies('rekap-siswa'), 403);
 
         ob_end_clean();
         ob_start();
@@ -867,6 +879,8 @@ class ApiController extends Controller
 
     public function exportDataIndukPDF(Request $request) {
 
+        abort_if(Gate::denies('tata usaha'), 403);
+
         $response = Http::get("{$this->api_url}/siswa/{$request->jurusan}/{$request->kelas}??page=1&perPage=100");
 
         $pdf = PDF::loadView('induk.pdf.data-induk', [
@@ -887,6 +901,8 @@ class ApiController extends Controller
 
     public function printDataInduk(Request $request) {
 
+        abort_if(Gate::denies('tata usaha'), 403);
+
         $response = Http::get("{$this->api_url}/siswa/{$request->jurusan}/{$request->kelas}??page=1&perPage=100");
 
         return view('induk.pdf.data-induk', [
@@ -900,6 +916,8 @@ class ApiController extends Controller
 
     public function exportDataIndukExcel() {
 
+        abort_if(Gate::denies('tata usaha'), 403);
+
         ob_end_clean();
         ob_start();
 
@@ -910,6 +928,8 @@ class ApiController extends Controller
     }
 
     public function exportDetailDataIndukExcel(Request $request) {
+
+        abort_if(Gate::denies('tata usaha'), 403);
 
         ob_end_clean();
         ob_start();
@@ -1004,6 +1024,8 @@ class ApiController extends Controller
 
     public function printRekapNilai(Request $request) {
 
+        abort_if(Gate::allows('kesiswaan'), 403);
+
         $nis = $request->nis;
 
         $response = Http::get("{$this->api_url}/siswa/{$nis}");
@@ -1038,6 +1060,8 @@ class ApiController extends Controller
     }
 
     public function exportRekapNilaiPDF(Request $request) {
+
+        abort_if(Gate::allows('kesiswaan'), 403);
 
         $nis = $request->nis;
 
@@ -1080,6 +1104,8 @@ class ApiController extends Controller
     }
 
     public function exportRekapNilaiExcel(Request $request) {
+
+        abort_if(Gate::allows('kesiswaan'), 403);
 
         ob_end_clean();
         ob_start();
@@ -1431,6 +1457,8 @@ class ApiController extends Controller
 
     public function exportDataSiswaPDF(Request $request) {
 
+        abort_if(Gate::denies('tata usaha'), 403);
+
         $nis = $request->nis;
 
         $response = Http::get("{$this->api_url}/siswa/{$nis}");
@@ -1454,6 +1482,8 @@ class ApiController extends Controller
 
 
     public function printDataSiswa(Request $request) {
+
+        abort_if(Gate::denies('tata usaha'), 403);
 
         $nis = $request->nis;
 
@@ -1950,6 +1980,8 @@ class ApiController extends Controller
 
     public function exportMutasiMasukExcel(Request $request) {
 
+        abort_if(Gate::denies('rekap-siswa'), 403);
+
         ob_end_clean();
         ob_start();
 
@@ -1965,6 +1997,8 @@ class ApiController extends Controller
 
     public function exportMutasiKeluarExcel(Request $request) {
 
+        abort_if(Gate::denies('rekap-siswa'), 403);
+
         ob_end_clean();
         ob_start();
 
@@ -1979,6 +2013,8 @@ class ApiController extends Controller
 
 
     public function exportMutasiMasukPDF(Request $request) {
+
+        abort_if(Gate::denies('rekap-siswa'), 403);
 
         $tgl_masuk_dari = $request->tgl_masuk_dari;
         $tgl_masuk_ke = $request->tgl_masuk_ke;
@@ -2000,6 +2036,8 @@ class ApiController extends Controller
 
     public function exportMutasiKeluarPDF(Request $request) {
 
+        abort_if(Gate::denies('rekap-siswa'), 403);
+
         $tgl_keluar_dari = $request->tgl_keluar_dari;
         $tgl_keluar_ke = $request->tgl_keluar_ke;
 
@@ -2020,6 +2058,8 @@ class ApiController extends Controller
 
     public function printMutasiMasuk(Request $request) {
 
+        abort_if(Gate::denies('rekap-siswa'), 403);
+
         $tgl_masuk_dari = $request->tgl_masuk_dari;
         $tgl_masuk_ke = $request->tgl_masuk_ke;
 
@@ -2035,6 +2075,8 @@ class ApiController extends Controller
 
 
     public function printMutasiKeluar(Request $request) {
+
+        abort_if(Gate::denies('rekap-siswa'), 403);
 
         $tgl_keluar_dari = $request->tgl_keluar_dari;
         $tgl_keluar_ke = $request->tgl_keluar_ke;
@@ -2086,6 +2128,8 @@ class ApiController extends Controller
 
     public function exportRekapJumlahPDF() {
 
+        abort_if(Gate::allows('wali kelas'), 403);
+
         $semuaKelas = Http::get("{$this->api_url}/kelas/siswa-per-kelas/all");
         $kelas10 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/10");
         $kelas11 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/11");
@@ -2107,6 +2151,8 @@ class ApiController extends Controller
     
     public function printRekapJumlah() {
 
+        abort_if(Gate::allows('wali kelas'), 403);
+
         $semuaKelas = Http::get("{$this->api_url}/kelas/siswa-per-kelas/all");
         $kelas10 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/10");
         $kelas11 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/11");
@@ -2123,6 +2169,8 @@ class ApiController extends Controller
 
     
     public function exportRekapJumlahExcel() {
+
+        abort_if(Gate::allows('wali kelas'), 403);
 
         ob_end_clean();
         ob_start();
