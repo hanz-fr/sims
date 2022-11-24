@@ -324,17 +324,23 @@ const data = {
 };
 
 const config = {
-  type: 'doughnut',
+  type: 'pie',
   data: data,
   options: {  
     responsive: true,
     maintainAspectRatio: false,
     layout: {
-            padding: {
-                bottom: 10,
-                top: 20
-            }
+        padding: {
+            bottom: 10,
+            top: 20
         }
+    },
+    elements: {
+        arc: {
+          borderWidth: 0.3, // <-- Set this to derired value
+          borderColor: '#ffffff'
+        }
+    }
   }
 };
 
