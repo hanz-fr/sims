@@ -41,7 +41,7 @@
             </div>
             <div class="tw-text-gray-400 tw-font-light tw-mt-3">
               <div class="tw-text-xl">{{ $user->email }}</div>
-              <div class="tw-text-xl tw-mt-2">{{ $user->password }}</div>
+              <div class="tw-text-xl tw-mt-2">{{ $user->no_telp }}</div>
             </div>
           </div>
         </div>

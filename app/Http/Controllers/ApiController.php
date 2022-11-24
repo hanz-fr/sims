@@ -32,7 +32,7 @@ class ApiController extends Controller
     public function __construct()
     {
 
-        $this->api_url = 'https://e5aa-103-148-113-86.ap.ngrok.io'; // Ganti link NGROK disini
+        $this->api_url = 'https://552d-103-139-10-189.ap.ngrok.io'; // Ganti link NGROK disini
 
 
         $this->sims_url = 'http://127.0.0.1:8000'; // SIMS URL
@@ -291,10 +291,13 @@ class ApiController extends Controller
         }
     }
 
-    public function exportDataTidakNaikExcel() {
+    public function exportDataTidakNaikExcel(Request $request) {
 
         ob_end_clean();
         ob_start();
+
+        $dibuatTglDari = $request->dibuatTglDari;
+        $dibuatTglKe = $request->dibuatTglKe;
 
         $tidaknaik = 'daftar_nama_tidak_naik_'.date('Y-m-d_H-i-s').'.xlsx';
 
@@ -302,31 +305,41 @@ class ApiController extends Controller
         
     }
 
-    public function exportDataTidakNaikPDF() {
+    public function exportDataTidakNaikPDF(Request $request) {
 
-        $response = Http::get("{$this->api_url}/dashboard/siswa-tidak-naik");
+        $dibuatTglDari = $request->dibuatTglDari;
+        $dibuatTglKe = $request->dibuatTglKe;
+
+        $response = Http::get("{$this->api_url}/dashboard/siswa-tidak-naik?dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}");
 
         $tidaknaik = 'daftar_nama_tidak_naik_'.date('Y-m-d_H-i-s').'.xlsx';
 
         $pdf = PDF::loadView('rekap-siswa.pdf.tidak-naik', [
-            'raport' => json_decode($response)->data->rows
+            'raport' => json_decode($response)->data->rows,
+            'dibuatTglDari' => $request->dibuatTglDari,
+            'dibuatTglKe' => $request->dibuatTglKe
         ]);
 
-        $tidaknaik = 'data_tidak_naik_kelas_periode_'.date('Y-m-d_H-i-s').'.pdf';
+        $tidaknaik = 'data_tidak_naik_kelas_periode_'.$dibuatTglDari.'_'.$dibuatTglKe.'.pdf';
 
         return $pdf->download($tidaknaik);
         
     }
 
 
-    public function printDataTidakNaik() {
+    public function printDataTidakNaik(Request $request) {
 
-        $response = Http::get("{$this->api_url}/dashboard/siswa-tidak-naik");
+        $dibuatTglDari = $request->dibuatTglDari;
+        $dibuatTglKe = $request->dibuatTglKe;
 
-        $tidaknaik = 'daftar_nama_tidak_naik_'.date('Y-m-d_H-i-s').'.xlsx';
+        $response = Http::get("{$this->api_url}/dashboard/siswa-tidak-naik?dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}");
+
+        $tidaknaik = 'daftar_nama_tidak_naik_'.$dibuatTglDari.'_'.$dibuatTglKe.'.xlsx';
 
         return view('rekap-siswa.pdf.tidak-naik', [
-            'raport' => json_decode($response)->data->rows
+            'raport' => json_decode($response)->data->rows,
+            'dibuatTglDari' => $request->dibuatTglDari,
+            'dibuatTglKe' => $request->dibuatTglKe
         ]);
         
     }
@@ -649,38 +662,60 @@ class ApiController extends Controller
     }
 
 
-    public function exportAlumniPDF() {
+    public function exportAlumniPDF(Request $request) {
 
-        $response = Http::get("{$this->api_url}/dashboard/alumni/get");
+        $dibuatTglDari = $request->dibuatTglDari;
+        $dibuatTglKe = $request->dibuatTglKe;
+
+        $tahun_dari = Carbon::parse($dibuatTglDari)->translatedFormat('Y');
+        $tahun_ke = Carbon::parse($dibuatTglDari)->translatedFormat('Y');
+
+        $response = Http::get("{$this->api_url}/dashboard/alumni/get?dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}");
 
         $pdf = PDF::loadView('induk.pdf.alumni', [
-            'alumni' => json_decode($response)->data->rows
+            'alumni' => json_decode($response)->data->rows,
+            'dibuatTglDari' => $tahun_dari,
+            'dibuatTglKe' => $tahun_ke
         ]);
 
-        $dataalumni = 'data_alumni_tahun_'.date('Y').'.pdf';
+        $dataalumni = 'data_alumni_tahun_'.$tahun_dari.'-'.$tahun_ke.'.pdf';
 
         return $pdf->download($dataalumni);
 
     }
 
     
-    public function printAlumni() {
+    public function printAlumni(Request $request) {
 
-        $response = Http::get("{$this->api_url}/dashboard/alumni/get");
+        $dibuatTglDari = $request->dibuatTglDari;
+        $dibuatTglKe = $request->dibuatTglKe;
+
+        $tahun_dari = Carbon::parse($dibuatTglDari)->translatedFormat('Y');
+        $tahun_ke = Carbon::parse($dibuatTglDari)->translatedFormat('Y');
+
+        $response = Http::get("{$this->api_url}/dashboard/alumni/get?dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}");
 
         return view('induk.pdf.alumni', [
-            'alumni' => json_decode($response)->data->rows
+            'alumni' => json_decode($response)->data->rows,
+            'dibuatTglDari' => $tahun_dari,
+            'dibuatTglKe' => $tahun_ke
         ]);
 
     }
 
 
-    public function exportAlumniExcel() {
+    public function exportAlumniExcel(Request $request) {
 
         ob_end_clean();
         ob_start();
 
-        $dataalumni = 'data_alumni_tahun_'.date('Y').'.xlsx';
+        $dibuatTglDari = $request->dibuatTglDari;
+        $dibuatTglKe = $request->dibuatTglKe;
+
+        $tahun_dari = Carbon::parse($dibuatTglDari)->translatedFormat('Y');
+        $tahun_ke = Carbon::parse($dibuatTglDari)->translatedFormat('Y');
+
+        $dataalumni = 'data_alumni_tahun_'.$tahun_dari.'-'.$tahun_ke.'.xlsx';
 
         return Excel::download(new AlumniExport, $dataalumni);
 
@@ -1912,77 +1947,103 @@ class ApiController extends Controller
     }
 
 
-    public function exportMutasiMasukExcel() {
+    public function exportMutasiMasukExcel(Request $request) {
 
         ob_end_clean();
         ob_start();
 
-        $laporan = 'laporan_mutasi_masuk_'.date('Y-m-d_H-i-s').'.xlsx';
+        $tgl_masuk_dari = $request->tgl_masuk_dari;
+        $tgl_masuk_ke = $request->tgl_masuk_ke;
+
+        $laporan = 'laporan_mutasi_masuk_'.$tgl_masuk_dari.'_'.$tgl_masuk_ke.'.xlsx';
 
         return Excel::download(new MutasiMasukExport, $laporan);
         
     }
 
 
-    public function exportMutasiKeluarExcel() {
+    public function exportMutasiKeluarExcel(Request $request) {
 
         ob_end_clean();
         ob_start();
 
-        $laporan = 'laporan_mutasi_keluar_'.date('Y-m-d_H-i-s').'.xlsx';
+        $tgl_keluar_dari = $request->tgl_keluar_dari;
+        $tgl_keluar_ke = $request->tgl_keluar_ke;
+
+        $laporan = 'laporan_mutasi_keluar_'.$tgl_keluar_dari.'_'.$tgl_keluar_ke.'.xlsx';
 
         return Excel::download(new MutasiKeluarExport, $laporan);
         
     }
 
 
-    public function exportMutasiMasukPDF() {
+    public function exportMutasiMasukPDF(Request $request) {
 
-        $response = Http::get("{$this->api_url}/mutasi/siswa-masuk");
+        $tgl_masuk_dari = $request->tgl_masuk_dari;
+        $tgl_masuk_ke = $request->tgl_masuk_ke;
+
+        $response = Http::get("{$this->api_url}/mutasi/siswa-masuk?tgl_masuk_dari={$tgl_masuk_dari}&tgl_masuk_ke={$tgl_masuk_ke}");
 
         $pdf = PDF::loadView('mutasi.pdf.mutasi-masuk', [
-            'mutasi' => json_decode($response)->data->rows
+            'mutasi' => json_decode($response)->data->rows,
+            'tgl_masuk_dari' => $request->tgl_masuk_dari,
+            'tgl_masuk_ke' => $request->tgl_masuk_ke
         ]);
 
-        $laporan = 'laporan_mutasi_masuk_'.date('Y-m-d_H-i-s').'.pdf';
+        $laporan = 'laporan_mutasi_masuk_'.$tgl_masuk_dari.'_'.$tgl_masuk_ke.'.pdf';
 
         return $pdf->download($laporan);
 
     }
 
 
-    public function exportMutasiKeluarPDF() {
+    public function exportMutasiKeluarPDF(Request $request) {
 
-        $response = Http::get("{$this->api_url}/mutasi/siswa-keluar");
+        $tgl_keluar_dari = $request->tgl_keluar_dari;
+        $tgl_keluar_ke = $request->tgl_keluar_ke;
+
+        $response = Http::get("{$this->api_url}/mutasi/siswa-keluar?tgl_keluar_dari={$tgl_keluar_dari}&tgl_keluar_ke={$tgl_keluar_ke}");
 
         $pdf = PDF::loadView('mutasi.pdf.mutasi-keluar', [
-            'mutasi' => json_decode($response)->data->rows
+            'mutasi' => json_decode($response)->data->rows,
+            'tgl_keluar_dari' => $request->tgl_keluar_dari,
+            'tgl_keluar_ke' => $request->tgl_keluar_ke
         ]);
 
-        $laporan = 'laporan_mutasi_keluar_'.date('Y-m-d_H-i-s').'.pdf';
+        $laporan = 'laporan_mutasi_keluar_'.$tgl_keluar_dari.'_'.$tgl_keluar_ke.'.pdf';
 
         return $pdf->download($laporan);
 
     }
 
 
-    public function printMutasiMasuk() {
+    public function printMutasiMasuk(Request $request) {
 
-        $response = Http::get("{$this->api_url}/mutasi/siswa-masuk");
+        $tgl_masuk_dari = $request->tgl_masuk_dari;
+        $tgl_masuk_ke = $request->tgl_masuk_ke;
+
+        $response = Http::get("{$this->api_url}/mutasi/siswa-masuk?tgl_masuk_dari={$tgl_masuk_dari}&tgl_masuk_ke={$tgl_masuk_ke}");
 
         return view('mutasi.pdf.mutasi-masuk', [
-            'mutasi' => json_decode($response)->data->rows
+            'mutasi' => json_decode($response)->data->rows,
+            'tgl_masuk_dari' => $request->tgl_masuk_dari,
+            'tgl_masuk_ke' => $request->tgl_masuk_ke
         ]);
 
     }
 
 
-    public function printMutasiKeluar() {
+    public function printMutasiKeluar(Request $request) {
 
-        $response = Http::get("{$this->api_url}/mutasi/siswa-masuk");
+        $tgl_keluar_dari = $request->tgl_keluar_dari;
+        $tgl_keluar_ke = $request->tgl_keluar_ke;
+
+        $response = Http::get("{$this->api_url}/mutasi/siswa-keluar?tgl_keluar_dari={$tgl_keluar_dari}&tgl_keluar_ke={$tgl_keluar_ke}");
 
         return view('mutasi.pdf.mutasi-keluar', [
-            'mutasi' => json_decode($response)->data->rows
+            'mutasi' => json_decode($response)->data->rows,
+            'tgl_keluar_dari' => $request->tgl_keluar_dari,
+            'tgl_keluar_ke' => $request->tgl_keluar_ke
         ]);
 
     }

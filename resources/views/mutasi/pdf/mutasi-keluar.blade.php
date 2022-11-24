@@ -19,10 +19,8 @@
   </style>
 </head>
 <body>
-  <table style="margin: auto">
-    <td><h4 style="font-weight: 500; text-align: center;">DATA SISWA KELUAR</h4></td>
-  </table>
-  {{-- <h5>Periode: </h5> --}}
+  <h4 style="font-weight: 500; text-align: center;">DATA SISWA KELUAR</h4>
+  <h5 style="font-weight: 400">Periode: {{ $tgl_keluar_dari }} - {{ $tgl_keluar_ke }}</h5>
 
     <table id="data">
         <tr>

@@ -48,20 +48,9 @@
                         <div class="tw-text-basic-200">{{ auth()->user()->email }}</div>
                     </div>
                     <div class="tw-flex tw-flex-col tw-gap-5 tw-font-bold tw-text-xl">
-                        <div class="tw-text-sims-400">Bagian</div>
+                        <div class="tw-text-sims-400">Nomor Telepon</div>
                         <div class="tw-text-basic-200">
-                            @if (auth()->user()->role === 1)
-                            Tata Usaha
-                            @endif
-                            @if (auth()->user()->role === 2)
-                                Kesiswaan
-                            @endif
-                            @if (auth()->user()->role === 3)
-                                Kurikulum
-                            @endif
-                            @if (auth()->user()->role === 4)
-                                Wali Kelas
-                            @endif
+                            {{ auth()->user()->no_telp }}
                         </div>
                     </div>
                 </div>

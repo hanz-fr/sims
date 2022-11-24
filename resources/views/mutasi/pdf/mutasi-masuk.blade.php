@@ -19,8 +19,8 @@
         </style>
 </head>
 <body>
-  <h4 style="font-weight: 500; text-align: center;">DATA SISWA MASUK</h4>
-
+    <h4 style="font-weight: 500; text-align: center;">DATA SISWA MASUK</h4>
+    <h5 style="font-weight: 400">Periode: {{ $tgl_masuk_dari }} - {{ $tgl_masuk_ke }}</h5>
 
     <table id="data">
         <tr>

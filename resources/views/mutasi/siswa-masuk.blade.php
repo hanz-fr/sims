@@ -26,10 +26,127 @@
                 </div>
                 @can('rekap-siswa')
                     <div class="tw-flex md:tw-justify-center tw-items-center">
-                        <a href="/mutasi-masuk-print" target="__blank" title="Print"><i class="fa-solid fa-print btn-export"></i></a>
+                        <button type="button" data-modal-toggle="export-print" title="Print"><i class="fa-solid fa-print btn-export"></i></button>
+                    
+                        <div id="export-print" tabindex="-1"
+                        class="hidden overflow-y-auto overflow-x-hidden fixed  z-50 md:tw-inset-0 h-modal md:h-full">
+                        <div class="tw-relative tw-p-4 tw-w-full tw-max-w-md tw-h-full md:tw-h-auto">
+                            <div class="tw-relative tw-bg-white tw-rounded-lg tw-shadow dark:tw-bg-slate-100">
+                                <button type="button"
+                                    class="tw-absolute tw-top-3 tw-right-2.5 tw-text-gray-400 tw-bg-transparent hover:tw-bg-gray-200 hover:tw-text-gray-900 tw-rounded-lg tw-text-sm tw-p-1.5 tw-ml-auto tw-inline-flex tw-items-center dark:hover:tw-bg-gray-800 dark:hover:tw-text-white"
+                                    data-modal-toggle="export-print">
+                                    <svg aria-hidden="true" class="tw-w-5 tw-h-5" fill="currentColor"
+                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                    <span class="tw-sr-only">Close modal</span>
+                                </button>
+                                <form action="/mutasi-masuk-print" method="">
+                                    @csrf
+                                    <div class="tw-p-6">
+                                        <div class="tw-text-gray-400 tw-font-pop tw-text-center tw-font-semibold tw-text-lg">Print Data</div>
+                                        <div class="tw-flex tw-gap-3 tw-justify-between tw-mt-5 tw-mx-5">
+                                            <div>
+                                                <div class="tw-text-xs tw-mb-2 tw-font-pop tw-font-normal tw-text-gray-400">Dari tanggal</div>
+                                                <input class="input-data tw-text-xs tw-font-pop" id="tgl_masuk_dari" name="tgl_masuk_dari" type="date" placeholder="dd/mm/yyyy" @if(isset($_GET['tgl_masuk_dari'])) value="{{ $_GET['tgl_masuk_dari'] }}" @endif>
+                                            </div>
+                                            <div>
+                                                <div class="tw-text-xs tw-mb-2 tw-font-pop tw-font-normal tw-text-gray-400">Ke tanggal</div>
+                                                <input class="input-data tw-text-xs tw-font-pop" id="tgl_masuk_ke" name="tgl_masuk_ke" type="date" placeholder="dd/mm/yyyy" @if(isset($_GET['tgl_masuk_ke'])) value="{{ $_GET['tgl_masuk_ke'] }}" @endif>
+                                            </div>
+                                        </div>
+                                        <div class="tw-flex tw-justify-center tw-mt-3">
+                                            <button type="submit" target="__blank" class="tw-w-full tw-rounded-lg tw-mx-3 tw-font-pop tw-text-white tw-text-sm tw-font-medium tw-mb-2 tw-py-2 tw-bg-sims-400 hover:tw-bg-sims-500 tw-transition-all tw-ease-in-out">Print</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
                         <button id="copy_btn" title="Copy Data" type="button" value="copy"><i class="fa-solid fa-copy btn-export"></i></button>
-                        <a href="/mutasi-masuk-excel" title="Export ke Excel"><i class="fa-solid fa-file-excel btn-export"></i></a>
-                        <a href="/mutasi-masuk-pdf" title="Export ke PDF"><i class="fa-solid fa-file-pdf btn-export"></i></a>
+
+                        <button type="button" data-modal-toggle="export-excel" title="Export ke Excel"><i class="fa-solid fa-file-excel btn-export"></i></button>
+                    
+                        <div id="export-excel" tabindex="-1"
+                            class="hidden overflow-y-auto overflow-x-hidden fixed  z-50 md:tw-inset-0 h-modal md:h-full">
+                            <div class="tw-relative tw-p-4 tw-w-full tw-max-w-md tw-h-full md:tw-h-auto">
+                                <div class="tw-relative tw-bg-white tw-rounded-lg tw-shadow dark:tw-bg-slate-100">
+                                    <button type="button"
+                                        class="tw-absolute tw-top-3 tw-right-2.5 tw-text-gray-400 tw-bg-transparent hover:tw-bg-gray-200 hover:tw-text-gray-900 tw-rounded-lg tw-text-sm tw-p-1.5 tw-ml-auto tw-inline-flex tw-items-center dark:hover:tw-bg-gray-800 dark:hover:tw-text-white"
+                                        data-modal-toggle="export-excel">
+                                        <svg aria-hidden="true" class="tw-w-5 tw-h-5" fill="currentColor"
+                                            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd"
+                                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span class="tw-sr-only">Close modal</span>
+                                    </button>
+                                    <form action="/mutasi-masuk-excel" method="">
+                                        @csrf
+                                        <div class="tw-p-6">
+                                            <div class="tw-text-gray-400 tw-font-pop tw-text-center tw-font-semibold tw-text-lg">Export Data Excel</div>
+                                            <div class="tw-flex tw-gap-3 tw-justify-between tw-mt-5 tw-mx-5">
+                                                <div>
+                                                    <div class="tw-text-xs tw-mb-2 tw-font-pop tw-font-normal tw-text-gray-400">Dari tanggal</div>
+                                                    <input class="input-data tw-text-xs tw-font-pop" id="tgl_masuk_dari" name="tgl_masuk_dari" type="date" placeholder="dd/mm/yyyy" @if(isset($_GET['tgl_masuk_dari'])) value="{{ $_GET['tgl_masuk_dari'] }}" @endif>
+                                                </div>
+                                                <div>
+                                                    <div class="tw-text-xs tw-mb-2 tw-font-pop tw-font-normal tw-text-gray-400">Ke tanggal</div>
+                                                    <input class="input-data tw-text-xs tw-font-pop" id="tgl_masuk_ke" name="tgl_masuk_ke" type="date" placeholder="dd/mm/yyyy" @if(isset($_GET['tgl_masuk_ke'])) value="{{ $_GET['tgl_masuk_ke'] }}" @endif>
+                                                </div>
+                                            </div>
+                                            <div class="tw-flex tw-justify-center tw-mt-3">
+                                                <button type="submit" class="tw-w-full tw-rounded-lg tw-mx-3 tw-font-pop tw-text-white tw-text-sm tw-font-medium tw-mb-2 tw-py-2 tw-bg-sims-400 hover:tw-bg-sims-500 tw-transition-all tw-ease-in-out">Export</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button type="button" data-modal-toggle="export-pdf" title="Export ke PDF"><i class="fa-solid fa-file-pdf btn-export"></i></button>
+                    
+                        <div id="export-pdf" tabindex="-1"
+                            class="hidden overflow-y-auto overflow-x-hidden fixed  z-50 md:tw-inset-0 h-modal md:h-full">
+                            <div class="tw-relative tw-p-4 tw-w-full tw-max-w-md tw-h-full md:tw-h-auto">
+                                <div class="tw-relative tw-bg-white tw-rounded-lg tw-shadow dark:tw-bg-slate-100">
+                                    <button type="button"
+                                        class="tw-absolute tw-top-3 tw-right-2.5 tw-text-gray-400 tw-bg-transparent hover:tw-bg-gray-200 hover:tw-text-gray-900 tw-rounded-lg tw-text-sm tw-p-1.5 tw-ml-auto tw-inline-flex tw-items-center dark:hover:tw-bg-gray-800 dark:hover:tw-text-white"
+                                        data-modal-toggle="export-pdf">
+                                        <svg aria-hidden="true" class="tw-w-5 tw-h-5" fill="currentColor"
+                                            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd"
+                                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span class="tw-sr-only">Close modal</span>
+                                    </button>
+                                    <form action="/mutasi-masuk-pdf">
+                                        @csrf
+                                        <div class="tw-p-6">
+                                            <div class="tw-text-gray-400 tw-font-pop tw-text-center tw-font-semibold tw-text-lg">Export Data PDF</div>
+                                            <div class="tw-flex tw-gap-3 tw-justify-between tw-mt-5 tw-mx-5">
+                                                <div>
+                                                    <div class="tw-text-xs tw-mb-2 tw-font-pop tw-font-normal tw-text-gray-400">Dari tanggal</div>
+                                                    <input class="input-data tw-text-xs tw-font-pop" id="tgl_masuk_dari" name="tgl_masuk_dari" type="date" placeholder="dd/mm/yyyy" @if(isset($_GET['tgl_masuk_dari'])) value="{{ $_GET['tgl_masuk_dari'] }}" @endif>
+                                                </div>
+                                                <div>
+                                                    <div class="tw-text-xs tw-mb-2 tw-font-pop tw-font-normal tw-text-gray-400">Ke tanggal</div>
+                                                    <input class="input-data tw-text-xs tw-font-pop" id="tgl_masuk_ke" name="tgl_masuk_ke" type="date" placeholder="dd/mm/yyyy" @if(isset($_GET['tgl_masuk_ke'])) value="{{ $_GET['tgl_masuk_ke'] }}" @endif>
+                                                </div>
+                                            </div>
+                                            <div class="tw-flex tw-justify-center tw-mt-3">
+                                                <button type="submit" class="tw-w-full tw-rounded-lg tw-mx-3 tw-font-pop tw-text-white tw-text-sm tw-font-medium tw-mb-2 tw-py-2 tw-bg-sims-400 hover:tw-bg-sims-500 tw-transition-all tw-ease-in-out">Export</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 @endcan
             </div>

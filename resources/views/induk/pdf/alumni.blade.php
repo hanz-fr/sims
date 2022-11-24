@@ -23,7 +23,8 @@
 </head>
 <body>
 
-  <h4 style="font-weight: 500; text-align: center; font-family:Arial, Helvetica, sans-serif">DATA ALUMNI</h4>
+  <h4 style="font-weight: 500; text-align: center;">DATA ALUMNI</h4>
+  <h5 style="font-weight: 400">Periode: {{ $dibuatTglDari }} - {{ $dibuatTglKe }}</h5>
 
     <table id="data">
         <tr>

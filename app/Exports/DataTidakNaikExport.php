@@ -23,7 +23,7 @@ class DataTidakNaikExport implements FromView, ShouldAutoSize, WithEvents, WithC
     public function __construct()
     {
 
-        $this->api_url = 'https://e5aa-103-148-113-86.ap.ngrok.io';
+        $this->api_url = 'https://552d-103-139-10-189.ap.ngrok.io';
 
     }
     /**
@@ -32,10 +32,19 @@ class DataTidakNaikExport implements FromView, ShouldAutoSize, WithEvents, WithC
     public function view(): View
     {
 
-        $siswa = Http::get("{$this->api_url}/dashboard/siswa-tidak-naik??perPage=1&perPage=100");
+        $request = request();
+
+        $sort_by = $request->sort_by;
+        $sort = $request->sort;
+        $dibuatTglDari = $request->dibuatTglDari;
+        $dibuatTglKe = $request->dibuatTglKe;
+
+        $siswa = Http::get("{$this->api_url}/dashboard/siswa-tidak-naik?dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}");
 
         return view('rekap-siswa.pdf.tidak-naik', [
-            'raport' => json_decode($siswa)->data->rows
+            'raport' => json_decode($siswa)->data->rows,
+            'dibuatTglDari' => $request->dibuatTglDari,
+            'dibuatTglKe' => $request->dibuatTglKe
         ]);
     }
 
