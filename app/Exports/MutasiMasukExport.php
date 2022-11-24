@@ -23,7 +23,7 @@ class MutasiMasukExport implements FromView, ShouldAutoSize, WithEvents, WithCol
     public function __construct()
     {
 
-        $this->url = 'https://e5aa-103-148-113-86.ap.ngrok.io';
+        $this->url = 'https://552d-103-139-10-189.ap.ngrok.io';
         
     }
 
@@ -32,11 +32,19 @@ class MutasiMasukExport implements FromView, ShouldAutoSize, WithEvents, WithCol
     */
     public function view(): View
     {
+        $request = request();
 
-        $mutasi = Http::get("{$this->url}/mutasi/siswa-masuk");
+        $sort_by = $request->sort_by;
+        $sort = $request->sort;
+        $tgl_masuk_dari = $request->tgl_masuk_dari;
+        $tgl_masuk_ke = $request->tgl_masuk_ke;
+
+        $mutasi = Http::get("{$this->url}/mutasi/siswa-masuk?sort_by={$sort_by}&sort={$sort}&tgl_masuk_dari={$tgl_masuk_dari}&tgl_masuk_ke={$tgl_masuk_ke}");
 
         return view('mutasi.pdf.mutasi-masuk', [
             'mutasi' => json_decode($mutasi)->data->rows,
+            'tgl_masuk_dari' => $request->tgl_masuk_dari,
+            'tgl_masuk_ke' => $request->tgl_masuk_ke
         ]);
     }
 
@@ -52,7 +60,7 @@ class MutasiMasukExport implements FromView, ShouldAutoSize, WithEvents, WithCol
                 ->getAlignment()
                 ->setHorizontal(Alignment::HORIZONTAL_CENTER_CONTINUOUS);
                 
-                $event->sheet->getDelegate()->getStyle('A2:G13')->applyFromArray([
+                $event->sheet->getDelegate()->getStyle('A2:G14')->applyFromArray([
                     'borders' => [
                         'allBorders' => [
                             'borderStyle' => Border::BORDER_THIN,

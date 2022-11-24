@@ -24,7 +24,7 @@ class MutasiKeluarExport implements FromView, ShouldAutoSize, WithEvents, WithCo
     public function __construct()
     {
 
-        $this->url = 'https://e5aa-103-148-113-86.ap.ngrok.io';
+        $this->url = 'https://552d-103-139-10-189.ap.ngrok.io';
         
     }
 
@@ -34,10 +34,19 @@ class MutasiKeluarExport implements FromView, ShouldAutoSize, WithEvents, WithCo
     public function view(): View
     {
 
-        $mutasi = Http::get("{$this->url}/mutasi/siswa-keluar");
+        $request = request();
+
+        $sort_by = $request->sort_by;
+        $sort = $request->sort;
+        $tgl_keluar_dari = $request->tgl_keluar_dari;
+        $tgl_keluar_ke = $request->tgl_keluar_ke;
+
+        $mutasi = Http::get("{$this->url}/mutasi/siswa-keluar?sort_by={$sort_by}&sort={$sort}&tgl_keluar_dari={$tgl_keluar_dari}&tgl_keluar_ke={$tgl_keluar_ke}");
 
         return view('mutasi.pdf.mutasi-keluar', [
             'mutasi' => json_decode($mutasi)->data->rows,
+            'tgl_keluar_dari' => $request->tgl_keluar_dari,
+            'tgl_keluar_ke' => $request->tgl_keluar_ke
         ]);
     }
 
@@ -54,7 +63,7 @@ class MutasiKeluarExport implements FromView, ShouldAutoSize, WithEvents, WithCo
                 ->setHorizontal(Alignment::HORIZONTAL_CENTER_CONTINUOUS);
 
                 
-                $event->sheet->getDelegate()->getStyle('A2:G12')->applyFromArray([
+                $event->sheet->getDelegate()->getStyle('A2:G13')->applyFromArray([
                     'borders' => [
                         'allBorders' => [
                             'borderStyle' => Border::BORDER_THIN,

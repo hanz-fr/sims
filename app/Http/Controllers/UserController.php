@@ -164,6 +164,12 @@ class UserController extends Controller
     }
 
 
+    // number verification form
+    public function verifyAccount() {
+        
+    }
+
+
     // forget password
       public function showForgetPasswordForm() {
 

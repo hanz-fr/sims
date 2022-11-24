@@ -2,6 +2,7 @@
 
 namespace App\Exports;
 
+use Carbon\Carbon;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Http;
 use Maatwebsite\Excel\Concerns\FromView;
@@ -21,7 +22,7 @@ class AlumniExport implements FromView, ShouldAutoSize, WithEvents, WithColumnWi
     public function __construct()
     {
         
-        $this->url = 'https://e5aa-103-148-113-86.ap.ngrok.io';
+        $this->url = 'https://552d-103-139-10-189.ap.ngrok.io';
 
     }
 
@@ -31,10 +32,20 @@ class AlumniExport implements FromView, ShouldAutoSize, WithEvents, WithColumnWi
     public function view(): View
     {
 
-        $alumni = Http::get("{$this->url}/dashboard/alumni/get");
+        $request = request();
+
+        $dibuatTglDari = $request->dibuatTglDari;
+        $dibuatTglKe = $request->dibuatTglKe;
+
+        $tahun_dari = Carbon::parse($dibuatTglDari)->translatedFormat('Y');
+        $tahun_ke = Carbon::parse($dibuatTglDari)->translatedFormat('Y');
+
+        $alumni = Http::get("{$this->url}/dashboard/alumni/get?dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}");
 
         return view('induk.pdf.alumni', [
             'alumni' => json_decode($alumni)->data->rows,
+            'dibuatTglDari' => $tahun_dari,
+            'dibuatTglKe' => $tahun_ke
         ]);
     }
     
@@ -50,7 +61,7 @@ class AlumniExport implements FromView, ShouldAutoSize, WithEvents, WithColumnWi
                 ->getAlignment()
                 ->setHorizontal(Alignment::HORIZONTAL_CENTER_CONTINUOUS);
                 
-                $event->sheet->getDelegate()->getStyle('A2:G12')->applyFromArray([
+                $event->sheet->getDelegate()->getStyle('A2:G13')->applyFromArray([
                     'borders' => [
                         'allBorders' => [
                             'borderStyle' => Border::BORDER_THIN,

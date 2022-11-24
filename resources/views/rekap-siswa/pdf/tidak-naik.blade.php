@@ -23,7 +23,8 @@
 </head>
 <body>
 
-  <h4 style="font-weight: 500; text-align: center; font-family:Arial, Helvetica, sans-serif">DAFTAR NAMA PESERTA DIDIK TIDAK NAIK KELAS</h4>
+  <h4 style="font-weight: 500; text-align: center;">DATA SISWA TIDAK NAIK KELAS</h4>
+  <h5 style="font-weight: 400">Periode: {{ $dibuatTglDari }} - {{ $dibuatTglKe }}</h5>
 
     <table>
         <thead class="tw-bg-gray-100 tw-text-basic-700 tw-border tw-font-pop">
