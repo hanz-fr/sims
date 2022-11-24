@@ -32,7 +32,7 @@ class ApiController extends Controller
     public function __construct()
     {
 
-        $this->api_url = 'https://e5aa-103-148-113-86.ap.ngrok.io'; // Ganti link NGROK disini
+        $this->api_url = '127.0.0.1:3000'; // Ganti link NGROK disini
 
 
         $this->sims_url = 'http://127.0.0.1:8000'; // SIMS URL
@@ -68,6 +68,7 @@ class ApiController extends Controller
                 'jumlahSiswaPM' => json_decode($response)->jumlahSiswaPM->count,
                 'jumlahSiswaPPLG' => json_decode($response)->jumlahSiswaPPLG->count,
                 'jumlahSiswaTJKT' => json_decode($response)->jumlahSiswaTJKT->count,
+                'jumlahSiswaMLOG' => json_decode($response)->jumlahSiswaMLOG->count,
             ]);
         } else {
             return view('induk.show-all', [
