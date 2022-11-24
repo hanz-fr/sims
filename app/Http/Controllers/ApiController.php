@@ -32,7 +32,7 @@ class ApiController extends Controller
     public function __construct()
     {
 
-        $this->api_url = '127.0.0.1:3000'; // Ganti link NGROK disini
+        $this->api_url = 'https://e5aa-103-148-113-86.ap.ngrok.io'; // Ganti link NGROK disini
 
 
         $this->sims_url = 'http://127.0.0.1:8000'; // SIMS URL
@@ -1033,7 +1033,7 @@ class ApiController extends Controller
             'raport04' => json_decode($raport04)->rows,
             'raport05' => json_decode($raport05)->rows,
             'raport06' => json_decode($raport06)->rows,
-        ])->setPaper('a3', 'landscape');
+        ])->setPaper('a4', 'landscape');
 
         $nama = json_decode($response)->result->nama_siswa;
 
@@ -1763,6 +1763,7 @@ class ApiController extends Controller
             ]);
         }
     }
+
 
     public function updateMutasiKeluar(Request $request, $id) {
 

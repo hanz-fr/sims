@@ -22,7 +22,7 @@ class DetailDataIndukExport implements FromView, ShouldAutoSize
 
         $this->nis = $nis;
 
-        $this->api_url = 'https://d197-103-139-10-189.ngrok.io';
+        $this->api_url = 'https://e5aa-103-148-113-86.ap.ngrok.io';
 
         $this->siswa = Http::get("{$this->api_url}/siswa/{$nis}??page=1&perPage=100");
     }

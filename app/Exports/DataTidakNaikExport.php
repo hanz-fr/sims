@@ -22,7 +22,7 @@ class DataTidakNaikExport implements FromView, ShouldAutoSize, WithEvents
     public function __construct()
     {
 
-        $this->api_url = 'https://d197-103-139-10-189.ngrok.io';
+        $this->api_url = 'https://e5aa-103-148-113-86.ap.ngrok.io';
 
     }
     /**

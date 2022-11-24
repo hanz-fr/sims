@@ -22,7 +22,7 @@ class MutasiMasukExport implements FromView, ShouldAutoSize, WithEvents
     public function __construct()
     {
 
-        $this->url = 'https://d197-103-139-10-189.ngrok.io';
+        $this->url = 'https://e5aa-103-148-113-86.ap.ngrok.io';
         
     }
 
