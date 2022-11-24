@@ -12,8 +12,9 @@ use PhpOffice\PhpSpreadsheet\Style\Border;
 use PhpOffice\PhpSpreadsheet\Style\Alignment;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
+use Maatwebsite\Excel\Concerns\WithColumnWidths;
 
-class DataTidakNaikExport implements FromView, ShouldAutoSize, WithEvents
+class DataTidakNaikExport implements FromView, ShouldAutoSize, WithEvents, WithColumnWidths
 {
 
     use Exportable;
@@ -50,7 +51,7 @@ class DataTidakNaikExport implements FromView, ShouldAutoSize, WithEvents
                 ->getAlignment()
                 ->setHorizontal(Alignment::HORIZONTAL_CENTER_CONTINUOUS);
                 
-                $event->sheet->getDelegate()->getStyle('A2:E10')->applyFromArray([
+                $event->sheet->getDelegate()->getStyle('A2:E12')->applyFromArray([
                     'borders' => [
                         'allBorders' => [
                             'borderStyle' => Border::BORDER_THIN,
@@ -63,6 +64,13 @@ class DataTidakNaikExport implements FromView, ShouldAutoSize, WithEvents
                 ->setVertical(Alignment::VERTICAL_CENTER)
                 ->setHorizontal(Alignment::HORIZONTAL_CENTER_CONTINUOUS);
             },
+        ];
+    }
+
+    public function columnWidths(): array
+    {
+        return [
+            'A' => 5,
         ];
     }
 }

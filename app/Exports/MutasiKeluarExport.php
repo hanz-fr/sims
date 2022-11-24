@@ -11,9 +11,10 @@ use Maatwebsite\Excel\Concerns\WithEvents;
 use PhpOffice\PhpSpreadsheet\Style\Border;
 use PhpOffice\PhpSpreadsheet\Style\Alignment;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
+use Maatwebsite\Excel\Concerns\WithColumnWidths;
 
 
-class MutasiKeluarExport implements FromView, ShouldAutoSize, WithEvents
+class MutasiKeluarExport implements FromView, ShouldAutoSize, WithEvents, WithColumnWidths
 {
 
     use Exportable;
@@ -51,8 +52,9 @@ class MutasiKeluarExport implements FromView, ShouldAutoSize, WithEvents
                 $event->sheet->getDelegate()->getStyle('A1')
                 ->getAlignment()
                 ->setHorizontal(Alignment::HORIZONTAL_CENTER_CONTINUOUS);
+
                 
-                $event->sheet->getDelegate()->getStyle('A2:G10')->applyFromArray([
+                $event->sheet->getDelegate()->getStyle('A2:G12')->applyFromArray([
                     'borders' => [
                         'allBorders' => [
                             'borderStyle' => Border::BORDER_THIN,
@@ -65,6 +67,13 @@ class MutasiKeluarExport implements FromView, ShouldAutoSize, WithEvents
                 ->setVertical(Alignment::VERTICAL_CENTER)
                 ->setHorizontal(Alignment::HORIZONTAL_CENTER_CONTINUOUS);
             },
+        ];
+    }
+
+    public function columnWidths(): array
+    {
+        return [
+            'A' => 5,
         ];
     }
 }

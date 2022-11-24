@@ -139,7 +139,26 @@
                     </div>
 
                     <div x-init="$dispatch('register', {id: 5})"  
-                      x-intersect:enter.half="setIndex(4)" x-transition.duration.500ms>
+                    x-intersect:enter.half="setIndex(4)" x-transition.duration.500ms>
+                    @cannot('wali kelas')
+                      <a href="/data-tidak-naik">
+                    @endcannot
+                          <div class="card-dashboard tw-transition-all hover:tw-shadow-lg">
+                              <div class="sm:tw-px-12 md:tw-px-8 tw-mt-7">
+                                  <div class="tw-flex tw-flex-row">
+                                    <div class="tw-text-5xl tw-text-[#6fc5bb]"><i class="fa-solid fa-user"></i></div>
+                                      <div class="tw-text-2xl tw-font-bold tw-text-gray-500 tw-py-3 tw-pl-3">{{ $siswaTdkNaik }}</div>
+                                  </div>
+                              </div>
+                              <div> 
+                                  <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Siswa TIdak Naik</div>
+                              </div>
+                          </div>
+                      </a>
+                  </div>
+
+                    <div x-init="$dispatch('register', {id: 6})"  
+                      x-intersect:enter.half="setIndex(5)" x-transition.duration.500ms>
                       @cannot('wali kelas')
                         <a href="/rekap-jumlah-siswa">
                       @endcannot
@@ -157,8 +176,8 @@
                         </a>
                     </div>
 
-                    <div x-init="$dispatch('register', {id: 6})"  
-                      x-intersect:enter.half="setIndex(5)" x-transition.duration.500ms>
+                    <div x-init="$dispatch('register', {id: 7})"  
+                      x-intersect:enter.half="setIndex(6)" x-transition.duration.500ms>
                         <a href="/jurusan">
                             <div class="card-dashboard tw-transition-all hover:tw-shadow-lg">
                                 <div class="sm:tw-px-12 md:tw-px-8 tw-mt-7">

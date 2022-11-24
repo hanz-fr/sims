@@ -312,7 +312,7 @@ class ApiController extends Controller
             'raport' => json_decode($response)->data->rows
         ]);
 
-        $tidaknaik = 'data_tidak_naik_kelas_periode'.date('Y-m-d_H-i-s').'.pdf';
+        $tidaknaik = 'data_tidak_naik_kelas_periode_'.date('Y-m-d_H-i-s').'.pdf';
 
         return $pdf->download($tidaknaik);
         

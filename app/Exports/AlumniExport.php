@@ -11,8 +11,9 @@ use Maatwebsite\Excel\Concerns\WithEvents;
 use PhpOffice\PhpSpreadsheet\Style\Border;
 use PhpOffice\PhpSpreadsheet\Style\Alignment;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
+use Maatwebsite\Excel\Concerns\WithColumnWidths;
 
-class AlumniExport implements FromView, ShouldAutoSize, WithEvents
+class AlumniExport implements FromView, ShouldAutoSize, WithEvents, WithColumnWidths
 {
 
     use Exportable;
@@ -62,6 +63,16 @@ class AlumniExport implements FromView, ShouldAutoSize, WithEvents
                 ->setVertical(Alignment::VERTICAL_CENTER)
                 ->setHorizontal(Alignment::HORIZONTAL_CENTER_CONTINUOUS);
             },
+        ];
+    }
+
+    public function columnWidths(): array
+    {
+        return [
+            'A' => 5,
+            'B' => 15,
+            'C' => 15,
+            'F' => 15,
         ];
     }
 }
