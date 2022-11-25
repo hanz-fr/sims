@@ -1545,6 +1545,42 @@ video {
   height: 450px;
 }
 
+.tw-h-60 {
+  height: 15rem;
+}
+
+.tw-h-80 {
+  height: 20rem;
+}
+
+.tw-h-1\/2 {
+  height: 50%;
+}
+
+.tw-h-3\/4 {
+  height: 75%;
+}
+
+.tw-h-4\/5 {
+  height: 80%;
+}
+
+.tw-h-\[\] {
+  height: ;
+}
+
+.tw-h-\[\'\'\] {
+  height: '';
+}
+
+.tw-h-\[\'400px\'\] {
+  height: '400px';
+}
+
+.tw-h-\[\'500px\'\] {
+  height: '500px';
+}
+
 .tw-w-full {
   width: 100%;
 }
