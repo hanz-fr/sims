@@ -273,7 +273,7 @@
 <script>
     const ctx = document.getElementById('chart');
     const chart = new Chart(ctx, {
-        type: 'polarArea',
+        type: 'line',
         data: {
             labels: ['Masuk', 'Keluar', 'Tidak Naik', 'Alumni'],
             datasets: [{
@@ -341,7 +341,7 @@ const config = {
     },
     elements: {
         arc: {
-          borderWidth: 0.6, // <-- Set this to derired value
+          borderWidth: 4.5, // <-- Set this to derired value
           borderColor: '#ffffff'
         }
     }

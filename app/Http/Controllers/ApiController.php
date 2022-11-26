@@ -33,7 +33,7 @@ class ApiController extends Controller
     public function __construct()
     {
 
-        $this->api_url = 'https://cffc-103-148-113-86.ap.ngrok.io'; // Ganti link NGROK disini
+        $this->api_url = '127.0.0.1:3000'; // Ganti link NGROK disini
 
 
         $this->sims_url = 'http://127.0.0.1:8000'; // SIMS URL
@@ -2380,7 +2380,6 @@ class ApiController extends Controller
         $kelas10 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/10");
         $kelas11 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/11");
         $kelas12 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/12");
-
 
         if ($semuaKelas->successful()) {
 
