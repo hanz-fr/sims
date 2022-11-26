@@ -2381,7 +2381,6 @@ class ApiController extends Controller
         $kelas11 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/11");
         $kelas12 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/12");
 
-
         if ($semuaKelas->successful()) {
 
             return view('rekap-siswa.data-rekap-jumlah-siswa', [
