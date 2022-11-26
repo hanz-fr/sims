@@ -273,7 +273,7 @@
 <script>
     const ctx = document.getElementById('chart');
     const chart = new Chart(ctx, {
-        type: 'line',
+        type: 'bar',
         data: {
             labels: ['Masuk', 'Keluar', 'Tidak Naik', 'Alumni'],
             datasets: [{
