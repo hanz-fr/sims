@@ -13,14 +13,14 @@
 
     @if($history === [])
 
-    <div class="tw-font-pop tw-text-gray-400 tw-text-xl">Belum ada histori yang tersimpan.</div>
+    <div class="tw-font-pop tw-text-sims-400 tw-text-xl">Belum ada histori yang tersimpan.</div>
 
     @else
         @foreach($history as $h)
         {{-- Accordion --}}
         <div id="accordion-flush" data-accordion="collapse" data-active-classes="tw-bg-white tw-text-sims-400" data-inactive-classes="tw-text-gray-500">
             <h2 id="accordion-flush-heading-{{ $h->id }}">
-              <button type="button" class="tw-flex tw-font-pop tw-items-center tw-justify-between tw-w-full tw-py-5 tw-font-medium tw-text-left tw-text-gray-500 tw-border-b tw-border-gray-200" data-accordion-target="#accordion-flush-body-{{ $h->id }}" aria-expanded="false" aria-controls="accordion-flush-body-{{ $h->id }}">
+              <button type="button" class="hover:tw-text-sims-300 tw-transition-all tw-ease-out tw-flex tw-font-pop tw-items-center tw-justify-between tw-w-full tw-py-5 tw-font-medium tw-text-left tw-text-gray-500 tw-border-b tw-border-gray-200" data-accordion-target="#accordion-flush-body-{{ $h->id }}" aria-expanded="false" aria-controls="accordion-flush-body-{{ $h->id }}">
                 <div>
                     <span class="tw-text-base tw-font-medium">{{ $h->activityName }}</span>
                     <span class="tw-text-sm tw-font-normal tw-mx-5 tw-text-gray-400">{{ $h->activityAuthor }}</span>
