@@ -444,17 +444,6 @@ Route::post('/registeruser', [UserController::class, 'register']);
 Route::post('/loginuser', [UserController::class, 'authenticate']);
 Route::get('/signout', [UserController::class, 'signOut']);
 
-Route::get('/verify-your-account', function () {
-    return view('auth.verify-number', [
-        'title' => 'Verifikasi Nomer Anda',
-    ]);
-});
-Route::get('/verification-code-sent', function () {
-    return view('auth.verification-code', [
-        'title' => 'Masukkan Kode Verifikasi',
-    ]);
-});
-
 Route::get('/forgot-password', [UserController::class, 'showForgetPasswordForm']);
 Route::post('/forget-password', [UserController::class, 'submitForgetPasswordForm']);
 Route::get('/reset-password/{token}', [UserController::class, 'showResetPasswordForm'])->name('reset.password');

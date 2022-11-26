@@ -28,7 +28,7 @@
                 <div class="tw-text-3xl tw-text-sims-400 tw-font-bold md:tw-mt-3 sm:tw-text-center lg:tw-text-left">Registrasi</div>
                 <div class="tw-text-sm tw-mt-2 tw-text-slate-400 sm:tw-text-center lg:tw-text-left">Daftar untuk membuat akun baru</div>
 
-            <form action="/registeruser" method="post" id="signUp" class="tw-mt-10 lg:tw-pr-8">
+                <form action="/registeruser" method="post" class="tw-mt-10 lg:tw-pr-8">
                 @csrf
                 <div style="display: block;">
                     <ul class="tw-flex tw-flex-col tw-gap-5">
@@ -39,7 +39,7 @@
                             @enderror
                         </li>
                         <li>
-                            <input type="text" name="nip" @error('nip') is-invalid @enderror placeholder="NIP" maxlength="18" class="login-input" required>
+                            <input type="text" name="nip" @error('nip') is-invalid @enderror placeholder="NIP" minlength="9" maxlength="18" class="login-input" required>
                             @error('nip')
                                 <div class="tw-text-sm tw-text-pink-700 tw-mt-1 tw-font-ubuntu">{{ $message }}</div>
                             @enderror
@@ -108,31 +108,30 @@
                             <a href="/login" class="tw-font-ubuntu tw-text-sims-400 tw-underline tw-text-sm">Sudah punya akun?</a>
                         </li>
                     </ul>
-                        </section>
+            </section>
                         <!-- image -->
                         <img class="lg:tw-w-1/2 sm:tw-mb-4 sm:tw-w-full tw-items-center md:tw-m-auto" src="{{ URL::asset('assets/img/sims-login.svg') }}" alt="" srcset="">
         </div>
-                </div>
+    </div>
 
-                <div class="w-full max-w-sm" style="display: none;" id="verification_input">
-                    <section class="tw-bg-white tw-font-pop tw-rounded-[50px] tw-flex tw-flex-col tw-mx-auto tw-my-28 tw-px-20 tw-py-11 tw-top-1/2 tw-w-3/5 tw-h-3/5 tw-border tw-border-slate-200 tw-shadow-xl tw-text-center">
-                        <img class="tw-w-1/2 tw-mx-auto" src="{{ URL::asset('assets/img/verif-code.svg') }}" alt="Registration Success">
-                        <div class="tw-text-3xl tw-font-bold tw-text-sims-400 tw-mt-5">Masukkan Kode Verifikasi</div>
-                        <div class="tw-text-sm tw-text-basic-300 tw-font-medium tw-mt-3">Mohon cek SMS anda. Kami sudah mengirimkan kode verifikasi</div>
-                            <div class="tw-w-1/2 tw-mx-auto tw-mt-5">
-                                <input type="text" id="verificationCode" placeholder="Kode Verifikasi" class="tw-appearance-none login-input tw-mx-auto">
-
-                                </div>
-                            <button onclick="verify();" id="submit" class="tw-font-ubuntu tw-bg-[#90C2C2] tw-py-3 text-md tw-mx-auto tw-font-medium tw-text-white tw-mt-6 hover:tw-bg-[#5B9C9C] tw-w-2/4">
-                                Verifikasi Akun
-                            </button>
-                            <button type="button" onclick="tryAgain();" class="tw-font-ubuntu tw-bg-[#90C2C2] tw-py-3 text-md tw-mx-auto tw-font-medium tw-text-white tw-mt-6 hover:tw-bg-[#5B9C9C] tw-w-2/4">
-                                Kirim Ulang
-                            </button>
-                    </section> <!-- card -->
-                </div>
-            </form>
-    </div> <!-- container -->
+        <div class="w-full max-w-sm" style="display: none;" id="verification_input">
+            <section class="tw-bg-white tw-font-pop tw-rounded-[50px] tw-flex tw-flex-col tw-mx-auto tw-my-28 tw-px-20 tw-py-11 tw-top-1/2 tw-w-3/5 tw-h-3/5 tw-border tw-border-slate-200 tw-shadow-xl tw-text-center">
+                <img class="tw-w-1/2 tw-mx-auto" src="{{ URL::asset('assets/img/verif-code.svg') }}" alt="Registration Success">
+                <div class="tw-text-3xl tw-font-bold tw-text-sims-400 tw-mt-5">Masukkan Kode Verifikasi</div>
+                <div class="tw-text-sm tw-text-basic-300 tw-font-medium tw-mt-3">Mohon cek SMS anda. Kami sudah mengirimkan kode verifikasi</div>
+                    <div class="tw-w-1/2 tw-mx-auto tw-mt-5">
+                        <input type="text" id="verificationCode" placeholder="Kode Verifikasi" class="tw-appearance-none login-input tw-mx-auto"
+                        </div>
+                    <button type="submit" onclick="verify();" class="tw-font-ubuntu tw-bg-[#90C2C2] tw-py-3 text-md tw-mx-auto tw-font-medium tw-text-white tw-mt-6 hover:tw-bg-[#5B9C9C] tw-w-2/4">
+                        Verifikasi Akun
+                    </button>
+                    <button type="button" onclick="tryAgain();" class="tw-font-ubuntu tw-bg-[#90C2C2] tw-py-3 text-md tw-mx-auto tw-font-medium tw-text-white tw-mt-6 hover:tw-bg-[#5B9C9C] tw-w-2/4">
+                        Kirim Ulang
+                    </button>
+            </section> <!-- card -->
+        </div>
+    </form>
+</div> <!-- container -->
 
 {{-- alpine js --}}
 <script defer src="https://unpkg.com/@alpinejs/intersect@3.10.3/dist/cdn.min.js"></script>
@@ -188,7 +187,6 @@
         signInWithPhoneNumber(auth, phoneNumber, appVerifier)
             .then((confirmationResult) => {
                 window.confirmationResult = confirmationResult;
-                // alert('Verification code sent!!! Please check your phone.')
                 $("#phone_input").hide();
                 $("#verification_input").show();
             }).catch((error) => {
@@ -202,12 +200,6 @@
         const code = $("#verificationCode").val();
 
         confirmationResult.confirm(code).then((result) => {
-            var form = document.getElementById("signUp");
-
-            document.getElementById("submit").addEventListener("click", function () {
-                form.submit();
-            });
-            // alert('Code verification successfull!!! Awesome!')
             const user = result.user;
 
         }).catch((error) => {
