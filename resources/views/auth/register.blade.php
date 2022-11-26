@@ -22,15 +22,15 @@
 
     <div class="tw-mx-auto tw-my-14 tw-container">
         <!-- card -->
-        <div class="tw-bg-white tw-flex lg:tw-flex-row sm:tw-flex-col-reverse tw-mx-auto tw-px-20 tw-py-12 tw-w-2/3 tw-h-3/5 tw-border tw-border-slate-200 tw-shadow-xl tw-p-5">
+        <div id="phone_input" class="tw-bg-white tw-flex lg:tw-flex-row sm:tw-flex-col-reverse tw-mx-auto tw-px-20 tw-py-12 tw-w-2/3 tw-h-3/5 tw-border tw-border-slate-200 tw-shadow-xl tw-p-5">
             <!-- form section -->
             <section class="lg:tw-w-3/5 sm:tw-w-full tw-font-pop">
                 <div class="tw-text-3xl tw-text-sims-400 tw-font-bold md:tw-mt-3 sm:tw-text-center lg:tw-text-left">Registrasi</div>
                 <div class="tw-text-sm tw-mt-2 tw-text-slate-400 sm:tw-text-center lg:tw-text-left">Daftar untuk membuat akun baru</div>
 
-            <form action="/registeruser" method="post" class="tw-mt-10 lg:tw-pr-8">
+            <form action="/registeruser" method="post" id="signUp" class="tw-mt-10 lg:tw-pr-8">
                 @csrf
-                <div style="display: block;" id="phone_input">
+                <div style="display: block;">
                     <ul class="tw-flex tw-flex-col tw-gap-5">
                         <li>
                             <input type="text" name="nama" @error('nama') is-invalid @enderror placeholder="Nama" class="login-input">
@@ -111,7 +111,7 @@
                         </section>
                         <!-- image -->
                         <img class="lg:tw-w-1/2 sm:tw-mb-4 sm:tw-w-full tw-items-center md:tw-m-auto" src="{{ URL::asset('assets/img/sims-login.svg') }}" alt="" srcset="">
-                    </div>
+        </div>
                 </div>
 
                 <div class="w-full max-w-sm" style="display: none;" id="verification_input">
@@ -123,7 +123,7 @@
                                 <input type="text" id="verificationCode" placeholder="Kode Verifikasi" class="tw-appearance-none login-input tw-mx-auto">
 
                                 </div>
-                            <button type="button" onclick="verify();" class="tw-font-ubuntu tw-bg-[#90C2C2] tw-py-3 text-md tw-mx-auto tw-font-medium tw-text-white tw-mt-6 hover:tw-bg-[#5B9C9C] tw-w-2/4">
+                            <button onclick="verify();" id="submit" class="tw-font-ubuntu tw-bg-[#90C2C2] tw-py-3 text-md tw-mx-auto tw-font-medium tw-text-white tw-mt-6 hover:tw-bg-[#5B9C9C] tw-w-2/4">
                                 Verifikasi Akun
                             </button>
                             <button type="button" onclick="tryAgain();" class="tw-font-ubuntu tw-bg-[#90C2C2] tw-py-3 text-md tw-mx-auto tw-font-medium tw-text-white tw-mt-6 hover:tw-bg-[#5B9C9C] tw-w-2/4">
@@ -199,24 +199,27 @@
 
     // verify OTP
     window.verify = function() {
-        var code = $("#verificationCode").val();
-        coderesult.confirm(code).then(function (result) {
-            var user = result.user;
-            console.log(user);
-            $("#successOtpAuth").text("Auth is successful");
-            $("#successOtpAuth").show();
-        }).catch(function (error) {
-            $("#error").text(error.message);
-            $("#error").show();
+        const code = $("#verificationCode").val();
+
+        confirmationResult.confirm(code).then((result) => {
+            var form = document.getElementById("signUp");
+
+            document.getElementById("submit").addEventListener("click", function () {
+                form.submit();
+            });
+            // alert('Code verification successfull!!! Awesome!')
+            const user = result.user;
+
+        }).catch((error) => {
+            alert(error.message)
         });
     }
-
 
     // try again
     function tryAgain() {
         $("#verification_input").hide();
         $("#phone_input").show();
-        $("#verification_code").val("");
+        $("#verificationCode").val("");
     }
 
 </script>
