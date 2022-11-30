@@ -357,7 +357,7 @@
 
 
                 </div>
-                @can('rekap-siswa')
+                @can('kesiswaan')
                 <div class="flex">
                     <a href="/create-mutasi-masuk"
                         class="tw-bg-[#28A745] tw-text-white hover:tw-text-white hover:tw-bg-green-700 tw-font-pop tw-rounded-lg tw-px-5 tw-py-2">
@@ -394,11 +394,12 @@
                                 <td class="tw-py-4 tw-px-6 tw-border">{{ $m->diterima_di_kelas }}</td>
                                 <td class="tw-py-4 tw-px-6 tw-border">{{ $m->pindah_dari }}, {{ $m->alasan_mutasi }}</td>
                                 <td class="tw-flex tw-justify-center tw-my-2 tw-gap-2">
-                                    @can('rekap-siswa')                                      
+                                @can('rekap-siswa')                                    
                                     <a href="/edit-mutasi-masuk/{{ $m->id }}"
                                         class="tw-text-white tw-bg-kuning-500 hover:tw-bg-kuning-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                                         <i class="fa-solid fa-pen-to-square"></i></a>
                                     </a>
+                                @endcan
 
                                     {{-- <form method="post" action="{{ url('/api/mutasi-masuk/delete/'.$m->id) }}">
                                         @csrf
@@ -408,7 +409,7 @@
                                         </button>
                                     </div>
                                     </form> --}}
-
+                                @can('kesiswaan')
                                     <form action="{{ url('/api/mutasi-masuk/delete/' . $m->id) }}" method="post">
                                         @csrf
                                         @method('delete')
@@ -460,7 +461,7 @@
                                             </div>
                                         </div>
                                     </form>
-                                    @endcan
+                                @endcan
                                 </td>
                             </tr>
                         @endforeach

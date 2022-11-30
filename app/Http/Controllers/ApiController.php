@@ -33,7 +33,7 @@ class ApiController extends Controller
     public function __construct()
     {
 
-        $this->api_url = '127.0.0.1:3000'; // Ganti link NGROK disini
+        $this->api_url = 'https://b316-103-139-10-36.ngrok.io'; // Ganti link NGROK disini
 
 
         $this->sims_url = 'http://127.0.0.1:8000'; // SIMS URL
@@ -254,7 +254,6 @@ class ApiController extends Controller
     }
 
 
-
     public function siswaTidakNaik(Request $request) {
 
         abort_if(Gate::allows('wali kelas'), 403);
@@ -350,7 +349,7 @@ class ApiController extends Controller
             'raport' => json_decode($response)->data->rows,
             'dibuatTglDari' => $request->dibuatTglDari,
             'dibuatTglKe' => $request->dibuatTglKe
-        ]);
+        ])->setPaper('A4_PLUS_PAPER', 'potrait');
 
         $tidaknaik = 'data_tidak_naik_kelas_periode_'.$dibuatTglDari.'_'.$dibuatTglKe.'.pdf';
 
@@ -558,7 +557,7 @@ class ApiController extends Controller
 
     public function storeTambahNilaiMapel(Request $request) {
 
-        abort_if(Gate::denies('rekap-nilai'), 403);
+        abort_if(Gate::denies('wali kelas'), 403);
 
         $nis = $request->nis_siswa;
 
@@ -662,7 +661,7 @@ class ApiController extends Controller
 
     public function deleteNilaiMapel($RaportId) {
 
-        abort_if(Gate::denies('rekap-nilai'), 403);
+        abort_if(Gate::denies('wali kelas'), 403);
 
         Http::delete("{$this->api_url}/raport/{$RaportId}");
 
@@ -683,6 +682,8 @@ class ApiController extends Controller
 
 
     public function viewAlumni(Request $request) {
+
+        abort_if(Gate::denies('rekap-siswa'), 403);
 
         $page = $request->page;
         $perPage = $request->perPage;
@@ -751,7 +752,7 @@ class ApiController extends Controller
             'alumni' => json_decode($response)->data->rows,
             'dibuatTglDari' => $tahun_dari,
             'dibuatTglKe' => $tahun_ke
-        ]);
+        ])->setPaper('A4_PLUS_PAPER', 'potrait');
 
         $dataalumni = 'data_alumni_tahun_'.$tahun_dari.'-'.$tahun_ke.'.pdf';
 
@@ -973,7 +974,7 @@ class ApiController extends Controller
             'jurusan' => $request->jurusan,
             'kelas' => $request->kelas,
             'siswa' => json_decode($response)->data->rows
-        ]);
+        ])->setPaper('A4_PLUS_PAPER', 'potrait');
 
         $jurusan = $request->jurusan;
         $kelas = $request->kelas;
@@ -1207,7 +1208,7 @@ class ApiController extends Controller
             'raport04' => json_decode($raport04)->rows,
             'raport05' => json_decode($raport05)->rows,
             'raport06' => json_decode($raport06)->rows,
-        ])->setPaper('a4', 'landscape');
+        ])->setPaper('A4_PLUS_PAPER', 'potrait');
 
         $nama = json_decode($response)->result->nama_siswa;
 
@@ -1511,6 +1512,8 @@ class ApiController extends Controller
     public function deleteSiswa(Request $request, $nis)
     {
 
+        abort_if(Gate::denies('tata usaha'), 403);
+
         /* Delete foto siswa jika memiliki foto */
         $siswa = Http::get("{$this->api_url}/siswa/{$nis}"); // get siswa with current nis
         $fotoSiswa = json_decode($siswa)->result->foto;
@@ -1536,6 +1539,8 @@ class ApiController extends Controller
 
 
     public function importDataSiswa(Request $request) {
+
+        abort_if(Gate::denies('tata usaha'), 403);
         
         $this->validate($request, [
             'uploaded_file' => 'required|file|mimes:xls,xlsx'
@@ -1637,7 +1642,7 @@ class ApiController extends Controller
         $pdf = PDF::loadView('induk.pdf.data-induk-detail', [
             'siswa' => json_decode($response)->result,
             'tgl_lahir_siswa' => $tgl_lahir_siswa,
-        ]);
+        ])->setPaper('A4_PLUS_PAPER', 'potrait');
 
         $nama = json_decode($response)->result->nama_siswa;
 
@@ -1801,7 +1806,7 @@ class ApiController extends Controller
 
     public function createMutasiKeluar() {
 
-        abort_if(Gate::denies('rekap-siswa'), 403);
+        abort_if(Gate::denies('kesiswaan'), 403);
 
         $kelas = Http::get("{$this->api_url}/kelas");
 
@@ -1833,7 +1838,7 @@ class ApiController extends Controller
 
     public function storeMutasiKeluar(Request $request) {
 
-        abort_if(Gate::denies('rekap-siswa'), 403);
+        abort_if(Gate::denies('kesiswaan'), 403);
 
         // validasi nis siswa jika sudah ada
         $nis = $request->nis_siswa;
@@ -1904,7 +1909,7 @@ class ApiController extends Controller
 
     public function storeMutasiMasuk(Request $request) {
 
-        abort_if(Gate::denies('rekap-siswa'), 403);
+        abort_if(Gate::denies('kesiswaan'), 403);
 
         // validasi nis siswa jika sudah ada
         $nis = $request->nis_siswa;
@@ -2145,7 +2150,7 @@ class ApiController extends Controller
     
     public function deleteMutasiKeluar($id) {
 
-        abort_if(Gate::denies('rekap-siswa'), 403);
+        abort_if(Gate::denies('kesiswaan'), 403);
 
         // validasi apakah id valid atau tidak
         $mutasiExist = Http::get("{$this->api_url}/mutasi/{$id}");
@@ -2182,7 +2187,7 @@ class ApiController extends Controller
 
     public function deleteMutasiMasuk($id) {
 
-        abort_if(Gate::denies('rekap-siswa'), 403);
+        abort_if(Gate::denies('kesiswaan'), 403);
 
         // validasi apakah id valid atau tidak
         $mutasiExist = Http::get("{$this->api_url}/mutasi/{$id}");
@@ -2285,7 +2290,7 @@ class ApiController extends Controller
             'mutasi' => json_decode($response)->data->rows,
             'tgl_masuk_dari' => $request->tgl_masuk_dari,
             'tgl_masuk_ke' => $request->tgl_masuk_ke
-        ]);
+        ])->setPaper('A4_PLUS_PAPER', 'potrait');
 
         $laporan = 'laporan_mutasi_masuk_'.$tgl_masuk_dari.'_'.$tgl_masuk_ke.'.pdf';
 
@@ -2317,7 +2322,7 @@ class ApiController extends Controller
             'mutasi' => json_decode($response)->data->rows,
             'tgl_keluar_dari' => $request->tgl_keluar_dari,
             'tgl_keluar_ke' => $request->tgl_keluar_ke
-        ]);
+        ])->setPaper('A4_PLUS_PAPER', 'potrait');
 
         $laporan = 'laporan_mutasi_keluar_'.$tgl_keluar_dari.'_'.$tgl_keluar_ke.'.pdf';
 
@@ -2419,7 +2424,7 @@ class ApiController extends Controller
             'kelas10' => json_decode($kelas10)->result,
             'kelas11' => json_decode($kelas11)->result,
             'kelas12' => json_decode($kelas12)->result
-        ]);
+        ])->setPaper('A4_PLUS_PAPER', 'landscape');
 
         $datajumlah = 'data_rekap_jumlah_siswa_'.date('Y-m-d_H-i-s').'.pdf';
 

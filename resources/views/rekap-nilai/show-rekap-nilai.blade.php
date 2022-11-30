@@ -56,7 +56,7 @@
                     </div>
                     @endcannot
                     
-                    @can('rekap-nilai')
+                    @can('wali kelas')
                         <a href="/tambah-nilai/{{ $siswa->nis_siswa }}" class="tw-bg-sims-400 tw-text-white hover:tw-text-white  tw-font-pop hover:tw-bg-sims-600 tw-px-5 tw-py-2 tw-rounded-lg">Tambah Rekap Nilai +</a>
                     @endcan
                 </div>
@@ -824,9 +824,13 @@
                         <tr class="tw-bg-sims-500">
                             <td class="tw-py-10 tw-flex tw-justify-center tw-gap-10">
                             <div class="tw-flex tw-gap-5 tw-justify-center">
+                                @can('rekap-nilai')
                                 <a href="/edit-rekap-nilai/{{ $rp->id }}" class="tw-text-white tw-text-sm tw-bg-yellow-400 hover:tw-text-white hover:tw-bg-yellow-500 tw-rounded-lg tw-py-2 tw-px-3">
                                 <i class="fa-solid fa-pen-to-square mr-2"></i>Edit
                                 </a>
+                                @endcan
+
+                                @can('wali kelas')                                    
                                 <form action="/api/raport/delete/{{ $rp->id }}" method="POST">
                                 @csrf
                                 @method('DELETE')
@@ -834,6 +838,7 @@
                                     class="show_confirm tw-text-white tw-text-sm tw-bg-red-400 hover:tw-bg-red-500 hover:tw-text-white tw-rounded-lg tw-py-2 tw-px-3">
                                     <i class="fa-solid fa-trash mr-2"></i> Delete
                                 </button>
+                                @endcan
                             </form>
                             </div>
                             <div></div>

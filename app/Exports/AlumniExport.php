@@ -22,7 +22,7 @@ class AlumniExport implements FromView, ShouldAutoSize, WithEvents, WithColumnWi
     public function __construct()
     {
         
-        $this->url = 'https://552d-103-139-10-189.ap.ngrok.io';
+        $this->url = 'https://9976-103-139-10-36.ngrok.io';
 
     }
 

@@ -3179,12 +3179,12 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.tw-ease-in {
-  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
-}
-
 .tw-ease-out {
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+.tw-ease-in {
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
 
 .tw-scrollbar.tw-overflow-x-hidden {
@@ -3900,6 +3900,11 @@ input[type="checkbox"]:checked {
   color: rgb(77 158 158 / var(--tw-text-opacity));
 }
 
+.hover\:tw-text-sims-300:hover {
+  --tw-text-opacity: 1;
+  color: rgb(127 201 198 / var(--tw-text-opacity));
+}
+
 .hover\:tw-text-sims-500:hover {
   --tw-text-opacity: 1;
   color: rgb(59 144 145 / var(--tw-text-opacity));
@@ -3938,11 +3943,6 @@ input[type="checkbox"]:checked {
 .hover\:tw-text-admin-800:hover {
   --tw-text-opacity: 1;
   color: rgb(54 76 151 / var(--tw-text-opacity));
-}
-
-.hover\:tw-text-sims-300:hover {
-  --tw-text-opacity: 1;
-  color: rgb(127 201 198 / var(--tw-text-opacity));
 }
 
 .hover\:tw-shadow-lg:hover {

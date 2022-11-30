@@ -42,6 +42,7 @@
                 {{-- data siswa n rekap nilai --}}
                 <div class="md:tw-w-3/5 sm:tw-w-full">
                     <div class="tw-float-right tw-flex tw-gap-2">
+                        @can('tata usaha')                            
                         <div>
                             <button type="button" data-modal-toggle="modal" class="tw-bg-sims-400 tw-text-sm tw-text-white hover:tw-text-white  tw-font-pop hover:tw-bg-sims-600 tw-px-5 tw-py-2 tw-rounded-lg">Export</button>
 
@@ -84,6 +85,7 @@
                               </div>
                             </div>
                         </div>
+                        @endcan
                         
                         @cannot('kesiswaan')
                         <a href="/rekap-nilai/{{ $siswa->nis_siswa }}"

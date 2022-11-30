@@ -19,7 +19,7 @@ class JumlahSiswaExport implements FromView, ShouldAutoSize, WithEvents
 
     public function __construct() {
 
-        $this->api_url = 'https://e5aa-103-148-113-86.ap.ngrok.io';
+        $this->api_url = 'https://9976-103-139-10-36.ngrok.io';
     }
 
     /**
