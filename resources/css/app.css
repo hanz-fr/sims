@@ -69,6 +69,33 @@ a {
   .without-ring {
     @apply focus:ring-0 focus:ring-offset-0;
   }
+  .hc-text-lg {
+    @apply tw-font-pop tw-text-lg tw-text-gray-400 tw-font-normal;
+  }
+  .hc-text-base {
+    @apply tw-font-pop tw-text-base tw-text-gray-400 tw-font-normal;
+  }
+  .hc-text-base-sims {
+    @apply tw-font-pop tw-text-base tw-text-sims-400 tw-font-normal;
+  }
+  .hc-text-sm {
+    @apply tw-font-pop tw-text-sm tw-text-gray-400 tw-font-normal;
+  }
+  .hc-text-xs {
+    @apply tw-font-pop tw-text-xs tw-text-gray-400 tw-font-normal;
+  }
+  .hc-title-lg {
+    @apply tw-font-pop tw-text-lg tw-font-bold tw-text-sims-400;
+  }
+  .hc-title-xl {
+    @apply tw-font-pop tw-text-xl tw-font-bold tw-text-sims-400;
+  }
+  .hc-title-3xl {
+    @apply tw-font-pop tw-text-3xl tw-font-bold tw-text-sims-400;
+  }
+  .hc-card {
+    @apply tw-flex tw-flex-col tw-text-center tw-bg-white tw-drop-shadow-md tw-p-8 tw-w-64 hover:tw-drop-shadow-xl tw-transition-all;
+  }
 }
 
 .snap {

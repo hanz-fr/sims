@@ -67,7 +67,7 @@
                       @can('rekap-siswa')
                         <a href="/siswa-keluar">
                       @endcan
-                            <div class="card-dashboard tw-transition-all hover:tw-shadow-lg">
+                            <div class="card-dashboard tw-transition-all hover:tw-shadow-xl">
                                 <div class="sm:tw-px-12 md:tw-px-8 tw-mt-7">
                                     <div class="tw-flex tw-flex-row">
                                         <div class="tw-text-5xl tw-text-[#FF869C]"><i class="fa-solid fa-user"></i></div>
@@ -86,7 +86,7 @@
                       @cannot('wali kelas')
                         <a href="/rekap-jumlah-siswa">
                       @endcannot
-                            <div class="card-dashboard tw-transition-all hover:tw-shadow-lg">
+                            <div class="card-dashboard tw-transition-all hover:tw-shadow-xl">
                                 <div class="sm:tw-px-12 md:tw-px-4 tw-mt-7">
                                     <div class="tw-flex tw-flex-row">
                                         <div class="tw-text-5xl tw-text-[#FFA386]"><i class="fa-solid fa-user"></i></div>
@@ -105,7 +105,7 @@
                       @can('rekap-siswa')
                         <a href="/siswa-masuk">
                       @endcan
-                            <div class="card-dashboard tw-transition-all hover:tw-shadow-lg">
+                            <div class="card-dashboard tw-transition-all hover:tw-shadow-xl">
                                 <div class="sm:tw-px-12 md:tw-px-8 tw-mt-7">
                                     <div class="tw-flex tw-flex-row">
                                         <div class="tw-text-5xl tw-text-[#6fc5bb]"><i class="fa-solid fa-user"></i></div>
@@ -124,7 +124,7 @@
                       @can('rekap-siswa')
                         <a href="/data-alumni">
                       @endcan
-                            <div class="card-dashboard tw-transition-all hover:tw-shadow-lg">
+                            <div class="card-dashboard tw-transition-all hover:tw-shadow-xl">
                                 <div class="sm:tw-px-12 md:tw-px-8 tw-mt-7">
                                     <div class="tw-flex tw-flex-row">
                                         <div class="tw-text-5xl tw-text-gray-400"><i class="fa-solid fa-user-graduate"></i></div>
@@ -143,7 +143,7 @@
                     @cannot('wali kelas')
                       <a href="/data-tidak-naik">
                     @endcannot
-                          <div class="card-dashboard tw-transition-all hover:tw-shadow-lg">
+                          <div class="card-dashboard tw-transition-all hover:tw-shadow-xl">
                               <div class="sm:tw-px-12 md:tw-px-8 tw-mt-7">
                                   <div class="tw-flex tw-flex-row">
                                     <div class="tw-text-5xl tw-text-[#6fc5bb]"><i class="fa-solid fa-user"></i></div>
@@ -162,7 +162,7 @@
                       @cannot('wali kelas')
                         <a href="/rekap-jumlah-siswa">
                       @endcannot
-                            <div class="card-dashboard tw-transition-all hover:tw-shadow-lg">
+                            <div class="card-dashboard tw-transition-all hover:tw-shadow-xl">
                                 <div class="sm:tw-px-12 md:tw-px-8 tw-mt-7">
                                     <div class="tw-flex tw-flex-row">
                                         <div class="tw-text-5xl tw-text-sky-400"><i class="fa-solid fa-chalkboard-user"></i></div>
@@ -179,7 +179,7 @@
                     <div x-init="$dispatch('register', {id: 7})"  
                       x-intersect:enter.half="setIndex(6)" x-transition.duration.500ms>
                         <a href="/jurusan">
-                            <div class="card-dashboard tw-transition-all hover:tw-shadow-lg">
+                            <div class="card-dashboard tw-transition-all hover:tw-shadow-xl">
                                 <div class="sm:tw-px-12 md:tw-px-8 tw-mt-7">
                                     <div class="tw-flex tw-flex-row">
                                         <div class="tw-text-5xl tw-text-indigo-400"><i class="fa-solid fa-shapes"></i></div>

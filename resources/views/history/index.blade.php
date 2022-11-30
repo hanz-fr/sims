@@ -33,7 +33,7 @@
             </h2>
             <div id="accordion-flush-body-{{ $h->id }}" class="hidden" aria-labelledby="accordion-flush-heading-{{ $h->id }}">
                 <div class="tw-py-5 tw-font-normal tw-border-b tw-border-gray-200">
-                  <p class="tw-font-pop tw-text-sm tw-text-gray-400 tw-w-1/2">
+                  <p class="tw-font-pop tw-text-sm tw-font-medium tw-text-gray-400 tw-w-1/2">
                     {{ $h->activityDesc }}
                   </p>
                   <p class="tw-font-pop tw-text-xs tw-text-gray-400">

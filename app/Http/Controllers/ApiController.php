@@ -33,7 +33,7 @@ class ApiController extends Controller
     public function __construct()
     {
 
-        $this->api_url = 'https://b316-103-139-10-36.ngrok.io'; // Ganti link NGROK disini
+        $this->api_url = '127.0.0.1:3000'; // Ganti link NGROK disini
 
 
         $this->sims_url = 'http://127.0.0.1:8000'; // SIMS URL
@@ -252,6 +252,26 @@ class ApiController extends Controller
         ]);
 
     }
+
+
+    public function viewHelpCenter(Request $request) {
+
+        return view('userguide.index', [
+            'title' => 'Help Center',
+            'active' => 'sims-help',  
+        ]);
+
+    }
+
+    public function viewGeneralHelp(Request $request) {
+
+        return view('userguide.general.index', [
+            'title' => 'Petunjuk Utama',
+            'active' => 'sims-help',
+        ]);
+
+    }
+
 
 
     public function siswaTidakNaik(Request $request) {

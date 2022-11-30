@@ -161,6 +161,11 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
     /* HISTORY PAGE */
     Route::get('/history', [ApiController::class, 'viewHistory'])->name('history');   
 
+
+    /* HELP CENTER */
+    Route::get('/help', [ApiController::class, 'viewHelpCenter'])->name('help-center');
+    Route::get('/help/general', [ApiController::class, 'viewGeneralHelp']);
+
 });
 
 
