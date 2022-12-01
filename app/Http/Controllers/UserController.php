@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Http;
 
 class UserController extends Controller
 {
@@ -22,6 +23,19 @@ class UserController extends Controller
         ]);
 
     }
+
+
+    /* GLOBAL VARIABLES */
+    public function __construct()
+    {
+
+        $this->api_url = '127.0.0.1:3000'; // Ganti link NGROK disini
+
+
+        $this->sims_url = 'http://127.0.0.1:8000'; // SIMS URL
+    
+    }
+
 
     public function register(Request $request) {
 
@@ -103,9 +117,12 @@ class UserController extends Controller
 
         $user = User::findOrFail(Auth::id());
 
+        $userHistory = Http::get("{$this->api_url}/history/$user->nama/all");
+
         return view('auth.profil-user', [
             'title'  => 'Profil User',
-            'active' => ''
+            'active' => '',
+            'history' => json_decode($userHistory)->rows,
         ], 
         compact('user'));
 

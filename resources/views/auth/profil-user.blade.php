@@ -58,23 +58,33 @@
 
             {{-- activity history --}}
             <div class="lg:tw-w-2/5 sm:tw-w-full lg:tw-mt-0 tw-bg-white tw-shadow-md tw-px-16 tw-pt-10 tw-pb-24 tw-font-pop">
-                <h1 class="tw-text-3xl tw-font-bold tw-text-gray-300 tw-text-center tw-mb-20">Activity</h1>
-                <div class="tw-justify-between tw-flex">
-                    <ul class="tw-list-none tw-text-xl tw-font-bold tw-text-admin-300 tw-flex tw-flex-col tw-gap-5">
-                        <li>Create New Siswa</li>
-                        <li>Update Siswa</li>
-                        <li>Delete Siswa</li>
-                        <li>Update Raport</li>
-                    </ul>
-                    <ul class="tw-list-none tw-text-xl tw-font-bold tw-text-basic-200 tw-flex tw-flex-col tw-gap-5">
-                        <li>5 Mins Ago</li>
-                        <li>10 Mins Ago</li>
-                        <li>12 Mins Ago</li>
-                        <li>10 Mins Ago</li>
-                    </ul>
+                <h1 class="tw-text-3xl tw-font-bold tw-text-basic-200 tw-text-center">Aktivitas</h1>
+                <p class="tw-font-pop tw-text-gray-300 tw-font-regular tw-text-md tw-text-center tw-mb-14">5 aktivitas terakhir</p>
+                <div class="tw-justify-center tw-flex">
+                    @if($history === [])
+                        <div class="tw-flex tw-flex-col">
+                            <img src="{{ URL::asset('assets/img/history-empty.jpg') }}" class="tw-mx-auto" alt="no_history" width="50%">
+                            <div class="tw-mx-auto tw-font-pop tw-text-sm tw-text-gray-400 tw-font-light tw-mt-5">Anda belum memiliki aktifitas.</div>
+                        </div>
+                    @else
+                    <div class="tw-flex tw-flex-col tw-gap-5">
+                        @foreach($history as $h)
+                            <div class="tw-flex tw-justify-between tw-gap-16">
+                                <div class="tw-font-pop tw-text-md tw-text-gray-400 tw-font-medium">{{ $h->activityName }}</div>
+                                <div class="tw-font-pop tw-text-md tw-text-gray-400 tw-font-light">{{ \Carbon\Carbon::createFromTimeStamp(strtotime($h->createdAt))->diffForHumans() }}</div>
+                            </div>
+                        @endforeach
+                        <!-- spacing !-->
+                        <div class="tw-mt-10"></div> 
+                        <!-------------->
+        
+                        <div class="tw-flex tw-justify-center">
+                            <a href="/history" class="tw-font-pop tw-text-blue-300 tw-transition tw-duration-75 tw-font-regular tw-text-md hover:tw-text-blue-400 tw-underline">lihat semua aktivitas</a>
+                        </div>
+                    </div>
+                    @endif
                 </div>
             </div>
-
         </section>
         
     </div>
