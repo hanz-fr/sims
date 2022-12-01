@@ -13,7 +13,7 @@
       </section>
 
     {{-- total account information card --}}
-    <section class="tw-bg-white tw-mt-12 tw-rounded-xl shadow-cs tw-w-full tw-flex tw-p-20 tw-justify-between tw-font-ubuntu tw-border-b-[13px] tw-border-admin-300">
+    <section class="tw-bg-white tw-rounded-xl shadow-cs tw-w-full tw-flex tw-p-20 tw-justify-between tw-font-ubuntu tw-border-b-[13px] tw-border-admin-300">
       <div class="tw-flex tw-gap-8 tw-text-admin-300">
         <div class="tw-text-center">
           <i class="fa-solid fa-user tw-text-6xl"></i>
