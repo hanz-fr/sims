@@ -174,13 +174,13 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
 /* ROUTE SUPER ADMIN */
 Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin', 'revalidate']], function () {
 
-    /* ADMIN DASHBOARD */
-    Route::get('/dashboard', function () {
-        return view('admin.dashboard', [
-            'title' => 'Dashboard Admin SIMS',
-            'active' => 'admin'
-        ]);
-    })->name('admin.dashboard');
+    // /* ADMIN DASHBOARD */
+    // Route::get('/dashboard', function () {
+    //     return view('admin.dashboard', [
+    //         'title' => 'Dashboard Admin SIMS',
+    //         'active' => 'admin'
+    //     ]);
+    // })->name('admin.dashboard');
 
 
     // DATABASE DASHBOARD
@@ -193,8 +193,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin', 'revalidate']]
     
 
     /* ACCOUNT MANAGEMENT */
-    Route::delete('/account/destroy-all', [AccountController::class, 'destroyAll'])->name('account.destroy-all');
-    Route::resource('/account', AccountController::class);
+    Route::delete('/manage/destroy-all', [AccountController::class, 'destroyAll'])->name('manage.destroy-all');
+    Route::resource('/manage', AccountController::class);
 
 
     /* SISWA */

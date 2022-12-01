@@ -6,7 +6,7 @@
 
     {{-- title --}}
     <section class="tw-flex tw-items-center">
-      <a href="/admin/account/{{ $user->id }}">
+      <a href="/admin/manage/{{ $user->id }}">
         <i class="fa-solid fa-chevron-left tw-text-gray-400 tw-text-2xl"></i>
       </a>
       <i class="fa-solid fa-user tw-text-admin-300 tw-text-3xl tw-ml-5"></i>
@@ -14,7 +14,7 @@
     </section>
     
     {{-- card form edit data --}}
-    <form action="/admin/account/{{ $user->id }}" method="POST">
+    <form action="/admin/manage/{{ $user->id }}" method="POST">
       @csrf
       @method('PUT')
     <div class="tw-bg-white tw-mt-10 tw-rounded-xl tw-border-l-[17px] tw-border-admin-300 tw-py-20 tw-pl-10 tw-font-pop shadow-cs">
@@ -64,8 +64,8 @@
                     <label class="tw-text-admin-300 tw-font-bold tw-ml-3 tw-text-lg" for="no_telp">
                       Nomor Telepon
                     </label>
-                    <input value="{{ $user->no_telp }}" class="input-account" @error('no_telp') is-invalid @enderror id="no_telp" name="no_telp" type="number" required>
-                    @error('no_telp')
+                    <input value="{{ $user->phone }}" class="input-account" @error('phone') is-invalid @enderror id="no_telp" name="phone" type="number" required>
+                    @error('phone')
                       <div class="tw-text-sm tw-text-pink-700 tw-mt-1">{{ $message }}</div>
                     @enderror
                 </div>

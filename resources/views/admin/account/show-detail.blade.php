@@ -6,7 +6,7 @@
 
     {{-- title --}}
     <section class="tw-flex tw-items-center">
-      <a href="/admin/account">
+      <a href="/admin/manage">
         <i class="fa-solid fa-chevron-left tw-text-gray-400 tw-text-2xl"></i>
       </a>
       <i class="fa-solid fa-user tw-text-admin-300 tw-text-3xl tw-ml-5"></i>
@@ -41,7 +41,7 @@
             </div>
             <div class="tw-text-gray-400 tw-font-light tw-mt-3">
               <div class="tw-text-xl">{{ $user->email }}</div>
-              <div class="tw-text-xl tw-mt-2">{{ $user->no_telp }}</div>
+              <div class="tw-text-xl tw-mt-2">{{ $user->phone }}</div>
             </div>
           </div>
         </div>
@@ -55,7 +55,7 @@
         <div class="tw-text-gray-400">Updated : <span class="tw-font-light">{{ $user->updated_at }}</span></div>
       </div>
       <div class="tw-flex tw-gap-5 tw-font-ubuntu tw-text-white tw-font-medium">
-        <form action="/admin/account/{{ $user->id }}" method="POST">
+        <form action="/admin/manage/{{ $user->id }}" method="POST">
           @csrf
           @method('DELETE')
           <button type="button" data-modal-toggle="popup-modal" class="tw-text-white tw-rounded-lg tw-bg-red-400 hover:tw-bg-red-500 hover:tw-text-white tw-py-4 tw-pl-6 tw-pr-14"><i class="fa-regular fa-trash-can tw-mr-4 tw-text-xl"></i>Delete Account</button>
@@ -99,7 +99,7 @@
               </div>
           </div>
       </form>
-        <a href="/admin/account/{{ $user->id }}/edit" class="tw-bg-[#FFCF86] tw-py-4 tw-pl-6 tw-pr-14 tw-rounded-lg"><i class="fa-regular fa-pen-to-square tw-mr-4 tw-text-xl"></i>Edit Account</a>
+        <a href="/admin/manage/{{ $user->id }}/edit" class="tw-bg-[#FFCF86] tw-py-4 tw-pl-6 tw-pr-14 tw-rounded-lg"><i class="fa-regular fa-pen-to-square tw-mr-4 tw-text-xl"></i>Edit Account</a>
       </div>
     </section>
   </div>

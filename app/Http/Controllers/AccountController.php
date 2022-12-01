@@ -25,9 +25,9 @@ class AccountController extends Controller
 
         $user = User::all();
 
-        return view('admin.account.manage-user', [
+        return view('admin.dashboard', [
             'title'     => 'Manage User SIMS',
-            'active'    => 'account',
+            'active'    => 'admin',
             'user'      => $user,
             'admin'     => $admin,
             'tatausaha' => $tatausaha,
@@ -47,7 +47,7 @@ class AccountController extends Controller
 
         return view('admin.account.create', [
             'title' => 'Create Account',
-            'active' => 'account'
+            'active' => 'admin'
         ]);
     }
 
@@ -62,7 +62,7 @@ class AccountController extends Controller
         $request->validate([
             'nip'      => 'required|unique:users|min:9|max:18',
             'nama'     => 'required',
-            'no_telp'  => 'required|max:20',
+            'phone'    => 'required|max:20',
             'email'    => 'required|email|unique:users',
             'role'     => 'required',
             'password' => 'required|min:6',
@@ -71,7 +71,7 @@ class AccountController extends Controller
         $user = new User([
             'nip'      => $request->nip,
             'nama'     => $request->nama,
-            'no_telp'  => $request->no_telp,
+            'phone'    => $request->phone,
             'email'    => $request->email,
             'role'     => $request->role,
             'password' => Hash::make($request->password),
@@ -79,7 +79,7 @@ class AccountController extends Controller
 
         $user->save();
          
-        return redirect()->route('account.index')->with('success','Account created successfully');
+        return redirect()->route('manage.index')->with('success','Account created successfully');
 
     }
 
@@ -95,7 +95,7 @@ class AccountController extends Controller
 
         return view('admin.account.show-detail', [
             'title' => 'Account Details',
-            'active' => 'account',
+            'active' => 'admin',
             'user' => $user
         ]);
 
@@ -113,7 +113,7 @@ class AccountController extends Controller
 
         return view('admin.account.edit', [
             'title' => 'Edit Account',
-            'active' => 'manage-user',
+            'active' => 'admin',
             'user' => $user
         ]);
     }
@@ -137,7 +137,7 @@ class AccountController extends Controller
 
         $user->update($request->all());
 
-        return redirect()->route('account.index')->with('success','Account has been updated successfully');
+        return redirect()->route('manage.index')->with('success','Account has been updated successfully');
 
     }
 
@@ -153,7 +153,7 @@ class AccountController extends Controller
 
         $user->delete();
 
-        return redirect()->route('account.index')->with('success','Account has been deleted successfully');
+        return redirect()->route('manage.index')->with('success','Account has been deleted successfully');
 
     }
 
@@ -161,7 +161,7 @@ class AccountController extends Controller
 
         User::truncate(); 
 
-        return redirect()->route('account.index')->with('success','All account has been deleted successfully');
+        return redirect()->route('manage.index')->with('success','All account has been deleted successfully');
     }
 }
  
