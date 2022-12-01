@@ -937,8 +937,8 @@ video {
 .hc-text-base {
   font-family: Poppins, sans-serif;
   font-size: 1rem;
-  line-height: 1.5rem;
   font-weight: 400;
+  line-height: 1.75rem;
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
 }
@@ -946,8 +946,8 @@ video {
 .hc-text-xs {
   font-family: Poppins, sans-serif;
   font-size: 0.75rem;
-  line-height: 1rem;
   font-weight: 400;
+  line-height: 1.75rem;
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
 }
@@ -955,8 +955,8 @@ video {
 .hc-title-lg {
   font-family: Poppins, sans-serif;
   font-size: 1.125rem;
-  line-height: 1.75rem;
   font-weight: 700;
+  line-height: 1.75rem;
   --tw-text-opacity: 1;
   color: rgb(77 158 158 / var(--tw-text-opacity));
 }
@@ -964,8 +964,8 @@ video {
 .hc-title-3xl {
   font-family: Poppins, sans-serif;
   font-size: 1.875rem;
-  line-height: 2.25rem;
   font-weight: 700;
+  line-height: 1.75rem;
   --tw-text-opacity: 1;
   color: rgb(77 158 158 / var(--tw-text-opacity));
 }
@@ -3257,6 +3257,10 @@ video {
   transition-duration: 200ms;
 }
 
+.tw-duration-150 {
+  transition-duration: 150ms;
+}
+
 .tw-ease-in-out {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -3745,6 +3749,16 @@ input[type="checkbox"]:checked {
 
 .hover\:-tw-translate-y-1:hover {
   --tw-translate-y: -0.25rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.hover\:-tw-translate-y-0\.5:hover {
+  --tw-translate-y: -0.125rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.hover\:-tw-translate-y-0:hover {
+  --tw-translate-y: -0px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
