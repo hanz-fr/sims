@@ -1384,6 +1384,14 @@ video {
   margin-left: 1.25rem;
 }
 
+.tw-ml-6 {
+  margin-left: 1.5rem;
+}
+
+.tw-mt-auto {
+  margin-top: auto;
+}
+
 .tw-ml-7 {
   margin-left: 1.75rem;
 }
@@ -1660,10 +1668,6 @@ video {
   width: 1rem;
 }
 
-.tw-w-60 {
-  width: 15rem;
-}
-
 .tw-w-16 {
   width: 4rem;
 }
@@ -1752,6 +1756,10 @@ video {
 
 .tw-w-2\/6 {
   width: 33.333333%;
+}
+
+.tw-w-60 {
+  width: 15rem;
 }
 
 .tw-w-80 {

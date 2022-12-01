@@ -6,7 +6,7 @@
 
     {{-- title --}}
     <section class="tw-flex tw-items-center">
-      <a href="/admin/account">
+      <a href="/admin/manage">
         <i class="fa-solid fa-chevron-left tw-text-gray-400 tw-text-2xl"></i>
       </a>
       <i class="fa-solid fa-user tw-text-admin-300 tw-text-3xl tw-ml-5"></i>
@@ -14,7 +14,7 @@
     </section>
 
     {{-- card form add data --}}
-    <form action="/admin/account" method="POST">
+    <form action="/admin/manage" method="POST">
       @csrf
     <section class="tw-bg-white tw-mt-8 tw-rounded-xl tw-border-l-[17px] tw-border-admin-300 tw-py-20 tw-pl-10 tw-font-pop shadow-cs">
       <div class="tw-flex tw-w-full tw-items-center">
@@ -60,11 +60,11 @@
                     @enderror
                 </div>
                 <div class="md:tw-w-1/2 sm:tw-w-full tw-px-3 tw-mb-6 md:tw-mb-0 tw-font-ubuntu">
-                    <label class="tw-text-admin-300 tw-font-bold tw-ml-3 tw-text-lg" for="no_telp">
+                    <label class="tw-text-admin-300 tw-font-bold tw-ml-3 tw-text-lg" for="phone">
                       Nomor Telepon
                     </label>
-                    <input class="input-account" @error('no_telp') is-invalid @enderror id="no_telp" name="no_telp" type="number" required>
-                    @error('no_telp')
+                    <input class="input-account" @error('phone') is-invalid @enderror id="phone" name="phone" type="number" required>
+                    @error('phone')
                       <div class="tw-text-sm tw-text-pink-700 tw-mt-1">{{ $message }}</div>
                     @enderror
                 </div>

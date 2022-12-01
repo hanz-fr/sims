@@ -25,18 +25,18 @@
   <aside class="tw-w-64 tw-top-0 tw-bottom-0 tw-sticky" aria-label="Sidebar">
       <div class="tw-w-64 tw-h-screen tw-sticky tw-py-4 tw-px-3 tw-bg-[#454F58] tw-justify-between tw-flex tw-flex-col">
          <div class="">
-            <a href="/dashboard" class="tw-items-center tw-flex tw-flex-col tw-gap-3 tw-pl-2.5 tw-mb-5 tw-mt-8">
+            <a href="/manage" class="tw-items-center tw-flex tw-flex-col tw-gap-3 tw-pl-2.5 tw-mb-5 tw-mt-8">
                <img src="{{ URL::asset('assets/img/logo-admin.svg') }}" class="tw-mr-3 tw-h-9">
                <span class="tw-self-center tw-text-2xl tw-font-semibold tw-whitespace-nowrap tw-font-pop tw-text-gray-100">SIMS Admin</span>
             </a>
             <ul class="tw-space-y-3 tw-font-ubuntu tw-mt-20">
                <li>
-                  <a href="/admin/dashboard" class="{{ ($active === "admin") ? 'tw-bg-[#5A6C7C] tw-text-white' : '' }} nav-item-admin tw-transition-colors tw-duration-300">
+                  <a href="/admin/manage" class="{{ ($active === "admin") ? 'tw-bg-[#5A6C7C] tw-text-white' : '' }} nav-item-admin tw-transition-colors tw-duration-300">
                   <i class="fa-regular fa-browser tw-text-[#B2FEFE] tw-text-2xl"></i>
                      <span class="tw-ml-3 tw-font-bold tw-text-lg">Dashboard</span>
                   </a>
                </li>
-               <li>
+               {{-- <li>
                <a href="/admin/database" class="{{ ($active === "database") ? 'tw-bg-[#5A6C7C] tw-text-white' : '' }} nav-item-admin tw-transition-colors tw-duration-300">
                   <i class="fa-regular fa-database tw-text-[#B2FEFE] tw-text-2xl"></i>
                   <span class="tw-ml-3 tw-font-bold tw-text-lg">Database</span>
@@ -47,7 +47,7 @@
                <i class="fa-solid fa-user tw-text-[#B2FEFE] tw-text-2xl"></i>
                <span class="tw-ml-3 tw-font-bold tw-text-lg">Account</span>
                </a>
-            </li>
+            </li> --}}
             </ul>
          </div>
          <div class="tw-flex tw-flex-col tw-justify-center">
@@ -69,7 +69,7 @@
                    <span aria-hidden="true" class="tw-mr-3">
                      <i class="fa-light fa-circle-user tw-text-4xl group-hover:tw-text-white group-focus:tw-text-white"></i>
                    </span>
-                   <span class="mx-3 text-left whitespace-nowrap tw-font-pop tw-text-gray-400 font-medium group-hover:tw-text-white group-focus:tw-text-white"> hyperadmin </span>
+                   <span class="mx-3 text-left whitespace-nowrap tw-font-pop tw-text-gray-400 font-medium group-hover:tw-text-white group-focus:tw-text-white"> {{ auth()->user()->name }} </span>
                    <span aria-hidden="true" class="tw-ml-2">
                    <i class="fa-solid fa-caret-down transition-transform transform tw-origin-center group-hover:tw-text-white group-focus:tw-text-white"
                    :class="{ 'tw-rotate-180': open }"></i>

@@ -50,7 +50,7 @@
                     <div class="tw-flex tw-flex-col tw-gap-5 tw-font-bold tw-text-xl">
                         <div class="tw-text-sims-400">Nomor Telepon</div>
                         <div class="tw-text-basic-200">
-                            {{ auth()->user()->no_telp }}
+                            {{ auth()->user()->phone }}
                         </div>
                     </div>
                 </div>

@@ -1,6 +1,6 @@
 <div class="tw-flex" x-data="{ open: false }">
     {{-- sidebar --}}
-    <aside x-bind:class="open?' tw-left-0 tw-h-screen tw-sticky tw-w-60 tw-bg-white @if($active === 'history' || 'help-center') tw-shadow-xl @endif tw-flex tw-flex-col tw-top-0 tw-bottom-0' : 'tw-sticky tw-inset-0 tw-w-16 tw-bg-white tw-flex tw-flex-col tw-top-0 tw-bottom-0 tw-h-screen'" class="tw-transition-all tw-duration-300 @if($active === 'history' || 'help-center') tw-shadow-xl @endif" x-transition:enter.duration.500ms x-transition:leave.duration.400ms>
+    <aside x-bind:class="open?' tw-left-0 tw-h-screen tw-sticky tw-w-70 tw-bg-white @if($active === 'history' || 'help-center') tw-shadow-xl @endif tw-flex tw-flex-col tw-top-0 tw-bottom-0' : 'tw-sticky tw-inset-0 tw-w-16 tw-bg-white tw-flex tw-flex-col tw-top-0 tw-bottom-0 tw-h-screen'" class="tw-transition-all tw-duration-300 tw-justify-between tw-flex @if($active === 'history' || 'help-center') tw-shadow-xl @endif" x-transition:enter.duration.500ms x-transition:leave.duration.400ms>
         <div class="tw-flex tw-items-center tw-h-12 tw-w-full tw-pl-3 tw-mt-4">
             <div x-on:click="open = !open" class="tw-overflow-hidden tw-cursor-pointer">
                 <div class="tw-h-10 tw-w-10 tw-grid tw-text-sims-400 tw-font-bold tw-text-2xl"><img src="{{ URL::asset('assets/img/sims-logo.png') }}" alt="" srcset=""></div>
@@ -32,25 +32,18 @@
                 <li class="tw-flex tw-text-sims-400 tw-cursor-pointer">
                     <a href="/history" class="{{ ($active === "history") ? 'tw-bg-sims-400 tw-text-white' : '' }} tw-p-5 hover:tw-bg-sims-400 hover:tw-text-white tw-h-16 tw-w-full tw-flex tw-transition-colors tw-duration-300">
                         <i class="fa-solid fa-clock-rotate-left tw-text-xl"></i>
-                        <div x-show="open" x-transition:enter.duration.500ms x-transition:leave.duration.400ms class="tw-ml-5 tw-text-lg tw-font-medium tw-font-pop">Histori</div>
+                        <div x-show="open" x-transition:enter.duration.500ms x-transition:leave.duration.400ms class="tw-ml-6 tw-text-lg tw-font-medium tw-font-pop">Histori</div>
                     </a>
                 </li>
             </ul>
         </div>
 
-        <!-- spacing -->
-        <div class="tw-my-auto"></div>
-        <!-- ******* --> 
 
-        <div class="tw-mb-10">
-            <ul class="list-unstyled">
-                <li class="tw-flex tw-mt-2 tw-text-sims-400 tw-cursor-pointer">
-                    <a href="/help" class="{{ ($active === "sims-help") ? 'tw-bg-sims-400 tw-text-white' : '' }} tw-p-5 hover:tw-bg-sims-400 hover:tw-text-white tw-h-16 tw-w-full tw-my-auto tw-flex tw-transition-colors tw-duration-300">
-                        <i class="fa-solid fa-circle-question tw-text-2xl"></i>
-                        <div x-show="open" x-transition:enter.duration.500ms x-transition:leave.duration.400ms class="tw-ml-5 tw-mt-1 tw-text-md tw-font-medium tw-font-pop">Help Centre</div>
-                    </a>
-                </li>
-            </ul>
+        <div class="tw-flex tw-mt-auto tw-text-sims-400 tw-cursor-pointer">
+            <a href="/help" class="{{ ($active === "sims-help") ? 'tw-bg-sims-400 tw-text-white' : '' }} tw-p-5 hover:tw-bg-sims-400 hover:tw-text-white tw-h-16 tw-w-full tw-my-auto tw-flex tw-transition-colors tw-duration-300">
+                <i class="fa-solid fa-circle-question tw-text-2xl"></i>
+                <div x-show="open" x-transition:enter.duration.500ms x-transition:leave.duration.400ms class="tw-ml-5 tw-mt-1 tw-text-md tw-font-medium tw-font-pop">Help Centre</div>
+            </a>
         </div>
     </aside>
     
