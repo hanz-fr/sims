@@ -1370,6 +1370,10 @@ video {
   margin-left: 1.5rem;
 }
 
+.tw-mt-auto {
+  margin-top: auto;
+}
+
 .tw-ml-7 {
   margin-left: 1.75rem;
 }
@@ -1894,10 +1898,6 @@ video {
   gap: 3.5rem;
 }
 
-.tw-gap-16 {
-  gap: 4rem;
-}
-
 .tw-gap-2 {
   gap: 0.5rem;
 }
@@ -1912,6 +1912,10 @@ video {
 
 .tw-gap-20 {
   gap: 5rem;
+}
+
+.tw-gap-16 {
+  gap: 4rem;
 }
 
 .tw-gap-x-5 {
@@ -3013,11 +3017,6 @@ video {
   color: rgb(200 200 200 / var(--tw-text-opacity));
 }
 
-.tw-text-blue-300 {
-  --tw-text-opacity: 1;
-  color: rgb(147 197 253 / var(--tw-text-opacity));
-}
-
 .tw-text-red-600 {
   --tw-text-opacity: 1;
   color: rgb(220 38 38 / var(--tw-text-opacity));
@@ -3133,6 +3132,11 @@ video {
   color: rgb(241 245 249 / var(--tw-text-opacity));
 }
 
+.tw-text-blue-300 {
+  --tw-text-opacity: 1;
+  color: rgb(147 197 253 / var(--tw-text-opacity));
+}
+
 .tw-underline {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
@@ -3192,18 +3196,18 @@ video {
   transition-duration: 150ms;
 }
 
-.tw-transition {
-  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
 .tw-transition-colors {
   transition-property: color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.tw-transition {
+  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -3216,16 +3220,16 @@ video {
   transition-duration: 300ms;
 }
 
-.tw-duration-75 {
-  transition-duration: 75ms;
-}
-
 .tw-duration-200 {
   transition-duration: 200ms;
 }
 
 .tw-duration-150 {
   transition-duration: 150ms;
+}
+
+.tw-duration-75 {
+  transition-duration: 75ms;
 }
 
 .tw-ease-in-out {
@@ -3968,11 +3972,6 @@ input[type="checkbox"]:checked {
   color: rgb(77 158 158 / var(--tw-text-opacity));
 }
 
-.hover\:tw-text-blue-400:hover {
-  --tw-text-opacity: 1;
-  color: rgb(96 165 250 / var(--tw-text-opacity));
-}
-
 .hover\:tw-text-sims-300:hover {
   --tw-text-opacity: 1;
   color: rgb(127 201 198 / var(--tw-text-opacity));
@@ -4011,6 +4010,11 @@ input[type="checkbox"]:checked {
 .hover\:tw-text-admin-800:hover {
   --tw-text-opacity: 1;
   color: rgb(54 76 151 / var(--tw-text-opacity));
+}
+
+.hover\:tw-text-blue-400:hover {
+  --tw-text-opacity: 1;
+  color: rgb(96 165 250 / var(--tw-text-opacity));
 }
 
 .hover\:tw-shadow-xl:hover {
