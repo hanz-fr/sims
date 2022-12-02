@@ -33,7 +33,7 @@ class ApiController extends Controller
     public function __construct()
     {
 
-        $this->api_url = '127.0.0.1:3000'; // Ganti link NGROK disini
+        $this->api_url = 'https://d198-103-139-10-32.ngrok.io'; // Ganti link NGROK disini
 
 
         $this->sims_url = 'http://127.0.0.1:8000'; // SIMS URL
@@ -1228,7 +1228,7 @@ class ApiController extends Controller
             'raport04' => json_decode($raport04)->rows,
             'raport05' => json_decode($raport05)->rows,
             'raport06' => json_decode($raport06)->rows,
-        ])->setPaper('A4_PLUS_PAPER', 'potrait');
+        ])->setPaper('A4_PLUS_PAPER', 'landscape');
 
         $nama = json_decode($response)->result->nama_siswa;
 

@@ -1274,10 +1274,6 @@ video {
   margin-right: 1.25rem;
 }
 
-.tw-mt-12 {
-  margin-top: 3rem;
-}
-
 .tw-mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -1302,10 +1298,6 @@ video {
   margin-right: 0.5rem;
 }
 
-.tw-mb-8 {
-  margin-bottom: 2rem;
-}
-
 .tw-mb-14 {
   margin-bottom: 3.5rem;
 }
@@ -1320,6 +1312,10 @@ video {
 
 .tw-ml-2 {
   margin-left: 0.5rem;
+}
+
+.tw-mb-8 {
+  margin-bottom: 2rem;
 }
 
 .tw--ml-6 {
@@ -1348,6 +1344,10 @@ video {
 
 .tw-mr-8 {
   margin-right: 2rem;
+}
+
+.tw-mt-12 {
+  margin-top: 3rem;
 }
 
 .tw-mr-0 {

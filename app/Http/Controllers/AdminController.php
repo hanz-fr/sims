@@ -32,7 +32,7 @@ class AdminController extends Controller
                ->attempt($request->only(['email', 'password'])))
         {
             return redirect()
-                ->route('admin.dashboard');
+                ->route('manage.index');
         }
 
         return redirect()

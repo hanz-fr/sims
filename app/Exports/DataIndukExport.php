@@ -21,7 +21,7 @@ class DataIndukExport implements FromView, ShouldAutoSize, WithEvents, WithColum
     public function __construct()
     {
 
-        $this->url = 'https://e5aa-103-148-113-86.ap.ngrok.io';
+        $this->url = 'https://18c7-114-79-55-123.ap.ngrok.io';
     }
 
     /**
