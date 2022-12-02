@@ -118,7 +118,7 @@
     </section>
 
     {{-- account data table --}}
-    <section class="tw-flex tw-flex-col tw-bg-white shadow-cs tw-py-8 tw-px-16 tw-rounded-xl tw-w-full tw-mb-8">
+    <section class="tw-flex tw-flex-col tw-bg-white shadow-cs tw-py-8 tw-px-16 tw-rounded-xl tw-w-full">
       <div class="tw-flex tw-justify-end">
         {{-- search --}}
         <div class="tw-flex tw-mb-14">
@@ -170,6 +170,7 @@
         </table>
       </div>
     </section>
+    <div class=""></div>
       
       {{-- data management
       <section class="shadow-cs tw-bg-white tw-px-8 tw-py-7 tw-mt-8 tw-w-full">

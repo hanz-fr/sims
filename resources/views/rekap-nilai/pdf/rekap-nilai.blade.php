@@ -9,49 +9,21 @@
   table {
     border-collapse: collapse;
     width: 100%;
-    font-size: 12px
+    font-size: 9px;
   }
 
   table td, table th {
     border: 1px solid black;
-    padding: 10px 7px;
+    padding: 7px 4px;
     color: black;
     text-align: center;
-  }
-
-  .foto {
-    border: 1px solid black;
-    text-align: center;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 177px;
-    height: 236px;
-  }
-
-  .pas-foto {
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .foto-foto {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 30px;
-    gap: 80px;
-    justify-content: center;
-    align-items: center;
   }
 
   </style>
 </head>
 <body>
 
-    <div style="display:flex; flex-direction: row; justify-content: space-between;">
+    <div style="display:flex; flex-direction: row; justify-content: space-between; font-size: 12px">
         <div></div>
         <h4 style="font-weight: bold; text-align: center; font-family:Arial, Helvetica, sans-serif">HASIL PENCAPAIAN KOMPETENSI PESERTA DIDIK</h4>
         <h4 style="font-weight: bold; text-align: center; font-family:Arial, Helvetica, sans-serif">Program Kompetensi Keahlian: </h4>
