@@ -42,7 +42,6 @@ class UserController extends Controller
         $request->validate([
             'nip'      => 'required|unique:users|min:9|max:18',
             'nama'     => 'required',
-            'phone'    => 'required|unique:users|max:20',
             'email'    => 'required|email|unique:users',
             'role'     => 'required',
             'password' => 'required|min:6',
@@ -51,7 +50,6 @@ class UserController extends Controller
         $user = new User([
             'nip'      => $request->nip,
             'nama'     => $request->nama,
-            'phone'    => $request->phone,
             'email'    => $request->email,
             'role'     => $request->role,
             'password' => Hash::make($request->password),
