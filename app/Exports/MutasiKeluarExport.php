@@ -24,7 +24,7 @@ class MutasiKeluarExport implements FromView, ShouldAutoSize, WithEvents, WithCo
     public function __construct()
     {
 
-        $this->url = 'https://9976-103-139-10-36.ngrok.io';
+        $this->url = '127.0.0.1:3000';
         
     }
 

@@ -1228,7 +1228,7 @@ class ApiController extends Controller
             'raport04' => json_decode($raport04)->rows,
             'raport05' => json_decode($raport05)->rows,
             'raport06' => json_decode($raport06)->rows,
-        ])->setPaper('A4_PLUS_PAPER', 'potrait');
+        ])->setPaper('A3', 'landscape');
 
         $nama = json_decode($response)->result->nama_siswa;
 

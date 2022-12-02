@@ -105,7 +105,7 @@
             <a href="/help/general" class="hc-card">
                 <i class="fa-solid fa-question tw-text-3xl tw-text-sims-400 tw-mb-2"></i>
                 <div class="hc-title-lg">SIMS</div>
-                <div class="hc-text-xs">Apaan tuh sims? ini game ya? buat apa? Nah buat lu pada yang bingung, langsung ae dah kesini, gausa banyak basa-basi.</div>
+                <div class="hc-text-xs">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, nemo?</div>
             </a>
 
         </div>

@@ -43,7 +43,7 @@
         <div class="tw-my-auto"></div>
         <!-- ******* --> 
 
-        <div class="tw-mb-10">
+        <div class="tw-mb-10 tw-hidden">
             <ul class="list-unstyled">
                 <li class="tw-flex tw-mt-2 tw-text-sims-400 tw-cursor-pointer">
                     <a href="/help" class="{{ ($active === "sims-help") ? 'tw-bg-sims-400 tw-text-white' : '' }} tw-p-5 hover:tw-bg-sims-400 hover:tw-text-white tw-h-16 tw-w-full tw-my-auto tw-flex tw-transition-colors tw-duration-300">
