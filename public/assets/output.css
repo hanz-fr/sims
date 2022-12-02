@@ -1305,6 +1305,10 @@ video {
   margin-right: 0.5rem;
 }
 
+.tw-mb-8 {
+  margin-bottom: 2rem;
+}
+
 .tw-mb-14 {
   margin-bottom: 3.5rem;
 }
@@ -1319,10 +1323,6 @@ video {
 
 .tw-ml-2 {
   margin-left: 0.5rem;
-}
-
-.tw-mb-8 {
-  margin-bottom: 2rem;
 }
 
 .tw--ml-6 {
