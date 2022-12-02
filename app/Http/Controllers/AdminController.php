@@ -35,9 +35,7 @@ class AdminController extends Controller
                 ->route('manage.index');
         }
 
-        return redirect()
-            ->back()
-            ->with('error', 'Login details are not valid');
+        return redirect()->back()->with('error', 'Login details are not valid');
 
     }
 

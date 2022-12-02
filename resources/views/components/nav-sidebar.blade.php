@@ -39,11 +39,19 @@
         </div>
 
 
-        <div class="tw-flex tw-mt-auto tw-text-sims-400 tw-cursor-pointer">
-            <a href="/help" class="{{ ($active === "sims-help") ? 'tw-bg-sims-400 tw-text-white' : '' }} tw-p-5 hover:tw-bg-sims-400 hover:tw-text-white tw-h-16 tw-w-full tw-my-auto tw-flex tw-transition-colors tw-duration-300">
-                <i class="fa-solid fa-circle-question tw-text-2xl"></i>
-                <div x-show="open" x-transition:enter.duration.500ms x-transition:leave.duration.400ms class="tw-ml-5 tw-mt-1 tw-text-md tw-font-medium tw-font-pop">Help Centre</div>
-            </a>
+        <!-- spacing -->
+        <div class="tw-my-auto"></div>
+        <!-- ******* --> 
+
+        <div class="tw-mb-10 tw-hidden">
+            <ul class="list-unstyled">
+                <li class="tw-flex tw-mt-2 tw-text-sims-400 tw-cursor-pointer">
+                    <a href="/help" class="{{ ($active === "sims-help") ? 'tw-bg-sims-400 tw-text-white' : '' }} tw-p-5 hover:tw-bg-sims-400 hover:tw-text-white tw-h-16 tw-w-full tw-my-auto tw-flex tw-transition-colors tw-duration-300">
+                        <i class="fa-solid fa-circle-question tw-text-2xl"></i>
+                        <div x-show="open" x-transition:enter.duration.500ms x-transition:leave.duration.400ms class="tw-ml-5 tw-mt-1 tw-text-md tw-font-medium tw-font-pop">Help Centre</div>
+                    </a>
+                </li>
+            </ul>
         </div>
     </aside>
     
