@@ -879,6 +879,13 @@ video {
   color: rgb(77 158 158 / var(--tw-text-opacity));
 }
 
+.title-main-nospace {
+  font-family: Poppins, sans-serif;
+  font-weight: 700;
+  --tw-text-opacity: 1;
+  color: rgb(77 158 158 / var(--tw-text-opacity));
+}
+
 .card-dashboard {
   display: flex;
   height: -webkit-fit-content;
@@ -2246,6 +2253,11 @@ video {
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 
+.tw-bg-slate-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
+}
+
 .tw-bg-red-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(254 226 226 / var(--tw-bg-opacity));
@@ -3133,6 +3145,16 @@ video {
   color: rgb(241 245 249 / var(--tw-text-opacity));
 }
 
+.tw-text-blue-500 {
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246 / var(--tw-text-opacity));
+}
+
+.tw-text-blue-400 {
+  --tw-text-opacity: 1;
+  color: rgb(96 165 250 / var(--tw-text-opacity));
+}
+
 .tw-underline {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
@@ -4011,6 +4033,11 @@ input[type="checkbox"]:checked {
 .hover\:tw-text-admin-800:hover {
   --tw-text-opacity: 1;
   color: rgb(54 76 151 / var(--tw-text-opacity));
+}
+
+.hover\:tw-text-blue-500:hover {
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246 / var(--tw-text-opacity));
 }
 
 .hover\:tw-shadow-xl:hover {

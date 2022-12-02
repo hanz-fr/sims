@@ -117,7 +117,7 @@ class UserController extends Controller
 
         $user = User::findOrFail(Auth::id());
 
-        $userHistory = Http::get("{$this->api_url}/history/$user->nama/all");
+        $userHistory = Http::get("{$this->api_url}/history/$user->nama/all?limit=5");
 
         return view('auth.profil-user', [
             'title'  => 'Profil User',

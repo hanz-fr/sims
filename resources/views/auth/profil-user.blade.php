@@ -79,7 +79,7 @@
                         <!-------------->
         
                         <div class="tw-flex tw-justify-center">
-                            <a href="/history" class="tw-font-pop tw-text-blue-300 tw-transition tw-duration-75 tw-font-regular tw-text-md hover:tw-text-blue-400 tw-underline">lihat semua aktivitas</a>
+                            <a href="/history/my" class="tw-font-pop tw-text-blue-300 tw-transition tw-duration-75 tw-font-regular tw-text-md hover:tw-text-blue-400 tw-underline">lihat semua histori</a>
                         </div>
                     </div>
                     @endif
