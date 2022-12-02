@@ -36,12 +36,12 @@
         <div class="tw-flex md:tw-justify-center tw-items-center md:-tw-mb-8">
             @if( ! empty($jurusan) && ! empty($kelas))
             <a href="/data-induk-print/{{ $jurusan }}/{{ $kelas }}" target="__blank" title="Print"><i class="fa-solid fa-print btn-export"></i></a>
-            <button id="copy_btn" title="Copy Data" type="button" value="copy"><i class="fa-solid fa-copy btn-export"></i></button>
+            {{-- <button id="copy_btn" title="Copy Data" type="button" value="copy"><i class="fa-solid fa-copy btn-export"></i></button> --}}
             <a href="/data-induk-excel/{{ $jurusan }}/{{ $kelas }}" title="Export ke Excel"><i class="fa-solid fa-file-excel btn-export"></i></a>
             <a href="/data-induk-pdf/{{ $jurusan }}/{{ $kelas }}" title="Export ke PDF"><i class="fa-solid fa-file-pdf btn-export"></i></a>
             @else
             <a href="/data-induk-print" target="__blank" title="Print"><i class="fa-solid fa-print btn-export"></i></a>
-            <button id="copy_btn" type="button" value="copy"><i class="fa-solid fa-copy btn-export"></i></button>
+            {{-- <button id="copy_btn" type="button" value="copy"><i class="fa-solid fa-copy btn-export"></i></button> --}}
             <a href="/data-induk-excel" title="Export ke Excel"><i class="fa-solid fa-file-excel btn-export"></i></a>
             <a href="/data-induk-pdf" title="Export ke PDF"><i class="fa-solid fa-file-pdf btn-export"></i></a>
             @endif
@@ -548,7 +548,7 @@
 });
 </script>
 
-<script>
+{{-- <script>
     var copyBtn = document.querySelector('#copy_btn');
 
     copyBtn.addEventListener('click', function () {
@@ -564,7 +564,7 @@
     document.execCommand('copy');
 }, 
 false);
-</script>
+</script> --}}
 
 <script>
     $(function(){

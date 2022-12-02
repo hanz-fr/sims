@@ -17,7 +17,7 @@
                 @can('rekap-siswa')
                 <div class="tw-flex tw-items-center -tw-mt-4">
                     <a href="/rekap-jumlah-siswa-print" target="__blank" title="Print"><i class="fa-solid fa-print btn-export"></i></a>
-                    <button id="copy_btn" type="button" value="copy"><i class="fa-solid fa-copy btn-export"></i></button>
+                    {{-- <button id="copy_btn" type="button" value="copy"><i class="fa-solid fa-copy btn-export"></i></button> --}}
                     <a href="/rekap-jumlah-siswa-excel" title="Export ke Excel" title="Export ke Excel"><i class="fa-solid fa-file-excel btn-export"></i></a>
                     <a href="/rekap-jumlah-siswa-pdf" title="Export ke PDF"><i class="fa-solid fa-file-pdf btn-export"></i></a>
                 </div>
@@ -506,7 +506,7 @@
     </div>
 @endsection
 
-@push('scripts')
+{{-- @push('scripts')
     <script>
         var copyBtn = document.querySelector('#copy_btn');
     
@@ -524,4 +524,4 @@
     }, 
     false);
     </script>
-@endpush
+@endpush --}}

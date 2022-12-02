@@ -492,7 +492,7 @@
             <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
                 <div class="tw-w-full tw-px-3">
                     <label class="label-input" for="nomor_ijazah_smk">
-                        Apakah siswa sudah lulus?
+                        Apakah siswa sudah lulus? *
                     </label>
                     <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-2">
                         <div class="tw-w-full tw-px-3">
@@ -570,11 +570,11 @@
                 </div>
             </div>
             {{-- rekap nilai --}}
-            <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-mb-8 tw-mt-24 tw-text-sims-400">J. Rekap Nilai</div>
+            {{-- <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-mb-8 tw-mt-24 tw-text-sims-400">J. Rekap Nilai</div>
             <div class="tw-flex tw-flex-col">
                 <a href="/rekap-nilai" class="tw-py-2 tw-border tw-w-fit tw-border-gray-600 tw-px-6 hover:tw-text-sims-400 tw-text-gray-600 tw-rounded-md tw-bg-white tw-font-medium">View & Edit</a>
                 <button type="submit" class="tw-bg-[#1D6F42] tw-w-fit tw-mt-4 tw-font-medium tw-text-white tw-py-3 tw-px-5 tw-rounded-lg">Upload dari excel</button>
-            </div>
+            </div> --}}
             <div class="tw-mx-auto tw-text-center tw-mt-10">
                 <button type="submit" class="tw-bg-sims-400 tw-font-medium tw-text-white tw-py-3 tw-px-6 tw-rounded-lg">Simpan Perubahan</button>
             </div>

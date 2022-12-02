@@ -28,7 +28,7 @@
     <table id="data">
         <thead class="tw-bg-gray-100 tw-text-basic-700 tw-border tw-font-pop">
             <tr>
-                <th>ID</th>
+                <th>NO</th>
                 <th>NIS</th>
                 <th>NISN</th>
                 <th>NAMA PESERTA DIDIK</th>

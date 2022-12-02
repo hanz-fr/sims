@@ -243,7 +243,7 @@
                         </div>
                     </div>
                 </div>
-                <button id="copy_btn" title="Copy Data" type="button" value="copy"><i class="fa-solid fa-copy btn-export"></i></button>
+                {{-- <button id="copy_btn" title="Copy Data" type="button" value="copy"><i class="fa-solid fa-copy btn-export"></i></button> --}}
 
                 <button type="button" data-modal-toggle="export-excel" title="Export ke excel"><i class="fa-solid fa-file-excel btn-export"></i></button>
                     
@@ -493,20 +493,20 @@
             });
         });
 
-        var copyBtn = document.querySelector('#copy_btn');
+    //     var copyBtn = document.querySelector('#copy_btn');
     
-        copyBtn.addEventListener('click', function () {
+    //     copyBtn.addEventListener('click', function () {
     
-        var urlField = document.querySelector('table');
+    //     var urlField = document.querySelector('table');
         
-        var range = document.createRange();  
+    //     var range = document.createRange();  
     
-        range.selectNode(urlField);
+    //     range.selectNode(urlField);
     
-        window.getSelection().addRange(range);
+    //     window.getSelection().addRange(range);
         
-        document.execCommand('copy');
-    }, 
-    false);
+    //     document.execCommand('copy');
+    // }, 
+    // false);
     </script>
 @endsection

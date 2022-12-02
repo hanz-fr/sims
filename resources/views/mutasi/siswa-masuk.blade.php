@@ -26,7 +26,7 @@
                 </div>
                 @can('rekap-siswa')
                     <div class="tw-flex md:tw-justify-center tw-items-center">
-                        <button type="button" data-modal-toggle="export-print" title="Print"><i class="fa-solid fa-print btn-export"></i></button>
+                        {{-- <button type="button" data-modal-toggle="export-print" title="Print"><i class="fa-solid fa-print btn-export"></i></button> --}}
                     
                         <div id="export-print" tabindex="-1"
                         class="hidden overflow-y-auto overflow-x-hidden fixed  z-50 md:tw-inset-0 h-modal md:h-full">
@@ -607,7 +607,7 @@
     @endif
 @endsection
 
-@push('scripts')
+{{-- @push('scripts')
 <script>
 var copyBtn = document.querySelector('#copy_btn');
 
@@ -626,4 +626,4 @@ copyBtn.addEventListener('click', function () {
 false);
 
 </script>
-@endpush
+@endpush --}}

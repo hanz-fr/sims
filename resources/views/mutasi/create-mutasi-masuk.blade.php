@@ -48,7 +48,7 @@
             <div class="tw-flex tw-flex-col tw-space-y-6">
                 <div class="tw-mx-auto md:tw-w-2/3 sm:tw-w-1/2">
                     <label class="label-input" for="nis_siswa">
-                        NIS
+                        NIS *
                     </label>
                     <input value="{{ old('nis_siswa') }}" @error('nis_siswa') is-invalid @enderror class="input-data-minimal tw-w-full" id="nis_siswa" name="nis_siswa" type="text" maxlength="10" required>
                     @error('nis')
@@ -57,7 +57,7 @@
                 </div>
                 <div class="tw-mx-auto md:tw-w-2/3 sm:tw-w-1/2">
                     <label class="label-input" for="nama_siswa">
-                        Nama Siswa
+                        Nama Siswa *
                     </label>
                     <input value="{{ old('nama_siswa') }}" @error('nama_siswa') is-invalid @enderror class="input-data-minimal tw-w-full" id="nama_siswa" name="nama_siswa" type="text" required>
                     @error('nama_siswa')
@@ -66,7 +66,7 @@
                 </div>
                 <div class="tw-mx-auto md:tw-w-2/3 sm:tw-w-1/2">
                     <label class="label-input" for="jenis_kelamin">
-                        Jenis Kelamin
+                        Jenis Kelamin *
                     </label>
                     <select class="input-data-minimal" id="jenis_kelamin" name="jenis_kelamin" required>
                         @if(old('jenis_kelamin') == 'L')
@@ -84,7 +84,7 @@
                 </div>
                 <div class="tw-mx-auto md:tw-w-2/3 sm:tw-w-1/2">
                     <label class="label-input" for="pindah_dari">
-                        Pindah dari
+                        Pindah dari *
                     </label>
                     <input value="{{ old('pindah_dari') }}" @error('pindah_dari') is-invalid @enderror class="input-data-minimal tw-w-full" id="pindah_dari" name="pindah_dari" type="text" required>
                     @error('pindah_dari')
@@ -116,7 +116,7 @@
                 </div>
                 <div class="tw-mx-auto md:tw-w-2/3 sm:tw-w-1/2">
                     <label class="label-input" for="tgl_mutasi">
-                        Tanggal Masuk
+                        Tanggal Masuk *
                     </label>
                     <input value="{{ old('tgl_mutasi') }}" @error('tgl_mutasi') is-invalid @enderror class="input-data-minimal tw-w-full" id="tgl_mutasi" name="tgl_mutasi" type="date" required>
                     @error('tgl_mutasi')

@@ -11,7 +11,7 @@
                     NIS : {{ $siswa->nis_siswa }}<br>Nama :  {{ $siswa->nama_siswa }}<br>Kelas : {{ $siswa->KelasId }}
                 </div>
                 <div class="tw-my-auto tw-flex tw-gap-5 sm:tw-mt-2 lg:tw-my-auto">
-                    <button id="copy_btn" type="button" value="copy" class="tw-bg-sims-400 tw-text-white hover:tw-text-white tw-font-pop hover:tw-bg-sims-600 tw-px-5 tw-py-2 tw-rounded-lg">Copy</button>
+                    {{-- <button id="copy_btn" type="button" value="copy" class="tw-bg-sims-400 tw-text-white hover:tw-text-white tw-font-pop hover:tw-bg-sims-600 tw-px-5 tw-py-2 tw-rounded-lg">Copy</button> --}}
 
                     @cannot('kesiswaan')
                     <button type="button" data-modal-toggle="modal" class="tw-bg-sims-400 tw-text-white hover:tw-text-white  tw-font-pop hover:tw-bg-sims-600 tw-px-5 tw-py-2 tw-rounded-lg">Export</button>
@@ -903,7 +903,7 @@
  </script>
 @endsection
 
-@push('scripts')
+{{-- @push('scripts')
 <script>
     var copyBtn = document.querySelector('#copy_btn');
 
@@ -921,4 +921,4 @@
 }, 
 false);
 </script>
-@endpush
+@endpush --}}

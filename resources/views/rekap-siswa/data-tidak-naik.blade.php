@@ -238,7 +238,7 @@
                         </div>
                     </div>
                 </div>
-                <button id="copy_btn" title="Copy Data" type="button" value="copy"><i class="fa-solid fa-copy btn-export"></i></button>
+                {{-- <button id="copy_btn" title="Copy Data" type="button" value="copy"><i class="fa-solid fa-copy btn-export"></i></button> --}}
 
                 <button type="button" data-modal-toggle="export-excel" title="Export ke excel"><i class="fa-solid fa-file-excel btn-export"></i></button>
                     
@@ -470,7 +470,7 @@
     </script>
 @endsection
 
-@push('scripts')
+{{-- @push('scripts')
     <script>
         var copyBtn = document.querySelector('#copy_btn');
     
@@ -488,4 +488,4 @@
     }, 
     false);
     </script>
-@endpush
+@endpush --}}

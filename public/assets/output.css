@@ -1225,6 +1225,11 @@ video {
   margin-right: 15rem;
 }
 
+.tw--mx-5 {
+  margin-left: -1.25rem;
+  margin-right: -1.25rem;
+}
+
 .tw-mt-5 {
   margin-top: 1.25rem;
 }
@@ -2771,6 +2776,10 @@ video {
 
 .tw-pb-5 {
   padding-bottom: 1.25rem;
+}
+
+.tw-pt-1 {
+  padding-top: 0.25rem;
 }
 
 .tw-text-left {
