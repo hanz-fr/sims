@@ -63,6 +63,9 @@ a {
   .title-main {
   @apply tw-font-pop tw-font-bold tw-mt-6 tw-text-sims-400;
   }
+  .title-main-nospace {
+    @apply tw-font-pop tw-font-bold tw-text-sims-400;
+  }
   .card-dashboard {
     @apply tw-px-4 tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-bg-white tw-w-56;
   }

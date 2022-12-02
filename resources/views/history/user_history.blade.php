@@ -2,16 +2,14 @@
 
 @section('content')
 
-
 <div class="tw-my-16 tw-mx-32">
 
-    {{-- Title --}}
     <div class="tw-flex tw-justify-between tw-h-fit tw-mb-5">
-      <div class="title-main-nospace tw-text-2xl">
-          Histori Aktivitas
-      </div>
-      <a href="/history/my" class="hover:tw-text-blue-400 tw-transition-all tw-duration-75 tw-underline tw-font-pop tw-text-sm tw-text-blue-300">lihat histori saya <i class="fa-sharp fa-solid fa-arrow-up-right-from-square tw-text-xs tw-ml-2"></i></a>
-  </div>
+        <div class="title-main-nospace tw-text-2xl">
+            Histori Saya
+        </div>
+        <a href="/history" class="hover:tw-text-blue-400 tw-transition-all tw-duration-75 tw-underline tw-font-pop tw-text-sm tw-text-blue-300">lihat histori sims <i class="fa-sharp fa-solid fa-arrow-up-right-from-square tw-text-xs tw-ml-2"></i></a>
+    </div>
 
     @if($history === [])
 
@@ -25,7 +23,6 @@
               <button type="button" class="hover:tw-text-sims-300 tw-transition-all tw-ease-out tw-flex tw-font-pop tw-items-center tw-justify-between tw-w-full tw-py-5 tw-font-medium tw-text-left tw-text-gray-500 tw-border-b tw-border-gray-200" data-accordion-target="#accordion-flush-body-{{ $h->id }}" aria-expanded="false" aria-controls="accordion-flush-body-{{ $h->id }}">
                 <div>
                     <span class="tw-text-base tw-font-medium">{{ $h->activityName }}</span>
-                    <span class="tw-text-sm tw-font-normal tw-mx-5 tw-text-gray-400">{{ $h->activityAuthor }}</span>
                 </div>
                 <div class="tw-flex">
                     <span class="tw-text-base tw-font-normal tw-mx-10 tw-text-gray-400">{{ \Carbon\Carbon::createFromTimeStamp(strtotime($h->createdAt))->diffForHumans() }}</span>
@@ -46,5 +43,7 @@
         </div>
         @endforeach
     @endif
+
 </div>
+
 @endsection

@@ -18,13 +18,14 @@ use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Http;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\DetailDataIndukExport;
+use PhpOffice\PhpSpreadsheet\Reader\Exception;
+use Illuminate\Support\Facades\Auth;
+use PhpOffice\PhpSpreadsheet\IOFactory;
+use App\Models\User;
 use function PHPUnit\Framework\isEmpty;
 use Illuminate\Support\Facades\Session;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
-use PhpOffice\PhpSpreadsheet\Reader\Exception;
 use PhpOffice\PhpSpreadsheet\Writer\Xls;
-use PhpOffice\PhpSpreadsheet\IOFactory;
-use Illuminate\Support\Facades\Auth;
 
 class ApiController extends Controller
 {
@@ -241,6 +242,7 @@ class ApiController extends Controller
     }
 
 
+    /* HISTORY */
     public function viewHistory(Request $request) {
 
         $history = Http::get("{$this->api_url}/history");
@@ -252,6 +254,21 @@ class ApiController extends Controller
         ]);
 
     }
+
+    public function viewMyHistory(Request $request) {
+
+        $user = User::findOrFail(Auth::id());
+
+        $userHistory = Http::get("{$this->api_url}/history/$user->nama/all");
+
+        return view('history.user_history', [
+            'title' => 'History',
+            'active' => 'history',
+            'history' => json_decode($userHistory)->rows,
+        ]);
+
+    }
+
 
 
     public function viewHelpCenter(Request $request) {
@@ -559,7 +576,7 @@ class ApiController extends Controller
             
                 'activityName' => 'Update Rekap Nilai',
                 'activityAuthor' => "$user->nama",
-                'activityDesc' => "$user->nama mengupdate data rekap nilai dengan NIS : $request->nis_siswa"
+                'activityDesc' => "$user->nama mengupdate data rekap nilai siswa dengan NIS : $request->nis_siswa"
             
             ]);
 
@@ -665,7 +682,7 @@ class ApiController extends Controller
             
                 'activityName' => 'Create Rekap Nilai',
                 'activityAuthor' => "$user->nama",
-                'activityDesc' => "$user->nama menambah data rekap nilai dengan NIS : $request->nis_siswa"
+                'activityDesc' => "$user->nama menambah data rekap nilai siswa dengan NIS : $request->nis_siswa"
             
             ]);
 
@@ -689,7 +706,7 @@ class ApiController extends Controller
 
         Http::post("{$this->api_url}/history", [
         
-            'activityName' => 'Update Rekap Nilai',
+            'activityName' => 'Delete Rekap Nilai',
             'activityAuthor' => "$user->nama",
             'activityDesc' => "$user->nama menghapus data rekap nilai dengan id : $RaportId"
         
