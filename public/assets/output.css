@@ -971,6 +971,10 @@ video {
   border-width: 0;
 }
 
+.tw-invisible {
+  visibility: hidden;
+}
+
 .tw-absolute {
   position: absolute;
 }
@@ -1007,12 +1011,12 @@ video {
   right: 0.5rem;
 }
 
-.tw-top-1\/2 {
-  top: 50%;
-}
-
 .tw-right-0 {
   right: 0px;
+}
+
+.tw-top-1\/2 {
+  top: 50%;
 }
 
 .tw-left-0 {
@@ -1223,11 +1227,6 @@ video {
 .tw-mx-60 {
   margin-left: 15rem;
   margin-right: 15rem;
-}
-
-.tw--mx-5 {
-  margin-left: -1.25rem;
-  margin-right: -1.25rem;
 }
 
 .tw-mt-5 {
@@ -1466,6 +1465,62 @@ video {
   margin-right: 8rem;
 }
 
+.tw-mb-56 {
+  margin-bottom: 14rem;
+}
+
+.tw-mb-60 {
+  margin-bottom: 15rem;
+}
+
+.tw-mb-64 {
+  margin-bottom: 16rem;
+}
+
+.tw-mb-\[\] {
+  margin-bottom: ;
+}
+
+.tw-mb-\[17rem\] {
+  margin-bottom: 17rem;
+}
+
+.tw-mb-\[16\.5rem\] {
+  margin-bottom: 16.5rem;
+}
+
+.tw-mb-\[16\.rem\] {
+  margin-bottom: 16.rem;
+}
+
+.tw-mb-\[16\.3rem\] {
+  margin-bottom: 16.3rem;
+}
+
+.tw-mb-\[18rem\] {
+  margin-bottom: 18rem;
+}
+
+.tw-mb-\[1rem\] {
+  margin-bottom: 1rem;
+}
+
+.tw-mb-\[19rem\] {
+  margin-bottom: 19rem;
+}
+
+.tw-mb-\[19\.5rem\] {
+  margin-bottom: 19.5rem;
+}
+
+.tw-mb-\[19\.7rem\] {
+  margin-bottom: 19.7rem;
+}
+
+.tw-mb-\[19\.8rem\] {
+  margin-bottom: 19.8rem;
+}
+
 .tw-box-border {
   box-sizing: border-box;
 }
@@ -1588,6 +1643,14 @@ video {
 
 .tw-h-\[450px\] {
   height: 450px;
+}
+
+.tw-h-11 {
+  height: 2.75rem;
+}
+
+.tw-h-1 {
+  height: 0.25rem;
 }
 
 .tw-w-full {
@@ -1750,6 +1813,10 @@ video {
 
 .tw-w-52 {
   width: 13rem;
+}
+
+.tw-w-11 {
+  width: 2.75rem;
 }
 
 .tw-max-w-3xl {
@@ -2090,6 +2157,11 @@ video {
 
 .tw-border-4 {
   border-width: 4px;
+}
+
+.tw-border-x {
+  border-left-width: 1px;
+  border-right-width: 1px;
 }
 
 .tw-border-r {
@@ -2658,6 +2730,10 @@ video {
   padding-bottom: 2rem;
 }
 
+.tw-pt-7 {
+  padding-top: 1.75rem;
+}
+
 .tw-pt-10 {
   padding-top: 2.5rem;
 }
@@ -2708,10 +2784,6 @@ video {
 
 .tw-pb-12 {
   padding-bottom: 3rem;
-}
-
-.tw-pt-7 {
-  padding-top: 1.75rem;
 }
 
 .tw-pb-10 {
@@ -2776,10 +2848,6 @@ video {
 
 .tw-pb-5 {
   padding-bottom: 1.25rem;
-}
-
-.tw-pt-1 {
-  padding-top: 0.25rem;
 }
 
 .tw-text-left {
