@@ -8,14 +8,14 @@
     {{-- Title --}}
     <div class="tw-flex tw-justify-between tw-h-fit tw-mb-5">
       <div class="title-main-nospace tw-text-2xl">
-          Histori Aktivitas
+          Riwayat Aktivitas
       </div>
       <a href="/history/my" class="hover:tw-text-blue-400 tw-transition-all tw-duration-75 tw-underline tw-font-pop tw-text-sm tw-text-blue-300">lihat histori saya <i class="fa-sharp fa-solid fa-arrow-up-right-from-square tw-text-xs tw-ml-2"></i></a>
   </div>
 
     @if($history === [])
 
-    <div class="tw-font-pop tw-text-sims-400 tw-text-xl">Belum ada histori yang tersimpan.</div>
+    <div class="tw-font-pop tw-text-sims-400 tw-text-xl">Belum ada riwayat aktivitas yang tersimpan.</div>
 
     @else
         @foreach($history as $h)
