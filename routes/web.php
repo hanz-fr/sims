@@ -42,8 +42,8 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
 
     Route::post('/api/siswa/import', [ApiController::class, 'importDataSiswa']);
 
-    Route::get('/data-siswa-pdf/{nis}', [ApiController::class, 'exportDataSiswaPDF']);
-    Route::get('/data-siswa-print/{nis}', [ApiController::class, 'printDataSiswa']);
+    Route::get('/data-siswa-pdf/{nis}', [ApiController::class, 'exportDataSiswaPDF'])->name('siswa.pdf');
+    Route::get('/data-siswa-print/{nis}', [ApiController::class, 'printDataSiswa'])->name('siswa.print');
 
     Route::get('/data-induk-pdf', [ApiController::class, 'exportDataIndukPDF']);
     Route::get('/data-induk-pdf/{jurusan}/{kelas}', [ApiController::class, 'exportDataIndukPDF']);

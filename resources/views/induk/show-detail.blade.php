@@ -19,7 +19,7 @@
                     class="md:tw-w-[30%] tw-bg-white tw-shadow-lg tw-rounded-lg sm:tw-w-full tw-text-center tw-text-basic-700 tw-text-xl tw-font-pop tw-font-semibold tw-m-9">
                     @if ($siswa->foto)
                         <img src="{{ asset('foto/' . $siswa->foto) }}" alt="Pas Foto" srcset=""
-                            class="tw-rounded-xl tw-mb-8 tw-w-48 tw-h-52 tw-border tw-border-slate-400 tw-mx-auto md:tw-mt-20 sm:tw-mt-10">
+                            class="tw-rounded-xl tw-object-cover tw-mb-8 tw-w-48 tw-h-64 tw-border tw-border-slate-400 tw-mx-auto md:tw-mt-20 sm:tw-mt-10">
                     @else
                         <img src="https://cdn.nerdschalk.com/wp-content/uploads/2020/09/how-to-remove-profile-picture-on-zoom-12.png?width=1000?height=100"
                             alt="Pas Foto" srcset=""
@@ -44,7 +44,7 @@
                     open: 1,
                     activeClasses: 'tw-bg-white tw-border',
                     inactiveClasses: 'tw-bg-gray-200 tw-border-t tw-border-x'
-                  }" class="md:tw-w-3/5 sm:tw-w-full" >
+                  }" class="md:tw-w-3/5 sm:tw-w-full tw-mt-5" >
                     <div class="tw-float-right tw-flex tw-gap-2">
                         @can('tata usaha')                            
                         <div>
@@ -362,7 +362,7 @@
                                     </div>
                                 </div>
                                 <div x-show="selected === 3">
-                                    <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl tw-mb-[16.3rem]">
+                                    <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl tw-mb-[16.9rem]">
                                         <table class="tw-w-full tw-text-left tw-text-basic-700">
                                             <thead
                                                 class="tw-text-lg tw-bg-gray-100 tw-border tw-font-pop">
@@ -410,7 +410,7 @@
                                 </div>
 
                                 {{-- btn paginate --}}
-                                <div class="tw-flex tw-justify-center tw-mt-8 tw-gap-4">
+                                <div class="tw-flex tw-justify-center tw-mt-10 tw-gap-4">
                                     <button x-on:click="selected = selected === 1 ? 3 : selected - 1"
                                         class="tw-text-white tw-bg-sims-400 tw-w-11 tw-h-11 hover:tw-bg-[#3F7373] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i
                                             class="fa-regular fa-arrow-left"></i></button>
@@ -512,7 +512,7 @@
                                     </div>
                                 </div>
                                 <div x-show="selected === 2">
-                                    <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl tw-mb-[19.8rem]">
+                                    <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl tw-mb-[20.5rem]">
                                         <table class="tw-w-full tw-text-basic-700 tw-text-left">
                                             <thead
                                                 class="tw-text-lg tw-bg-gray-100 tw-border tw-font-pop">
@@ -550,7 +550,7 @@
                                 </div>
 
                                 {{-- btn paginate --}}
-                                <div class="tw-flex tw-justify-center tw-mt-8 tw-gap-4">
+                                <div class="tw-flex tw-justify-center tw-mt-10 tw-gap-4">
                                     <button x-on:click="selected = 1"
                                         class="tw-text-white tw-bg-sims-400 tw-w-11 tw-h-11 hover:tw-bg-[#3F7373] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i
                                             class="fa-regular fa-arrow-left"></i></button>
@@ -652,7 +652,7 @@
                                     </div>
                                 </div>
                                 <div x-show="selected === 2">
-                                    <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl tw-mb-[19.8rem]">
+                                    <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl tw-mb-[20.5rem]">
                                         <table class="tw-w-full tw-text-basic-700 tw-text-left">
                                             <thead
                                                 class="tw-text-lg tw-bg-gray-100 tw-border tw-font-pop">
@@ -690,7 +690,7 @@
                                 </div>
 
                                 {{-- btn paginate --}}
-                                <div class="tw-flex tw-justify-center tw-mt-8 tw-gap-4">
+                                <div class="tw-flex tw-justify-center tw-mt-10 tw-gap-4">
                                     <button x-on:click="selected = selected === 1 ? 2 : selected - 1"
                                         class="tw-text-white tw-bg-sims-400 tw-w-11 tw-h-11 hover:tw-bg-[#3F7373] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i
                                             class="fa-regular fa-arrow-left"></i></button>

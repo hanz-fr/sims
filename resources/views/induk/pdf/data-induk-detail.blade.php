@@ -22,6 +22,7 @@
     justify-content: space-between;
     width: 141px;
     height: 200px;
+    object-fit: cover;
   }
 
   .pas-foto {
@@ -61,27 +62,43 @@
 <table>
 	<tbody>
 		<tr>
-			<th>1</th>
+			<th>1.</th>
 			<td>Nama Peserta Didik</td>
 			<td >: {{ $siswa->nama_siswa }}</td>
-            <td rowspan="15" style="padding-left: 100px">
-                <div class="pas-foto">
-                    <h3 style="text-align: center;">SMKN 11 <br> BANDUNG</h3>
-                    <div class="foto">
-                        <h4>PAS Photo</h4>
-                        <h4>3 X 4</h4>
-                        <h4>Waktu Masuk <br> Sekolah</h4>
-                    </div>
-                </div>
-            </td>
+			@if(Route::is('siswa.pdf') && $siswa->foto)
+			<td rowspan="15" style="padding-left: 100px">
+				<div class="pas-foto">
+					<h3 style="text-align: center;">SMKN 11 <br> BANDUNG</h3>
+					<img src="{{ public_path('foto/' . $siswa->foto) }}" class="foto" style="object-fit: cover" alt="Pas Foto" srcset="">
+				</div>
+			</td>
+			@elseif(Route::is('siswa.print') && $siswa->foto)
+			<td rowspan="15" style="padding-left: 100px">
+				<div class="pas-foto">
+					<h3 style="text-align: center;">SMKN 11 <br> BANDUNG</h3>
+					<img src="{{ asset('foto/' . $siswa->foto) }}" class="foto" style="object-fit: cover" alt="Pas Foto" srcset="">
+				</div>
+			</td>
+			@else
+			<td rowspan="15" style="padding-left: 100px">
+				<div class="pas-foto">
+					<h3 style="text-align: center;">SMKN 11 <br> BANDUNG</h3>
+					<div class="foto">
+						<h4>PAS Photo</h4>
+						<h4>3 X 4</h4>
+						<h4>Waktu Masuk <br> Sekolah</h4>
+					</div>
+				</div>
+			</td>
+			@endif
 		</tr>
 		<tr>
-			<th>2</th>
+			<th>2.</th>
 			<td>Tempat Tgl. Lahir</td>
 			<td>: {{ $siswa->tmp_lahir }}, {{ $tgl_lahir_siswa }}</td>
 		</tr>
 		<tr>
-			<th>3</th>
+			<th>3.</th>
 			<td>Jenis Kelamin</td>
 			<td>:                                                         
 				@if ($siswa->jenis_kelamin == 'L')
@@ -93,17 +110,17 @@
 			   @endif</td>
 		</tr>
 		<tr>
-			<th>4</th>
+			<th>4.</th>
 			<td>Agama</td>
 			<td>: {{ $siswa->agama }}</td>
 		</tr>
 		<tr>
-			<th>5</th>
+			<th>5.</th>
 			<td>Anak Ke</td>
 			<td>: {{ $siswa->anak_ke }}</td>
 		</tr>
 		<tr>
-			<th>6</th>
+			<th>6.</th>
 			<td>Status dalam Keluarga</td>
 			<td>:                                                  
 			@if ($siswa->status == 'AK')
@@ -118,7 +135,7 @@
             </td>
 		</tr>
 		<tr>
-			<th>7</th>
+			<th>7.</th>
 			<td>Alamat Peserta Didik</td>
 			<td>: {{ $siswa->alamat_siswa }}</td>
 		</tr>
@@ -133,7 +150,7 @@
 			<td>: {{ $siswa->email_siswa }}</td>
 		</tr>
 		<tr>
-			<th>8</th>
+			<th>8.</th>
 			<td>Diterima di sekolah ini</td>
 			<td>: </td>
 		</tr>
@@ -148,7 +165,7 @@
 			<td>: {{ $siswa->tgl_diterima }}</td>
 		</tr>
 		<tr>
-			<th>9</th>
+			<th>9.</th>
 			<td>Sekolah Asal</td>
 			<td>: </td>
 		</tr>
@@ -163,7 +180,7 @@
 			<td>: {{ $siswa->alamat_sekolah_asal }}</td>
 		</tr>
 		<tr>
-			<th>10</th>
+			<th>10.</th>
 			<td>Ijazah SMP/MTs</td>
 			<td>: </td>
 		</tr>
@@ -178,7 +195,7 @@
 			<td>: {{ $siswa->no_ijazah_smp }}</td>
 		</tr>
 		<tr>
-			<th>11</th>
+			<th>11.</th>
 			<td>SKHUN SMP/MTs</td>
 			<td>: </td>
 		</tr>
@@ -193,7 +210,7 @@
 			<td>: {{ $siswa->no_skhun_smp }}</td>
 		</tr>
 		<tr>
-			<th>12</th>
+			<th>12.</th>
 			<td>Nama Orang Tua</td>
 			<td>: </td>
 		</tr>
@@ -218,7 +235,7 @@
 			<td>: {{ $siswa->nama_ibu }}</td>
 		</tr>
 		<tr>
-			<th>13</th>
+			<th>13.</th>
 			<td>Alamat Orang Tua</td>
 			<td>: {{ $siswa->alamat_ortu }}</td>
 		</tr>
@@ -233,7 +250,7 @@
 			<td>: {{ $siswa->email_ortu }}</td>
 		</tr>
         <tr>
-            <th>14</th>
+            <th>14.</th>
             <td>Wali</td>
             <td>: </td>
         </tr>
@@ -248,16 +265,17 @@
 			<td>: {{ $siswa->alamat_wali }}</td>
 		</tr>
 		<tr>
-			<td></td>
-			<td>:No. Telp/HP {{ $siswa->no_telp_wali }}</td>
+			<th></th>
+			<th> </th>
+			<td>No. Telp/HP : {{ $siswa->no_telp_wali }}</td>
 		</tr>
 		<tr>
-			<th>28</th>
+			<th></th>
 			<td>c. Pekerjaan</td>
 			<td>: {{ $siswa->pekerjaan_wali }}</td>
 		</tr>
 		<tr>
-			<th>15</th>
+			<th>15.</th>
 			<td>Meninggalkan Sekolah</td>
 			<td>: </td>
 		</tr>
@@ -272,7 +290,7 @@
 			<td>: {{ $siswa->alasan_meninggalkan_sekolah }}</td>
 		</tr>
 		<tr>
-			<th>16</th>
+			<th>16.</th>
 			<td>Tamat Di sekolah ini</td>
 			<td>: </td>
 		</tr>
@@ -287,24 +305,24 @@
 			<td>: {{ $siswa->tgl_ijazah_smk }}</td>
 		</tr>
 		<tr>
-			<th>17</th>
+			<th>17.</th>
 			<td>Keterangan Jasmani</td>
 			<td>: </td>
 		</tr>
 		<tr>
 			<th></th>
 			<td>a. Berat Badan</td>
-			<td>: {{ $siswa->berat_badan }}</td>
+			<td>: {{ $siswa->berat_badan }} Kg</td>
 		</tr>
 		<tr>
-			<th>37</th>
+			<th></th>
 			<td>b. Tinggi Badan</td>
-			<td>: {{ $siswa->tinggi_badan }}</td>
+			<td>: {{ $siswa->tinggi_badan }} Cm</td>
 		</tr>
 		<tr>
 			<th></th>
 			<td>c. Lingkar Kepala</td>
-			<td>: {{ $siswa->lingkar_kepala }}</td>
+			<td>: {{ $siswa->lingkar_kepala }} Cm</td>
 		</tr>
 		<tr>
 			<th></th>
@@ -312,7 +330,7 @@
 			<td>: {{ $siswa->golongan_darah }}</td>
 		</tr>
         <tr>
-			<th>18</th>
+			<th>18.</th>
 			<td>Keterangan lain-lain</td>
 			<td>: {{ $siswa->keterangan_lain }}</td>
 		</tr>
