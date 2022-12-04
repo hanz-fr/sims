@@ -22,7 +22,7 @@
   </style>
 </head>
 <body>
-	<h4 style="font-weight: 500; text-align: center; font-family:Arial, Helvetica, sans-serif">DATA REKAP JUMLAH SISWA</h4>
+	<h4 style="font-weight: 500; text-align: center; font-family:Arial, Helvetica, sans-serif">REKAPITULASI JUMLAH SISWA</h4>
 <br>
 
 	<table>

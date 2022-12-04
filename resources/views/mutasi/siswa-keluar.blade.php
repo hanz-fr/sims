@@ -26,7 +26,7 @@
                 </div>
                 @can('rekap-siswa')
                 <div class="tw-flex md:tw-justify-center tw-items-center">
-                    {{-- <button type="button" data-modal-toggle="export-print" title="Print"><i class="fa-solid fa-print btn-export"></i></button> --}}
+                    <button type="button" data-modal-toggle="export-print" title="Print"><i class="fa-solid fa-print btn-export"></i></button>
                     
                     <div id="export-print" tabindex="-1"
                     class="hidden overflow-y-auto overflow-x-hidden fixed  z-50 md:tw-inset-0 h-modal md:h-full">
@@ -66,7 +66,7 @@
                     </div>
                 </div>
                     
-                    <button id="copy_btn" title="Copy Data" type="button" value="copy"><i class="fa-solid fa-copy btn-export"></i></button>
+                    {{-- <button id="copy_btn" title="Copy Data" type="button" value="copy"><i class="fa-solid fa-copy btn-export"></i></button> --}}
                     
                     <button type="button" data-modal-toggle="export-excel" title="Export ke Excel"><i class="fa-solid fa-file-excel btn-export"></i></button>
                     
@@ -386,7 +386,7 @@
                                 <td class="tw-py-4 tw-px-6 tw-border">{{ $m->alasan_mutasi }}</td>
                                 <td class="tw-flex tw-justify-center tw-my-2 tw-gap-2">
                                 @can('rekap-siswa')
-                                    <a href="/edit-mutasi-keluar/{{ $m->id }}"
+                                    <a title="Edit Data" href="/edit-mutasi-keluar/{{ $m->id }}"
                                         class="tw-text-white tw-bg-kuning-500 hover:tw-bg-kuning-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                                         <i class="fa-solid fa-pen-to-square"></i></a>
                                     </a>
@@ -403,7 +403,7 @@
                                     <form action="{{ url('/api/mutasi-keluar/delete/' . $m->id) }}" method="post">
                                         @csrf
                                         @method('delete')
-                                        <button type="button" data-modal-toggle="popup-modal_{{$m->id}}" data-target="popup-modal_{{$m->id}}"
+                                        <button title="Hapus Data" type="button" data-modal-toggle="popup-modal_{{$m->id}}" data-target="popup-modal_{{$m->id}}"
                                             class="tw-text-white tw-bg-red-400 hover:tw-bg-red-500 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                                             <i class="fa-solid fa-trash"></i>
                                         </button>

@@ -171,17 +171,22 @@
                             <tr class="tw-bg-sims-500">
                             <td class="tw-py-10 tw-flex tw-justify-center tw-gap-10">
                                 <div class="tw-flex tw-gap-5 tw-justify-center">
-                                <a href="/edit-rekap-nilai/{{ $rp->id }}" class="tw-text-white tw-text-sm tw-bg-yellow-400 hover:tw-text-white hover:tw-bg-yellow-500 tw-rounded-lg tw-py-2 tw-px-3">
-                                    <i class="fa-solid fa-pen-to-square mr-2"></i>Edit
-                                </a>
-                                <form action="/api/raport/delete/{{ $rp->id }}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" 
-                                    class="show_confirm tw-text-white tw-text-sm tw-bg-red-400 hover:tw-bg-red-500 hover:tw-text-white tw-rounded-lg tw-py-2 tw-px-3">
-                                    <i class="fa-solid fa-trash mr-2"></i> Delete
-                                </button>
-                                </form>
+                                    @can('rekap-nilai')
+                                    <a href="/edit-rekap-nilai/{{ $rp->id }}" class="tw-text-white tw-text-sm tw-bg-yellow-400 hover:tw-text-white hover:tw-bg-yellow-500 tw-rounded-lg tw-py-2 tw-px-3">
+                                        <i class="fa-solid fa-pen-to-square mr-2"></i>Edit
+                                    </a>
+                                    @endcan
+
+                                    @can('wali kelas')
+                                    <form action="/api/raport/delete/{{ $rp->id }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" 
+                                            class="show_confirm tw-text-white tw-text-sm tw-bg-red-400 hover:tw-bg-red-500 hover:tw-text-white tw-rounded-lg tw-py-2 tw-px-3">
+                                            <i class="fa-solid fa-trash mr-2"></i> Delete
+                                        </button>
+                                    </form>
+                                    @endcan
                                 </div>
                                 <div></div>
                             </td>
@@ -297,20 +302,25 @@
                         </tr>
                         <tr class="tw-bg-sims-500">
                             <td class="tw-py-10 tw-flex tw-justify-center tw-gap-10">
-                            <div class="tw-flex tw-gap-5 tw-justify-center">
-                                <a href="/edit-rekap-nilai/{{ $rp->id }}" class="tw-text-white tw-text-sm tw-bg-yellow-400 hover:tw-text-white hover:tw-bg-yellow-500 tw-rounded-lg tw-py-2 tw-px-3">
-                                <i class="fa-solid fa-pen-to-square mr-2"></i>Edit
-                                </a>
-                                <form action="/api/raport/delete/{{ $rp->id }}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" 
-                                    class="show_confirm tw-text-white tw-text-sm tw-bg-red-400 hover:tw-bg-red-500 hover:tw-text-white tw-rounded-lg tw-py-2 tw-px-3">
-                                    <i class="fa-solid fa-trash mr-2"></i> Delete
-                                </button>
-                            </form>
-                            </div>
-                            <div></div>
+                                <div class="tw-flex tw-gap-5 tw-justify-center">
+                                    @can('rekap-nilai')
+                                    <a href="/edit-rekap-nilai/{{ $rp->id }}" class="tw-text-white tw-text-sm tw-bg-yellow-400 hover:tw-text-white hover:tw-bg-yellow-500 tw-rounded-lg tw-py-2 tw-px-3">
+                                    <i class="fa-solid fa-pen-to-square mr-2"></i>Edit
+                                    </a>
+                                    @endcan
+
+                                    @can('wali kelas')
+                                    <form action="/api/raport/delete/{{ $rp->id }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" 
+                                            class="show_confirm tw-text-white tw-text-sm tw-bg-red-400 hover:tw-bg-red-500 hover:tw-text-white tw-rounded-lg tw-py-2 tw-px-3">
+                                            <i class="fa-solid fa-trash mr-2"></i> Delete
+                                        </button>
+                                    </form>
+                                    @endcan
+                                </div>
+                                <div></div>
                             </td>
                             <td></td>
                             <td></td>
@@ -328,10 +338,10 @@
                                 Nama Mapel
                             </th>
                             <th scope="col" class="tw-py-3 tw-px-6">
-                            Pengetahuan
+                                Pengetahuan
                             </th>
                             <th scope="col" class="tw-py-3 tw-px-6">
-                            Keterampilan
+                                Keterampilan
                             </th>
                         </tr>
                     </thead>
@@ -344,10 +354,10 @@
                             {{ $nm->MapelJurusan->MapelId }}
                         </th>
                         <td class="tw-py-4 tw-px-6">
-                        {{ $nm->nilai_pengetahuan }}
+                            {{ $nm->nilai_pengetahuan }}
                         </td>
                         <td class="tw-py-4 tw-px-6">
-                        {{ $nm->nilai_keterampilan }}
+                            {{ $nm->nilai_keterampilan }}
                         </td>
                         {{-- <td class="tw-py-4 tw-px-6">
                         {{ $nm->kkm }}
@@ -419,17 +429,22 @@
                         <tr class="tw-bg-sims-500">
                             <td class="tw-py-10 tw-flex tw-justify-center tw-gap-10">
                             <div class="tw-flex tw-gap-5 tw-justify-center">
+                                @can('rekap-nilai')
                                 <a href="/edit-rekap-nilai/{{ $rp->id }}" class="tw-text-white tw-text-sm tw-bg-yellow-400 hover:tw-text-white hover:tw-bg-yellow-500 tw-rounded-lg tw-py-2 tw-px-3">
-                                <i class="fa-solid fa-pen-to-square mr-2"></i>Edit
+                                    <i class="fa-solid fa-pen-to-square mr-2"></i>Edit
                                 </a>
+                                @endcan
+
+                                @can('wali kelas')
                                 <form action="/api/raport/delete/{{ $rp->id }}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" 
-                                    class="show_confirm tw-text-white tw-text-sm tw-bg-red-400 hover:tw-bg-red-500 hover:tw-text-white tw-rounded-lg tw-py-2 tw-px-3">
-                                    <i class="fa-solid fa-trash mr-2"></i> Delete
-                                </button>
-                            </form>
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" 
+                                        class="show_confirm tw-text-white tw-text-sm tw-bg-red-400 hover:tw-bg-red-500 hover:tw-text-white tw-rounded-lg tw-py-2 tw-px-3">
+                                        <i class="fa-solid fa-trash mr-2"></i> Delete
+                                    </button>
+                                </form>
+                                @endcan
                             </div>
                             <div></div>
                             </td>
@@ -546,17 +561,22 @@
                         <tr class="tw-bg-sims-500">
                             <td class="tw-py-10 tw-flex tw-justify-center tw-gap-10">
                             <div class="tw-flex tw-gap-5 tw-justify-center">
+                                @can('rekap-nilai')
                                 <a href="/edit-rekap-nilai/{{ $rp->id }}" class="tw-text-white tw-text-sm tw-bg-yellow-400 hover:tw-text-white hover:tw-bg-yellow-500 tw-rounded-lg tw-py-2 tw-px-3">
-                                <i class="fa-solid fa-pen-to-square mr-2"></i>Edit
+                                    <i class="fa-solid fa-pen-to-square mr-2"></i>Edit
                                 </a>
+                                @endcan
+
+                                @can('wali kelas')
                                 <form action="/api/raport/delete/{{ $rp->id }}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" 
-                                    class="show_confirm tw-text-white tw-text-sm tw-bg-red-400 hover:tw-bg-red-500 hover:tw-text-white tw-rounded-lg tw-py-2 tw-px-3">
-                                    <i class="fa-solid fa-trash mr-2"></i> Delete
-                                </button>
-                            </form>
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" 
+                                        class="show_confirm tw-text-white tw-text-sm tw-bg-red-400 hover:tw-bg-red-500 hover:tw-text-white tw-rounded-lg tw-py-2 tw-px-3">
+                                        <i class="fa-solid fa-trash mr-2"></i> Delete
+                                    </button>
+                                </form>
+                                @endcan
                             </div>
                             <div></div>
                             </td>
@@ -673,17 +693,22 @@
                         <tr class="tw-bg-sims-500">
                             <td class="tw-py-10 tw-flex tw-justify-center tw-gap-10">
                             <div class="tw-flex tw-gap-5 tw-justify-center">
+                                @can('rekap-nilai')
                                 <a href="/edit-rekap-nilai/{{ $rp->id }}" class="tw-text-white tw-text-sm tw-bg-yellow-400 hover:tw-text-white hover:tw-bg-yellow-500 tw-rounded-lg tw-py-2 tw-px-3">
-                                <i class="fa-solid fa-pen-to-square mr-2"></i>Edit
-                                </a>
+                                    <i class="fa-solid fa-pen-to-square mr-2"></i>Edit
+                                    </a>
+                                @endcan
+
+                                @can('wali kelas')
                                 <form action="/api/raport/delete/{{ $rp->id }}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" 
-                                    class="show_confirm tw-text-white tw-text-sm tw-bg-red-400 hover:tw-bg-red-500 hover:tw-text-white tw-rounded-lg tw-py-2 tw-px-3">
-                                    <i class="fa-solid fa-trash mr-2"></i> Delete
-                                </button>
-                            </form>
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" 
+                                        class="show_confirm tw-text-white tw-text-sm tw-bg-red-400 hover:tw-bg-red-500 hover:tw-text-white tw-rounded-lg tw-py-2 tw-px-3">
+                                        <i class="fa-solid fa-trash mr-2"></i> Delete
+                                    </button>
+                                </form>
+                                @endcan
                             </div>
                             <div></div>
                             </td>

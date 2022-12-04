@@ -23,9 +23,9 @@
   </style>
 </head>
 <body>
-  <h4 style="font-weight: 500; text-align: center;">LAPORAN SISWA MUTASI KELUAR</h4>
-  <h4 style="font-weight: 500; text-align: center;">SMKN 11 BANDUNG</h4>
-  <h4 style="font-weight: 500; text-align: center;">PERIODE {{ $tgl_keluar_dari }} - {{ $tgl_keluar_ke }}</h4>
+  <h4 style="font-weight: 500; text-align: center; margin-bottom: -10px">LAPORAN SISWA MUTASI KELUAR</h4>
+  <h4 style="font-weight: 500; text-align: center; margin-bottom: -10px">SMK NEGERI 11 BANDUNG</h4>
+  <h5 style="font-weight: 500; text-align: center;">PERIODE {{ $tgl_keluar_dari }} - {{ $tgl_keluar_ke }}</h5>
 
     <table id="data">
         <tr>
