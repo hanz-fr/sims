@@ -16,11 +16,16 @@
     text-align: center;
   }
 
+  table {
+    text-transform: capitalize;
+  }
+
   </style>
 </head>
 <body>
-  <h4 style="font-weight: 500; text-align: center;">DATA SISWA KELUAR</h4>
-  <h5 style="font-weight: 400">Periode: {{ $tgl_keluar_dari }} - {{ $tgl_keluar_ke }}</h5>
+  <h4 style="font-weight: 500; text-align: center;">LAPORAN SISWA MUTASI KELUAR</h4>
+  <h4 style="font-weight: 500; text-align: center;">SMKN 11 BANDUNG</h4>
+  <h4 style="font-weight: 500; text-align: center;">PERIODE {{ $tgl_keluar_dari }} - {{ $tgl_keluar_ke }}</h4>
 
     <table id="data">
         <tr>

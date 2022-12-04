@@ -22,7 +22,7 @@
         <div class="tw-mx-10">
             <div class="tw-flex lg:tw-flex-row sm:tw-flex-col tw-justify-between tw-mt-8">
                 <div class="tw-flex">
-                    <h4 class="tw-font-pop tw-font-bold tw-mt-6 tw-text-sims-400">Data Siswa Masuk</h4>
+                    <h4 class="tw-font-pop tw-font-bold tw-mt-6 tw-text-sims-400">Data Mutasi Masuk</h4>
                 </div>
                 @can('rekap-siswa')
                     <div class="tw-flex md:tw-justify-center tw-items-center">
