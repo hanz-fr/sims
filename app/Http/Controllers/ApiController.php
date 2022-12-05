@@ -1470,6 +1470,7 @@ class ApiController extends Controller
         abort_if(Gate::denies('tata usaha'), 403);
 
         if ($request->file('foto')) {
+
             if ($file = $request->hasFile('foto')) {
 
                 if ($request->oldImage) {
@@ -1480,7 +1481,9 @@ class ApiController extends Controller
                 $fileName = uniqid() . $file->getClientOriginalName();
                 $destinationPath = public_path() . '/foto';
                 $file->move($destinationPath, $fileName);
+
             }
+            
         } else {
             $fileName = $request->oldImage;
         }
