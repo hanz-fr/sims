@@ -245,7 +245,9 @@ class ApiController extends Controller
     /* HISTORY */
     public function viewHistory(Request $request) {
 
-        $history = Http::get("{$this->api_url}/history");
+        $current_year = Carbon::now()->year;
+
+        $history = Http::get("{$this->api_url}/history?year={$current_year}");
 
         return view('history.index', [
             'title' => 'History',
@@ -257,9 +259,11 @@ class ApiController extends Controller
 
     public function viewMyHistory(Request $request) {
 
+        $current_year = Carbon::now()->year;
+
         $user = User::findOrFail(Auth::id());
 
-        $userHistory = Http::get("{$this->api_url}/history/$user->nama/all");
+        $userHistory = Http::get("{$this->api_url}/history/$user->nama/all?year={$current_year}");
 
         return view('history.user_history', [
             'title' => 'History',
@@ -269,6 +273,18 @@ class ApiController extends Controller
 
     }
 
+    public function viewHistoryNew(Request $request) {
+
+        $current_year = Carbon::now()->year;
+        $history = Http::get("{$this->api_url}/history?year={$current_year}");
+
+        return view('history.search&paginate-test', [
+            'title' => 'History',
+            'active' => 'history',
+            'history' => json_decode($history)->rows,
+        ]);
+
+    }
 
 
     public function viewHelpCenter(Request $request) {
@@ -863,7 +879,6 @@ class ApiController extends Controller
 
 
     /* API SISWA */
-
     public function getAllSiswa(Request $request)
     {
 
