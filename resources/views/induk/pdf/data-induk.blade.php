@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <style type="text/css" media="print">
+    @page { size: landscape; }
+  </style>
   <style>
     * {
       font-family: Arial, sans-serif;
@@ -12,18 +15,27 @@
     font-size: 12px
   }
 
-  #data td, #data th {
+  #data th {
+    padding: 10px 5px;
     border: 1px solid black;
-    padding: 10px 7px;
     color: black;
     text-align: center;
+    font-weight: bold;
+  }
+
+  #data td {
+    border: 1px solid black;
+    padding: 2px 2px;
+    color: black;
+    text-align: center;
+    font-weight: bold;
   }
 
   </style>
 </head>
 <body>
 
-  <h4 style="font-weight: 500; text-align: center; font-family:Arial, Helvetica, sans-serif">DAFTAR NAMA PESERTA DIDIK DALAM BUKU INDUK</h4>
+  <h4 style="font-weight: bold; text-align: center; font-family:Arial, Helvetica, sans-serif; margin-top: -10px">DAFTAR NAMA PESERTA DIDIK DALAM BUKU INDUK</h4>
 
     <table id="data">
         <thead class="tw-bg-gray-100 tw-text-basic-700 tw-border tw-font-pop">

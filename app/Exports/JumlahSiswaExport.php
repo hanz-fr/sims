@@ -49,70 +49,14 @@ class JumlahSiswaExport implements FromView, ShouldAutoSize, WithEvents
         return [
             AfterSheet::class => function(AfterSheet $event) {
                 $event->sheet->getDelegate()->mergeCells('A1:M1');
-                $event->sheet->getDelegate()->getStyle('A1')
-                ->getAlignment()
-                ->setHorizontal(Alignment::HORIZONTAL_CENTER_CONTINUOUS);
-
+                $event->sheet->getDelegate()->mergeCells('A2:M2');
                 $event->sheet->getDelegate()->mergeCells('A3:M3');
-                $event->sheet->getDelegate()->getStyle('A3')
-                ->getAlignment()
-                ->setHorizontal(Alignment::HORIZONTAL_CENTER_CONTINUOUS);
 
-                $event->sheet->getDelegate()->mergeCells('A32:M32');
-                $event->sheet->getDelegate()->getStyle('A32')
+                $event->sheet->getDelegate()->getStyle('A1:A3')
                 ->getAlignment()
-                ->setHorizontal(Alignment::HORIZONTAL_CENTER_CONTINUOUS);
-
-                $event->sheet->getDelegate()->mergeCells('A61:M61');
-                $event->sheet->getDelegate()->getStyle('A61')
-                ->getAlignment()
-                ->setHorizontal(Alignment::HORIZONTAL_CENTER_CONTINUOUS);
-
-                $event->sheet->getDelegate()->mergeCells('A90:M90');
-                $event->sheet->getDelegate()->getStyle('A90')
-                ->getAlignment()
-                ->setHorizontal(Alignment::HORIZONTAL_CENTER_CONTINUOUS);
+                ->setHorizontal(Alignment::HORIZONTAL_CENTER_CONTINUOUS);     
                 
-                $event->sheet->getDelegate()->getStyle('A4:M30')->applyFromArray([
-                    'borders' => [
-                        'allBorders' => [
-                            'borderStyle' => Border::BORDER_THIN,
-                            'color' => ['argb' => '000000'],
-                        ],
-                    ],
-                ])
-                ->getAlignment()
-                ->setWrapText(true)
-                ->setVertical(Alignment::VERTICAL_CENTER)
-                ->setHorizontal(Alignment::HORIZONTAL_CENTER_CONTINUOUS);
-                
-                $event->sheet->getDelegate()->getStyle('A33:M59')->applyFromArray([
-                    'borders' => [
-                        'allBorders' => [
-                            'borderStyle' => Border::BORDER_THIN,
-                            'color' => ['argb' => '000000'],
-                        ],
-                    ],
-                ])
-                ->getAlignment()
-                ->setWrapText(true)
-                ->setVertical(Alignment::VERTICAL_CENTER)
-                ->setHorizontal(Alignment::HORIZONTAL_CENTER_CONTINUOUS);
-
-                $event->sheet->getDelegate()->getStyle('A62:M88')->applyFromArray([
-                    'borders' => [
-                        'allBorders' => [
-                            'borderStyle' => Border::BORDER_THIN,
-                            'color' => ['argb' => '000000'],
-                        ],
-                    ],
-                ])
-                ->getAlignment()
-                ->setWrapText(true)
-                ->setVertical(Alignment::VERTICAL_CENTER)
-                ->setHorizontal(Alignment::HORIZONTAL_CENTER_CONTINUOUS);
-
-                $event->sheet->getDelegate()->getStyle('A91:M165')->applyFromArray([
+                $event->sheet->getDelegate()->getStyle('A5:M79')->applyFromArray([
                     'borders' => [
                         'allBorders' => [
                             'borderStyle' => Border::BORDER_THIN,

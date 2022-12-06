@@ -2,6 +2,7 @@
 
 namespace App\Exports;
 
+use Carbon\Carbon;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Http;
 use Maatwebsite\Excel\Concerns\FromView;
@@ -38,15 +39,17 @@ class MutasiKeluarExport implements FromView, ShouldAutoSize, WithEvents, WithCo
 
         $sort_by = $request->sort_by;
         $sort = $request->sort;
-        $tgl_keluar_dari = $request->tgl_keluar_dari;
-        $tgl_keluar_ke = $request->tgl_keluar_ke;
+        $keluar_dari = $request->tgl_keluar_dari;
+        $tgl_keluar_dari = Carbon::parse($keluar_dari)->translatedFormat('F');
+        $keluar_ke = $request->tgl_keluar_ke;
+        $tgl_keluar_ke = Carbon::parse($keluar_ke)->translatedFormat('F');
 
         $mutasi = Http::get("{$this->url}/mutasi/siswa-keluar?sort_by={$sort_by}&sort={$sort}&tgl_keluar_dari={$tgl_keluar_dari}&tgl_keluar_ke={$tgl_keluar_ke}");
 
         return view('mutasi.pdf.mutasi-keluar', [
             'mutasi' => json_decode($mutasi)->data->rows,
-            'tgl_keluar_dari' => $request->tgl_keluar_dari,
-            'tgl_keluar_ke' => $request->tgl_keluar_ke
+            'tgl_keluar_dari' => $tgl_keluar_dari,
+            'tgl_keluar_ke' => $tgl_keluar_ke
         ]);
     }
 
@@ -58,12 +61,15 @@ class MutasiKeluarExport implements FromView, ShouldAutoSize, WithEvents, WithCo
         return [
             AfterSheet::class => function(AfterSheet $event) {
                 $event->sheet->getDelegate()->mergeCells('A1:G1');
-                $event->sheet->getDelegate()->getStyle('A1')
+                $event->sheet->getDelegate()->mergeCells('A2:G2');
+                $event->sheet->getDelegate()->mergeCells('A3:G3');
+
+                $event->sheet->getDelegate()->getStyle('A1:A3')
                 ->getAlignment()
                 ->setHorizontal(Alignment::HORIZONTAL_CENTER_CONTINUOUS);
 
                 
-                $event->sheet->getDelegate()->getStyle('A2:G13')->applyFromArray([
+                $event->sheet->getDelegate()->getStyle('A8:G18')->applyFromArray([
                     'borders' => [
                         'allBorders' => [
                             'borderStyle' => Border::BORDER_THIN,

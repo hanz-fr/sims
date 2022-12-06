@@ -2,6 +2,7 @@
 
 namespace App\Exports;
 
+use Carbon\Carbon;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Http;
 use Maatwebsite\Excel\Concerns\FromView;
@@ -36,15 +37,17 @@ class DataTidakNaikExport implements FromView, ShouldAutoSize, WithEvents, WithC
 
         $sort_by = $request->sort_by;
         $sort = $request->sort;
-        $dibuatTglDari = $request->dibuatTglDari;
-        $dibuatTglKe = $request->dibuatTglKe;
+        $getDibuatTglDari = $request->dibuatTglDari;
+        $dibuatTglDari = Carbon::parse($getDibuatTglDari)->translatedFormat('F');
+        $getDibuatTglKe = $request->dibuatTglKe;
+        $dibuatTglKe = Carbon::parse($getDibuatTglKe)->translatedFormat('F');
 
         $siswa = Http::get("{$this->api_url}/dashboard/siswa-tidak-naik?dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}");
 
         return view('rekap-siswa.pdf.tidak-naik', [
             'raport' => json_decode($siswa)->data->rows,
-            'dibuatTglDari' => $request->dibuatTglDari,
-            'dibuatTglKe' => $request->dibuatTglKe
+            'dibuatTglDari' => $dibuatTglDari,
+            'dibuatTglKe' => $dibuatTglKe
         ]);
     }
 
@@ -56,11 +59,17 @@ class DataTidakNaikExport implements FromView, ShouldAutoSize, WithEvents, WithC
         return [
             AfterSheet::class => function(AfterSheet $event) {
                 $event->sheet->getDelegate()->mergeCells('A1:E1');
-                $event->sheet->getDelegate()->getStyle('A1')
+                $event->sheet->getDelegate()->mergeCells('A2:E2');
+                $event->sheet->getDelegate()->mergeCells('A3:E3');
+                $event->sheet->getDelegate()->mergeCells('A4:E4');
+
+                $event->sheet->getDelegate()->mergeCells('A6:E6');
+
+                $event->sheet->getDelegate()->getStyle('A1:A6')
                 ->getAlignment()
                 ->setHorizontal(Alignment::HORIZONTAL_CENTER_CONTINUOUS);
                 
-                $event->sheet->getDelegate()->getStyle('A2:E12')->applyFromArray([
+                $event->sheet->getDelegate()->getStyle('A8:E18')->applyFromArray([
                     'borders' => [
                         'allBorders' => [
                             'borderStyle' => Border::BORDER_THIN,

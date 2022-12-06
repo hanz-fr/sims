@@ -83,7 +83,7 @@
           <a href="/siswa-keluar" class="tw-group">
             <div class="tw-flex tw-flex-col tw-justify-center tw-text-center tw-border-2 tw-py-4 tw-bg-white tw-rounded-lg group-hover:tw-text-white group-hover:tw-bg-sims-400 tw-transition-all tw-duration-300">
               <div class="tw-text-2xl tw-text-sims-400 group-hover:tw-text-white"><i class="fa-solid fa-user-group"></i></div>
-              <div class="tw-text-base tw-text-gray-500 tw-font-normal tw-mt-3 group-hover:tw-text-white">Data Siswa Keluar</div>
+              <div class="tw-text-base tw-text-gray-500 tw-font-normal tw-mt-3 group-hover:tw-text-white">Data Mutasi Keluar</div>
             </div>
           </a>
           @endcan
@@ -98,7 +98,7 @@
           <a href="/data-tidak-naik" class="tw-group">
             <div class="tw-flex tw-flex-col tw-justify-center tw-text-center tw-border-2 tw-py-4 tw-bg-white tw-rounded-lg group-hover:tw-text-white group-hover:tw-bg-sims-400 tw-transition-all tw-duration-300">
               <div class="tw-text-2xl tw-text-sims-400 group-hover:tw-text-white"><i class="fa-solid fa-clipboard-list"></i></div>
-              <div class="tw-text-base tw-text-gray-500 tw-font-normal tw-mt-3 group-hover:tw-text-white">Data Siswa Tidak Naik Kelas</div>
+              <div class="tw-text-base tw-text-gray-500 tw-font-normal tw-mt-3 group-hover:tw-text-white tw-px-2">Data Siswa Tidak Naik Kelas</div>
             </div>
           </a>
           @endcannot

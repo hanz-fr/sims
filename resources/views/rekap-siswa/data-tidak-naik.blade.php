@@ -216,7 +216,7 @@
                                 </svg>
                                 <span class="tw-sr-only">Close modal</span>
                             </button>
-                            <form action="/data-tidak-naik-print" method="">
+                            <form action="/data-tidak-naik-print" target="__blank" method="">
                                 @csrf
                                 <div class="tw-p-6">
                                     <div class="tw-text-gray-400 tw-font-pop tw-text-center tw-font-semibold tw-text-lg">Print Data</div>

@@ -2,30 +2,51 @@
 <html>
 <head>
 	<style>
-		* {
-		font-family: Arial, sans-serif;
-		}
 
-	table {
-		border-collapse: collapse;
-		width: 100%;
-		font-size: 12px
+	@font-face {
+		font-family: Arial, Helvetica, sans-serif;
 	}
 
-	table td, table th {
+    .footer {
+        font-family: Arial, Helvetica, sans-serif;
+        width: 100%;
+        font-size: 12px;
+        margin-top: 30px;
+    }
+
+	h5 {
+        font-weight: bold;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+	#data {
+		border-collapse: collapse;
+		width: 100%;
+		font-size: 10px;
+        font-family: Arial, Helvetica, sans-serif;
+	}
+
+	#data td, #data th {
 		border: 1px solid black;
 		padding: 10px 7px;
 		color: black;
 		text-align: center;
-	}
+	}	
+
+    th {
+        background-color: turquoise;
+    }
 
   </style>
 </head>
 <body>
-	<h4 style="font-weight: 500; text-align: center; font-family:Arial, Helvetica, sans-serif">REKAPITULASI JUMLAH SISWA</h4>
+	<h5 style="margin-bottom: -15px">REKAPITULASI JUMLAH SISWA</h5>
+	<h5 style="margin-bottom: -15px">SMK NEGERI 11 BANDUNG</h5>
+	<h5>TAHUN AJARAN {{ date('Y') }}/{{ date('Y') + 1 }}</h5>
 <br>
 
-	<table>
+	<table id="data">
 		<thead>
 			<tr>
 				<th scope="col" rowspan="2">KELAS</th>
@@ -123,6 +144,40 @@
 
 	</tbody>
 	</table>
+
+    <table class="footer">
+        <tbody>
+            <tr>
+                <td>Mengetahui,</td>
+                <td ></td>
+                <td style="padding-left: 70px">Bandung, {{ date('F Y') }}</td>
+            </tr>
+            <tr>
+                <td>Kepala Sekolah</td>
+                <td style="padding-left: 70px">Waka Kesiswaan,</td>
+                <td style="padding-left: 70px">PELUR ADM Kesiswaan</td>
+            </tr>
+            <tr style="color: white"> 
+                <td>.</td>
+            </tr>
+            <tr style="color: white"> 
+                <td>.</td>
+            </tr>
+            <tr style="color: white">
+                <td>.</td>
+            </tr>
+            <tr>
+                <td>Ino Suprano, S.Pd, M.MPd</td>
+                <td style="padding-left: 70px">Parwanto, S.Pd</td>
+                <td style="padding-left: 70px">Rasminah</td>
+            </tr>
+            <tr>
+                <td>NIP. 19630708 198703 1 009</td>
+                <td style="padding-left: 70px">NIP. 19810521 201001 1 008</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
 
 	<script type="text/javascript">
     window.print();

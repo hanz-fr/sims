@@ -2,6 +2,7 @@
 
 namespace App\Exports;
 
+use Carbon\Carbon;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Http;
 use Maatwebsite\Excel\Concerns\FromView;
@@ -36,8 +37,10 @@ class MutasiMasukExport implements FromView, ShouldAutoSize, WithEvents, WithCol
 
         $sort_by = $request->sort_by;
         $sort = $request->sort;
-        $tgl_masuk_dari = $request->tgl_masuk_dari;
-        $tgl_masuk_ke = $request->tgl_masuk_ke;
+        $masuk_dari = $request->tgl_masuk_dari;
+        $tgl_masuk_dari = Carbon::parse($masuk_dari)->translatedFormat('F');
+        $masuk_ke = $request->tgl_masuk_ke;
+        $tgl_masuk_ke = Carbon::parse($masuk_ke)->translatedFormat('F');
 
         $mutasi = Http::get("{$this->url}/mutasi/siswa-masuk?sort_by={$sort_by}&sort={$sort}&tgl_masuk_dari={$tgl_masuk_dari}&tgl_masuk_ke={$tgl_masuk_ke}");
 
@@ -56,11 +59,14 @@ class MutasiMasukExport implements FromView, ShouldAutoSize, WithEvents, WithCol
         return [
             AfterSheet::class => function(AfterSheet $event) {
                 $event->sheet->getDelegate()->mergeCells('A1:G1');
-                $event->sheet->getDelegate()->getStyle('A1')
+                $event->sheet->getDelegate()->mergeCells('A2:G2');
+                $event->sheet->getDelegate()->mergeCells('A3:G3');
+
+                $event->sheet->getDelegate()->getStyle('A1:A3')
                 ->getAlignment()
                 ->setHorizontal(Alignment::HORIZONTAL_CENTER_CONTINUOUS);
                 
-                $event->sheet->getDelegate()->getStyle('A2:G14')->applyFromArray([
+                $event->sheet->getDelegate()->getStyle('A8:G18')->applyFromArray([
                     'borders' => [
                         'allBorders' => [
                             'borderStyle' => Border::BORDER_THIN,
