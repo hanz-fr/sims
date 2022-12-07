@@ -144,7 +144,7 @@
               <tr class="tw-border-b">
                 <td class="tw-p-6">{{ $u->nip }}</td>
                 <td class="tw-p-6">{{ $u->nama }}</td>
-                <td class="tw-p-6">{{ $u->created_at->format('l d F Y') }}</td>
+                <td class="tw-p-6">{{ \Carbon\Carbon::parse($u->created_at)->format('d F Y') }}</td>
                 <td class="tw-p-6">
                 @if ($u->role === 1)
                   Tata Usaha

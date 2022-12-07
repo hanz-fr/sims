@@ -117,7 +117,9 @@ class UserController extends Controller
 
         $user = User::findOrFail(Auth::id());
 
-        $userHistory = Http::get("{$this->api_url}/history/$user->nama/all?limit=5");
+        $current_year = Carbon::now()->year;
+
+        $userHistory = Http::get("{$this->api_url}/history/$user->nama/all?limit=5&year=$current_year");
 
         return view('auth.profil-user', [
             'title'  => 'Profil User',
