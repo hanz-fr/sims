@@ -37,17 +37,19 @@ class MutasiMasukExport implements FromView, ShouldAutoSize, WithEvents, WithCol
 
         $sort_by = $request->sort_by;
         $sort = $request->sort;
-        $masuk_dari = $request->tgl_masuk_dari;
-        $tgl_masuk_dari = Carbon::parse($masuk_dari)->translatedFormat('F');
-        $masuk_ke = $request->tgl_masuk_ke;
-        $tgl_masuk_ke = Carbon::parse($masuk_ke)->translatedFormat('F');
+        $tgl_masuk_dari = $request->tgl_masuk_dari;
+        $masuk_dari = Carbon::parse($tgl_masuk_dari)->translatedFormat('F');
+        $tgl_masuk_ke = $request->tgl_masuk_ke;
+        $masuk_ke = Carbon::parse($tgl_masuk_ke)->translatedFormat('F');
 
         $mutasi = Http::get("{$this->url}/mutasi/siswa-masuk?sort_by={$sort_by}&sort={$sort}&tgl_masuk_dari={$tgl_masuk_dari}&tgl_masuk_ke={$tgl_masuk_ke}");
 
         return view('mutasi.pdf.mutasi-masuk', [
             'mutasi' => json_decode($mutasi)->data->rows,
-            'tgl_masuk_dari' => $request->tgl_masuk_dari,
-            'tgl_masuk_ke' => $request->tgl_masuk_ke
+            'tgl_masuk_dari' => $tgl_masuk_dari,
+            'tgl_masuk_ke' => $tgl_masuk_ke,
+            'masuk_dari' => $masuk_dari,
+            'masuk_ke' => $masuk_ke
         ]);
     }
 

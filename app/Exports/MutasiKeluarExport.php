@@ -39,17 +39,19 @@ class MutasiKeluarExport implements FromView, ShouldAutoSize, WithEvents, WithCo
 
         $sort_by = $request->sort_by;
         $sort = $request->sort;
-        $keluar_dari = $request->tgl_keluar_dari;
-        $tgl_keluar_dari = Carbon::parse($keluar_dari)->translatedFormat('F');
-        $keluar_ke = $request->tgl_keluar_ke;
-        $tgl_keluar_ke = Carbon::parse($keluar_ke)->translatedFormat('F');
+        $tgl_keluar_dari = $request->tgl_keluar_dari;
+        $keluar_dari = Carbon::parse($tgl_keluar_dari)->translatedFormat('F');
+        $tgl_keluar_ke = $request->tgl_keluar_ke;
+        $keluar_ke = Carbon::parse($tgl_keluar_ke)->translatedFormat('F');
 
         $mutasi = Http::get("{$this->url}/mutasi/siswa-keluar?sort_by={$sort_by}&sort={$sort}&tgl_keluar_dari={$tgl_keluar_dari}&tgl_keluar_ke={$tgl_keluar_ke}");
 
         return view('mutasi.pdf.mutasi-keluar', [
             'mutasi' => json_decode($mutasi)->data->rows,
             'tgl_keluar_dari' => $tgl_keluar_dari,
-            'tgl_keluar_ke' => $tgl_keluar_ke
+            'tgl_keluar_ke' => $tgl_keluar_ke,
+            'keluar_dari' => $keluar_dari,
+            'keluar_ke' => $keluar_ke
         ]);
     }
 

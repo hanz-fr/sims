@@ -33,7 +33,7 @@
   <h5 style="margin-bottom: -15px">SMK NEGERI 11 BANDUNG</h5>
   <h5>TAHUN AJARAN {{ date('Y') }}/{{ date('Y') + 1 }}</h5>
 
-  <h6 style="margin-bottom: -2px">Periode : {{ $tgl_keluar_dari }} - {{ $tgl_keluar_ke }}</h6>
+  <h6 style="margin-bottom: -2px">Periode : {{ $keluar_dari }} - {{ $keluar_ke }}</h6>
 
   <hr style="margin-bottom: 25px; border: solid 1px black">
     

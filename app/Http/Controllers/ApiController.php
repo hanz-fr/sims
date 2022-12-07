@@ -368,11 +368,12 @@ class ApiController extends Controller
         ob_end_clean();
         ob_start();
 
-        $getDibuatTglDari = $request->dibuatTglDari;
-        $dibuatTglDari = Carbon::parse($getDibuatTglDari)->translatedFormat('F');
-        $getDibuatTglKe = $request->dibuatTglKe;
-        $dibuatTglKe = Carbon::parse($getDibuatTglKe)->translatedFormat('F');
-        $tidaknaik = 'daftar_nama_tidak_naik_'.date('Y-m-d').'.xlsx';
+        $dibuatTglDari = $request->dibuatTglDari;
+        $getDibuatTglDari = Carbon::parse($dibuatTglDari)->translatedFormat('F');
+        $dibuatTglKe = $request->dibuatTglKe;
+        $getDibuatTglKe = Carbon::parse($dibuatTglKe)->translatedFormat('F');
+
+        $tidaknaik = 'daftar_nama_tidak_naik_'.$getDibuatTglDari.'_'.$getDibuatTglKe.'.xlsx';
 
         $user = Auth::user();
 
@@ -392,20 +393,22 @@ class ApiController extends Controller
 
         abort_if(Gate::allows('wali kelas'), 403);
 
-        $getDibuatTglDari = $request->dibuatTglDari;
-        $dibuatTglDari = Carbon::parse($getDibuatTglDari)->translatedFormat('F');
-        $getDibuatTglKe = $request->dibuatTglKe;
-        $dibuatTglKe = Carbon::parse($getDibuatTglKe)->translatedFormat('F');
+        $dibuatTglDari = $request->dibuatTglDari;
+        $getDibuatTglDari = Carbon::parse($dibuatTglDari)->translatedFormat('F');
+        $dibuatTglKe = $request->dibuatTglKe;
+        $getDibuatTglKe = Carbon::parse($dibuatTglKe)->translatedFormat('F');
 
         $response = Http::get("{$this->api_url}/dashboard/siswa-tidak-naik?dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}");
 
         $pdf = PDF::loadView('rekap-siswa.pdf.tidak-naik', [
             'raport' => json_decode($response)->data->rows,
             'dibuatTglDari' => $dibuatTglDari,
-            'dibuatTglKe' => $dibuatTglKe
+            'dibuatTglKe' => $dibuatTglKe,
+            'TglDari' => $getDibuatTglDari,
+            'TglKe' => $getDibuatTglKe            
         ])->setPaper('A4_PLUS_PAPER', 'potrait');
 
-        $tidaknaik = 'data_tidak_naik_kelas_periode_'.$dibuatTglDari.'_'.$dibuatTglKe.'.pdf';
+        $tidaknaik = 'data_tidak_naik_kelas_periode_'.$getDibuatTglDari.'_'.$getDibuatTglKe.'.pdf';
 
         $user = Auth::user();
 
@@ -426,10 +429,10 @@ class ApiController extends Controller
 
         abort_if(Gate::allows('wali kelas'), 403);
 
-        $getDibuatTglDari = $request->dibuatTglDari;
-        $dibuatTglDari = Carbon::parse($getDibuatTglDari)->translatedFormat('F');
-        $getDibuatTglKe = $request->dibuatTglKe;
-        $dibuatTglKe = Carbon::parse($getDibuatTglKe)->translatedFormat('F');
+        $dibuatTglDari = $request->dibuatTglDari;
+        $getDibuatTglDari = Carbon::parse($dibuatTglDari)->translatedFormat('F');
+        $dibuatTglKe = $request->dibuatTglKe;
+        $getDibuatTglKe = Carbon::parse($dibuatTglKe)->translatedFormat('F');
 
         $response = Http::get("{$this->api_url}/dashboard/siswa-tidak-naik?dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}");
 
@@ -438,7 +441,9 @@ class ApiController extends Controller
         return view('rekap-siswa.pdf.tidak-naik', [
             'raport' => json_decode($response)->data->rows,
             'dibuatTglDari' => $dibuatTglDari,
-            'dibuatTglKe' => $dibuatTglKe
+            'dibuatTglKe' => $dibuatTglKe,
+            'TglDari' => $getDibuatTglDari,
+            'TglKe' => $getDibuatTglKe   
         ]);
         
     }
@@ -806,8 +811,10 @@ class ApiController extends Controller
 
         $pdf = PDF::loadView('induk.pdf.alumni', [
             'alumni' => json_decode($response)->data->rows,
-            'dibuatTglDari' => $tahun_dari,
-            'dibuatTglKe' => $tahun_ke
+            'dibuatTglDari' => $dibuatTglDari,
+            'dibuatTglKe' => $dibuatTglKe,
+            'TglDari' => $tahun_dari,
+            'TglKe' => $tahun_ke
         ])->setPaper('A4_PLUS_PAPER', 'potrait');
 
         $dataalumni = 'data_alumni_tahun_'.$tahun_dari.'-'.$tahun_ke.'.pdf';
@@ -841,8 +848,10 @@ class ApiController extends Controller
 
         return view('induk.pdf.alumni', [
             'alumni' => json_decode($response)->data->rows,
-            'dibuatTglDari' => $tahun_dari,
-            'dibuatTglKe' => $tahun_ke
+            'dibuatTglDari' => $dibuatTglDari,
+            'dibuatTglKe' => $dibuatTglKe,
+            'TglDari' => $tahun_dari,
+            'TglKe' => $tahun_ke
         ]);
 
     }
@@ -2288,10 +2297,8 @@ class ApiController extends Controller
         ob_end_clean();
         ob_start();
 
-        $masuk_dari = $request->tgl_masuk_dari;
-        $tgl_masuk_dari = Carbon::parse($masuk_dari)->translatedFormat('F');
-        $masuk_ke = $request->tgl_masuk_ke;
-        $tgl_masuk_ke = Carbon::parse($masuk_ke)->translatedFormat('F');
+        $tgl_masuk_dari = $request->tgl_masuk_dari;
+        $tgl_masuk_ke = $request->tgl_masuk_ke;
         
 
         $laporan = 'laporan_mutasi_masuk_'.$tgl_masuk_dari.'_'.$tgl_masuk_ke.'.xlsx';
@@ -2318,10 +2325,8 @@ class ApiController extends Controller
         ob_end_clean();
         ob_start();
 
-        $keluar_dari = $request->tgl_keluar_dari;
-        $tgl_keluar_dari = Carbon::parse($keluar_dari)->translatedFormat('F');
-        $keluar_ke = $request->tgl_keluar_ke;
-        $tgl_keluar_ke = Carbon::parse($keluar_ke)->translatedFormat('F');
+        $tgl_keluar_dari = $request->tgl_keluar_dari;
+        $tgl_keluar_ke = $request->tgl_keluar_ke;
 
         $laporan = 'laporan_mutasi_keluar_'.$tgl_keluar_dari.'_'.$tgl_keluar_ke.'.xlsx';
 
@@ -2344,17 +2349,19 @@ class ApiController extends Controller
 
         abort_if(Gate::denies('rekap-siswa'), 403);
 
-        $masuk_dari = $request->tgl_masuk_dari;
-        $tgl_masuk_dari = Carbon::parse($masuk_dari)->translatedFormat('F');
-        $masuk_ke = $request->tgl_masuk_ke;
-        $tgl_masuk_ke = Carbon::parse($masuk_ke)->translatedFormat('F');
+        $tgl_masuk_dari = $request->tgl_masuk_dari;
+        $masuk_dari = Carbon::parse($tgl_masuk_dari)->translatedFormat('F');
+        $tgl_masuk_ke = $request->tgl_masuk_ke;
+        $masuk_ke = Carbon::parse($tgl_masuk_ke)->translatedFormat('F');
 
         $response = Http::get("{$this->api_url}/mutasi/siswa-masuk?tgl_masuk_dari={$tgl_masuk_dari}&tgl_masuk_ke={$tgl_masuk_ke}");
 
         $pdf = PDF::loadView('mutasi.pdf.mutasi-masuk', [
             'mutasi' => json_decode($response)->data->rows,
             'tgl_masuk_dari' => $tgl_masuk_dari,
-            'tgl_masuk_ke' => $tgl_masuk_ke
+            'tgl_masuk_ke' => $tgl_masuk_ke,
+            'masuk_dari' => $masuk_dari,
+            'masuk_ke' => $masuk_ke
         ])->setPaper('A4_PLUS_PAPER', 'potrait');
 
         $laporan = 'laporan_mutasi_masuk_'.$tgl_masuk_dari.'_'.$tgl_masuk_ke.'.pdf';
@@ -2378,17 +2385,19 @@ class ApiController extends Controller
 
         abort_if(Gate::denies('rekap-siswa'), 403);
 
-        $keluar_dari = $request->tgl_keluar_dari;
-        $tgl_keluar_dari = Carbon::parse($keluar_dari)->translatedFormat('F');
-        $keluar_ke = $request->tgl_keluar_ke;
-        $tgl_keluar_ke = Carbon::parse($keluar_ke)->translatedFormat('F');
+        $tgl_keluar_dari = $request->tgl_keluar_dari;
+        $keluar_dari = Carbon::parse($tgl_keluar_dari)->translatedFormat('F');
+        $tgl_keluar_ke = $request->tgl_keluar_ke;
+        $keluar_ke = Carbon::parse($tgl_keluar_ke)->translatedFormat('F');
 
         $response = Http::get("{$this->api_url}/mutasi/siswa-keluar?tgl_keluar_dari={$tgl_keluar_dari}&tgl_keluar_ke={$tgl_keluar_ke}");
 
         $pdf = PDF::loadView('mutasi.pdf.mutasi-keluar', [
             'mutasi' => json_decode($response)->data->rows,
             'tgl_keluar_dari' => $tgl_keluar_dari,
-            'tgl_keluar_ke' => $tgl_keluar_ke
+            'tgl_keluar_ke' => $tgl_keluar_ke,
+            'keluar_dari' => $keluar_dari,
+            'keluar_ke' => $keluar_ke
         ])->setPaper('A4_PLUS_PAPER', 'potrait');
 
         $laporan = 'laporan_mutasi_keluar_'.$tgl_keluar_dari.'_'.$tgl_keluar_ke.'.pdf';
@@ -2412,17 +2421,19 @@ class ApiController extends Controller
 
         abort_if(Gate::denies('rekap-siswa'), 403);
 
-        $masuk_dari = $request->tgl_masuk_dari;
-        $tgl_masuk_dari = Carbon::parse($masuk_dari)->translatedFormat('F');
-        $masuk_ke = $request->tgl_masuk_ke;
-        $tgl_masuk_ke = Carbon::parse($masuk_ke)->translatedFormat('F');
+        $tgl_masuk_dari = $request->tgl_masuk_dari;
+        $masuk_dari = Carbon::parse($tgl_masuk_dari)->translatedFormat('F');
+        $tgl_masuk_ke = $request->tgl_masuk_ke;
+        $masuk_ke = Carbon::parse($tgl_masuk_ke)->translatedFormat('F');
 
         $response = Http::get("{$this->api_url}/mutasi/siswa-masuk?tgl_masuk_dari={$tgl_masuk_dari}&tgl_masuk_ke={$tgl_masuk_ke}");
 
         return view('mutasi.pdf.mutasi-masuk', [
             'mutasi' => json_decode($response)->data->rows,
             'tgl_masuk_dari' => $tgl_masuk_dari,
-            'tgl_masuk_ke' => $tgl_masuk_ke
+            'tgl_masuk_ke' => $tgl_masuk_ke,
+            'masuk_dari' => $masuk_dari,
+            'masuk_ke' => $masuk_ke
         ]);
 
     }
@@ -2432,17 +2443,19 @@ class ApiController extends Controller
 
         abort_if(Gate::denies('rekap-siswa'), 403);
 
-        $keluar_dari = $request->tgl_keluar_dari;
-        $tgl_keluar_dari = Carbon::parse($keluar_dari)->translatedFormat('F');
-        $keluar_ke = $request->tgl_keluar_ke;
-        $tgl_keluar_ke = Carbon::parse($keluar_ke)->translatedFormat('F');
+        $tgl_keluar_dari = $request->tgl_keluar_dari;
+        $keluar_dari = Carbon::parse($tgl_keluar_dari)->translatedFormat('F');
+        $tgl_keluar_ke = $request->tgl_keluar_ke;
+        $keluar_ke = Carbon::parse($tgl_keluar_ke)->translatedFormat('F');
 
         $response = Http::get("{$this->api_url}/mutasi/siswa-keluar?tgl_keluar_dari={$tgl_keluar_dari}&tgl_keluar_ke={$tgl_keluar_ke}");
 
         return view('mutasi.pdf.mutasi-keluar', [
             'mutasi' => json_decode($response)->data->rows,
             'tgl_keluar_dari' => $tgl_keluar_dari,
-            'tgl_keluar_ke' => $tgl_keluar_ke
+            'tgl_keluar_ke' => $tgl_keluar_ke,
+            'keluar_dari' => $keluar_dari,
+            'keluar_ke' => $keluar_ke
         ]);
 
     }
@@ -2540,7 +2553,7 @@ class ApiController extends Controller
         ob_end_clean();
         ob_start();
 
-        $datajumlah = 'data_rekap_jumlah_siswa_'.date('Y-m-d_H-i-s').'.xlsx';
+        $datajumlah = 'data_rekap_jumlah_siswa_'.date('Y-m-d').'.xlsx';
 
         $user = Auth::user();
 

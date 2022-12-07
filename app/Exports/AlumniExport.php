@@ -44,8 +44,10 @@ class AlumniExport implements FromView, ShouldAutoSize, WithEvents, WithColumnWi
 
         return view('induk.pdf.alumni', [
             'alumni' => json_decode($alumni)->data->rows,
-            'dibuatTglDari' => $tahun_dari,
-            'dibuatTglKe' => $tahun_ke
+            'dibuatTglDari' => $dibuatTglDari,
+            'dibuatTglKe' => $dibuatTglKe,
+            'TglDari' => $tahun_dari,
+            'TglKe' => $tahun_ke
         ]);
     }
     
@@ -57,11 +59,15 @@ class AlumniExport implements FromView, ShouldAutoSize, WithEvents, WithColumnWi
         return [
             AfterSheet::class => function(AfterSheet $event) {
                 $event->sheet->getDelegate()->mergeCells('A1:G1');
-                $event->sheet->getDelegate()->getStyle('A1')
+                $event->sheet->getDelegate()->mergeCells('A2:G2');
+                $event->sheet->getDelegate()->mergeCells('A3:G3');
+
+
+                $event->sheet->getDelegate()->getStyle('A1:A3')
                 ->getAlignment()
                 ->setHorizontal(Alignment::HORIZONTAL_CENTER_CONTINUOUS);
                 
-                $event->sheet->getDelegate()->getStyle('A2:G13')->applyFromArray([
+                $event->sheet->getDelegate()->getStyle('A7:G17')->applyFromArray([
                     'borders' => [
                         'allBorders' => [
                             'borderStyle' => Border::BORDER_THIN,

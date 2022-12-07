@@ -2,14 +2,18 @@
 <html>
 <head>
   <style>
-    * {
-      font-family: Arial, sans-serif;
-    }
+  @font-face {
+    font-family: 'Times New Roman', Times, serif;
+  }
+  h5 {
+  font-weight: bold;
+  text-align: center;
+  }
 
   #data {
     border-collapse: collapse;
     width: 100%;
-    font-size: 12px
+    font-size: 10px
   }
 
   #data td, #data th {
@@ -23,8 +27,12 @@
 </head>
 <body>
 
-  <h4 style="font-weight: 500; text-align: center;">DATA ALUMNI</h4>
-  <h5 style="font-weight: 400">Periode: {{ $dibuatTglDari }} - {{ $dibuatTglKe }}</h5>
+  <h5 style="margin-bottom: -15px">DATA ALUMNI</h5>
+  <h5 style="margin-bottom: -15px">SMK NEGERI 11 BANDUNG</h5>
+
+  <h6 style="margin-bottom: -2px">Periode : {{ $TglDari }} - {{ $TglKe }}</h6>
+
+  <hr style="margin-bottom: 25px; border: solid 1px black">
 
     <table id="data">
         <tr>

@@ -2666,6 +2666,11 @@ video {
   padding-bottom: 1.25rem;
 }
 
+.tw-px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
 .tw-px-24 {
   padding-left: 6rem;
   padding-right: 6rem;
@@ -2679,11 +2684,6 @@ video {
 .tw-px-28 {
   padding-left: 7rem;
   padding-right: 7rem;
-}
-
-.tw-px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
 }
 
 .tw-pt-8 {

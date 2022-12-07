@@ -37,17 +37,19 @@ class DataTidakNaikExport implements FromView, ShouldAutoSize, WithEvents, WithC
 
         $sort_by = $request->sort_by;
         $sort = $request->sort;
-        $getDibuatTglDari = $request->dibuatTglDari;
-        $dibuatTglDari = Carbon::parse($getDibuatTglDari)->translatedFormat('F');
-        $getDibuatTglKe = $request->dibuatTglKe;
-        $dibuatTglKe = Carbon::parse($getDibuatTglKe)->translatedFormat('F');
+        $dibuatTglDari = $request->dibuatTglDari;
+        $getDibuatTglDari = Carbon::parse($dibuatTglDari)->translatedFormat('F');
+        $dibuatTglKe = $request->dibuatTglKe;
+        $getDibuatTglKe = Carbon::parse($dibuatTglKe)->translatedFormat('F');
 
         $siswa = Http::get("{$this->api_url}/dashboard/siswa-tidak-naik?dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}");
 
         return view('rekap-siswa.pdf.tidak-naik', [
             'raport' => json_decode($siswa)->data->rows,
             'dibuatTglDari' => $dibuatTglDari,
-            'dibuatTglKe' => $dibuatTglKe
+            'dibuatTglKe' => $dibuatTglKe,
+            'TglDari' => $getDibuatTglDari,
+            'TglKe' => $getDibuatTglKe
         ]);
     }
 
