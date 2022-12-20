@@ -187,11 +187,12 @@
                                         </button>
                                     </form>
                                     @endcan
+
                                 </div>
                                 <div></div>
                             </td>
                                 <td></td>
-                                <td></td>
+                                <td><div class="tw-flex tw-justify-end  tw-font-pop tw-text-md tw-text-white tw-font-bold tw-mx-10">Tanggal dibuat : </div><div class="tw-flex tw-justify-end  tw-font-pop tw-text-md tw-text-white tw-mx-10">{{ \Carbon\Carbon::parse(strtotime($rp->createdAt))->setTimezone('+7')->translatedFormat('l d F Y') }}</div> </td>
                                 <td></td>
                             </tr>
                         @endforeach
@@ -323,7 +324,7 @@
                                 <div></div>
                             </td>
                             <td></td>
-                            <td></td>
+                            <td><div class="tw-flex tw-justify-end  tw-font-pop tw-text-md tw-text-white tw-font-bold tw-mx-10">Tanggal dibuat : </div><div class="tw-flex tw-justify-end  tw-font-pop tw-text-md tw-text-white tw-mx-10">{{ \Carbon\Carbon::parse(strtotime($rp->createdAt))->setTimezone('+7')->translatedFormat('l d F Y') }}</div> </td>
                             <td></td>
                         </tr>
                     @endforeach
@@ -449,7 +450,7 @@
                             <div></div>
                             </td>
                             <td></td>
-                            <td></td>
+                            <td><div class="tw-flex tw-justify-end  tw-font-pop tw-text-md tw-text-white tw-font-bold tw-mx-10">Tanggal dibuat : </div><div class="tw-flex tw-justify-end  tw-font-pop tw-text-md tw-text-white tw-mx-10">{{ \Carbon\Carbon::parse(strtotime($rp->createdAt))->setTimezone('+7')->translatedFormat('l d F Y') }}</div> </td>
                             <td></td>
                         </tr>
                     @endforeach
@@ -581,7 +582,7 @@
                             <div></div>
                             </td>
                             <td></td>
-                            <td></td>
+                            <td><div class="tw-flex tw-justify-end  tw-font-pop tw-text-md tw-text-white tw-font-bold tw-mx-10">Tanggal dibuat : </div><div class="tw-flex tw-justify-end  tw-font-pop tw-text-md tw-text-white tw-mx-10">{{ \Carbon\Carbon::parse(strtotime($rp->createdAt))->setTimezone('+7')->translatedFormat('l d F Y') }}</div> </td>
                             <td></td>
                         </tr>
                     @endforeach
@@ -713,7 +714,7 @@
                             <div></div>
                             </td>
                             <td></td>
-                            <td></td>
+                            <td><div class="tw-flex tw-justify-end  tw-font-pop tw-text-md tw-text-white tw-font-bold tw-mx-10">Tanggal dibuat : </div><div class="tw-flex tw-justify-end  tw-font-pop tw-text-md tw-text-white tw-mx-10">{{ \Carbon\Carbon::parse(strtotime($rp->createdAt))->setTimezone('+7')->translatedFormat('l d F Y') }}</div> </td>
                             <td></td>
                         </tr>
                     @endforeach
@@ -873,7 +874,7 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td></td>
+                            <td><div class="tw-flex tw-justify-end  tw-font-pop tw-text-md tw-text-white tw-font-bold tw-mx-10">Tanggal dibuat : </div><div class="tw-flex tw-justify-end  tw-font-pop tw-text-md tw-text-white tw-mx-10">{{ \Carbon\Carbon::parse(strtotime($rp->createdAt))->setTimezone('+7')->translatedFormat('l d F Y') }}</div> </td>
                             <td></td>
                             </tr>
                     @endforeach

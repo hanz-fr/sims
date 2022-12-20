@@ -340,6 +340,19 @@
 
 
                             <div class="tw-flex tw-gap-3 tw-justify-between tw-mt-5 tw-mx-5">
+                                <div class="tw-absolute tw-right-4 tw-top-2">
+                                    <!--Code Block for white tooltip starts-->
+                                    <a tabindex="0" role="link" aria-label="tooltip 1" class="focus:outline-none focus:ring-gray-300 rounded-full focus:ring-offset-2 focus:ring-2 focus:bg-gray-200 relative mt-20 md:mt-0" onmouseover="showTooltip(1)" onfocus="showTooltip(1)" onmouseout="hideTooltip(1)">
+                                        <div class=" cursor-pointer">
+                                            <i data-tooltip-target="tooltip-animation" class="fa-regular fa-circle-question tw-text-md tw-text-sims-400"></i>
+                                        </div>
+                                        <div id="tooltip1" role="tooltip" class="z-20 w-64 absolute transition duration-150 ease-in-out left-0 ml-8 shadow-lg bg-white p-4 rounded hidden">
+                                            <p class="text-sm font-bold text-gray-800 pb-1">Data periodik Mutasi Masuk</p>
+                                            <p class="text-xs leading-4 text-gray-600">Data mutasi masuk periodik diambil berdasarkan tanggal masuk siswa tersebut.</p>
+                                        </div>
+                                    </a>
+                                    <!--Code Block for white tooltip ends-->
+                                </div>
                                 <div>
                                     <div class="tw-text-xs tw-mb-2 tw-font-pop tw-font-normal tw-text-gray-400">Dari tanggal</div>
                                     <input class="input-data tw-text-xs tw-font-pop" id="tgl_masuk_dari" name="tgl_masuk_dari" type="date" placeholder="dd/mm/yyyy" @if(isset($_GET['tgl_masuk_dari'])) value="{{ $_GET['tgl_masuk_dari'] }}" @endif>
@@ -585,6 +598,34 @@
                   return false;
               });
             });
+        </script>
+        <script src="index.js"></script>
+        <script>function showTooltip(flag) {
+            switch (flag) {
+              case 1:
+                document.getElementById("tooltip1").classList.remove("hidden");
+                break;
+              case 2:
+                document.getElementById("tooltip2").classList.remove("hidden");
+                break;
+              case 3:
+                document.getElementById("tooltip3").classList.remove("hidden");
+                break;
+            }
+            }
+            function hideTooltip(flag) {
+            switch (flag) {
+              case 1:
+                document.getElementById("tooltip1").classList.add("hidden");
+                break;
+              case 2:
+                document.getElementById("tooltip2").classList.add("hidden");
+                break;
+              case 3:
+                document.getElementById("tooltip3").classList.add("hidden");
+                break;
+            }
+            }
         </script>
         @if(isset($mutasi))
         @foreach($mutasi as $m)
