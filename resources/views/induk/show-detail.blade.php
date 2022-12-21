@@ -26,7 +26,7 @@
                             class="tw-rounded-xl tw-mb-8 tw-w-48 tw-h-52 tw-border tw-border-slate-400 tw-mx-auto md:tw-mt-20 sm:tw-mt-10">
                     @endif
 
-                    <div class="tw-rounded-lg tw-py-5">
+                    <div class="tw-rounded-lg tw-py-10">
                         <div class="tw-font-pop tw-text-sims-500 tw-text-xl tw-mb-3 tw-px-6">{{ $siswa->nama_siswa }} @if($siswa->isAlumni === true)<div class="tw-font-pop tw-text-xs tw-text-sims-400 tw-mt-1"><i class="fa-solid fa-graduation-cap tw-mx-1"></i>Alumni</div>@endif</div>
                         <div>
                             <div class="tw-font-pop tw-text-gray-400 tw-text-base tw-font-normal">{{ $siswa->nis_siswa }} / {{ $siswa->nisn_siswa }}</div>
@@ -333,13 +333,22 @@
                                                 <tr class="tw-bg-white tw-border">
                                                     <th scope="row"
                                                         class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-whitespace-nowrap">
+                                                        Tahun Ajaran
+                                                    </th>
+                                                    <td class="tw-py-4 tw-px-6">
+                                                        {{ $siswa->thn_ajaran }}
+                                                    </td>
+                                                </tr>
+                                                <tr class="tw-bg-gray-100 tw-border">
+                                                    <th scope="row"
+                                                        class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-whitespace-nowrap">
                                                         Nama sekolah asal
                                                     </th>
                                                     <td class="tw-py-4 tw-px-6">
                                                         {{ $siswa->sekolah_asal }}
                                                     </td>
                                                 </tr>
-                                                <tr class="tw-bg-gray-100 tw-border">
+                                                <tr class="tw-bg-white tw-border">
                                                     <th scope="row"
                                                         class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-whitespace-nowrap">
                                                         Alamat sekolah asal
@@ -348,21 +357,12 @@
                                                         {{ $siswa->alamat_sekolah_asal }}
                                                     </td>
                                                 </tr>
-                                                <tr class="tw-bg-white tw-border">
-                                                    <th scope="row"
-                                                        class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-whitespace-nowrap">
-                                                        Tahun Ijazah SMP
-                                                    </th>
-                                                    <td class="tw-py-4 tw-px-6">
-                                                        {{ $siswa->thn_ijazah_smp }}
-                                                    </td>
-                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
                                 <div x-show="selected === 3">
-                                    <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl tw-mb-[16.9rem]">
+                                    <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl tw-mb-[164px]">
                                         <table class="tw-w-full tw-text-left tw-text-basic-700">
                                             <thead
                                                 class="tw-text-lg tw-bg-gray-100 tw-border tw-font-pop">
@@ -388,7 +388,7 @@
                                                 <tr class="tw-bg-gray-100 tw-border">
                                                     <th scope="row"
                                                         class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-whitespace-nowrap">
-                                                        Tahun SKHUN SMP
+                                                        Tahun Ijazah SMP
                                                     </th>
                                                     <td class="tw-py-4 tw-px-6">
                                                         {{ $siswa->thn_ijazah_smp }}
@@ -397,10 +397,28 @@
                                                 <tr class="tw-bg-white tw-border">
                                                     <th scope="row"
                                                         class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-whitespace-nowrap">
+                                                        Tahun SKHUN SMP
+                                                    </th>
+                                                    <td class="tw-py-4 tw-px-6">
+                                                        {{ $siswa->thn_ijazah_smp }}
+                                                    </td>
+                                                </tr>
+                                                <tr class="tw-bg-gray-100 tw-border">
+                                                    <th scope="row"
+                                                        class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-whitespace-nowrap">
                                                         Nomor SKHUN SMP
                                                     </th>
                                                     <td class="tw-py-4 tw-px-6">
                                                         {{ $siswa->no_skhun_smp }}
+                                                    </td>
+                                                </tr>
+                                                <tr class="tw-bg-white tw-border">
+                                                    <th scope="row"
+                                                        class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-whitespace-nowrap">
+                                                        Status Siswa
+                                                    </th>
+                                                    <td class="tw-py-4 tw-px-6">
+                                                        {{ $siswa->status_siswa }}
                                                     </td>
                                                 </tr>
                                             </tbody>

@@ -1505,6 +1505,26 @@ video {
   margin-right: 8rem;
 }
 
+.tw-mb-\[16px\] {
+  margin-bottom: 16px;
+}
+
+.tw-mb-\[160px\] {
+  margin-bottom: 160px;
+}
+
+.tw-mb-\[165px\] {
+  margin-bottom: 165px;
+}
+
+.tw-mb-\[162px\] {
+  margin-bottom: 162px;
+}
+
+.tw-mb-\[164px\] {
+  margin-bottom: 164px;
+}
+
 .tw-box-border {
   box-sizing: border-box;
 }
