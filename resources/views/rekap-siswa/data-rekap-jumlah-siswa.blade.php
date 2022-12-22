@@ -3,8 +3,21 @@
 @section('content')
     <div class="tw-mx-10">
         <div class="tw-flex tw-justify-between tw-gap-5 tw-mt-8">
-            <div class="tw-flex tw-flex-col">
+            <div class="tw-flex tw-flex-row tw-justify-around">
                 <h4 class="title-main">Data Rekap Jumlah Siswa</h4>
+            </div>
+            <div class="tw-flex tw-mx-4 tw-my-auto">
+                <!--Code Block for white tooltip starts-->
+                <a tabindex="0" role="link" aria-label="tooltip 1" class="focus:outline-none focus:ring-gray-300 rounded-full focus:ring-offset-2 focus:ring-2 focus:bg-gray-200 relative mt-20 md:mt-0" onmouseover="showTooltip(1)" onfocus="showTooltip(1)" onmouseout="hideTooltip(1)">
+                    <div class=" cursor-pointer">
+                        <i data-tooltip-target="tooltip-animation" class="fa-regular fa-circle-question tw-text-2xl tw-text-sims-400"></i>
+                    </div>
+                    <div id="tooltip1" role="tooltip" class="z-20 tw-w-64 absolute transition duration-150 ease-in-out right-0 ml-8 shadow-lg bg-white p-4 rounded hidden">
+                        <p class="tw-text-sm tw-font-pop tw-font-bold text-gray-600">Rekap Jumlah Siswa</p>
+                        <p class="tw-text-sm tw-font-pop tw-font-normal leading-4 text-gray-600">Data siswa yang ditampilkan di tabel berikut adalah siswa yang sedang aktif sekolah dan tidak memiliki surat mutasi.</p>
+                    </div>
+                </a>
+                <!--Code Block for white tooltip ends-->
             </div>
         </div>
 
@@ -16,7 +29,6 @@
             <div class="tw-float-right">
                 @can('rekap-siswa')
                 <div class="tw-flex tw-items-center -tw-mt-4">
-                    <div class="tw-font-pop tw-text-gray-400 tw-text-xs tw-mx-10">*Data siswa yang ditampilkan adalah siswa yang sedang aktif sekolah.</div>
                     <a href="/rekap-jumlah-siswa-print" target="__blank" title="Print"><i class="fa-solid fa-print btn-export"></i></a>
                     <a href="/rekap-jumlah-siswa-excel" title="Export ke Excel" title="Export ke Excel"><i class="fa-solid fa-file-excel btn-export"></i></a>
                     <a href="/rekap-jumlah-siswa-pdf" title="Export ke PDF"><i class="fa-solid fa-file-pdf btn-export"></i></a>
@@ -167,7 +179,7 @@
                         <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_masuk }}</th>
                         <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_p_akhir }}</th>
                         <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_l_akhir }}</th>
-                        <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_akhir }}</th>
+                        <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_p_akhir + $sum_total_siswa_l_akhir }}</th>
                     </tfoot>
                 </table>
             </div>
@@ -504,6 +516,35 @@
             </div>
         </div>
     </div>
+
+    <script src="index.js"></script>
+    <script>function showTooltip(flag) {
+        switch (flag) {
+          case 1:
+            document.getElementById("tooltip1").classList.remove("hidden");
+            break;
+          case 2:
+            document.getElementById("tooltip2").classList.remove("hidden");
+            break;
+          case 3:
+            document.getElementById("tooltip3").classList.remove("hidden");
+            break;
+        }
+    }
+    function hideTooltip(flag) {
+      switch (flag) {
+        case 1:
+          document.getElementById("tooltip1").classList.add("hidden");
+          break;
+        case 2:
+          document.getElementById("tooltip2").classList.add("hidden");
+          break;
+        case 3:
+          document.getElementById("tooltip3").classList.add("hidden");
+          break;
+      }
+    }
+    </script>
 @endsection
 
 {{-- @push('scripts')

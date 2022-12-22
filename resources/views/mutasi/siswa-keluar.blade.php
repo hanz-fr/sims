@@ -22,7 +22,7 @@
         <div class="tw-mx-10">
             <div class="tw-flex lg:tw-flex-row sm:tw-flex-col tw-justify-between tw-mt-8">
                 <div class="tw-flex">
-                    <h4 class="tw-font-pop tw-font-bold tw-mt-6 tw-text-sims-400">Data Mutasi Keluar</h4>
+                    <h4 class="title-main">Data Mutasi Keluar</h4>
                 </div>
                 @can('rekap-siswa')
                 <div class="tw-flex md:tw-justify-center tw-items-center">
@@ -401,7 +401,7 @@
                                 <td class="tw-flex tw-justify-center tw-my-2 tw-gap-2">
                                 @can('rekap-siswa')
                                     <a title="Edit Data" href="/edit-mutasi-keluar/{{ $m->id }}"
-                                        class="tw-text-white tw-bg-kuning-500 hover:tw-bg-kuning-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
+                                        class="tw-text-kuning-500 hover:tw-bg-kuning-500 hover:tw-text-white hover:tw-shadow-md tw-transition-all tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                                         <i class="fa-solid fa-pen-to-square"></i></a>
                                     </a>
                                 @endcan
@@ -418,8 +418,8 @@
                                         @csrf
                                         @method('delete')
                                         <button title="Hapus Data" type="button" data-modal-toggle="popup-modal_{{$m->id}}" data-target="popup-modal_{{$m->id}}"
-                                            class="tw-text-white tw-bg-red-400 hover:tw-bg-red-500 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
-                                            <i class="fa-solid fa-trash"></i>
+                                            class="tw-text-red-400 hover:tw-bg-red-400 hover:tw-text-white hover:tw-shadow-md tw-transition-all tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
+                                            <i class="fa-regular fa-trash"></i>
                                         </button>
                                         <div id="popup-modal_{{$m->id}}" tabindex="-1"
                                             class="popup-modal hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full">

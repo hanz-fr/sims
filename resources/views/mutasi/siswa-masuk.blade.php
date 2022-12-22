@@ -409,7 +409,7 @@
                                 <td class="tw-flex tw-justify-center tw-my-2 tw-gap-2">
                                 @can('rekap-siswa')                                    
                                     <a title="Edit Data" href="/edit-mutasi-masuk/{{ $m->id }}"
-                                        class="tw-text-white tw-bg-kuning-500 hover:tw-bg-kuning-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
+                                        class="tw-text-kuning-500  hover:tw-text-white hover:tw-bg-kuning-500 hover:tw-shadow-md tw-transition-all tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                                         <i class="fa-solid fa-pen-to-square"></i></a>
                                     </a>
                                 @endcan
@@ -427,7 +427,7 @@
                                         @csrf
                                         @method('delete')
                                         <button title="Hapus Data" type="button" data-modal-toggle="popup-modal_{{$m->id}}" data-target="popup-modal_{{$m->id}}"
-                                            class="tw-text-white tw-bg-red-400 hover:tw-bg-red-500 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
+                                            class="tw-text-red-400 hover:tw-bg-red-400 hover:tw-text-white hover:tw-shadow-md tw-transition-all tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                                             <i class="fa-solid fa-trash"></i>
                                         </button>
 
