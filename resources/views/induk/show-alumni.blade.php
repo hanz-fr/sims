@@ -346,7 +346,6 @@
             <table class="tw-w-full tw-text-sm tw-text-center">
                 <thead class="tw-text-md tw-bg-gray-100 tw-text-basic-700 tw-border tw-font-pop">
                     <tr>
-                        <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">NO</th>
                         <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">NIS</th>
                         <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">NISN</th>
                         <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">NAMA PESERTA DIDIK</th>
@@ -358,7 +357,6 @@
                 <tbody class="tw-text-base">
                     @foreach ($alumni as $key => $a)
                     <tr class="tw-bg-white tw-border">
-                        <td class="tw-py-4 tw-px-6 tw-border">{{ $key + 1 }}</td>
                         <td class="tw-py-4 tw-px-6 tw-border">{{ $a->nis_siswa }}</td>
                         <td class="tw-py-4 tw-px-6 tw-border">{{ $a->nisn_siswa }}</td>
                         <td class="tw-py-4 tw-px-6 tw-border">{{ $a->nama_siswa }}</td>
