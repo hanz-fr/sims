@@ -33,9 +33,6 @@
                     Kirim Ulang
                 </button>
             </form>
-            <a href="/login" type="submit" class="tw-font-ubuntu tw-bg-gray-400 tw-py-3 text-md tw-mx-auto tw-font-medium tw-text-white tw-mt-2 hover:tw-bg-gray-600 tw-w-2/4">
-                Lanjutkan tanpa verifikasi
-            </a>
         </section> <!-- card -->
         @else
         <!-- card -->
