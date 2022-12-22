@@ -887,6 +887,14 @@ class ApiController extends Controller
     }
 
 
+
+
+
+
+
+
+
+
     /* API SISWA */
     public function getAllSiswa(Request $request)
     {
@@ -903,8 +911,9 @@ class ApiController extends Controller
         $sort = $request->sort;
         $dibuatTglDari = $request->dibuatTglDari;
         $dibuatTglKe = $request->dibuatTglKe;
+        $thn_ajaran = $request->thn_ajaran;
 
-        $response = Http::get("{$this->api_url}/siswa?page={$page}&perPage={$perPage}&search={$search}&nis_siswa={$nis_siswa}&nisn_siswa={$nisn_siswa}&nama_siswa={$nama_siswa}&jenis_kelamin={$jenis_kelamin}&KelasId={$KelasId}&sort_by={$sort_by}&sort={$sort}&dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}");
+        $response = Http::get("{$this->api_url}/siswa?page={$page}&perPage={$perPage}&search={$search}&nis_siswa={$nis_siswa}&nisn_siswa={$nisn_siswa}&nama_siswa={$nama_siswa}&jenis_kelamin={$jenis_kelamin}&KelasId={$KelasId}&sort_by={$sort_by}&sort={$sort}&dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}&thn_ajaran={$thn_ajaran}");
 
         if ($response->successful()) {
             
@@ -977,9 +986,10 @@ class ApiController extends Controller
         $sort = $request->sort;
         $dibuatTglDari = $request->dibuatTglDari;
         $dibuatTglKe = $request->dibuatTglKe;
+        $thn_ajaran = $request->thn_ajaran;
 
 
-        $response = Http::get("{$this->api_url}/siswa/{$request->jurusan}/{$request->kelas}?page={$page}&perPage={$perPage}&search={$search}&nis_siswa={$nis_siswa}&nisn_siswa={$nisn_siswa}&nama_siswa={$nama_siswa}&jenis_kelamin={$jenis_kelamin}&KelasId={$KelasId}&sort_by={$sort_by}&sort={$sort}&dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}");
+        $response = Http::get("{$this->api_url}/siswa/{$request->jurusan}/{$request->kelas}?page={$page}&perPage={$perPage}&search={$search}&nis_siswa={$nis_siswa}&nisn_siswa={$nisn_siswa}&nama_siswa={$nama_siswa}&jenis_kelamin={$jenis_kelamin}&KelasId={$KelasId}&sort_by={$sort_by}&sort={$sort}&dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}&thn_ajaran={$thn_ajaran}");
 
 
         if ($response->successful()) {
@@ -1415,6 +1425,8 @@ class ApiController extends Controller
                 'tgl_diterima' => $request->tgl_masuk,
                 'semester_diterima' => (int)$request->semester,
                 'diterima_di_kelas' => $request->diterima_di_kelas,
+                'thn_ajaran' => $request->thn_ajaran,
+                'status_siswa' => $request->status_siswa,
                 'alamat_siswa' => $request->alamat_siswa,
                 'sekolah_asal' => $request->nama_sekolah_asal,
                 'alamat_sekolah_asal' => $request->alamat_sekolah_asal,
@@ -1536,6 +1548,8 @@ class ApiController extends Controller
             'tgl_diterima' => $request->tgl_masuk,
             'semester_diterima' => (int)$request->semester,
             'diterima_di_kelas' => $request->diterima_di_kelas,
+            'thn_ajaran' => $request->thn_ajaran,
+            'status_siswa' => $request->status_siswa,
             'alamat_siswa' => $request->alamat_siswa,
             'sekolah_asal' => $request->nama_sekolah_asal,
             'alamat_sekolah_asal' => $request->alamat_sekolah_asal,

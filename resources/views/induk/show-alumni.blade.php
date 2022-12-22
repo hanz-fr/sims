@@ -216,7 +216,7 @@
                 </a>
             </div> --}}
             @can('rekap-siswa')
-            <div class="tw-flex tw-justify-center tw-items-center -tw-mb-8">
+            <div class="tw-flex tw-justify-center tw-items-center">
                 <button type="button" data-modal-toggle="export-print" title="Export ke print"><i class="fa-solid fa-print btn-export"></i></button>
                     
                 <div id="export-print" tabindex="-1"
@@ -365,11 +365,11 @@
                         <td class="tw-py-4 tw-px-6 tw-border">{{ $a->jenis_kelamin }}</td>
                         <td class="tw-py-4 tw-px-6 tw-border">{{ $a->KelasId }}</td>
                         <td>
-                            <a href="/edit-siswa/{{ $a->nis_siswa }}" class="tw-text-white tw-bg-kuning-500 hover:tw-bg-kuning-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
+                            <a href="/edit-siswa/{{ $a->nis_siswa }}" class="tw-text-kuning-500  hover:tw-text-white hover:tw-bg-kuning-500 hover:tw-shadow-md tw-transition-all tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                                 <i class="fa-solid fa-pen-to-square"></i></a>
                             </a>
-                            <a href="/detail/{{ $a->nis_siswa }}" class="tw-text-white tw-bg-gray-500 hover:tw-bg-gray-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
-                                <i class="fa-solid fa-eye"></i>
+                            <a href="/detail/{{ $a->nis_siswa }}" class="tw-text-gray-400  hover:tw-text-white hover:tw-bg-gray-400 hover:tw-shadow-md tw-transition-all tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
+                                <i class="fa-regular fa-eye"></i>
                             </a>
                         </td>
                     </tr>

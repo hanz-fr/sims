@@ -763,7 +763,6 @@ video {
 .btn-export {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
-  margin-bottom: 0.75rem;
   border-radius: 0.5rem;
   border-width: 1px;
   --tw-bg-opacity: 1;
@@ -873,6 +872,7 @@ video {
 
 .title-main {
   margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
   font-family: Poppins, sans-serif;
   font-weight: 700;
   --tw-text-opacity: 1;
@@ -1429,8 +1429,8 @@ video {
   margin-bottom: -2rem;
 }
 
-.tw-mb-\[16\.9rem\] {
-  margin-bottom: 16.9rem;
+.tw-mb-\[164px\] {
+  margin-bottom: 164px;
 }
 
 .tw-mb-\[20\.5rem\] {
@@ -1893,6 +1893,12 @@ video {
 
 .tw-list-none {
   list-style-type: none;
+}
+
+.tw-appearance-none {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 
 .tw-grid-flow-col {
@@ -2396,11 +2402,6 @@ video {
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
 
-.tw-bg-kuning-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 193 7 / var(--tw-bg-opacity));
-}
-
 .tw-bg-danger-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(248 59 59 / var(--tw-bg-opacity));
@@ -2799,6 +2800,10 @@ video {
   padding-right: 1.25rem;
 }
 
+.tw-pr-10 {
+  padding-right: 2.5rem;
+}
+
 .tw-pb-6 {
   padding-bottom: 1.5rem;
 }
@@ -2833,10 +2838,6 @@ video {
 
 .tw-pl-10 {
   padding-left: 2.5rem;
-}
-
-.tw-pr-10 {
-  padding-right: 2.5rem;
 }
 
 .tw-pb-28 {
@@ -3169,6 +3170,16 @@ video {
 .tw-text-gray-700 {
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity));
+}
+
+.tw-text-gray-600 {
+  --tw-text-opacity: 1;
+  color: rgb(75 85 99 / var(--tw-text-opacity));
+}
+
+.tw-text-kuning-500 {
+  --tw-text-opacity: 1;
+  color: rgb(255 193 7 / var(--tw-text-opacity));
 }
 
 .tw-text-sims-600 {
@@ -3841,6 +3852,11 @@ input[type="checkbox"]:checked {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.hover\:tw-border-sims-400:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(77 158 158 / var(--tw-border-opacity));
+}
+
 .hover\:tw-border-gray-300:hover {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
@@ -3975,19 +3991,14 @@ input[type="checkbox"]:checked {
   background-color: rgb(156 163 175 / var(--tw-bg-opacity));
 }
 
+.hover\:tw-bg-kuning-500:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 193 7 / var(--tw-bg-opacity));
+}
+
 .hover\:tw-bg-sims-600:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(45 114 116 / var(--tw-bg-opacity));
-}
-
-.hover\:tw-bg-kuning-600:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(226 148 0 / var(--tw-bg-opacity));
-}
-
-.hover\:tw-bg-gray-600:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
 }
 
 .hover\:tw-bg-danger-700:hover {
@@ -4008,6 +4019,11 @@ input[type="checkbox"]:checked {
 .hover\:tw-bg-\[\#3F7373\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(63 115 115 / var(--tw-bg-opacity));
+}
+
+.hover\:tw-bg-red-400:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 113 113 / var(--tw-bg-opacity));
 }
 
 .hover\:tw-bg-salmon-600:hover {
@@ -4129,6 +4145,12 @@ input[type="checkbox"]:checked {
 .hover\:tw-shadow-lg:hover {
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.hover\:tw-shadow-md:hover {
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
@@ -4335,6 +4357,14 @@ input[type="checkbox"]:checked {
 
   .md\:tw-mt-20 {
     margin-top: 5rem;
+  }
+
+  .md\:-tw-mb-10 {
+    margin-bottom: -2.5rem;
+  }
+
+  .md\:-tw-mb-2 {
+    margin-bottom: -0.5rem;
   }
 
   .md\:tw-h-auto {

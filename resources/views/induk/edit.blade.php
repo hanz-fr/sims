@@ -244,6 +244,14 @@
                     <input class="input-data-minimal" id="semester" type="number" name="semester" value="{{ $siswa->semester_diterima }}">
                 </div>
             </div>
+            <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
+                <div class="tw-w-full tw-px-3">
+                    <label class="label-input" for="thn_ajaran">
+                        Tahun Ajaran
+                    </label>
+                    <input class="input-data-minimal" id="thn_ajaran" type="number" name="thn_ajaran" value="{{ $siswa->thn_ajaran }}">
+                </div>
+            </div>
 
             {{-- sekolah asal --}}
             <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-mb-8 tw-mt-20 tw-text-sims-400">C.  Sekolah Asal</div>
@@ -491,6 +499,23 @@
                     </div>
                 </div>
 
+                <div class="tw-w-full tw-mt-6">
+                    <label class="label-input" for="status_siswa">
+                        Status Siswa *
+                    </label>
+                    <select class="input-data-minimal" id="status_siswa" name="status_siswa" value="{{ $siswa->status_siswa }}">
+                        @if($siswa->status_siswa === 'aktif')
+                        <option selected value="{{ $siswa->status_siswa }}">Aktif</option>
+                        <option value="non-aktif">Non Aktif</option>
+                        @elseif($siswa->status_siswa === 'non-aktif')
+                        <option selected value="{{ $siswa->status_siswa }}">Non Aktif</option>
+                        <option value="aktif">Aktif</option>
+                        @else
+                        <option selected value="aktif">Aktif</option>
+                        <option value="non-aktif">Non Aktif</option>
+                        @endif
+                    </select>
+                </div>
             </div>
 
             <div class="tw-mx-auto tw-text-center tw-mt-16">
