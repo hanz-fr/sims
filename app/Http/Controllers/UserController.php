@@ -81,7 +81,7 @@ class UserController extends Controller
 
         Mail::to($user->email)->send(new EmailVerification($user));
 
-        return redirect()->back()->with([
+        return view('auth.register', [
             'status' => 'success', 
             'message' => 'Link baru sudah terkirim',
             'user' => $user
@@ -116,65 +116,6 @@ class UserController extends Controller
 
     }
 
-
-    // send verify link
-    public function sendVerifyAccount($id, Request $request) {
-
-        $user = User::where('id', $id)->first();
-
-        $request->validate([
-            'email' => 'required|email',
-        ]);
-
-        $user->update([
-            'email' => $request->email
-        ]);
-        
-        Mail::send('auth.email.verification-after', [
-            'token' => $user->token, 
-            'user' => $user,
-            'title' => 'Email',
-        ], function($message) use($request) {
-            $message->to($request->email);
-            $message->subject('Verifikasi Akun SIMS');
-        });
-
-        return view('auth.edit-profil', [
-            'title'  => 'Verifikasi Akun',
-            'status' => 'success',
-            'user' => $user,
-            'active' => ''
-        ]);
-
-    }
-    
-
-    // verify account after login
-    public function verifyAccountAfter($token) {
-        
-        $user = User::where('token', $token)->first();
-
-        $current_year = Carbon::now()->year;
-
-        $userHistory = Http::get("{$this->api_url}/history/$user->nama/all?limit=5&year=$current_year");
-
-        if ($user->email_verified_at) {
-            return redirect()->back()->with('error', 'Email sudah terverifikasi');
-        } else {
-
-            $user->update([
-                'email_verified_at' => Carbon::now()
-            ]);
-
-            return view('auth.profil-user', [
-                'title'  => 'Profil User',
-                'active' => '',
-                'history' => json_decode($userHistory)->rows,
-            ], 
-            compact('user'));
-        }
-
-    }
     
     // show login form
     public function index() {
