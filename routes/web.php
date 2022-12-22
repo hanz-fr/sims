@@ -152,9 +152,12 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
 
     /* PROFILE */
     Route::get('/profile', [UserController::class, 'show'])->name('profile');
-    Route::get('/edit-profile', [UserController::class, 'edit']);
+    Route::get('/edit-profile', [UserController::class, 'edit'])->name('profile.edit');
     Route::post('/update-profile/{id}', [UserController::class, 'update']);
     Route::post('/change-password', [UserController::class, 'changePassword']);
+
+    Route::get('/email/verify/{id}', [UserController::class, 'sendVerifyAccount']);
+    Route::get('/email/verify-after/{token}', [UserController::class, 'verifyAccountAfter'])->name('account.verify');
 
 
 
@@ -444,13 +447,17 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin', 'revalidate']]
 
 
 // ROUTE USER SIMS (LOGIN & REGISTER)
-Route::get('/register', [UserController::class, 'registration']);
+Route::get('/register', [UserController::class, 'registration'])->name('register.form');
 Route::get('/login', [UserController::class, 'index'])->name('login');
 Route::post('/registeruser', [UserController::class, 'register']);
 Route::post('/loginuser', [UserController::class, 'authenticate']);
 Route::get('/signout', [UserController::class, 'signOut']);
 
+Route::get('email/verify/{token}', [UserController::class, 'verifyAccount'])->name('user.verify');
+Route::post('/resend-email/{id}', [UserController::class, 'resend'])->name('user.resend');
+
+
 Route::get('/forgot-password', [UserController::class, 'showForgetPasswordForm']);
 Route::post('/forget-password', [UserController::class, 'submitForgetPasswordForm']);
-Route::get('/reset-password/{token}', [UserController::class, 'showResetPasswordForm'])->name('reset.password');
-Route::post('/reset-password', [UserController::class, 'submitResetPasswordForm'])->name('update.password');
+Route::get('/reset-password/{token}/edit', [UserController::class, 'showResetPasswordForm'])->name('reset.password');
+Route::patch('/reset-password', [UserController::class, 'submitResetPasswordForm'])->name('update.password');

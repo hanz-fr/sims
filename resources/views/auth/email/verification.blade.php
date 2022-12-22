@@ -80,7 +80,7 @@
 
   <!-- start preheader -->
   <div class="preheader" style="display: none; max-width: 0; max-height: 0; overflow: hidden; font-size: 1px; line-height: 1px; color: #fff; opacity: 0;">
-    Atur Ulang Kata Sandi
+    Verifikasi Akun SIMS anda
   </div>
   <!-- end preheader -->
 
@@ -108,16 +108,14 @@
       <td align="center" bgcolor="#4e9d9d">
         <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
           <tr>
-            <td align="left" bgcolor="#ffffff" style="padding: 36px 24px 0; font-family: 'Poppins', sans-serif; border-top: 3px solid #d4dadf;">
-              <h1 style="margin: 0; font-size: 32px; font-weight: 700; letter-spacing: -1px; line-height: 48px;">Reset Password</h1>
+            <td align="center" bgcolor="#ffffff" style="padding: 36px 24px 0; font-family: 'Poppins', sans-serif; border-top: 3px solid #d4dadf;">
+              <h1 style="margin: 0; font-size: 32px; font-weight: 600; letter-spacing: -1px; line-height: 48px;">Konfirmasi akun anda</h1>
             </td>
           </tr>
         </table>
       </td>
     </tr>
-    <!-- end hero -->
 
-    <!-- start copy block -->
     <tr>
       <td align="center" bgcolor="#4e9d9d">
         <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
@@ -125,7 +123,7 @@
           <!-- start copy -->
           <tr>
             <td align="center" bgcolor="#ffffff" style="padding: 24px; font-family: 'Poppins', sans-serif; font-size: 16px; line-height: 24px;">
-              <p style="margin: 0;">Halo kack~! Klik untuk ubah kata sandi anda^_^</p>
+              <p style="margin: 0;">Halo {{ $user->nama }}~! Klik untuk verifikasi akun anda^_^</p>
             </td>
           </tr>
           <!-- end copy -->
@@ -139,7 +137,7 @@
                     <table border="0" cellpadding="0" cellspacing="0">
                       <tr>
                         <td align="center" bgcolor="#4d9e9e" style="border-radius: 6px;">
-                          <a href="{{ route('reset.password', $token) }}" target="_blank" style="display: inline-block; padding: 16px 36px; font-family: 'Poppins', sans-serif; font-size: 16px; color: #ffffff; text-decoration: none; border-radius: 6px;">Atur Ulang Kata Sandi</a>
+                          <a href="{{ route('user.verify', $user->token) }}" target="_blank" style="display: inline-block; padding: 16px 36px; font-family: 'Poppins', sans-serif; font-size: 16px; color: #ffffff; text-decoration: none; border-radius: 6px;">Verifikasi Akun</a>
                         </td>
                       </tr>
                     </table>
@@ -153,8 +151,8 @@
           <!-- start copy -->
           <tr style="margin-bottom: 30px">
             <td align="center" bgcolor="#ffffff" style="padding: 30px; font-family: 'Poppins', sans-serif; font-size: 16px; line-height: 24px;">
-              <p style="margin: 0;">Atau salin link di bawah ini untuk atur ulang kata sandi</p> <br>
-              <p style="margin: 0;"><a href="{{ route('reset.password', $token) }}" target="_blank">{{ route('reset.password', $token) }}</a></p>
+              <p style="margin: 0;">Atau salin link di bawah ini untuk verifikasi</p> <br>
+              <p style="margin: 0;"><a href="{{ route('user.verify', $user->token) }}" target="_blank">{{ route('user.verify', $user->token) }}</a></p>
             </td>
           </tr>
           <!-- end copy -->

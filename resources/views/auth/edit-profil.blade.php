@@ -6,22 +6,41 @@
         <div class="lg:tw-w-1/5 sm:tw-w-full tw-bg-white tw-py-20 tw-px-10 tw-shadow-md tw-flex tw-flex-col">
             <ul class="tw-flex lg:tw-flex-col sm:tw-flex-row tw-text-left mb-0 mt-3 tw--ml-6">
                 <li @click="openTab = 1" :class="{ 'tw--mb-px': openTab === 1 }" class="tw--mb-px tw-mr-1">
-                    <button :class="openTab === 1 ? activeClasses : inactiveClasses" class="hover:tw-text-sims-400 tw-text-lg tw-inline-block tw-py-2 tw-px-4 tw-font-semibold tw-font-pop" href="#">
+                    <button :class="openTab === 1 ? activeClasses : inactiveClasses" class="hover:tw-text-sims-400 tw-text-lg tw-inline-block tw-py-2 tw-px-4 tw-font-semibold tw-font-pop">
                         <i class="fa-solid fa-address-card tw-mr-3 tw-text-lg"></i>Edit Profil
                     </button>
                 </li>
                 <li @click="openTab = 2" :class="{ 'tw--mb-px': openTab === 2 }" class="tw--mb-px tw-mr-1">
-                    <button :class="openTab === 2 ? activeClasses : inactiveClasses" class="tw-text-left tw-text-lg hover:tw-text-sims-400 tw-inline-block tw-py-2 tw-px-4 tw-font-semibold tw-font-pop" href="#">
-                        <i class="fa-solid fa-shield-check tw-mr-3 tw-text-lg"></i>Ubah Kata Sandi
+                    <button :class="openTab === 2 ? activeClasses : inactiveClasses" class="tw-text-left tw-text-lg hover:tw-text-sims-400 tw-inline-block tw-py-2 tw-px-4 tw-font-semibold tw-font-pop">
+                        <i class="fa-solid fa-lock tw-mr-3 tw-text-lg"></i>Ubah Kata Sandi
+                    </button>
+                </li>
+                <li @click="openTab = 3" :class="{ 'tw--mb-px': openTab === 3 }" class="tw--mb-px tw-mr-1">
+                    <button :class="openTab === 3 ? activeClasses : inactiveClasses" class="tw-text-left tw-text-lg tw-text-gray-500 hover:tw-text-sims-400 tw-inline-block tw-py-2 tw-px-4 tw-font-semibold tw-font-pop">
+                        <i class="fa-solid fa-shield-check tw-mr-3 tw-text-lg"></i>Verifikasi Akun
                     </button>
                 </li>
             </ul>
         </div>
 
+    @if ($status == 'success')
+    <div class="lg:tw-w-4/5 sm:tw-w-full tw-flex tw-flex-col tw-bg-white tw-shadow-md tw-px-20 tw-py-16 tw-mx-auto tw-text-center">
+        <img class="tw-mx-auto tw-w-2/5" src="{{ URL::asset('assets/img/mailbox.svg') }}" alt="Registration Success">
+        <div class="tw-text-3xl tw-font-bold tw-text-sims-400 tw-mt-5">Verifikasi akun anda</div>
+        <div class="tw-text-sm tw-text-basic-300 tw-font-medium tw-mt-3">Kami sudah mengirimkan link verifikasi, silahkan cek email anda.</div>
+        <form action="{{ route('user.resend', auth()->user()->id) }}" method="post">
+            @csrf
+            <button type="submit" class="tw-font-ubuntu tw-bg-[#90C2C2] tw-py-3 text-md tw-mx-auto tw-font-medium tw-text-white tw-mt-9 hover:tw-bg-[#5B9C9C] tw-w-2/4">
+                Kirim Ulang
+            </button>
+        </form>
+    </div>
+    @else
+    
     {{-- edit profil --}}
     <div x-show="openTab === 1" class="lg:tw-w-3/5 sm:tw-w-full tw-flex tw-flex-col tw-bg-white tw-shadow-md tw-px-20 tw-py-16">
         <h4 class="title-main tw-mb-8">Edit Profil</h4>
-        <form action="/update-profile/{{$user->id}}" method="POST">
+        <form action="/update-profile/{{auth()->user()->id}}" method="POST">
             @csrf
             <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
                 <div class="tw-w-full tw-px-3">
@@ -45,7 +64,7 @@
                     @enderror
                 </div>
             </div>
-            <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
+            {{-- <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
                 <div class="tw-w-full tw-px-3">
                     <label class="label-input" for="email">Email</label>
                     <input class="input-data" id="email" @error('email') is-invalid @enderror type="email" name="email" value="{{ auth()->user()->email }}">
@@ -53,7 +72,7 @@
                         <div class="tw-text-sm tw-text-pink-700 tw-mt-1 tw-font-ubuntu">{{ $message }}</div>
                     @enderror
                 </div>
-            </div>
+            </div> --}}
             <div class="tw-mx-auto tw-text-center tw-mt-10 ">
                 <button type="submit" class="tw-bg-sims-400 tw-font-medium tw-font-pop tw-text-white tw-py-3 tw-px-6 tw-rounded-lg">Simpan Perubahan</button>
             </div>
@@ -178,6 +197,27 @@
         </div>
       </form>
     </div>
+
+    <div x-show="openTab === 3" class="lg:tw-w-4/5 sm:tw-w-full tw-flex tw-flex-col tw-bg-white tw-shadow-md tw-px-20 tw-py-16">
+        <h4 class="title-main tw-mb-8 tw-text-center">Verifikasi Akun</h4>
+          <div x-data="{ show: true }" class="tw-flex tw-flex-wrap tw-mb-6">
+            <div class="tw-flex tw-flex-col tw-mx-auto tw-text-center">
+                <img class="tw-mx-auto" src="{{ URL::asset('assets/img/email-sent.svg') }}" alt="" srcset="">
+                  <div class="tw-text-sm tw-text-[#B8B8B8] tw-font-medium tw-font-pop">Verifikasi email anda atau ubah email untuk memverifikasi akun</div>
+                  <form action="/email/verify/{{ auth()->user()->id }}" method="get">
+                    @csrf
+                        <input type="text" name="email" @error('email') is-invalid @enderror value="{{ auth()->user()->email }}" placeholder="Email" class="login-input tw-mt-3">
+                        @error('email')
+                            <div class="tw-text-sm tw-text-pink-700 tw-mt-1">{{ $message }}</div>
+                        @enderror
+                        <button type="submit" class="tw-font-ubuntu tw-bg-[#90C2C2] tw-py-3 text-md tw-mx-auto tw-font-medium tw-text-white tw-mt-9 hover:tw-bg-[#5B9C9C] tw-w-2/4">
+                            Kirim Link Verifikasi
+                        </button>
+                  </form>
+            </div>
+          </div>
   </div>
+  @endif
+
 </div>
 @endsection

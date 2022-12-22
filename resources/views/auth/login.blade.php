@@ -95,7 +95,7 @@
                                 </div>
                                 <label for="remember" class="tw-ml-1 tw-text-sm tw-font-medium tw-text-sims-400">Remember me</label>
                             </div>
-                            {{-- <a href="/forgot-password" class="tw-text-sims-400 tw-underline tw-text-sm">Lupa Kata Sandi?</a> --}}
+                            <a href="/forgot-password" class="tw-text-sims-400 tw-underline tw-text-sm">Lupa Kata Sandi?</a>
                         </li>
                         <li>
                             <button type="submit" class="tw-bg-[#90C2C2] tw-w-full tw-py-3 tw-text-sm tw-font-medium tw-text-white hover:tw-bg-[#5B9C9C]">Masuk</button>

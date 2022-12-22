@@ -21,10 +21,10 @@
     <div class="tw-bg-white tw-rounded-[50px] tw-flex tw-flex-col tw-mx-auto tw-my-28 tw-px-20 tw-py-11 tw-top-1/2 tw-w-3/5 tw-h-3/5 tw-border tw-border-slate-200 tw-shadow-xl tw-text-center">
         <img class="tw-w-1/2 tw-mx-auto" src="assets/img/email-sent.svg" alt="" srcset="">
           <div class="tw-text-3xl tw-font-bold tw-text-sims-400 tw-font-pop tw-mt-5">Email Terkirim</div>
-          <div class="tw-text-sm tw-text-[#B8B8B8] tw-font-medium tw-font-pop tw-mt-3">Please check your inbox</div>
+          <div class="tw-text-sm tw-text-[#B8B8B8] tw-font-medium tw-font-pop tw-mt-3">Cek inbox email anda</div>
           <a href="/login">
           <button class="tw-font-ubuntu tw-bg-[#90C2C2] tw-py-3 text-md tw-mx-auto tw-font-medium tw-text-white tw-mt-9 hover:tw-bg-[#5B9C9C] tw-w-2/4">
-          Okay
+          Oke!
         </button>
       </a>
     </div> <!-- card -->
@@ -37,7 +37,7 @@
             <!-- form section -->
             <div class="input-area lg:tw-w-3/5 tw-mr-8 sm:tw-w-full tw-flex tw-flex-col tw-justify-center">
                 <div class="tw-text-3xl tw-text-sims-400 tw-font-pop tw-font-bold">Atur Ulang Kata Sandi</div>
-                <div class="tw-text-sm tw-mt-2 tw-text-slate-400 tw-font-pop">Input your email address, we will send you a reset password link</div>
+                <div class="tw-text-sm tw-mt-2 tw-text-slate-400 tw-font-pop">Input alamat email anda, kami akan mengirimkan link atur ulang kata sandi</div>
                 <form action="/forget-password" method="post" class="tw-mt-12">
                     @csrf
                     <ul class="tw-flex tw-flex-col tw-gap-5 tw-font-ubuntu">
@@ -48,7 +48,7 @@
                             @enderror
                         </li>
                         <li>
-                            <button type="submit" class="tw-bg-[#90C2C2] tw-w-full tw-py-3 tw-text-sm tw-font-medium tw-text-white hover:tw-bg-[#5B9C9C]">Send Reset Password Link</button>
+                            <button type="submit" class="tw-bg-[#90C2C2] tw-w-full tw-py-3 tw-text-sm tw-font-medium tw-text-white hover:tw-bg-[#5B9C9C]">Kirim Link</button>
                         </li>
                     </ul>
                 </form>

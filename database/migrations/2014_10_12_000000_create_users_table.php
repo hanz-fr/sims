@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('nama');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
+            $table->string('token');
             $table->string('password');
             $table->tinyInteger('role');
             /* Users: Tata Usaha, Kesiswaan, Kurikulum, Wali Kelas */

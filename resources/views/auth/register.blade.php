@@ -21,6 +21,23 @@
 <body style="background-image: url('{{ URL::asset('assets/img/bg-login.svg') }}')">
 
     <div class="tw-mx-auto tw-my-14 tw-container">
+
+        @if($status == 'success')
+        <section class="tw-bg-white tw-font-pop tw-rounded-[50px] tw-flex tw-flex-col tw-mx-auto tw-my-28 tw-px-20 tw-py-11 tw-top-1/2 tw-w-3/5 tw-h-3/5 tw-border tw-border-slate-200 tw-shadow-xl tw-text-center">
+            <img class="tw-w-1/2 tw-mx-auto" src="{{ URL::asset('assets/img/email-sent.svg') }}" alt="Registration Success">
+            <div class="tw-text-3xl tw-font-bold tw-text-sims-400 tw-mt-5">Verifikasi akun anda</div>
+            <div class="tw-text-sm tw-text-basic-300 tw-font-medium tw-mt-3">Kami sudah mengirimkan link verifikasi, silahkan check email anda.</div>
+            <form action="{{ route('user.resend', $user->id) }}" method="post">
+                @csrf
+                <button type="submit" class="tw-font-ubuntu tw-bg-[#90C2C2] tw-py-3 text-md tw-mx-auto tw-font-medium tw-text-white tw-mt-9 hover:tw-bg-[#5B9C9C] tw-w-2/4">
+                    Kirim Ulang
+                </button>
+            </form>
+            <a href="/login" type="submit" class="tw-font-ubuntu tw-bg-gray-400 tw-py-3 text-md tw-mx-auto tw-font-medium tw-text-white tw-mt-2 hover:tw-bg-gray-600 tw-w-2/4">
+                Lanjutkan tanpa verifikasi
+            </a>
+        </section> <!-- card -->
+        @else
         <!-- card -->
         <div class="tw-bg-white tw-flex lg:tw-flex-row sm:tw-flex-col-reverse tw-mx-auto tw-px-20 tw-py-12 tw-w-2/3 tw-h-3/5 tw-border tw-border-slate-200 tw-shadow-xl tw-p-5">
             <!-- form section -->
@@ -106,8 +123,10 @@
 
             <!-- image -->
             <img class="lg:tw-w-1/2 sm:tw-mb-4 sm:tw-w-full tw-items-center md:tw-m-auto" src="{{ URL::asset('assets/img/sims-login.svg') }}" alt="" srcset="">
+            @endif
         </div>
     </div> <!-- container -->
+    @include('sweetalert::alert')
     {{-- alpine js --}}
     <script defer src="https://unpkg.com/@alpinejs/intersect@3.10.3/dist/cdn.min.js"></script>
     <script defer src="https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"></script>

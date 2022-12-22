@@ -2,28 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use Carbon\Carbon;
 use App\Models\User;
+use App\Models\UserVerify;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
+use App\Mail\EmailVerification;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Http;
 
 class UserController extends Controller
 {
-    // registrasi
-    public function registration() {
-        
-        return view('auth.register', [
-            'title' => 'Registrasi Akun'
-        ]);
-
-    }
-
 
     /* GLOBAL VARIABLES */
     public function __construct()
@@ -37,32 +30,149 @@ class UserController extends Controller
     }
 
 
+    // registrasi
+    public function registration() {
+    
+        return view('auth.register', [
+            'title' => 'Registrasi Akun',
+            'status' => ''
+        ]);
+
+    }
+
+
     public function register(Request $request) {
 
         $request->validate([
             'nip'      => 'required|unique:users|min:9|max:18',
             'nama'     => 'required',
-            // 'phone'    => 'required|unique:users|max:20',
             'email'    => 'required|email|unique:users',
             'role'     => 'required',
             'password' => 'required|min:6',
         ]);
         
-        $user = new User([
+        $user = User::create([
             'nip'      => $request->nip,
             'nama'     => $request->nama,
-            // 'phone'    => $request->phone,
             'email'    => $request->email,
             'role'     => $request->role,
             'password' => Hash::make($request->password),
+            'token'    => Str::random(40),
         ]);
 
-        $user->save();
-         
-        return view("auth.login", [
-            'title'  => 'Akun berhasil dibuat',
-            'status' => 'success'
+        Mail::to($request->email)->send(new EmailVerification($user));
+
+        return view('auth.register', [
+            'title'  => 'Verifikasi akun anda',
+            'status' => 'success',
+            'user' => $user
         ]);
+
+    }
+
+
+    public function resend($id) {
+
+        $user = User::where('id', $id)->first();
+
+        $user->update([
+            'token' => Str::random(40)
+        ]);
+
+        Mail::to($user->email)->send(new EmailVerification($user));
+
+        return redirect()->back()->with([
+            'status' => 'success', 
+            'message' => 'Link baru sudah terkirim',
+            'user' => $user
+        ]);
+
+    }
+
+
+    public function verifyAccount($token) {
+        
+        $user = User::where('token', $token)->first();
+
+        if (!$user){
+            return redirect()->route('register.form')->with('error', 'Invalid URL');
+        } else {
+
+            if ($user->email_verified_at) {
+                return redirect()->route('register.form')->with('error', 'Email sudah terverifikasi');
+            } else {
+                $user->update([
+                    'email_verified_at' => Carbon::now()
+                ]);
+
+                return view('auth.login', [
+                    'title'  => 'Log In',
+                    'status' => 'success'
+                ]);
+
+            }
+
+        }
+
+    }
+
+
+    // send verify link
+    public function sendVerifyAccount($id, Request $request) {
+
+        $user = User::where('id', $id)->first();
+
+        $request->validate([
+            'email' => 'required|email',
+        ]);
+
+        $user->update([
+            'email' => $request->email
+        ]);
+        
+        Mail::send('auth.email.verification-after', [
+            'token' => $user->token, 
+            'user' => $user,
+            'title' => 'Email',
+        ], function($message) use($request) {
+            $message->to($request->email);
+            $message->subject('Verifikasi Akun SIMS');
+        });
+
+        return view('auth.edit-profil', [
+            'title'  => 'Verifikasi Akun',
+            'status' => 'success',
+            'user' => $user,
+            'active' => ''
+        ]);
+
+    }
+    
+
+    // verify account after login
+    public function verifyAccountAfter($token) {
+        
+        $user = User::where('token', $token)->first();
+
+        $current_year = Carbon::now()->year;
+
+        $userHistory = Http::get("{$this->api_url}/history/$user->nama/all?limit=5&year=$current_year");
+
+        if ($user->email_verified_at) {
+            return redirect()->back()->with('error', 'Email sudah terverifikasi');
+        } else {
+
+            $user->update([
+                'email_verified_at' => Carbon::now()
+            ]);
+
+            return view('auth.profil-user', [
+                'title'  => 'Profil User',
+                'active' => '',
+                'history' => json_decode($userHistory)->rows,
+            ], 
+            compact('user'));
+        }
 
     }
     
@@ -97,7 +207,7 @@ class UserController extends Controller
             Auth::setRememberDuration(43200); // equivalent to 1 month
         endif;
   
-        return redirect("login")->with('error', 'Login details are not valid');
+        return redirect("login")->with('error', 'Detail login tidak valid!');
     }
 
     // logout
@@ -138,7 +248,8 @@ class UserController extends Controller
 
         return view('auth.edit-profil', [
             'title'  => 'Profil User',
-            'active' => ''
+            'active' => '',
+            'status' => ''
         ], 
         compact('user'));
 
@@ -173,21 +284,15 @@ class UserController extends Controller
         ]);
 
         if(!Hash::check($request->old_password, auth()->user()->password)) {
-            return back()->with("error", "Old Password Doesn't match!");
+            return back()->with('error', 'Kata Sandi lama tidak cocok!');
         }
 
         User::whereId(auth()->user()->id)->update([
-        'password' => Hash::make($request->new_password)
+            'password' => Hash::make($request->new_password)
         ]);
 
-        return back()->with('success', 'Password changed successfully!');
+        return back()->with('success', 'Kata Sandi berhasil diubah!');
 
-    }
-
-
-    // number verification form
-    public function verifyAccount() {
-        
     }
 
 
@@ -195,7 +300,7 @@ class UserController extends Controller
       public function showForgetPasswordForm() {
 
          return view('auth.forgot-password', [
-            'title' => 'Forgot Password',
+            'title' => 'Lupa Kata Sandi',
             'status' => ''
          ]);
 
@@ -218,10 +323,10 @@ class UserController extends Controller
   
         Mail::send('auth.email.forget-password', [
             'token' => $token, 
-            'title' => 'Email'
+            'title' => 'Email',
         ], function($message) use($request) {
             $message->to($request->email);
-            $message->subject('Reset Password');
+            $message->subject('Atur Ulang Kata Sandi');
         });
   
         return view("auth.forgot-password", [
@@ -234,9 +339,11 @@ class UserController extends Controller
 
       public function showResetPasswordForm($token) { 
 
+        $user = DB::table('password_resets')->where('token', $token)->first();
+
          return view('auth.reset-password', [
-            'token' => $token,
-            'title' => 'Reset your password'
+            'user' => $user,
+            'title' => 'Atur Ulang Kata Sandi'
         ]);
 
       }
@@ -245,7 +352,6 @@ class UserController extends Controller
       public function submitResetPasswordForm(Request $request) {
 
         $this->validate($request, [
-            'email' => 'required',
             'password' => 'required|min:6',
             'password_confirmation' => 'required|same:password'
         ]);
@@ -257,7 +363,7 @@ class UserController extends Controller
             return redirect()->route('login')->with('success', 'Password has been changed');
         }
 
-        return redirect()->route('update.password')->with('failed', 'Failed! something went wrong');
+        return redirect()->route('update.password')->with('error', 'Failed! something went wrong');
 
     }
 

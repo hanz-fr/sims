@@ -44,15 +44,16 @@
                         <div class="tw-text-basic-200">{{ auth()->user()->nip }}</div>
                     </div>
                     <div class="tw-flex tw-flex-col tw-gap-5 tw-font-bold tw-text-xl">
-                        <div class="tw-text-sims-400">Email</div>
+                        <div class="tw-flex">
+                            <div class="tw-text-sims-400 tw-mr-4">Email</div>
+                            @if (auth()->user()->email_verified_at)
+                                <span class="tw-text-xs tw-flex tw-py-1 tw-px-2.5 tw-text-center tw-whitespace-nowrap tw-items-center tw-justify-center tw-font-bold tw-bg-ijo-400 tw-text-white tw-rounded-full">Terverifikasi</span>
+                            @else
+                                <a href="/edit-profile"><span class="tw-text-xs tw-flex tw-py-1 tw-px-2.5 tw-text-center tw-whitespace-nowrap tw-items-center tw-justify-center tw-font-bold tw-bg-gray-400 hover:tw-bg-gray-600 tw-text-white tw-rounded-full">Belum Terverifikasi</span></a>
+                            @endif
+                        </div>
                         <div class="tw-text-basic-200">{{ auth()->user()->email }}</div>
                     </div>
-                    {{-- <div class="tw-flex tw-flex-col tw-gap-5 tw-font-bold tw-text-xl">
-                        <div class="tw-text-sims-400">Nomor Telepon</div>
-                        <div class="tw-text-basic-200">
-                            {{ auth()->user()->phone }}
-                        </div>
-                    </div> --}}
                 </div>
             </div>
 
