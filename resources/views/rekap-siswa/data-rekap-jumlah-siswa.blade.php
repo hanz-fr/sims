@@ -16,8 +16,8 @@
             <div class="tw-float-right">
                 @can('rekap-siswa')
                 <div class="tw-flex tw-items-center -tw-mt-4">
+                    <div class="tw-font-pop tw-text-gray-400 tw-text-xs tw-mx-10">*Data siswa yang ditampilkan adalah siswa yang sedang aktif sekolah.</div>
                     <a href="/rekap-jumlah-siswa-print" target="__blank" title="Print"><i class="fa-solid fa-print btn-export"></i></a>
-                    {{-- <button id="copy_btn" type="button" value="copy"><i class="fa-solid fa-copy btn-export"></i></button> --}}
                     <a href="/rekap-jumlah-siswa-excel" title="Export ke Excel" title="Export ke Excel"><i class="fa-solid fa-file-excel btn-export"></i></a>
                     <a href="/rekap-jumlah-siswa-pdf" title="Export ke PDF"><i class="fa-solid fa-file-pdf btn-export"></i></a>
                 </div>
@@ -134,7 +134,7 @@
                                 <td class="tw-py-4 tw-px-6 tw-border">
                                     {{ $k->jumlahSiswaLaki - $k->siswaLakiKeluar + $k->siswaLakiMasuk }}</td>
                                 <td class="tw-py-4 tw-px-6 tw-border">
-                                    {{ $k->jumlahSiswaPerempuan - $k->siswaPerempuanKeluar + $k->siswaPerempuanMasuk + $k->jumlahSiswaLaki - $k->siswaLakiKeluar + $k->siswaLakiMasuk }}
+                                   {{ $k->jumlahSiswaPerempuan - $k->siswaPerempuanKeluar + $k->siswaPerempuanMasuk + $k->jumlahSiswaLaki - $k->siswaLakiKeluar + $k->siswaLakiMasuk }}
                                 </td>
                             </tr>
                             <?php $sum_total_siswa_p += $k->jumlahSiswaPerempuan; ?>
