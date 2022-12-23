@@ -137,8 +137,6 @@
                         <input type="hidden" name="search" value="{{ $_GET['search'] }}"> 
                         @endif
                         
-                        @if(isset($_GET['dibuatTglDari'])) <input name="dibuatTglDari" value="{{ $_GET['dibuatTglDari'] }}" type="hidden"> @endif
-                        @if(isset($_GET['dibuatTglKe'])) <input name="dibuatTglKe" value="{{ $_GET['dibuatTglKe'] }}" type="hidden"> @endif
                         
                         <ul class="tw-p-3 tw-space-y-1 tw-text-sm tw-text-gray-700" aria-labelledby="dropdownToggleButton">
                             <li>
@@ -229,6 +227,8 @@
                             </div>
                         </div>
 
+                        @if(isset($_GET['dibuatTglDari'])) <input name="dibuatTglDari" value="{{ $_GET['dibuatTglDari'] }}" type="hidden"> @endif
+                        @if(isset($_GET['dibuatTglKe'])) <input name="dibuatTglKe" value="{{ $_GET['dibuatTglKe'] }}" type="hidden"> @endif
                         @if(isset($_GET['thn_ajaran'])) <input name="thn_ajaran" value="{{ $_GET['thn_ajaran'] }}" type="hidden"> @endif
 
                         <div class="tw-flex tw-justify-center">
@@ -256,7 +256,6 @@
                         @if(isset($_GET['KelasId'])) <input name="KelasId" value="{{ $_GET['KelasId'] }}" type="hidden"> @endif
                         @if(isset($_GET['sort_by'])) <input name="sort_by" value="{{ $_GET['sort_by'] }}" type="hidden"> @endif
                         @if(isset($_GET['sort'])) <input name="sort" value="{{ $_GET['sort'] }}" type="hidden"> @endif
-                        @if(isset($_GET['thn_ajaran'])) <input name="thn_ajaran" value="{{ $_GET['thn_ajaran'] }}" type="hidden"> @endif
                         
                         <div class="tw-flex tw-gap-3 tw-justify-between tw-mt-5 tw-mx-5">
                             <div class="tw-absolute tw-right-4 tw-top-2">
@@ -282,6 +281,9 @@
                                 <input class="input-data tw-text-xs tw-font-pop" id="dibuatTglKe" name="dibuatTglKe" type="date" placeholder="dd/mm/yyyy" @if(isset($_GET['dibuatTglKe'])) value="{{ $_GET['dibuatTglKe'] }}" @endif>
                             </div>
                         </div>
+
+                        @if(isset($_GET['thn_ajaran'])) <input name="thn_ajaran" value="{{ $_GET['thn_ajaran'] }}" type="hidden"> @endif
+
                         <div class="tw-flex tw-justify-center tw-mt-3">
                             <button type="submit" class="tw-w-full tw-rounded-lg tw-mx-3 tw-font-pop tw-text-white tw-text-sm tw-font-medium tw-mb-2 tw-py-2 tw-bg-sims-400 hover:tw-bg-sims-500 tw-transition-all tw-ease-in-out">Simpan</button>
                         </div>
@@ -501,13 +503,11 @@
             <div class="tw-py-3 tw-my-auto tw-h-min tw-flex tw-justify-center">
                 <form action="/data-induk-siswa/{{ $jurusan }}/{{ $kelas }}" class="tw-text-center">
 
+                    <input type="number" name="page" class="tw-bg-white tw-border tw-border-slate-200 tw-w-1/2 tw-font-pop tw-font-medium tw-text-slate-500 tw-rounded-md tw-text-center focus:tw-ring-gray-200 focus:tw-border-gray-200 no-spin" min="1" @if(isset($_GET['page'])) value="{{ $_GET['page'] }}"@endif>
+
                     @if(isset($_GET['perPage']))
                     <input name="perPage" value="{{ $_GET['perPage'] }}" type="hidden">
                     @endif
-
-
-                    <input type="number" name="page" class="tw-bg-white tw-border tw-border-slate-200 tw-w-1/2 tw-font-pop tw-font-medium tw-text-slate-500 tw-rounded-md tw-text-center focus:tw-ring-gray-200 focus:tw-border-gray-200 no-spin" min="1" @if(isset($_GET['page'])) value="{{ $_GET['page'] }}"@endif>
-
 
                     @if(isset($_GET['search']))
                     <input name="search" value="{{ $_GET['search'] }}" type="hidden">
@@ -529,14 +529,12 @@
             <div class="tw-py-3 tw-my-auto tw-h-min tw-flex tw-justify-center">
                 <form action="/data-induk-siswa" class="tw-text-center">
 
+                    <input type="number" name="page" class="tw-bg-white tw-border tw-border-slate-200 tw-w-1/2 tw-font-pop tw-font-medium tw-text-slate-500 tw-rounded-md tw-text-center focus:tw-ring-gray-200 focus:tw-border-gray-200 no-spin" min="1" @if(isset($_GET['page'])) value="{{ $_GET['page'] }}"@endif>
+                    
                     @if(isset($_GET['perPage']))
                     <input name="perPage" value="{{ $_GET['perPage'] }}" type="hidden">
                     @endif
 
-
-                    <input type="number" name="page" class="tw-bg-white tw-border tw-border-slate-200 tw-w-1/2 tw-font-pop tw-font-medium tw-text-slate-500 tw-rounded-md tw-text-center focus:tw-ring-gray-200 focus:tw-border-gray-200 no-spin" min="1" @if(isset($_GET['page'])) value="{{ $_GET['page'] }}"@endif>
-
-                    
                     @if(isset($_GET['search']))
                     <input name="search" value="{{ $_GET['search'] }}" type="hidden">
                     @endif
@@ -594,7 +592,7 @@
 </script>
 
 <script src="index.js"></script>
-          <script>function showTooltip(flag) {
+<script>function showTooltip(flag) {
   switch (flag) {
     case 1:
       document.getElementById("tooltip1").classList.remove("hidden");
