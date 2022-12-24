@@ -290,6 +290,11 @@
                         </form>
                     </div>
 
+                    @if( ! empty($jurusan) && ! empty($kelas))
+
+                    
+                    @else
+                    
                     <!-- This is an example component -->
                     <div class="tw-mx-5">
                         <select id="show-tahun-ajaran" class="tw-border tw-border-none tw-text-sims-400 hover:tw-text-white tw-font-pop tw-text-sm tw-font-medium tw-rounded-lg tw-h-10 tw-pl-5 tw-pr-10 tw-bg-white hover:tw-bg-sims-400 hover:tw-border-sims-400 focus:tw-outline-none tw-appearance-none focus:tw-ring-0 tw-shadow-md tw-transition-all tw-ease-in-out" style="cursor: pointer;">
@@ -321,6 +326,9 @@
                           @endfor
                         </select>
                     </div>
+
+
+                    @endif
                 </div>
             </div>
             <div class="tw-flex">

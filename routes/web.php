@@ -115,7 +115,7 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
 
     /* GET DATA INDUK BY JURUSAN */
 
-    Route::get('/data-induk-siswa/{jurusan}/{kelas}', [ApiController::class, 'getSiswaByJurusanKelas']);
+    Route::get('/data-induk-siswa/{jurusan}/{kelas}/{angkatan}', [ApiController::class, 'getSiswaByJurusanKelas']);
 
 
     /* JURUSAN */
