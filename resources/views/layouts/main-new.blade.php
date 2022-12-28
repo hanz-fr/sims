@@ -78,7 +78,7 @@
         <!-- Left mini bar -->
         <nav
           aria-label="Options"
-          class="tw-z-20 tw-flex-col tw-items-center tw-flex-shrink-0 tw-hidden tw-w-16 tw-py-4 tw-bg-white tw-border-r-2 tw-border-indigo-100 tw-shadow-md sm:tw-flex tw-rounded-tr-3xl tw-rounded-br-3xl"
+          class="tw-z-20 tw-flex-col tw-items-center tw-flex-shrink-0 tw-hidden tw-w-16 tw-py-4 tw-bg-white tw-border-r-2 tw-border-indigo-100 tw-shadow-md sm:tw-flex"
         >
           <!-- Logo -->
           <div class="tw-flex-shrink-0 tw-py-4">
