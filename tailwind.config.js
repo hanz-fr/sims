@@ -13,6 +13,8 @@ module.exports = {
       fontFamily: {
         pop : ['Poppins','sans-serif'],
         ubuntu : ['Ubuntu'],
+        satoshi: ['Satoshi'],
+        sg: ['Space Grotesk']
       },
       backgroundImage: {
         'admin-login': "url('./img/bg-admin.svg')",
@@ -29,6 +31,18 @@ module.exports = {
             '700': '#285a5d',
             '800': '#234a4c',
             '900': '#213e40',
+          },
+          'sims-new': {
+            '50': '#f1fafa',
+            '100': '#daf1f3',
+            '200': '#bae2e7',
+            '300': '#8acdd6',
+            '400': '#53b0bd',
+            '500': '#3894a3',
+            '600': '#317889',
+            '700': '#2d6271',
+            '800': '#2c525e',
+            '900': '#294650',
           },
           'basic': {
             '50': '#f7f7f7',

@@ -11,6 +11,19 @@ a {
   text-decoration: none;
 }
 
+/* @layer base {
+  @font-face {
+    font-family: Satoshi;
+    font-weight: 400;
+    src: url(/fonts/proxima-nova/400-regular.woff) format("woff");
+  }
+  @font-face {
+    font-family: Satoshi;
+    font-weight: 500;
+    src: url(/fonts/proxima-nova/500-medium.woff) format("woff");
+  }
+} */
+
 @layer components {
   .login-input {
     @apply tw-font-ubuntu tw-font-medium tw-px-4 tw-py-3 tw-border-2 tw-text-gray-500 tw-border-gray-300 tw-w-full tw-block tw-text-sm placeholder:tw-text-gray-400 focus:placeholder:tw-invisible focus:tw-outline-none focus:tw-ring-1 focus:tw-ring-sims-400 focus:tw-border-sims-400;
@@ -98,6 +111,93 @@ a {
   }
   .hc-card {
     @apply tw-flex tw-flex-col tw-text-center tw-bg-white tw-drop-shadow-md tw-p-8 tw-w-64 hover:tw-drop-shadow-xl tw-transition-all;
+  }
+
+
+
+
+  /* SIMS 1.0 Tailwind CSS Presets */
+
+  /* TEXT */
+  .sims-heading-3xl {
+    @apply tw-font-satoshi tw-text-3xl tw-font-bold tw-text-sims-new-500
+  }
+  .sims-heading-2xl {
+    @apply tw-font-satoshi tw-text-2xl tw-font-bold tw-text-sims-new-500
+  }
+  .sims-heading-xl {
+    @apply tw-font-satoshi tw-text-xl tw-font-bold tw-text-sims-new-500
+  }
+  .sims-heading-lg {
+    @apply tw-font-satoshi tw-text-lg tw-font-bold tw-text-sims-new-500
+  }
+  .sims-heading-md {
+    @apply tw-font-satoshi tw-text-base tw-font-bold tw-text-sims-new-500
+  }
+  .sims-text-gray-xl {
+    @apply tw-font-sg tw-font-semibold tw-text-xl tw-text-gray-400
+  }
+  .sims-text-gray-lg {
+    @apply tw-font-sg tw-font-semibold tw-text-lg tw-text-gray-400
+  }
+  .sims-text-gray-md {
+    @apply tw-font-sg tw-font-semibold tw-text-base tw-text-gray-400
+  }
+  .sims-text-gray-sm {
+    @apply tw-font-sg tw-font-semibold tw-text-sm tw-text-gray-400
+  }
+  .sims-text-gray-xs {
+    @apply tw-font-sg tw-font-semibold tw-text-xs tw-text-gray-400
+  }
+  .sims-text-black-xl {
+    @apply tw-font-sg tw-font-semibold tw-text-xl tw-text-[#2F414F]
+  }
+  .sims-text-black-lg {
+    @apply tw-font-sg tw-font-semibold tw-text-lg tw-text-[#2F414F]
+  }
+  .sims-text-black-md {
+    @apply tw-font-sg tw-font-semibold tw-text-base tw-text-[#2F414F]
+  }
+  .sims-text-black-sm {
+    @apply tw-font-sg tw-font-semibold tw-text-sm tw-text-[#2F414F]
+  }
+  .sims-text-black-xs {
+    @apply tw-font-sg tw-font-semibold tw-text-xs tw-text-[#2F414F]
+  }
+
+
+  /* CARDS */
+  .sims-card-1 {
+    @apply tw-w-full tw-mx-10 tw-py-10 tw-my-2 tw-h-fit tw-border-2 tw-border-indigo-100 tw-bg-white tw-shadow-md tw-rounded-md
+  }
+
+  /* FOR ICONS */
+  .sims-icon-5xl {
+    @apply tw-text-5xl tw-text-sims-new-500 tw-my-auto
+  }
+  .sims-icon-4xl {
+    @apply tw-text-4xl tw-text-sims-new-500 tw-my-auto
+  }
+  .sims-icon-3xl {
+    @apply tw-text-3xl tw-text-sims-new-500 tw-my-auto
+  }
+  .sims-icon-2xl {
+    @apply tw-text-2xl tw-text-sims-new-500 tw-my-auto
+  }
+  .sims-icon-xl {
+    @apply tw-text-xl tw-text-sims-new-500 tw-my-auto
+  }
+  .sims-icon-lg {
+    @apply tw-text-lg tw-text-sims-new-500 tw-my-auto
+  }
+  .sims-icon-md {
+    @apply tw-text-md tw-text-sims-new-500 tw-my-auto
+  }
+  .sims-icon-sm {
+    @apply tw-text-sm tw-text-sims-new-500 tw-my-auto
+  }
+  .sims-icon-xs {
+    @apply tw-text-xs tw-text-sims-new-500 tw-my-auto
   }
 }
 

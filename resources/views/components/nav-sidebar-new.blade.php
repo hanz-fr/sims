@@ -1,7 +1,7 @@
 <div x-data="setup()" x-init="$refs.loading.classList.add('hidden');" @resize.window="watchScreen()">
     <div class="tw-flex tw-h-screen tw-antialiased tw-text-gray-900 tw-bg-gray-100 dark:tw-bg-dark dark:tw-text-light">
         <!-- Sidebar -->
-        <div class="tw-flex tw-flex-shrink-0 tw-transition-all">
+        <aside class="tw-flex tw-flex-shrink-0 tw-transition-all">
             <div x-show="isSidebarOpen" @click="isSidebarOpen = false"
                 class="tw-fixed tw-inset-0 tw-z-10 tw-bg-black tw-bg-opacity-50 lg:tw-hidden"></div>
             <div x-show="isSidebarOpen" class="tw-fixed tw-inset-y-0 tw-z-10 tw-w-16 tw-bg-white"></div>
@@ -33,7 +33,7 @@
 
             <!-- Left mini bar -->
             <nav aria-label="Options"
-                class="tw-z-20 tw-flex-col tw-items-center tw-flex-shrink-0 tw-hidden tw-w-24 tw-py-4 tw-bg-white tw-border-r-2 tw-border-indigo-100 tw-shadow-md sm:tw-flex">
+                class="tw-z-20 tw-flex-col tw-items-center tw-flex-shrink-0 tw-hidden tw-w-24 tw-py-4 tw-bg-white tw-border-r-2 tw-border-indigo-100 sm:tw-flex">
                 <!-- Logo -->
                 <div class="tw-flex-shrink-0 tw-py-4">
                     <a href="#">
@@ -208,10 +208,10 @@
                     <h2 class="text-xl">Notifications</h2>
                 </section>
             </div>
-        </div>
-        <div class="flex flex-col flex-1">
-            <header class="relative flex items-center justify-between flex-shrink-0 p-4">
+        </aside>
+        <div class="flex flex-col flex-1 tw-bg-white">
 
+            <header>
                 <!-- Mobile sub header -->
                 <div x-transition:enter="transform transition-transform"
                     x-transition:enter-start="translate-y-full opacity-0"
@@ -267,8 +267,8 @@
                     </a>
                 </div>
             </header>
-
-            <div class="tw-flex tw-flex-1">
+            <!-- Content -->
+            <div class="tw-mr-20">
                 @yield('content')
             </div>
         </div>
