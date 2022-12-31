@@ -45,42 +45,50 @@
 
                     <!-- Homepage button -->
                     <div x-data="{ tooltip: 'Dashboard' }">
-                        <button x-tooltip.placement.right.delay.500-100="tooltip" type="button"
-                            class="{{ ($active === "dashboard-main") ? 'tw-bg-sims-400 tw-text-white' : 'tw-text-sims-400' }} tw-p-5 tw-transition-colors tw-rounded-xl hover:tw-bg-sims-400 hover:tw-text-white focus:tw-outline-none">
-                            <span class="sr-only">Toggle sidebar</span>
-                            <i class="fa-solid fa-house tw-text-xl"></i>
-                        </button>
+                        <a href="/">
+                            <button x-tooltip.placement.right.delay.500-100="tooltip" type="button"
+                                class="{{ ($active === "dashboard-main") ? 'tw-bg-sims-400 tw-text-white' : 'tw-text-sims-400' }} tw-p-5 tw-transition-colors tw-rounded-xl hover:tw-bg-sims-400 hover:tw-text-white focus:tw-outline-none">
+                                <span class="sr-only">Toggle sidebar</span>
+                                <i class="fa-solid fa-house tw-text-xl"></i>
+                            </button>
+                        </a>
                     </div>
 
 
                     <!-- Data Induk button -->
                     <div x-data="{ tooltip: 'Buku Induk' }">
-                        <button x-tooltip.placement.right.delay.500-100="tooltip" type="button"
-                            class="{{ ($active === "data-induk") ? 'tw-bg-sims-400 tw-text-white' : 'tw-text-sims-400' }} tw-p-5 tw-transition-colors tw-rounded-xl hover:tw-bg-sims-400 hover:tw-text-white focus:tw-outline-none">
-                            <span class="sr-only">Toggle sidebar</span>
-                            <i class="fa-sharp fa-regular fa-book-open tw-text-xl"></i>
-                        </button>
+                        <a href="/jurusan">
+                            <button x-tooltip.placement.right.delay.500-100="tooltip" type="button"
+                                class="{{ ($active === "data-induk") ? 'tw-bg-sims-400 tw-text-white' : 'tw-text-sims-400' }} tw-p-5 tw-transition-colors tw-rounded-xl hover:tw-bg-sims-400 hover:tw-text-white focus:tw-outline-none">
+                                <span class="sr-only">Toggle sidebar</span>
+                                <i class="fa-sharp fa-regular fa-book-open tw-text-xl"></i>
+                            </button>
+                        </a>
                     </div>
 
 
                     @cannot('wali kelas')
                     <!-- Rekap Siswa button -->
                     <div x-data="{ tooltip: 'Rekap Siswa' }">
-                        <button x-tooltip.placement.right.delay.500-100="tooltip" type="button"
-                            class="{{ ($active === "rekap-siswa") ? 'tw-bg-sims-400 tw-text-white' : 'tw-text-sims-400' }} tw-p-5 tw-transition-colors tw-rounded-xl hover:tw-bg-sims-400 hover:tw-text-white focus:tw-outline-none">
-                            <span class="sr-only">Toggle sidebar</span>
-                            <i class="fa-solid fa-users tw-text-xl"></i>
-                        </button>
+                        <a href="/rekap-siswa">
+                            <button x-tooltip.placement.right.delay.500-100="tooltip" type="button"
+                                class="{{ ($active === "rekap-siswa") ? 'tw-bg-sims-400 tw-text-white' : 'tw-text-sims-400' }} tw-p-5 tw-transition-colors tw-rounded-xl hover:tw-bg-sims-400 hover:tw-text-white focus:tw-outline-none">
+                                <span class="sr-only">Toggle sidebar</span>
+                                <i class="fa-solid fa-users tw-text-xl"></i>
+                            </button>
+                        </a>
                     </div>
                     @endcannot
 
                     <!-- History button -->
                     <div x-data="{ tooltip: 'Histori' }">
-                        <button x-tooltip.placement.right.delay.500-100="tooltip" type="button"
-                            class="{{ ($active === "history") ? 'tw-bg-sims-400 tw-text-white' : 'tw-text-sims-400' }} tw-p-5 tw-transition-colors tw-rounded-xl hover:tw-bg-sims-400 hover:tw-text-white focus:tw-outline-none">
-                            <span class="sr-only">Toggle sidebar</span>
-                            <i class="fa-solid fa-clock-rotate-left tw-text-xl"></i>
-                        </button>
+                        <a href="/history">
+                            <button x-tooltip.placement.right.delay.500-100="tooltip" type="button"
+                                class="{{ ($active === "history") ? 'tw-bg-sims-400 tw-text-white' : 'tw-text-sims-400' }} tw-p-5 tw-transition-colors tw-rounded-xl hover:tw-bg-sims-400 hover:tw-text-white focus:tw-outline-none">
+                                <span class="sr-only">Toggle sidebar</span>
+                                <i class="fa-solid fa-clock-rotate-left tw-text-xl"></i>
+                            </button>
+                        </a>
                     </div>
                 </div>
 
@@ -210,6 +218,7 @@
             </div>
         </aside>
         <div class="flex flex-col flex-1 tw-bg-white">
+            <div class="tw-my-8"></div>
 
             <header>
                 <!-- Mobile sub header -->
