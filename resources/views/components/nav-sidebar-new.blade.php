@@ -218,7 +218,6 @@
             </div>
         </aside>
         <div class="flex flex-col flex-1 tw-bg-white">
-            <div class="tw-my-8"></div>
 
             <header>
                 <!-- Mobile sub header -->

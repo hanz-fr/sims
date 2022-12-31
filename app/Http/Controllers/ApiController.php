@@ -50,7 +50,7 @@ class ApiController extends Controller
         
         if ($response->successful()) {
 
-            return view('dashboard-main', [
+            return view('dashboard.main', [
                 'title' => 'Dashboard',
                 'active' => 'dashboard-main',
                 'mutasi' => json_decode($response)->mutasi->count,
