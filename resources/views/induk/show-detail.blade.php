@@ -342,19 +342,19 @@
                                                 <tr class="tw-bg-gray-100 tw-border">
                                                     <th scope="row"
                                                         class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-whitespace-nowrap">
-                                                        Nama sekolah asal
+                                                        Angkatan
                                                     </th>
                                                     <td class="tw-py-4 tw-px-6">
-                                                        {{ $siswa->sekolah_asal }}
+                                                        {{ $siswa->angkatan }}
                                                     </td>
                                                 </tr>
                                                 <tr class="tw-bg-white tw-border">
                                                     <th scope="row"
                                                         class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-whitespace-nowrap">
-                                                        Alamat sekolah asal
+                                                        Nama sekolah asal
                                                     </th>
                                                     <td class="tw-py-4 tw-px-6">
-                                                        {{ $siswa->alamat_sekolah_asal }}
+                                                        {{ $siswa->sekolah_asal }}
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -362,7 +362,7 @@
                                     </div>
                                 </div>
                                 <div x-show="selected === 3">
-                                    <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl tw-mb-[164px]">
+                                    <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl tw-mb-[103px]">
                                         <table class="tw-w-full tw-text-left tw-text-basic-700">
                                             <thead
                                                 class="tw-text-lg tw-bg-gray-100 tw-border tw-font-pop">
@@ -379,13 +379,22 @@
                                                 <tr class="tw-bg-white tw-border">
                                                     <th scope="row"
                                                         class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-whitespace-nowrap">
+                                                        Alamat Sekolah Asal
+                                                    </th>
+                                                    <td class="tw-py-4 tw-px-6">
+                                                        {{ $siswa->alamat_sekolah_asal }}
+                                                    </td>
+                                                </tr>
+                                                <tr class="tw-bg-gray-100 tw-border">
+                                                    <th scope="row"
+                                                        class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-whitespace-nowrap">
                                                         Nomor Ijazah SMP
                                                     </th>
                                                     <td class="tw-py-4 tw-px-6">
                                                         {{ $siswa->no_ijazah_smp }}
                                                     </td>
                                                 </tr>
-                                                <tr class="tw-bg-gray-100 tw-border">
+                                                <tr class="tw-bg-white tw-border">
                                                     <th scope="row"
                                                         class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-whitespace-nowrap">
                                                         Tahun Ijazah SMP
@@ -394,7 +403,7 @@
                                                         {{ $siswa->thn_ijazah_smp }}
                                                     </td>
                                                 </tr>
-                                                <tr class="tw-bg-white tw-border">
+                                                <tr class="tw-bg-gray-100 tw-border">
                                                     <th scope="row"
                                                         class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-whitespace-nowrap">
                                                         Tahun SKHUN SMP
@@ -403,7 +412,7 @@
                                                         {{ $siswa->thn_ijazah_smp }}
                                                     </td>
                                                 </tr>
-                                                <tr class="tw-bg-gray-100 tw-border">
+                                                <tr class="tw-bg-white tw-border">
                                                     <th scope="row"
                                                         class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-whitespace-nowrap">
                                                         Nomor SKHUN SMP
@@ -412,7 +421,7 @@
                                                         {{ $siswa->no_skhun_smp }}
                                                     </td>
                                                 </tr>
-                                                <tr class="tw-bg-white tw-border">
+                                                <tr class="tw-bg-gray-100 tw-border">
                                                     <th scope="row"
                                                         class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-whitespace-nowrap">
                                                         Status Siswa
