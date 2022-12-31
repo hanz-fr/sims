@@ -151,7 +151,7 @@
                                   </div>
                               </div>
                               <div> 
-                                  <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Siswa TIdak Naik</div>
+                                  <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Siswa Tidak Naik</div>
                               </div>
                           </div>
                       </a>

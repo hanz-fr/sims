@@ -134,6 +134,33 @@ a {
   .sims-heading-md {
     @apply tw-font-satoshi tw-text-base tw-font-bold tw-text-sims-new-500
   }
+  .sims-heading-sm {
+    @apply tw-font-satoshi tw-text-sm tw-font-bold tw-text-sims-new-500
+  }
+  .sims-heading-xs {
+    @apply tw-font-satoshi tw-text-xs tw-font-bold tw-text-sims-new-500
+  }
+  .sims-heading-3xl-black {
+    @apply tw-font-satoshi tw-text-3xl tw-font-bold tw-text-[#2F414F]
+  }
+  .sims-heading-2xl-black {
+    @apply tw-font-satoshi tw-text-2xl tw-font-bold tw-text-[#2F414F]
+  }
+  .sims-heading-xl-black {
+    @apply tw-font-satoshi tw-text-xl tw-font-bold tw-text-[#2F414F]
+  }
+  .sims-heading-lg-black {
+    @apply tw-font-satoshi tw-text-lg tw-font-bold tw-text-[#2F414F]
+  }
+  .sims-heading-md-black {
+    @apply tw-font-satoshi tw-text-base tw-font-bold tw-text-[#2F414F]
+  }
+  .sims-heading-sm-black {
+    @apply tw-font-satoshi tw-text-sm tw-font-bold tw-text-[#2F414F]
+  }
+  .sims-heading-xs-black {
+    @apply tw-font-satoshi tw-text-xs tw-font-bold tw-text-[#2F414F]
+  }
   .sims-text-gray-xl {
     @apply tw-font-sg tw-font-semibold tw-text-xl tw-text-gray-400
   }
@@ -164,11 +191,29 @@ a {
   .sims-text-black-xs {
     @apply tw-font-sg tw-font-semibold tw-text-xs tw-text-[#2F414F]
   }
+  .sims-text-regular-xl {
+    @apply tw-font-sg tw-font-semibold tw-text-xl tw-text-sims-new-500
+  }
+  .sims-text-regular-lg {
+    @apply tw-font-sg tw-font-semibold tw-text-lg tw-text-sims-new-500
+  }
+  .sims-text-regular-md {
+    @apply tw-font-sg tw-font-semibold tw-text-base tw-text-sims-new-500
+  }
+  .sims-text-regular-sm {
+    @apply tw-font-sg tw-font-semibold tw-text-sm tw-text-sims-new-500
+  }
+  .sims-text-regular-xs {
+    @apply tw-font-sg tw-font-semibold tw-text-xs tw-text-sims-new-500
+  }
 
 
   /* CARDS */
   .sims-card-1 {
-    @apply tw-w-full tw-mx-10 tw-py-10 tw-my-2 tw-h-fit tw-border-2 tw-border-indigo-100 tw-bg-white tw-shadow-md tw-rounded-md
+    @apply tw-w-full tw-py-10 tw-my-2 tw-h-fit tw-border-2 tw-border-gray-200 tw-bg-white tw-shadow-md tw-rounded-md
+  }
+  .sims-card-1-noshadow {
+    @apply tw-w-full tw-py-10 tw-my-2 tw-h-fit tw-border-2 tw-border-gray-200 tw-bg-white tw-rounded-md
   }
 
   /* FOR ICONS */
