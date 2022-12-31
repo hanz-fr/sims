@@ -248,7 +248,15 @@
                         <label class="label-input" for="thn_ajaran">
                             Tahun Ajaran
                         </label>
-                        <input class="input-data-minimal" id="thn_ajaran" type="number" name="thn_ajaran">
+                        <input class="input-data-minimal" id="thn_ajaran" type="text" name="thn_ajaran">
+                    </div>
+                </div>
+                <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
+                    <div class="tw-w-full tw-px-3">
+                        <label class="label-input" for="angkatan">
+                            Angkatan
+                        </label>
+                        <input class="input-data-minimal" id="angkatan" type="number" name="angkatan">
                     </div>
                 </div>
 
