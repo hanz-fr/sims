@@ -972,24 +972,6 @@ video {
   color: rgb(56 148 163 / var(--tw-text-opacity));
 }
 
-.sims-heading-sm {
-  font-family: Satoshi;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  font-weight: 700;
-  --tw-text-opacity: 1;
-  color: rgb(56 148 163 / var(--tw-text-opacity));
-}
-
-.sims-heading-xs {
-  font-family: Satoshi;
-  font-size: 0.75rem;
-  line-height: 1rem;
-  font-weight: 700;
-  --tw-text-opacity: 1;
-  color: rgb(56 148 163 / var(--tw-text-opacity));
-}
-
 .sims-heading-lg-black {
   font-family: Satoshi;
   font-size: 1.125rem;
@@ -997,15 +979,6 @@ video {
   font-weight: 700;
   --tw-text-opacity: 1;
   color: rgb(47 65 79 / var(--tw-text-opacity));
-}
-
-.sims-text-gray-md {
-  font-family: Space Grotesk;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  font-weight: 600;
-  --tw-text-opacity: 1;
-  color: rgb(156 163 175 / var(--tw-text-opacity));
 }
 
 .sims-text-gray-sm {
@@ -1024,15 +997,6 @@ video {
   font-weight: 600;
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
-}
-
-.sims-text-black-sm {
-  font-family: Space Grotesk;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  font-weight: 600;
-  --tw-text-opacity: 1;
-  color: rgb(47 65 79 / var(--tw-text-opacity));
 }
 
 .sims-text-regular-md {
@@ -1245,16 +1209,16 @@ video {
   margin: 2.5rem;
 }
 
+.tw-m-auto {
+  margin: auto;
+}
+
 .tw-m-9 {
   margin: 2.25rem;
 }
 
 .tw-m-0 {
   margin: 0px;
-}
-
-.tw-m-auto {
-  margin: auto;
 }
 
 .tw-mx-10 {
@@ -2498,16 +2462,6 @@ video {
   border-color: rgb(227 227 227 / var(--tw-border-opacity));
 }
 
-.tw-border-\[\#2F414F\] {
-  --tw-border-opacity: 1;
-  border-color: rgb(47 65 79 / var(--tw-border-opacity));
-}
-
-.tw-border-gray-400 {
-  --tw-border-opacity: 1;
-  border-color: rgb(156 163 175 / var(--tw-border-opacity));
-}
-
 .tw-border-b-white {
   --tw-border-opacity: 1;
   border-bottom-color: rgb(255 255 255 / var(--tw-border-opacity));
@@ -2761,10 +2715,6 @@ video {
 
 .tw-bg-no-repeat {
   background-repeat: no-repeat;
-}
-
-.tw-fill-sims-new-500 {
-  fill: #3894a3;
 }
 
 .tw-object-contain {
@@ -3411,6 +3361,21 @@ video {
   color: rgb(79 70 229 / var(--tw-text-opacity));
 }
 
+.tw-text-\[\#e66161\] {
+  --tw-text-opacity: 1;
+  color: rgb(230 97 97 / var(--tw-text-opacity));
+}
+
+.tw-text-\[\#7379d3\] {
+  --tw-text-opacity: 1;
+  color: rgb(115 121 211 / var(--tw-text-opacity));
+}
+
+.tw-text-\[\#f0d897\] {
+  --tw-text-opacity: 1;
+  color: rgb(240 216 151 / var(--tw-text-opacity));
+}
+
 .tw-text-sims-new-500 {
   --tw-text-opacity: 1;
   color: rgb(56 148 163 / var(--tw-text-opacity));
@@ -3519,91 +3484,6 @@ video {
 .tw-text-slate-100 {
   --tw-text-opacity: 1;
   color: rgb(241 245 249 / var(--tw-text-opacity));
-}
-
-.tw-text-\[\#c56f82\] {
-  --tw-text-opacity: 1;
-  color: rgb(197 111 130 / var(--tw-text-opacity));
-}
-
-.tw-text-\[\#313131\] {
-  --tw-text-opacity: 1;
-  color: rgb(49 49 49 / var(--tw-text-opacity));
-}
-
-.tw-text-\[\#af3131\] {
-  --tw-text-opacity: 1;
-  color: rgb(175 49 49 / var(--tw-text-opacity));
-}
-
-.tw-text-\[\#bd4343\] {
-  --tw-text-opacity: 1;
-  color: rgb(189 67 67 / var(--tw-text-opacity));
-}
-
-.tw-text-\[\#d15252\] {
-  --tw-text-opacity: 1;
-  color: rgb(209 82 82 / var(--tw-text-opacity));
-}
-
-.tw-text-\[\#e66161\] {
-  --tw-text-opacity: 1;
-  color: rgb(230 97 97 / var(--tw-text-opacity));
-}
-
-.tw-text-\[\#e08787\] {
-  --tw-text-opacity: 1;
-  color: rgb(224 135 135 / var(--tw-text-opacity));
-}
-
-.tw-text-\[\#878de0\] {
-  --tw-text-opacity: 1;
-  color: rgb(135 141 224 / var(--tw-text-opacity));
-}
-
-.tw-text-\[\#5a63da\] {
-  --tw-text-opacity: 1;
-  color: rgb(90 99 218 / var(--tw-text-opacity));
-}
-
-.tw-text-\[\#676eda\] {
-  --tw-text-opacity: 1;
-  color: rgb(103 110 218 / var(--tw-text-opacity));
-}
-
-.tw-text-\[\#5157aa\] {
-  --tw-text-opacity: 1;
-  color: rgb(81 87 170 / var(--tw-text-opacity));
-}
-
-.tw-text-\[\#6268c2\] {
-  --tw-text-opacity: 1;
-  color: rgb(98 104 194 / var(--tw-text-opacity));
-}
-
-.tw-text-\[\#7379d3\] {
-  --tw-text-opacity: 1;
-  color: rgb(115 121 211 / var(--tw-text-opacity));
-}
-
-.tw-text-\[\#d3b973\] {
-  --tw-text-opacity: 1;
-  color: rgb(211 185 115 / var(--tw-text-opacity));
-}
-
-.tw-text-\[\#e7ca7a\] {
-  --tw-text-opacity: 1;
-  color: rgb(231 202 122 / var(--tw-text-opacity));
-}
-
-.tw-text-\[\#f0d897\] {
-  --tw-text-opacity: 1;
-  color: rgb(240 216 151 / var(--tw-text-opacity));
-}
-
-.tw-text-\[\#2F414F\] {
-  --tw-text-opacity: 1;
-  color: rgb(47 65 79 / var(--tw-text-opacity));
 }
 
 .tw-underline {
@@ -4487,16 +4367,6 @@ input[type="checkbox"]:checked {
   background-color: rgb(74 133 205 / var(--tw-bg-opacity));
 }
 
-.hover\:tw-bg-sims-new-400:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(83 176 189 / var(--tw-bg-opacity));
-}
-
-.hover\:tw-bg-\[\#2F414F\]:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(47 65 79 / var(--tw-bg-opacity));
-}
-
 .hover\:tw-text-sims-600:hover {
   --tw-text-opacity: 1;
   color: rgb(45 114 116 / var(--tw-text-opacity));
@@ -4557,11 +4427,6 @@ input[type="checkbox"]:checked {
   color: rgb(54 76 151 / var(--tw-text-opacity));
 }
 
-.hover\:tw-text-black:hover {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
-}
-
 .hover\:tw-shadow-xl:hover {
   --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
@@ -4580,33 +4445,8 @@ input[type="checkbox"]:checked {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.hover\:tw-shadow-sims-new-500:hover {
-  --tw-shadow-color: #3894a3;
-  --tw-shadow: var(--tw-shadow-colored);
-}
-
-.hover\:tw-shadow-black:hover {
-  --tw-shadow-color: #000;
-  --tw-shadow: var(--tw-shadow-colored);
-}
-
-.hover\:tw-shadow-sims-500:hover {
-  --tw-shadow-color: #3b9091;
-  --tw-shadow: var(--tw-shadow-colored);
-}
-
-.hover\:tw-drop-shadow-xl:hover {
-  --tw-drop-shadow: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-}
-
 .hover\:tw-drop-shadow-md:hover {
   --tw-drop-shadow: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-}
-
-.hover\:tw-drop-shadow-sm:hover {
-  --tw-drop-shadow: drop-shadow(0 1px 1px rgb(0 0 0 / 0.05));
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
@@ -4705,15 +4545,6 @@ input[type="checkbox"]:checked {
     font-weight: 700;
     --tw-text-opacity: 1;
     color: rgb(56 148 163 / var(--tw-text-opacity));
-  }
-
-  .sm\:sims-text-gray-sm {
-    font-family: Space Grotesk;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    font-weight: 600;
-    --tw-text-opacity: 1;
-    color: rgb(156 163 175 / var(--tw-text-opacity));
   }
 
   .sm\:sims-text-gray-xs {
@@ -4942,15 +4773,6 @@ input[type="checkbox"]:checked {
     font-family: Space Grotesk;
     font-size: 1rem;
     line-height: 1.5rem;
-    font-weight: 600;
-    --tw-text-opacity: 1;
-    color: rgb(156 163 175 / var(--tw-text-opacity));
-  }
-
-  .lg\:sims-text-gray-sm {
-    font-family: Space Grotesk;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
     font-weight: 600;
     --tw-text-opacity: 1;
     color: rgb(156 163 175 / var(--tw-text-opacity));
