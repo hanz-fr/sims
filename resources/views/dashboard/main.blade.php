@@ -150,7 +150,7 @@
         <div class="sims-card-1">
             <div class="tw-flex tw-justify-between tw-mx-16">
                 <div class="tw-flex tw-flex-col tw-gap-1">
-                    <div class="lg:sims-heading-3xl sm:sims-heading-xl">Selamat Malam, <div class="tw-inline tw-font-black">{{ auth()->user()->nama }}</div>
+                    <div class="lg:sims-heading-3xl sm:sims-heading-xl">Selamat Siang, <div class="tw-inline tw-font-black">{{ auth()->user()->nama }}</div>
                     </div>
                     <div class="lg:sims-text-gray-md sm:sims-text-gray-xs">Apa yang akan anda lakukan hari ini?</div>
                 </div>
