@@ -741,6 +741,14 @@ class ApiController extends Controller
     }
 
 
+    /* ALUMNI */
+    public function selectAngkatanAlumni(Request $request) {
+        return view('induk.select-angkatan-alumni', [
+            'title' => 'Data Alumni',
+            'active' => 'data-induk',
+            'status' => 'error',
+        ]);
+    }
 
     public function viewAlumni(Request $request) {
 

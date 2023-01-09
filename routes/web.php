@@ -134,6 +134,7 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
     Route::get('/alumni-pdf', [ApiController::class, 'exportAlumniPDF']);
     Route::get('/alumni-print', [ApiController::class, 'printAlumni']);
     Route::get('/alumni-excel', [ApiController::class, 'exportAlumniExcel']);
+    Route::get('/data-alumni/{jurusan}/{kelas}/{angkatan}', [ApiController::class, 'viewAlumniAngkatan']);
 
 
     /* REKAP SISWA */
