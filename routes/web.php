@@ -118,14 +118,14 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
     Route::get('/data-induk-siswa/{jurusan}/{kelas}', [ApiController::class, 'getSiswaByJurusanKelas']);
 
 
-    /* JURUSAN */
+    /* JURUSAN SISWA*/
 
     Route::get('/jurusan', [ApiController::class, 'getJurusan']);
 
-
-    /* ANGKATAN */
+    /* ANGKATAN SISWA */
 
     Route::get('/angkatan', [ApiController::class, 'getAngkatan']);
+
 
 
     /* ALUMNI */
@@ -134,8 +134,8 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
     Route::get('/alumni-pdf', [ApiController::class, 'exportAlumniPDF']);
     Route::get('/alumni-print', [ApiController::class, 'printAlumni']);
     Route::get('/alumni-excel', [ApiController::class, 'exportAlumniExcel']);
-    Route::get('/data-alumni/{jurusan}/{kelas}/{angkatan}', [ApiController::class, 'viewAlumniAngkatan']);
-
+    Route::get('/select-jurusan-alumni', [ApiController::class, 'selectJurusanAlumni']);
+    Route::get('/select-angkatan-alumni', [ApiController::class, 'selectAngkatanAlumni']);
 
     /* REKAP SISWA */
 

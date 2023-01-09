@@ -122,7 +122,7 @@
                     <div x-init="$dispatch('register', {id: 4})"  
                       x-intersect:enter.half="setIndex(3)" x-transition.duration.500ms>
                       @can('rekap-siswa')
-                        <a href="/select-angkatan-alumni">
+                        <a href="/select-jurusan-alumni">
                       @endcan
                             <div class="card-dashboard tw-transition-all hover:tw-shadow-xl">
                                 <div class="sm:tw-px-12 md:tw-px-8 tw-mt-7">

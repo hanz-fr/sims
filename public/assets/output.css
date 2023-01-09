@@ -1312,6 +1312,16 @@ video {
   margin-right: 15rem;
 }
 
+.tw-my-1 {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.tw-my-0 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
 .tw-mt-8 {
   margin-top: 2rem;
 }
@@ -1570,6 +1580,10 @@ video {
 
 .tw-mr-32 {
   margin-right: 8rem;
+}
+
+.tw-mb-0 {
+  margin-bottom: 0px;
 }
 
 .tw-box-border {
@@ -2495,6 +2509,11 @@ video {
 .tw-bg-gray-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+}
+
+.tw-bg-sims-new-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(218 241 243 / var(--tw-bg-opacity));
 }
 
 .tw-bg-\[\#1096C2\] {
