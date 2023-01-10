@@ -47,7 +47,7 @@
                     <div x-data="{ tooltip: 'Dashboard' }">
                         <a href="/">
                             <button x-tooltip.placement.right.delay.500-100="tooltip" type="button"
-                                class="{{ ($active === "dashboard-main") ? 'tw-bg-sims-400 tw-text-white' : 'tw-text-sims-400' }} tw-p-5 tw-transition-colors tw-rounded-xl hover:tw-bg-sims-400 hover:tw-text-white focus:tw-outline-none">
+                                class="{{ ($active === "dashboard-main") ? 'tw-bg-sims-new-500 tw-text-white' : 'tw-text-sims-new-500' }} tw-p-5 tw-transition-colors tw-rounded-xl hover:tw-bg-sims-new-500 hover:tw-text-white focus:tw-outline-none">
                                 <span class="sr-only">Toggle sidebar</span>
                                 <i class="fa-solid fa-house tw-text-xl"></i>
                             </button>
@@ -59,7 +59,7 @@
                     <div x-data="{ tooltip: 'Buku Induk' }">
                         <a href="/jurusan">
                             <button x-tooltip.placement.right.delay.500-100="tooltip" type="button"
-                                class="{{ ($active === "data-induk") ? 'tw-bg-sims-400 tw-text-white' : 'tw-text-sims-400' }} tw-p-5 tw-transition-colors tw-rounded-xl hover:tw-bg-sims-400 hover:tw-text-white focus:tw-outline-none">
+                                class="{{ ($active === "data-induk") ? 'tw-bg-sims-new-500 tw-text-white' : 'tw-text-sims-new-500' }} tw-p-5 tw-transition-colors tw-rounded-xl hover:tw-bg-sims-new-500 hover:tw-text-white focus:tw-outline-none">
                                 <span class="sr-only">Toggle sidebar</span>
                                 <i class="fa-sharp fa-regular fa-book-open tw-text-xl"></i>
                             </button>
@@ -72,7 +72,7 @@
                     <div x-data="{ tooltip: 'Rekap Siswa' }">
                         <a href="/rekap-siswa">
                             <button x-tooltip.placement.right.delay.500-100="tooltip" type="button"
-                                class="{{ ($active === "rekap-siswa") ? 'tw-bg-sims-400 tw-text-white' : 'tw-text-sims-400' }} tw-p-5 tw-transition-colors tw-rounded-xl hover:tw-bg-sims-400 hover:tw-text-white focus:tw-outline-none">
+                                class="{{ ($active === "rekap-siswa") ? 'tw-bg-sims-new-500 tw-text-white' : 'tw-text-sims-new-500' }} tw-p-5 tw-transition-colors tw-rounded-xl hover:tw-bg-sims-new-500 hover:tw-text-white focus:tw-outline-none">
                                 <span class="sr-only">Toggle sidebar</span>
                                 <i class="fa-solid fa-users tw-text-xl"></i>
                             </button>
@@ -84,7 +84,7 @@
                     <div x-data="{ tooltip: 'Histori' }">
                         <a href="/history">
                             <button x-tooltip.placement.right.delay.500-100="tooltip" type="button"
-                                class="{{ ($active === "history") ? 'tw-bg-sims-400 tw-text-white' : 'tw-text-sims-400' }} tw-p-5 tw-transition-colors tw-rounded-xl hover:tw-bg-sims-400 hover:tw-text-white focus:tw-outline-none">
+                                class="{{ ($active === "history") ? 'tw-bg-sims-new-500 tw-text-white' : 'tw-text-sims-new-500' }} tw-p-5 tw-transition-colors tw-rounded-xl hover:tw-bg-sims-new-500 hover:tw-text-white focus:tw-outline-none">
                                 <span class="sr-only">Toggle sidebar</span>
                                 <i class="fa-solid fa-clock-rotate-left tw-text-xl"></i>
                             </button>
