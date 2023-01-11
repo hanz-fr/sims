@@ -1207,6 +1207,11 @@ video {
   margin-bottom: 2rem;
 }
 
+.tw-my-8 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 .tw-my-auto {
   margin-top: auto;
   margin-bottom: auto;
@@ -1508,8 +1513,8 @@ video {
   margin-left: 1rem;
 }
 
-.tw-mb-\[103px\] {
-  margin-bottom: 103px;
+.tw-mb-\[164px\] {
+  margin-bottom: 164px;
 }
 
 .tw-mb-\[20\.5rem\] {
@@ -1714,6 +1719,12 @@ video {
 
 .tw-h-\[450px\] {
   height: 450px;
+}
+
+.tw-h-max {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
 }
 
 .tw-w-full {
@@ -2931,6 +2942,10 @@ video {
   padding-bottom: 0.5rem;
 }
 
+.tw-pl-10 {
+  padding-left: 2.5rem;
+}
+
 .tw-pl-5 {
   padding-left: 1.25rem;
 }
@@ -2973,10 +2988,6 @@ video {
 
 .tw-pt-6 {
   padding-top: 1.5rem;
-}
-
-.tw-pl-10 {
-  padding-left: 2.5rem;
 }
 
 .tw-pb-28 {
@@ -4176,11 +4187,6 @@ input[type="checkbox"]:checked {
 .hover\:tw-bg-\[\#249f5b\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(36 159 91 / var(--tw-bg-opacity));
-}
-
-.hover\:tw-bg-\[\#3f7f7f\]:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(63 127 127 / var(--tw-bg-opacity));
 }
 
 .hover\:tw-bg-green-700:hover {

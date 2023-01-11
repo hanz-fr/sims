@@ -9,10 +9,9 @@
 </style>
 
 <div class="tw-mx-10">
-    <div class="tw-flex tw-justify-between tw-gap-5 tw-mt-8">
-        <div class="tw-flex tw-flex-col">
-            <h4 class="title-main">Data Alumni</h4>
-        </div>
+    <div class="tw-flex tw-flex-col tw-mt-6">
+        <h4 class="title-main tw-mb-0">Data Alumni</h4>
+        <div class="tw-font-pop tw-text-gray-400 tw-font-medium tw-my-2">{{ $_GET['jurusan'] }} - Angkatan {{ $_GET['angkatan'] }}</div>
     </div>
 
         <div class="tw-flex tw-justify-between sm:tw-flex-wrap sm:tw-gap-5">
@@ -20,6 +19,8 @@
                 <form action="/data-alumni"> 
                     <div class="relative tw-border-2 tw-rounded-lg focus:tw-ring-sims-400">
                         
+                        <input name="jurusan" value="{{ $_GET['jurusan'] }}" type="hidden">
+                        <input name="angkatan" value="{{ $_GET['angkatan'] }}" type="hidden">
                         <input name="page" value="1" type="hidden">
                         <input name="perPage" value="10" type="hidden">
 
@@ -40,10 +41,10 @@
                 </form>
                 <div class="tw-text-base pt-1 tw-text-basic-700 tw-ml-4 tw-mr-2 tw-font-normal tw-font-pop">Show</div>
                 <select name="show-data-perpage" id="show-data-perpage" class="tw-bg-gray-300 tw-font-bold tw-px-7 tw-rounded-xl tw-text tw-mb-2 tw-border-none">
-                    <option value="/data-alumni?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=10&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&nis_siswa=@isset($_GET['nis_siswa']){{ $_GET['nis_siswa'] }}@endisset&nisn_siswa=@isset($_GET['nisn_siswa']){{ $_GET['nisn_siswa'] }}@endisset&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&jenis_kelamin=@isset($_GET['jenis_kelamin']){{ $_GET['jenis_kelamin'] }}@endisset&KelasId=@isset($_GET['KelasId']){{ $_GET['KelasId'] }}@endisset&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset&dibuatTglDari=@isset($_GET['dibuatTglDari']){{ $_GET['dibuatTglDari'] }}@endisset&dibuatTglKe=@isset($_GET['dibuatTglKe']){{ $_GET['dibuatTglKe'] }}@endisset&thn_ajaran=@isset($_GET['thn_ajaran']){{ $_GET['thn_ajaran'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '10') selected @endif @endisset class="tw-bg-white">10</option>
-                    <option value="/data-alumni?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=25&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&nis_siswa=@isset($_GET['nis_siswa']){{ $_GET['nis_siswa'] }}@endisset&nisn_siswa=@isset($_GET['nisn_siswa']){{ $_GET['nisn_siswa'] }}@endisset&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&jenis_kelamin=@isset($_GET['jenis_kelamin']){{ $_GET['jenis_kelamin'] }}@endisset&KelasId=@isset($_GET['KelasId']){{ $_GET['KelasId'] }}@endisset&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset&dibuatTglDari=@isset($_GET['dibuatTglDari']){{ $_GET['dibuatTglDari'] }}@endisset&dibuatTglKe=@isset($_GET['dibuatTglKe']){{ $_GET['dibuatTglKe'] }}@endisset&thn_ajaran=@isset($_GET['thn_ajaran']){{ $_GET['thn_ajaran'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '25') selected @endif @endisset class="tw-bg-white">25</option>
-                    <option value="/data-alumni?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=50&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&nis_siswa=@isset($_GET['nis_siswa']){{ $_GET['nis_siswa'] }}@endisset&nisn_siswa=@isset($_GET['nisn_siswa']){{ $_GET['nisn_siswa'] }}@endisset&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&jenis_kelamin=@isset($_GET['jenis_kelamin']){{ $_GET['jenis_kelamin'] }}@endisset&KelasId=@isset($_GET['KelasId']){{ $_GET['KelasId'] }}@endisset&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset&dibuatTglDari=@isset($_GET['dibuatTglDari']){{ $_GET['dibuatTglDari'] }}@endisset&dibuatTglKe=@isset($_GET['dibuatTglKe']){{ $_GET['dibuatTglKe'] }}@endisset&thn_ajaran=@isset($_GET['thn_ajaran']){{ $_GET['thn_ajaran'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '50') selected @endif @endisset class="tw-bg-white">50</option>
-                    <option value="/data-alumni?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=100&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&nis_siswa=@isset($_GET['nis_siswa']){{ $_GET['nis_siswa'] }}@endisset&nisn_siswa=@isset($_GET['nisn_siswa']){{ $_GET['nisn_siswa'] }}@endisset&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&jenis_kelamin=@isset($_GET['jenis_kelamin']){{ $_GET['jenis_kelamin'] }}@endisset&KelasId=@isset($_GET['KelasId']){{ $_GET['KelasId'] }}@endisset&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset&dibuatTglDari=@isset($_GET['dibuatTglDari']){{ $_GET['dibuatTglDari'] }}@endisset&dibuatTglKe=@isset($_GET['dibuatTglKe']){{ $_GET['dibuatTglKe'] }}@endisset&thn_ajaran=@isset($_GET['thn_ajaran']){{ $_GET['thn_ajaran'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '100') selected @endif @endisset class="tw-bg-white">100</option>
+                    <option value="/data-alumni?jurusan={{ $_GET['jurusan'] }}&angkatan={{ $_GET['angkatan'] }}&page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=10&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&nis_siswa=@isset($_GET['nis_siswa']){{ $_GET['nis_siswa'] }}@endisset&nisn_siswa=@isset($_GET['nisn_siswa']){{ $_GET['nisn_siswa'] }}@endisset&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&jenis_kelamin=@isset($_GET['jenis_kelamin']){{ $_GET['jenis_kelamin'] }}@endisset&KelasId=@isset($_GET['KelasId']){{ $_GET['KelasId'] }}@endisset&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset&dibuatTglDari=@isset($_GET['dibuatTglDari']){{ $_GET['dibuatTglDari'] }}@endisset&dibuatTglKe=@isset($_GET['dibuatTglKe']){{ $_GET['dibuatTglKe'] }}@endisset&thn_ajaran=@isset($_GET['thn_ajaran']){{ $_GET['thn_ajaran'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '10') selected @endif @endisset class="tw-bg-white">10</option>
+                    <option value="/data-alumni?jurusan={{ $_GET['jurusan'] }}&angkatan={{ $_GET['angkatan'] }}&page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=25&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&nis_siswa=@isset($_GET['nis_siswa']){{ $_GET['nis_siswa'] }}@endisset&nisn_siswa=@isset($_GET['nisn_siswa']){{ $_GET['nisn_siswa'] }}@endisset&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&jenis_kelamin=@isset($_GET['jenis_kelamin']){{ $_GET['jenis_kelamin'] }}@endisset&KelasId=@isset($_GET['KelasId']){{ $_GET['KelasId'] }}@endisset&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset&dibuatTglDari=@isset($_GET['dibuatTglDari']){{ $_GET['dibuatTglDari'] }}@endisset&dibuatTglKe=@isset($_GET['dibuatTglKe']){{ $_GET['dibuatTglKe'] }}@endisset&thn_ajaran=@isset($_GET['thn_ajaran']){{ $_GET['thn_ajaran'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '25') selected @endif @endisset class="tw-bg-white">25</option>
+                    <option value="/data-alumni?jurusan={{ $_GET['jurusan'] }}&angkatan={{ $_GET['angkatan'] }}&page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=50&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&nis_siswa=@isset($_GET['nis_siswa']){{ $_GET['nis_siswa'] }}@endisset&nisn_siswa=@isset($_GET['nisn_siswa']){{ $_GET['nisn_siswa'] }}@endisset&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&jenis_kelamin=@isset($_GET['jenis_kelamin']){{ $_GET['jenis_kelamin'] }}@endisset&KelasId=@isset($_GET['KelasId']){{ $_GET['KelasId'] }}@endisset&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset&dibuatTglDari=@isset($_GET['dibuatTglDari']){{ $_GET['dibuatTglDari'] }}@endisset&dibuatTglKe=@isset($_GET['dibuatTglKe']){{ $_GET['dibuatTglKe'] }}@endisset&thn_ajaran=@isset($_GET['thn_ajaran']){{ $_GET['thn_ajaran'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '50') selected @endif @endisset class="tw-bg-white">50</option>
+                    <option value="/data-alumni?jurusan={{ $_GET['jurusan'] }}&angkatan={{ $_GET['angkatan'] }}&page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=100&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&nis_siswa=@isset($_GET['nis_siswa']){{ $_GET['nis_siswa'] }}@endisset&nisn_siswa=@isset($_GET['nisn_siswa']){{ $_GET['nisn_siswa'] }}@endisset&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&jenis_kelamin=@isset($_GET['jenis_kelamin']){{ $_GET['jenis_kelamin'] }}@endisset&KelasId=@isset($_GET['KelasId']){{ $_GET['KelasId'] }}@endisset&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset&dibuatTglDari=@isset($_GET['dibuatTglDari']){{ $_GET['dibuatTglDari'] }}@endisset&dibuatTglKe=@isset($_GET['dibuatTglKe']){{ $_GET['dibuatTglKe'] }}@endisset&thn_ajaran=@isset($_GET['thn_ajaran']){{ $_GET['thn_ajaran'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '100') selected @endif @endisset class="tw-bg-white">100</option>
                 </select>
                 <div class="tw-text-base pt-1 tw-mx-2 tw-font-pop tw-font-normal tw-text-basic-700">Entries</div>
 
@@ -54,6 +55,9 @@
                     <div class="tw-font-pop tw-text-xs tw-text-gray-400 tw-my-2 tw-mx-5">Cari berdasarkan...</div>
                     <form action="/data-alumni">
                     
+                    <input name="jurusan" value="{{ $_GET['jurusan'] }}" type="hidden">
+                    <input name="angkatan" value="{{ $_GET['angkatan'] }}" type="hidden">
+
                     @if(isset($_GET['page']))
                     <input type="hidden" name="page" value="{{ $_GET['page'] }}"> 
                     @endif
@@ -168,6 +172,9 @@
                 <div id="periodik-dd" class="hidden tw-z-10 tw-w-auto tw-bg-white tw-rounded tw-divide-y tw-divide-gray-100 tw-shadow-md">
                     <form action="/data-alumni" class="tw-text-center">
                         
+                        <input name="jurusan" value="{{ $_GET['jurusan'] }}" type="hidden">
+                        <input name="angkatan" value="{{ $_GET['angkatan'] }}" type="hidden">
+
                         @if(isset($_GET['perPage']))
                         <input name="perPage" value="{{ $_GET['perPage'] }}" type="hidden">
                         @endif
@@ -215,7 +222,7 @@
                 </div>
 
                 <!-- This is an example component -->
-                <div class="tw-mx-5">
+                {{-- <div class="tw-mx-5">
                     <select id="show-tahun-ajaran" class="tw-border tw-border-none tw-text-sims-400 hover:tw-text-white tw-font-pop tw-text-sm tw-font-medium tw-rounded-lg tw-h-full tw-pl-5 tw-pr-10 tw-bg-white hover:tw-bg-sims-400 hover:tw-border-sims-400 focus:tw-outline-none tw-appearance-none focus:tw-ring-0 tw-shadow-md tw-transition-all tw-ease-in-out" style="cursor: pointer;">
                     
                       @if(!empty($_GET['thn_ajaran'])) 
@@ -232,7 +239,7 @@
                             @endwhile
                       @endfor
                     </select>
-                </div>
+                </div> --}}
             </div>
            
             @can('rekap-siswa')
@@ -413,6 +420,9 @@
             <div class="tw-py-3 tw-my-auto tw-h-min tw-flex tw-justify-center">
                 <form action="/data-alumni" class="tw-text-center">
 
+                    <input name="jurusan" value="{{ $_GET['jurusan'] }}" type="hidden">
+                    <input name="angkatan" value="{{ $_GET['angkatan'] }}" type="hidden">
+
                     <input type="number" name="page" class="tw-bg-white tw-border tw-border-slate-200 tw-w-1/2 tw-font-pop tw-font-medium tw-text-slate-500 tw-rounded-md tw-text-center focus:tw-ring-gray-200 focus:tw-border-gray-200 no-spin" min="1" @if(isset($_GET['page'])) value="{{ $_GET['page'] }}" @else  @endif>
 
                     @if(isset($_GET['perPage']))
@@ -470,6 +480,9 @@
             <div class="tw-py-3 tw-my-auto tw-h-min tw-flex tw-justify-center">
                 <form action="/data-alumni" class="tw-text-center">
                     
+                    <input name="jurusan" value="{{ $_GET['jurusan'] }}" type="hidden">
+                    <input name="angkatan" value="{{ $_GET['angkatan'] }}" type="hidden">
+
                     <input type="number" name="page" class="tw-bg-white tw-border tw-border-slate-200 tw-w-1/2 tw-font-pop tw-font-medium tw-text-slate-500 tw-rounded-md tw-text-center focus:tw-ring-gray-200 focus:tw-border-gray-200 no-spin" min="1" @if(isset($_GET['page'])) value="{{ $_GET['page'] }}" @endif>
                     
                     @if(isset($_GET['perPage']))
