@@ -151,7 +151,7 @@
 
     <!-- Welcome Banner -->
     <div class="tw-flex tw-flex-col tw-my-10 tw-mx-10">
-        <div class="sims-card-1">
+        <div class="sims-card-1 tw-py-8">
             <div class="tw-flex tw-justify-between tw-mx-16">
                 <div class="tw-flex tw-flex-col tw-gap-1">
                     <div class="lg:sims-heading-3xl sm:sims-heading-xl">Selamat Siang, <div class="tw-inline tw-font-black">
@@ -159,20 +159,19 @@
                     </div>
                     <div class="lg:sims-text-gray-md sm:sims-text-gray-xs">Apa yang akan anda lakukan hari ini?</div>
                 </div>
-                <i class="fa-solid fa-circle-user lg:sims-icon-5xl sm:sims-icon-4xl"></i>
             </div>
         </div>
 
         <!-- spacing -->
-        <div class="tw-my-5"></div>
+        <div class="tw-my-2"></div>
 
         <!-- Content -->
         <div class="tw-flex tw-gap-10">
 
             <!-- Column 1 -->
             <!-- Carousel -->
-            <div class="tw-flex tw-flex-col tw-w-1/2">
-                <div class="slide-container swiper tw-h-fit">
+            <div class="tw-flex tw-flex-col tw-w-1/2 tw-justify-end">
+                <div class="slide-container swiper tw-my-auto">
                     <div class="slide-content">
                         <div class="card-wrapper swiper-wrapper">
 
@@ -277,87 +276,109 @@
 
 
                 <!-- Chart -->
-                <div class="sims-card-1 tw-mt-5">
+                <div class="sims-card-1">
                     <div class="tw-flex tw-flex-col tw-mx-5">
 
                         <select
-                            class="div-toggle sims-heading-1 sims-heading-lg-black tw-lock tw-py-2.5 tw-px-4 tw-w-full tw-bg-transparent tw-border-0 tw-border-gray-200 tw-border-gray-100 tw-appearance-none dark:tw-text-gray-400 dark:tw-border-gray-700 focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-200 tw-peer"
+                            class="div-toggle sims-heading-1 sims-heading-lg-black tw-lock tw-px-4 tw-w-full tw-bg-transparent tw-border-0 tw-border-gray-200 tw-appearance-none dark:tw-text-gray-400 dark:tw-border-gray-700 focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-200 tw-peer"
                             data-target=".my-info-1">
-                            <option value="chart1" data-show=".chart1">Grafik Jumlah Siswa</option>
                             <option value="chart2" data-show=".chart2">Jumlah Siswa Mutasi & Alumni</option>
+                            <option value="chart1" data-show=".chart1">Grafik Jumlah Siswa</option>
                         </select>
 
                         <div class="my-info-1">
-                            <div class="chart1" style="height: 350px">
-                                <canvas id="myChart" class="tw-mt-4"></canvas>
-                            </div>
-                            <div class="chart2 hide" style="height: 350px">
+                            <div class="chart2" style="height: 300px">
                                 <canvas id="chart" class="tw-mt-4"></canvas>
+                            </div>
+                            <div class="chart1 hide" style="height: 300px">
+                                <canvas id="myChart" class="tw-mt-4"></canvas>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
             <!-- End of Column 1 -->
 
 
             <!-- Column 2 -->
-            <div class="sims-card-1 tw-px-10">
+            <div class="tw-flex tw-flex-col tw-w-full">
 
-                <!-- Latest Activity Card -->
-                <div class="sims-card-1-noshadow">
-                    <div class="tw-flex tw-justify-around">
-                        <div class="tw-flex tw-gap-10 tw-mx-10">
-                            <i class="fa-solid fa-clock-rotate-left sims-icon-5xl"></i>
-                            <div class="tw-flex tw-flex-col">
-                                <div class="sims-heading-lg-black">Aktivitas terakhir anda</div>
-                                <div class="sims-text-regular-md">Create new Siswa dengan NIS : 0023929</div>
-                                <div class="sims-text-gray-xs">2 menit yang lalu</div>
+                <div class="sims-card-1 tw-px-10">
+
+                    <!-- Latest Activity Card -->
+                    <div class="sims-card-1-noshadow">
+                        <div class="tw-flex tw-justify-around">
+                            <div class="tw-flex tw-gap-10 tw-mx-10">
+                                <i class="fa-solid fa-clock-rotate-left sims-icon-5xl"></i>
+                                <div class="tw-flex tw-flex-col">
+                                    <div class="sims-heading-lg-black">Aktivitas terakhir anda</div>
+                                    <div class="sims-text-regular-md">Create new Siswa dengan NIS : 0023929</div>
+                                    <div class="sims-text-gray-xs">2 menit yang lalu</div>
+                                </div>
                             </div>
+                            <a href="#"
+                                class="tw-border-sims-new-500 tw-border tw-text-sm tw-h-fit tw-my-auto tw-mr-5 tw-px-2 tw-py-3 tw-rounded-lg tw-text-sims-new-500 hover:tw-text-white hover:tw-bg-sims-new-500 tw-transition-all">
+                                Lihat Semua Histori
+                            </a>
                         </div>
+                    </div>
+
+                    <!-- Quick Access Card -->
+                    <div class="tw-flex">
                         <a href="#"
-                            class="tw-border-sims-new-500 tw-border tw-text-sm tw-h-fit tw-my-auto tw-mr-5 tw-px-2 tw-py-3 tw-rounded-lg tw-text-sims-new-500 hover:tw-text-white hover:tw-bg-sims-new-500 tw-transition-all">
-                            Lihat Semua Histori
+                            class="sims-card-1-noshadow sims-text-regular-sm tw-text-center tw-font-normal tw-w-full tw-h-40 tw-px-3 tw-mx-2 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all">
+                            <div class="tw-flex tw-flex-col tw-gap-3">
+                                <i class="fa-regular fa-book-open tw-text-3xl tw-m-auto"></i>
+                                Data Induk
+                            </div>
+                        </a>
+                        <a href="#"
+                            class="sims-card-1-noshadow sims-text-regular-sm tw-text-center tw-font-normal tw-w-full tw-h-40 tw-px-3 tw-mx-2 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all">
+                            <div class="tw-flex tw-flex-col tw-gap-3">
+                                <i class="fa-solid fa-graduation-cap tw-text-3xl tw-m-auto"></i>
+                                Rekap Jumlah Siswa
+                            </div>
+                        </a>
+                        <a href="#"
+                            class="sims-card-1-noshadow sims-text-regular-sm tw-text-center tw-font-normal tw-w-full tw-h-40 tw-px-3 tw-mx-2 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all">
+                            <div class="tw-flex tw-flex-col tw-gap-3">
+                                <i class="fa-solid fa-user-group tw-text-3xl tw-m-auto"></i>
+                                Data Perpindahan
+                            </div>
+                        </a>
+                        <a href="#"
+                            class="sims-card-1-noshadow sims-text-regular-sm tw-text-center tw-font-normal tw-w-full tw-h-40 tw-px-3 tw-mx-2 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all">
+                            <div class="tw-flex tw-flex-col tw-gap-3">
+                                <i class="fa-solid fa-question tw-text-3xl tw-m-auto"></i>
+                                Pusat Bantuan
+                            </div>
                         </a>
                     </div>
+
                 </div>
 
-                <!-- Quick Access Card -->
-                <div class="tw-flex">
-                    <a href="#"
-                        class="sims-card-1-noshadow sims-text-regular-sm tw-text-center tw-font-normal tw-w-full tw-h-40 tw-px-3 tw-mx-2 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all">
-                        <div class="tw-flex tw-flex-col tw-gap-3">
-                            <i class="fa-regular fa-book-open tw-text-3xl tw-m-auto"></i>
-                            Data Induk
+
+                <!-- Persebaran Murid -->
+                <div class="sims-card-1 tw-h-full">
+                    <div class="tw-flex tw-justify-center">
+                        <div class="tw-flex tw-flex-col">
+                            <div class="sims-heading-xl-black tw-mb-5 tw-flex tw-justify-center">Persebaran Murid</div>
+                            <div class="tw-flex tw-justify-center tw-gap-6 tw-flex-wrap tw-px-10">
+                                @foreach ($allJurusan as $j)
+                                    @if (collect($siswaJurusan)->pluck('kelas')->where('JurusanId', $j->id)->count() > 0)
+                                        <div class="tw-flex tw-flex-col tw-justify-center tw-text-center">
+                                            <div class="sims-heading-md">
+                                                {{ collect($siswaJurusan)->pluck('kelas')->where('JurusanId', $j->id)->count() }}
+                                            </div>
+                                            <div class="sims-text-gray-sm tw-font-normal">{{ $j->nama }}</div>
+                                        </div>
+                                    @endif
+                                @endforeach
+                            </div>
                         </div>
-                    </a>
-                    <a href="#"
-                        class="sims-card-1-noshadow sims-text-regular-sm tw-text-center tw-font-normal tw-w-full tw-h-40 tw-px-3 tw-mx-2 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all">
-                        <div class="tw-flex tw-flex-col tw-gap-3">
-                            <i class="fa-solid fa-graduation-cap tw-text-3xl tw-m-auto"></i>
-                            Rekap Jumlah Siswa
-                        </div>
-                    </a>
-                    <a href="#"
-                        class="sims-card-1-noshadow sims-text-regular-sm tw-text-center tw-font-normal tw-w-full tw-h-40 tw-px-3 tw-mx-2 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all">
-                        <div class="tw-flex tw-flex-col tw-gap-3">
-                            <i class="fa-solid fa-user-group tw-text-3xl tw-m-auto"></i>
-                            Data Perpindahan
-                        </div>
-                    </a>
-                    <a href="#"
-                        class="sims-card-1-noshadow sims-text-regular-sm tw-text-center tw-font-normal tw-w-full tw-h-40 tw-px-3 tw-mx-2 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all">
-                        <div class="tw-flex tw-flex-col tw-gap-3">
-                            <i class="fa-solid fa-question tw-text-3xl tw-m-auto"></i>
-                            Pusat Bantuan
-                        </div>
-                    </a>
+                    </div>
                 </div>
-
-            </div>
-
-            <div class="tw-sims-card-1">
-                <div class="sims-heading-xl-black">Persebaran Murid</div>
             </div>
             <!-- End of Column 2-->
 
