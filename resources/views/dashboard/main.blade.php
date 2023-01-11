@@ -3,6 +3,10 @@
 @section('content')
     {{-- SWIPER CSS --}}
     <style>
+        .hide {
+            display: none;
+        }
+
         .slide-container {
             max-width: 1000px;
             width: 100%;
@@ -150,7 +154,8 @@
         <div class="sims-card-1">
             <div class="tw-flex tw-justify-between tw-mx-16">
                 <div class="tw-flex tw-flex-col tw-gap-1">
-                    <div class="lg:sims-heading-3xl sm:sims-heading-xl">Selamat Siang, <div class="tw-inline tw-font-black">{{ auth()->user()->nama }}</div>
+                    <div class="lg:sims-heading-3xl sm:sims-heading-xl">Selamat Siang, <div class="tw-inline tw-font-black">
+                            {{ auth()->user()->nama }}</div>
                     </div>
                     <div class="lg:sims-text-gray-md sm:sims-text-gray-xs">Apa yang akan anda lakukan hari ini?</div>
                 </div>
@@ -166,108 +171,134 @@
 
             <!-- Column 1 -->
             <!-- Carousel -->
-            <div class="slide-container swiper tw-h-fit">
-                <div class="slide-content">
-                    <div class="card-wrapper swiper-wrapper">
+            <div class="tw-flex tw-flex-col tw-w-1/2">
+                <div class="slide-container swiper tw-h-fit">
+                    <div class="slide-content">
+                        <div class="card-wrapper swiper-wrapper">
 
-                        <!-- Card 1 -->
-                        <a href="/siswa-keluar" class="swiper-slide tw-cursor-pointer hover:tw-drop-shadow-md tw-transition-all">
-                            <div class="sims-card-1">
-                                <div class="tw-flex tw-justify-evenly tw-px-5 tw-gap-5">
-                                    <i class="fa-solid fa-user sims-icon-3xl tw-text-[#FF869C]"></i>
-                                    <div class="tw-flex tw-flex-col">
-                                        <div class="sims-heading-xl tw-font-black">-</div>
-                                        <div class="sims-text-gray-sm">Siswa Keluar</div>
+                            <!-- Card 1 -->
+                            <a href="/siswa-keluar"
+                                class="swiper-slide tw-cursor-pointer hover:tw-drop-shadow-md tw-transition-all">
+                                <div class="sims-card-1">
+                                    <div class="tw-flex tw-justify-evenly tw-px-5 tw-gap-5">
+                                        <i class="fa-solid fa-user sims-icon-3xl tw-text-[#FF869C]"></i>
+                                        <div class="tw-flex tw-flex-col">
+                                            <div class="sims-heading-xl tw-font-black">-</div>
+                                            <div class="sims-text-gray-sm">Siswa Keluar</div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </a>
+                            </a>
 
-                        <!-- Card 2 -->
-                        <a href="/rekap-jumlah-siswa" class="swiper-slide">
-                            <div class="sims-card-1 tw-cursor-pointer hover:tw-drop-shadow-md tw-transition-all">
-                                <div class="tw-flex tw-justify-evenly tw-px-5 tw-gap-5">
-                                    <i class="fa-solid fa-user sims-icon-3xl tw-text-[#FFA386]"></i>
-                                    <div class="tw-flex tw-flex-col">
-                                        <div class="sims-heading-xl tw-font-black">-</div>
-                                        <div class="sims-text-gray-sm">Jumlah Siswa</div>
+                            <!-- Card 2 -->
+                            <a href="/rekap-jumlah-siswa" class="swiper-slide">
+                                <div class="sims-card-1 tw-cursor-pointer hover:tw-drop-shadow-md tw-transition-all">
+                                    <div class="tw-flex tw-justify-evenly tw-px-5 tw-gap-5">
+                                        <i class="fa-solid fa-user sims-icon-3xl tw-text-[#FFA386]"></i>
+                                        <div class="tw-flex tw-flex-col">
+                                            <div class="sims-heading-xl tw-font-black">-</div>
+                                            <div class="sims-text-gray-sm">Jumlah Siswa</div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </a>
+                            </a>
 
-                        <!-- Card 3 -->
-                        <a href="/siswa-masuk" class="swiper-slide">
-                            <div class="sims-card-1 tw-cursor-pointer hover:tw-drop-shadow-md tw-transition-all">
-                                <div class="tw-flex tw-justify-evenly tw-px-5 tw-gap-5">
-                                    <i class="fa-solid fa-user sims-icon-3xl tw-text-[#6fc5bb]"></i>
-                                    <div class="tw-flex tw-flex-col">
-                                        <div class="sims-heading-xl tw-font-black">-</div>
-                                        <div class="sims-text-gray-sm">Siswa Masuk</div>
+                            <!-- Card 3 -->
+                            <a href="/siswa-masuk" class="swiper-slide">
+                                <div class="sims-card-1 tw-cursor-pointer hover:tw-drop-shadow-md tw-transition-all">
+                                    <div class="tw-flex tw-justify-evenly tw-px-5 tw-gap-5">
+                                        <i class="fa-solid fa-user sims-icon-3xl tw-text-[#6fc5bb]"></i>
+                                        <div class="tw-flex tw-flex-col">
+                                            <div class="sims-heading-xl tw-font-black">-</div>
+                                            <div class="sims-text-gray-sm">Siswa Masuk</div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </a>
+                            </a>
 
-                        <!-- Card 4 -->
-                        <a href="/data-alumni" class="swiper-slide">
-                            <div class="sims-card-1 tw-cursor-pointer hover:tw-drop-shadow-md tw-transition-all">
-                                <div class="tw-flex tw-justify-evenly tw-px-5 tw-gap-5">
-                                    <i class="fa-solid fa-user-graduate sims-icon-3xl tw-text-gray-400"></i>
-                                    <div class="tw-flex tw-flex-col">
-                                        <div class="sims-heading-xl tw-font-black">-</div>
-                                        <div class="sims-text-gray-sm">Alumni</div>
+                            <!-- Card 4 -->
+                            <a href="/data-alumni" class="swiper-slide">
+                                <div class="sims-card-1 tw-cursor-pointer hover:tw-drop-shadow-md tw-transition-all">
+                                    <div class="tw-flex tw-justify-evenly tw-px-5 tw-gap-5">
+                                        <i class="fa-solid fa-user-graduate sims-icon-3xl tw-text-gray-400"></i>
+                                        <div class="tw-flex tw-flex-col">
+                                            <div class="sims-heading-xl tw-font-black">-</div>
+                                            <div class="sims-text-gray-sm">Alumni</div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </a>
-                        
-                        <!-- Card 5 -->
-                        <a href="/data-tidak-naik" class="swiper-slide">
-                            <div class="sims-card-1 tw-cursor-pointer hover:tw-drop-shadow-md tw-transition-all">
-                                <div class="tw-flex tw-justify-evenly tw-px-5 tw-gap-5">
-                                    <i class="fa-solid fa-user sims-icon-3xl tw-text-[#e66161]"></i>
-                                    <div class="tw-flex tw-flex-col">
-                                        <div class="sims-heading-xl tw-font-black">-</div>
-                                        <div class="sims-text-gray-sm">Siswa Tidak Naik</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
+                            </a>
 
-                        <!-- Card 6 -->
-                        <a href="/rekap-jumlah-siswa" class="swiper-slide">
-                            <div class="sims-card-1 tw-cursor-pointer hover:tw-drop-shadow-md tw-transition-all">
-                                <div class="tw-flex tw-justify-evenly tw-px-5 tw-gap-5">
-                                    <i class="fa-solid fa-chalkboard-user sims-icon-3xl tw-text-[#7379d3]"></i>
-                                    <div class="tw-flex tw-flex-col">
-                                        <div class="sims-heading-xl tw-font-black">-</div>
-                                        <div class="sims-text-gray-sm">Kelas</div>
+                            <!-- Card 5 -->
+                            <a href="/data-tidak-naik" class="swiper-slide">
+                                <div class="sims-card-1 tw-cursor-pointer hover:tw-drop-shadow-md tw-transition-all">
+                                    <div class="tw-flex tw-justify-evenly tw-px-5 tw-gap-5">
+                                        <i class="fa-solid fa-user sims-icon-3xl tw-text-[#e66161]"></i>
+                                        <div class="tw-flex tw-flex-col">
+                                            <div class="sims-heading-xl tw-font-black">-</div>
+                                            <div class="sims-text-gray-sm">Siswa Tidak Naik</div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </a>
+                            </a>
 
-                        <!-- Card 7 -->
-                        <a href="/jurusan" class="swiper-slide">
-                            <div class="sims-card-1 tw-cursor-pointer hover:tw-drop-shadow-md tw-transition-all">
-                                <div class="tw-flex tw-justify-evenly tw-px-5 tw-gap-5">
-                                    <i class="fa-solid fa-shapes sims-icon-3xl tw-text-[#f0d897]"></i>
-                                    <div class="tw-flex tw-flex-col">
-                                        <div class="sims-heading-xl tw-font-black">-</div>
-                                        <div class="sims-text-gray-sm">Jurusan</div>
+                            <!-- Card 6 -->
+                            <a href="/rekap-jumlah-siswa" class="swiper-slide">
+                                <div class="sims-card-1 tw-cursor-pointer hover:tw-drop-shadow-md tw-transition-all">
+                                    <div class="tw-flex tw-justify-evenly tw-px-5 tw-gap-5">
+                                        <i class="fa-solid fa-chalkboard-user sims-icon-3xl tw-text-[#7379d3]"></i>
+                                        <div class="tw-flex tw-flex-col">
+                                            <div class="sims-heading-xl tw-font-black">-</div>
+                                            <div class="sims-text-gray-sm">Kelas</div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </a>
+                            </a>
+
+                            <!-- Card 7 -->
+                            <a href="/jurusan" class="swiper-slide">
+                                <div class="sims-card-1 tw-cursor-pointer hover:tw-drop-shadow-md tw-transition-all">
+                                    <div class="tw-flex tw-justify-evenly tw-px-5 tw-gap-5">
+                                        <i class="fa-solid fa-shapes sims-icon-3xl tw-text-[#f0d897]"></i>
+                                        <div class="tw-flex tw-flex-col">
+                                            <div class="sims-heading-xl tw-font-black">-</div>
+                                            <div class="sims-text-gray-sm">Jurusan</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
                     </div>
+
+                    <div class="swiper-button-next swiper-navBtn"></div>
+                    <div class="swiper-button-prev swiper-navBtn"></div>
+
                 </div>
 
-                <div class="swiper-button-next swiper-navBtn"></div>
-                <div class="swiper-button-prev swiper-navBtn"></div>
+
+                <!-- Chart -->
+                <div class="sims-card-1 tw-mt-5">
+                    <div class="tw-flex tw-flex-col tw-mx-5">
+
+                        <select
+                            class="div-toggle sims-heading-1 sims-heading-lg-black tw-lock tw-py-2.5 tw-px-4 tw-w-full tw-bg-transparent tw-border-0 tw-border-gray-200 tw-border-gray-100 tw-appearance-none dark:tw-text-gray-400 dark:tw-border-gray-700 focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-200 tw-peer"
+                            data-target=".my-info-1">
+                            <option value="chart1" data-show=".chart1">Grafik Jumlah Siswa</option>
+                            <option value="chart2" data-show=".chart2">Jumlah Siswa Mutasi & Alumni</option>
+                        </select>
+
+                        <div class="my-info-1">
+                            <div class="chart1" style="height: 350px">
+                                <canvas id="myChart" class="tw-mt-4"></canvas>
+                            </div>
+                            <div class="chart2 hide" style="height: 350px">
+                                <canvas id="chart" class="tw-mt-4"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- End of Column 1 -->
-            
 
 
             <!-- Column 2 -->
@@ -284,7 +315,8 @@
                                 <div class="sims-text-gray-xs">2 menit yang lalu</div>
                             </div>
                         </div>
-                        <a href="#" class="tw-border-sims-new-500 tw-border tw-h-fit tw-my-auto tw-px-5 tw-py-3 tw-rounded-lg tw-text-sims-new-500 hover:tw-text-white hover:tw-bg-sims-new-500 tw-transition-all">
+                        <a href="#"
+                            class="tw-border-sims-new-500 tw-border tw-text-sm tw-h-fit tw-my-auto tw-mr-5 tw-px-2 tw-py-3 tw-rounded-lg tw-text-sims-new-500 hover:tw-text-white hover:tw-bg-sims-new-500 tw-transition-all">
                             Lihat Semua Histori
                         </a>
                     </div>
@@ -292,62 +324,166 @@
 
                 <!-- Quick Access Card -->
                 <div class="tw-flex">
-                    <a href="#" class="sims-card-1-noshadow sims-text-regular-sm tw-text-center tw-font-normal tw-w-full tw-h-40 tw-px-3 tw-mx-2 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all">
+                    <a href="#"
+                        class="sims-card-1-noshadow sims-text-regular-sm tw-text-center tw-font-normal tw-w-full tw-h-40 tw-px-3 tw-mx-2 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all">
                         <div class="tw-flex tw-flex-col tw-gap-3">
                             <i class="fa-regular fa-book-open tw-text-3xl tw-m-auto"></i>
                             Data Induk
                         </div>
                     </a>
-                    <a href="#" class="sims-card-1-noshadow sims-text-regular-sm tw-text-center tw-font-normal tw-w-full tw-h-40 tw-px-3 tw-mx-2 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all">
+                    <a href="#"
+                        class="sims-card-1-noshadow sims-text-regular-sm tw-text-center tw-font-normal tw-w-full tw-h-40 tw-px-3 tw-mx-2 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all">
                         <div class="tw-flex tw-flex-col tw-gap-3">
                             <i class="fa-solid fa-graduation-cap tw-text-3xl tw-m-auto"></i>
                             Rekap Jumlah Siswa
                         </div>
                     </a>
-                    <a href="#" class="sims-card-1-noshadow sims-text-regular-sm tw-text-center tw-font-normal tw-w-full tw-h-40 tw-px-3 tw-mx-2 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all">
+                    <a href="#"
+                        class="sims-card-1-noshadow sims-text-regular-sm tw-text-center tw-font-normal tw-w-full tw-h-40 tw-px-3 tw-mx-2 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all">
                         <div class="tw-flex tw-flex-col tw-gap-3">
                             <i class="fa-solid fa-user-group tw-text-3xl tw-m-auto"></i>
                             Data Perpindahan
                         </div>
                     </a>
-                    <a href="#" class="sims-card-1-noshadow sims-text-regular-sm tw-text-center tw-font-normal tw-w-full tw-h-40 tw-px-3 tw-mx-2 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all">
+                    <a href="#"
+                        class="sims-card-1-noshadow sims-text-regular-sm tw-text-center tw-font-normal tw-w-full tw-h-40 tw-px-3 tw-mx-2 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all">
                         <div class="tw-flex tw-flex-col tw-gap-3">
                             <i class="fa-solid fa-question tw-text-3xl tw-m-auto"></i>
                             Pusat Bantuan
                         </div>
                     </a>
                 </div>
+
+            </div>
+
+            <div class="tw-sims-card-1">
+                <div class="sims-heading-xl-black">Persebaran Murid</div>
             </div>
             <!-- End of Column 2-->
 
+
         </div>
-    </div>
 
-    <script>
-        var swiper = new Swiper(".slide-content", {
-            slidesPerView: 2,
-            spaceBetween: 25,
-            fade: 'true',
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+            const ctx = document.getElementById('chart');
+            const chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Masuk', 'Keluar', 'Tidak Naik', 'Alumni'],
+                    datasets: [{
+                        label: 'Jumlah ',
+                        data: [{{ $siswaMasuk }}, {{ $siswaKeluar }}, {{ $siswaTdkNaik }},
+                            {{ $alumni }}
+                        ],
+                        backgroundColor: [
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(207, 209, 207, 0.5)',
+                        ],
+                        borderColor: [
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(207, 209, 207, 1)',
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scale: {
+                        ticks: {
+                            precision: 0
+                        }
+                    }
+                },
+            });
+        </script>
 
-            breakpoints: {
-                0: {
-                    slidesPerView: 1,
+        <script>
+            /* SWIPER JS */
+            var swiper = new Swiper(".slide-content", {
+                slidesPerView: 2,
+                spaceBetween: 25,
+                fade: 'true',
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
                 },
-                300: {
-                    slidesPerView: 2,
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
                 },
-                1450: {
-                    slidesPerView: 3,
+
+                breakpoints: {
+                    0: {
+                        slidesPerView: 1,
+                    },
+                    300: {
+                        slidesPerView: 2,
+                    },
+                    1450: {
+                        slidesPerView: 3,
+                    },
                 },
-            },
-        });
-    </script>
-@endsection
+            });
+
+            $(document).on('change', '.div-toggle', function() {
+                var target = $(this).data('target');
+                var show = $("option:selected", this).data('show');
+                $(target).children().addClass('hide');
+                $(show).removeClass('hide');
+            });
+            $(document).ready(function() {
+                $('.div-toggle').trigger('change');
+            });
+
+
+            /* CHART JS */
+            const data = {
+                datasets: [{
+                    data: [{{ $jumlahSiswaX }}, {{ $jumlahSiswaXI }}, {{ $jumlahSiswaXII }}],
+                    backgroundColor: ['rgba(144,194,194,1)', 'rgba(255,163,134,1)', 'rgba(149,187,232,1)'],
+                    hoverBackgroundColor: ['rgba(146, 212, 212,1)', 'rgba(255, 177, 153,1)', 'rgba(181, 215, 255)'],
+                    hoverBorderColor: ['rgba(146, 212, 212,1)', 'rgba(255, 177, 153,1)', 'rgba(181, 215, 255)'],
+                    hoverOffset: 2
+                }],
+
+                // These labels appear in the legend and in the tooltips when hovering different arcs
+                labels: [
+                    'Kelas X',
+                    'Kelas XI',
+                    'Kelas XII'
+                ]
+            };
+
+            const config = {
+                type: 'pie',
+                data: data,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    layout: {
+                        padding: {
+                            bottom: 10,
+                            top: 20
+                        }
+                    },
+                    elements: {
+                        arc: {
+                            borderWidth: 4.5, // <-- Set this to derired value
+                            borderColor: '#ffffff'
+                        }
+                    }
+                }
+            };
+
+            const myChart = new Chart(
+                document.getElementById('myChart'),
+                config
+            );
+        </script>
+    @endsection
