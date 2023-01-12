@@ -50,7 +50,7 @@
         <section class="tw-flex lg:tw-flex-row sm:tw-flex-col tw-justify-between sm:tw-flex-wrap sm:tw-gap-5 tw-ml-8 tw-mt-8">
             <div class="tw-flex lg:tw-flex-row sm:tw-flex-col tw-my-auto">
                 @if( ! empty($jurusan) && ! empty($kelas))
-                <form action="/data-induk-siswa/{{ $jurusan }}/{{ $   
+                <form action="/data-induk-siswa/{{ $jurusan }}/{{ $kelas }}"> 
 
                     <div class="relative tw-border-[1.5px] tw-border-gray-300 tw-rounded-xl focus:tw-ring-sims-new-500">
                         <input name="angkatan" type="hidden" value="{{ $_GET['angkatan'] }}">
