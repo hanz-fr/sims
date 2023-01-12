@@ -182,7 +182,7 @@
                                     <div class="tw-flex tw-justify-evenly tw-px-5 tw-gap-5">
                                         <i class="fa-solid fa-user sims-icon-3xl tw-text-[#FF869C]"></i>
                                         <div class="tw-flex tw-flex-col">
-                                            <div class="sims-heading-xl tw-font-black">-</div>
+                                            <div class="sims-heading-xl tw-font-black">{{ $siswaKeluar }}</div>
                                             <div class="sims-text-gray-sm">Siswa Keluar</div>
                                         </div>
                                     </div>
@@ -195,7 +195,7 @@
                                     <div class="tw-flex tw-justify-evenly tw-px-5 tw-gap-5">
                                         <i class="fa-solid fa-user sims-icon-3xl tw-text-[#FFA386]"></i>
                                         <div class="tw-flex tw-flex-col">
-                                            <div class="sims-heading-xl tw-font-black">-</div>
+                                            <div class="sims-heading-xl tw-font-black">{{ $siswa }}</div>
                                             <div class="sims-text-gray-sm">Jumlah Siswa</div>
                                         </div>
                                     </div>
@@ -208,7 +208,7 @@
                                     <div class="tw-flex tw-justify-evenly tw-px-5 tw-gap-5">
                                         <i class="fa-solid fa-user sims-icon-3xl tw-text-[#6fc5bb]"></i>
                                         <div class="tw-flex tw-flex-col">
-                                            <div class="sims-heading-xl tw-font-black">-</div>
+                                            <div class="sims-heading-xl tw-font-black">{{ $siswaMasuk }}</div>
                                             <div class="sims-text-gray-sm">Siswa Masuk</div>
                                         </div>
                                     </div>
@@ -221,7 +221,7 @@
                                     <div class="tw-flex tw-justify-evenly tw-px-5 tw-gap-5">
                                         <i class="fa-solid fa-user-graduate sims-icon-3xl tw-text-gray-400"></i>
                                         <div class="tw-flex tw-flex-col">
-                                            <div class="sims-heading-xl tw-font-black">-</div>
+                                            <div class="sims-heading-xl tw-font-black">{{ $alumni }}</div>
                                             <div class="sims-text-gray-sm">Alumni</div>
                                         </div>
                                     </div>
@@ -234,7 +234,7 @@
                                     <div class="tw-flex tw-justify-evenly tw-px-5 tw-gap-5">
                                         <i class="fa-solid fa-user sims-icon-3xl tw-text-[#e66161]"></i>
                                         <div class="tw-flex tw-flex-col">
-                                            <div class="sims-heading-xl tw-font-black">-</div>
+                                            <div class="sims-heading-xl tw-font-black">{{ $siswaTdkNaik }}</div>
                                             <div class="sims-text-gray-sm">Siswa Tidak Naik</div>
                                         </div>
                                     </div>
@@ -247,7 +247,7 @@
                                     <div class="tw-flex tw-justify-evenly tw-px-5 tw-gap-5">
                                         <i class="fa-solid fa-chalkboard-user sims-icon-3xl tw-text-[#7379d3]"></i>
                                         <div class="tw-flex tw-flex-col">
-                                            <div class="sims-heading-xl tw-font-black">-</div>
+                                            <div class="sims-heading-xl tw-font-black">{{ $kelas }}</div>
                                             <div class="sims-text-gray-sm">Kelas</div>
                                         </div>
                                     </div>
@@ -260,7 +260,7 @@
                                     <div class="tw-flex tw-justify-evenly tw-px-5 tw-gap-5">
                                         <i class="fa-solid fa-shapes sims-icon-3xl tw-text-[#f0d897]"></i>
                                         <div class="tw-flex tw-flex-col">
-                                            <div class="sims-heading-xl tw-font-black">-</div>
+                                            <div class="sims-heading-xl tw-font-black">{{ $jurusan }}</div>
                                             <div class="sims-text-gray-sm">Jurusan</div>
                                         </div>
                                     </div>
@@ -317,7 +317,7 @@
                                     <div class="sims-text-gray-xs">2 menit yang lalu</div>
                                 </div>
                             </div>
-                            <a href="#"
+                            <a href="/history/my"
                                 class="tw-border-sims-new-500 tw-border tw-text-sm tw-h-fit tw-my-auto tw-mr-5 tw-px-2 tw-py-3 tw-rounded-lg tw-text-sims-new-500 hover:tw-text-white hover:tw-bg-sims-new-500 tw-transition-all">
                                 Lihat Semua Histori
                             </a>
@@ -326,28 +326,28 @@
 
                     <!-- Quick Access Card -->
                     <div class="tw-flex">
-                        <a href="#"
+                        <a href="/data-induk-siswa?perPage=10&page=1"
                             class="sims-card-1-noshadow sims-text-regular-sm tw-text-center tw-font-normal tw-w-full tw-h-40 tw-px-3 tw-mx-2 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all">
                             <div class="tw-flex tw-flex-col tw-gap-3">
                                 <i class="fa-regular fa-book-open tw-text-3xl tw-m-auto"></i>
-                                Data Induk
+                                Data Induk Siswa (Umum)
                             </div>
                         </a>
-                        <a href="#"
+                        <a href="/rekap-jumlah-siswa"
                             class="sims-card-1-noshadow sims-text-regular-sm tw-text-center tw-font-normal tw-w-full tw-h-40 tw-px-3 tw-mx-2 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all">
                             <div class="tw-flex tw-flex-col tw-gap-3">
                                 <i class="fa-solid fa-graduation-cap tw-text-3xl tw-m-auto"></i>
                                 Rekap Jumlah Siswa
                             </div>
                         </a>
-                        <a href="#"
+                        <a href="/siswa-keluar"
                             class="sims-card-1-noshadow sims-text-regular-sm tw-text-center tw-font-normal tw-w-full tw-h-40 tw-px-3 tw-mx-2 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all">
                             <div class="tw-flex tw-flex-col tw-gap-3">
                                 <i class="fa-solid fa-user-group tw-text-3xl tw-m-auto"></i>
                                 Data Perpindahan
                             </div>
                         </a>
-                        <a href="#"
+                        <a href="/help"
                             class="sims-card-1-noshadow sims-text-regular-sm tw-text-center tw-font-normal tw-w-full tw-h-40 tw-px-3 tw-mx-2 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all">
                             <div class="tw-flex tw-flex-col tw-gap-3">
                                 <i class="fa-solid fa-question tw-text-3xl tw-m-auto"></i>
