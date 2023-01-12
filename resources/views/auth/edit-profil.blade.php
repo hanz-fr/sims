@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.main-new')
 
 @section('content')
 <div class="tw-m-10">

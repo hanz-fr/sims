@@ -1,7 +1,7 @@
 <div x-data="setup()" x-init="$refs.loading.classList.add('hidden');" @resize.window="watchScreen()">
-    <div class="tw-flex tw-h-screen tw-antialiased tw-text-gray-900 tw-bg-gray-100 dark:tw-bg-dark dark:tw-text-light">
+    <div class="tw-flex tw-antialiased tw-text-gray-900 tw-bg-gray-100 dark:tw-bg-dark dark:tw-text-light">
         <!-- Sidebar -->
-        <aside class="tw-flex tw-flex-shrink-0 tw-transition-all">
+        <aside class="tw-flex tw-sticky tw-top-0 tw-h-screen tw-flex-shrink-0 tw-transition-all">
             <div x-show="isSidebarOpen" @click="isSidebarOpen = false"
                 class="tw-fixed tw-inset-0 tw-z-10 tw-bg-black tw-bg-opacity-50 lg:tw-hidden"></div>
             <div x-show="isSidebarOpen" class="tw-fixed tw-inset-y-0 tw-z-10 tw-w-16 tw-bg-white"></div>

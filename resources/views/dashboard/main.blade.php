@@ -216,7 +216,7 @@
                             </a>
 
                             <!-- Card 4 -->
-                            <a href="/data-alumni" class="swiper-slide">
+                            <a href="/select-jurusan-alumni" class="swiper-slide">
                                 <div class="sims-card-1 tw-cursor-pointer hover:tw-drop-shadow-md tw-transition-all">
                                     <div class="tw-flex tw-justify-evenly tw-px-5 tw-gap-5">
                                         <i class="fa-solid fa-user-graduate sims-icon-3xl tw-text-gray-400"></i>

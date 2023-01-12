@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.main-new')
 
 @section('content')
     <div class="tw-mx-10">
@@ -39,32 +39,32 @@
             <ul class="tw-flex mb-0 mt-4 tw--ml-6 tw-font-pop tw-text-xl">
                 <li @click="openTab = 1" :class="{ 'tw--mb-px': openTab === 1 }">
                     <button :class="openTab === 1 ? activeClasses : inactiveClasses"
-                        class="tw-rounded-t-2xl tw-text-gray-500 hover:tw-text-sims-400 tw-inline-block tw-py-2 tw-px-10 tw-font-semibold">
+                        class=" tw-rounded-t-2xl tw-text-gray-500 hover:tw-text-sims-400 tw-inline-block tw-py-2 tw-px-10 tw-font-semibold">
                         Semua Kelas
                     </button>
                 </li>
                 <li @click="openTab = 2" :class="{ 'tw--mb-px': openTab === 2 }">
                     <button :class="openTab === 2 ? activeClasses : inactiveClasses"
-                        class="tw-rounded-t-2xl tw-text-gray-500 hover:tw-text-sims-400 tw-inline-block tw-py-2 tw-px-10 tw-font-semibold">
+                        class=" tw-rounded-t-2xl tw-text-gray-500 hover:tw-text-sims-400 tw-inline-block tw-py-2 tw-px-10 tw-font-semibold">
                         X
                     </button>
                 </li>
                 <li @click="openTab = 3" :class="{ 'tw--mb-px': openTab === 3 }">
                     <button :class="openTab === 3 ? activeClasses : inactiveClasses"
-                        class="tw-rounded-t-2xl tw-text-gray-500 hover:tw-text-sims-400 tw-inline-block tw-py-2 tw-px-10 tw-font-semibold">
+                        class=" tw-rounded-t-2xl tw-text-gray-500 hover:tw-text-sims-400 tw-inline-block tw-py-2 tw-px-10 tw-font-semibold">
                         XI
                     </button>
                 </li>
                 <li @click="openTab = 4" :class="{ 'tw--mb-px': openTab === 4 }">
                     <button :class="openTab === 4 ? activeClasses : inactiveClasses"
-                        class="tw-rounded-t-2xl tw-text-gray-500 hover:tw-text-sims-400 tw-inline-block tw-py-2 tw-px-10 tw-font-semibold">
+                        class=" tw-rounded-t-2xl tw-text-gray-500 hover:tw-text-sims-400 tw-inline-block tw-py-2 tw-px-10 tw-font-semibold">
                         XII
                     </button>
                 </li>
             </ul>
             <div x-show="openTab === 1" class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl tw-mb-20">
                 <table class="tw-w-full tw-text-sm tw-text-center">
-                    <thead class="tw-text-md tw-bg-gray-100 tw-text-basic-700 tw-border tw-font-pop">
+                    <thead class="tw-text-md tw-bg-gray tw-text-basic-700 tw-border tw-font-pop">
                         <tr>
                             <th scope="col" rowspan="2" class="tw-py-3 tw-px-6 tw-border">KELAS</th>
                             <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border">JUMLAH SISWA AWAL BULAN</th>
