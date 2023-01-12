@@ -73,11 +73,11 @@
                 </form>
                 @else
                 <form action="/data-induk-siswa"> 
-                    <div class="relative tw-border-[1.5px] tw-border-gray-300 tw-rounded-xl focus:tw-border-none focus:tw-ring-0 focus:tw-outline-0 ">
+                    <div class="relative tw-border-[1.5px] tw-border-gray-300 tw-rounded-xl focus:tw-ring-sims-new-500">
                         
                         <input name="page" value="1" type="hidden">
                         <input name="perPage" value="10" type="hidden">
-                        <input type="text" id="search" name="search" class="tw-w-full tw-border-none tw-rounded-xl" value="{{ request()->search }}">
+                        <input type="text" id="search" name="search" class="tw-block tw-py-1 tw-px-5 tw-border-none tw-rounded-xl" value="{{ request()->search }}">
     
                         @if(isset($_GET['nis_siswa'])) <input name="nis_siswa" value="{{ $_GET['nis_siswa'] }}" type="hidden"> @endif
                         @if(isset($_GET['nisn_siswa'])) <input name="nisn_siswa" value="{{ $_GET['nisn_siswa'] }}" type="hidden"> @endif
@@ -90,11 +90,11 @@
                         @if(isset($_GET['dibuatTglKe'])) <input name="dibuatTglKe" value="{{ $_GET['dibuatTglKe'] }}" type="hidden"> @endif
                         @if(isset($_GET['thn_ajaran'])) <input name="thn_ajaran" value="{{ $_GET['thn_ajaran'] }}" type="hidden"> @endif
     
-                        <i class="fa-solid fa-magnifying-glass tw-pr-5 tw-pl-3 tw-text-slate-600"></i>
+                        <i class="fa-thin fa-magnifying-glass tw-absolute tw-text-gray-400 right-0 tw-inset-y-1.5 tw-pr-5 tw-text-sm"></i>
                     </div>
                 </form>
                 @endif
-                <div class="tw-flex">
+                <div class="tw-flex tw-my-auto">
                     <div class="tw-my-auto tw-text-basic-700 tw-ml-8 tw-mr-2 tw-font-normal tw-font-satoshi">Tampilkan</div>
                     @if( ! empty($jurusan) && ! empty($kelas))
                     <select name="show-data-perpage" id="show-data-perpage" class="tw-px-5 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-200 tw-peer tw-font-bold  bg-transparent tw-border-0 tw-border-b-2 tw-border-gray-200 tw-appearance-none tw-block">
@@ -331,7 +331,7 @@
                     @endif
                 </div>
             </div>
-            <div class="tw-flex">
+            <div class="tw-flex tw-my-auto">
                 @can('tata usaha')
                 <button type="button" data-modal-toggle="popup-modal" class="tw-bg-sims-new-500 tw-text-white hover:tw-text-white hover:tw-bg-sims-new-700 tw-font-satoshi tw-rounded-lg tw-px-8 tw-py-2 tw-mr-7">
                     Tambah Data +
