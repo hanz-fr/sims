@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.main-new')
 
 @section('content')
 <style>
@@ -8,14 +8,15 @@
     }
 </style>
 
-<div class="tw-mx-10">
-    <div class="tw-flex tw-mt-8">
-        <h4 class="title-main">Data Siswa Tidak Naik Kelas</h4>
+<div class="tw-mt-10">
+    <div class="tw-flex tw-mt-8 tw-ml-8">
+        <h4 class="sims-heading-3xl">Data Siswa Tidak Naik Kelas</h4>
     </div>
-        <div class="tw-flex tw-justify-between tw-mt-3 sm:tw-flex-wrap sm:tw-gap-5">
-            <div class="tw-flex">
+
+        <div class="tw-flex tw-justify-between tw-ml-8 tw-mt-8 lg:tw-flex-row sm:tw-flex-col sm:tw-gap-5">
+            <div class="tw-flex tw-my-auto">
                 <form action="/data-tidak-naik"> 
-                    <div class="relative tw-border-2 tw-rounded-lg focus:tw-ring-sims-400">
+                    <div class="relative tw-border-[1.5px] tw-border-gray-300 tw-rounded-xl focus:tw-ring-sims-new-500">
                         
                         <input name="page" value="1" type="hidden">
                         <input name="perPage" value="10" type="hidden">
@@ -30,23 +31,25 @@
                         @if(isset($_GET['dibuatTglDari'])) <input name="dibuatTglDari" value="{{ $_GET['dibuatTglDari'] }}" type="hidden"> @endif
                         @if(isset($_GET['dibuatTglKe'])) <input name="dibuatTglKe" value="{{ $_GET['dibuatTglKe'] }}" type="hidden"> @endif
 
-                        <input type="text" id="search" name="search" class="tw-py-1 tw-px-5 tw-border-none tw-rounded-md" value="{{ request()->search }}">
-                        <i class="fa-solid fa-magnifying-glass tw-pr-5 tw-pl-3 tw-text-slate-600"></i>
+                        <input type="text" id="search" name="search" class="tw-block tw-py-1 tw-px-5 tw-border-none tw-rounded-xl" value="{{ request()->search }}">
+                        <i class="fa-thin fa-magnifying-glass tw-absolute tw-text-gray-400 right-0 tw-inset-y-1.5 tw-pr-5 tw-text-sm"></i>
                     </div>
                 </form>
-                <div class="tw-text-base pt-1 tw-text-basic-700 tw-ml-4 tw-mr-2 tw-font-normal tw-font-pop">Show</div>
-                <select name="show-data-perpage" id="show-data-perpage" class="tw-bg-gray-300 tw-font-bold tw-px-7 tw-rounded-xl tw-text tw-mb-2 tw-border-none">
+
+                <div class="tw-my-auto tw-text-basic-700 tw-ml-8 tw-mr-2 tw-font-normal tw-font-satoshi">Tampilkan</div>
+                <select name="show-data-perpage" id="show-data-perpage" class="tw-px-5 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-200 tw-peer tw-font-bold  bg-transparent tw-border-0 tw-border-b-2 tw-border-gray-200 tw-appearance-none tw-block">
                     <option value="/data-tidak-naik?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=10&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&tinggal_di_Kelas=@isset($_GET['tinggal_di_Kelas']){{ $_GET['tinggal_di_Kelas'] }}@endisset&alasan_tidak_naik=@isset($_GET['alasan_tidak_naik']){{ $_GET['alasan_tidak_naik'] }}@endisset&tmp_lahir=@isset($_GET['tmp_lahir']){{ $_GET['tmp_lahir'] }}@endisset&tgl_lahir=@isset($_GET['tgl_lahir']){{ $_GET['tgl_lahir'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '10') selected @endif @endisset class="tw-bg-white">10</option>
                     <option value="/data-tidak-naik?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=25&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&tinggal_di_Kelas=@isset($_GET['tinggal_di_Kelas']){{ $_GET['tinggal_di_Kelas'] }}@endisset&alasan_tidak_naik=@isset($_GET['alasan_tidak_naik']){{ $_GET['alasan_tidak_naik'] }}@endisset&tmp_lahir=@isset($_GET['tmp_lahir']){{ $_GET['tmp_lahir'] }}@endisset&tgl_lahir=@isset($_GET['tgl_lahir']){{ $_GET['tgl_lahir'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '25') selected @endif @endisset class="tw-bg-white">25</option>
                     <option value="/data-tidak-naik?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=50&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&tinggal_di_Kelas=@isset($_GET['tinggal_di_Kelas']){{ $_GET['tinggal_di_Kelas'] }}@endisset&alasan_tidak_naik=@isset($_GET['alasan_tidak_naik']){{ $_GET['alasan_tidak_naik'] }}@endisset&tmp_lahir=@isset($_GET['tmp_lahir']){{ $_GET['tmp_lahir'] }}@endisset&tgl_lahir=@isset($_GET['tgl_lahir']){{ $_GET['tgl_lahir'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '50') selected @endif @endisset class="tw-bg-white">50</option>
                     <option value="/data-tidak-naik?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=100&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&tinggal_di_Kelas=@isset($_GET['tinggal_di_Kelas']){{ $_GET['tinggal_di_Kelas'] }}@endisset&alasan_tidak_naik=@isset($_GET['alasan_tidak_naik']){{ $_GET['alasan_tidak_naik'] }}@endisset&tmp_lahir=@isset($_GET['tmp_lahir']){{ $_GET['tmp_lahir'] }}@endisset&tgl_lahir=@isset($_GET['tgl_lahir']){{ $_GET['tgl_lahir'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '100') selected @endif @endisset class="tw-bg-white">100</option>
                 </select>
-                <div class="tw-text-base pt-1 tw-mx-2 tw-font-pop tw-font-normal tw-text-basic-700">Entries</div>
+                <div class="tw-my-auto tw-mx-2 tw-font-satoshi tw-font-normal tw-text-basic-700">data</div>
             
                 <div class="tw-flex tw-mx-1 tw-my-auto">
                     
                     {{-- FILTER DROPDOWN --}}
-                    <button id="dropdownToggleButton" data-dropdown-toggle="filter-dd" class="tw-text-sims-500 hover:tw-text-white tw-font-pop focus:tw-ring-0 focus:tw-outline-none tw-font-medium tw-rounded-lg tw-text-sm tw-px-4 tw-py-1 tw-ml-2 tw-text-center tw-inline-flex tw-items-center dark:tw-bg-white dark:hover:tw-bg-sims-500 tw-shadow-md tw-transition-all tw-ease-in-out" type="button">Filters <i class="tw-text-xl tw-ml-5 fa-duotone fa-sliders-simple"></i></button>
+                    <button id="dropdownToggleButton" data-dropdown-toggle="filter-dd" class="tw-text-sims-new-600 hover:tw-text-white tw-font-satoshi focus:tw-ring-0 focus:tw-outline-none tw-font-medium tw-rounded-md tw-text-sm tw-px-5 tw-py-0.5 tw-ml-8 tw-text-center tw-inline-flex tw-items-center dark:tw-bg-white dark:hover:tw-bg-sims-new-600 tw-shadow-md tw-transition-all tw-ease-in-out
+                     type="button">Filters <i class="tw-text-xl tw-ml-5 fa-duotone fa-sliders-simple"></i></button>
 
                     <!-- filter menu -->
                     <div id="filter-dd" class="hidden tw-z-10 tw-w-72 tw-bg-white tw-rounded tw-divide-y tw-divide-gray-100 tw-shadow-md">
@@ -71,7 +74,7 @@
                                 <div class="tw-flex tw-p-2 tw-rounded hover:tw-bg-gray-100 tw-transition-all tw-ease-in-out">
                                   <label class="tw-inline-flex tw-relative tw-items-center tw-w-full tw-cursor-pointer">
                                     <input type="checkbox" value="true" name="nama_siswa" class="tw-sr-only tw-peer focus:tw-ring-0 focus:tw-ring-offset-0" @isset($_GET['nama_siswa']) @if($_GET['nama_siswa'] === "true") checked @endif @endisset>
-                                    <div class="tw-w-9 tw-h-5 tw-bg-gray-200 peer-focus:tw-outline-none tw-rounded-full tw-peer peer-checked:after:tw-translate-x-full peer-checked:after:tw-border-white after:tw-content-[''] after:tw-absolute after:tw-top-[2px] after:tw-left-[2px] after:tw-bg-white after:tw-border-gray-300 after:tw-border after:tw-rounded-full after:tw-h-4 after:tw-w-4 after:tw-transition-all peer-checked:tw-bg-sims-400"></div>
+                                    <div class="tw-w-9 tw-h-5 tw-bg-gray-200 peer-focus:tw-outline-none tw-rounded-full tw-peer peer-checked:after:tw-translate-x-full peer-checked:after:tw-border-white after:tw-content-[''] after:tw-absolute after:tw-top-[2px] after:tw-left-[2px] after:tw-bg-white after:tw-border-gray-300 after:tw-border after:tw-rounded-full after:tw-h-4 after:tw-w-4 after:tw-transition-all peer-checked:tw-bg-sims-new-500"></div>
                                     <span class="tw-ml-3 tw-text-xs tw-font-medium tw-text-gray-500 dark:text-gray-300">Nama Siswa</span>
                                   </label>
                                 </div>
@@ -80,7 +83,7 @@
                                 <div class="tw-flex tw-p-2 tw-rounded hover:tw-bg-gray-100 tw-transition-all tw-ease-in-out">
                                   <label class="tw-inline-flex tw-relative tw-items-center tw-w-full tw-cursor-pointer">
                                     <input type="checkbox" value="true" name="tmp_lahir" class="tw-sr-only tw-peer focus:tw-ring-0 focus:tw-ring-offset-0" @isset($_GET['tmp_lahir']) @if($_GET['tmp_lahir'] === "true") checked @endif @endisset>
-                                    <div class="tw-w-9 tw-h-5 tw-bg-gray-200 peer-focus:tw-outline-none tw-rounded-full tw-peer peer-checked:after:tw-translate-x-full peer-checked:after:tw-border-white after:tw-content-[''] after:tw-absolute after:tw-top-[2px] after:tw-left-[2px] after:tw-bg-white after:tw-border-gray-300 after:tw-border after:tw-rounded-full after:tw-h-4 after:tw-w-4 after:tw-transition-all peer-checked:tw-bg-sims-400"></div>
+                                    <div class="tw-w-9 tw-h-5 tw-bg-gray-200 peer-focus:tw-outline-none tw-rounded-full tw-peer peer-checked:after:tw-translate-x-full peer-checked:after:tw-border-white after:tw-content-[''] after:tw-absolute after:tw-top-[2px] after:tw-left-[2px] after:tw-bg-white after:tw-border-gray-300 after:tw-border after:tw-rounded-full after:tw-h-4 after:tw-w-4 after:tw-transition-all peer-checked:tw-bg-sims-new-500"></div>
                                     <span class="tw-ml-3 tw-text-xs tw-font-medium tw-text-gray-500 dark:text-gray-300">Tempat Lahir</span>
                                   </label>
                                 </div>
@@ -89,7 +92,7 @@
                                 <div class="tw-flex tw-p-2 tw-rounded hover:tw-bg-gray-100 tw-transition-all tw-ease-in-out">
                                   <label class="tw-inline-flex tw-relative tw-items-center tw-w-full tw-cursor-pointer">
                                     <input type="checkbox" value="true" name="tgl_lahir" class="tw-sr-only tw-peer focus:tw-ring-0 focus:tw-ring-offset-0" @isset($_GET['tgl_lahir']) @if($_GET['tgl_lahir'] === "true") checked @endif @endisset>
-                                    <div class="tw-w-9 tw-h-5 tw-bg-gray-200 peer-focus:tw-outline-none tw-rounded-full tw-peer peer-checked:after:tw-translate-x-full peer-checked:after:tw-border-white after:tw-content-[''] after:tw-absolute after:tw-top-[2px] after:tw-left-[2px] after:tw-bg-white after:tw-border-gray-300 after:tw-border after:tw-rounded-full after:tw-h-4 after:tw-w-4 after:tw-transition-all peer-checked:tw-bg-sims-400"></div>
+                                    <div class="tw-w-9 tw-h-5 tw-bg-gray-200 peer-focus:tw-outline-none tw-rounded-full tw-peer peer-checked:after:tw-translate-x-full peer-checked:after:tw-border-white after:tw-content-[''] after:tw-absolute after:tw-top-[2px] after:tw-left-[2px] after:tw-bg-white after:tw-border-gray-300 after:tw-border after:tw-rounded-full after:tw-h-4 after:tw-w-4 after:tw-transition-all peer-checked:tw-bg-sims-new-500"></div>
                                     <span class="tw-ml-3 tw-text-xs tw-font-medium tw-text-gray-500 dark:text-gray-300">Tanggal Lahir</span>
                                   </label>
                                 </div>
@@ -98,7 +101,7 @@
                                 <div class="tw-flex tw-p-2 tw-rounded hover:tw-bg-gray-100 tw-transition-all tw-ease-in-out">
                                   <label class="tw-inline-flex tw-relative tw-items-center tw-w-full tw-cursor-pointer">
                                     <input type="checkbox" value="true" name="tinggal_di_Kelas" class="tw-sr-only tw-peer focus:tw-ring-0 focus:tw-ring-offset-0" @isset($_GET['tinggal_di_Kelas']) @if($_GET['tinggal_di_Kelas'] === "true") checked @endif @endisset>
-                                    <div class="tw-w-9 tw-h-5 tw-bg-gray-200 peer-focus:tw-outline-none tw-rounded-full tw-peer peer-checked:after:tw-translate-x-full peer-checked:after:tw-border-white after:tw-content-[''] after:tw-absolute after:tw-top-[2px] after:tw-left-[2px] after:tw-bg-white after:tw-border-gray-300 after:tw-border after:tw-rounded-full after:tw-h-4 after:tw-w-4 after:tw-transition-all peer-checked:tw-bg-sims-400"></div>
+                                    <div class="tw-w-9 tw-h-5 tw-bg-gray-200 peer-focus:tw-outline-none tw-rounded-full tw-peer peer-checked:after:tw-translate-x-full peer-checked:after:tw-border-white after:tw-content-[''] after:tw-absolute after:tw-top-[2px] after:tw-left-[2px] after:tw-bg-white after:tw-border-gray-300 after:tw-border after:tw-rounded-full after:tw-h-4 after:tw-w-4 after:tw-transition-all peer-checked:tw-bg-sims-new-500"></div>
                                     <span class="tw-ml-3 tw-text-xs tw-font-medium tw-text-gray-500 dark:text-gray-300">Tinggal di Kelas</span>
                                   </label>
                                 </div>
@@ -107,7 +110,7 @@
                                 <div class="tw-flex tw-p-2 tw-rounded hover:tw-bg-gray-100 tw-transition-all tw-ease-in-out">
                                   <label class="tw-inline-flex tw-relative tw-items-center tw-w-full tw-cursor-pointer">
                                     <input type="checkbox" value="true" name="alasan_tidak_naik" class="tw-sr-only tw-peer focus:tw-ring-0 focus:tw-ring-offset-0" @isset($_GET['alasan_tidak_naik']) @if($_GET['alasan_tidak_naik'] === "true") checked @endif @endisset>
-                                    <div class="tw-w-9 tw-h-5 tw-bg-gray-200 peer-focus:tw-outline-none tw-rounded-full tw-peer peer-checked:after:tw-translate-x-full peer-checked:after:tw-border-white after:tw-content-[''] after:tw-absolute after:tw-top-[2px] after:tw-left-[2px] after:tw-bg-white after:tw-border-gray-300 after:tw-border after:tw-rounded-full after:tw-h-4 after:tw-w-4 after:tw-transition-all peer-checked:tw-bg-sims-400"></div>
+                                    <div class="tw-w-9 tw-h-5 tw-bg-gray-200 peer-focus:tw-outline-none tw-rounded-full tw-peer peer-checked:after:tw-translate-x-full peer-checked:after:tw-border-white after:tw-content-[''] after:tw-absolute after:tw-top-[2px] after:tw-left-[2px] after:tw-bg-white after:tw-border-gray-300 after:tw-border after:tw-rounded-full after:tw-h-4 after:tw-w-4 after:tw-transition-all peer-checked:tw-bg-sims-new-500"></div>
                                     <span class="tw-ml-3 tw-text-xs tw-font-medium tw-text-gray-500 dark:text-gray-300">Alasan</span>
                                   </label>
                                 </div>
@@ -150,7 +153,7 @@
                         </div>
 
                         <div class="tw-flex tw-justify-center">
-                            <button type="submit" class="tw-w-full tw-rounded-lg tw-mx-3 tw-font-pop tw-text-white tw-text-sm tw-font-medium tw-mb-2 tw-py-2 tw-bg-sims-400 hover:tw-bg-sims-500 tw-transition-all tw-ease-in-out">Simpan</button>
+                            <button type="submit" class="tw-w-full tw-rounded-lg tw-mx-3 tw-font-pop tw-text-white tw-text-sm tw-font-medium tw-mb-2 tw-py-2 tw-bg-sims-new-500 hover:tw-bg-sims-new-600 tw-transition-all tw-ease-in-out">Simpan</button>
                         </div>
                         </form>
                     </div>
@@ -158,7 +161,7 @@
 
 
                     {{-- DATA PERIODIK DROPDOWN --}}
-                    <button id="dropdownToggleButton" data-dropdown-toggle="periodik-dd" class="tw-text-sims-400 hover:tw-text-white tw-font-pop focus:tw-ring-0 focus:tw-outline-none tw-font-medium tw-rounded-lg tw-text-sm tw-px-4 tw-py-1 tw-ml-4 tw-text-center tw-inline-flex tw-items-center dark:tw-bg-white dark:hover:tw-bg-sims-500 tw-shadow-md tw-transition-all tw-ease-in-out" type="button">Data Periodik <i class="fa-duotone fa-calendar tw-ml-4"></i></button>
+                    <button id="dropdownToggleButton" data-dropdown-toggle="periodik-dd" class="tw-text-sims-new-500 hover:tw-text-white tw-font-satoshi focus:tw-ring-0 focus:tw-outline-none tw-font-medium tw-rounded-md tw-text-sm tw-px-4 tw-py-0.5 tw-ml-4 tw-text-center tw-inline-flex tw-items-center dark:tw-bg-white dark:hover:tw-bg-sims-new-600 tw-shadow-md tw-transition-all tw-ease-in-out" type="button">Data Periodik <i class="fa-duotone fa-calendar tw-ml-4"></i></button>
                 
                     <div id="periodik-dd" class="hidden tw-z-10 tw-w-auto tw-bg-white tw-rounded tw-divide-y tw-divide-gray-100 tw-shadow-md">
                         <form action="/data-tidak-naik" class="tw-text-center">
@@ -185,7 +188,7 @@
                                     <!--Code Block for white tooltip starts-->
                                     <a tabindex="0" role="link" aria-label="tooltip 1" class="focus:outline-none focus:ring-gray-300 rounded-full focus:ring-offset-2 focus:ring-2 focus:bg-gray-200 relative mt-20 md:mt-0" onmouseover="showTooltip(1)" onfocus="showTooltip(1)" onmouseout="hideTooltip(1)">
                                         <div class=" cursor-pointer">
-                                            <i data-tooltip-target="tooltip-animation" class="fa-regular fa-circle-question tw-text-md tw-text-sims-400"></i>
+                                            <i data-tooltip-target="tooltip-animation" class="fa-regular fa-circle-question tw-text-md tw-text-sims-new-500"></i>
                                         </div>
                                         <div id="tooltip1" role="tooltip" class="z-20 w-64 absolute transition duration-150 ease-in-out left-0 ml-8 shadow-lg bg-white p-4 rounded hidden">
                                             <p class="text-sm font-bold text-gray-800 pb-1">Data periodik Tidak Naik Kelas</p>
@@ -204,13 +207,14 @@
                                 </div>
                             </div>
                             <div class="tw-flex tw-justify-center tw-mt-3">
-                                <button type="submit" class="tw-w-full tw-rounded-lg tw-mx-3 tw-font-pop tw-text-white tw-text-sm tw-font-medium tw-mb-2 tw-py-2 tw-bg-sims-400 hover:tw-bg-sims-500 tw-transition-all tw-ease-in-out">Simpan</button>
+                                <button type="submit" class="tw-w-full tw-rounded-lg tw-mx-3 tw-font-pop tw-text-white tw-text-sm tw-font-medium tw-mb-2 tw-py-2 tw-bg-sims-new-500 hover:tw-bg-sims-new-600 tw-transition-all tw-ease-in-out">Simpan</button>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
-            <div class="tw-flex md:tw-justify-center tw-items-center">
+
+            <div class="tw-flex md:tw-justify-center tw-items-center tw-mr-7">
                 @cannot('wali kelas')
                 <button type="button" data-modal-toggle="export-print" title="Export ke print"><i class="fa-solid fa-print btn-export"></i></button>
                     
@@ -244,7 +248,7 @@
                                         </div>
                                     </div>
                                     <div class="tw-flex tw-justify-center tw-mt-3">
-                                        <button type="submit" class="tw-w-full tw-rounded-lg tw-mx-3 tw-font-pop tw-text-white tw-text-sm tw-font-medium tw-mb-2 tw-py-2 tw-bg-sims-400 hover:tw-bg-sims-500 tw-transition-all tw-ease-in-out">Print</button>
+                                        <button type="submit" class="tw-w-full tw-rounded-lg tw-mx-3 tw-font-pop tw-text-white tw-text-sm tw-font-medium tw-mb-2 tw-py-2 tw-bg-sims-new-500 hover:tw-bg-sims-new-600 tw-transition-all tw-ease-in-out">Print</button>
                                     </div>
                                 </div>
                             </form>
@@ -285,7 +289,7 @@
                                         </div>
                                     </div>
                                     <div class="tw-flex tw-justify-center tw-mt-3">
-                                        <button type="submit" class="tw-w-full tw-rounded-lg tw-mx-3 tw-font-pop tw-text-white tw-text-sm tw-font-medium tw-mb-2 tw-py-2 tw-bg-sims-400 hover:tw-bg-sims-500 tw-transition-all tw-ease-in-out">Export</button>
+                                        <button type="submit" class="tw-w-full tw-rounded-lg tw-mx-3 tw-font-pop tw-text-white tw-text-sm tw-font-medium tw-mb-2 tw-py-2 tw-bg-sims-new-500 hover:tw-bg-sims-new-600 tw-transition-all tw-ease-in-out">Export</button>
                                     </div>
                                 </div>
                             </form>
@@ -293,7 +297,7 @@
                     </div>
                 </div>
 
-                <button type="button" data-modal-toggle="export-pdf" title="Export ke PDF"><i class="fa-solid fa-file-pdf btn-export"></i></button>
+                <button type="button" data-modal-toggle="export-pdf" title="Export ke PDF"><i class="fa-solid fa-file-pdf btn-export tw-mr-0"></i></button>
                     
                 <div id="export-pdf" tabindex="-1"
                     class="hidden overflow-y-auto overflow-x-hidden fixed  z-50 md:tw-inset-0 h-modal md:h-full">
@@ -325,7 +329,7 @@
                                         </div>
                                     </div>
                                     <div class="tw-flex tw-justify-center tw-mt-3">
-                                        <button type="submit" class="tw-w-full tw-rounded-lg tw-mx-3 tw-font-pop tw-text-white tw-text-sm tw-font-medium tw-mb-2 tw-py-2 tw-bg-sims-400 hover:tw-bg-sims-500 tw-transition-all tw-ease-in-out">Export</button>
+                                        <button type="submit" class="tw-w-full tw-rounded-lg tw-mx-3 tw-font-pop tw-text-white tw-text-sm tw-font-medium tw-mb-2 tw-py-2 tw-bg-sims-new-500 hover:tw-bg-sims-new-600 tw-transition-all tw-ease-in-out">Export</button>
                                     </div>
                                 </div>
                             </form>
@@ -337,25 +341,25 @@
         </div>
 
         @if(isset($raport))
-        <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl tw-mt-5">
-            <table class="tw-w-full tw-text-sm tw-text-center">
-                <thead class="tw-text-md tw-bg-gray-100 tw-text-basic-700 tw-border tw-font-pop">
+        <div class="tw-overflow-x-auto tw-relative tw-mt-7">
+            <table class="tw-w-full tw-text-lg tw-text-center tw-font-satoshi tw-text-bluewood-900">
+                <thead class="tw-border-y">
                     <tr>
-                        <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">NO</th>
-                        <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">NAMA PESERTA DIDIK</th>
-                        <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">TEMPAT TANGGAL LAHIR</th>
-                        <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">TINGGAL DI KELAS</th>
-                        <th scope="col" class="tw-py-3 tw-px-6">ALASAN</th>
+                        <th scope="col" class="tw-py-5 tw-px-6">No</th>
+                        <th scope="col" class="tw-py-5 tw-px-6">Nama Peserta Didik</th>
+                        <th scope="col" class="tw-py-5 tw-px-6">Tempat Tanggal Lahir</th>
+                        <th scope="col" class="tw-py-5 tw-px-6">Tinggal di Kelas</th>
+                        <th scope="col" class="tw-py-5 tw-px-6">Alasan</th>
                     </tr>
                 </thead>
                 <tbody class="tw-text-base">
                     @foreach ($raport as $key => $r)
-                    <tr class="tw-bg-white tw-border">
-                        <td class="tw-py-4 tw-px-6 tw-border">{{ $key + 1 }}</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">{{ $r->siswa->nama_siswa }}</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">{{ $r->siswa->tmp_lahir }}, {{ $r->siswa->tgl_lahir }}</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">{{ $r->tinggal_di_Kelas }}</td>
-                        <td class="tw-py-4 tw-px-6 tw-border">{{ $r->alasan_tidak_naik }}</td>
+                    <tr class="tw-bg-white">
+                        <td class="tw-p-6">{{ $key + 1 }}</td>
+                        <td class="tw-p-6">{{ $r->siswa->nama_siswa }}</td>
+                        <td class="tw-p-6">{{ $r->siswa->tmp_lahir }}, {{ $r->siswa->tgl_lahir }}</td>
+                        <td class="tw-p-6">{{ $r->tinggal_di_Kelas }}</td>
+                        <td class="tw-p-6">{{ $r->alasan_tidak_naik }}</td>
                     </tr>
                     @endforeach
                 </tbody>
@@ -366,11 +370,11 @@
             
             @if($response->prev_page_url)
             <div class="tw-float-right tw-py-5">
-                <a href="{{ $response->prev_page_url }}" class="tw-transition-all tw-text-sims-400 hover:tw-bg-sims-400 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-solid fa-chevron-left"></i></a>
+                <a href="{{ $response->prev_page_url }}" class="tw-transition-all tw-text-sims-new-500 hover:tw-bg-sims-new-500 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-solid fa-chevron-left"></i></a>
             </div>
             @else
             <div class="tw-float-right tw-py-5">
-                <a class="tw-text-sims-600 hover:tw-text-sims-600 tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-solid fa-chevron-left"></i></a>
+                <a class="tw-text-sims-new-700 hover:tw-text-sims-new-700 tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-solid fa-chevron-left"></i></a>
             </div>
             @endif
 
@@ -401,9 +405,9 @@
             
             <div class="tw-float-right tw-py-5">
             @if($response->to >= $total)
-            <a class="tw-text-sims-600 hover:tw-text-sims-600 tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-solid fa-chevron-right"></i></a>
+            <a class="tw-text-sims-new-700 hover:tw-text-sims-new-700 tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-solid fa-chevron-right"></i></a>
             @else
-            <a href="{{ $response->next_page_url }}" class="tw-transition-all tw-text-sims-400 hover:tw-bg-sims-400 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-solid fa-chevron-right"></i></a>
+            <a href="{{ $response->next_page_url }}" class="tw-transition-all tw-text-sims-new-500 hover:tw-bg-sims-new-500 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-solid fa-chevron-right"></i></a>
             @endif
             </div>
 
@@ -412,7 +416,7 @@
             <div class="tw-flex tw-justify-center">
                 <div class="tw-w-1/3 tw-my-28">
                     <img src="{{ URL::asset('assets/img/search-not-found.png') }}" class="-tw-mb-1" alt="g ada dek">
-                    <div class="tw-font-pop tw-text-sims-500 tw-font-bold tw-text-3xl tw-text-center tw-mt-8">
+                    <div class="tw-font-pop tw-text-sims-new-600 tw-font-bold tw-text-3xl tw-text-center tw-mt-8">
                         Data tidak dapat ditemukan.
                     </div>
                 </div>
@@ -422,11 +426,11 @@
 
                 @if($response->prev_page_url)
                 <div class="tw-float-right tw-py-5">
-                    <a href="{{ $response->prev_page_url }}" class="tw-transition-all tw-text-sims-400 hover:tw-bg-sims-400 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-solid fa-chevron-left"></i></a>
+                    <a href="{{ $response->prev_page_url }}" class="tw-transition-all tw-text-sims-new-500 hover:tw-bg-sims-new-500 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-solid fa-chevron-left"></i></a>
                 </div>
                 @else
                 <div class="tw-float-right tw-py-5">
-                    <a class="tw-text-sims-600 hover:tw-text-sims-600 tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-solid fa-chevron-left"></i></a>
+                    <a class="tw-text-sims-new-700 hover:tw-text-sims-new-700 tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-solid fa-chevron-left"></i></a>
                 </div>
                 @endif
 
@@ -459,9 +463,9 @@
 
                 <div class="tw-float-right tw-py-5">
                 @if($response->to >= $total)
-                <a class="tw-text-sims-600 hover:tw-text-sims-600 tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-solid fa-chevron-right"></i></a>
+                <a class="tw-text-sims-new-700 hover:tw-text-sims-new-700 tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-solid fa-chevron-right"></i></a>
                 @else
-                <a href="{{ $response->next_page_url }}" class="tw-transition-all tw-text-sims-400 hover:tw-bg-sims-400 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-solid fa-chevron-right"></i></a>
+                <a href="{{ $response->next_page_url }}" class="tw-transition-all tw-text-sims-new-500 hover:tw-bg-sims-new-500 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-solid fa-chevron-right"></i></a>
                 @endif
                 </div>
 

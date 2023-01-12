@@ -47,17 +47,22 @@ class ApiController extends Controller
     public function mainDashboard() 
     {
         $response = Http::get("{$this->api_url}/dashboard");
-        
+        $allJurusan = Http::get("{$this->api_url}/jurusan");
+
+        // return collect(json_decode($response)->siswa->rows)->pluck('kelas')->where('JurusanId', 'DKV')->count();
+
         if ($response->successful()) {
 
-            return view('dashboard-main', [
+            return view('dashboard.main', [
                 'title' => 'Dashboard',
                 'active' => 'dashboard-main',
                 'mutasi' => json_decode($response)->mutasi->count,
                 'kelas' => json_decode($response)->kelas->count,
                 'siswa' => json_decode($response)->siswa->count,
+                'siswaJurusan' => json_decode($response)->siswa->rows,
                 'mapel' => json_decode($response)->mapel->count,
                 'jurusan' => json_decode($response)->jurusan->count,
+                'allJurusan' => json_decode($allJurusan)->jurusan->rows,
                 'alumni' => json_decode($response)->alumni->count,
                 'siswaMasuk' => json_decode($response)->siswaMasuk->count,
                 'siswaKeluar' => json_decode($response)->siswaKeluar->count,
