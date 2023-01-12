@@ -35,9 +35,9 @@
     </div> <!-- container -->
 @else
 
-    <div class="tw-mx-auto tw-my-28 tw-container">
+    <div class="tw-mx-auto tw-flex tw-justify-center tw-items-center tw-h-screen tw-container">
         <!-- card -->
-        <div class="tw-flex lg:tw-flex-row sm:tw-flex-col-reverse tw-bg-white tw-px-20 tw-py-16 tw-mx-auto tw-w-2/3 tw-h-3/5 tw-border tw-border-slate-200 tw-shadow-xl">
+        <div class="tw-flex lg:tw-flex-row tw-h-fit sm:tw-flex-col-reverse tw-bg-white tw-px-20 tw-py-16 tw-mx-auto tw-w-2/3 tw-border tw-border-slate-200 tw-shadow-xl">
             <!-- form section -->
             <section class="lg:tw-w-3/5 lg:tw-mr-8 tw-font-pop sm:tw-w-full">
                 <div class="tw-text-3xl tw-text-sims-400 tw-font-bold md:tw-mt-3 sm:tw-text-center lg:tw-text-left">Selamat Datang</div>
@@ -100,7 +100,7 @@
                         <li>
                             <button type="submit" class="tw-bg-[#90C2C2] tw-w-full tw-py-3 tw-text-sm tw-font-medium tw-text-white hover:tw-bg-[#5B9C9C]">Masuk</button>
                         </li>
-                        <li class="tw-text-center tw-mb-8">
+                        <li class="tw-text-center">
                             <a href="/register" class="tw-text-sims-400 tw-underline tw-text-sm">Tidak punya akun?</a>
                         </li>
                     </ul>

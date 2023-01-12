@@ -31,9 +31,9 @@
   </div> <!-- container -->
 @else
 
-    <div class="tw-mx-auto tw-my-28 tw-container">
+    <div class="tw-mx-auto tw-flex tw-justify-center tw-items-center tw-h-screen tw-container">
         <!-- card -->
-        <div class="tw-flex lg:tw-flex-row sm:tw-flex-col-reverse tw-bg-white tw-px-20 tw-py-10 tw-mx-auto tw-w-2/3 tw-h-3/5 tw-border tw-border-slate-200 tw-shadow-xl">
+        <div class="tw-flex lg:tw-flex-row sm:tw-flex-col-reverse tw-bg-white tw-px-20 tw-py-10 tw-mx-auto tw-w-2/3 tw-h-fit tw-border tw-border-slate-200 tw-shadow-xl">
             <!-- form section -->
             <div class="input-area lg:tw-w-3/5 tw-mr-8 sm:tw-w-full tw-flex tw-flex-col tw-justify-center">
                 <div class="tw-text-3xl tw-text-sims-400 tw-font-pop tw-font-bold">Atur Ulang Kata Sandi</div>

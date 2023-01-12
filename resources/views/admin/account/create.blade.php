@@ -60,26 +60,17 @@
                     @enderror
                 </div>
                 <div class="md:tw-w-1/2 sm:tw-w-full tw-px-3 tw-mb-6 md:tw-mb-0 tw-font-ubuntu">
-                    <label class="tw-text-admin-300 tw-font-bold tw-ml-3 tw-text-lg" for="phone">
-                      Nomor Telepon
-                    </label>
-                    <input class="input-account" @error('phone') is-invalid @enderror id="phone" name="phone" type="number" required>
-                    @error('phone')
-                      <div class="tw-text-sm tw-text-pink-700 tw-mt-1">{{ $message }}</div>
-                    @enderror
+                  <label class="tw-text-admin-300 tw-font-bold tw-ml-3 tw-text-lg" for="password">
+                    Password
+                  </label>
+                  <input class="input-account" @error('password') is-invalid @enderror id="password" name="password" type="password" required>
+                  @error('password')
+                    <div class="tw-text-sm tw-text-pink-700 tw-mt-1">{{ $message }}</div>
+                  @enderror
                 </div>
             </div>
             <div class="tw-flex tw-flex-wrap tw-justify-between tw-w-full tw-mb-6">
             <div class="md:tw-w-1/2 sm:tw-w-full tw-pr-10 tw-mb-6 md:tw-mb-0 tw-font-ubuntu">
-                <label class="tw-text-admin-300 tw-font-bold tw-ml-3 tw-text-lg" for="password">
-                  Password
-                </label>
-                <input class="input-account" @error('password') is-invalid @enderror id="password" name="password" type="password" required>
-                @error('password')
-                  <div class="tw-text-sm tw-text-pink-700 tw-mt-1">{{ $message }}</div>
-                @enderror
-            </div>
-            <div class="md:tw-w-1/2 sm:tw-w-full tw-px-3 tw-mb-6 md:tw-mb-0 tw-font-ubuntu">
               <label class="tw-text-admin-300 tw-font-bold tw-ml-3 tw-text-lg" for="role">
                 Role
               </label>
