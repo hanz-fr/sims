@@ -276,7 +276,7 @@
                 </div>
             </header>
             <!-- Content -->
-            <div class="tw-mr-5">
+            <div>
                 @yield('content')
             </div>
         </div>

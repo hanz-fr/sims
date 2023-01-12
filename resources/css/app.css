@@ -44,7 +44,7 @@ a {
     @apply tw-block tw-bg-slate-100 tw-text-gray-400 tw-w-full tw-font-pop tw-border tw-border-[#E3E3E3] tw-mt-2 tw-rounded-2xl tw-py-3 tw-px-8 tw-bg-white focus:tw-shadow-sm focus:tw-shadow-admin-300 focus:tw-border-admin-300 focus:tw-outline-none;
   }
   .btn-export {
-    @apply tw-text-xl tw-px-3 tw-py-2 tw-mx-2 tw-text-white tw-bg-sims-400 hover:tw-bg-[#3b7a7a] tw-border tw-rounded-lg;
+    @apply tw-text-xl tw-px-3 tw-py-2 tw-mx-2 tw-text-white tw-bg-sims-new-500 hover:tw-bg-[#3b7a7a] tw-border tw-rounded-lg;
   }
   .nav-item-admin {
     @apply tw-text-base tw-font-normal tw-text-gray-400 tw-rounded-lg hover:tw-bg-[#5A6C7C] hover:tw-text-gray-100 tw-flex tw-items-center tw-pl-3 tw-py-2;

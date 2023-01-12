@@ -766,7 +766,7 @@ video {
   border-radius: 0.5rem;
   border-width: 1px;
   --tw-bg-opacity: 1;
-  background-color: rgb(77 158 158 / var(--tw-bg-opacity));
+  background-color: rgb(56 148 163 / var(--tw-bg-opacity));
   padding-left: 0.75rem;
   padding-right: 0.75rem;
   padding-top: 0.5rem;
@@ -963,6 +963,15 @@ video {
 
 /* TEXT */
 
+.sims-heading-3xl {
+  font-family: Satoshi;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  --tw-text-opacity: 1;
+  color: rgb(56 148 163 / var(--tw-text-opacity));
+}
+
 .sims-heading-xl {
   font-family: Satoshi;
   font-size: 1.25rem;
@@ -976,6 +985,15 @@ video {
   font-family: Satoshi;
   font-size: 1.125rem;
   line-height: 1.75rem;
+  font-weight: 700;
+  --tw-text-opacity: 1;
+  color: rgb(47 65 79 / var(--tw-text-opacity));
+}
+
+.sims-heading-md-black {
+  font-family: Satoshi;
+  font-size: 1rem;
+  line-height: 1.5rem;
   font-weight: 700;
   --tw-text-opacity: 1;
   color: rgb(47 65 79 / var(--tw-text-opacity));
@@ -1119,6 +1137,16 @@ video {
 .tw-inset-x-0 {
   left: 0px;
   right: 0px;
+}
+
+.tw-inset-y-1\.5 {
+  top: 0.375rem;
+  bottom: 0.375rem;
+}
+
+.tw-inset-y-1 {
+  top: 0.25rem;
+  bottom: 0.25rem;
 }
 
 .tw-top-3 {
@@ -1564,6 +1592,14 @@ video {
   margin-top: 4rem;
 }
 
+.tw-ml-8 {
+  margin-left: 2rem;
+}
+
+.tw-mr-7 {
+  margin-right: 1.75rem;
+}
+
 .tw-ml-4 {
   margin-left: 1rem;
 }
@@ -1614,10 +1650,6 @@ video {
 
 .tw-ml-14 {
   margin-left: 3.5rem;
-}
-
-.tw-ml-8 {
-  margin-left: 2rem;
 }
 
 .-tw-mb-10 {
@@ -2353,6 +2385,19 @@ video {
   border-width: 4px;
 }
 
+.tw-border-\[1\.5px\] {
+  border-width: 1.5px;
+}
+
+.tw-border-0 {
+  border-width: 0px;
+}
+
+.tw-border-y {
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+}
+
 .tw-border-x {
   border-left-width: 1px;
   border-right-width: 1px;
@@ -2384,6 +2429,10 @@ video {
 
 .tw-border-t-4 {
   border-top-width: 4px;
+}
+
+.tw-border-b-2 {
+  border-bottom-width: 2px;
 }
 
 .tw-border-l-\[17px\] {
@@ -2541,9 +2590,9 @@ video {
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
-.tw-bg-sims-new-400 {
+.tw-bg-sims-new-500 {
   --tw-bg-opacity: 1;
-  background-color: rgb(83 176 189 / var(--tw-bg-opacity));
+  background-color: rgb(56 148 163 / var(--tw-bg-opacity));
 }
 
 .tw-bg-indigo-600 {
@@ -2611,11 +2660,6 @@ video {
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
 
-.tw-bg-\[\#28A745\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(40 167 69 / var(--tw-bg-opacity));
-}
-
 .tw-bg-\[\#1D6F42\] {
   --tw-bg-opacity: 1;
   background-color: rgb(29 111 66 / var(--tw-bg-opacity));
@@ -2654,6 +2698,11 @@ video {
 .tw-bg-back {
   --tw-bg-opacity: 1;
   background-color: rgb(244 244 244 / var(--tw-bg-opacity));
+}
+
+.tw-bg-\[\#28A745\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(40 167 69 / var(--tw-bg-opacity));
 }
 
 .tw-bg-sims-500 {
@@ -2704,11 +2753,6 @@ video {
 .tw-bg-\[\#95BBE8\] {
   --tw-bg-opacity: 1;
   background-color: rgb(149 187 232 / var(--tw-bg-opacity));
-}
-
-.tw-bg-sims-new-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(56 148 163 / var(--tw-bg-opacity));
 }
 
 .tw-bg-opacity-50 {
@@ -2934,6 +2978,16 @@ video {
   padding-right: 3.5rem;
 }
 
+.tw-py-0\.5 {
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
+}
+
+.tw-py-0 {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
 .tw-px-24 {
   padding-left: 6rem;
   padding-right: 6rem;
@@ -3123,6 +3177,10 @@ video {
 
 .tw-font-ubuntu {
   font-family: Ubuntu;
+}
+
+.tw-font-satoshi {
+  font-family: Satoshi;
 }
 
 .tw-font-\[ubuntu\] {
@@ -3351,6 +3409,11 @@ video {
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
+.tw-text-sims-new-500 {
+  --tw-text-opacity: 1;
+  color: rgb(56 148 163 / var(--tw-text-opacity));
+}
+
 .tw-text-gray-600 {
   --tw-text-opacity: 1;
   color: rgb(75 85 99 / var(--tw-text-opacity));
@@ -3386,11 +3449,6 @@ video {
   color: rgb(240 216 151 / var(--tw-text-opacity));
 }
 
-.tw-text-sims-new-500 {
-  --tw-text-opacity: 1;
-  color: rgb(56 148 163 / var(--tw-text-opacity));
-}
-
 .tw-text-red-400 {
   --tw-text-opacity: 1;
   color: rgb(248 113 113 / var(--tw-text-opacity));
@@ -3416,19 +3474,29 @@ video {
   color: rgb(55 65 81 / var(--tw-text-opacity));
 }
 
+.tw-text-bluewood-900 {
+  --tw-text-opacity: 1;
+  color: rgb(47 65 79 / var(--tw-text-opacity));
+}
+
 .tw-text-kuning-500 {
   --tw-text-opacity: 1;
   color: rgb(255 193 7 / var(--tw-text-opacity));
 }
 
-.tw-text-sims-600 {
+.tw-text-sims-new-700 {
   --tw-text-opacity: 1;
-  color: rgb(45 114 116 / var(--tw-text-opacity));
+  color: rgb(45 98 113 / var(--tw-text-opacity));
 }
 
 .tw-text-slate-500 {
   --tw-text-opacity: 1;
   color: rgb(100 116 139 / var(--tw-text-opacity));
+}
+
+.tw-text-sims-new-600 {
+  --tw-text-opacity: 1;
+  color: rgb(49 120 137 / var(--tw-text-opacity));
 }
 
 .tw-text-gray-100 {
@@ -3439,6 +3507,11 @@ video {
 .tw-text-\[\#B2FEFE\] {
   --tw-text-opacity: 1;
   color: rgb(178 254 254 / var(--tw-text-opacity));
+}
+
+.tw-text-sims-600 {
+  --tw-text-opacity: 1;
+  color: rgb(45 114 116 / var(--tw-text-opacity));
 }
 
 .tw-text-sims-300 {
@@ -3494,11 +3567,6 @@ video {
 .tw-text-slate-100 {
   --tw-text-opacity: 1;
   color: rgb(241 245 249 / var(--tw-text-opacity));
-}
-
-.tw-text-sims-new-400 {
-  --tw-text-opacity: 1;
-  color: rgb(83 176 189 / var(--tw-text-opacity));
 }
 
 .tw-underline {
@@ -3951,6 +4019,10 @@ input[type="checkbox"]:checked {
   z-index: 10;
 }
 
+.focus\:tw-border-none:focus {
+  border-style: none;
+}
+
 .focus\:tw-border-admin-300:focus {
   --tw-border-opacity: 1;
   border-color: rgb(149 187 232 / var(--tw-border-opacity));
@@ -3986,6 +4058,10 @@ input[type="checkbox"]:checked {
 .focus\:tw-outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
+}
+
+.focus\:tw-outline-0:focus {
+  outline-width: 0px;
 }
 
 .focus\:tw-outline-admin-300:focus {
@@ -4052,6 +4128,11 @@ input[type="checkbox"]:checked {
   --tw-ring-color: rgb(248 113 113 / var(--tw-ring-opacity));
 }
 
+.focus\:tw-ring-sims-new-500:focus {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(56 148 163 / var(--tw-ring-opacity));
+}
+
 .focus\:tw-ring-offset-2:focus {
   --tw-ring-offset-width: 2px;
 }
@@ -4107,6 +4188,11 @@ input[type="checkbox"]:checked {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.tw-peer:checked ~ .peer-checked\:tw-bg-sims-new-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(56 148 163 / var(--tw-bg-opacity));
+}
+
 .tw-peer:checked ~ .peer-checked\:tw-bg-sims-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(77 158 158 / var(--tw-bg-opacity));
@@ -4148,9 +4234,9 @@ input[type="checkbox"]:checked {
   overflow: auto;
 }
 
-.hover\:tw-border-sims-400:hover {
+.hover\:tw-border-sims-new-500:hover {
   --tw-border-opacity: 1;
-  border-color: rgb(77 158 158 / var(--tw-border-opacity));
+  border-color: rgb(56 148 163 / var(--tw-border-opacity));
 }
 
 .hover\:tw-border-gray-300:hover {
@@ -4208,9 +4294,9 @@ input[type="checkbox"]:checked {
   background-color: rgb(55 48 163 / var(--tw-bg-opacity));
 }
 
-.hover\:tw-bg-sims-new-400:hover {
+.hover\:tw-bg-sims-new-500:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(83 176 189 / var(--tw-bg-opacity));
+  background-color: rgb(56 148 163 / var(--tw-bg-opacity));
 }
 
 .hover\:tw-bg-sims-400:hover {
@@ -4225,11 +4311,6 @@ input[type="checkbox"]:checked {
 
 .hover\:tw-bg-sims-400\/\[0\.6\]:hover {
   background-color: rgb(77 158 158 / 0.6);
-}
-
-.hover\:tw-bg-sims-new-500:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(56 148 163 / var(--tw-bg-opacity));
 }
 
 .hover\:tw-bg-sims-500:hover {
@@ -4292,9 +4373,9 @@ input[type="checkbox"]:checked {
   background-color: rgb(63 127 127 / var(--tw-bg-opacity));
 }
 
-.hover\:tw-bg-green-700:hover {
+.hover\:tw-bg-sims-new-700:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(21 128 61 / var(--tw-bg-opacity));
+  background-color: rgb(45 98 113 / var(--tw-bg-opacity));
 }
 
 .hover\:tw-bg-green-800:hover {
@@ -4315,6 +4396,11 @@ input[type="checkbox"]:checked {
 .hover\:tw-bg-kuning-500:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(255 193 7 / var(--tw-bg-opacity));
+}
+
+.hover\:tw-bg-sims-new-600:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(49 120 137 / var(--tw-bg-opacity));
 }
 
 .hover\:tw-bg-sims-600:hover {
@@ -4345,6 +4431,11 @@ input[type="checkbox"]:checked {
 .hover\:tw-bg-red-400:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(248 113 113 / var(--tw-bg-opacity));
+}
+
+.hover\:tw-bg-green-700:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(21 128 61 / var(--tw-bg-opacity));
 }
 
 .hover\:tw-bg-salmon-600:hover {
@@ -4420,6 +4511,16 @@ input[type="checkbox"]:checked {
 .hover\:tw-text-sims-500:hover {
   --tw-text-opacity: 1;
   color: rgb(59 144 145 / var(--tw-text-opacity));
+}
+
+.hover\:tw-text-sims-new-700:hover {
+  --tw-text-opacity: 1;
+  color: rgb(45 98 113 / var(--tw-text-opacity));
+}
+
+.hover\:tw-text-sims-new-600:hover {
+  --tw-text-opacity: 1;
+  color: rgb(49 120 137 / var(--tw-text-opacity));
 }
 
 .hover\:tw-text-gray-600:hover {
@@ -4549,6 +4650,11 @@ input[type="checkbox"]:checked {
   .dark\:hover\:tw-bg-sims-500:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(59 144 145 / var(--tw-bg-opacity));
+  }
+
+  .dark\:hover\:tw-bg-sims-new-600:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(49 120 137 / var(--tw-bg-opacity));
   }
 
   .dark\:hover\:tw-text-white:hover {
