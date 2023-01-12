@@ -296,7 +296,7 @@
                     @else
 
                     <!-- This is an example component -->
-                    <div class="tw-mx-5">
+                    {{-- <div class="tw-mx-5">
                         <select id="show-tahun-ajaran" class="tw-border tw-border-none tw-text-sims-new-500 hover:tw-text-white tw-font-pop tw-text-sm tw-font-medium tw-rounded-lg tw-h-10 tw-pl-5 tw-pr-10 tw-bg-white hover:tw-bg-sims-new-500 hover:tw-border-sims-new-500 focus:tw-outline-none tw-appearance-none focus:tw-ring-0 tw-shadow-md tw-transition-all tw-ease-in-out" style="cursor: pointer;">
                         
                           @if(!empty($_GET['thn_ajaran'])) 
@@ -325,7 +325,7 @@
                                 @endwhile
                           @endfor
                         </select>
-                    </div>
+                    </div> --}}
 
 
                     @endif
