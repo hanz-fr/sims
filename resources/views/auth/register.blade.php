@@ -20,10 +20,10 @@
 
 <body style="background-image: url('{{ URL::asset('assets/img/bg-login.svg') }}')">
 
-    <div class="tw-mx-auto tw-my-14 tw-container">
+    <div class="tw-mx-auto tw-flex tw-justify-center tw-items-center tw-h-screen tw-container">
 
         @if($status == 'success')
-        <section class="tw-bg-white tw-font-pop tw-rounded-[50px] tw-flex tw-flex-col tw-mx-auto tw-my-28 tw-px-20 tw-py-11 tw-top-1/2 tw-w-3/5 tw-h-3/5 tw-border tw-border-slate-200 tw-shadow-xl tw-text-center">
+        <section class="tw-bg-white tw-font-pop tw-rounded-[50px] tw-flex tw-flex-col tw-mx-auto tw-my-28 tw-px-20 tw-py-11 tw-top-1/2 tw-w-3/5 tw-h-fit tw-border tw-border-slate-200 tw-shadow-xl tw-text-center">
             <img class="tw-w-1/2 tw-mx-auto" src="{{ URL::asset('assets/img/email-sent.svg') }}" alt="Registration Success">
             <div class="tw-text-3xl tw-font-bold tw-text-sims-400 tw-mt-5">Verifikasi akun anda</div>
             <div class="tw-text-sm tw-text-basic-300 tw-font-medium tw-mt-3">Kami sudah mengirimkan link verifikasi, silahkan check email anda.</div>
@@ -36,7 +36,7 @@
         </section> <!-- card -->
         @else
         <!-- card -->
-        <div class="tw-bg-white tw-flex lg:tw-flex-row sm:tw-flex-col-reverse tw-mx-auto tw-px-20 tw-py-12 tw-w-2/3 tw-h-3/5 tw-border tw-border-slate-200 tw-shadow-xl tw-p-5">
+        <div class="tw-bg-white tw-flex lg:tw-flex-row sm:tw-flex-col-reverse tw-mx-auto tw-px-20 tw-py-12 tw-w-2/3 tw-h-fit tw-border tw-border-slate-200 tw-shadow-xl tw-p-5">
             <!-- form section -->
             <section class="lg:tw-w-3/5 sm:tw-w-full tw-font-pop">
                 <div class="tw-text-3xl tw-text-sims-400 tw-font-bold md:tw-mt-3 sm:tw-text-center lg:tw-text-left">Registrasi</div>
@@ -111,7 +111,7 @@
                     <li>
                         <button type="submit" class="tw-font-ubuntu tw-bg-[#90C2C2] tw-w-full tw-py-4 tw-text-sm tw-font-medium tw-text-white hover:tw-bg-[#5B9C9C]">Daftar</button>
                     </li>
-                    <li class="tw-text-center tw-mb-10">
+                    <li class="tw-text-center">
                         <a href="/login" class="tw-font-ubuntu tw-text-sims-400 tw-underline tw-text-sm">Sudah punya akun?</a>
                     </li>
                 </ul>

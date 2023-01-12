@@ -2415,10 +2415,6 @@ video {
   border-width: 1.5px;
 }
 
-.tw-border-0 {
-  border-width: 0px;
-}
-
 .tw-border-y {
   border-top-width: 1px;
   border-bottom-width: 1px;
@@ -2724,11 +2720,6 @@ video {
 .tw-bg-back {
   --tw-bg-opacity: 1;
   background-color: rgb(244 244 244 / var(--tw-bg-opacity));
-}
-
-.tw-bg-\[\#28A745\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(40 167 69 / var(--tw-bg-opacity));
 }
 
 .tw-bg-sims-500 {
@@ -3535,11 +3526,6 @@ video {
   color: rgb(178 254 254 / var(--tw-text-opacity));
 }
 
-.tw-text-sims-600 {
-  --tw-text-opacity: 1;
-  color: rgb(45 114 116 / var(--tw-text-opacity));
-}
-
 .tw-text-sims-300 {
   --tw-text-opacity: 1;
   color: rgb(127 201 198 / var(--tw-text-opacity));
@@ -4219,11 +4205,6 @@ input[type="checkbox"]:checked {
   background-color: rgb(56 148 163 / var(--tw-bg-opacity));
 }
 
-.tw-peer:checked ~ .peer-checked\:tw-bg-sims-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(77 158 158 / var(--tw-bg-opacity));
-}
-
 .tw-peer:checked ~ .peer-checked\:after\:tw-translate-x-full::after {
   content: var(--tw-content);
   --tw-translate-x: 100%;
@@ -4457,11 +4438,6 @@ input[type="checkbox"]:checked {
 .hover\:tw-bg-red-400:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(248 113 113 / var(--tw-bg-opacity));
-}
-
-.hover\:tw-bg-green-700:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(21 128 61 / var(--tw-bg-opacity));
 }
 
 .hover\:tw-bg-salmon-600:hover {
