@@ -1,4 +1,4 @@
-@extends('layouts.white-bg')
+@extends('layouts.main-new')
 
 @section('content')
 
