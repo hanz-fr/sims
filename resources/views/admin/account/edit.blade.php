@@ -61,37 +61,17 @@
                     @enderror
                 </div>
                 <div class="md:tw-w-1/2 sm:tw-w-full tw-px-3 tw-mb-6 md:tw-mb-0 tw-font-ubuntu">
-                    <label class="tw-text-admin-300 tw-font-bold tw-ml-3 tw-text-lg" for="no_telp">
-                      Nomor Telepon
-                    </label>
-                    <input value="{{ $user->phone }}" class="input-account" @error('phone') is-invalid @enderror id="no_telp" name="phone" type="number" required>
-                    @error('phone')
-                      <div class="tw-text-sm tw-text-pink-700 tw-mt-1">{{ $message }}</div>
-                    @enderror
+                  <label class="tw-text-admin-300 tw-font-bold tw-ml-3 tw-text-lg" for="role">
+                    Role
+                  </label>
+                  <select value="{{ $user->role }}" class="input-account" id="role" name="role" required>
+                    <option value="1">Tata Usaha</option>
+                    <option value="2">Kesiswaan</option>
+                    <option value="3">Kurikulum</option>
+                    <option value="4">Wali Kelas</option>
+                  </select>
                 </div>
 
-            </div>
-            <div class="tw-flex tw-flex-wrap tw-justify-between tw-w-full tw-mb-6">
-                <div class="tw-w-1/2 tw-pr-10 tw-mb-6 md:tw-mb-0 tw-font-ubuntu">
-                    <label class="tw-text-admin-300 tw-font-bold tw-ml-3 tw-text-lg" for="password">
-                      Password
-                    </label>
-                    <input value="{{ $user->password }}" @error('password') is-invalid @enderror class="input-account" id="password" name="password" type="password" required>
-                    @error('password')
-                      <div class="tw-text-sm tw-text-pink-700 tw-mt-1">{{ $message }}</div>
-                    @enderror
-                </div>
-                <div class="tw-w-1/2 tw-px-3 tw-mb-6 md:tw-mb-0 tw-font-ubuntu">
-                <label class="tw-text-admin-300 tw-font-bold tw-ml-3 tw-text-lg" for="role">
-                  Role
-                </label>
-                <select value="{{ $user->role }}" class="input-account" id="role" name="role" required>
-                  <option value="1">Tata Usaha</option>
-                  <option value="2">Kesiswaan</option>
-                  <option value="3">Kurikulum</option>
-                  <option value="4">Wali Kelas</option>
-                </select>
-              </div>
             </div>
           </div>
         </div>
