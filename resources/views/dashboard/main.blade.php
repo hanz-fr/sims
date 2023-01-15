@@ -176,8 +176,8 @@
                     <div class="slide-content">
                         <div class="card-wrapper swiper-wrapper">
 
-                            <!-- Card 1 -->
-                            <a href="/siswa-keluar"
+                            <!-- Card 1 (Siswa Keluar) -->
+                            <a @if(! Gate::allows('rekap-siswa'))  @else href="/siswa-keluar" @endif
                                 class="swiper-slide tw-cursor-pointer hover:tw-drop-shadow-md tw-transition-all">
                                 <div class="sims-card-1">
                                     <div class="tw-flex tw-justify-evenly tw-px-5 tw-gap-5">
@@ -190,8 +190,8 @@
                                 </div>
                             </a>
 
-                            <!-- Card 2 -->
-                            <a href="/rekap-jumlah-siswa" class="swiper-slide">
+                            <!-- Card 2 (Rekap Jumlah Siswa) -->
+                            <a @if(! Gate::allows('wali kelas')) href="/rekap-jumlah-siswa" @endif class="swiper-slide">
                                 <div class="sims-card-1 tw-cursor-pointer hover:tw-drop-shadow-md tw-transition-all">
                                     <div class="tw-flex tw-justify-evenly tw-px-5 tw-gap-5">
                                         <i class="fa-solid fa-user sims-icon-3xl tw-text-[#FFA386]"></i>
@@ -203,8 +203,8 @@
                                 </div>
                             </a>
 
-                            <!-- Card 3 -->
-                            <a href="/siswa-masuk" class="swiper-slide">
+                            <!-- Card 3 (Siswa Masuk) -->
+                            <a @if(! Gate::allows('rekap-siswa')) @else href="/siswa-masuk" @endif class="swiper-slide">
                                 <div class="sims-card-1 tw-cursor-pointer hover:tw-drop-shadow-md tw-transition-all">
                                     <div class="tw-flex tw-justify-evenly tw-px-5 tw-gap-5">
                                         <i class="fa-solid fa-user sims-icon-3xl tw-text-[#6fc5bb]"></i>
@@ -216,8 +216,8 @@
                                 </div>
                             </a>
 
-                            <!-- Card 4 -->
-                            <a href="/select-jurusan-alumni" class="swiper-slide">
+                            <!-- Card 4 (Alumni) -->
+                            <a @if(! Gate::allows('rekap-siswa')) @else href="/select-jurusan-alumni" @endif class="swiper-slide">
                                 <div class="sims-card-1 tw-cursor-pointer hover:tw-drop-shadow-md tw-transition-all">
                                     <div class="tw-flex tw-justify-evenly tw-px-5 tw-gap-5">
                                         <i class="fa-solid fa-user-graduate sims-icon-3xl tw-text-gray-400"></i>
@@ -229,8 +229,8 @@
                                 </div>
                             </a>
 
-                            <!-- Card 5 -->
-                            <a href="/data-tidak-naik" class="swiper-slide">
+                            <!-- Card 5 (Siswa Tidak Naik) -->
+                            <a @if(! Gate::allows('wali kelas')) href="/data-tidak-naik" @endif class="swiper-slide">
                                 <div class="sims-card-1 tw-cursor-pointer hover:tw-drop-shadow-md tw-transition-all">
                                     <div class="tw-flex tw-justify-evenly tw-px-5 tw-gap-5">
                                         <i class="fa-solid fa-user sims-icon-3xl tw-text-[#e66161]"></i>
@@ -242,8 +242,8 @@
                                 </div>
                             </a>
 
-                            <!-- Card 6 -->
-                            <a href="/rekap-jumlah-siswa" class="swiper-slide">
+                            <!-- Card 6 (Kelas) -->
+                            <a @if(! Gate::allows('wali kelas')) href="/rekap-jumlah-siswa" @endif class="swiper-slide">
                                 <div class="sims-card-1 tw-cursor-pointer hover:tw-drop-shadow-md tw-transition-all">
                                     <div class="tw-flex tw-justify-evenly tw-px-5 tw-gap-5">
                                         <i class="fa-solid fa-chalkboard-user sims-icon-3xl tw-text-[#7379d3]"></i>
@@ -305,6 +305,7 @@
             <!-- Column 2 -->
             <div class="tw-flex tw-flex-col tw-w-full">
 
+                <!-- Row 1 -->
                 <div class="sims-card-1 tw-px-10">
 
                     <!-- Latest Activity Card -->
@@ -327,7 +328,7 @@
                                             {{ \Carbon\Carbon::createFromTimeStamp(strtotime($userHistory->rows[0]->createdAt))->diffForHumans() }}
                                         </div>
                                     @else
-                                        <div class="sims-text-regular-md">Anda belum memiliki aktifitas.</div>
+                                        <div class="sims-text-regular-md">Anda belum memiliki riwayat aktifitas.</div>
                                     @endif
                                 </div>
                             </div>
@@ -347,6 +348,7 @@
                                 Data Induk Siswa (Umum)
                             </div>
                         </a>
+                        @can('rekap-siswa')
                         <a href="/rekap-jumlah-siswa"
                             class="sims-card-1-noshadow sims-text-regular-sm tw-text-center tw-font-normal tw-w-full tw-h-40 tw-px-3 tw-mx-2 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all">
                             <div class="tw-flex tw-flex-col tw-gap-3">
@@ -361,6 +363,7 @@
                                 Data Perpindahan
                             </div>
                         </a>
+                        @endcan
                         <a href="/help"
                             class="sims-card-1-noshadow sims-text-regular-sm tw-text-center tw-font-normal tw-w-full tw-h-40 tw-px-3 tw-mx-2 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all">
                             <div class="tw-flex tw-flex-col tw-gap-3">
@@ -372,6 +375,7 @@
 
                 </div>
 
+                <!-- Row 2 -->
 
                 <!-- Persebaran Murid -->
                 <div class="sims-card-1 tw-h-full">
