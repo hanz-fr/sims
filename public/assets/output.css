@@ -2113,6 +2113,10 @@ video {
   flex-wrap: wrap-reverse;
 }
 
+.tw-flex-nowrap {
+  flex-wrap: nowrap;
+}
+
 .tw-place-items-center {
   place-items: center;
 }
@@ -2720,6 +2724,11 @@ video {
 .tw-bg-\[\#95BBE8\] {
   --tw-bg-opacity: 1;
   background-color: rgb(149 187 232 / var(--tw-bg-opacity));
+}
+
+.tw-bg-slate-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
 }
 
 .tw-bg-opacity-50 {

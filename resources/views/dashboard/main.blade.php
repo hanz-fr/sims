@@ -154,7 +154,8 @@
         <div class="sims-card-1 tw-py-8">
             <div class="tw-flex tw-justify-between tw-mx-16">
                 <div class="tw-flex tw-flex-col tw-gap-1">
-                    <div class="lg:sims-heading-3xl sm:sims-heading-xl">Selamat Siang, <div class="tw-inline tw-font-black">
+                    <div class="lg:sims-heading-3xl sm:sims-heading-xl">{{ $message }}, <div
+                            class="tw-inline tw-font-black">
                             {{ auth()->user()->nama }}</div>
                     </div>
                     <div class="lg:sims-text-gray-md sm:sims-text-gray-xs">Apa yang akan anda lakukan hari ini?</div>
@@ -313,12 +314,25 @@
                                 <i class="fa-solid fa-clock-rotate-left sims-icon-5xl"></i>
                                 <div class="tw-flex tw-flex-col">
                                     <div class="sims-heading-lg-black">Aktivitas terakhir anda</div>
-                                    <div class="sims-text-regular-md">Create new Siswa dengan NIS : 0023929</div>
-                                    <div class="sims-text-gray-xs">2 menit yang lalu</div>
+
+                                    <!-- If user have a history, it will display the latest one. -->
+                                    @if ($userHistory->count > 0)
+                                        <?php
+                                        $latestHistory = str_replace([auth()->user()->nama], '', $userHistory->rows[0]->activityDesc);// remove user name from activityDesc
+                                        ?>
+                                        <div class="sims-text-regular-md">
+                                            {{ ucwords($latestHistory) }}
+                                        </div>
+                                        <div class="sims-text-gray-sm">
+                                            {{ \Carbon\Carbon::createFromTimeStamp(strtotime($userHistory->rows[0]->createdAt))->diffForHumans() }}
+                                        </div>
+                                    @else
+                                        <div class="sims-text-regular-md">Anda belum memiliki aktifitas.</div>
+                                    @endif
                                 </div>
                             </div>
                             <a href="/history/my"
-                                class="tw-border-sims-new-500 tw-border tw-text-sm tw-h-fit tw-my-auto tw-mr-5 tw-px-2 tw-py-3 tw-rounded-lg tw-text-sims-new-500 hover:tw-text-white hover:tw-bg-sims-new-500 tw-transition-all">
+                                class="tw-border-sims-new-500 tw-border tw-text-sm tw-text-center tw-whitespace-nowrap tw-h-fit tw-my-auto tw-mr-5 tw-px-3 tw-py-3 tw-rounded-lg tw-text-sims-new-500 hover:tw-text-white hover:tw-bg-sims-new-500 tw-transition-all">
                                 Lihat Semua Histori
                             </a>
                         </div>

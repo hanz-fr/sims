@@ -46,16 +46,45 @@ class ApiController extends Controller
 
     public function mainDashboard() 
     {
+        
+        $message = ''; // greetings message
+        $user = User::findOrFail(Auth::id()); // current logged in user
+        $current_year = Carbon::now()->year; // current year
+
         $response = Http::get("{$this->api_url}/dashboard");
         $allJurusan = Http::get("{$this->api_url}/jurusan");
+        $userHistory = json_decode(Http::get("{$this->api_url}/history/$user->nama/all?year={$current_year}"));
 
-        // return collect(json_decode($response)->siswa->rows)->pluck('kelas')->where('JurusanId', 'DKV')->count();
+        /* This sets the $time variable to the current hour in the 24 hour clock format */
+        $time = date("H");
+        /* Set the $timezone variable to become the current timezone */
+        $timezone = date("e");
+
+        /* If the time is less than 1200 hours, show good morning */
+        if ($time < "12") {
+            $message = "Selamat Pagi";
+        } else
+        /* If the time is grater than or equal to 1200 hours, but less than 1700 hours, so good afternoon */
+        if ($time >= "12" && $time < "15") {
+            $message = "Selamat Siang";
+        } else
+        /* Should the time be between or equal to 1700 and 1900 hours, show good evening */
+        if ($time >= "15" && $time < "18") {
+            $message = "Selamat Sore";
+        } else
+        /* Finally, show good night if the time is greater than or equal to 1900 hours */
+        if ($time >= "18") {
+            $message = "Selamat Malam";
+        }
+
 
         if ($response->successful()) {
 
             return view('dashboard.main', [
                 'title' => 'Dashboard',
                 'active' => 'dashboard-main',
+                'message' => $message,
+                'userHistory' => $userHistory,
                 'mutasi' => json_decode($response)->mutasi->count,
                 'kelas' => json_decode($response)->kelas->count,
                 'siswa' => json_decode($response)->siswa->count,
