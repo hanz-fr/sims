@@ -12,7 +12,7 @@
                 <!-- Logo -->
                 <div class="tw-flex-shrink-0 tw-py-4">
                     <a href="#">
-                        <img class="tw-w-10 tw-h-auto" src="{{ URL::asset('assets/img/sims-logo.png') }}"
+                        <img class="tw-w-10 tw-h-auto" src="{{ URL::asset('assets/img/sims-new-logo.png') }}"
                             alt="K-UI" />
                     </a>
                 </div>
