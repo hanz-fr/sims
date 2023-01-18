@@ -4,17 +4,17 @@
     <div class="tw-mx-10">
         <div class="tw-flex tw-justify-between tw-gap-5 tw-mt-8">
             <div class="tw-flex tw-flex-row tw-justify-around">
-                <h4 class="title-main">Data Rekap Jumlah Siswa</h4>
+                <h4 class="sims-heading-2xl">Data Rekap Jumlah Siswa</h4>
             </div>
             <div class="tw-flex tw-mx-4 tw-my-auto">
                 <!--Code Block for white tooltip starts-->
                 <a tabindex="0" role="link" aria-label="tooltip 1" class="focus:outline-none focus:ring-gray-300 rounded-full focus:ring-offset-2 focus:ring-2 focus:bg-gray-200 relative mt-20 md:mt-0" onmouseover="showTooltip(1)" onfocus="showTooltip(1)" onmouseout="hideTooltip(1)">
                     <div class=" cursor-pointer">
-                        <i data-tooltip-target="tooltip-animation" class="fa-regular fa-circle-question tw-text-2xl tw-text-sims-400"></i>
+                        <i data-tooltip-target="tooltip-animation" class="fa-regular fa-circle-question tw-text-2xl tw-text-sims-new-500"></i>
                     </div>
                     <div id="tooltip1" role="tooltip" class="z-20 tw-w-64 absolute transition duration-150 ease-in-out right-0 ml-8 shadow-lg bg-white p-4 rounded hidden">
-                        <p class="tw-text-sm tw-font-pop tw-font-bold text-gray-600">Rekap Jumlah Siswa</p>
-                        <p class="tw-text-sm tw-font-pop tw-font-normal leading-4 text-gray-600">Data siswa yang ditampilkan di tabel berikut adalah siswa yang sedang aktif sekolah dan tidak memiliki surat mutasi.</p>
+                        <p class="tw-text-sm tw-font-satoshi tw-font-bold text-gray-600">Rekap Jumlah Siswa</p>
+                        <p class="tw-text-sm tw-font-satoshi tw-font-normal leading-4 text-gray-600">Data siswa yang ditampilkan di tabel berikut adalah siswa yang sedang aktif sekolah dan tidak memiliki surat mutasi.</p>
                     </div>
                 </a>
                 <!--Code Block for white tooltip ends-->
@@ -34,37 +34,37 @@
                     <a href="/rekap-jumlah-siswa-pdf" title="Export ke PDF"><i class="fa-solid fa-file-pdf btn-export"></i></a>
                 </div>
                 @endcan
-                {{-- <a href="" class="tw-bg-sims-400 tw-text-white hover:tw-text-white tw-font-pop hover:tw-bg-sims-600 tw-px-5 tw-py-2 tw-rounded-lg tw-mr-5">Ekspor</a> --}}
+                {{-- <a href="" class="tw-bg-sims-new-500 tw-text-white hover:tw-text-white tw-font-satoshi hover:tw-bg-sims-600 tw-px-5 tw-py-2 tw-rounded-lg tw-mr-5">Ekspor</a> --}}
             </div>
-            <ul class="tw-flex mb-0 mt-4 tw--ml-6 tw-font-pop tw-text-xl">
+            <ul class="tw-flex mb-0 mt-4 tw--ml-6 tw-font-sg tw-text-xl">
                 <li @click="openTab = 1" :class="{ 'tw--mb-px': openTab === 1 }">
                     <button :class="openTab === 1 ? activeClasses : inactiveClasses"
-                        class=" tw-rounded-t-2xl tw-text-gray-500 hover:tw-text-sims-400 tw-inline-block tw-py-2 tw-px-10 tw-font-semibold">
+                        class=" tw-rounded-t-2xl tw-text-gray-500 hover:tw-text-sims-new-500 tw-inline-block tw-py-2 tw-px-10 tw-font-semibold">
                         Semua Kelas
                     </button>
                 </li>
                 <li @click="openTab = 2" :class="{ 'tw--mb-px': openTab === 2 }">
                     <button :class="openTab === 2 ? activeClasses : inactiveClasses"
-                        class=" tw-rounded-t-2xl tw-text-gray-500 hover:tw-text-sims-400 tw-inline-block tw-py-2 tw-px-10 tw-font-semibold">
+                        class=" tw-rounded-t-2xl tw-text-gray-500 hover:tw-text-sims-new-500 tw-inline-block tw-py-2 tw-px-10 tw-font-semibold">
                         X
                     </button>
                 </li>
                 <li @click="openTab = 3" :class="{ 'tw--mb-px': openTab === 3 }">
                     <button :class="openTab === 3 ? activeClasses : inactiveClasses"
-                        class=" tw-rounded-t-2xl tw-text-gray-500 hover:tw-text-sims-400 tw-inline-block tw-py-2 tw-px-10 tw-font-semibold">
+                        class=" tw-rounded-t-2xl tw-text-gray-500 hover:tw-text-sims-new-500 tw-inline-block tw-py-2 tw-px-10 tw-font-semibold">
                         XI
                     </button>
                 </li>
                 <li @click="openTab = 4" :class="{ 'tw--mb-px': openTab === 4 }">
                     <button :class="openTab === 4 ? activeClasses : inactiveClasses"
-                        class=" tw-rounded-t-2xl tw-text-gray-500 hover:tw-text-sims-400 tw-inline-block tw-py-2 tw-px-10 tw-font-semibold">
+                        class=" tw-rounded-t-2xl tw-text-gray-500 hover:tw-text-sims-new-500 tw-inline-block tw-py-2 tw-px-10 tw-font-semibold">
                         XII
                     </button>
                 </li>
             </ul>
             <div x-show="openTab === 1" class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl tw-mb-20">
                 <table class="tw-w-full tw-text-sm tw-text-center">
-                    <thead class="tw-text-md tw-bg-gray tw-text-basic-700 tw-border tw-font-pop">
+                    <thead class="tw-text-md tw-bg-gray tw-text-basic-700 tw-border tw-font-satoshi">
                         <tr>
                             <th scope="col" rowspan="2" class="tw-py-3 tw-px-6 tw-border">KELAS</th>
                             <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border">JUMLAH SISWA AWAL BULAN</th>
@@ -185,7 +185,7 @@
             </div>
             <div x-show="openTab === 2" class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl tw-mb-20">
                 <table class="tw-w-full tw-text-sm tw-text-center">
-                    <thead class="tw-text-md tw-bg-gray-100 tw-text-basic-700 tw-border tw-font-pop">
+                    <thead class="tw-text-md tw-bg-gray-100 tw-text-basic-700 tw-border tw-font-satoshi">
                         <tr>
                             <th scope="col" rowspan="2" class="tw-py-3 tw-px-6 tw-border-r">KELAS</th>
                             <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border-r">JUMLAH SISWA AWAL BULAN</th>
@@ -296,7 +296,7 @@
             </div>
             <div x-show="openTab === 3" class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl tw-mb-20">
                 <table class="tw-w-full tw-text-sm tw-text-center">
-                    <thead class="tw-text-md tw-bg-gray-100 tw-text-basic-700 tw-border tw-font-pop">
+                    <thead class="tw-text-md tw-bg-gray-100 tw-text-basic-700 tw-border tw-font-satoshi">
                         <tr>
                             <th scope="col" rowspan="2" class="tw-py-3 tw-px-6 tw-border-r">KELAS</th>
                             <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border-r">JUMLAH SISWA AWAL BULAN</th>
@@ -405,7 +405,7 @@
             </div>
             <div x-show="openTab === 4" class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl tw-mb-20">
                 <table class="tw-w-full tw-text-sm tw-text-center">
-                    <thead class="tw-text-md tw-bg-gray-100 tw-text-basic-700 tw-border tw-font-pop">
+                    <thead class="tw-text-md tw-bg-gray-100 tw-text-basic-700 tw-border tw-font-satoshi">
                         <tr>
                             <th scope="col" rowspan="2" class="tw-py-3 tw-px-6 tw-border">KELAS</th>
                             <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border">JUMLAH SISWA AWAL BULAN</th>

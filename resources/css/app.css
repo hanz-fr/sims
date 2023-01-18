@@ -1,14 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
 
 .dropdown:hover .dropdown-menu {
-  display: block;
+    display: block;
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 /* @layer base {
@@ -25,367 +25,367 @@ a {
 } */
 
 @layer components {
-  .login-input {
-    @apply tw-font-ubuntu tw-font-medium tw-px-4 tw-py-3 tw-border-2 tw-text-gray-500 tw-border-gray-300 tw-w-full tw-block tw-text-sm placeholder:tw-text-gray-400 focus:placeholder:tw-invisible focus:tw-outline-none focus:tw-ring-1 focus:tw-ring-sims-400 focus:tw-border-sims-400;
-  }
-  .label-input {
-    @apply tw-block tw-uppercase tw-tracking-wide tw-text-gray-500 tw-text-sm tw-font-bold tw-mb-2;
-  }
-  .input-data {
-    @apply tw-block tw-w-full tw-bg-gray-200 tw-text-gray-500 tw-border tw-border-gray-200 tw-rounded-xl tw-py-3 tw-px-4 tw-leading-tight focus:tw-outline-none focus:tw-bg-white focus:tw-border-sims-400 focus:tw-ring-1 focus:tw-ring-sims-400 placeholder:tw-invisible;
-  }
-  .input-data-minimal {
-    @apply tw-block tw-w-full tw-rounded-xl tw-border-0 tw-font-pop tw-font-normal tw-py-3 tw-px-5 tw-bg-gray-100 tw-text-gray-400 focus:tw-outline-none focus:tw-bg-white focus:tw-border-sims-400 focus:tw-ring-1 focus:tw-ring-sims-400 placeholder:tw-invisible;
-  }
-  .input-account {
-    @apply tw-block tw-text-gray-400 tw-w-full tw-font-pop tw-border tw-border-[#E3E3E3] tw-mt-2 tw-rounded-2xl tw-py-3 tw-px-8 tw-bg-white focus:tw-shadow-sm focus:tw-shadow-admin-300 focus:tw-border-admin-300 focus:tw-outline-none;
-  }
-  .input-account-disabled {
-    @apply tw-block tw-bg-slate-100 tw-text-gray-400 tw-w-full tw-font-pop tw-border tw-border-[#E3E3E3] tw-mt-2 tw-rounded-2xl tw-py-3 tw-px-8 tw-bg-white focus:tw-shadow-sm focus:tw-shadow-admin-300 focus:tw-border-admin-300 focus:tw-outline-none;
-  }
-  .btn-export {
-    @apply tw-text-xl tw-px-3 tw-py-2 tw-mx-2 tw-text-white tw-bg-sims-new-500 hover:tw-bg-[#3b7a7a] tw-border tw-rounded-lg;
-  }
-  .nav-item-admin {
-    @apply tw-text-base tw-font-normal tw-text-gray-400 tw-rounded-lg hover:tw-bg-[#5A6C7C] hover:tw-text-gray-100 tw-flex tw-items-center tw-pl-3 tw-py-2;
-  }
-  .card-account {
-    @apply tw-bg-white tw-rounded-xl tw-shadow-lg tw-flex tw-flex-col;
-  }
-  .card-account-title {
-    @apply tw-font-ubuntu tw-font-semibold tw-text-lg tw-mt-4;
-  }
-  .card-account-btn {
-    @apply tw-bg-admin-300 tw-py-3 tw-px-14 tw-rounded-xl tw-text-white tw-font-medium tw-mt-5 hover:tw-bg-[#88ACD7];
-  }
-  .card-data {
-    @apply tw-shadow-lg tw-rounded-xl tw-flex tw-bg-[#5A6C7C];
-  }
-  .card-data-white {
-    @apply tw-shadow-lg tw-rounded-xl tw-flex tw-bg-gray-100;
-  }
-  .card-data-bright {
-    @apply tw-shadow-lg tw-rounded-xl tw-flex tw-bg-white;
-  }
-  .card-data-btn {
-    @apply tw-border-2 tw-border-[#90C2C2] tw-py-1 tw-px-20 tw-text-[#90C2C2] tw-font-semibold tw-rounded-lg tw-font-ubuntu hover:tw-bg-[#90C2C2] hover:tw-text-white tw-mt-8;
-  }
-  .report-card-pills {
-    @apply tw-w-full tw-px-4 tw-py-2 tw-shadow-md tw-rounded-full tw-flex tw-justify-between;
-  }
-  .title-main {
-  @apply tw-font-pop tw-my-6 tw-font-bold tw-text-sims-400;
-  }
-  .title-main-nospace {
-    @apply tw-font-pop tw-font-bold tw-text-sims-400;
-  }
-  .card-dashboard {
-    @apply tw-px-4 tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-bg-white tw-w-56;
-  }
-  .without-ring {
-    @apply focus:ring-0 focus:ring-offset-0;
-  }
-  .hc-text-lg {
-    @apply tw-font-pop tw-leading-7 tw-text-lg tw-text-gray-400 tw-font-normal;
-  }
-  .hc-text-base {
-    @apply tw-font-pop tw-leading-7 tw-text-base tw-text-gray-400 tw-font-normal;
-  }
-  .hc-text-base-sims {
-    @apply tw-font-pop tw-leading-7 tw-text-base tw-text-sims-400 tw-font-normal;
-  }
-  .hc-text-sm {
-    @apply tw-font-pop tw-leading-7 tw-text-sm tw-text-gray-400 tw-font-normal;
-  }
-  .hc-text-xs {
-    @apply tw-font-pop tw-leading-7 tw-text-xs tw-text-gray-400 tw-font-normal;
-  }
-  .hc-title-lg {
-    @apply tw-font-pop tw-leading-7 tw-text-lg tw-font-bold tw-text-sims-400;
-  }
-  .hc-title-xl {
-    @apply tw-font-pop tw-leading-7 tw-text-xl tw-font-bold tw-text-sims-400;
-  }
-  .hc-title-3xl {
-    @apply tw-font-pop tw-leading-7 tw-text-3xl tw-font-bold tw-text-sims-400;
-  }
-  .hc-card {
-    @apply tw-flex tw-flex-col tw-text-center tw-bg-white tw-drop-shadow-md tw-p-8 tw-w-64 hover:tw-drop-shadow-xl tw-transition-all;
-  }
+    .login-input {
+        @apply tw-font-sg tw-font-medium tw-px-4 tw-py-3 tw-border-2 tw-text-gray-500 tw-border-gray-300 tw-w-full tw-block tw-text-sm placeholder:tw-text-gray-400 focus:placeholder:tw-invisible focus:tw-outline-none focus:tw-ring-1 focus:tw-ring-sims-400 focus:tw-border-sims-400;
+    }
+    .label-input {
+        @apply tw-block tw-uppercase tw-tracking-wide tw-text-gray-500 tw-text-sm tw-font-bold tw-mb-2;
+    }
+    .input-data {
+        @apply tw-block tw-w-full tw-bg-gray-200 tw-text-gray-500 tw-border tw-border-gray-200 tw-rounded-xl tw-py-3 tw-px-4 tw-leading-tight focus:tw-outline-none focus:tw-bg-white focus:tw-border-sims-400 focus:tw-ring-1 focus:tw-ring-sims-400 placeholder:tw-invisible;
+    }
+    .input-data-minimal {
+        @apply tw-block tw-w-full tw-rounded-xl tw-border-0 tw-font-pop tw-font-normal tw-py-3 tw-px-5 tw-bg-gray-100 tw-text-gray-400 focus:tw-outline-none focus:tw-bg-white focus:tw-border-sims-400 focus:tw-ring-1 focus:tw-ring-sims-400 placeholder:tw-invisible;
+    }
+    .input-account {
+        @apply tw-block tw-text-gray-400 tw-w-full tw-font-pop tw-border tw-border-[#E3E3E3] tw-mt-2 tw-rounded-2xl tw-py-3 tw-px-8 tw-bg-white focus:tw-shadow-sm focus:tw-shadow-admin-300 focus:tw-border-admin-300 focus:tw-outline-none;
+    }
+    .input-account-disabled {
+        @apply tw-block tw-text-gray-400 tw-w-full tw-font-pop tw-border tw-border-[#E3E3E3] tw-mt-2 tw-rounded-2xl tw-py-3 tw-px-8 tw-bg-white focus:tw-shadow-sm focus:tw-shadow-admin-300 focus:tw-border-admin-300 focus:tw-outline-none;
+    }
+    .btn-export {
+        @apply tw-text-xl tw-px-3 tw-py-2 tw-mx-2 tw-text-white tw-bg-sims-new-500 hover:tw-bg-[#3b7a7a] tw-border tw-rounded-lg;
+    }
+    .nav-item-admin {
+        @apply tw-text-base tw-font-normal tw-text-gray-400 tw-rounded-lg hover:tw-bg-[#5A6C7C] hover:tw-text-gray-100 tw-flex tw-items-center tw-pl-3 tw-py-2;
+    }
+    .card-account {
+        @apply tw-bg-white tw-rounded-xl tw-shadow-lg tw-flex tw-flex-col;
+    }
+    .card-account-title {
+        @apply tw-font-ubuntu tw-font-semibold tw-text-lg tw-mt-4;
+    }
+    .card-account-btn {
+        @apply tw-bg-admin-300 tw-py-3 tw-px-14 tw-rounded-xl tw-text-white tw-font-medium tw-mt-5 hover:tw-bg-[#88ACD7];
+    }
+    .card-data {
+        @apply tw-shadow-lg tw-rounded-xl tw-flex tw-bg-[#5A6C7C];
+    }
+    .card-data-white {
+        @apply tw-shadow-lg tw-rounded-xl tw-flex tw-bg-gray-100;
+    }
+    .card-data-bright {
+        @apply tw-shadow-lg tw-rounded-xl tw-flex tw-bg-white;
+    }
+    .card-data-btn {
+        @apply tw-border-2 tw-border-[#90C2C2] tw-py-1 tw-px-20 tw-text-[#90C2C2] tw-font-semibold tw-rounded-lg tw-font-ubuntu hover:tw-bg-[#90C2C2] hover:tw-text-white tw-mt-8;
+    }
+    .report-card-pills {
+        @apply tw-w-full tw-px-4 tw-py-2 tw-shadow-md tw-rounded-full tw-flex tw-justify-between;
+    }
+    .title-main {
+        @apply tw-font-pop tw-my-6 tw-font-bold tw-text-sims-400;
+    }
+    .title-main-nospace {
+        @apply tw-font-pop tw-font-bold tw-text-sims-400;
+    }
+    .card-dashboard {
+        @apply tw-px-4 tw-h-fit tw-pb-8 tw-flex tw-flex-col tw-rounded-lg tw-font-pop tw-border tw-bg-white tw-w-56;
+    }
+    .without-ring {
+        @apply focus:ring-0 focus:ring-offset-0;
+    }
+    .hc-text-lg {
+        @apply tw-font-pop tw-leading-7 tw-text-lg tw-text-gray-400 tw-font-normal;
+    }
+    .hc-text-base {
+        @apply tw-font-pop tw-leading-7 tw-text-base tw-text-gray-400 tw-font-normal;
+    }
+    .hc-text-base-sims {
+        @apply tw-font-pop tw-leading-7 tw-text-base tw-text-sims-400 tw-font-normal;
+    }
+    .hc-text-sm {
+        @apply tw-font-pop tw-leading-7 tw-text-sm tw-text-gray-400 tw-font-normal;
+    }
+    .hc-text-xs {
+        @apply tw-font-pop tw-leading-7 tw-text-xs tw-text-gray-400 tw-font-normal;
+    }
+    .hc-title-lg {
+        @apply tw-font-pop tw-leading-7 tw-text-lg tw-font-bold tw-text-sims-400;
+    }
+    .hc-title-xl {
+        @apply tw-font-pop tw-leading-7 tw-text-xl tw-font-bold tw-text-sims-400;
+    }
+    .hc-title-3xl {
+        @apply tw-font-pop tw-leading-7 tw-text-3xl tw-font-bold tw-text-sims-400;
+    }
+    .hc-card {
+        @apply tw-flex tw-flex-col tw-text-center tw-bg-white tw-drop-shadow-md tw-p-8 tw-w-64 hover:tw-drop-shadow-xl tw-transition-all;
+    }
 
+    /* SIMS 1.0 Tailwind CSS Presets */
 
+    /* TEXT */
+    .sims-heading-3xl {
+        @apply tw-font-satoshi tw-text-3xl tw-font-bold tw-text-sims-new-500;
+    }
+    .sims-heading-2xl {
+        @apply tw-font-satoshi tw-text-2xl tw-font-bold tw-text-sims-new-500;
+    }
+    .sims-heading-xl {
+        @apply tw-font-satoshi tw-text-xl tw-font-bold tw-text-sims-new-500;
+    }
+    .sims-heading-lg {
+        @apply tw-font-satoshi tw-text-lg tw-font-bold tw-text-sims-new-500;
+    }
+    .sims-heading-md {
+        @apply tw-font-satoshi tw-text-base tw-font-bold tw-text-sims-new-500;
+    }
+    .sims-heading-sm {
+        @apply tw-font-satoshi tw-text-sm tw-font-bold tw-text-sims-new-500;
+    }
+    .sims-heading-xs {
+        @apply tw-font-satoshi tw-text-xs tw-font-bold tw-text-sims-new-500;
+    }
+    .sims-heading-3xl-black {
+        @apply tw-font-satoshi tw-text-3xl tw-font-bold tw-text-[#2F414F];
+    }
+    .sims-heading-2xl-black {
+        @apply tw-font-satoshi tw-text-2xl tw-font-bold tw-text-[#2F414F];
+    }
+    .sims-heading-xl-black {
+        @apply tw-font-satoshi tw-text-xl tw-font-bold tw-text-[#2F414F];
+    }
+    .sims-heading-lg-black {
+        @apply tw-font-satoshi tw-text-lg tw-font-bold tw-text-[#2F414F];
+    }
+    .sims-heading-md-black {
+        @apply tw-font-satoshi tw-text-base tw-font-bold tw-text-[#2F414F];
+    }
+    .sims-heading-sm-black {
+        @apply tw-font-satoshi tw-text-sm tw-font-bold tw-text-[#2F414F];
+    }
+    .sims-heading-xs-black {
+        @apply tw-font-satoshi tw-text-xs tw-font-bold tw-text-[#2F414F];
+    }
+    .sims-text-gray-xl {
+        @apply tw-font-sg tw-font-semibold tw-text-xl tw-text-gray-400;
+    }
+    .sims-text-gray-lg {
+        @apply tw-font-sg tw-font-semibold tw-text-lg tw-text-gray-400;
+    }
+    .sims-text-gray-md {
+        @apply tw-font-sg tw-font-semibold tw-text-base tw-text-gray-400;
+    }
+    .sims-text-gray-sm {
+        @apply tw-font-sg tw-font-semibold tw-text-sm tw-text-gray-400;
+    }
+    .sims-text-gray-xs {
+        @apply tw-font-sg tw-font-semibold tw-text-xs tw-text-gray-400;
+    }
+    .sims-text-black-xl {
+        @apply tw-font-sg tw-font-semibold tw-text-xl tw-text-[#2F414F];
+    }
+    .sims-text-black-lg {
+        @apply tw-font-sg tw-font-semibold tw-text-lg tw-text-[#2F414F];
+    }
+    .sims-text-black-md {
+        @apply tw-font-sg tw-font-semibold tw-text-base tw-text-[#2F414F];
+    }
+    .sims-text-black-sm {
+        @apply tw-font-sg tw-font-semibold tw-text-sm tw-text-[#2F414F];
+    }
+    .sims-text-black-xs {
+        @apply tw-font-sg tw-font-semibold tw-text-xs tw-text-[#2F414F];
+    }
+    .sims-text-regular-xl {
+        @apply tw-font-sg tw-font-semibold tw-text-xl tw-text-sims-new-500;
+    }
+    .sims-text-regular-lg {
+        @apply tw-font-sg tw-font-semibold tw-text-lg tw-text-sims-new-500;
+    }
+    .sims-text-regular-md {
+        @apply tw-font-sg tw-font-semibold tw-text-base tw-text-sims-new-500;
+    }
+    .sims-text-regular-sm {
+        @apply tw-font-sg tw-font-semibold tw-text-sm tw-text-sims-new-500;
+    }
+    .sims-text-regular-xs {
+        @apply tw-font-sg tw-font-semibold tw-text-xs tw-text-sims-new-500;
+    }
 
+    /* CARDS */
+    .sims-card-1 {
+        @apply tw-w-full tw-py-10 tw-my-2 tw-h-fit tw-border-2 tw-border-gray-200 tw-bg-white tw-shadow-md tw-rounded-md;
+    }
+    .sims-card-1-noshadow {
+        @apply tw-w-full tw-py-10 tw-my-2 tw-h-fit tw-border-2 tw-border-gray-200 tw-bg-white tw-rounded-md;
+    }
 
-  /* SIMS 1.0 Tailwind CSS Presets */
-
-  /* TEXT */
-  .sims-heading-3xl {
-    @apply tw-font-satoshi tw-text-3xl tw-font-bold tw-text-sims-new-500
-  }
-  .sims-heading-2xl {
-    @apply tw-font-satoshi tw-text-2xl tw-font-bold tw-text-sims-new-500
-  }
-  .sims-heading-xl {
-    @apply tw-font-satoshi tw-text-xl tw-font-bold tw-text-sims-new-500
-  }
-  .sims-heading-lg {
-    @apply tw-font-satoshi tw-text-lg tw-font-bold tw-text-sims-new-500
-  }
-  .sims-heading-md {
-    @apply tw-font-satoshi tw-text-base tw-font-bold tw-text-sims-new-500
-  }
-  .sims-heading-sm {
-    @apply tw-font-satoshi tw-text-sm tw-font-bold tw-text-sims-new-500
-  }
-  .sims-heading-xs {
-    @apply tw-font-satoshi tw-text-xs tw-font-bold tw-text-sims-new-500
-  }
-  .sims-heading-3xl-black {
-    @apply tw-font-satoshi tw-text-3xl tw-font-bold tw-text-[#2F414F]
-  }
-  .sims-heading-2xl-black {
-    @apply tw-font-satoshi tw-text-2xl tw-font-bold tw-text-[#2F414F]
-  }
-  .sims-heading-xl-black {
-    @apply tw-font-satoshi tw-text-xl tw-font-bold tw-text-[#2F414F]
-  }
-  .sims-heading-lg-black {
-    @apply tw-font-satoshi tw-text-lg tw-font-bold tw-text-[#2F414F]
-  }
-  .sims-heading-md-black {
-    @apply tw-font-satoshi tw-text-base tw-font-bold tw-text-[#2F414F]
-  }
-  .sims-heading-sm-black {
-    @apply tw-font-satoshi tw-text-sm tw-font-bold tw-text-[#2F414F]
-  }
-  .sims-heading-xs-black {
-    @apply tw-font-satoshi tw-text-xs tw-font-bold tw-text-[#2F414F]
-  }
-  .sims-text-gray-xl {
-    @apply tw-font-sg tw-font-semibold tw-text-xl tw-text-gray-400
-  }
-  .sims-text-gray-lg {
-    @apply tw-font-sg tw-font-semibold tw-text-lg tw-text-gray-400
-  }
-  .sims-text-gray-md {
-    @apply tw-font-sg tw-font-semibold tw-text-base tw-text-gray-400
-  }
-  .sims-text-gray-sm {
-    @apply tw-font-sg tw-font-semibold tw-text-sm tw-text-gray-400
-  }
-  .sims-text-gray-xs {
-    @apply tw-font-sg tw-font-semibold tw-text-xs tw-text-gray-400
-  }
-  .sims-text-black-xl {
-    @apply tw-font-sg tw-font-semibold tw-text-xl tw-text-[#2F414F]
-  }
-  .sims-text-black-lg {
-    @apply tw-font-sg tw-font-semibold tw-text-lg tw-text-[#2F414F]
-  }
-  .sims-text-black-md {
-    @apply tw-font-sg tw-font-semibold tw-text-base tw-text-[#2F414F]
-  }
-  .sims-text-black-sm {
-    @apply tw-font-sg tw-font-semibold tw-text-sm tw-text-[#2F414F]
-  }
-  .sims-text-black-xs {
-    @apply tw-font-sg tw-font-semibold tw-text-xs tw-text-[#2F414F]
-  }
-  .sims-text-regular-xl {
-    @apply tw-font-sg tw-font-semibold tw-text-xl tw-text-sims-new-500
-  }
-  .sims-text-regular-lg {
-    @apply tw-font-sg tw-font-semibold tw-text-lg tw-text-sims-new-500
-  }
-  .sims-text-regular-md {
-    @apply tw-font-sg tw-font-semibold tw-text-base tw-text-sims-new-500
-  }
-  .sims-text-regular-sm {
-    @apply tw-font-sg tw-font-semibold tw-text-sm tw-text-sims-new-500
-  }
-  .sims-text-regular-xs {
-    @apply tw-font-sg tw-font-semibold tw-text-xs tw-text-sims-new-500
-  }
-
-
-  /* CARDS */
-  .sims-card-1 {
-    @apply tw-w-full tw-py-10 tw-my-2 tw-h-fit tw-border-2 tw-border-gray-200 tw-bg-white tw-shadow-md tw-rounded-md
-  }
-  .sims-card-1-noshadow {
-    @apply tw-w-full tw-py-10 tw-my-2 tw-h-fit tw-border-2 tw-border-gray-200 tw-bg-white tw-rounded-md
-  }
-
-  /* FOR ICONS */
-  .sims-icon-5xl {
-    @apply tw-text-5xl tw-text-sims-new-500 tw-my-auto
-  }
-  .sims-icon-4xl {
-    @apply tw-text-4xl tw-text-sims-new-500 tw-my-auto
-  }
-  .sims-icon-3xl {
-    @apply tw-text-3xl tw-text-sims-new-500 tw-my-auto
-  }
-  .sims-icon-2xl {
-    @apply tw-text-2xl tw-text-sims-new-500 tw-my-auto
-  }
-  .sims-icon-xl {
-    @apply tw-text-xl tw-text-sims-new-500 tw-my-auto
-  }
-  .sims-icon-lg {
-    @apply tw-text-lg tw-text-sims-new-500 tw-my-auto
-  }
-  .sims-icon-md {
-    @apply tw-text-md tw-text-sims-new-500 tw-my-auto
-  }
-  .sims-icon-sm {
-    @apply tw-text-sm tw-text-sims-new-500 tw-my-auto
-  }
-  .sims-icon-xs {
-    @apply tw-text-xs tw-text-sims-new-500 tw-my-auto
-  }
+    /* FOR ICONS */
+    .sims-icon-5xl {
+        @apply tw-text-5xl tw-text-sims-new-500 tw-my-auto;
+    }
+    .sims-icon-4xl {
+        @apply tw-text-4xl tw-text-sims-new-500 tw-my-auto;
+    }
+    .sims-icon-3xl {
+        @apply tw-text-3xl tw-text-sims-new-500 tw-my-auto;
+    }
+    .sims-icon-2xl {
+        @apply tw-text-2xl tw-text-sims-new-500 tw-my-auto;
+    }
+    .sims-icon-xl {
+        @apply tw-text-xl tw-text-sims-new-500 tw-my-auto;
+    }
+    .sims-icon-lg {
+        @apply tw-text-lg tw-text-sims-new-500 tw-my-auto;
+    }
+    .sims-icon-md {
+        @apply tw-text-md tw-text-sims-new-500 tw-my-auto;
+    }
+    .sims-icon-sm {
+        @apply tw-text-sm tw-text-sims-new-500 tw-my-auto;
+    }
+    .sims-icon-xs {
+        @apply tw-text-xs tw-text-sims-new-500 tw-my-auto;
+    }
 }
 
-
-
 .snap {
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  -ms-overflow-style: none;
-  scrollbar-width: none
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .snap::-webkit-scrollbar {
-   display: none;
+    display: none;
 }
 
-.snap>div {
-   scroll-snap-align: start;
+.snap > div {
+    scroll-snap-align: start;
 }
 
 .tw-shadow-inner-r {
-  box-shadow: white 0px 30px 40px -2em inset; 
+    box-shadow: white 0px 30px 40px -2em inset;
 }
 
 .shadow-inner-b {
-box-shadow:inset 0px -11px 8px -10px #CCC;
+    box-shadow: inset 0px -11px 8px -10px #ccc;
 }
 
 .shadow-cs {
-  box-shadow: 0px 4px 35px -13px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 35px -13px rgba(0, 0, 0, 0.25);
 }
 
 .tw-rounded-xl {
-  border-radius: 0.75rem!important;
+    border-radius: 0.75rem !important;
 }
 
 .tw-border-gray-300 {
-  --tw-border-opacity: 1;
-  border-color: rgb(209 213 219 / var(--tw-border-opacity))!important;
+    --tw-border-opacity: 1;
+    border-color: rgb(209 213 219 / var(--tw-border-opacity)) !important;
 }
 
 .shadow-card {
-  box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.25);
 }
 
 .shadow {
-  position: absolute;
-  left: 0;
-  z-index: 100;
-  width: 100%;
-  height: 10px;
-  background: red;
+    position: absolute;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 10px;
+    background: red;
 }
 
 .shadow--top {
-  top: 0;
-  background: -webkit-linear-gradient(270deg, rgba(0, 0, 0, 0.35), transparent);
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.35), transparent);
-  opacity: 0;
+    top: 0;
+    background: -webkit-linear-gradient(
+        270deg,
+        rgba(0, 0, 0, 0.35),
+        transparent
+    );
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.35), transparent);
+    opacity: 0;
 }
 
 .shadow--bottom {
-  bottom: 0;
-  background: -webkit-linear-gradient(90deg, rgba(0, 0, 0, 0.35), transparent);
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.35), transparent);
+    bottom: 0;
+    background: -webkit-linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.35),
+        transparent
+    );
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.35), transparent);
 }
 
 table {
-  counter-reset: tableCount;     
+    counter-reset: tableCount;
 }
-.counterCell:before {              
-  content: counter(tableCount); 
-  counter-increment: tableCount; 
+.counterCell:before {
+    content: counter(tableCount);
+    counter-increment: tableCount;
 }
 
 /* SWITCH */
 
 .switch {
-  position: relative;
-  display: inline-block;
+    position: relative;
+    display: inline-block;
 }
 
-.switch input { 
-  opacity: 0;
-  width: 0;
-  height: 0;
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
 .slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
 }
 
 .slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+    background-color: #2196f3;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px #2196f3;
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
 }
 
 input[type="radio"]:checked {
-
-  background-color: rgb(77, 158, 158);
-  accent-color: rgb(77, 158, 158);
+    background-color: rgb(56, 148, 163);
+    accent-color: rgb(56, 148, 163);
 }
 
 input[type="checkbox"]:checked {
-
-  background-color: rgb(77, 158, 158);
-  accent-color: rgb(77, 158, 158);
+    background-color: rgb(56, 148, 163);
+    accent-color: rgb(56, 148, 163);
 }
 
 /* Rounded sliders */
 .slider.round {
-  border-radius: 34px;
+    border-radius: 34px;
 }
 
 .slider.round:before {
-  border-radius: 50%;
+    border-radius: 50%;
 }

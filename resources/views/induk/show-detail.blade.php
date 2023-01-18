@@ -5,18 +5,18 @@
         <div class="tw-flex tw-justify-center">
             <div class="tw-block tw-my-32">
                 <img src="{{ asset('assets/img/error_img.svg') }}" alt="error_img">
-                <h1 class="tw-flex tw-justify-center tw-font-pop tw-font-bold tw-mt-6 tw-text-sims-400">404 Not Found</h1>
-                <p class="tw-flex tw-justify-center tw-font-pop tw-text-md tw-font-semibold tw-text-gray-400 tw-mt-5">
+                <h1 class="tw-flex tw-justify-center tw-font-satoshi tw-font-bold tw-mt-6 tw-text-sims-new-500">404 Not Found</h1>
+                <p class="tw-flex tw-justify-center tw-font-satoshi tw-text-md tw-font-semibold tw-text-gray-400 tw-mt-5">
                     {{ $message }}</p>
             </div>
         </div>
     @else
         <div class="tw-mx-10 tw-my-10">
-            <div class="tw-text-3xl tw-text-sims-400 tw-font-pop tw-font-semibold tw-flex tw-mt-9 tw-mx-9">Data Siswa</div>
+            <div class="tw-text-3xl tw-text-sims-new-500 tw-font-satoshi tw-font-semibold tw-flex tw-mt-9 tw-mx-9">Data Siswa</div>
             {{-- foto profil --}}
-            <div class="tw-flex sm:tw-flex-col md:tw-flex-row tw-font-pop">
+            <div class="tw-flex sm:tw-flex-col md:tw-flex-row tw-font-satoshi">
                 <div
-                    class="md:tw-w-[30%] tw-bg-white tw-shadow-lg tw-rounded-lg sm:tw-w-full tw-text-center tw-text-basic-700 tw-text-xl tw-font-pop tw-font-semibold tw-m-9">
+                    class="md:tw-w-[30%] tw-bg-white tw-shadow-lg tw-rounded-lg sm:tw-w-full tw-text-center tw-text-basic-700 tw-text-xl tw-font-satoshi tw-font-semibold tw-m-9">
                     @if ($siswa->foto)
                         <img src="{{ asset('foto/' . $siswa->foto) }}" alt="Pas Foto" srcset=""
                             class="tw-rounded-xl tw-object-cover tw-mb-8 tw-w-48 tw-h-64 tw-border tw-border-slate-400 tw-mx-auto md:tw-mt-20 sm:tw-mt-10">
@@ -27,14 +27,13 @@
                     @endif
 
                     <div class="tw-rounded-lg tw-py-10">
-                        <div class="tw-font-pop tw-text-sims-500 tw-text-xl tw-mb-3 tw-px-6">{{ $siswa->nama_siswa }} @if($siswa->isAlumni === true)<div class="tw-font-pop tw-text-xs tw-text-sims-400 tw-mt-1"><i class="fa-solid fa-graduation-cap tw-mx-1"></i>Alumni</div>@endif</div>
-                        <div>
-                            <div class="tw-font-pop tw-text-gray-400 tw-text-base tw-font-normal">{{ $siswa->nis_siswa }} / {{ $siswa->nisn_siswa }}</div>
-                            <div class="tw-font-pop tw-text-gray-400 tw-text-base tw-font-normal">{{ $siswa->kelas->jurusan }}</div>
-                            <div class="tw-font-pop tw-text-gray-400 tw-text-base tw-font-normal">{{ $siswa->kelas->id }}</div>
-                            <div class="tw-font-pop tw-text-basic-200 tw-text-xs tw-font-normal tw-mt-8"><b>Dibuat : </b>{{ $createdAt }}</div>
-                            <div class="tw-font-pop tw-text-basic-200 tw-text-xs tw-font-normal"><b>Update terakhir : </b>{{ $updatedAt }}</div>
-                            
+                        <div class="tw-text-sims-new-600 tw-text-xl tw-mb-3 tw-px-6">{{ $siswa->nama_siswa }} @if($siswa->isAlumni === true)<div class="tw-text-xs tw-text-sims-new-500 tw-mt-1"><i class="fa-solid fa-graduation-cap tw-mx-1"></i>Alumni</div>@endif</div>
+                        <div class="tw-text-gray-400 tw-text-base tw-font-normal tw-font-sg">
+                            <div>{{ $siswa->nis_siswa }} / {{ $siswa->nisn_siswa }}</div>
+                            <div>{{ $siswa->kelas->jurusan }}</div>
+                            <div>{{ $siswa->kelas->id }}</div>
+                            <div class="tw-text-basic-200 tw-text-sm tw-font-normal tw-mt-8"><b>Dibuat : </b>{{ $createdAt }}</div>
+                            <div class="tw-text-basic-200 tw-text-sm tw-font-normal"><b>Update terakhir : </b>{{ $updatedAt }}</div>
                         </div>
                     </div>
                 </div>
@@ -48,12 +47,12 @@
                     <div class="tw-float-right tw-flex tw-gap-2">
                         @can('tata usaha')                            
                         <div>
-                            <button type="button" data-modal-toggle="modal" class="tw-bg-sims-400 tw-text-sm tw-text-white hover:tw-text-white  tw-font-pop hover:tw-bg-sims-600 tw-px-5 tw-py-2 tw-rounded-lg">Export</button>
+                            <button type="button" data-modal-toggle="modal" class="tw-bg-sims-new-500 tw-text-sm tw-text-white hover:tw-text-white  tw-font-satoshi hover:tw-bg-sims-new-700 tw-px-5 tw-py-2 tw-rounded-lg">Export</button>
 
                             <div id="modal" tabindex="-1"
                              class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full">
                               <div class="relative p-4 w-full max-w-md h-full md:h-auto">
-                                  <div class="tw-relative tw-bg-white tw-rounded-lg tw-shadow dark:tw-bg-slate-100 tw-font-pop">
+                                  <div class="tw-relative tw-bg-white tw-rounded-lg tw-shadow dark:tw-bg-slate-100 tw-font-satoshi">
                                       <button type="button"
                                         class="tw-absolute tw-top-3 tw-right-2.5 tw-text-gray-400 tw-bg-transparent hover:tw-bg-gray-200 hover:tw-text-gray-900 tw-rounded-lg tw-text-sm tw-p-1.5 tw-ml-auto tw-inline-flex tw-items-center"
                                         data-modal-toggle="modal">
@@ -67,12 +66,12 @@
                                           <span class="sr-only">Close modal</span>
                                       </button>
                                       <div class="tw-p-6">
-                                          <div class="tw-mb-8 tw-mt-5 tw-flex tw-justify-center tw-text-2xl tw-font-semibold tw-text-sims-400">
+                                          <div class="tw-mb-8 tw-mt-5 tw-flex tw-justify-center tw-text-2xl tw-font-semibold tw-text-sims-new-500">
                                               Export Data
                                           </div>
-                                          <div class="tw-gap-3 tw-grid">
+                                          <div class="tw-gap-3 tw-grid tw-font-sg">
                                               <a href="/data-siswa-print/{{ $siswa->nis_siswa }}" target="__blank"
-                                                class="tw-text-white tw-justify-center tw-bg-sims-400 tw-w-full hover:tw-bg-sims-500 hover:tw-text-white tw-font-medium tw-text-xl tw-inline-flex tw-items-center tw-py-8 tw-text-center">
+                                                class="tw-text-white tw-justify-center tw-bg-sims-new-500 tw-w-full hover:tw-bg-sims-new-600 hover:tw-text-white tw-font-medium tw-text-xl tw-inline-flex tw-items-center tw-py-8 tw-text-center">
                                                   Print data&nbsp;&nbsp;<i class="fa-solid fa-print tw-text-2xl"></i>
                                               </a>
                                               <a href="/detail-data-induk/{{ $siswa->nis_siswa }}"
@@ -93,13 +92,13 @@
                         
                         @cannot('kesiswaan')
                         <a href="/rekap-nilai/{{ $siswa->nis_siswa }}"
-                            class="tw-text-white tw-text-sm tw-bg-sims-400 hover:tw-text-white hover:tw-bg-sims-500 tw-rounded-lg tw-py-2 tw-px-3"><i
+                            class="tw-text-white tw-font-sg tw-text-sm tw-bg-sims-new-500 hover:tw-text-white hover:tw-bg-sims-new-600 tw-rounded-lg tw-py-2 tw-px-3"><i
                                 class="fa-light fa-clipboard-list mr-2"></i>Rekap Nilai</a>
                         @endcannot
 
                         @can('tata usaha')
                         
-                        <a href="/edit-siswa/{{ $siswa->nis_siswa }}" class="tw-text-white tw-text-sm tw-bg-yellow-400 hover:tw-text-white hover:tw-bg-yellow-500 tw-rounded-lg tw-py-2 tw-px-3"><i class="fa-solid fa-pen-to-square mr-2"></i>Edit</a>
+                        <a href="/edit-siswa/{{ $siswa->nis_siswa }}" class="tw-text-white tw-text-sm tw-font-sg  tw-bg-yellow-400 hover:tw-text-white hover:tw-bg-yellow-500 tw-rounded-lg tw-py-2 tw-px-3"><i class="fa-solid fa-pen-to-square mr-2"></i>Edit</a>
                         
                         <form action="/api/siswa/delete/{{ $siswa->nis_siswa }}" method="POST">
                             @csrf
@@ -108,7 +107,7 @@
                             <input type="hidden" name="prevURLwithParams" value="{{ URL::previous() }}">
 
                             <button type="button" data-modal-toggle="popup-modal"
-                                class="tw-text-white tw-text-sm tw-bg-red-400 hover:tw-bg-red-500 hover:tw-text-white tw-rounded-lg tw-py-2 tw-px-3">
+                                class="tw-text-white tw-text-sm tw-font-sg tw-bg-red-400 hover:tw-bg-red-500 hover:tw-text-white tw-rounded-lg tw-py-2 tw-px-3">
                                 <i class="fa-solid fa-trash mr-2"></i> Delete
                             </button>
 
@@ -155,24 +154,24 @@
                         </form>
                         @endcan
                     </div>
-                    <ul class="tw-flex mb-0 mt-3 tw--ml-6">
+                    <ul class="tw-flex mb-0 mt-3 tw--ml-6 tw-font-sg">
                         <li @click="open = 1" :class="{ 'tw--mb-px': open === 1 }" class="tw--mb-px tw-mr-1">
                             <button :class="open === 1 ? activeClasses : inactiveClasses"
-                                class="tw-rounded-t-2xl tw-text-basic-700 hover:tw-text-sims-400 tw-inline-block tw-py-2 tw-px-4 tw-font-semibold"
+                                class="tw-rounded-t-2xl tw-text-basic-700 hover:tw-text-sims-new-500 tw-inline-block tw-py-2 tw-px-4 tw-font-semibold"
                                 href="#">
                                 Data Diri
                             </button>
                         </li>
                         <li @click="open = 2" :class="{ 'tw--mb-px': open === 2 }" class="tw--mb-px tw-mr-1">
                             <button :class="open === 2 ? activeClasses : inactiveClasses"
-                                class="tw-rounded-t-2xl tw-text-basic-700 hover:tw-text-sims-400 tw-inline-block tw-py-2 tw-px-4 tw-font-semibold"
+                                class="tw-rounded-t-2xl tw-text-basic-700 hover:tw-text-sims-new-500 tw-inline-block tw-py-2 tw-px-4 tw-font-semibold"
                                 href="#">
                                 Data Orang Tua/Wali
                             </button>
                         </li>
                         <li @click="open = 3" :class="{ 'tw--mb-px': open === 3 }" class="tw--mb-px tw-mr-1">
                             <button :class="open === 3 ? activeClasses : inactiveClasses"
-                                class="tw-rounded-t-2xl tw-text-basic-700 hover:tw-text-sims-400 tw-inline-block tw-py-2 tw-px-4 tw-font-semibold"
+                                class="tw-rounded-t-2xl tw-text-basic-700 hover:tw-text-sims-new-500 tw-inline-block tw-py-2 tw-px-4 tw-font-semibold"
                                 href="#">
                                 Lainnya
                             </button>
@@ -182,14 +181,14 @@
                         <div x-show="open === 1">
                             <div x-data="{
                                 selected: 1,
-                                activeClasses: 'tw-bg-sims-400 tw-text-white',
-                                inactiveClasses: 'tw-bg-white tw-text-sims-400'
+                                activeClasses: 'tw-bg-sims-new-500 tw-text-white',
+                                inactiveClasses: 'tw-bg-white tw-text-sims-new-500'
                             }">
                                 <div x-show="selected === 1">
                                     <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
                                         <table class="tw-w-full tw-text-left tw-text-basic-700">
                                             <thead
-                                                class="tw-text-lg tw-bg-gray-100 tw-border tw-font-pop">
+                                                class="tw-text-lg tw-bg-gray-100 tw-border tw-font-satoshi">
                                                 <tr>
                                                     <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">
                                                         Data Diri
@@ -283,7 +282,7 @@
                                     <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
                                         <table class="tw-w-full tw-text-left tw-text-basic-700">
                                             <thead
-                                                class="tw-text-lg tw-bg-gray-100 tw-border tw-font-pop">
+                                                class="tw-text-lg tw-bg-gray-100 tw-border tw-font-satoshi">
                                                 <tr>
                                                     <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">
                                                         Data Diri
@@ -365,7 +364,7 @@
                                     <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl tw-mb-[103px]">
                                         <table class="tw-w-full tw-text-left tw-text-basic-700">
                                             <thead
-                                                class="tw-text-lg tw-bg-gray-100 tw-border tw-font-pop">
+                                                class="tw-text-lg tw-bg-gray-100 tw-border tw-font-satoshi">
                                                 <tr>
                                                     <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">
                                                         Data Diri
@@ -439,10 +438,10 @@
                                 {{-- btn paginate --}}
                                 <div class="tw-flex tw-justify-center tw-mt-10 tw-gap-4">
                                     <button x-on:click="selected = selected === 1 ? 3 : selected - 1"
-                                        class="tw-text-white tw-bg-sims-400 tw-w-11 tw-h-11 hover:tw-bg-[#3F7373] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i
+                                        class="tw-text-white tw-bg-sims-new-500 tw-w-11 tw-h-11 hover:tw-bg-[#3F7373] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i
                                             class="fa-regular fa-arrow-left"></i></button>
                                     <button x-on:click="selected = selected === 3 ? 1 : selected + 1"
-                                        class="tw-text-white tw-bg-sims-400 tw-w-11 tw-h-11 hover:tw-bg-[#3F7373] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i
+                                        class="tw-text-white tw-bg-sims-new-500 tw-w-11 tw-h-11 hover:tw-bg-[#3F7373] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i
                                             class="fa-regular fa-arrow-right"></i></button>
                                 </div>
                             </div>
@@ -453,14 +452,14 @@
                         <div x-show="open === 2">
                             <div x-data="{
                                 selected: 1,
-                                activeClasses: 'tw-bg-sims-400 tw-text-white',
-                                inactiveClasses: 'tw-bg-white tw-text-sims-400'
+                                activeClasses: 'tw-bg-sims-new-500 tw-text-white',
+                                inactiveClasses: 'tw-bg-white tw-text-sims-new-500'
                             }">
                                 <div x-show="selected === 1">
                                     <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
                                         <table class="tw-w-full tw-text-left tw-text-basic-700">
                                             <thead
-                                                class="tw-text-lg tw-bg-gray-100 tw-border tw-font-pop">
+                                                class="tw-text-lg tw-bg-gray-100 tw-border tw-font-satoshi">
                                                 <tr>
                                                     <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">
                                                         Data Orang Tua/Wali
@@ -542,7 +541,7 @@
                                     <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl tw-mb-[20.5rem]">
                                         <table class="tw-w-full tw-text-basic-700 tw-text-left">
                                             <thead
-                                                class="tw-text-lg tw-bg-gray-100 tw-border tw-font-pop">
+                                                class="tw-text-lg tw-bg-gray-100 tw-border tw-font-satoshi">
                                                 <tr>
                                                     <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">
                                                         Data Orang Tua/Wali
@@ -579,10 +578,10 @@
                                 {{-- btn paginate --}}
                                 <div class="tw-flex tw-justify-center tw-mt-10 tw-gap-4">
                                     <button x-on:click="selected = 1"
-                                        class="tw-text-white tw-bg-sims-400 tw-w-11 tw-h-11 hover:tw-bg-[#3F7373] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i
+                                        class="tw-text-white tw-bg-sims-new-500 tw-w-11 tw-h-11 hover:tw-bg-[#3F7373] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i
                                             class="fa-regular fa-arrow-left"></i></button>
                                     <button x-on:click="selected = 2"
-                                        class="tw-text-white tw-bg-sims-400 tw-w-11 tw-h-11 hover:tw-bg-[#3F7373] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i
+                                        class="tw-text-white tw-bg-sims-new-500 tw-w-11 tw-h-11 hover:tw-bg-[#3F7373] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i
                                             class="fa-regular fa-arrow-right"></i></button>
                                 </div>
                             </div>
@@ -593,14 +592,14 @@
                         <div x-show="open === 3">
                             <div x-data="{
                                 selected: 1,
-                                activeClasses: 'tw-bg-sims-400 tw-text-white',
-                                inactiveClasses: 'tw-bg-white tw-text-sims-400'
+                                activeClasses: 'tw-bg-sims-new-500 tw-text-white',
+                                inactiveClasses: 'tw-bg-white tw-text-sims-new-500'
                             }">
                                 <div x-show="selected === 1">
                                     <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
                                         <table class="tw-w-full tw-text-basic-700 tw-text-left">
                                             <thead
-                                                class="tw-text-lg tw-bg-gray-100 tw-border tw-font-pop">
+                                                class="tw-text-lg tw-bg-gray-100 tw-border tw-font-satoshi">
                                                 <tr>
                                                     <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">
                                                         Data
@@ -682,7 +681,7 @@
                                     <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl tw-mb-[20.5rem]">
                                         <table class="tw-w-full tw-text-basic-700 tw-text-left">
                                             <thead
-                                                class="tw-text-lg tw-bg-gray-100 tw-border tw-font-pop">
+                                                class="tw-text-lg tw-bg-gray-100 tw-border tw-font-satoshi">
                                                 <tr>
                                                     <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">
                                                         Data
@@ -719,10 +718,10 @@
                                 {{-- btn paginate --}}
                                 <div class="tw-flex tw-justify-center tw-mt-10 tw-gap-4">
                                     <button x-on:click="selected = selected === 1 ? 2 : selected - 1"
-                                        class="tw-text-white tw-bg-sims-400 tw-w-11 tw-h-11 hover:tw-bg-[#3F7373] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i
+                                        class="tw-text-white tw-bg-sims-new-500 tw-w-11 tw-h-11 hover:tw-bg-[#3F7373] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i
                                             class="fa-regular fa-arrow-left"></i></button>
                                     <button x-on:click="selected = selected === 2 ? 1 : selected + 1"
-                                        class="tw-text-white tw-bg-sims-400 tw-w-11 tw-h-11 hover:tw-bg-[#3F7373] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i
+                                        class="tw-text-white tw-bg-sims-new-500 tw-w-11 tw-h-11 hover:tw-bg-[#3F7373] hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i
                                             class="fa-regular fa-arrow-right"></i></button>
                                 </div>
                             </div>

@@ -6,8 +6,8 @@
 <div class="tw-flex tw-justify-center">
     <div class="tw-block tw-my-32">
         <img src="{{asset('assets/img/error_img.svg')}}" alt="error_img">
-        <h1 class="tw-flex tw-justify-center tw-font-pop tw-font-bold tw-mt-6 tw-text-sims-400">404 Not Found</h1>
-        <p class="tw-flex tw-justify-center tw-font-pop tw-text-md tw-font-semibold tw-text-gray-400 tw-mt-5">{{ $message }}</p>
+        <h1 class="tw-flex tw-justify-center tw-font-satoshi tw-font-bold tw-mt-6 tw-text-sims-new-500">404 Not Found</h1>
+        <p class="tw-flex tw-justify-center tw-font-satoshi tw-text-md tw-font-semibold tw-text-gray-400 tw-mt-5">{{ $message }}</p>
     </div>
 </div>
 </div>
@@ -34,8 +34,8 @@
    @endif
 
     <div class="tw-flex  tw-flex-col tw-rounded-[35px] tw-bg-white lg:tw-w-1/2 sm:tw-w-full sm:tw-mx-5 tw-p-8 tw-h-full tw-mx-auto tw-my-10 tw-shadow-lg">
-        <a href="/siswa-keluar" class="tw-text-sims-400 sm:tw-text-md md:tw-text-3xl tw-w-min hover:tw-text-sims-500"><i class="fa-solid fa-chevron-left"></i></a>
-        <h3 class="tw-font-pop tw-font-semibold tw-mt-6 tw-text-sims-400 tw-text-center tw-mb-14">Edit Data Mutasi Keluar</h3>
+        <a href="/siswa-keluar" class="tw-text-sims-new-500 sm:tw-text-md md:tw-text-3xl tw-w-min hover:tw-text-sims-new-600"><i class="fa-solid fa-chevron-left"></i></a>
+        <h3 class="tw-font-satoshi tw-font-semibold tw-mt-6 tw-text-sims-new-500 tw-text-center tw-mb-14">Edit Data Mutasi Keluar</h3>
         <form action="/api/mutasi-keluar/update/{{ $mutasi->id }}" method="POST">
         @csrf
         @method('PUT')
@@ -127,7 +127,7 @@
                     @enderror
                 </div>
                 <div class="tw-mx-auto tw-text-center tw-mt-10">
-                    <button type="submit" class="tw-bg-sims-400 hover:tw-bg-sims-500 tw-font-medium tw-text-white tw-py-3 tw-transition tw-px-6 tw-rounded-lg">Update</button>
+                    <button type="submit" class="tw-bg-sims-new-500 tw-font-sg hover:tw-bg-sims-new-600 tw-font-medium tw-text-white tw-py-3 tw-transition tw-px-6 tw-rounded-lg">Update</button>
                 </div>
             </div>
         </form>

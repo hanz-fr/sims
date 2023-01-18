@@ -3,23 +3,23 @@
 @section('content')
     <div class="tw-mx-10">
         <div class="tw-flex tw-mt-8 tw-items-center">
-            <a href="{{ URL::previous() }}" class=" tw-text-sims-400 tw-text-3xl hover:tw-text-sims-600"><i class="fa-regular fa-chevron-left"></i></a>
-            <div class="tw-text-2xl tw-text-sims-400 tw-font-pop tw-font-semibold tw-flex tw-ml-4">Rekap Nilai Siswa</div>
+            <a href="{{ URL::previous() }}" class=" tw-text-sims-new-500 tw-text-3xl hover:tw-text-sims-new-700"><i class="fa-regular fa-chevron-left"></i></a>
+            <div class="tw-text-2xl tw-text-sims-new-500 tw-font-satoshi tw-font-semibold tw-flex tw-ml-4">Rekap Nilai Siswa</div>
         </div>
             <div class="tw-flex lg:tw-flex-row sm:tw-flex-col tw-justify-between tw-mb-5 tw-mt-8">
-                <div class="tw-font-pop tw-font-medium tw-text-md tw-text-slate-400">
+                <div class="tw-font-satoshi tw-font-medium tw-text-md tw-text-slate-400">
                     NIS : {{ $siswa->nis_siswa }}<br>Nama :  {{ $siswa->nama_siswa }}<br>Kelas : {{ $siswa->KelasId }}
                 </div>
                 <div class="tw-my-auto tw-flex tw-gap-5 sm:tw-mt-2 lg:tw-my-auto">
-                    {{-- <button id="copy_btn" type="button" value="copy" class="tw-bg-sims-400 tw-text-white hover:tw-text-white tw-font-pop hover:tw-bg-sims-600 tw-px-5 tw-py-2 tw-rounded-lg">Copy</button> --}}
+                    {{-- <button id="copy_btn" type="button" value="copy" class="tw-bg-sims-new-500 tw-text-white hover:tw-text-white tw-font-satoshi hover:tw-bg-sims-new-700 tw-px-5 tw-py-2 tw-rounded-lg">Copy</button> --}}
 
                     @cannot('kesiswaan')
-                    <button type="button" data-modal-toggle="modal" class="tw-bg-sims-400 tw-text-white hover:tw-text-white  tw-font-pop hover:tw-bg-sims-600 tw-px-5 tw-py-2 tw-rounded-lg">Export</button>
+                    <button type="button" data-modal-toggle="modal" class="tw-bg-sims-new-500 tw-text-white hover:tw-text-white  tw-font-sg hover:tw-bg-sims-new-700 tw-px-5 tw-py-2 tw-rounded-lg">Export</button>
 
                     <div id="modal" tabindex="-1"
                      class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full">
                       <div class="relative p-4 w-full max-w-md h-full md:h-auto">
-                          <div class="tw-relative tw-bg-white tw-rounded-lg tw-shadow dark:tw-bg-slate-100 tw-font-pop">
+                          <div class="tw-relative tw-bg-white tw-rounded-lg tw-shadow dark:tw-bg-slate-100 tw-font-satoshi">
                               <button type="button"
                                 class="tw-absolute tw-top-3 tw-right-2.5 tw-text-gray-400 tw-bg-transparent hover:tw-bg-gray-200 hover:tw-text-gray-900 tw-rounded-lg tw-text-sm tw-p-1.5 tw-ml-auto tw-inline-flex tw-items-center"
                                 data-modal-toggle="modal">
@@ -33,12 +33,12 @@
                                   <span class="sr-only">Close modal</span>
                               </button>
                               <div class="tw-p-6">
-                                  <div class="tw-mb-8 tw-mt-5 tw-flex tw-justify-center tw-text-2xl tw-font-semibold tw-text-sims-400">
+                                  <div class="tw-mb-8 tw-mt-5 tw-flex tw-justify-center tw-text-2xl tw-font-semibold tw-text-sims-new-500">
                                       Export Data
                                   </div>
-                                  <div class="tw-gap-3 tw-grid">
+                                  <div class="tw-gap-3 tw-grid tw-font-sg">
                                       <a target="__blank" href="/rekap-nilai-print/{{ $siswa->nis_siswa }}"
-                                        class="tw-text-white tw-justify-center tw-bg-sims-400 tw-w-full hover:tw-bg-sims-500 hover:tw-text-white tw-font-medium tw-text-xl tw-inline-flex tw-items-center tw-py-8 tw-text-center">
+                                        class="tw-text-white tw-justify-center tw-bg-sims-new-500 tw-w-full hover:tw-bg-sims-new-600 hover:tw-text-white tw-font-medium tw-text-xl tw-inline-flex tw-items-center tw-py-8 tw-text-center">
                                           Print data&nbsp;&nbsp;<i class="fa-solid fa-print tw-text-2xl"></i>
                                       </a>
                                       <a href="/rekap-nilai-excel/{{ $siswa->nis_siswa }}"
@@ -57,18 +57,18 @@
                     @endcannot
                     
                     @can('wali kelas')
-                        <a href="/tambah-nilai/{{ $siswa->nis_siswa }}" class="tw-bg-sims-400 tw-text-white hover:tw-text-white  tw-font-pop hover:tw-bg-sims-600 tw-px-5 tw-py-2 tw-rounded-lg">Tambah Rekap Nilai +</a>
+                        <a href="/tambah-nilai/{{ $siswa->nis_siswa }}" class="tw-bg-sims-new-500 tw-text-white hover:tw-text-white  tw-font-sg hover:tw-bg-sims-new-700 tw-px-5 tw-py-2 tw-rounded-lg">Tambah Rekap Nilai +</a>
                     @endcan
                 </div>
             </div>
         <div x-data="{
           selected: 1,
-          activeClasses: 'tw-bg-sims-400 tw-text-white',
-          inactiveClasses: 'tw-bg-white tw-text-sims-400'
+          activeClasses: 'tw-bg-sims-new-500 tw-text-white',
+          inactiveClasses: 'tw-bg-white tw-text-sims-new-500'
           }">
             <div x-show="selected === 1" class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
                 <table class="tw-w-full tw-text-sm tw-text-center">
-                    <thead class="tw-text-lg tw-bg-gray-100 tw-text-basic-700 tw-border-b tw-font-pop">
+                    <thead class="tw-text-lg tw-bg-gray-100 tw-text-basic-700 tw-border-b tw-font-satoshi">
                         <tr class="tw-border">
                             <th scope="col" class="tw-py-3 tw-px-6">
                                 Nama Mapel
@@ -168,7 +168,7 @@
                                 {{ $rp->tgl_kenaikan }}
                             </td>
                             </tr>
-                            <tr class="tw-bg-sims-500">
+                            <tr class="tw-bg-sims-new-600">
                             <td class="tw-py-10 tw-flex tw-justify-center tw-gap-10">
                                 <div class="tw-flex tw-gap-5 tw-justify-center">
                                     @can('rekap-nilai')
@@ -192,7 +192,7 @@
                                 <div></div>
                             </td>
                                 <td></td>
-                                <td><div class="tw-flex tw-justify-end  tw-font-pop tw-text-md tw-text-white tw-font-bold tw-mx-10">Tanggal dibuat : </div><div class="tw-flex tw-justify-end  tw-font-pop tw-text-md tw-text-white tw-mx-10">{{ \Carbon\Carbon::parse(strtotime($rp->createdAt))->setTimezone('+7')->translatedFormat('l d F Y') }}</div> </td>
+                                <td><div class="tw-flex tw-justify-end  tw-font-satoshi tw-text-md tw-text-white tw-font-bold tw-mx-10">Tanggal dibuat : </div><div class="tw-flex tw-justify-end  tw-font-satoshi tw-text-md tw-text-white tw-mx-10">{{ \Carbon\Carbon::parse(strtotime($rp->createdAt))->setTimezone('+7')->translatedFormat('l d F Y') }}</div> </td>
                                 <td></td>
                             </tr>
                         @endforeach
@@ -201,7 +201,7 @@
             </div>
             <div x-show="selected === 2" class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
                 <table class="tw-w-full tw-text-sm tw-text-center">
-                    <thead class="tw-text-lg tw-bg-gray-100 tw-text-basic-700 tw-border-b tw-font-pop">
+                    <thead class="tw-text-lg tw-bg-gray-100 tw-text-basic-700 tw-border-b tw-font-satoshi">
                         <tr class="tw-border">
                             <th scope="col" class="tw-py-3 tw-px-6">
                                 Nama Mapel
@@ -301,7 +301,7 @@
                             {{ $rp->tgl_kenaikan }}
                             </td>
                         </tr>
-                        <tr class="tw-bg-sims-500">
+                        <tr class="tw-bg-sims-new-600">
                             <td class="tw-py-10 tw-flex tw-justify-center tw-gap-10">
                                 <div class="tw-flex tw-gap-5 tw-justify-center">
                                     @can('rekap-nilai')
@@ -324,7 +324,7 @@
                                 <div></div>
                             </td>
                             <td></td>
-                            <td><div class="tw-flex tw-justify-end  tw-font-pop tw-text-md tw-text-white tw-font-bold tw-mx-10">Tanggal dibuat : </div><div class="tw-flex tw-justify-end  tw-font-pop tw-text-md tw-text-white tw-mx-10">{{ \Carbon\Carbon::parse(strtotime($rp->createdAt))->setTimezone('+7')->translatedFormat('l d F Y') }}</div> </td>
+                            <td><div class="tw-flex tw-justify-end  tw-font-satoshi tw-text-md tw-text-white tw-font-bold tw-mx-10">Tanggal dibuat : </div><div class="tw-flex tw-justify-end  tw-font-satoshi tw-text-md tw-text-white tw-mx-10">{{ \Carbon\Carbon::parse(strtotime($rp->createdAt))->setTimezone('+7')->translatedFormat('l d F Y') }}</div> </td>
                             <td></td>
                         </tr>
                     @endforeach
@@ -333,7 +333,7 @@
             </div>
             <div x-show="selected === 3" class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
                 <table class="tw-w-full tw-text-sm tw-text-center">
-                    <thead class="tw-text-lg tw-bg-gray-100 tw-text-basic-700 tw-border-b tw-font-pop">
+                    <thead class="tw-text-lg tw-bg-gray-100 tw-text-basic-700 tw-border-b tw-font-satoshi">
                         <tr class="tw-border">
                             <th scope="col" class="tw-py-3 tw-px-6">
                                 Nama Mapel
@@ -427,7 +427,7 @@
                             {{ $rp->tgl_kenaikan }}
                             </td>
                         </tr>
-                        <tr class="tw-bg-sims-500">
+                        <tr class="tw-bg-sims-new-600">
                             <td class="tw-py-10 tw-flex tw-justify-center tw-gap-10">
                             <div class="tw-flex tw-gap-5 tw-justify-center">
                                 @can('rekap-nilai')
@@ -450,7 +450,7 @@
                             <div></div>
                             </td>
                             <td></td>
-                            <td><div class="tw-flex tw-justify-end  tw-font-pop tw-text-md tw-text-white tw-font-bold tw-mx-10">Tanggal dibuat : </div><div class="tw-flex tw-justify-end  tw-font-pop tw-text-md tw-text-white tw-mx-10">{{ \Carbon\Carbon::parse(strtotime($rp->createdAt))->setTimezone('+7')->translatedFormat('l d F Y') }}</div> </td>
+                            <td><div class="tw-flex tw-justify-end  tw-font-satoshi tw-text-md tw-text-white tw-font-bold tw-mx-10">Tanggal dibuat : </div><div class="tw-flex tw-justify-end  tw-font-satoshi tw-text-md tw-text-white tw-mx-10">{{ \Carbon\Carbon::parse(strtotime($rp->createdAt))->setTimezone('+7')->translatedFormat('l d F Y') }}</div> </td>
                             <td></td>
                         </tr>
                     @endforeach
@@ -459,7 +459,7 @@
             </div>
             <div x-show="selected === 4" class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
                 <table class="tw-w-full tw-text-sm tw-text-center">
-                    <thead class="tw-text-lg tw-bg-gray-100 tw-text-basic-700 tw-border-b tw-font-pop">
+                    <thead class="tw-text-lg tw-bg-gray-100 tw-text-basic-700 tw-border-b tw-font-satoshi">
                         <tr class="tw-border">
                             <th scope="col" class="tw-py-3 tw-px-6">
                                 Nama Mapel
@@ -559,7 +559,7 @@
                             {{ $rp->tgl_kenaikan }}
                             </td>
                         </tr>
-                        <tr class="tw-bg-sims-500">
+                        <tr class="tw-bg-sims-new-600">
                             <td class="tw-py-10 tw-flex tw-justify-center tw-gap-10">
                             <div class="tw-flex tw-gap-5 tw-justify-center">
                                 @can('rekap-nilai')
@@ -582,7 +582,7 @@
                             <div></div>
                             </td>
                             <td></td>
-                            <td><div class="tw-flex tw-justify-end  tw-font-pop tw-text-md tw-text-white tw-font-bold tw-mx-10">Tanggal dibuat : </div><div class="tw-flex tw-justify-end  tw-font-pop tw-text-md tw-text-white tw-mx-10">{{ \Carbon\Carbon::parse(strtotime($rp->createdAt))->setTimezone('+7')->translatedFormat('l d F Y') }}</div> </td>
+                            <td><div class="tw-flex tw-justify-end  tw-font-satoshi tw-text-md tw-text-white tw-font-bold tw-mx-10">Tanggal dibuat : </div><div class="tw-flex tw-justify-end  tw-font-satoshi tw-text-md tw-text-white tw-mx-10">{{ \Carbon\Carbon::parse(strtotime($rp->createdAt))->setTimezone('+7')->translatedFormat('l d F Y') }}</div> </td>
                             <td></td>
                         </tr>
                     @endforeach
@@ -591,7 +591,7 @@
             </div>
             <div x-show="selected === 5" class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
                 <table class="tw-w-full tw-text-sm tw-text-center">
-                    <thead class="tw-text-lg tw-bg-gray-100 tw-text-basic-700 tw-border-b tw-font-pop">
+                    <thead class="tw-text-lg tw-bg-gray-100 tw-text-basic-700 tw-border-b tw-font-satoshi">
                         <tr class="tw-border">
                             <th scope="col" class="tw-py-3 tw-px-6">
                                 Nama Mapel
@@ -691,7 +691,7 @@
                             {{ $rp->tgl_kenaikan }}
                             </td>
                         </tr>
-                        <tr class="tw-bg-sims-500">
+                        <tr class="tw-bg-sims-new-600">
                             <td class="tw-py-10 tw-flex tw-justify-center tw-gap-10">
                             <div class="tw-flex tw-gap-5 tw-justify-center">
                                 @can('rekap-nilai')
@@ -714,7 +714,7 @@
                             <div></div>
                             </td>
                             <td></td>
-                            <td><div class="tw-flex tw-justify-end  tw-font-pop tw-text-md tw-text-white tw-font-bold tw-mx-10">Tanggal dibuat : </div><div class="tw-flex tw-justify-end  tw-font-pop tw-text-md tw-text-white tw-mx-10">{{ \Carbon\Carbon::parse(strtotime($rp->createdAt))->setTimezone('+7')->translatedFormat('l d F Y') }}</div> </td>
+                            <td><div class="tw-flex tw-justify-end  tw-font-satoshi tw-text-md tw-text-white tw-font-bold tw-mx-10">Tanggal dibuat : </div><div class="tw-flex tw-justify-end  tw-font-satoshi tw-text-md tw-text-white tw-mx-10">{{ \Carbon\Carbon::parse(strtotime($rp->createdAt))->setTimezone('+7')->translatedFormat('l d F Y') }}</div> </td>
                             <td></td>
                         </tr>
                     @endforeach
@@ -723,7 +723,7 @@
             </div>
             <div x-show="selected === 6" class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
                 <table class="tw-w-full tw-text-sm tw-text-center">
-                    <thead class="tw-text-lg tw-bg-gray-100 tw-text-basic-700 tw-border-b tw-font-pop">
+                    <thead class="tw-text-lg tw-bg-gray-100 tw-text-basic-700 tw-border-b tw-font-satoshi">
                         <tr class="tw-border">
                             <th scope="col" rowspan="2" class="tw-py-3 tw-px-6">
                                 Nama Mapel
@@ -847,7 +847,7 @@
                             {{ $rp->tgl_kenaikan }}
                             </td>
                         </tr>
-                        <tr class="tw-bg-sims-500">
+                        <tr class="tw-bg-sims-new-600">
                             <td class="tw-py-10 tw-flex tw-justify-center tw-gap-10">
                             <div class="tw-flex tw-gap-5 tw-justify-center">
                                 @can('rekap-nilai')
@@ -874,33 +874,33 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td><div class="tw-flex tw-justify-end  tw-font-pop tw-text-md tw-text-white tw-font-bold tw-mx-10">Tanggal dibuat : </div><div class="tw-flex tw-justify-end  tw-font-pop tw-text-md tw-text-white tw-mx-10">{{ \Carbon\Carbon::parse(strtotime($rp->createdAt))->setTimezone('+7')->translatedFormat('l d F Y') }}</div> </td>
+                            <td><div class="tw-flex tw-justify-end  tw-font-satoshi tw-text-md tw-text-white tw-font-bold tw-mx-10">Tanggal dibuat : </div><div class="tw-flex tw-justify-end  tw-font-satoshi tw-text-md tw-text-white tw-mx-10">{{ \Carbon\Carbon::parse(strtotime($rp->createdAt))->setTimezone('+7')->translatedFormat('l d F Y') }}</div> </td>
                             <td></td>
                             </tr>
                     @endforeach
                     </tbody>
                 </table>
             </div>
-            <div class="tw-text-center tw-font-medium tw-mt-8 tw-mb-3 tw-text-gray-500 tw-font-pop tw-text-xl">SEMESTER</div>
+            <div class="tw-text-center tw-font-medium tw-mt-8 tw-mb-3 tw-text-gray-500 tw-font-satoshi tw-text-xl">SEMESTER</div>
             <div class="tw-flex tw-justify-center tw-gap-4 tw-mb-8">
                 <a x-on:click="selected = 1"
                     :class="selected === 1 ? activeClasses : inactiveClasses" href="#"
-                    class="tw-rounded-lg tw-font-semibold tw-text-lg tw-py-2 tw-px-5 tw-shadow-md hover:tw-bg-sims-400 hover:tw-text-white">1</a>
+                    class="tw-rounded-lg tw-font-semibold tw-text-lg tw-py-2 tw-px-5 tw-shadow-md hover:tw-bg-sims-new-500 hover:tw-text-white">1</a>
                 <a x-on:click="selected = 2"
                     :class="selected === 2 ? activeClasses : inactiveClasses" href="#"
-                    class="tw-rounded-lg tw-font-semibold tw-text-lg tw-py-2 tw-px-5 tw-shadow-md hover:tw-bg-sims-400 hover:tw-text-white">2</a>
+                    class="tw-rounded-lg tw-font-semibold tw-text-lg tw-py-2 tw-px-5 tw-shadow-md hover:tw-bg-sims-new-500 hover:tw-text-white">2</a>
                 <a x-on:click="selected = 3"
                     :class="selected === 3 ? activeClasses : inactiveClasses" href="#"
-                    class="tw-rounded-lg tw-font-semibold tw-text-lg tw-py-2 tw-px-5 tw-shadow-md hover:tw-bg-sims-400 hover:tw-text-white">3</a>
+                    class="tw-rounded-lg tw-font-semibold tw-text-lg tw-py-2 tw-px-5 tw-shadow-md hover:tw-bg-sims-new-500 hover:tw-text-white">3</a>
                 <a x-on:click="selected = 4"
                     :class="selected === 4 ? activeClasses : inactiveClasses" href="#"
-                    class="tw-rounded-lg tw-font-semibold tw-text-lg tw-py-2 tw-px-5 tw-shadow-md hover:tw-bg-sims-400 hover:tw-text-white">4</a>
+                    class="tw-rounded-lg tw-font-semibold tw-text-lg tw-py-2 tw-px-5 tw-shadow-md hover:tw-bg-sims-new-500 hover:tw-text-white">4</a>
                 <a x-on:click="selected = 5"
                     :class="selected === 5 ? activeClasses : inactiveClasses" href="#"
-                    class="tw-rounded-lg tw-font-semibold tw-text-lg tw-py-2 tw-px-5 tw-shadow-md hover:tw-bg-sims-400 hover:tw-text-white">5</a>
+                    class="tw-rounded-lg tw-font-semibold tw-text-lg tw-py-2 tw-px-5 tw-shadow-md hover:tw-bg-sims-new-500 hover:tw-text-white">5</a>
                 <a x-on:click="selected = 6"
                     :class="selected === 6 ? activeClasses : inactiveClasses" href="#"
-                    class="tw-rounded-lg tw-font-semibold tw-text-lg tw-py-2 tw-px-5 tw-shadow-md hover:tw-bg-sims-400 hover:tw-text-white">6</a>
+                    class="tw-rounded-lg tw-font-semibold tw-text-lg tw-py-2 tw-px-5 tw-shadow-md hover:tw-bg-sims-new-500 hover:tw-text-white">6</a>
             </div>
         </div>
     </div>

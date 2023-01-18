@@ -37,8 +37,8 @@
 </div>
    @endif
     <div class="tw-flex tw-flex-col tw-rounded-[35px] tw-bg-white lg:tw-w-1/2 sm:tw-w-full sm:tw-mx-5 tw-p-8 tw-h-full tw-mx-auto tw-my-10 tw-shadow-lg">
-        <a href="/siswa-masuk" class="tw-text-sims-400 sm:tw-text-md md:tw-text-3xl tw-w-min hover:tw-text-sims-500"><i class="fa-solid fa-chevron-left"></i></a>
-        <h3 class="tw-font-pop tw-font-semibold tw-mt-6 tw-mb-14 tw-text-sims-400 tw-text-center">Tambah Data Mutasi Masuk</h3>
+        <a href="/siswa-masuk" class="tw-text-sims-new-500 sm:tw-text-md md:tw-text-3xl tw-w-min hover:tw-text-sims-new-600"><i class="fa-solid fa-chevron-left"></i></a>
+        <h3 class="tw-font-satoshi tw-font-semibold tw-mt-6 tw-mb-14 tw-text-sims-new-500 tw-text-center">Tambah Data Mutasi Masuk</h3>
         <form action="/api/mutasi-masuk/store" method="POST">
         @csrf
         @method('POST')
@@ -133,7 +133,7 @@
                     @enderror
                 </div>
                 <div class="tw-mx-auto tw-text-center tw-mt-10">
-                    <button type="submit" class="tw-bg-sims-400 tw-font-medium tw-transition hover:tw-bg-sims-500 tw-text-white tw-py-3 tw-px-6 tw-rounded-lg">Kirim</button>
+                    <button type="submit" class="tw-bg-sims-new-500 tw-font-sg tw-font-medium tw-transition hover:tw-bg-sims-new-600 tw-text-white tw-py-3 tw-px-6 tw-rounded-lg">Kirim</button>
                 </div>
             </div>
         </form>
