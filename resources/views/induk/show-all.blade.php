@@ -30,6 +30,7 @@
             @else
             <h6 class="sims-heading-md-black">Seluruh Kelas</h6>
             @endif
+            <div class="sims-text-gray-sm">Jumlah : {{ $total }} siswa</div>
         </div>
 
         @can('tata usaha')
