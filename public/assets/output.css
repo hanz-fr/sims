@@ -1026,15 +1026,6 @@ video {
   color: rgb(156 163 175 / var(--tw-text-opacity));
 }
 
-.sims-text-gray-xs {
-  font-family: Space Grotesk;
-  font-size: 0.75rem;
-  line-height: 1rem;
-  font-weight: 600;
-  --tw-text-opacity: 1;
-  color: rgb(156 163 175 / var(--tw-text-opacity));
-}
-
 .sims-text-regular-md {
   font-family: Space Grotesk;
   font-size: 1rem;
@@ -2113,10 +2104,6 @@ video {
   flex-wrap: wrap-reverse;
 }
 
-.tw-flex-nowrap {
-  flex-wrap: nowrap;
-}
-
 .tw-place-items-center {
   place-items: center;
 }
@@ -2724,11 +2711,6 @@ video {
 .tw-bg-\[\#95BBE8\] {
   --tw-bg-opacity: 1;
   background-color: rgb(149 187 232 / var(--tw-bg-opacity));
-}
-
-.tw-bg-slate-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
 }
 
 .tw-bg-opacity-50 {

@@ -1151,7 +1151,9 @@ class ApiController extends Controller
 
         abort_if(Gate::denies('tata usaha'), 403);
 
-        $response = Http::get("{$this->api_url}/siswa/{$request->jurusan}/{$request->kelas}??page=1&perPage=100");
+        $page = $request->page;
+
+        $response = Http::get("{$this->api_url}/siswa/{$request->jurusan}/{$request->kelas}?page={$page}&perPage=100");
 
         $pdf = PDF::loadView('induk.pdf.data-induk', [
             'jurusan' => $request->jurusan,
@@ -1747,7 +1749,7 @@ class ApiController extends Controller
             $row_limit    = $sheet->getHighestDataRow();
             $column_limit = $sheet->getHighestDataColumn();
             $row_range    = range( 2, $row_limit );
-            $column_range = range( 'AQ', $column_limit );
+            $column_range = range( 'A', $column_limit );
             $startcount   = 2;
             
             foreach ( $row_range as $row ) {
@@ -1795,6 +1797,9 @@ class ApiController extends Controller
                     'golongan_darah'              => $sheet->getCell( 'AO' . $row )->getValue(),
                     'tgl_masuk'                   => $sheet->getCell( 'AP' . $row )->getValue(),
                     'isAlumni'                    => $sheet->getCell( 'AQ' . $row )->getValue(),
+                    'angkatan'                    => $sheet->getCell( 'AR' . $row )->getValue(),
+                    'status_siswa'                => $sheet->getCell( 'AS' . $row )->getValue(),
+                    'thn_ajaran'                  => $sheet->getCell( 'AT' . $row )->getValue()
                 ]);
                 $startcount++;
             }
