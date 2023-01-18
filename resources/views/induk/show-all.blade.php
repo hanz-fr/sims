@@ -34,15 +34,213 @@
 
         @can('tata usaha')
         <div class="tw-flex md:tw-justify-center tw-items-center md:-tw-mb-8">
-            @if( ! empty($jurusan) && ! empty($kelas))
-            <a href="/data-induk-print/{{ $jurusan }}/{{ $kelas }}?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=100" target="__blank" title="Print"><i class="fa-solid fa-print btn-export"></i></a>
+            <button type="button" data-modal-toggle="modal-print" target="__blank" title="Print"><i class="fa-solid fa-print btn-export"></i></button>
+
+            <div id="modal-print" tabindex="-1"
+              class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full">
+                <div class="relative p-4 w-full max-w-md h-full md:h-auto">
+                    <div class="tw-relative tw-bg-white tw-rounded-lg tw-shadow dark:tw-bg-slate-100 tw-font-pop">
+                        <button type="button"
+                          class="tw-absolute tw-top-3 tw-right-2.5 tw-text-gray-400 tw-bg-transparent hover:tw-bg-gray-200 hover:tw-text-gray-900 tw-rounded-lg tw-text-sm tw-p-1.5 tw-ml-auto tw-inline-flex tw-items-center"
+                          data-modal-toggle="modal-print">
+                            <svg aria-hidden="true" class="tw-w-5 tw-h-5" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                  clip-rule="evenodd">
+                                </path>
+                            </svg>
+                            <span class="sr-only">Close modal</span>
+                        </button>
+                        <div class="tw-p-6">
+                            <div class="tw-mb-8 tw-mt-5 tw-flex tw-justify-center tw-text-2xl tw-font-semibold tw-text-sims-new-500">
+                                Print Data
+                            </div>
+                            @if( ! empty($jurusan) && ! empty($kelas))
+                            <form action="/data-induk-print/{{ $jurusan }}/{{ $kelas }}?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=100" method="" class="tw-flex tw-flex-col">
+                                <div class="tw-flex tw-justify-center tw-mb-4">
+                                    <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Export</div>
+                                    
+                                    <input type="number" class="tw-px-4 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
+                                    
+                                    <div class="tw-my-auto tw-ml-2 tw-font-satoshi tw-font-normal tw-text-lg tw-text-basic-700">data</div>
+                                </div>
+
+                                <div class="tw-flex tw-justify-center tw-mb-3">
+                                    <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Page</div>
+                                    <input type="number" class="tw-px-4 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
+                                </div>
+
+                                <div class="tw-flex tw-justify-center tw-mt-3">
+                                    <button type="submit" class="tw-text-white tw-bg-sims-new-500 hover:tw-bg-sims-new-700 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-red-300 dark:focus:tw-ring-red-800 tw-font-medium tw-rounded-lg tw-text-sm tw-inline-flex tw-items-center tw-py-2.5 tw-text-center tw-mr-2 tw-px-6">Export</button>
+                                </div>
+                            </form>
+                            @else
+                            <form action="/data-induk-print" method="" class="tw-flex tw-flex-col">
+                                <div class="tw-flex tw-justify-center tw-mb-4">
+                                    <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Export</div>
+                                    
+                                    <input type="number" class="tw-px-4 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
+                                    
+                                    <div class="tw-my-auto tw-ml-2 tw-font-satoshi tw-font-normal tw-text-lg tw-text-basic-700">data</div>
+                                </div>
+
+                                <div class="tw-flex tw-justify-center tw-mb-3">
+                                    <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Page</div>
+                                    <input type="number" class="tw-px-4 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
+                                </div>
+
+                                <div class="tw-flex tw-justify-center tw-mt-3">
+                                    <button type="submit" class="tw-text-white tw-bg-sims-new-500 hover:tw-bg-sims-new-700 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-red-300 dark:focus:tw-ring-red-800 tw-font-medium tw-rounded-lg tw-text-sm tw-inline-flex tw-items-center tw-py-2.5 tw-text-center tw-mr-2 tw-px-6">Export</button>
+                                </div>
+                            </form>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="button" data-modal-toggle="modal-export-excel" target="__blank" title="Export ke Excel"><i class="fa-solid fa-file-excel btn-export"></i></button>
+
+            <div id="modal-export-excel" tabindex="-1"
+              class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full">
+                <div class="relative p-4 w-full max-w-md h-full md:h-auto">
+                    <div class="tw-relative tw-bg-white tw-rounded-lg tw-shadow dark:tw-bg-slate-100 tw-font-pop">
+                        <button type="button"
+                          class="tw-absolute tw-top-3 tw-right-2.5 tw-text-gray-400 tw-bg-transparent hover:tw-bg-gray-200 hover:tw-text-gray-900 tw-rounded-lg tw-text-sm tw-p-1.5 tw-ml-auto tw-inline-flex tw-items-center"
+                          data-modal-toggle="modal-export-excel">
+                            <svg aria-hidden="true" class="tw-w-5 tw-h-5" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                  clip-rule="evenodd">
+                                </path>
+                            </svg>
+                            <span class="sr-only">Close modal</span>
+                        </button>
+                        <div class="tw-p-6">
+                            <div class="tw-mb-8 tw-mt-5 tw-flex tw-justify-center tw-text-2xl tw-font-semibold tw-text-sims-new-500">
+                                Export Excel
+                            </div>
+                            @if( ! empty($jurusan) && ! empty($kelas))
+                            <form action="/data-induk-excel/{{ $jurusan }}/{{ $kelas }}?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=100" method="" class="tw-flex tw-flex-col">
+                                <div class="tw-flex tw-justify-center tw-mb-4">
+                                    <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Export</div>
+                                    
+                                    <input type="number" class="tw-px-4 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
+                                    
+                                    <div class="tw-my-auto tw-ml-2 tw-font-satoshi tw-font-normal tw-text-lg tw-text-basic-700">data</div>
+                                </div>
+
+                                <div class="tw-flex tw-justify-center tw-mb-3">
+                                    <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Page</div>
+                                    <input type="number" class="tw-px-4 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
+                                </div>
+
+                                <div class="tw-flex tw-justify-center tw-mt-3">
+                                    <button type="submit" class="tw-text-white tw-bg-sims-new-500 hover:tw-bg-sims-new-700 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-red-300 dark:focus:tw-ring-red-800 tw-font-medium tw-rounded-lg tw-text-sm tw-inline-flex tw-items-center tw-py-2.5 tw-text-center tw-mr-2 tw-px-6">Export</button>
+                                </div>
+                            </form>
+                            @else
+                            <form action="/data-induk-excel" method="" class="tw-flex tw-flex-col">
+                                <div class="tw-flex tw-justify-center tw-mb-4">
+                                    <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Export</div>
+                                    
+                                    <input type="number" class="tw-px-4 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
+                                    
+                                    <div class="tw-my-auto tw-ml-2 tw-font-satoshi tw-font-normal tw-text-lg tw-text-basic-700">data</div>
+                                </div>
+
+                                <div class="tw-flex tw-justify-center tw-mb-3">
+                                    <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Page</div>
+                                    <input type="number" class="tw-px-4 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
+                                </div>
+
+                                <div class="tw-flex tw-justify-center tw-mt-3">
+                                    <button type="submit" class="tw-text-white tw-bg-sims-new-500 hover:tw-bg-sims-new-700 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-red-300 dark:focus:tw-ring-red-800 tw-font-medium tw-rounded-lg tw-text-sm tw-inline-flex tw-items-center tw-py-2.5 tw-text-center tw-mr-2 tw-px-6">Export</button>
+                                </div>
+                            </form>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="button" data-modal-toggle="modal-export-pdf" target="__blank" title="Export ke PDF"><i class="fa-solid fa-file-pdf btn-export tw-mr-0"></i></button>
+
+            <div id="modal-export-pdf" tabindex="-1"
+              class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full">
+                <div class="relative p-4 w-full max-w-md h-full md:h-auto">
+                    <div class="tw-relative tw-bg-white tw-rounded-lg tw-shadow dark:tw-bg-slate-100 tw-font-pop">
+                        <button type="button"
+                          class="tw-absolute tw-top-3 tw-right-2.5 tw-text-gray-400 tw-bg-transparent hover:tw-bg-gray-200 hover:tw-text-gray-900 tw-rounded-lg tw-text-sm tw-p-1.5 tw-ml-auto tw-inline-flex tw-items-center"
+                          data-modal-toggle="modal-export-pdf">
+                            <svg aria-hidden="true" class="tw-w-5 tw-h-5" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                  clip-rule="evenodd">
+                                </path>
+                            </svg>
+                            <span class="sr-only">Close modal</span>
+                        </button>
+                        <div class="tw-p-6">
+                            <div class="tw-mb-8 tw-mt-5 tw-flex tw-justify-center tw-text-2xl tw-font-semibold tw-text-sims-new-500">
+                                Export ke PDF
+                            </div>
+                            @if( ! empty($jurusan) && ! empty($kelas))
+                            <form action="/data-induk-pdf/{{ $jurusan }}/{{ $kelas }}?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=100" method="" class="tw-flex tw-flex-col">
+                                <div class="tw-flex tw-justify-center tw-mb-4">
+                                    <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Export</div>
+                                    
+                                    <input type="number" class="tw-px-4 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
+                                    
+                                    <div class="tw-my-auto tw-ml-2 tw-font-satoshi tw-font-normal tw-text-lg tw-text-basic-700">data</div>
+                                </div>
+
+                                <div class="tw-flex tw-justify-center tw-mb-3">
+                                    <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Page</div>
+                                    <input type="number" class="tw-px-4 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
+                                </div>
+
+                                <div class="tw-flex tw-justify-center tw-mt-3">
+                                    <button type="submit" class="tw-text-white tw-bg-sims-new-500 hover:tw-bg-sims-new-700 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-red-300 dark:focus:tw-ring-red-800 tw-font-medium tw-rounded-lg tw-text-sm tw-inline-flex tw-items-center tw-py-2.5 tw-text-center tw-mr-2 tw-px-6">Export</button>
+                                </div>
+                            </form>
+                            @else
+                            <form action="/data-induk-pdf" method="" class="tw-flex tw-flex-col">
+                                <div class="tw-flex tw-justify-center tw-mb-4">
+                                    <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Export</div>
+                                    
+                                    <input type="number" class="tw-px-4 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
+                                    
+                                    <div class="tw-my-auto tw-ml-2 tw-font-satoshi tw-font-normal tw-text-lg tw-text-basic-700">data</div>
+                                </div>
+
+                                <div class="tw-flex tw-justify-center tw-mb-3">
+                                    <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Page</div>
+                                    <input type="number" class="tw-px-4 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
+                                </div>
+
+                                <div class="tw-flex tw-justify-center tw-mt-3">
+                                    <button type="submit" class="tw-text-white tw-bg-sims-new-500 hover:tw-bg-sims-new-700 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-red-300 dark:focus:tw-ring-red-800 tw-font-medium tw-rounded-lg tw-text-sm tw-inline-flex tw-items-center tw-py-2.5 tw-text-center tw-mr-2 tw-px-6">Export</button>
+                                </div>
+                            </form>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+            {{-- @if( ! empty($jurusan) && ! empty($kelas)) --}}
+
+            {{-- <a href="/data-induk-print/{{ $jurusan }}/{{ $kelas }}?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=100" target="__blank" title="Print"><i class="fa-solid fa-print btn-export"></i></a>
             <a href="/data-induk-excel/{{ $jurusan }}/{{ $kelas }}?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=100" title="Export ke Excel"><i class="fa-solid fa-file-excel btn-export"></i></a>
             <a href="/data-induk-pdf/{{ $jurusan }}/{{ $kelas }}?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=100" title="Export ke PDF"><i class="fa-solid fa-file-pdf btn-export tw-mr-0"></i></a>
             @else
             <a href="/data-induk-print" target="__blank" title="Print"><i class="fa-solid fa-print btn-export"></i></a>
             <a href="/data-induk-excel" title="Export ke Excel"><i class="fa-solid fa-file-excel btn-export"></i></a>
             <a href="/data-induk-pdf" title="Export ke PDF"><i class="fa-solid fa-file-pdf btn-export tw-mr-0"></i></a>
-            @endif
+            @endif --}}
         </div>
         @endcan
     </div>

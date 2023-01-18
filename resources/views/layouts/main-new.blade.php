@@ -66,15 +66,13 @@
     }
   </script>
 
-  <script src="https://unpkg.com/flowbite@1.5.5/dist/flowbite.js"></script>
-
   <script src="{{ URL::asset('assets/main.js') }}"></script>
 
   {{-- ajax --}}
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   
   {{-- flowbite --}}
-  <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+  <script src="https://unpkg.com/flowbite@1.5.5/dist/flowbite.js"></script>
   
   {{-- AOS --}}
   <script>
