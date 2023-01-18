@@ -61,14 +61,14 @@
                                 <div class="tw-flex tw-justify-center tw-mb-4">
                                     <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Export</div>
                                     
-                                    <input type="number" class="tw-px-4 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
+                                    <input type="number" class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
                                     
                                     <div class="tw-my-auto tw-ml-2 tw-font-satoshi tw-font-normal tw-text-lg tw-text-basic-700">data</div>
                                 </div>
 
                                 <div class="tw-flex tw-justify-center tw-mb-3">
                                     <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Page</div>
-                                    <input type="number" class="tw-px-4 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
+                                    <input type="number" class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
                                 </div>
 
                                 <div class="tw-flex tw-justify-center tw-mt-3">
@@ -80,14 +80,14 @@
                                 <div class="tw-flex tw-justify-center tw-mb-4">
                                     <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Export</div>
                                     
-                                    <input type="number" class="tw-px-4 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
+                                    <input type="number" class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
                                     
                                     <div class="tw-my-auto tw-ml-2 tw-font-satoshi tw-font-normal tw-text-lg tw-text-basic-700">data</div>
                                 </div>
 
                                 <div class="tw-flex tw-justify-center tw-mb-3">
                                     <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Page</div>
-                                    <input type="number" class="tw-px-4 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
+                                    <input type="number" class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
                                 </div>
 
                                 <div class="tw-flex tw-justify-center tw-mt-3">
@@ -126,14 +126,14 @@
                                 <div class="tw-flex tw-justify-center tw-mb-4">
                                     <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Export</div>
                                     
-                                    <input type="number" class="tw-px-4 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
+                                    <input type="number" class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
                                     
                                     <div class="tw-my-auto tw-ml-2 tw-font-satoshi tw-font-normal tw-text-lg tw-text-basic-700">data</div>
                                 </div>
 
                                 <div class="tw-flex tw-justify-center tw-mb-3">
                                     <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Page</div>
-                                    <input type="number" class="tw-px-4 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
+                                    <input type="number" class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
                                 </div>
 
                                 <div class="tw-flex tw-justify-center tw-mt-3">
@@ -145,14 +145,14 @@
                                 <div class="tw-flex tw-justify-center tw-mb-4">
                                     <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Export</div>
                                     
-                                    <input type="number" class="tw-px-4 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
+                                    <input type="number" class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
                                     
                                     <div class="tw-my-auto tw-ml-2 tw-font-satoshi tw-font-normal tw-text-lg tw-text-basic-700">data</div>
                                 </div>
 
                                 <div class="tw-flex tw-justify-center tw-mb-3">
                                     <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Page</div>
-                                    <input type="number" class="tw-px-4 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
+                                    <input type="number" class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
                                 </div>
 
                                 <div class="tw-flex tw-justify-center tw-mt-3">
@@ -191,14 +191,14 @@
                                 <div class="tw-flex tw-justify-center tw-mb-4">
                                     <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Export</div>
                                     
-                                    <input type="number" class="tw-px-4 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
+                                    <input type="number" class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
                                     
                                     <div class="tw-my-auto tw-ml-2 tw-font-satoshi tw-font-normal tw-text-lg tw-text-basic-700">data</div>
                                 </div>
 
                                 <div class="tw-flex tw-justify-center tw-mb-3">
                                     <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Page</div>
-                                    <input type="number" class="tw-px-4 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
+                                    <input type="number" class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
                                 </div>
 
                                 <div class="tw-flex tw-justify-center tw-mt-3">
@@ -210,14 +210,14 @@
                                 <div class="tw-flex tw-justify-center tw-mb-4">
                                     <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Export</div>
                                     
-                                    <input type="number" class="tw-px-4 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
+                                    <input type="number" class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
                                     
                                     <div class="tw-my-auto tw-ml-2 tw-font-satoshi tw-font-normal tw-text-lg tw-text-basic-700">data</div>
                                 </div>
 
                                 <div class="tw-flex tw-justify-center tw-mb-3">
                                     <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Page</div>
-                                    <input type="number" class="tw-px-4 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
+                                    <input type="number" class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
                                 </div>
 
                                 <div class="tw-flex tw-justify-center tw-mt-3">
