@@ -1115,6 +1115,10 @@ video {
   border-width: 0;
 }
 
+.tw-static {
+  position: static;
+}
+
 .tw-fixed {
   position: fixed;
 }
@@ -1225,16 +1229,16 @@ video {
   left: 50%;
 }
 
+.tw-right-1\/2 {
+  right: 50%;
+}
+
 .tw-z-10 {
   z-index: 10;
 }
 
 .tw-z-20 {
   z-index: 20;
-}
-
-.tw-z-50 {
-  z-index: 50;
 }
 
 .tw-float-right {
@@ -2066,6 +2070,10 @@ video {
   cursor: pointer;
 }
 
+.tw-snap-center {
+  scroll-snap-align: center;
+}
+
 .tw-list-none {
   list-style-type: none;
 }
@@ -2276,10 +2284,6 @@ video {
 
 .tw-overflow-x-auto {
   overflow-x: auto;
-}
-
-.tw-overflow-y-auto {
-  overflow-y: auto;
 }
 
 .tw-overflow-x-hidden {
@@ -2721,9 +2725,9 @@ video {
   background-color: rgb(149 187 232 / var(--tw-bg-opacity));
 }
 
-.tw-bg-slate-400 {
+.tw-bg-slate-200 {
   --tw-bg-opacity: 1;
-  background-color: rgb(148 163 184 / var(--tw-bg-opacity));
+  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
 }
 
 .tw-bg-opacity-50 {
@@ -4546,9 +4550,9 @@ input[type="checkbox"]:checked {
     background-color: rgb(252 165 165 / var(--tw-bg-opacity));
   }
 
-  .dark\:hover\:tw-bg-sims-500:hover {
+  .dark\:hover\:tw-bg-sims-new-500:hover {
     --tw-bg-opacity: 1;
-    background-color: rgb(59 144 145 / var(--tw-bg-opacity));
+    background-color: rgb(56 148 163 / var(--tw-bg-opacity));
   }
 
   .dark\:hover\:tw-bg-sims-new-600:hover {
@@ -4704,10 +4708,6 @@ input[type="checkbox"]:checked {
 
   .md\:tw-h-auto {
     height: auto;
-  }
-
-  .md\:tw-h-full {
-    height: 100%;
   }
 
   .md\:tw-w-full {

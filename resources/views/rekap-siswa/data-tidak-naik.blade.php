@@ -48,7 +48,7 @@
                 <div class="tw-flex tw-mx-1 tw-my-auto">
                     
                     {{-- FILTER DROPDOWN --}}
-                    <button id="dropdownToggleButton" data-dropdown-toggle="filter-dd" class="tw-text-sims-new-600 hover:tw-text-white tw-font-satoshi focus:tw-ring-0 focus:tw-outline-none tw-font-medium tw-rounded-md tw-text-sm tw-px-5 tw-py-0.5 tw-ml-8 tw-text-center tw-inline-flex tw-items-center dark:tw-bg-white dark:hover:tw-bg-sims-new-600 tw-shadow-md tw-transition-all tw-ease-in-out
+                    <button id="dropdownToggleButton" data-dropdown-toggle="filter-dd" class="tw-text-sims-new-500 hover:tw-text-white tw-font-satoshi focus:tw-ring-0 focus:tw-outline-none tw-font-medium tw-rounded-md tw-text-sm tw-px-5 tw-py-0.5 tw-ml-8 tw-text-center tw-inline-flex tw-items-center dark:tw-bg-white dark:hover:tw-bg-sims-new-500 tw-shadow-md tw-transition-all tw-ease-in-out
                      type="button">Filters <i class="tw-text-xl tw-ml-5 fa-duotone fa-sliders-simple"></i></button>
 
                     <!-- filter menu -->
@@ -161,7 +161,7 @@
 
 
                     {{-- DATA PERIODIK DROPDOWN --}}
-                    <button id="dropdownToggleButton" data-dropdown-toggle="periodik-dd" class="tw-text-sims-new-500 hover:tw-text-white tw-font-satoshi focus:tw-ring-0 focus:tw-outline-none tw-font-medium tw-rounded-md tw-text-sm tw-px-4 tw-py-0.5 tw-ml-4 tw-text-center tw-inline-flex tw-items-center dark:tw-bg-white dark:hover:tw-bg-sims-new-600 tw-shadow-md tw-transition-all tw-ease-in-out" type="button">Data Periodik <i class="fa-duotone fa-calendar tw-ml-4"></i></button>
+                    <button id="dropdownToggleButton" data-dropdown-toggle="periodik-dd" class="tw-text-sims-new-500 hover:tw-text-white tw-font-satoshi focus:tw-ring-0 focus:tw-outline-none tw-font-medium tw-rounded-md tw-text-sm tw-px-4 tw-py-0.5 tw-ml-4 tw-text-center tw-inline-flex tw-items-center dark:tw-bg-white dark:hover:tw-bg-sims-new-500 tw-shadow-md tw-transition-all tw-ease-in-out" type="button">Data Periodik <i class="fa-duotone fa-calendar tw-ml-4"></i></button>
                 
                     <div id="periodik-dd" class="hidden tw-z-10 tw-w-auto tw-bg-white tw-rounded tw-divide-y tw-divide-gray-100 tw-shadow-md">
                         <form action="/data-tidak-naik" class="tw-text-center">
