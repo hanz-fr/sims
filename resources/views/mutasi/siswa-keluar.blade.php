@@ -29,7 +29,6 @@
                 @can('rekap-siswa')
                 <div class="tw-flex md:tw-justify-center tw-items-center">
                     <button type="button" data-modal-toggle="export-print" title="Print"><i class="fa-solid fa-print btn-export"></i></button>
-                    
                     <div id="export-print" tabindex="-1"
                     class="hidden overflow-y-auto overflow-x-hidden fixed  z-50 md:tw-inset-0 h-modal md:h-full">
                     <div class="tw-relative tw-p-4 tw-w-full tw-max-w-md tw-h-full md:tw-h-auto">
@@ -67,11 +66,8 @@
                         </div>
                     </div>
                 </div>
-                    
                     {{-- <button id="copy_btn" title="Copy Data" type="button" value="copy"><i class="fa-solid fa-copy btn-export"></i></button> --}}
-                    
                     <button type="button" data-modal-toggle="export-excel" title="Export ke Excel"><i class="fa-solid fa-file-excel btn-export"></i></button>
-                    
                     <div id="export-excel" tabindex="-1"
                         class="hidden overflow-y-auto overflow-x-hidden fixed  z-50 md:tw-inset-0 h-modal md:h-full">
                         <div class="tw-relative tw-p-4 tw-w-full tw-max-w-md tw-h-full md:tw-h-auto">
@@ -109,9 +105,7 @@
                             </div>
                         </div>
                     </div>
-
                     <button type="button" data-modal-toggle="export-pdf" title="Export ke PDF"><i class="fa-solid fa-file-pdf btn-export tw-mr-0"></i></button>
-                    
                     <div id="export-pdf" tabindex="-1"
                         class="hidden overflow-y-auto overflow-x-hidden fixed  z-50 md:tw-inset-0 h-modal md:h-full">
                         <div class="tw-relative tw-p-4 tw-w-full tw-max-w-md tw-h-full md:tw-h-auto">
@@ -152,7 +146,6 @@
                 </div>
                 @endcan
             </div>
-
 
             <div class="tw-flex tw-justify-between tw-ml-8 tw-mt-8 lg:tw-flex-row sm:tw-flex-col sm:tw-gap-5">
                 <div class="tw-flex tw-my-auto">

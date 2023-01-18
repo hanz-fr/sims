@@ -7,7 +7,6 @@
     <!-- spacing !-->
     <div class="tw-mt-10"></div> 
     <!-------------->
-
     
     <div role="status" class="tw-flex tw-justify-center">
         <div class="lg:tw-w-1/2">

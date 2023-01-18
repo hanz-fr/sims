@@ -1151,7 +1151,10 @@ class ApiController extends Controller
 
         abort_if(Gate::denies('tata usaha'), 403);
 
-        $response = Http::get("{$this->api_url}/siswa/{$request->jurusan}/{$request->kelas}??page=1&perPage=100");
+        $response = Http::get("{$this->api_url}/siswa/{$request->jurusan}/{$request->kelas}?page=1&perPage=100");
+        $total_siswa = json_decode($response)->count;
+
+        return $response;
 
         $pdf = PDF::loadView('induk.pdf.data-induk', [
             'jurusan' => $request->jurusan,
