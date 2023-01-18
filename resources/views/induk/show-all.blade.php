@@ -57,19 +57,36 @@
                                 Print Data
                             </div>
                             @if( ! empty($jurusan) && ! empty($kelas))
-                            <form action="/data-induk-print/{{ $jurusan }}/{{ $kelas }}?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=100" method="" class="tw-flex tw-flex-col">
+                            <form action="/data-induk-print/{{ $jurusan }}/{{ $kelas }}" method="" class="tw-flex tw-flex-col">
                                 <div class="tw-flex tw-justify-center tw-mb-4">
                                     <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Export</div>
-                                    
-                                    <input type="number" class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
+
+                                    <input name="perPage" @if(!empty($_GET['perPage'])) value="{{ $_GET['perPage'] }}" @endif type="number" class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block">
                                     
                                     <div class="tw-my-auto tw-ml-2 tw-font-satoshi tw-font-normal tw-text-lg tw-text-basic-700">data</div>
                                 </div>
 
                                 <div class="tw-flex tw-justify-center tw-mb-3">
                                     <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Page</div>
-                                    <input type="number" class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
+                                    <input type="number" name="page" @if(!empty($_GET['page'])) value="{{ $_GET['page'] }}" @endif class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block">
                                 </div>
+
+                                <input name="angkatan" type="hidden" value="{{ $_GET['angkatan'] }}">
+
+                                @if(isset($_GET['search']))
+                                <input name="search" value="{{ $_GET['search'] }}" type="hidden">
+                                @endif
+
+                                @if(isset($_GET['nis_siswa'])) <input name="nis_siswa" value="{{ $_GET['nis_siswa'] }}" type="hidden"> @endif
+                                @if(isset($_GET['nisn_siswa'])) <input name="nisn_siswa" value="{{ $_GET['nisn_siswa'] }}" type="hidden"> @endif
+                                @if(isset($_GET['nama_siswa'])) <input name="nama_siswa" value="{{ $_GET['nama_siswa'] }}" type="hidden"> @endif
+                                @if(isset($_GET['jenis_kelamin'])) <input name="jenis_kelamin" value="{{ $_GET['jenis_kelamin'] }}" type="hidden"> @endif
+                                @if(isset($_GET['KelasId'])) <input name="KelasId" value="{{ $_GET['KelasId'] }}" type="hidden"> @endif
+                                @if(isset($_GET['sort_by'])) <input name="sort_by" value="{{ $_GET['sort_by'] }}" type="hidden"> @endif
+                                @if(isset($_GET['sort'])) <input name="sort" value="{{ $_GET['sort'] }}" type="hidden"> @endif
+                                @if(isset($_GET['dibuatTglDari'])) <input name="dibuatTglDari" value="{{ $_GET['dibuatTglDari'] }}" type="hidden"> @endif
+                                @if(isset($_GET['dibuatTglKe'])) <input name="dibuatTglKe" value="{{ $_GET['dibuatTglKe'] }}" type="hidden"> @endif
+                                @if(isset($_GET['thn_ajaran'])) <input name="thn_ajaran" value="{{ $_GET['thn_ajaran'] }}" type="hidden"> @endif
 
                                 <div class="tw-flex tw-justify-center tw-mt-3">
                                     <button type="submit" class="tw-text-white tw-bg-sims-new-500 hover:tw-bg-sims-new-700 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-red-300 dark:focus:tw-ring-red-800 tw-font-medium tw-rounded-lg tw-text-sm tw-inline-flex tw-items-center tw-py-2.5 tw-text-center tw-mr-2 tw-px-6">Export</button>
@@ -80,16 +97,31 @@
                                 <div class="tw-flex tw-justify-center tw-mb-4">
                                     <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Export</div>
                                     
-                                    <input type="number" class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
+                                    <input name="perPage" @if(!empty($_GET['perPage'])) value="{{ $_GET['perPage'] }}" @endif type="number" class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block">
                                     
                                     <div class="tw-my-auto tw-ml-2 tw-font-satoshi tw-font-normal tw-text-lg tw-text-basic-700">data</div>
                                 </div>
 
                                 <div class="tw-flex tw-justify-center tw-mb-3">
                                     <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Page</div>
-                                    <input type="number" class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
+                                    <input type="number" name="page" @if(!empty($_GET['page'])) value="{{ $_GET['page'] }}" @endif class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block">
                                 </div>
 
+                                @if(isset($_GET['search']))
+                                <input name="search" value="{{ $_GET['search'] }}" type="hidden">
+                                @endif
+
+                                @if(isset($_GET['nis_siswa'])) <input name="nis_siswa" value="{{ $_GET['nis_siswa'] }}" type="hidden"> @endif
+                                @if(isset($_GET['nisn_siswa'])) <input name="nisn_siswa" value="{{ $_GET['nisn_siswa'] }}" type="hidden"> @endif
+                                @if(isset($_GET['nama_siswa'])) <input name="nama_siswa" value="{{ $_GET['nama_siswa'] }}" type="hidden"> @endif
+                                @if(isset($_GET['jenis_kelamin'])) <input name="jenis_kelamin" value="{{ $_GET['jenis_kelamin'] }}" type="hidden"> @endif
+                                @if(isset($_GET['KelasId'])) <input name="KelasId" value="{{ $_GET['KelasId'] }}" type="hidden"> @endif
+                                @if(isset($_GET['sort_by'])) <input name="sort_by" value="{{ $_GET['sort_by'] }}" type="hidden"> @endif
+                                @if(isset($_GET['sort'])) <input name="sort" value="{{ $_GET['sort'] }}" type="hidden"> @endif
+                                @if(isset($_GET['dibuatTglDari'])) <input name="dibuatTglDari" value="{{ $_GET['dibuatTglDari'] }}" type="hidden"> @endif
+                                @if(isset($_GET['dibuatTglKe'])) <input name="dibuatTglKe" value="{{ $_GET['dibuatTglKe'] }}" type="hidden"> @endif
+                                @if(isset($_GET['thn_ajaran'])) <input name="thn_ajaran" value="{{ $_GET['thn_ajaran'] }}" type="hidden"> @endif
+                                
                                 <div class="tw-flex tw-justify-center tw-mt-3">
                                     <button type="submit" class="tw-text-white tw-bg-sims-new-500 hover:tw-bg-sims-new-700 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-red-300 dark:focus:tw-ring-red-800 tw-font-medium tw-rounded-lg tw-text-sm tw-inline-flex tw-items-center tw-py-2.5 tw-text-center tw-mr-2 tw-px-6">Export</button>
                                 </div>
@@ -125,16 +157,33 @@
                             <form action="/data-induk-excel/{{ $jurusan }}/{{ $kelas }}?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=100" method="" class="tw-flex tw-flex-col">
                                 <div class="tw-flex tw-justify-center tw-mb-4">
                                     <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Export</div>
-                                    
-                                    <input type="number" class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
+
+                                    <input name="perPage" @if(!empty($_GET['perPage'])) value="{{ $_GET['perPage'] }}" @endif type="number" class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block">
                                     
                                     <div class="tw-my-auto tw-ml-2 tw-font-satoshi tw-font-normal tw-text-lg tw-text-basic-700">data</div>
                                 </div>
 
                                 <div class="tw-flex tw-justify-center tw-mb-3">
                                     <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Page</div>
-                                    <input type="number" class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
+                                    <input type="number" name="page" @if(!empty($_GET['page'])) value="{{ $_GET['page'] }}" @endif class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block">
                                 </div>
+
+                                <input name="angkatan" type="hidden" value="{{ $_GET['angkatan'] }}">
+
+                                @if(isset($_GET['search']))
+                                <input name="search" value="{{ $_GET['search'] }}" type="hidden">
+                                @endif
+
+                                @if(isset($_GET['nis_siswa'])) <input name="nis_siswa" value="{{ $_GET['nis_siswa'] }}" type="hidden"> @endif
+                                @if(isset($_GET['nisn_siswa'])) <input name="nisn_siswa" value="{{ $_GET['nisn_siswa'] }}" type="hidden"> @endif
+                                @if(isset($_GET['nama_siswa'])) <input name="nama_siswa" value="{{ $_GET['nama_siswa'] }}" type="hidden"> @endif
+                                @if(isset($_GET['jenis_kelamin'])) <input name="jenis_kelamin" value="{{ $_GET['jenis_kelamin'] }}" type="hidden"> @endif
+                                @if(isset($_GET['KelasId'])) <input name="KelasId" value="{{ $_GET['KelasId'] }}" type="hidden"> @endif
+                                @if(isset($_GET['sort_by'])) <input name="sort_by" value="{{ $_GET['sort_by'] }}" type="hidden"> @endif
+                                @if(isset($_GET['sort'])) <input name="sort" value="{{ $_GET['sort'] }}" type="hidden"> @endif
+                                @if(isset($_GET['dibuatTglDari'])) <input name="dibuatTglDari" value="{{ $_GET['dibuatTglDari'] }}" type="hidden"> @endif
+                                @if(isset($_GET['dibuatTglKe'])) <input name="dibuatTglKe" value="{{ $_GET['dibuatTglKe'] }}" type="hidden"> @endif
+                                @if(isset($_GET['thn_ajaran'])) <input name="thn_ajaran" value="{{ $_GET['thn_ajaran'] }}" type="hidden"> @endif
 
                                 <div class="tw-flex tw-justify-center tw-mt-3">
                                     <button type="submit" class="tw-text-white tw-bg-sims-new-500 hover:tw-bg-sims-new-700 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-red-300 dark:focus:tw-ring-red-800 tw-font-medium tw-rounded-lg tw-text-sm tw-inline-flex tw-items-center tw-py-2.5 tw-text-center tw-mr-2 tw-px-6">Export</button>
@@ -145,16 +194,31 @@
                                 <div class="tw-flex tw-justify-center tw-mb-4">
                                     <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Export</div>
                                     
-                                    <input type="number" class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
+                                    <input name="perPage" @if(!empty($_GET['perPage'])) value="{{ $_GET['perPage'] }}" @endif type="number" class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block">
                                     
                                     <div class="tw-my-auto tw-ml-2 tw-font-satoshi tw-font-normal tw-text-lg tw-text-basic-700">data</div>
                                 </div>
 
                                 <div class="tw-flex tw-justify-center tw-mb-3">
                                     <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Page</div>
-                                    <input type="number" class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
+                                    <input type="number" name="page" @if(!empty($_GET['page'])) value="{{ $_GET['page'] }}" @endif class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block">
                                 </div>
 
+                                @if(isset($_GET['search']))
+                                <input name="search" value="{{ $_GET['search'] }}" type="hidden">
+                                @endif
+
+                                @if(isset($_GET['nis_siswa'])) <input name="nis_siswa" value="{{ $_GET['nis_siswa'] }}" type="hidden"> @endif
+                                @if(isset($_GET['nisn_siswa'])) <input name="nisn_siswa" value="{{ $_GET['nisn_siswa'] }}" type="hidden"> @endif
+                                @if(isset($_GET['nama_siswa'])) <input name="nama_siswa" value="{{ $_GET['nama_siswa'] }}" type="hidden"> @endif
+                                @if(isset($_GET['jenis_kelamin'])) <input name="jenis_kelamin" value="{{ $_GET['jenis_kelamin'] }}" type="hidden"> @endif
+                                @if(isset($_GET['KelasId'])) <input name="KelasId" value="{{ $_GET['KelasId'] }}" type="hidden"> @endif
+                                @if(isset($_GET['sort_by'])) <input name="sort_by" value="{{ $_GET['sort_by'] }}" type="hidden"> @endif
+                                @if(isset($_GET['sort'])) <input name="sort" value="{{ $_GET['sort'] }}" type="hidden"> @endif
+                                @if(isset($_GET['dibuatTglDari'])) <input name="dibuatTglDari" value="{{ $_GET['dibuatTglDari'] }}" type="hidden"> @endif
+                                @if(isset($_GET['dibuatTglKe'])) <input name="dibuatTglKe" value="{{ $_GET['dibuatTglKe'] }}" type="hidden"> @endif
+                                @if(isset($_GET['thn_ajaran'])) <input name="thn_ajaran" value="{{ $_GET['thn_ajaran'] }}" type="hidden"> @endif
+                                
                                 <div class="tw-flex tw-justify-center tw-mt-3">
                                     <button type="submit" class="tw-text-white tw-bg-sims-new-500 hover:tw-bg-sims-new-700 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-red-300 dark:focus:tw-ring-red-800 tw-font-medium tw-rounded-lg tw-text-sm tw-inline-flex tw-items-center tw-py-2.5 tw-text-center tw-mr-2 tw-px-6">Export</button>
                                 </div>
@@ -190,16 +254,33 @@
                             <form action="/data-induk-pdf/{{ $jurusan }}/{{ $kelas }}?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=100" method="" class="tw-flex tw-flex-col">
                                 <div class="tw-flex tw-justify-center tw-mb-4">
                                     <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Export</div>
-                                    
-                                    <input type="number" class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
+
+                                    <input name="perPage" @if(!empty($_GET['perPage'])) value="{{ $_GET['perPage'] }}" @endif type="number" class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block">
                                     
                                     <div class="tw-my-auto tw-ml-2 tw-font-satoshi tw-font-normal tw-text-lg tw-text-basic-700">data</div>
                                 </div>
 
                                 <div class="tw-flex tw-justify-center tw-mb-3">
                                     <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Page</div>
-                                    <input type="number" class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
+                                    <input type="number" name="page" @if(!empty($_GET['page'])) value="{{ $_GET['page'] }}" @endif class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block">
                                 </div>
+
+                                <input name="angkatan" type="hidden" value="{{ $_GET['angkatan'] }}">
+
+                                @if(isset($_GET['search']))
+                                <input name="search" value="{{ $_GET['search'] }}" type="hidden">
+                                @endif
+
+                                @if(isset($_GET['nis_siswa'])) <input name="nis_siswa" value="{{ $_GET['nis_siswa'] }}" type="hidden"> @endif
+                                @if(isset($_GET['nisn_siswa'])) <input name="nisn_siswa" value="{{ $_GET['nisn_siswa'] }}" type="hidden"> @endif
+                                @if(isset($_GET['nama_siswa'])) <input name="nama_siswa" value="{{ $_GET['nama_siswa'] }}" type="hidden"> @endif
+                                @if(isset($_GET['jenis_kelamin'])) <input name="jenis_kelamin" value="{{ $_GET['jenis_kelamin'] }}" type="hidden"> @endif
+                                @if(isset($_GET['KelasId'])) <input name="KelasId" value="{{ $_GET['KelasId'] }}" type="hidden"> @endif
+                                @if(isset($_GET['sort_by'])) <input name="sort_by" value="{{ $_GET['sort_by'] }}" type="hidden"> @endif
+                                @if(isset($_GET['sort'])) <input name="sort" value="{{ $_GET['sort'] }}" type="hidden"> @endif
+                                @if(isset($_GET['dibuatTglDari'])) <input name="dibuatTglDari" value="{{ $_GET['dibuatTglDari'] }}" type="hidden"> @endif
+                                @if(isset($_GET['dibuatTglKe'])) <input name="dibuatTglKe" value="{{ $_GET['dibuatTglKe'] }}" type="hidden"> @endif
+                                @if(isset($_GET['thn_ajaran'])) <input name="thn_ajaran" value="{{ $_GET['thn_ajaran'] }}" type="hidden"> @endif
 
                                 <div class="tw-flex tw-justify-center tw-mt-3">
                                     <button type="submit" class="tw-text-white tw-bg-sims-new-500 hover:tw-bg-sims-new-700 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-red-300 dark:focus:tw-ring-red-800 tw-font-medium tw-rounded-lg tw-text-sm tw-inline-flex tw-items-center tw-py-2.5 tw-text-center tw-mr-2 tw-px-6">Export</button>
@@ -210,16 +291,31 @@
                                 <div class="tw-flex tw-justify-center tw-mb-4">
                                     <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Export</div>
                                     
-                                    <input type="number" class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
+                                    <input name="perPage" @if(!empty($_GET['perPage'])) value="{{ $_GET['perPage'] }}" @endif type="number" class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block">
                                     
                                     <div class="tw-my-auto tw-ml-2 tw-font-satoshi tw-font-normal tw-text-lg tw-text-basic-700">data</div>
                                 </div>
 
                                 <div class="tw-flex tw-justify-center tw-mb-3">
                                     <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Page</div>
-                                    <input type="number" class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block"></input>
+                                    <input type="number" name="page" @if(!empty($_GET['page'])) value="{{ $_GET['page'] }}" @endif class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block">
                                 </div>
 
+                                @if(isset($_GET['search']))
+                                <input name="search" value="{{ $_GET['search'] }}" type="hidden">
+                                @endif
+
+                                @if(isset($_GET['nis_siswa'])) <input name="nis_siswa" value="{{ $_GET['nis_siswa'] }}" type="hidden"> @endif
+                                @if(isset($_GET['nisn_siswa'])) <input name="nisn_siswa" value="{{ $_GET['nisn_siswa'] }}" type="hidden"> @endif
+                                @if(isset($_GET['nama_siswa'])) <input name="nama_siswa" value="{{ $_GET['nama_siswa'] }}" type="hidden"> @endif
+                                @if(isset($_GET['jenis_kelamin'])) <input name="jenis_kelamin" value="{{ $_GET['jenis_kelamin'] }}" type="hidden"> @endif
+                                @if(isset($_GET['KelasId'])) <input name="KelasId" value="{{ $_GET['KelasId'] }}" type="hidden"> @endif
+                                @if(isset($_GET['sort_by'])) <input name="sort_by" value="{{ $_GET['sort_by'] }}" type="hidden"> @endif
+                                @if(isset($_GET['sort'])) <input name="sort" value="{{ $_GET['sort'] }}" type="hidden"> @endif
+                                @if(isset($_GET['dibuatTglDari'])) <input name="dibuatTglDari" value="{{ $_GET['dibuatTglDari'] }}" type="hidden"> @endif
+                                @if(isset($_GET['dibuatTglKe'])) <input name="dibuatTglKe" value="{{ $_GET['dibuatTglKe'] }}" type="hidden"> @endif
+                                @if(isset($_GET['thn_ajaran'])) <input name="thn_ajaran" value="{{ $_GET['thn_ajaran'] }}" type="hidden"> @endif
+                                
                                 <div class="tw-flex tw-justify-center tw-mt-3">
                                     <button type="submit" class="tw-text-white tw-bg-sims-new-500 hover:tw-bg-sims-new-700 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-red-300 dark:focus:tw-ring-red-800 tw-font-medium tw-rounded-lg tw-text-sm tw-inline-flex tw-items-center tw-py-2.5 tw-text-center tw-mr-2 tw-px-6">Export</button>
                                 </div>

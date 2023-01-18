@@ -1149,7 +1149,7 @@ class ApiController extends Controller
 
         abort_if(Gate::denies('tata usaha'), 403);
 
-        $response = Http::get("{$this->api_url}/siswa/{$request->jurusan}/{$request->kelas}?page={$request->page}&perPage={$request->perPage}");
+        $response = Http::get("{$this->api_url}/siswa/{$request->jurusan}/{$request->kelas}?page={$request->page}&perPage={$request->perPage}&search={$request->search}&nis_siswa={$request->nis_siswa}&nisn_siswa={$request->nisn_siswa}&nama_siswa={$request->nama_siswa}&jenis_kelamin={$request->jenis_kelamin}&KelasId={$request->KelasId}&sort_by={$request->sort_by}&sort={$request->sort}&dibuatTglDari={$request->dibuatTglDari}&dibuatTglKe={$request->dibuatTglKe}&thn_ajaran={$request->thn_ajaran}&angkatan={$request->angkatan}");
 
         $pdf = PDF::loadView('induk.pdf.data-induk', [
             'jurusan' => $request->jurusan,
@@ -1179,7 +1179,7 @@ class ApiController extends Controller
 
         abort_if(Gate::denies('tata usaha'), 403);
 
-        $response = Http::get("{$this->api_url}/siswa/{$request->jurusan}/{$request->kelas}??page=1&perPage=100");
+        $response = Http::get("{$this->api_url}/siswa/{$request->jurusan}/{$request->kelas}?page={$request->page}&perPage={$request->perPage}&search={$request->search}&nis_siswa={$request->nis_siswa}&nisn_siswa={$request->nisn_siswa}&nama_siswa={$request->nama_siswa}&jenis_kelamin={$request->jenis_kelamin}&KelasId={$request->KelasId}&sort_by={$request->sort_by}&sort={$request->sort}&dibuatTglDari={$request->dibuatTglDari}&dibuatTglKe={$request->dibuatTglKe}&thn_ajaran={$request->thn_ajaran}&angkatan={$request->angkatan}");
 
         return view('induk.pdf.data-induk', [
             'jurusan' => $request->jurusan,
@@ -1190,7 +1190,7 @@ class ApiController extends Controller
     }
 
 
-    public function exportDataIndukExcel() {
+    public function exportDataIndukExcel(Request $request) {
 
         abort_if(Gate::denies('tata usaha'), 403);
 
