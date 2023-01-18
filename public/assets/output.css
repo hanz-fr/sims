@@ -1233,6 +1233,10 @@ video {
   z-index: 20;
 }
 
+.tw-z-50 {
+  z-index: 50;
+}
+
 .tw-float-right {
   float: right;
 }
@@ -2274,6 +2278,10 @@ video {
   overflow-x: auto;
 }
 
+.tw-overflow-y-auto {
+  overflow-y: auto;
+}
+
 .tw-overflow-x-hidden {
   overflow-x: hidden;
 }
@@ -2711,6 +2719,11 @@ video {
 .tw-bg-\[\#95BBE8\] {
   --tw-bg-opacity: 1;
   background-color: rgb(149 187 232 / var(--tw-bg-opacity));
+}
+
+.tw-bg-slate-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(148 163 184 / var(--tw-bg-opacity));
 }
 
 .tw-bg-opacity-50 {
@@ -4686,6 +4699,10 @@ input[type="checkbox"]:checked {
 
   .md\:tw-h-auto {
     height: auto;
+  }
+
+  .md\:tw-h-full {
+    height: 100%;
   }
 
   .md\:tw-w-full {

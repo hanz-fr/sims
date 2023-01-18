@@ -35,9 +35,9 @@
         @can('tata usaha')
         <div class="tw-flex md:tw-justify-center tw-items-center md:-tw-mb-8">
             @if( ! empty($jurusan) && ! empty($kelas))
-            <a href="/data-induk-print/{{ $jurusan }}/{{ $kelas }}?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=100" target="__blank" title="Print"><i class="fa-solid fa-print btn-export"></i></a>
-            <a href="/data-induk-excel/{{ $jurusan }}/{{ $kelas }}?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=100" title="Export ke Excel"><i class="fa-solid fa-file-excel btn-export"></i></a>
-            <a href="/data-induk-pdf/{{ $jurusan }}/{{ $kelas }}?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=100" title="Export ke PDF"><i class="fa-solid fa-file-pdf btn-export tw-mr-0"></i></a>
+            <a href="/data-induk-print/{{ $jurusan }}/{{ $kelas }}?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage={{ $total }}" target="__blank" title="Print"><i class="fa-solid fa-print btn-export"></i></a>
+            <a href="/data-induk-excel/{{ $jurusan }}/{{ $kelas }}?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage={{ $total }}" title="Export ke Excel"><i class="fa-solid fa-file-excel btn-export"></i></a>
+            <a href="/data-induk-pdf/{{ $jurusan }}/{{ $kelas }}?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage={{ $total }}" title="Export ke PDF"><i class="fa-solid fa-file-pdf btn-export tw-mr-0"></i></a>
             @else
             <a href="/data-induk-print" target="__blank" title="Print"><i class="fa-solid fa-print btn-export"></i></a>
             <a href="/data-induk-excel" title="Export ke Excel"><i class="fa-solid fa-file-excel btn-export"></i></a>

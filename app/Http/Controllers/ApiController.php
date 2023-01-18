@@ -1108,7 +1108,7 @@ class ApiController extends Controller
                 return view('induk.show-all', [
                     'status' => 'Pencarian tidak ditemukan!',
                     'jurusan' => $request->jurusan,
-                    'kelas' => $request->kelas,
+                    'kelas' => $request->kelas,                    
                     'response' => json_decode($response),
                     'total' => json_decode($response)->data->count,
                     'title' => 'Data Induk',
@@ -1130,8 +1130,6 @@ class ApiController extends Controller
 
             }
 
-            
-
         } else {
 
             return view('induk.show-all', [
@@ -1151,8 +1149,7 @@ class ApiController extends Controller
 
         abort_if(Gate::denies('tata usaha'), 403);
 
-        $response = Http::get("{$this->api_url}/siswa/{$request->jurusan}/{$request->kelas}?page=1&perPage=100");
-        $total_siswa = json_decode($response)->count;
+        $response = Http::get("{$this->api_url}/siswa/{$request->jurusan}/{$request->kelas}?page={$request->page}&perPage={$request->perPage}");
 
         $pdf = PDF::loadView('induk.pdf.data-induk', [
             'jurusan' => $request->jurusan,

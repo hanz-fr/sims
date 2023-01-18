@@ -34,6 +34,9 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
     Route::get('/detail/{nis}', [ApiController::class, 'getSiswa']);
     Route::get('/tambah-data', [ApiController::class, 'createSiswa']);
     Route::get('/edit-siswa/{nis}', [ApiController::class, 'editSiswa']);
+    
+    /* GET DATA INDUK BY JURUSAN */
+    Route::get('/data-induk-siswa/{jurusan}/{kelas}', [ApiController::class, 'getSiswaByJurusanKelas']);
 
     // CRUD //
     Route::post('/api/siswa', [ApiController::class, 'storeSiswa']);
@@ -112,10 +115,6 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
     Route::get('/rekap-jumlah-siswa-pdf', [ApiController::class, 'exportRekapJumlahPDF']);
     Route::get('/rekap-jumlah-siswa-print', [ApiController::class, 'printRekapJumlah']);
     Route::get('/rekap-jumlah-siswa-excel', [ApiController::class, 'exportRekapJumlahExcel']);
-
-    /* GET DATA INDUK BY JURUSAN */
-
-    Route::get('/data-induk-siswa/{jurusan}/{kelas}', [ApiController::class, 'getSiswaByJurusanKelas']);
 
 
     /* JURUSAN SISWA*/
