@@ -1023,8 +1023,9 @@ class ApiController extends Controller
         $dibuatTglKe = $request->dibuatTglKe;
         $thn_ajaran = $request->thn_ajaran;
 
-        $response = Http::get("{$this->api_url}/siswa?page={$page}&perPage={$perPage}&search={$search}&nis_siswa={$nis_siswa}&nisn_siswa={$nisn_siswa}&nama_siswa={$nama_siswa}&jenis_kelamin={$jenis_kelamin}&KelasId={$KelasId}&sort_by={$sort_by}&sort={$sort}&dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}&thn_ajaran={$thn_ajaran}");
-
+        $response = Http::get("{$this->api_url}/siswa?page={$page}&perPage={$perPage}&search={$search}&nis_siswa={$nis_siswa}&nisn_siswa={$nisn_siswa}&nama_siswa={$nama_siswa}&jenis_kelamin={$jenis_kelamin}&KelasId={$KelasId}&sort_by={$sort_by}&sort={$sort}&dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}&thn_ajaran={$thn_ajaran}"); 
+        $total = json_decode(Http::get("{$this->api_url}/siswa"))->data->count;
+        
         if ($response->successful()) {
             
             if(json_decode($response)->data->rows == []) {
@@ -1033,6 +1034,7 @@ class ApiController extends Controller
                     'status' => 'Pencarian tidak ditemukan!',
                     'response' => json_decode($response),
                     'total' => json_decode($response)->data->count,
+                    'total_siswa' => $total,
                     'title' => 'Data Induk',
                     'active' => 'data-induk',
                 ]);
@@ -1045,6 +1047,7 @@ class ApiController extends Controller
                     'status' => 'success',
                     'response' => json_decode($response),
                     'total' => json_decode($response)->data->count,
+                    'total_siswa' => $total,
                     'title' => 'Data Induk',
                     'active' => 'data-induk',
                 ]);
@@ -1100,6 +1103,7 @@ class ApiController extends Controller
         $angkatan = $request->angkatan;
 
         $response = Http::get("{$this->api_url}/siswa/{$request->jurusan}/{$request->kelas}?page={$page}&perPage={$perPage}&search={$search}&nis_siswa={$nis_siswa}&nisn_siswa={$nisn_siswa}&nama_siswa={$nama_siswa}&jenis_kelamin={$jenis_kelamin}&KelasId={$KelasId}&sort_by={$sort_by}&sort={$sort}&dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}&thn_ajaran={$thn_ajaran}&angkatan={$angkatan}");
+        $total = json_decode(Http::get("{$this->api_url}/siswa/{$request->jurusan}/{$request->kelas}?page={$page}&perPage={$perPage}"))->data->count; 
 
         if ($response->successful()) {
             
@@ -1111,6 +1115,7 @@ class ApiController extends Controller
                     'kelas' => $request->kelas,                    
                     'response' => json_decode($response),
                     'total' => json_decode($response)->data->count,
+                    'total_siswa' => $total,
                     'title' => 'Data Induk',
                     'active' => 'data-induk',
                 ]);
@@ -1124,6 +1129,7 @@ class ApiController extends Controller
                     'kelas' => $request->kelas,
                     'response' => json_decode($response),
                     'total' => json_decode($response)->data->count,
+                    'total_siswa' => $total,
                     'title' => 'Data Induk',
                     'active' => 'data-induk',
                 ]);

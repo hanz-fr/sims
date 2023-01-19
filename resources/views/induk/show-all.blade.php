@@ -30,7 +30,7 @@
             @else
             <h6 class="sims-heading-md-black">Seluruh Kelas</h6>
             @endif
-            <div class="sims-text-gray-sm">Jumlah : {{ $total }} siswa</div>
+            <div class="sims-text-gray-sm">Jumlah : {{ $total_siswa }} siswa</div>
         </div>
 
         @can('tata usaha')
@@ -555,7 +555,7 @@
                                     </div>
                                     <div id="tooltip1" role="tooltip" class="z-20 w-64 absolute transition duration-150 ease-in-out left-0 ml-8 shadow-lg bg-white p-4 rounded hidden">
                                         <p class="text-sm font-bold text-gray-800 pb-1">Data periodik Data Induk</p>
-                                        <p class="text-xs leading-4 text-gray-600">Data Induk periodik diambil berdasarkan tanggal </p>
+                                        <p class="text-xs leading-4 text-gray-600">Data Induk periodik diambil berdasarkan tanggal dibuatnya data siswa tersebut.</p>
                                     </div>
                                 </a>
                                 <!--Code Block for white tooltip ends-->
