@@ -866,12 +866,14 @@ class ApiController extends Controller
         $sort = $request->sort;
         $dibuatTglDari = $request->dibuatTglDari;
         $dibuatTglKe = $request->dibuatTglKe;
-        $thn_ajaran = $request->thn_ajaran;
+        $angkatan = $request->angkatan;
+        $jurusan = $request->jurusan;
 
 
-        if(is_null($request->jurusan) && is_null($request->angkatan)) {
+        if(is_null($request->jurusan)) {
 
-            $response = Http::get("{$this->api_url}/dashboard/alumni/all");
+            $response = Http::get("{$this->api_url}/dashboard/alumni/all?page={$page}&perPage={$perPage}&search={$search}&nis_siswa={$nis_siswa}&nisn_siswa={$nisn_siswa}&nama_siswa={$nama_siswa}&jenis_kelamin={$jenis_kelamin}&KelasId={$KelasId}&sort_by={$sort_by}&sort={$sort}&dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}&angkatan={$angkatan}");
+
 
             if($response->successful()) {
     
@@ -911,7 +913,7 @@ class ApiController extends Controller
 
         } else {
 
-            $response = Http::get("{$this->api_url}/dashboard/alumni/get/{$request->jurusan}/{$request->angkatan}?page={$page}&perPage={$perPage}&search={$search}&nis_siswa={$nis_siswa}&nisn_siswa={$nisn_siswa}&nama_siswa={$nama_siswa}&jenis_kelamin={$jenis_kelamin}&KelasId={$KelasId}&sort_by={$sort_by}&sort={$sort}&dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}&thn_ajaran={$thn_ajaran}");
+            $response = Http::get("{$this->api_url}/dashboard/alumni/get/{$jurusan}/{$angkatan}?page={$page}&perPage={$perPage}&search={$search}&nis_siswa={$nis_siswa}&nisn_siswa={$nisn_siswa}&nama_siswa={$nama_siswa}&jenis_kelamin={$jenis_kelamin}&KelasId={$KelasId}&sort_by={$sort_by}&sort={$sort}&dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}");
     
     
             if($response->successful()) {
