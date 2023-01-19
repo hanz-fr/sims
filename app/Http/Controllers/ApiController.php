@@ -868,43 +868,59 @@ class ApiController extends Controller
         $dibuatTglKe = $request->dibuatTglKe;
         $thn_ajaran = $request->thn_ajaran;
 
-        $response = Http::get("{$this->api_url}/dashboard/alumni/get/{$request->jurusan}/{$request->angkatan}?page={$page}&perPage={$perPage}&search={$search}&nis_siswa={$nis_siswa}&nisn_siswa={$nisn_siswa}&nama_siswa={$nama_siswa}&jenis_kelamin={$jenis_kelamin}&KelasId={$KelasId}&sort_by={$sort_by}&sort={$sort}&dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}&thn_ajaran={$thn_ajaran}");
 
+        if(is_null($request->jurusan) && is_null($request->angkatan)) {
 
-        if($response->successful()) {
+            $response = Http::get("{$this->api_url}/dashboard/alumni/all");
 
-            if (json_decode($response)->data->rows == []) {
-
-                return view('induk.show-alumni', [
-                    'title' => 'Data Alumni',
-                    'active' => 'data-induk',
-                    'status' => 'error',
-                    'response' => json_decode($response),
-                    'total' => json_decode($response)->data->count,
-                ]);
-
-            } else {
-
-                return view('induk.show-alumni', [
-                    'title' => 'Data Alumni',
-                    'active' => 'data-induk',
-                    'alumni' => json_decode($response)->data->rows,
-                    'response' => json_decode($response),
-                    'total' => json_decode($response)->data->count,
-                ]);
-
-            }
-
-
-        } else {
             return view('induk.show-all', [
                 'status' => 'error',
                 'title' => 'Data Alumni',
                 'active' => 'data-induk',
-                'message' => 'Halaman yang kamu cari tidak dapat ditemukan :('
+                'message' => 'COULD NOT FIND ALUMNI'
             ]);
+
+        } else {
+
+            $response = Http::get("{$this->api_url}/dashboard/alumni/get/{$request->jurusan}/{$request->angkatan}?page={$page}&perPage={$perPage}&search={$search}&nis_siswa={$nis_siswa}&nisn_siswa={$nisn_siswa}&nama_siswa={$nama_siswa}&jenis_kelamin={$jenis_kelamin}&KelasId={$KelasId}&sort_by={$sort_by}&sort={$sort}&dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}&thn_ajaran={$thn_ajaran}");
+    
+    
+            if($response->successful()) {
+    
+                if (json_decode($response)->data->rows == []) {
+    
+                    return view('induk.show-alumni', [
+                        'title' => 'Data Alumni',
+                        'active' => 'data-induk',
+                        'status' => 'error',
+                        'response' => json_decode($response),
+                        'total' => json_decode($response)->data->count,
+                    ]);
+    
+                } else {
+    
+                    return view('induk.show-alumni', [
+                        'title' => 'Data Alumni',
+                        'active' => 'data-induk',
+                        'alumni' => json_decode($response)->data->rows,
+                        'response' => json_decode($response),
+                        'total' => json_decode($response)->data->count,
+                    ]);
+    
+                }
+    
+    
+            } else {
+                return view('induk.show-all', [
+                    'status' => 'error',
+                    'title' => 'Data Alumni',
+                    'active' => 'data-induk',
+                    'message' => 'Halaman yang kamu cari tidak dapat ditemukan :('
+                ]);
+            }
+            }
         }
-    }
+
 
 
     public function exportAlumniPDF(Request $request) {

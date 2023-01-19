@@ -130,6 +130,7 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
     /* ALUMNI */
 
     Route::get('/data-alumni', [ApiController::class, 'viewAlumni']);
+    Route::get('/data-alumni/all', [ApiController::class, 'viewAllAlumni']);
     Route::get('/alumni-pdf', [ApiController::class, 'exportAlumniPDF']);
     Route::get('/alumni-print', [ApiController::class, 'printAlumni']);
     Route::get('/alumni-excel', [ApiController::class, 'exportAlumniExcel']);

@@ -54,6 +54,12 @@
                 <p class="tw-text-base tw-text-left tw-pl-5 tw-p-2 fw-bolder">PENGEMBANGAN PERANGKAT LUNAK DAN GIM</p>
             </button>
         </form>
+        <form action="/data-alumni/all">
+            <button class="tw-flex tw-transition-all tw-ease-in tw-delay-[100] hover:-tw-translate-y-1 hover:tw-shadow-lg tw-w-full tw-text-white tw-bg-[#2CC06F] tw-p-5 tw-rounded-xl tw-shadow-md hover:tw-bg-[#249f5b] hover:tw-text-white tw-h-36 tw-items-center">
+                <i class="fa-solid fa-code tw-text-6xl tw-text tw-py-5"></i>
+                <p class="tw-text-base tw-text-left tw-pl-5 tw-p-2 fw-bolder">SEMUA JURUSAN & ANGKATAN</p>
+            </button>
+        </form>
     </div>
     
 </div>
