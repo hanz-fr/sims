@@ -873,12 +873,41 @@ class ApiController extends Controller
 
             $response = Http::get("{$this->api_url}/dashboard/alumni/all");
 
-            return view('induk.show-all', [
-                'status' => 'error',
-                'title' => 'Data Alumni',
-                'active' => 'data-induk',
-                'message' => 'COULD NOT FIND ALUMNI'
-            ]);
+            if($response->successful()) {
+    
+                if (json_decode($response)->data->rows == []) {
+    
+                    return view('induk.show-alumni', [
+                        'title' => 'Data Alumni',
+                        'active' => 'data-induk',
+                        'status' => 'error',
+                        'response' => json_decode($response),
+                        'total' => json_decode($response)->data->count,
+                    ]);
+    
+                } else {
+    
+                    return view('induk.show-alumni', [
+                        'title' => 'Data Alumni',
+                        'active' => 'data-induk',
+                        'alumni' => json_decode($response)->data->rows,
+                        'response' => json_decode($response),
+                        'total' => json_decode($response)->data->count,
+                    ]);
+    
+                }
+    
+    
+            } else {
+                
+                return view('induk.show-all', [
+                    'status' => 'error',
+                    'title' => 'Data Alumni',
+                    'active' => 'data-induk',
+                    'message' => 'Halaman yang kamu cari tidak dapat ditemukan :('
+                ]);
+                
+            }
 
         } else {
 
@@ -911,15 +940,17 @@ class ApiController extends Controller
     
     
             } else {
+
                 return view('induk.show-all', [
                     'status' => 'error',
                     'title' => 'Data Alumni',
                     'active' => 'data-induk',
                     'message' => 'Halaman yang kamu cari tidak dapat ditemukan :('
                 ]);
-            }
+
             }
         }
+    }
 
 
 
