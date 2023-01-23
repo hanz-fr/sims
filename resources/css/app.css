@@ -85,20 +85,23 @@ a {
     .without-ring {
         @apply focus:ring-0 focus:ring-offset-0;
     }
+    .hc-text-xl {
+        @apply tw-font-satoshi tw-leading-7 tw-text-xl tw-text-gray-400 tw-font-normal;
+    }
     .hc-text-lg {
-        @apply tw-font-pop tw-leading-7 tw-text-lg tw-text-gray-400 tw-font-normal;
+        @apply tw-font-satoshi tw-leading-7 tw-text-lg tw-text-gray-400 tw-font-normal;
     }
     .hc-text-base {
-        @apply tw-font-pop tw-leading-7 tw-text-base tw-text-gray-400 tw-font-normal;
+        @apply tw-font-satoshi tw-leading-7 tw-text-base tw-text-gray-400 tw-font-normal;
     }
     .hc-text-base-sims {
-        @apply tw-font-pop tw-leading-7 tw-text-base tw-text-sims-400 tw-font-normal;
+        @apply tw-font-satoshi tw-leading-7 tw-text-base tw-text-sims-400 tw-font-normal;
     }
     .hc-text-sm {
-        @apply tw-font-pop tw-leading-7 tw-text-sm tw-text-gray-400 tw-font-normal;
+        @apply tw-font-satoshi tw-leading-7 tw-text-sm tw-text-gray-400 tw-font-normal;
     }
     .hc-text-xs {
-        @apply tw-font-pop tw-leading-7 tw-text-xs tw-text-gray-400 tw-font-normal;
+        @apply tw-font-satoshi tw-leading-7 tw-text-xs tw-text-gray-400 tw-font-normal;
     }
     .hc-title-lg {
         @apply tw-font-pop tw-leading-7 tw-text-lg tw-font-bold tw-text-sims-400;
@@ -111,6 +114,9 @@ a {
     }
     .hc-card {
         @apply tw-flex tw-flex-col tw-text-center tw-bg-white tw-drop-shadow-md tw-p-8 tw-w-64 hover:tw-drop-shadow-xl tw-transition-all;
+    }
+    .hc-card-general {
+        @apply tw-flex tw-flex-col tw-rounded-lg tw-px-6 tw-py-8 tw-w-full hover:tw-drop-shadow-xl hover:tw-border-gray-200 tw-transition-all;
     }
 
     /* SIMS 1.0 Tailwind CSS Presets */
@@ -243,6 +249,20 @@ a {
     .sims-icon-xs {
         @apply tw-text-xs tw-text-sims-new-500 tw-my-auto;
     }
+}
+
+.hc-search-input {
+    width: 30rem;
+    height: 40px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    padding: 9px 4px 9px 40px;
+    background: transparent
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E")
+        no-repeat 13px center;
+}
+
+.hc-search-input:hover {
+    box-shadow: 0px 10px 12px rgba(0, 0, 0, 0.12);
 }
 
 .snap {
