@@ -211,6 +211,9 @@ a {
     .sims-card-1-noshadow {
         @apply tw-w-full tw-py-10 tw-my-2 tw-h-fit tw-border-2 tw-border-gray-200 tw-bg-white tw-rounded-md;
     }
+    .sims-card-2 {
+        @apply tw-my-0 tw-py-3 tw-px-5 tw-w-full tw-border-2 tw-border-white hover:tw-border-2 hover:tw-border-gray-200 tw-h-fit tw-bg-white hover:tw-shadow-md tw-transition-all tw-rounded-xl;
+    }
 
     /* FOR ICONS */
     .sims-icon-5xl {
@@ -232,7 +235,7 @@ a {
         @apply tw-text-lg tw-text-sims-new-500 tw-my-auto;
     }
     .sims-icon-md {
-        @apply tw-text-md tw-text-sims-new-500 tw-my-auto;
+        @apply tw-text-base tw-text-sims-new-500 tw-my-auto;
     }
     .sims-icon-sm {
         @apply tw-text-sm tw-text-sims-new-500 tw-my-auto;

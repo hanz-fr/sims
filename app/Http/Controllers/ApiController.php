@@ -80,7 +80,7 @@ class ApiController extends Controller
 
         if ($response->successful()) {
 
-            return view('dashboard.main', [
+            return view('dashboard.admin-main', [
                 'title' => 'Dashboard',
                 'active' => 'dashboard-main',
                 'message' => $message,
