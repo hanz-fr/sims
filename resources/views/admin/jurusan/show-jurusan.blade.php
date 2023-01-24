@@ -1,101 +1,218 @@
-@extends('layouts.admin')
-@section('content')
+@extends('layouts.main-new')
 
-<div class="tw-mx-10 tw-w-screen">
-  <section class="tw-flex tw-gap-3 mt-8">
-    <a href="/admin/database">
-      <i class="fa-solid fa-chevron-left tw-text-gray-400 tw-text-2xl"></i>
-    </a>
-    <i class="fa-solid fa-shapes tw-text-sims-300 tw-text-2xl"></i>
-    <div class="tw-text-2xl tw-font-pop tw-font-semibold tw-text-gray-300">Jurusan</div>
-  </section>
-    <div class="tw-flex tw-flex-col tw-bg-white shadow-cs tw-py-8 tw-px-16 tw-rounded-xl tw-w-full tw-mb-8 tw-mt-14 ">
-        <div class="tw-flex tw-justify-end">
-          <div class="tw-flex tw-mb-14">
-              <input type="text" class="tw-px-4 tw-rounded-xl tw-border tw-border-gray-300 tw-py-2 tw-w-80">
-              <button class="tw-px-5 -tw-ml-4 tw-rounded-xl tw-text-white tw-bg-admin-300">
-                <i class="fa-regular fa-magnifying-glass"></i>
+@section('content')
+<style>
+    .no-spin::-webkit-inner-spin-button, .no-spin::-webkit-outer-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0 !important;
+    }
+</style>
+
+<div class="tw-mt-10">
+    <div class="tw-flex tw-flex-col tw-mt-8 tw-ml-8">
+        <h4 class="sims-heading-3xl">Data Jurusan</h4>
+        <div class="sims-text-gray-sm">Total : {{ $total_jurusan }}</div>
+    </div>
+
+        <div class="tw-flex tw-justify-between tw-ml-8 tw-mt-8 lg:tw-flex-row sm:tw-flex-col sm:tw-gap-5">
+            <div class="tw-flex tw-my-auto">
+
+                <!-- Searching -->
+                <form action="/admin/jurusan"> 
+                    <div class="relative tw-border-[1.5px] tw-border-gray-300 tw-rounded-xl focus:tw-ring-sims-new-500">
+                        
+                        <input name="page" value="1" type="hidden">
+                        <input name="perPage" value="10" type="hidden">
+                        <input type="text" id="search" name="search" class="tw-block tw-py-1 tw-px-5 tw-border-none tw-rounded-xl" value="{{ request()->search }}">
+                        
+                        @if(isset($_GET['sort_by']))
+                        <input name="sort_by" value="{{ $_GET['sort_by'] }}" type="hidden">
+                        @endif
+
+                        @if(isset($_GET['sort']))
+                        <input name="sort" value="{{ $_GET['sort'] }}" type="hidden">
+                        @endif
+
+                        <i class="fa-thin fa-magnifying-glass tw-absolute tw-text-gray-400 right-0 tw-inset-y-1.5 tw-pr-5 tw-text-sm"></i>
+                    </div>
+                </form>
+
+                <!-- Limit -->
+                <div class="tw-my-auto tw-text-basic-700 tw-ml-8 tw-mr-2 tw-font-normal tw-font-satoshi">Tampilkan</div>
+                <select name="show-data-perpage" id="show-data-perpage" class="tw-px-5 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-200 tw-peer tw-font-bold  bg-transparent tw-border-0 tw-border-b-2 tw-border-gray-200 tw-appearance-none tw-block">
+                    <option value="/admin/jurusan?page=@if(isset($_GET['page'])){{ $_GET['page'] }}@endif&perPage=10&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&sort_by=@if(isset($_GET['sort_by'])){{ $_GET['sort_by'] }}@endif&sort=@if(isset($_GET['sort'])){{ $_GET['sort'] }}@endif" @isset($_GET['perPage']) @if($_GET['perPage'] === '10') selected @endif @endisset class="tw-bg-white">10</option>
+                    <option value="/admin/jurusan?page=@if(isset($_GET['page'])){{ $_GET['page'] }}@endif&perPage=25&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&sort_by=@if(isset($_GET['sort_by'])){{ $_GET['sort_by'] }}@endif&sort=@if(isset($_GET['sort'])){{ $_GET['sort'] }}@endif" @isset($_GET['perPage']) @if($_GET['perPage'] === '25') selected @endif @endisset class="tw-bg-white">25</option>
+                    <option value="/admin/jurusan?page=@if(isset($_GET['page'])){{ $_GET['page'] }}@endif&perPage=50&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&sort_by=@if(isset($_GET['sort_by'])){{ $_GET['sort_by'] }}@endif&sort=@if(isset($_GET['sort'])){{ $_GET['sort'] }}@endif" @isset($_GET['perPage']) @if($_GET['perPage'] === '50') selected @endif @endisset class="tw-bg-white">50</option>
+                    <option value="/admin/jurusan?page=@if(isset($_GET['page'])){{ $_GET['page'] }}@endif&perPage=100&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&sort_by=@if(isset($_GET['sort_by'])){{ $_GET['sort_by'] }}@endif&sort=@if(isset($_GET['sort'])){{ $_GET['sort'] }}@endif" @isset($_GET['perPage']) @if($_GET['perPage'] === '100') selected @endif @endisset class="tw-bg-white">100</option>
+                </select>
+                <div class="tw-my-auto tw-mx-2 tw-font-satoshi tw-font-normal tw-text-basic-700">data</div>
+
+                <!-- Sort By -->
+                <div class="tw-my-auto tw-text-basic-700 tw-ml-8 tw-mr-2 tw-font-normal tw-font-satoshi">Urutkan berdasarkan</div>
+                <select name="sort-by-data" id="sort-by-data" class="tw-px-5 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-200 tw-peer tw-font-bold  bg-transparent tw-border-0 tw-border-b-2 tw-border-gray-200 tw-appearance-none tw-block">
+                    <option value="/admin/jurusan?page=@if(isset($_GET['page'])){{ $_GET['page'] }}@endif&perPage=@if(isset($_GET['perPage'])){{ $_GET['perPage'] }}@endif&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&sort_by=id&sort=@if(isset($_GET['sort'])){{ $_GET['sort'] }}@endif" @isset($_GET['sort_by']) @if($_GET['sort_by'] === 'id') selected @endif @endisset class="tw-bg-white">Id</option>
+                    <option value="/admin/jurusan?page=@if(isset($_GET['page'])){{ $_GET['page'] }}@endif&perPage=@if(isset($_GET['perPage'])){{ $_GET['perPage'] }}@endif&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&sort_by=nama&sort=@if(isset($_GET['sort'])){{ $_GET['sort'] }}@endif" @isset($_GET['sort_by']) @if($_GET['sort_by'] === 'nama') selected @endif @endisset class="tw-bg-white">Nama</option>
+                    <option value="/admin/jurusan?page=@if(isset($_GET['page'])){{ $_GET['page'] }}@endif&perPage=@if(isset($_GET['perPage'])){{ $_GET['perPage'] }}@endif&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&sort_by=konsentrasi&sort=@if(isset($_GET['sort'])){{ $_GET['sort'] }}@endif" @isset($_GET['sort_by']) @if($_GET['sort_by'] === 'konsentrasi') selected @endif @endisset class="tw-bg-white">Konsentrasi</option>
+                    <option value="/admin/jurusan?page=@if(isset($_GET['page'])){{ $_GET['page'] }}@endif&perPage=@if(isset($_GET['perPage'])){{ $_GET['perPage'] }}@endif&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&sort_by=desc&sort=@if(isset($_GET['sort'])){{ $_GET['sort'] }}@endif" @isset($_GET['sort_by']) @if($_GET['sort_by'] === 'desc') selected @endif @endisset class="tw-bg-white">Deskripsi</option>
+                    <option value="/admin/jurusan?page=@if(isset($_GET['page'])){{ $_GET['page'] }}@endif&perPage=@if(isset($_GET['perPage'])){{ $_GET['perPage'] }}@endif&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&sort_by=createdAt&sort=@if(isset($_GET['sort'])){{ $_GET['sort'] }}@endif" @isset($_GET['sort_by']) @if($_GET['sort_by'] === 'createdAt') selected @endif @endisset class="tw-bg-white">Tgl Dibuat</option>
+                </select>
+
+                <!-- Sort -->
+                <select name="sort-data" id="sort-data" class="tw-px-10 tw-mx-5 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-200 tw-peer tw-font-bold  bg-transparent tw-border-0 tw-border-b-2 tw-border-gray-200 tw-appearance-none tw-block">
+                    <option value="/admin/jurusan?page=@if(isset($_GET['page'])){{ $_GET['page'] }}@endif&perPage=@if(isset($_GET['perPage'])){{ $_GET['perPage'] }}@endif&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&sort_by=@if(isset($_GET['sort_by'])){{ $_GET['sort_by'] }}@endif&sort=ASC" @isset($_GET['sort']) @if($_GET['sort'] === 'ASC') selected @endif @endisset class="tw-bg-white">A-Z</option>
+                    <option value="/admin/jurusan?page=@if(isset($_GET['page'])){{ $_GET['page'] }}@endif&perPage=@if(isset($_GET['perPage'])){{ $_GET['perPage'] }}@endif&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&sort_by=@if(isset($_GET['sort_by'])){{ $_GET['sort_by'] }}@endif&sort=DESC" @isset($_GET['sort']) @if($_GET['sort'] === 'DESC') selected @endif @endisset class="tw-bg-white">Z-A</option>
+                </select>
+            </div>
+
+            <div class="tw-flex md:tw-justify-center tw-items-center tw-mr-7">
+              <button type="button" data-modal-toggle="popup-modal" class="tw-bg-sims-new-500 tw-text-white hover:tw-text-white hover:tw-bg-sims-new-700 tw-font-satoshi tw-rounded-lg tw-px-8 tw-py-2 tw-mr-7">
+                Tambah Data +
               </button>
-          </div>
+            </div>
         </div>
-        <div class="tw-overflow-y-scroll tw-h-[500px] tw-scrollbar-thumb-gray-300 tw-scrollbar-thumb-rounded-lg tw-scrollbar-thin tw-scrollbar-track-gray-100">
-          <table class="tw-mt-10 tw-w-full tw-text-sm tw-text-center">
-            <thead class="tw-text-lg tw-font-pop tw-text-admin-300">
-                <tr>
-                    <th scope="col" class="tw-pb-9 tw-px-5">Id</th>
-                    <th scope="col" class="tw-pb-9 tw-px-5">Nama Jurusan</th>
-                    <th scope="col" class="tw-pb-9 tw-px-5">Konsentrasi</th>
-                    <th scope="col" class="tw-pb-9 tw-px-5">Desc</th>
-                    <th scope="col" class="tw-pb-9 tw-px-5">Created</th>
-                    <th scope="col" class="tw-pb-9 tw-px-5"></th>
-                </tr>
-            </thead>
-            <tbody>     
-                <tr class="tw-bg-white tw-text-[#B4B8BC] tw-font-bold text-lg tw-font-ubuntu">
-                    <td class="tw-pb-6 tw-px-5 tw-py-7 tw-border-b">RPL</td>
-                    <td class="tw-pb-6 tw-px-5 tw-py-7 tw-border-b">RPL</td>
-                    <td class="tw-pb-6 tw-px-5 tw-py-7 tw-border-b"></td>
-                    <td class="tw-pb-6 tw-px-5 tw-py-7 tw-border-b">Lorem ipsum, dolor sit....</td>
-                    <td class="tw-pb-6 tw-px-5 tw-py-7 tw-border-b">12 February 2023</td>
-                    <td class="tw-pb-6 tw-px-5 tw-py-7 tw-border-b">
-                      <a href="/admin/detail-jurusan" class="tw-text-white tw-bg-admin-300 hover:tw-bg-admin-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-7 tw-mr-1">
-                          View
-                      </a>
-                    </td>
-                </tr>
-                <tr class="tw-bg-white tw-text-[#B4B8BC] tw-font-bold text-lg tw-font-ubuntu">
-                    <td class="tw-pb-6 tw-px-5 tw-py-7 tw-border-b">RPL</td>
-                    <td class="tw-pb-6 tw-px-5 tw-py-7 tw-border-b">RPL</td>
-                    <td class="tw-pb-6 tw-px-5 tw-py-7 tw-border-b"></td>
-                    <td class="tw-pb-6 tw-px-5 tw-py-7 tw-border-b">Lorem ipsum, dolor sit....</td>
-                    <td class="tw-pb-6 tw-px-5 tw-py-7 tw-border-b">12 February 2023</td>
-                    <td class="tw-pb-6 tw-px-5 tw-py-7 tw-border-b">
-                      <a href="/admin/detail-jurusan" class="tw-text-white tw-bg-admin-300 hover:tw-bg-admin-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-7 tw-mr-1">
-                          View
-                      </a>
-                    </td>
-                </tr>
-                <tr class="tw-bg-white tw-text-[#B4B8BC] tw-font-bold text-lg tw-font-ubuntu">
-                    <td class="tw-pb-6 tw-px-5 tw-py-7 tw-border-b">RPL</td>
-                    <td class="tw-pb-6 tw-px-5 tw-py-7 tw-border-b">RPL</td>
-                    <td class="tw-pb-6 tw-px-5 tw-py-7 tw-border-b"></td>
-                    <td class="tw-pb-6 tw-px-5 tw-py-7 tw-border-b">Lorem ipsum, dolor sit....</td>
-                    <td class="tw-pb-6 tw-px-5 tw-py-7 tw-border-b">12 February 2023</td>
-                    <td class="tw-pb-6 tw-px-5 tw-py-7 tw-border-b">
-                      <a href="/admin/detail-jurusan" class="tw-text-white tw-bg-admin-300 hover:tw-bg-admin-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-7 tw-mr-1">
-                          View
-                      </a>
-                    </td>
-                </tr>
-                <tr class="tw-bg-white tw-text-[#B4B8BC] tw-font-bold text-lg tw-font-ubuntu">
-                    <td class="tw-pb-6 tw-px-5 tw-py-7 tw-border-b">RPL</td>
-                    <td class="tw-pb-6 tw-px-5 tw-py-7 tw-border-b">RPL</td>
-                    <td class="tw-pb-6 tw-px-5 tw-py-7 tw-border-b"></td>
-                    <td class="tw-pb-6 tw-px-5 tw-py-7 tw-border-b">Lorem ipsum, dolor sit....</td>
-                    <td class="tw-pb-6 tw-px-5 tw-py-7 tw-border-b">12 February 2023</td>
-                    <td class="tw-pb-6 tw-px-5 tw-py-7 tw-border-b">
-                      <a href="/admin/detail-jurusan" class="tw-text-white tw-bg-admin-300 hover:tw-bg-admin-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-7 tw-mr-1">
-                          View
-                      </a>
-                    </td>
-                </tr>
-                <tr class="tw-bg-white tw-text-[#B4B8BC] tw-font-bold text-lg tw-font-ubuntu">
-                    <td class="tw-pb-6 tw-px-5 tw-py-7 tw-border-b">RPL</td>
-                    <td class="tw-pb-6 tw-px-5 tw-py-7 tw-border-b">RPL</td>
-                    <td class="tw-pb-6 tw-px-5 tw-py-7 tw-border-b"></td>
-                    <td class="tw-pb-6 tw-px-5 tw-py-7 tw-border-b">Lorem ipsum, dolor sit....</td>
-                    <td class="tw-pb-6 tw-px-5 tw-py-7 tw-border-b">12 February 2023</td>
-                    <td class="tw-pb-6 tw-px-5 tw-py-7 tw-border-b">
-                      <a href="/admin/detail-jurusan" class="tw-text-white tw-bg-admin-300 hover:tw-bg-admin-600 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-7 tw-mr-1">
-                          View
-                      </a>
-                    </td>
-                </tr>
-            </tbody>
-          </table>
+
+        <div class="tw-overflow-x-auto tw-relative tw-mt-7">
+            <table class="tw-w-full tw-text-lg tw-text-center tw-font-satoshi tw-text-bluewood-900">
+                <thead class="tw-border-y">
+                    <tr>
+                        <th scope="col" class="tw-py-5 tw-px-6">Id</th>
+                        <th scope="col" class="tw-py-5 tw-px-6">Nama</th>
+                        <th scope="col" class="tw-py-5 tw-px-6">Konsentrasi</th>
+                        <th scope="col" class="tw-py-5 tw-px-6">Deskripsi</th>
+                        <th scope="col" class="tw-py-5 tw-px-6">Dibuat</th>
+                        <th scope="col" class="tw-py-5 tw-px-6">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody class="tw-text-base">
+                    @foreach($jurusan as $j)
+                    <tr class="tw-bg-white">
+                        <td class="tw-p-8">{{ $j->id }}</td>
+                        <td class="tw-p-8">{{ $j->nama }}</td>
+                        <td class="tw-p-8">{{ $j->konsentrasi }}</td>
+                        <td class="tw-p-8 tw-w-1/4">{{ $j->desc }}</td>
+                        <td>{{ $j->createdAt }}</td>
+                        <td class="tw-flex tw-mt-8 tw-justify-center tw-gap-3">
+                          <a href="#" class="tw-text-kuning-500  hover:tw-text-white hover:tw-bg-kuning-500 hover:tw-shadow-md tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-w-12 tw-transition-all" title="Edit Data Siswa">
+                              <i class="fa-solid fa-pen-to-square"></i>
+                          </a>
+                          <a href="#" class="tw-text-gray-400  hover:tw-text-white hover:tw-bg-gray-400 hover:tw-shadow-md tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-w-12 tw-transition-all" title="Detail Data">
+                              <i class="fa-regular fa-eye"></i>
+                          </a>
+                      </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+
+        {{-- pagination --}}
+        <div class="tw-flex tw-justify-center tw-rounded-b-lg">
+            
+            @if($response->prev_page_url)
+            <div class="tw-float-right tw-py-5">
+                <a href="{{ $response->prev_page_url }}" class="tw-transition-all tw-text-sims-new-500 hover:tw-bg-sims-new-500 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-solid fa-chevron-left"></i></a>
+            </div>
+            @else
+            <div class="tw-float-right tw-py-5">
+                <a class="tw-text-sims-new-700 hover:tw-text-sims-new-700 tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-solid fa-chevron-left"></i></a>
+            </div>
+            @endif
+
+            <div class="tw-py-3 tw-my-auto tw-h-min tw-flex tw-justify-center">
+                <form action="/admin/jurusan" class="tw-text-center">
+
+                    <input type="number" name="page" class="tw-bg-white tw-border tw-border-slate-200 tw-w-1/2 tw-font-pop tw-font-medium tw-text-slate-500 tw-rounded-md tw-text-center focus:tw-ring-gray-200 focus:tw-border-gray-200 no-spin" min="1" @if(isset($_GET['page'])) value="{{ $_GET['page'] }}" @endif>
+                    
+                    @if(isset($_GET['perPage']))
+                    <input name="perPage" value="{{ $_GET['perPage'] }}" type="hidden">
+                    @endif
+
+                    @if(isset($_GET['search']))
+                    <input name="search" value="{{ $_GET['search'] }}" type="hidden">
+                    @endif
+
+                    @if(isset($_GET['sort_by']))
+                    <input name="sort_by" value="{{ $_GET['sort_by'] }}" type="hidden">
+                    @endif
+
+                    @if(isset($_GET['sort']))
+                    <input name="sort" value="{{ $_GET['sort'] }}" type="hidden">
+                    @endif
+
+                </form>
+            </div>
+            
+            <div class="tw-float-right tw-py-5">
+            @if($response->to >= $total)
+            <a class="tw-text-sims-new-700 hover:tw-text-sims-new-700 tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-solid fa-chevron-right"></i></a>
+            @else
+            <a href="{{ $response->next_page_url }}" class="tw-transition-all tw-text-sims-new-500 hover:tw-bg-sims-new-500 hover:tw-text-white tw-rounded-lg tw-text-xl tw-py-2 tw-px-3"><i class="fa-solid fa-chevron-right"></i></a>
+            @endif
+            </div>
+
         </div>
     </div>
-</div>
 
+    <script>
+        $(function(){
+          // bind change event to select
+          $('#show-data-perpage').on('change', function () {
+              var url = $(this).val(); // get selected value
+              if (url) { // require a URL
+                  window.location = url; // redirect
+              }
+              return false;
+          });
+        });
 
+        $(function(){
+          // bind change event to select
+          $('#sort-by-data').on('change', function () {
+              var url = $(this).val(); // get selected value
+              if (url) { // require a URL
+                  window.location = url; // redirect
+              }
+              return false;
+          });
+        });
+
+        $(function(){
+          // bind change event to select
+          $('#sort-data').on('change', function () {
+              var url = $(this).val(); // get selected value
+              if (url) { // require a URL
+                  window.location = url; // redirect
+              }
+              return false;
+          });
+        });
+    </script>
+    <script src="index.js"></script>
+    <script>function showTooltip(flag) {
+        switch (flag) {
+            case 1:
+                document.getElementById("tooltip1").classList.remove("hidden");
+                break;
+            case 2:
+                document.getElementById("tooltip2").classList.remove("hidden");
+                break;
+            case 3:
+                document.getElementById("tooltip3").classList.remove("hidden");
+                break;
+            }
+        }
+        function hideTooltip(flag) {
+            switch (flag) {
+                case 1:
+                    document.getElementById("tooltip1").classList.add("hidden");
+                    break;
+                case 2:
+                    document.getElementById("tooltip2").classList.add("hidden");
+                    break;
+                case 3:
+                    document.getElementById("tooltip3").classList.add("hidden");
+                break;
+            }
+        }
+    </script>
 @endsection
