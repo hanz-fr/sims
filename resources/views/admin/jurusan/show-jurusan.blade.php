@@ -1,7 +1,4 @@
 @extends('layouts.main-new')
-@section('content')
-
-@extends('layouts.main-new')
 
 @section('content')
 <style>
@@ -61,10 +58,11 @@
                 <tbody class="tw-text-base">
                     @foreach($jurusan as $j)
                     <tr class="tw-bg-white">
-                        <td class="tw-p-6">-</td>
-                        <td class="tw-p-6">{{ $j->nama }}</td>
-                        <td class="tw-p-6">{{ $j->konsentrasi }}</td>
-                        <td class="tw-p-6">{{ $j->desc }}</td>
+                        <td class="tw-p-8">{{ $j->id }}</td>
+                        <td class="tw-p-8">{{ $j->nama }}</td>
+                        <td class="tw-p-8">{{ $j->konsentrasi }}</td>
+                        <td class="tw-p-8 tw-w-1/3">{{ $j->desc }}</td>
+                        <td>-</td>
                         <td class="tw-flex tw-justify-center tw-gap-3 tw-py-2">
                           <a href="#" class="tw-text-kuning-500  hover:tw-text-white hover:tw-bg-kuning-500 hover:tw-shadow-md tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-w-12 tw-transition-all" title="Edit Data Siswa">
                               <i class="fa-solid fa-pen-to-square"></i>
@@ -74,6 +72,7 @@
                           </a>
                       </td>
                     </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
@@ -140,6 +139,3 @@
     false);
     </script>
 @endpush --}}
-
-
-@endsection

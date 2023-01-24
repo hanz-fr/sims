@@ -72,7 +72,7 @@ class AdminController extends Controller
 
         return view('admin.jurusan.show-jurusan', [
             'response' =>  json_decode($response),
-            'jurusan' => json_decode($response)->rows,
+            'jurusan' => json_decode($response)->jurusan->rows,
             'title' => 'Show All Jurusan',
             'active' => 'database',
         ]);

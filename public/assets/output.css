@@ -2077,10 +2077,6 @@ video {
   width: fit-content;
 }
 
-.tw-w-72 {
-  width: 18rem;
-}
-
 .tw-w-4\/5 {
   width: 80%;
 }
@@ -2107,6 +2103,10 @@ video {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+}
+
+.tw-w-72 {
+  width: 18rem;
 }
 
 .tw-w-9 {
@@ -2171,6 +2171,18 @@ video {
 
 .tw-w-52 {
   width: 13rem;
+}
+
+.tw-w-20 {
+  width: 5rem;
+}
+
+.tw-w-36 {
+  width: 9rem;
+}
+
+.tw-w-3 {
+  width: 0.75rem;
 }
 
 .tw-max-w-3xl {
@@ -2470,6 +2482,10 @@ video {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.tw-text-ellipsis {
+  text-overflow: ellipsis;
 }
 
 .tw-whitespace-nowrap {
@@ -2903,6 +2919,11 @@ video {
   background-color: rgb(255 117 117 / var(--tw-bg-opacity));
 }
 
+.tw-bg-slate-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
+}
+
 .tw-bg-slate-700 {
   --tw-bg-opacity: 1;
   background-color: rgb(51 65 85 / var(--tw-bg-opacity));
@@ -3298,10 +3319,6 @@ video {
 
 .tw-pl-12 {
   padding-left: 3rem;
-}
-
-.tw-pb-9 {
-  padding-bottom: 2.25rem;
 }
 
 .tw-pl-8 {
@@ -4884,24 +4901,12 @@ input[type="checkbox"]:checked {
     width: 6rem;
   }
 
-  .sm\:tw-w-1\/2 {
-    width: 50%;
-  }
-
-  .sm\:tw-w-72 {
-    width: 18rem;
-  }
-
-  .sm\:tw-w-20 {
-    width: 5rem;
-  }
-
-  .sm\:tw-w-4 {
-    width: 1rem;
-  }
-
   .sm\:tw-w-48 {
     width: 12rem;
+  }
+
+  .sm\:tw-w-1\/2 {
+    width: 50%;
   }
 
   .sm\:tw-grid-cols-1 {
@@ -5010,18 +5015,6 @@ input[type="checkbox"]:checked {
 
   .md\:tw-w-2\/3 {
     width: 66.666667%;
-  }
-
-  .md\:tw-w-72 {
-    width: 18rem;
-  }
-
-  .md\:tw-w-20 {
-    width: 5rem;
-  }
-
-  .md\:tw-w-10 {
-    width: 2.5rem;
   }
 
   .md\:tw-grid-cols-2 {
@@ -5134,24 +5127,16 @@ input[type="checkbox"]:checked {
     width: 8rem;
   }
 
+  .lg\:tw-w-64 {
+    width: 16rem;
+  }
+
   .lg\:tw-w-1\/4 {
     width: 25%;
   }
 
   .lg\:tw-w-3\/4 {
     width: 75%;
-  }
-
-  .lg\:tw-w-72 {
-    width: 18rem;
-  }
-
-  .lg\:tw-w-64 {
-    width: 16rem;
-  }
-
-  .lg\:tw-w-6 {
-    width: 1.5rem;
   }
 
   .lg\:tw-grid-cols-3 {
@@ -5189,17 +5174,5 @@ input[type="checkbox"]:checked {
 
   .lg\:tw-text-left {
     text-align: left;
-  }
-}
-
-@media (min-width: 1280px) {
-  .xl\:tw-w-72 {
-    width: 18rem;
-  }
-}
-
-@media (min-width: 1536px) {
-  .\32xl\:tw-w-72 {
-    width: 18rem;
   }
 }
