@@ -66,15 +66,27 @@ class AdminController extends Controller
 
 
     /* View All Jurusan */
-    public function viewAllJurusan() {
+    public function viewAllJurusan(Request $request) {
 
-        $response = Http::get("{$this->api_url}/jurusan");
+        //-- search & sorting --//
+        $search = $request->search;
+        $sort_by = $request->sort_by;
+        $sort = $request->sort;
+
+        //-- pagination --//
+        $page = $request->page;
+        $perPage = $request->perPage;
+
+        $response = Http::get("{$this->api_url}/jurusan?page={$page}&perPage={$perPage}&search={$search}&sort_by={$sort_by}&sort={$sort}");
+        $total_jurusan = json_decode(Http::get("{$this->api_url}/jurusan"))->data->count;
 
         return view('admin.jurusan.show-jurusan', [
-            'response' =>  json_decode($response),
-            'jurusan' => json_decode($response)->jurusan->rows,
             'title' => 'Show All Jurusan',
             'active' => 'database',
+            'response' =>  json_decode($response),
+            'jurusan' => json_decode($response)->data->rows,
+            'total' => json_decode($response)->data->count,
+            'total_jurusan' => $total_jurusan,
         ]);
 
     }    
