@@ -253,13 +253,13 @@
 
 
             <!-- User List - Column 3 -->
-            <div class="sims-card-1 tw-w-1/4 tw-my-0 tw-h-[500px]">
+            <div class="sims-card-1 tw-w-1/4 tw-my-0 tw-h-fit">
                 <div class="tw-flex tw-flex-col tw-h-1/2">
 
                     <!-- heading -->
-                    <div class="tw-flex tw-justify-around">
+                    <div class="tw-flex tw-justify-between tw-ml-7 tw-mr-5">
                         <div class="sims-heading-xl-black">User List</div>
-                        <button type="button" class="tw-bg-[#F1F1EF] hover:tw-bg-[#ebebeb] tw-px-3 tw-py-1 tw-rounded-lg sims-heading-sm-black tw-text-[#979797]">Show All</button>
+                        <a href="/account" class="tw-bg-[#F1F1EF] hover:tw-bg-[#ebebeb] hover:tw-text-gray-600 tw-px-3 tw-py-1 tw-rounded-lg sims-heading-sm-black tw-text-[#979797]">Show All</a>
                     </div>
 
                     <!-- spacing -->
@@ -267,21 +267,39 @@
 
                     <!-- content -->
                     {{-- SHOW 5 USERS ONLY --}}
-                    <div class="tw-flex tw-flex-col tw-gap-3 tw-mx-5">
+                    <div class="tw-flex tw-flex-col tw-gap-3 tw-pr-3 tw-mx-5 tw-overflow-y-scroll tw-h-[365px] tw-scrollbar-thumb-gray-400 tw-scrollbar-thumb-rounded-lg tw-scrollbar-thin tw-scrollbar-track-gray-100">
 
+                        @foreach ($users as $u )
                         <button class="tw-flex tw-justify-between sims-card-2">
                             <div class="tw-flex tw-gap-3">
                                 <i class="fa-solid fa-circle-user sims-icon-3xl"></i>
                                 <div class="tw-flex tw-flex-col tw-text-start">
-                                    <div class="sims-heading-sm tw-truncate sm:tw-w-24 lg:tw-w-32">John Doe</div>
-                                    <div class="sims-text-gray-xs">Tata Usaha</div>
+                                    <div class="sims-heading-sm tw-truncate sm:tw-w-24 lg:tw-w-32">{{ $u->nama }}</div>
+                                    <div class="sims-text-gray-xs">
+                                        @if ($u->role === 1)
+                                        Tata Usaha
+                                        @endif
+                                        @if ($u->role === 2)
+                                            Kesiswaan
+                                        @endif
+                                        @if ($u->role === 3)
+                                            Kurikulum
+                                        @endif
+                                        @if ($u->role === 4)
+                                            Wali Kelas
+                                        @endif
+                                        @if ($u->is_admin === 1)
+                                            Admin
+                                        @endif
+                                    </div>
                                 </div>
                             </div>
-                            <a href="#" class="tw-text-[#979797] tw-my-auto tw-h-fit">
+                            <a href="/account/{{ $u->id }}/edit" class="tw-text-[#979797] tw-my-auto tw-h-fit">
                                 <i class="fa-solid fa-pen-to-square hover:tw-text-[#FBB845] tw-transition-all"></i>
                             </a>
                         </button>
-
+                        @endforeach
+{{-- 
                         <button class="tw-flex tw-justify-between sims-card-2">
                             <div class="tw-flex tw-gap-3">
                                 <i class="fa-solid fa-circle-user sims-icon-3xl tw-text-[#FFA386]"></i>
@@ -335,7 +353,7 @@
                             <a href="#" class="tw-text-[#979797] tw-my-auto tw-h-fit">
                                 <i class="fa-solid fa-pen-to-square hover:tw-text-[#FBB845] tw-transition-all"></i>
                             </a>
-                        </button>
+                        </button> --}}
                     </div>
                 </div>
 
@@ -512,7 +530,7 @@
 
 
             <!-- Latest Activity - Column 2 -->
-            <div class="sims-card-1 tw-ml-5 tw-my-auto tw-h-[500px]">
+            <div class="sims-card-1 tw-ml-5 tw-my-auto tw-h-fit">
 
                 <!-- heading -->
                 <div class="tw-flex tw-justify-between tw-mx-10">

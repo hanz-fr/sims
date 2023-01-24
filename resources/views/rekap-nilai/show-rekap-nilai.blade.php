@@ -13,7 +13,7 @@
                 <div class="tw-my-auto tw-flex tw-gap-5 sm:tw-mt-2 lg:tw-my-auto">
                     {{-- <button id="copy_btn" type="button" value="copy" class="tw-bg-sims-new-500 tw-text-white hover:tw-text-white tw-font-satoshi hover:tw-bg-sims-new-700 tw-px-5 tw-py-2 tw-rounded-lg">Copy</button> --}}
 
-                    @cannot('kesiswaan')
+                    @cannot('kes')
                     <button type="button" data-modal-toggle="modal" class="tw-bg-sims-new-500 tw-text-white hover:tw-text-white  tw-font-sg hover:tw-bg-sims-new-700 tw-px-5 tw-py-2 tw-rounded-lg">Export</button>
 
                     <div id="modal" tabindex="-1"

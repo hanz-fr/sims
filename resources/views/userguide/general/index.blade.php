@@ -26,7 +26,7 @@
                 <div class="hc-title-3xl tw-flex tw-justify-center tw-mb-4"> 
                     <span class="tw-text-bluewood-700">Apa</span>&nbsp;itu SIMS?
                </div>
-               <div class="hc-text-base tw-text-justify">
+               <div class="hc-text-lg tw-text-justify">
                 Sistem Informasi Manajemen Data Siswa berbasis web yang dikembangkan 
                 sebagai alat bantu untuk sekolah dalam pengelolaan data induk siswa 
                 secara online. Pada dasarnya, SIMS memungkinkan sekolah untuk menyimpan 
@@ -47,23 +47,30 @@
 
            <div class="tw-grid tw-grid-cols-3 hover:tw-text-white">
 
-            <div class="hc-card-general">
-                <h4 class="hc-title-lg">Transformasi Digital</h4>
-                <p class="hc-text-base tw-mt-2">dari penginputan manual di buku induk menjadi penyimpanan data digital. 
-                Singkatnya, SIMS adalah Buku Induk Siswa versi digital.</p>
+                <div class="hc-card-general">
+                    <i class="fa-regular fa-computer-speaker tw-text-4xl tw-text-sims-new-500"></i>
+                    <h4 class="hc-title-lg tw-mt-3">Transformasi Digital</h4>
+                    <p class="tw-text-justify hc-text-base tw-mt-2">dari penginputan manual di buku induk menjadi penyimpanan data digital. 
+                    Singkatnya, SIMS adalah Buku Induk Siswa versi digital.</p>
+                </div>
+
+                <div class="hc-card-general">
+                    <i class="fa-light fa-screen-users tw-text-4xl tw-text-sims-new-500"></i>
+                    <h4 class="hc-title-lg tw-mt-3">Peningkatan kinerja operator sekolah</h4>
+                    <p class="tw-text-justify hc-text-base tw-mt-2">SIMS mampu meningkatkan kinerja operator sekolah, efektifitas, dan efisiensi waktu 
+                    khususnya dalam penginputan data induk.</p>
+                </div>
+                <div class="hc-card-general">
+                    <i class="fa-regular fa-people-arrows tw-text-4xl tw-text-sims-new-500"></i>
+                    <h4 class="hc-title-lg tw-mt-3">Peningkatan keefektifan komunikasi</h4>
+                    <p class="tw-text-justify hc-text-base tw-mt-2">SIMS memungkinkan data ditransfer dengan lancar dari satu bagian ke bagian lainnya. </p>
+                </div>
+
             </div>
 
-            <div class="hc-card-general">
-                <h4 class="hc-title-lg">Peningkatan kinerja operator sekolah</h4>
-                <p class="hc-text-base tw-mt-2">SIMS mampu meningkatkan kinerja operator sekolah, efektifitas, dan efisiensi waktu 
-                khususnya dalam penginputan data induk.</p>
+            <div class="tw-text-center hc-title-3xl tw-mt-20">
+                Manfaat SIMS
             </div>
-            <div class="hc-card-general">
-                <h4 class="hc-title-lg">Peningkatan keefektifan komunikasi antar bagian dalam sekolah</h4>
-                <p class="hc-text-base tw-mt-2">SIMS memungkinkan data ditransfer dengan lancar dari satu bagian ke bagian lainnya. </p>
-            </div>
-
-        </div>
         </div>
     </div>
 

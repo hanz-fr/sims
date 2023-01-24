@@ -90,7 +90,7 @@
                         </div>
                         @endcan
                         
-                        @cannot('kesiswaan')
+                        @cannot('kes')
                         <a href="/rekap-nilai/{{ $siswa->nis_siswa }}"
                             class="tw-text-white tw-font-sg tw-text-sm tw-bg-sims-new-500 hover:tw-text-white hover:tw-bg-sims-new-600 tw-rounded-lg tw-py-2 tw-px-3"><i
                                 class="fa-light fa-clipboard-list mr-2"></i>Rekap Nilai</a>

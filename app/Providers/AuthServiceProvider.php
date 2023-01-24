@@ -27,17 +27,32 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        Gate::define('tata usaha', fn(User $user) => $user->role === 1);
-        Gate::define('kesiswaan', fn(User $user) => $user->role === 2);
-        Gate::define('kurikulum', fn(User $user) => $user->role === 3);
-        Gate::define('wali kelas', fn(User $user) => $user->role === 4); 
+        Gate::define('kes', fn(User $user) => $user->role === 2); 
+        Gate::define('wali-kelas', fn(User $user) => $user->role === 4); 
+        Gate::define('admin', fn(User $user) => $user->is_admin === 1); 
+
+        Gate::define('tata usaha', function($user){
+            return in_array($user->role, [0, 1]);
+        });
+
+        Gate::define('kesiswaan', function($user){
+            return in_array($user->role, [0, 2]);
+        });
+
+        Gate::define('kurikulum', function($user){
+            return in_array($user->role, [0, 3]);
+        });
+
+        Gate::define('wali kelas', function($user){
+            return in_array($user->role, [0, 4]);
+        });
 
         Gate::define('rekap-siswa', function($user){
-            return in_array($user->role, [1, 2]);
+            return in_array($user->role, [0, 1, 2]);
         });
 
         Gate::define('rekap-nilai', function($user){
-            return in_array($user->role, [1, 4]);
+            return in_array($user->role, [0, 1, 4]);
         });
     }
 }

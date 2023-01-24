@@ -27,6 +27,9 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
 
     Route::get('/', [ApiController::class, 'mainDashboard']);
 
+    /* ADMIN DASHBOARD */
+
+    Route::get('/admin', [ApiController::class, 'adminDashboard'])->middleware('is_admin');
 
     /* ROUTE SISWA */
 
@@ -161,6 +164,9 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
     Route::get('/email/verify-after/{token}', [UserController::class, 'verifyAccountAfter'])->name('account.verify');
 
 
+    /* ACCOUNT MANAGEMENT */
+    Route::resource('/account', AccountController::class);
+
 
     /* HISTORY PAGE */
     Route::get('/history', [ApiController::class, 'viewHistory'])->name('history');   
@@ -199,7 +205,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin', 'revalidate']]
 
     /* ACCOUNT MANAGEMENT */
     Route::delete('/manage/destroy-all', [AccountController::class, 'destroyAll'])->name('manage.destroy-all');
-    Route::resource('/manage', AccountController::class);
 
 
     /* SISWA */
@@ -442,9 +447,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin', 'revalidate']]
 });
 
     /* ADMIN LOGIN */
-    Route::get('/admin', [AdminController::class, 'index'])->name('admin.login');
-    Route::post('/login-admin', [AdminController::class, 'handleLogin']);
-    Route::get('/admin/logout', [AdminController::class, 'logout']);
+    // Route::get('/admin', [AdminController::class, 'index'])->name('admin.login');
+    // Route::post('/login-admin', [AdminController::class, 'handleLogin']);
+    // Route::get('/admin/logout', [AdminController::class, 'logout']);
 
 
 // ROUTE USER SIMS (LOGIN & REGISTER)

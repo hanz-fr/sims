@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 use App\Models\User;
-use App\Models\Admin;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -15,26 +15,35 @@ class AccountController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() {
+    public function index(Request $request) {
 
-        $tatausaha = User::where('role',1)->count();
-        $kesiswaan = User::where('role',2)->count();
-        $kurikulum = User::where('role',3)->count();
-        $walikelas = User::where('role',4)->count();
-        $admin = Admin::all()->count();
+        $user = User::where([
+            ['nama', '!=', Null],
+            [function ($query) use ($request) {
+                if (($s = $request->s)) {
+                    $query->orWhere('nama', 'LIKE', '%' . $s . '%')
+                        ->orWhere('email', 'LIKE', '%' . $s . '%')
+                        ->orWhere('role', 'LIKE', '%' . $s . '%')
+                        ->get();
+                }
+            }]
+        ])->cursorPaginate(7);
 
-        $user = User::all();
-
-        return view('admin.dashboard', [
-            'title'     => 'Manage User SIMS',
-            'active'    => 'admin',
-            'user'      => $user,
-            'admin'     => $admin,
-            'tatausaha' => $tatausaha,
-            'kesiswaan' => $kesiswaan,
-            'kurikulum' => $kurikulum,
-            'walikelas' => $walikelas
-        ]);
+        if($user) {
+            return view('admin.account.manage-user', [
+                'title'     => 'Manage User SIMS',
+                'active'    => '',
+                'status'    => '',
+                'user'      => $user,
+            ]);
+        } else {
+            return view('induk.show-all', [
+                'status' => 'error',
+                'title' => 'Data Induk',
+                'active' => 'data-induk',
+                'message' => 'Halaman yang kamu cari tidak dapat ditemukan :('
+            ]);
+        }
 
     }
 
@@ -63,6 +72,7 @@ class AccountController extends Controller
             'nip'      => 'required|unique:users|min:9|max:18',
             'nama'     => 'required',
             'email'    => 'required|email|unique:users',
+            // 'no_telp'  => 'unique:users|min:10|max:16',
             'role'     => 'required',
             'password' => 'required|min:6',
         ]);
@@ -71,13 +81,15 @@ class AccountController extends Controller
             'nip'      => $request->nip,
             'nama'     => $request->nama,
             'email'    => $request->email,
+            // 'no_telp'  => $request->no_telp,
             'role'     => $request->role,
             'password' => Hash::make($request->password),
+            'token'    => Str::random(40),
         ]);
 
         $user->save();
          
-        return redirect()->route('manage.index')->with('success','Account created successfully');
+        return redirect()->route('account.index')->with('success','Account created successfully');
 
     }
 
@@ -126,16 +138,17 @@ class AccountController extends Controller
     public function update(Request $request, $id) {
 
         $this->validate($request,[
-            'nip'   => 'required|min:9|max:18',
-            'nama'  => 'required',
-            'email' => 'required|email'
+            'nip'      => 'required|min:9|max:18',
+            'nama'     => 'required',
+            'email'    => 'required|email',
+            // 'no_telp'  => 'unique:users|min:10|max:16'
         ]);
 
         $user = User::find($id);
 
         $user->update($request->all());
 
-        return redirect()->route('manage.index')->with('success','Account has been updated successfully');
+        return redirect()->route('account.index')->with('success','Account has been updated successfully');
 
     }
 
@@ -151,15 +164,8 @@ class AccountController extends Controller
 
         $user->delete();
 
-        return redirect()->route('manage.index')->with('success','Account has been deleted successfully');
+        return redirect()->route('account.index')->with('success','Account has been deleted successfully');
 
-    }
-
-    public function destroyAll() {
-
-        User::truncate(); 
-
-        return redirect()->route('manage.index')->with('success','All account has been deleted successfully');
     }
 }
  

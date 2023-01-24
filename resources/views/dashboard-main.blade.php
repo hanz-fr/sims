@@ -83,7 +83,7 @@
 
                     <div x-init="$dispatch('register', {id: 2})"  
                       x-intersect:enter.half="setIndex(1)" x-transition.duration.500ms>
-                      @cannot('wali kelas')
+                      @cannot('wali-kelas')
                         <a href="/rekap-jumlah-siswa">
                       @endcannot
                             <div class="card-dashboard tw-transition-all hover:tw-shadow-xl">
@@ -140,7 +140,7 @@
 
                     <div x-init="$dispatch('register', {id: 5})"  
                     x-intersect:enter.half="setIndex(4)" x-transition.duration.500ms>
-                    @cannot('wali kelas')
+                    @cannot('wali-kelas')
                       <a href="/data-tidak-naik">
                     @endcannot
                           <div class="card-dashboard tw-transition-all hover:tw-shadow-xl">
@@ -159,7 +159,7 @@
 
                     <div x-init="$dispatch('register', {id: 6})"  
                       x-intersect:enter.half="setIndex(5)" x-transition.duration.500ms>
-                      @cannot('wali kelas')
+                      @cannot('wali-kelas')
                         <a href="/rekap-jumlah-siswa">
                       @endcannot
                             <div class="card-dashboard tw-transition-all hover:tw-shadow-xl">

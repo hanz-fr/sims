@@ -47,6 +47,7 @@ class UserController extends Controller
             'nip'      => 'required|unique:users|min:9|max:18',
             'nama'     => 'required',
             'email'    => 'required|email|unique:users',
+            // 'no_telp'  => 'unique:users|min:10|max:16',
             'role'     => 'required',
             'password' => 'required|min:6',
         ]);
@@ -55,6 +56,7 @@ class UserController extends Controller
             'nip'      => $request->nip,
             'nama'     => $request->nama,
             'email'    => $request->email,
+            // 'no_telp'  => $request->no_telp,
             'role'     => $request->role,
             'password' => Hash::make($request->password),
             'token'    => Str::random(40),
@@ -141,7 +143,11 @@ class UserController extends Controller
         if (Auth::attempt($credentials, $remember_me)) {
             // $request->session()->regenerate();
 
-            return redirect()->intended('/')->with('success', 'Signed In');
+            if (auth()->user()->is_admin == 1) {
+                return redirect()->intended('/admin')->with('success', 'Signed In');
+            }else{
+                return redirect()->intended('/')->with('success', 'Signed In');
+            }
         }
 
         if($request->get('remember')):

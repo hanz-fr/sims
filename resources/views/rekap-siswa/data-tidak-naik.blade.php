@@ -215,7 +215,7 @@
             </div>
 
             <div class="tw-flex md:tw-justify-center tw-items-center tw-mr-7">
-                @cannot('wali kelas')
+                @cannot('wali-kelas')
                 <button type="button" data-modal-toggle="export-print" title="Export ke print"><i class="fa-solid fa-print btn-export"></i></button>
                     
                 <div id="export-print" tabindex="-1"

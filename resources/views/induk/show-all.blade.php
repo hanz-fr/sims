@@ -711,7 +711,7 @@
                         <td class="tw-p-6">{{ $s->jenis_kelamin }}</td>
                         <td class="tw-p-6">{{ $s->KelasId }}</td>
                         <td class="tw-flex tw-justify-center tw-gap-3 tw-py-2">
-                            @cannot('kesiswaan')
+                            @cannot('kes')
                             <a href="/rekap-nilai/{{ $s->nis_siswa }}" class="tw-text-sims-new-500 tw-justify-center tw-items-center  hover:tw-text-white hover:tw-bg-sims-new-500 hover:tw-shadow-md tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-w-12 tw-transition-all" title="Rekap Nilai">
                                 <i class="fa-regular fa-clipboard"></i>
                             </a>

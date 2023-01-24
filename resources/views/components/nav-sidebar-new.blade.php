@@ -20,7 +20,11 @@
 
                     <!-- Homepage button -->
                     <div x-data="{ tooltip: 'Dashboard' }">
-                        <a href="/">
+                        @if (auth()->user()->is_admin === 1)
+                            <a href="/admin">
+                        @else
+                            <a href="/">
+                        @endif
                             <button x-tooltip.placement.right.delay.500-100="tooltip" type="button"
                                 class="{{ ($active === "dashboard-main") ? 'tw-bg-sims-new-500 tw-text-white' : 'tw-text-sims-new-500' }} tw-p-5 tw-transition-colors tw-rounded-xl hover:tw-bg-sims-new-500 hover:tw-text-white focus:tw-outline-none">
                                 <i class="fa-solid fa-house tw-text-xl"></i>
@@ -40,7 +44,7 @@
                     </div>
 
 
-                    @cannot('wali kelas')
+                    @cannot('wali-kelas')
                     <!-- Rekap Siswa button -->
                     <div x-data="{ tooltip: 'Rekap Siswa' }">
                         <a href="/rekap-siswa">

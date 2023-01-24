@@ -41,7 +41,7 @@
     {{-- Rekap Data Jumlah Siswa --}}
     <div class="tw-flex lg:tw-flex-row sm:tw-flex-col tw-gap-8 tw-my-8">
       <div class="tw-bg-white tw-flex tw-flex-col tw-rounded-xl tw-pt-3 tw-pb-12 tw-px-16 tw-shadow-lg tw-font-satoshi tw-w-full">
-        @cannot('wali kelas')
+        @cannot('wali-kelas')
         <div class="tw-float-right -tw-mr-8">
           <a href="/rekap-jumlah-siswa" class="tw-text-sims-new-500 hover:tw-text-sims-new-700 tw-pr-2 tw-mt-2 tw-text-sm tw-float-right"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
         </div>
@@ -94,7 +94,7 @@
               <div class="tw-text-base tw-text-gray-500 tw-font-normal tw-mt-3 group-hover:tw-text-white">Data Induk Siswa</div>
             </div>
           </a>
-          @cannot('wali kelas')
+          @cannot('wali-kelas')
           <a href="/data-tidak-naik" class="tw-group">
             <div class="tw-flex tw-flex-col tw-justify-center tw-text-center tw-border-2 tw-py-4 tw-bg-white tw-rounded-lg group-hover:tw-text-white group-hover:tw-bg-sims-new-500 tw-transition-all tw-duration-300">
               <div class="tw-text-2xl tw-text-sims-new-500 group-hover:tw-text-white"><i class="fa-solid fa-clipboard-list"></i></div>

@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -23,11 +24,15 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-
-        DB::table('admins')->insert([
-            'name' => 'admin',
-            'email' => 'admin@gmail.com',
+        
+        User::create([
+            'nip'      => '123123123',
+            'nama'     => 'Supra Admin',
+            'email'    => 'contactsims11@gmail.com',
+            'role'     => 0,
+            'is_admin' => true,
             'password' => bcrypt('123123'),
+            'token'    => Str::random(40),
         ]);
     }
 }

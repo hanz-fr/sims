@@ -80,11 +80,86 @@ class ApiController extends Controller
 
         if ($response->successful()) {
 
+            return view('dashboard.main', [
+                'title' => 'Dashboard',
+                'active' => 'dashboard-main',
+                'message' => $message,
+                'userHistory' => $userHistory,
+                'mutasi' => json_decode($response)->mutasi->count,
+                'kelas' => json_decode($response)->kelas->count,
+                'siswa' => json_decode($response)->siswa->count,
+                'siswaJurusan' => json_decode($response)->siswa->rows,
+                'mapel' => json_decode($response)->mapel->count,
+                'jurusan' => json_decode($response)->jurusan->count,
+                'allJurusan' => json_decode($allJurusan)->jurusan->rows,
+                'alumni' => json_decode($response)->alumni->count,
+                'siswaMasuk' => json_decode($response)->siswaMasuk->count,
+                'siswaKeluar' => json_decode($response)->siswaKeluar->count,
+                'siswaTdkNaik' => json_decode($response)->siswaTdkNaik->count,
+                'jumlahSiswaX' =>  json_decode($response)->jumlahSiswaX->count,
+                'jumlahSiswaXI' =>  json_decode($response)->jumlahSiswaXI->count,
+                'jumlahSiswaXII' =>  json_decode($response)->jumlahSiswaXII->count,
+                'jumlahSiswaAKL' => json_decode($response)->jumlahSiswaAKL->count,
+                'jumlahSiswaDKV' => json_decode($response)->jumlahSiswaDKV->count,
+                'jumlahSiswaMPLB' => json_decode($response)->jumlahSiswaMPLB->count,
+                'jumlahSiswaPM' => json_decode($response)->jumlahSiswaPM->count,
+                'jumlahSiswaPPLG' => json_decode($response)->jumlahSiswaPPLG->count,
+                'jumlahSiswaTJKT' => json_decode($response)->jumlahSiswaTJKT->count,
+                'jumlahSiswaMLOG' => json_decode($response)->jumlahSiswaMLOG->count,
+            ]);
+        } else {
+            return view('induk.show-all', [
+                'status' => 'error',
+                'title' => 'Data Induk',
+                'active' => 'data-induk',
+                'message' => 'Halaman yang kamu cari tidak dapat ditemukan :('
+            ]);
+        }
+    }
+
+    public function adminDashboard() 
+    {
+        
+        $message = ''; // greetings message
+        $user = User::findOrFail(Auth::id()); // current logged in user
+        $users = User::all();
+        $current_year = Carbon::now()->year; // current year
+
+        $response = Http::get("{$this->api_url}/dashboard");
+        $allJurusan = Http::get("{$this->api_url}/jurusan");
+        $userHistory = json_decode(Http::get("{$this->api_url}/history/$user->nama/all?year={$current_year}"));
+
+        /* This sets the $time variable to the current hour in the 24 hour clock format */
+        $time = date("H");
+        /* Set the $timezone variable to become the current timezone */
+        $timezone = date("e");
+
+        /* If the time is less than 1200 hours, show good morning */
+        if ($time < "12") {
+            $message = "Selamat Pagi";
+        } else
+        /* If the time is grater than or equal to 1200 hours, but less than 1700 hours, so good afternoon */
+        if ($time >= "12" && $time < "15") {
+            $message = "Selamat Siang";
+        } else
+        /* Should the time be between or equal to 1700 and 1900 hours, show good evening */
+        if ($time >= "15" && $time < "18") {
+            $message = "Selamat Sore";
+        } else
+        /* Finally, show good night if the time is greater than or equal to 1900 hours */
+        if ($time >= "18") {
+            $message = "Selamat Malam";
+        }
+
+
+        if ($response->successful()) {
+
             return view('dashboard.admin-main', [
                 'title' => 'Dashboard',
                 'active' => 'dashboard-main',
                 'message' => $message,
                 'userHistory' => $userHistory,
+                'users' => $users,
                 'mutasi' => json_decode($response)->mutasi->count,
                 'kelas' => json_decode($response)->kelas->count,
                 'siswa' => json_decode($response)->siswa->count,
