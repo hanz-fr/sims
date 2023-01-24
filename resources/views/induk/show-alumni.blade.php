@@ -142,7 +142,7 @@
                                 @elseif($_GET['sort_by'] == 'nisn_siswa')
                                 NISN (selected)
                                 @elseif($_GET['sort_by'] == 'nama_siswa')
-                                Nama Siswa (selected)
+                                Nama Peserta Didik (selected)
                                 @elseif($_GET['sort_by'] == 'jenis_kelamin')
                                 Gender (selected)
                                 @elseif($_GET['sort_by'] == 'KelasId')

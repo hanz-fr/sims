@@ -80,7 +80,7 @@ class ApiController extends Controller
 
         if ($response->successful()) {
 
-            return view('dashboard.admin-main', [
+            return view('dashboard.main', [
                 'title' => 'Dashboard',
                 'active' => 'dashboard-main',
                 'message' => $message,
@@ -91,7 +91,7 @@ class ApiController extends Controller
                 'siswaJurusan' => json_decode($response)->siswa->rows,
                 'mapel' => json_decode($response)->mapel->count,
                 'jurusan' => json_decode($response)->jurusan->count,
-                'allJurusan' => json_decode($allJurusan)->jurusan->rows,
+                'allJurusan' => json_decode($allJurusan)->data->rows,
                 'alumni' => json_decode($response)->alumni->count,
                 'siswaMasuk' => json_decode($response)->siswaMasuk->count,
                 'siswaKeluar' => json_decode($response)->siswaKeluar->count,
