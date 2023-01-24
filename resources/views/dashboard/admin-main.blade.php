@@ -531,7 +531,7 @@
 
                         <div class="tw-flex tw-flex-col tw-my-auto">
                             <div class="sims-heading-md-black">Ibnu Asep bin Budi</div>
-                            <div class="sims-text-regular-sm tw-font-normal tw-truncate tw-w-72">Create Siswa dengan NIS : 200912381239</div>
+                            <div class="sims-text-regular-sm tw-font-normal tw-truncate lg:tw-w-64 sm:tw-w-48">Create Siswa dengan NIS : 200912381239</div>
                         </div>
 
                     </div>
@@ -547,7 +547,7 @@
 
                         <div class="tw-flex tw-flex-col tw-my-auto">
                             <div class="sims-heading-md-black">Ibnu Asep bin Budi</div>
-                            <div class="sims-text-regular-sm tw-font-normal tw-truncate tw-w-72">Update Siswa dengan NIS : 200912381239</div>
+                            <div class="sims-text-regular-sm tw-font-normal tw-truncate lg:tw-w-64 sm:tw-w-48">Update Siswa dengan NIS : 200912381239</div>
                         </div>
 
                     </div>
@@ -563,7 +563,7 @@
 
                         <div class="tw-flex tw-flex-col tw-my-auto">
                             <div class="sims-heading-md-black">Ibnu Asep bin Budi</div>
-                            <div class="sims-text-regular-sm tw-font-normal tw-truncate tw-w-72">Export Data Induk dengan tipe file PDF</div>
+                            <div class="sims-text-regular-sm tw-font-normal tw-truncate lg:tw-w-64 sm:tw-w-48">Export Data Induk dengan tipe file PDF</div>
                         </div>
 
                     </div>
@@ -579,7 +579,7 @@
 
                         <div class="tw-flex tw-flex-col tw-my-auto">
                             <div class="sims-heading-md-black">Ibnu Asep bin Budi</div>
-                            <div class="sims-text-regular-sm tw-font-normal tw-truncate tw-w-72">Export Data Induk dengan tipe file Excel</div>
+                            <div class="sims-text-regular-sm tw-font-normal tw-truncate lg:tw-w-64 sm:tw-w-48">Export Data Induk dengan tipe file Excel</div>
                         </div>
 
                     </div>

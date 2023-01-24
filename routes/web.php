@@ -177,7 +177,7 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
 
 
 /* ROUTE SUPER ADMIN */
-Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin', 'revalidate']], function () {
+Route::group(['prefix' => 'admin', ['revalidate']], function () {
 
     // /* ADMIN DASHBOARD */
     // Route::get('/dashboard', function () {
@@ -195,6 +195,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin', 'revalidate']]
             'active' => 'database'
         ]);
     });
+
     
 
     /* ACCOUNT MANAGEMENT */
@@ -256,12 +257,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin', 'revalidate']]
 
 
     /* JURUSAN */
-    Route::get('/jurusan', function () {
-        return view('admin.jurusan.show-jurusan', [
-            'title' => 'Jurusan',
-            'active' => 'database'
-        ]);
-    });
+    Route::get('/jurusan',[AdminController::class, 'viewAllJurusan']);
 
     Route::get('/detail-jurusan', function () {
         return view('admin.jurusan.show-detail-jurusan', [
