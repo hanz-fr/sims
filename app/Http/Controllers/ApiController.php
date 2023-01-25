@@ -91,7 +91,7 @@ class ApiController extends Controller
                 'siswaJurusan' => json_decode($response)->siswa->rows,
                 'mapel' => json_decode($response)->mapel->count,
                 'jurusan' => json_decode($response)->jurusan->count,
-                'allJurusan' => json_decode($allJurusan)->jurusan->rows,
+                'allJurusan' => json_decode($allJurusan)->data->rows,
                 'alumni' => json_decode($response)->alumni->count,
                 'siswaMasuk' => json_decode($response)->siswaMasuk->count,
                 'siswaKeluar' => json_decode($response)->siswaKeluar->count,
@@ -123,6 +123,10 @@ class ApiController extends Controller
         $message = ''; // greetings message
         $user = User::findOrFail(Auth::id()); // current logged in user
         $users = User::all();
+        $tatausaha = User::where('role', 1)->count();
+        $kesiswaan = User::where('role', 2)->count();
+        $kurikulum = User::where('role', 3)->count();
+        $walikelas = User::where('role', 4)->count();
         $current_year = Carbon::now()->year; // current year
 
         $response = Http::get("{$this->api_url}/dashboard");
@@ -160,6 +164,10 @@ class ApiController extends Controller
                 'message' => $message,
                 'userHistory' => $userHistory,
                 'users' => $users,
+                'tatausaha' => $tatausaha,
+                'kesiswaan' => $kesiswaan,
+                'kurikulum' => $kurikulum,
+                'walikelas' => $walikelas,
                 'mutasi' => json_decode($response)->mutasi->count,
                 'kelas' => json_decode($response)->kelas->count,
                 'siswa' => json_decode($response)->siswa->count,
@@ -2823,6 +2831,41 @@ class ApiController extends Controller
         
         return Excel::download(new JumlahSiswaExport, $datajumlah);
 
+    }
+
+
+    public function viewAllKelas() {
+        
+        return view('admin.kelas.show-all-kelas', [
+            'title' => 'Data Semua Kelas',
+            'active' => '',
+        ]);
+    }
+
+    public function createKelas() {
+
+        return view('admin.kelas.tambah-kelas-admin', [
+            'title' => 'Tambah Data Kelas',
+            'active' => ''
+        ]);
+    }
+
+
+    public function editKelas() {
+
+        return view('admin.kelas.edit-kelas-admin', [
+            'title' => 'Edit Data Kelas',
+            'active' => ''
+        ]);
+    }
+
+
+    public function viewKelas() {
+
+        return view('admin.kelas.detail-kelas', [
+            'title' => 'Detail Data Kelas',
+            'active' => ''
+        ]);
     }
 
 

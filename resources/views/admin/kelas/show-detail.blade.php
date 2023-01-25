@@ -1,7 +1,8 @@
-@extends('layouts.admin')
+@extends('layouts.main-new')
+
 @section('content')
 
-<div class="tw-mx-10 tw-w-screen">
+<div class="tw-mx-10">
     <div class="tw-flex tw-mt-8">
         <a href="/admin/kelas"><i class="fa-solid fa-chevron-left tw-text-2xl tw-text-gray-400 hover:tw-text-gray-600"></i></a>
         <i class="fa-solid fa-shapes tw-text-sims-300 tw-text-2xl tw-ml-3"></i>

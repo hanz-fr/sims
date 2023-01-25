@@ -213,7 +213,7 @@
                         <div class="tw-flex tw-gap-2">
                             <i class="fa-solid fa-user sims-icon-3xl"></i>
                             <div class="tw flex tw-flex-col">
-                                <div class="sims-heading-sm">12</div>
+                                <div class="sims-heading-sm">{{ $tatausaha }}</div>
                                 <div class="sims-text-black-sm tw-font-normal">Tata Usaha</div>
                             </div>
                         </div>
@@ -223,7 +223,7 @@
                         <div class="tw-flex tw-gap-2">
                             <i class="fa-solid fa-user sims-icon-3xl tw-text-[#FF869C]"></i>
                             <div class="tw flex tw-flex-col">
-                                <div class="sims-heading-sm tw-text-[#FF869C]">12</div>
+                                <div class="sims-heading-sm tw-text-[#FF869C]">{{ $kesiswaan }}</div>
                                 <div class="sims-text-black-sm tw-font-normal">Kesiswaan</div>
                             </div>
                         </div>
@@ -233,7 +233,7 @@
                         <div class="tw-flex tw-gap-2">
                             <i class="fa-solid fa-user sims-icon-3xl tw-text-[#FFA386]"></i>
                             <div class="tw flex tw-flex-col">
-                                <div class="sims-heading-sm tw-text-[#FFA386]">12</div>
+                                <div class="sims-heading-sm tw-text-[#FFA386]">{{ $walikelas }}</div>
                                 <div class="sims-text-black-sm tw-font-normal">Wali Kelas</div>
                             </div>
                         </div>
@@ -243,7 +243,7 @@
                         <div class="tw-flex tw-gap-2">
                             <i class="fa-solid fa-user sims-icon-3xl tw-text-[#B4B8BC]"></i>
                             <div class="tw flex tw-flex-col">
-                                <div class="sims-heading-sm tw-text-[#B4B8BC]">12</div>
+                                <div class="sims-heading-sm tw-text-[#B4B8BC]">{{ $kurikulum }}</div>
                                 <div class="sims-text-black-sm tw-font-normal">Kurikulum</div>
                             </div>
                         </div>
@@ -299,61 +299,7 @@
                             </a>
                         </button>
                         @endforeach
-{{-- 
-                        <button class="tw-flex tw-justify-between sims-card-2">
-                            <div class="tw-flex tw-gap-3">
-                                <i class="fa-solid fa-circle-user sims-icon-3xl tw-text-[#FFA386]"></i>
-                                <div class="tw-flex tw-flex-col tw-text-start">
-                                    <div class="sims-heading-sm tw-truncate sm:tw-w-24 lg:tw-w-32 tw-text-[#FFA386]">Simeon
-                                        Gabe</div>
-                                    <div class="sims-text-gray-xs">Wali Kelas</div>
-                                </div>
-                            </div>
-                            <a href="#" class="tw-text-[#979797] tw-my-auto tw-h-fit">
-                                <i class="fa-solid fa-pen-to-square hover:tw-text-[#FBB845] tw-transition-all"></i>
-                            </a>
-                        </button>
 
-                        <button class="tw-flex tw-justify-between sims-card-2">
-                            <div class="tw-flex tw-gap-3">
-                                <i class="fa-solid fa-circle-user sims-icon-3xl tw-text-[#B4B8BC]"></i>
-                                <div class="tw-flex tw-flex-col tw-text-start">
-                                    <div class="sims-heading-sm tw-truncate sm:tw-w-24 lg:tw-w-32 tw-text-[#B4B8BC]">
-                                        Asterisk</div>
-                                    <div class="sims-text-gray-xs">Kurikulum</div>
-                                </div>
-                            </div>
-                            <a href="#" class="tw-text-[#979797] tw-my-auto tw-h-fit">
-                                <i class="fa-solid fa-pen-to-square hover:tw-text-[#FBB845] tw-transition-all"></i>
-                            </a>
-                        </button>
-
-                        <button class="tw-flex tw-justify-between sims-card-2">
-                            <div class="tw-flex tw-gap-3">
-                                <i class="fa-solid fa-circle-user sims-icon-3xl tw-text-[#FF869C]"></i>
-                                <div class="tw-flex tw-flex-col tw-text-start">
-                                    <div class="sims-heading-sm tw-truncate sm:tw-w-24 lg:tw-w-32 tw-text-[#FF869C]">Ibnu
-                                        Johan bin Asep lorem ipsum dolor sit amet </div>
-                                    <div class="sims-text-gray-xs">Kesiswaan</div>
-                                </div>
-                            </div>
-                            <a href="#" class="tw-text-[#979797] tw-my-auto tw-h-fit">
-                                <i class="fa-solid fa-pen-to-square hover:tw-text-[#FBB845] tw-transition-all"></i>
-                            </a>
-                        </button>
-
-                        <button class="tw-flex tw-justify-between sims-card-2">
-                            <div class="tw-flex tw-gap-3">
-                                <i class="fa-solid fa-circle-user sims-icon-3xl"></i>
-                                <div class="tw-flex tw-flex-col tw-text-start">
-                                    <div class="sims-heading-sm tw-truncate sm:tw-w-24 lg:tw-w-32">John Doe</div>
-                                    <div class="sims-text-gray-xs">Tata Usaha</div>
-                                </div>
-                            </div>
-                            <a href="#" class="tw-text-[#979797] tw-my-auto tw-h-fit">
-                                <i class="fa-solid fa-pen-to-square hover:tw-text-[#FBB845] tw-transition-all"></i>
-                            </a>
-                        </button> --}}
                     </div>
                 </div>
 
@@ -663,7 +609,7 @@
                 ],
                 datasets: [{
                     label: 'Jumlah',
-                    data: [8, 3, 2, 10],
+                    data: [{{ $tatausaha }}, {{ $kesiswaan }}, {{ $walikelas }}, {{ $kurikulum }}],
                     backgroundColor: [
                         'rgb(56, 148, 163)',
                         'rgb(255, 134, 156)',

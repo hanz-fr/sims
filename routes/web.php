@@ -129,6 +129,10 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
     Route::get('/angkatan', [ApiController::class, 'getAngkatan']);
 
 
+    Route::get('/kelas', [ApiController::class, 'viewAllKelas']);
+    Route::get('/kelas/create', [ApiController::class, 'createKelas']);
+    Route::get('/kelas/edit', [ApiController::class, 'editKelas']);
+    Route::get('/kelas/show', [ApiController::class, 'viewKelas']);
 
     /* ALUMNI */
 
@@ -165,7 +169,7 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
 
 
     /* ACCOUNT MANAGEMENT */
-    Route::resource('/account', AccountController::class);
+    Route::resource('/account', AccountController::class)->middleware('is_admin');
 
 
     /* HISTORY PAGE */
@@ -232,33 +236,33 @@ Route::group(['prefix' => 'admin', ['revalidate']], function () {
     
 
     /* KELAS */
-    Route::get('/kelas', function () {
-        return view('admin.kelas.show-all-kelas', [
-            'title' => 'List All Kelas',
-            'active' => 'database'
-        ]);
-    });
+    // Route::get('/kelas', function () {
+    //     return view('admin.kelas.show-all-kelas', [
+    //         'title' => 'List All Kelas',
+    //         'active' => 'database'
+    //     ]);
+    // });
 
-    Route::get('/detail-kelas', function () {
-        return view('admin.kelas.detail-kelas', [
-            'title' => 'Detail Kelas',
-            'active' => 'database'
-        ]);
-    });
+    // Route::get('/detail-kelas', function () {
+    //     return view('admin.kelas.detail-kelas', [
+    //         'title' => 'Detail Kelas',
+    //         'active' => 'database'
+    //     ]);
+    // });
 
-    Route::get('/kelas/create', function () {
-        return view('admin.kelas.tambah-kelas-admin', [
-            'title' => 'Create Kelas',
-            'active' => 'database'
-        ]);
-    });
+    // Route::get('/kelas/create', function () {
+    //     return view('admin.kelas.tambah-kelas-admin', [
+    //         'title' => 'Create Kelas',
+    //         'active' => 'database'
+    //     ]);
+    // });
 
-    Route::get('/kelas/edit', function () {
-        return view('admin.kelas.edit-kelas-admin', [
-            'title' => 'Edit Kelas',
-            'active' => 'database'
-        ]);
-    });
+    // Route::get('/kelas/edit', function () {
+    //     return view('admin.kelas.edit-kelas-admin', [
+    //         'title' => 'Edit Kelas',
+    //         'active' => 'database'
+    //     ]);
+    // });
 
 
     /* JURUSAN */

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('nip');
             $table->string('nama');
             $table->string('email')->unique();
-            // $table->string('no_telp')->unique()->nullable();
+            $table->string('no_telp')->unique()->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('token');
             $table->string('password');

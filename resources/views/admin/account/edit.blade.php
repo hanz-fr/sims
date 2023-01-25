@@ -7,7 +7,7 @@
         <h3 class="tw-font-satoshi tw-font-semibold tw-mt-6 tw-mb-14 tw-text-sims-new-500 tw-text-center">Edit Akun</h3>
         <form action="/account/{{ $user->id }}" method="POST">
           @csrf
-          @method('POST')
+          @method('PUT')
         
             <div class="tw-flex tw-flex-col tw-space-y-6">
                 <div class="tw-mx-auto md:tw-w-2/3 sm:tw-w-1/2">
@@ -34,6 +34,15 @@
                     </label>
                     <input value="{{ $user->email }}" @error('email') is-invalid @enderror class="input-data-minimal tw-w-full" id="email" name="email" type="email">
                     @error('email')
+                        <small class="tw-text-red-500">{{ $message }}</small>
+                    @enderror
+                </div>
+                <div class="tw-mx-auto md:tw-w-2/3 sm:tw-w-1/2">
+                    <label class="label-input" for="no_telp">
+                        Nomor Telepon
+                    </label>
+                    <input value="{{ $user->no_telp }}" @error('no_telp') is-invalid @enderror class="input-data-minimal tw-w-full" id="no_telp" name="no_telp" type="text">
+                    @error('no_telp')
                         <small class="tw-text-red-500">{{ $message }}</small>
                     @enderror
                 </div>

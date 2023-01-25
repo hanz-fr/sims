@@ -54,6 +54,15 @@
                     @enderror
                 </div>
             </div>
+            <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
+                <div class="tw-w-full tw-px-3">
+                    <label class="label-input" for="no_telp">Nomor Telepon</label>
+                    <input class="input-data-minimal" id="no_telp" @error('no_telp') is-invalid @enderror type="text" name="no_telp" value="{{ auth()->user()->no_telp }}">
+                    @error('no_telp')
+                        <div class="tw-text-sm tw-text-pink-700 tw-mt-1 tw-font-ubuntu">{{ $message }}</div>
+                    @enderror
+                </div>
+            </div>
             <div class="tw-mx-auto tw-text-center tw-mt-10 ">
                 <button type="submit" class="tw-bg-sims-new-500 tw-font-medium tw-font-satoshi tw-text-white tw-py-3 tw-px-6 tw-rounded-lg">Simpan Perubahan</button>
             </div>
