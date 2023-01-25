@@ -264,12 +264,7 @@ Route::group(['prefix' => 'admin', ['revalidate']], function () {
     /* JURUSAN */
     Route::get('/jurusan',[AdminController::class, 'viewAllJurusan']);
 
-    Route::get('/detail-jurusan', function () {
-        return view('admin.jurusan.show-detail-jurusan', [
-            'title' => 'Detail Jurusan',
-            'active' => 'database'
-        ]);
-    });
+    Route::get('/detail-jurusan', [AdminController::class, 'viewJurusan']);
 
     Route::get('/jurusan/create', function () {
         return view('admin.jurusan.create-show-jurusan', [
@@ -287,12 +282,7 @@ Route::group(['prefix' => 'admin', ['revalidate']], function () {
 
 
     // MAPEL
-    Route::get('/mata-pelajaran', function () {
-        return view('admin.all-mapel.all-mapel', [
-            'title' => 'Mata Pelajaran',
-            'active' => 'database'
-        ]);
-    });
+    Route::get('/mata-pelajaran', [AdminController::class, 'viewAllMapel']);
 
     Route::get('/detail-mata-pelajaran', function () {
         return view('admin.all-mapel.detail-all-mapel', [
@@ -317,12 +307,7 @@ Route::group(['prefix' => 'admin', ['revalidate']], function () {
 
 
     /* MAPEL JURUSAN */
-    Route::get('/mapel-jurusan', function () {
-        return view('admin.mapel-jurusan.mapel-jurusan', [
-            'title' => 'Mata Pelajaran Jurusan',
-            'active' => 'database'
-        ]);
-    });
+    Route::get('/mapel-jurusan', [AdminController::class, 'viewAllMapelJurusan']);
 
     Route::get('/detail-mapel-jurusan', function () {
         return view('admin.mapel-jurusan.detail-mapel-jurusan', [

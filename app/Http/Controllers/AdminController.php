@@ -81,7 +81,7 @@ class AdminController extends Controller
         $total_jurusan = json_decode(Http::get("{$this->api_url}/jurusan"))->data->count;
 
         return view('admin.jurusan.show-jurusan', [
-            'title' => 'Show All Jurusan',
+            'title' => 'Jurusan',
             'active' => 'database',
             'response' =>  json_decode($response),
             'jurusan' => json_decode($response)->data->rows,
@@ -89,6 +89,71 @@ class AdminController extends Controller
             'total_jurusan' => $total_jurusan,
         ]);
 
-    }    
+    }
+
+
+    /* View Detail Jurusan */
+    public function viewJurusan(Request $request) {
+
+        return view('admin.jurusan.show-detail-jurusan', [
+            'title' => 'Detail Jurusan',
+            'active' => 'database'
+        ]);
+
+    }
+    
+    
+    /* View All Mapel */
+    public function viewAllMapel(Request $request) {
+
+        //-- search & sorting --//
+        $search = $request->search;
+        $sort_by = $request->sort_by;
+        $sort = $request->sort;
+
+        //-- pagination --//
+        $page = $request->page;
+        $perPage = $request->perPage;
+
+        $response = Http::get("{$this->api_url}/mapel?page={$page}&perPage={$perPage}&search={$search}&sort_by={$sort_by}&sort={$sort}");
+        $total_mapel = json_decode(Http::get("{$this->api_url}/mapel"))->data->count;
+
+        return view('admin.all-mapel.all-mapel', [
+            'title' => 'Mata Pelajaran',
+            'active' => 'database',
+            'response' =>  json_decode($response),
+            'mapel' => json_decode($response)->data->rows,
+            'total' => json_decode($response)->data->count,
+            'total_mapel' => $total_mapel,
+        ]); 
+
+    }
+
+
+    /* View All Mapel Jurusan */
+    public function viewAllMapelJurusan(Request $request) {
+
+        //-- search & sorting --//
+        $search = $request->search;
+        $sort_by = $request->sort_by;
+        $sort = $request->sort;
+
+        //-- pagination --//
+        $page = $request->page;
+        $perPage = $request->perPage;
+
+        $response = Http::get("{$this->api_url}/mapel-jurusan?page={$page}&perPage={$perPage}&search={$search}&sort_by={$sort_by}&sort={$sort}");
+        $total_mapel_jurusan = json_decode(Http::get("{$this->api_url}/mapel-jurusan"))->data->count;
+
+        return view('admin.mapel-jurusan.mapel-jurusan', [
+            'title' => 'Mata Pelajaran Jurusan',
+            'active' => 'database',
+            'response' =>  json_decode($response),
+            'mapel_jurusan' => json_decode($response)->data->rows,
+            'total' => json_decode($response)->data->count,
+            'total_mapel_jurusan' => $total_mapel_jurusan,
+        ]); 
+
+    }
 
 }
