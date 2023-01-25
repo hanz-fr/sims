@@ -263,8 +263,7 @@ Route::group(['prefix' => 'admin', ['revalidate']], function () {
 
     /* JURUSAN */
     Route::get('/jurusan',[AdminController::class, 'viewAllJurusan']);
-
-    Route::get('/detail-jurusan', [AdminController::class, 'viewJurusan']);
+    Route::get('/detail-jurusan/{id}', [AdminController::class, 'viewJurusan']);
 
     Route::get('/jurusan/create', function () {
         return view('admin.jurusan.create-show-jurusan', [

@@ -80,25 +80,44 @@ class AdminController extends Controller
         $response = Http::get("{$this->api_url}/jurusan?page={$page}&perPage={$perPage}&search={$search}&sort_by={$sort_by}&sort={$sort}");
         $total_jurusan = json_decode(Http::get("{$this->api_url}/jurusan"))->data->count;
 
-        return view('admin.jurusan.show-jurusan', [
-            'title' => 'Jurusan',
-            'active' => 'database',
-            'response' =>  json_decode($response),
-            'jurusan' => json_decode($response)->data->rows,
-            'total' => json_decode($response)->data->count,
-            'total_jurusan' => $total_jurusan,
-        ]);
+        if ($response->successful()) {
+
+            return view('admin.jurusan.show-jurusan', [
+                'title' => 'Jurusan',
+                'active' => 'database',
+                'response' =>  json_decode($response),
+                'jurusan' => json_decode($response)->data->rows,
+                'total' => json_decode($response)->data->count,
+                'total_jurusan' => $total_jurusan,
+            ]);
+
+        } else {
+
+            return view('errors.404');
+
+        }
 
     }
 
 
     /* View Detail Jurusan */
-    public function viewJurusan(Request $request) {
+    public function viewJurusan(Request $request, $id) {
 
-        return view('admin.jurusan.show-detail-jurusan', [
-            'title' => 'Detail Jurusan',
-            'active' => 'database'
-        ]);
+        $response = Http::get("{$this->api_url}/jurusan/{$id}");
+
+        if($response->successful()) {
+
+            return view('admin.jurusan.show-detail-jurusan', [
+                'title' => 'Detail Jurusan',
+                'active' => 'database',
+                'jurusan' => json_decode($response)->result
+            ]);
+
+        } else {
+
+            return view('errors.404');
+
+        }
 
     }
     
@@ -118,14 +137,22 @@ class AdminController extends Controller
         $response = Http::get("{$this->api_url}/mapel?page={$page}&perPage={$perPage}&search={$search}&sort_by={$sort_by}&sort={$sort}");
         $total_mapel = json_decode(Http::get("{$this->api_url}/mapel"))->data->count;
 
-        return view('admin.all-mapel.all-mapel', [
-            'title' => 'Mata Pelajaran',
-            'active' => 'database',
-            'response' =>  json_decode($response),
-            'mapel' => json_decode($response)->data->rows,
-            'total' => json_decode($response)->data->count,
-            'total_mapel' => $total_mapel,
-        ]); 
+        if ($response->successful()) {
+
+            return view('admin.all-mapel.all-mapel', [
+                'title' => 'Mata Pelajaran',
+                'active' => 'database',
+                'response' =>  json_decode($response),
+                'mapel' => json_decode($response)->data->rows,
+                'total' => json_decode($response)->data->count,
+                'total_mapel' => $total_mapel,
+            ]); 
+
+        } else {
+
+            return view('errors.404');
+
+        }
 
     }
 
@@ -145,15 +172,22 @@ class AdminController extends Controller
         $response = Http::get("{$this->api_url}/mapel-jurusan?page={$page}&perPage={$perPage}&search={$search}&sort_by={$sort_by}&sort={$sort}");
         $total_mapel_jurusan = json_decode(Http::get("{$this->api_url}/mapel-jurusan"))->data->count;
 
-        return view('admin.mapel-jurusan.mapel-jurusan', [
-            'title' => 'Mata Pelajaran Jurusan',
-            'active' => 'database',
-            'response' =>  json_decode($response),
-            'mapel_jurusan' => json_decode($response)->data->rows,
-            'total' => json_decode($response)->data->count,
-            'total_mapel_jurusan' => $total_mapel_jurusan,
-        ]); 
+        if ($response->successful()) { 
 
+            return view('admin.mapel-jurusan.mapel-jurusan', [
+                'title' => 'Mata Pelajaran Jurusan',
+                'active' => 'database',
+                'response' =>  json_decode($response),
+                'mapel_jurusan' => json_decode($response)->data->rows,
+                'total' => json_decode($response)->data->count,
+                'total_mapel_jurusan' => $total_mapel_jurusan,
+            ]); 
+
+        } else {
+
+            return view('errors.404');
+
+        }
     }
 
 }
