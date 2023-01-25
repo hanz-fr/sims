@@ -2,22 +2,35 @@
 
 namespace App\Http\Controllers;
 
-use Carbon\Carbon;
 use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Http;
 
 class AccountController extends Controller
 {
+
+    /* GLOBAL VARIABLES */
+    public function __construct()
+    {
+
+        $this->api_url = '127.0.0.1:3000'; // Ganti link NGROK disini
+    
+
+        $this->sims_url = 'http://127.0.0.1:8000'; // SIMS URL
+        
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request) {
+    public function index(Request $request, User $user) {
 
-        $user = User::where([
+        $users = User::where([
             ['nama', '!=', Null],
             [function ($query) use ($request) {
                 if (($s = $request->s)) {
@@ -27,14 +40,17 @@ class AccountController extends Controller
                         ->get();
                 }
             }]
-        ])->cursorPaginate(7);
+        ])->simplePaginate(7);
+
+        $created_at = Carbon::parse($user->created_at)->translatedFormat('d F Y');
 
         if($user) {
-            return view('admin.account.manage-user', [
-                'title'     => 'Manage User SIMS',
+            return view('admin.account.index', [
+                'title'     => 'Manajemen Akun SIMS',
                 'active'    => '',
                 'status'    => '',
-                'user'      => $user,
+                'users'      => $users,
+                'created_at' => $created_at
             ]);
         } else {
             return view('induk.show-all', [
@@ -55,7 +71,7 @@ class AccountController extends Controller
     public function create() {
 
         return view('admin.account.create', [
-            'title' => 'Create Account',
+            'title' => 'Tambah Akun',
             'active' => 'admin'
         ]);
     }
@@ -72,7 +88,7 @@ class AccountController extends Controller
             'nip'      => 'required|unique:users|min:9|max:18',
             'nama'     => 'required',
             'email'    => 'required|email|unique:users',
-            // 'no_telp'  => 'unique:users|min:10|max:16',
+            'no_telp'  => 'unique:users|min:10|max:16',
             'role'     => 'required',
             'password' => 'required|min:6',
         ]);
@@ -81,7 +97,7 @@ class AccountController extends Controller
             'nip'      => $request->nip,
             'nama'     => $request->nama,
             'email'    => $request->email,
-            // 'no_telp'  => $request->no_telp,
+            'no_telp'  => $request->no_telp,
             'role'     => $request->role,
             'password' => Hash::make($request->password),
             'token'    => Str::random(40),
@@ -89,7 +105,7 @@ class AccountController extends Controller
 
         $user->save();
          
-        return redirect()->route('account.index')->with('success','Account created successfully');
+        return redirect()->route('account.index')->with('success','Akun berhasil dibuat');
 
     }
 
@@ -101,12 +117,17 @@ class AccountController extends Controller
      */
     public function show($id) {
 
-        $user = User::find($id);
+        $user = User::findOrFail($id);
 
-        return view('admin.account.show-detail', [
-            'title' => 'Account Details',
-            'active' => 'admin',
-            'user' => $user
+        $current_year = Carbon::now()->year;
+
+        $userHistory = Http::get("{$this->api_url}/history/$user->nama/all?limit=5&year=$current_year");
+
+        return view('admin.account.show', [
+            'title'  => 'Detail Akun',
+            'active' => '',
+            'user'   => $user,
+            'history' => json_decode($userHistory)->rows
         ]);
 
     }
@@ -122,7 +143,7 @@ class AccountController extends Controller
         $user = User::find($id);
 
         return view('admin.account.edit', [
-            'title' => 'Edit Account',
+            'title' => 'Edit Akun',
             'active' => 'admin',
             'user' => $user
         ]);
@@ -141,14 +162,14 @@ class AccountController extends Controller
             'nip'      => 'required|min:9|max:18',
             'nama'     => 'required',
             'email'    => 'required|email',
-            // 'no_telp'  => 'unique:users|min:10|max:16'
+            'no_telp'  => 'min:10|max:16'
         ]);
 
         $user = User::find($id);
 
         $user->update($request->all());
 
-        return redirect()->route('account.index')->with('success','Account has been updated successfully');
+        return redirect()->route('account.index')->with('success','Akun berhasil diperbarui!');
 
     }
 
@@ -164,7 +185,7 @@ class AccountController extends Controller
 
         $user->delete();
 
-        return redirect()->route('account.index')->with('success','Account has been deleted successfully');
+        return redirect()->route('account.index')->with('success','Akun berhasil dihapus');
 
     }
 }

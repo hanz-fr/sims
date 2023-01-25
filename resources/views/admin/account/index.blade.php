@@ -42,7 +42,7 @@
               </tr>
           </thead>
           <tbody class="tw-text-base">     
-            @foreach ($user as $key => $u )
+            @foreach ($users as $key => $u )
               <tr class="tw-bg-white">
                 <td class="tw-p-6">{{ $key + 1 }}</td>
                 <td class="tw-p-6">{{ $u->nip }}</td>
@@ -72,7 +72,7 @@
                         Admin
                     @endif
                 </td>
-                <td class="tw-p-6">{{ $u->created_at }}</td>
+                <td class="tw-p-6">{{ $created_at }}</td>
                 <td class="tw-flex tw-justify-center tw-gap-3 tw-py-2">
                     @can('admin')
                     <a title="Edit Data" href="/account/{{ $u->id }}/edit"
@@ -89,7 +89,7 @@
           </tbody>
         </table>
         <div class="tw-flex tw-justify-center tw-my-8">
-            {{ $user->links() }}
+            {{ $users->links() }}
         </div>
       </div>
     </section>
