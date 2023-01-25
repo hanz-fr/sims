@@ -1610,6 +1610,11 @@ video {
   margin-right: 3rem;
 }
 
+.tw-my-20 {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
 .tw-mt-8 {
   margin-top: 2rem;
 }
@@ -2706,6 +2711,11 @@ video {
 .tw-border-\[\#E3E3E3\] {
   --tw-border-opacity: 1;
   border-color: rgb(227 227 227 / var(--tw-border-opacity));
+}
+
+.tw-border-gray-400 {
+  --tw-border-opacity: 1;
+  border-color: rgb(156 163 175 / var(--tw-border-opacity));
 }
 
 .tw-border-l-sims-new-500 {
@@ -4178,6 +4188,14 @@ input[type="checkbox"]:checked {
   border-radius: 50%;
 }
 
+.placeholder\:tw-invisible::-moz-placeholder {
+  visibility: hidden;
+}
+
+.placeholder\:tw-invisible::placeholder {
+  visibility: hidden;
+}
+
 .placeholder\:tw-text-gray-400::-moz-placeholder {
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
@@ -4291,6 +4309,20 @@ input[type="checkbox"]:checked {
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
 
+.focus\:tw-border-sims-new-500:focus {
+  --tw-border-opacity: 1;
+  border-color: rgb(56 148 163 / var(--tw-border-opacity));
+}
+
+.focus\:tw-border-transparent:focus {
+  border-color: transparent;
+}
+
+.focus\:tw-bg-white:focus {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
 .focus\:tw-shadow-md:focus {
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
@@ -4313,8 +4345,16 @@ input[type="checkbox"]:checked {
   outline-offset: 2px;
 }
 
+.focus\:tw-outline:focus {
+  outline-style: solid;
+}
+
 .focus\:tw-outline-admin-300:focus {
   outline-color: #95bbe8;
+}
+
+.focus\:tw-outline-sims-new-500:focus {
+  outline-color: #3894a3;
 }
 
 .focus\:tw-ring-4:focus {
@@ -4374,6 +4414,11 @@ input[type="checkbox"]:checked {
 .focus\:tw-ring-gray-300:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(209 213 219 / var(--tw-ring-opacity));
+}
+
+.focus\:tw-ring-sims-new-400:focus {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(83 176 189 / var(--tw-ring-opacity));
 }
 
 .focus\:tw-ring-offset-0:focus {
@@ -4825,6 +4870,16 @@ input[type="checkbox"]:checked {
 .hover\:tw-drop-shadow-md:hover {
   --tw-drop-shadow: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.active\:tw-border-sims-new-500:active {
+  --tw-border-opacity: 1;
+  border-color: rgb(56 148 163 / var(--tw-border-opacity));
+}
+
+.active\:tw-ring-sims-new-500:active {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(56 148 163 / var(--tw-ring-opacity));
 }
 
 @media (prefers-color-scheme: dark) {

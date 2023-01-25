@@ -23,8 +23,8 @@
                         
                         <input name="page" value="1" type="hidden">
                         <input name="perPage" value="10" type="hidden">
-                        <input type="text" id="search" name="search" class="tw-block tw-py-1 tw-px-5 tw-border-none tw-rounded-xl" value="{{ request()->search }}">
                         
+                        <input type="text" id="search" name="search" class="tw-block tw-py-1 tw-px-5 tw-border-none tw-rounded-xl" value="{{ request()->search }}">
                         @if(isset($_GET['sort_by']))
                         <input name="sort_by" value="{{ $_GET['sort_by'] }}" type="hidden">
                         @endif

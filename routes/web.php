@@ -268,13 +268,7 @@ Route::group(['prefix' => 'admin', ['revalidate']], function () {
     /* JURUSAN */
     Route::get('/jurusan',[AdminController::class, 'viewAllJurusan']);
     Route::get('/detail-jurusan/{id}', [AdminController::class, 'viewJurusan']);
-
-    Route::get('/jurusan/create', function () {
-        return view('admin.jurusan.create-show-jurusan', [
-            'title' => 'Create Jurusan',
-            'active' => 'database'
-        ]);
-    });
+    Route::get('/jurusan/create', [AdminController::class, 'createJurusan']);
 
     Route::get('/jurusan/edit', function () {
         return view('admin.jurusan.update-show-jurusan', [

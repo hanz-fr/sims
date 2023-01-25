@@ -120,6 +120,18 @@ class AdminController extends Controller
         }
 
     }
+
+
+    /* Create Jurusan */
+    public function createJurusan() {
+
+        return view('admin.jurusan.create-jurusan', [
+            'title' => 'Create Jurusan',
+            'active' => 'database',
+        ]);
+
+    }
+
     
     
     /* View All Mapel */
