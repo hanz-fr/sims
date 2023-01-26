@@ -130,8 +130,91 @@ class AdminController extends Controller
             'active' => 'database',
         ]);
 
+}
+
+    /* Edit Jurusan */
+    public function editJurusan($id) {
+
+        $response = Http::get("{$this->api_url}/jurusan/{$id}");
+
+        return view('admin.jurusan.edit-jurusan', [
+            'title' => 'Create Jurusan',
+            'active' => 'database',
+            'jurusan' => json_decode($response)->result,
+        ]);
+
     }
 
+
+    /* Store Jurusan */
+    public function storeJurusan(Request $request) {
+
+        $id = "{$request->nama}-{$request->konsentrasi}";
+
+        $response = json_decode(Http::post("{$this->api_url}/jurusan", [
+            'nama' => $request->nama,
+            'konsentrasi' => $request->konsentrasi,
+            'desc' => $request->desc,
+        ]));
+
+        if($response->message == 'Data added successfully.') {
+
+            return redirect('/admin/jurusan')->with('success', 'Data berhasil ditambahkan.');
+
+        } else if ($response->message === "Jurusan with Id : '{$id}' already exist") {
+
+            return redirect('/admin/jurusan/create')->with(['error' => 'Jurusan dengan Id tersebut sudah terdaftar.']);
+
+        } else {
+
+            return redirect('/admin/jurusan/create')->with(['error' => 'Terjadi kesalahan.']);
+
+        }
+
+    }
+
+
+    /* Update Jurusan */
+    public function updateJurusan(Request $request, $id) {
+
+        $response = Http::put("{$this->api_url}/jurusan/{$id}", [
+            'nama' => $request->nama,
+            'konsentrasi' => $request->konsentrasi,
+            'desc' => $request->desc 
+        ]);
+
+        $response->throw();
+
+        if (json_decode($response)->status == 'success') {
+
+            return redirect('/admin/jurusan')->with('success', 'Data berhasil diupdate.');
+
+        } else {
+
+            return redirect("/admin/jurusan/edit/{$id}")->with(['error' => 'Terjadi kesalahan']);
+
+        }
+
+    }
+
+
+    /* Delete Jurusan */
+    public function deleteJurusan(Request $request, $id) {
+
+        $response = Http::delete("{$this->api_url}/jurusan/{$id}");
+
+        if (json_decode($response)->message == 'Jurusan does not exist') {
+
+            return redirect('/admin/jurusan')->with('warning', 'Data tidak terdaftar.');
+            
+        } else {
+
+            return redirect('/admin/jurusan')->with('success', 'Data berhasil dihapus.');
+
+        }
+
+
+    }
     
     
     /* View All Mapel */

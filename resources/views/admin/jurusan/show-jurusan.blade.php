@@ -65,9 +65,11 @@
             </div>
 
             <div class="tw-flex md:tw-justify-center tw-items-center tw-mr-7">
-              <button type="button" data-modal-toggle="popup-modal" class="tw-bg-sims-new-500 tw-text-white hover:tw-text-white hover:tw-bg-sims-new-700 tw-font-satoshi tw-rounded-lg tw-px-8 tw-py-2 tw-mr-7">
-                Tambah Data +
-              </button>
+                <form action="/admin/jurusan/create" method="GET">
+                    <button type="submit" data-modal-toggle="popup-modal" class="tw-bg-sims-new-500 tw-text-white hover:tw-text-white hover:tw-bg-sims-new-700 tw-font-satoshi tw-rounded-lg tw-px-8 tw-py-2 tw-mr-7">
+                        Tambah Data +
+                    </button>
+                </form>
             </div>
         </div>
 
@@ -92,7 +94,7 @@
                         <td class="tw-p-8 tw-w-1/4">{{ $j->desc }}</td>
                         <td>{{ $j->createdAt }}</td>
                         <td class="tw-flex tw-mt-8 tw-justify-center tw-gap-3">
-                          <a href="#" class="tw-text-kuning-500  hover:tw-text-white hover:tw-bg-kuning-500 hover:tw-shadow-md tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-w-12 tw-transition-all" title="Edit Data Siswa">
+                          <a href="/admin/jurusan/edit/{{ $j->id }}" class="tw-text-kuning-500  hover:tw-text-white hover:tw-bg-kuning-500 hover:tw-shadow-md tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-w-12 tw-transition-all" title="Edit Data Siswa">
                               <i class="fa-solid fa-pen-to-square"></i>
                           </a>
                           <a href="/admin/detail-jurusan/{{ $j->id }}" class="tw-text-gray-400  hover:tw-text-white hover:tw-bg-gray-400 hover:tw-shadow-md tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-w-12 tw-transition-all" title="Detail Data">

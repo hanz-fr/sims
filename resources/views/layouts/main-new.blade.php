@@ -40,6 +40,7 @@
   {{-- AJAX (DO NOT REMOVE) --}}
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   
+
   {{-- icon --}}
   <link rel="stylesheet" href="{{ URL::asset('font-awesome/css/all.min.css') }}">
   <title>SIMS | {{ $title }}</title>
@@ -65,6 +66,9 @@
       }
     }
   </script>
+
+
+
 
   <script src="{{ URL::asset('assets/main.js') }}"></script>
 

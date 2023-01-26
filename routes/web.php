@@ -269,15 +269,12 @@ Route::group(['prefix' => 'admin', ['revalidate']], function () {
     Route::get('/jurusan',[AdminController::class, 'viewAllJurusan']);
     Route::get('/detail-jurusan/{id}', [AdminController::class, 'viewJurusan']);
     Route::get('/jurusan/create', [AdminController::class, 'createJurusan']);
+    Route::get('/jurusan/edit/{id}', [AdminController::class, 'editJurusan']);
 
-    Route::get('/jurusan/edit', function () {
-        return view('admin.jurusan.update-show-jurusan', [
-            'title' => 'Edit Jurusan',
-            'active' => 'database'
-        ]);
-    });
-
-
+    Route::post('/jurusan/store', [AdminController::class, 'storeJurusan']);
+    Route::put('/jurusan/update/{id}', [AdminController::class, 'updateJurusan']);
+    Route::delete('/jurusan/delete/{id}', [AdminController::class, 'deleteJurusan']);
+    
     // MAPEL
     Route::get('/mata-pelajaran', [AdminController::class, 'viewAllMapel']);
 
