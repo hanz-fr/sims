@@ -27,10 +27,6 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
 
     Route::get('/', [ApiController::class, 'mainDashboard']);
 
-    /* ADMIN DASHBOARD */
-
-    Route::get('/admin', [ApiController::class, 'adminDashboard'])->middleware('is_admin');
-
     /* ROUTE SISWA */
 
     Route::get('/data-induk-siswa', [ApiController::class, 'getAllSiswa']);
@@ -129,11 +125,6 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
     Route::get('/angkatan', [ApiController::class, 'getAngkatan']);
 
 
-    Route::get('/kelas', [ApiController::class, 'viewAllKelas']);
-    Route::get('/kelas/create', [ApiController::class, 'createKelas']);
-    Route::get('/kelas/edit', [ApiController::class, 'editKelas']);
-    Route::get('/kelas/show', [ApiController::class, 'viewKelas']);
-
     /* ALUMNI */
 
     Route::get('/data-alumni', [ApiController::class, 'viewAlumni']);
@@ -168,10 +159,6 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
     Route::get('/email/verify-after/{token}', [UserController::class, 'verifyAccountAfter'])->name('account.verify');
 
 
-    /* ACCOUNT MANAGEMENT */
-    Route::resource('/account', AccountController::class)->middleware('is_admin');
-
-
     /* HISTORY PAGE */
     Route::get('/history', [ApiController::class, 'viewHistory'])->name('history');   
     Route::get('/history/my', [ApiController::class, 'viewMyHistory'])->name('myHistory');
@@ -187,15 +174,22 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
 
 
 /* ROUTE SUPER ADMIN */
-Route::group(['prefix' => 'admin', ['revalidate']], function () {
+Route::group(['prefix' => 'admin', 'middleware' => ['is_admin'] , ['revalidate']], function () {
 
-    // /* ADMIN DASHBOARD */
-    // Route::get('/dashboard', function () {
-    //     return view('admin.dashboard', [
-    //         'title' => 'Dashboard Admin SIMS',
-    //         'active' => 'admin'
-    //     ]);
-    // })->name('admin.dashboard');
+
+    /* DASHBOARD */
+    Route::get('/', [ApiController::class, 'adminDashboard']);
+
+
+    Route::get('/kelas', [AdminController::class, 'viewAllKelas']);
+    Route::get('/kelas/create', [AdminController::class, 'createKelas']);
+    Route::post('/admin/kelas/store', [AdminController::class, 'storeKelas']);
+    Route::get('/kelas/edit/{id}', [AdminController::class, 'editKelas']);
+    Route::get('/kelas/show/{id}', [AdminController::class, 'viewKelas']);
+
+
+    /* ACCOUNT MANAGEMENT */
+    Route::resource('/account', AccountController::class);
 
 
     // DATABASE DASHBOARD
@@ -205,11 +199,6 @@ Route::group(['prefix' => 'admin', ['revalidate']], function () {
             'active' => 'database'
         ]);
     });
-
-    
-
-    /* ACCOUNT MANAGEMENT */
-    Route::delete('/manage/destroy-all', [AccountController::class, 'destroyAll'])->name('manage.destroy-all');
 
 
     /* SISWA */
@@ -233,36 +222,6 @@ Route::group(['prefix' => 'admin', ['revalidate']], function () {
             'active' => 'database'
         ]);
     });
-    
-
-    /* KELAS */
-    // Route::get('/kelas', function () {
-    //     return view('admin.kelas.show-all-kelas', [
-    //         'title' => 'List All Kelas',
-    //         'active' => 'database'
-    //     ]);
-    // });
-
-    // Route::get('/detail-kelas', function () {
-    //     return view('admin.kelas.detail-kelas', [
-    //         'title' => 'Detail Kelas',
-    //         'active' => 'database'
-    //     ]);
-    // });
-
-    // Route::get('/kelas/create', function () {
-    //     return view('admin.kelas.tambah-kelas-admin', [
-    //         'title' => 'Create Kelas',
-    //         'active' => 'database'
-    //     ]);
-    // });
-
-    // Route::get('/kelas/edit', function () {
-    //     return view('admin.kelas.edit-kelas-admin', [
-    //         'title' => 'Edit Kelas',
-    //         'active' => 'database'
-    //     ]);
-    // });
 
 
     /* JURUSAN */
@@ -330,36 +289,6 @@ Route::group(['prefix' => 'admin', ['revalidate']], function () {
     Route::get('/mapel-jurusan/edit', function () {
         return view('admin.mapel-jurusan.edit-mapel-jurusan', [
             'title' => 'Edit Mata Pelajaran',
-            'active' => 'database'
-        ]);
-    });
-
-
-    // MUTASI
-    Route::get('/mutasi', function () {
-        return view('admin.mutasi.show-all-mutasi', [
-            'title' => 'Data Mutasi',
-            'active' => 'database'
-        ]);
-    });
-
-    Route::get('/detail-mutasi', function () {
-        return view('admin.mutasi.detail', [
-            'title' => 'Detail Mutasi Keluar',
-            'active' => 'database'
-        ]);
-    });
-
-    Route::get('/mutasi/create', function () {
-        return view('admin.mutasi.create', [
-            'title' => 'Add Mutasi Keluar',
-            'active' => 'database'
-        ]);
-    });
-
-    Route::get('/mutasi/edit', function () {
-        return view('admin.mutasi.edit', [
-            'title' => 'Edit Mutasi Keluar',
             'active' => 'database'
         ]);
     });

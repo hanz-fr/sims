@@ -120,7 +120,7 @@
         @if($history === [])
         <div class="tw-flex tw-flex-col tw-px-14 tw-pt-14">
             <img src="{{ URL::asset('assets/img/history-empty.jpg') }}" class="tw-mx-auto" alt="no_history" width="50%">
-            <div class="tw-text-gray-400 tw-font-light sims-text-gray-sm tw-mt-5">Anda belum memiliki aktifitas.</div>
+            <div class="tw-text-gray-400 tw-font-light sims-text-gray-sm tw-mt-5 tw-text-center">Anda belum memiliki aktifitas.</div>
         </div>
         @else
         <div class="tw-px-14 tw-pt-14 tw-grid tw-grid-rows-6">

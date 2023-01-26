@@ -8,7 +8,7 @@
         }
 
         .slide-container {
-            max-width: 1000px;
+            max-width: 600px;
             width: 100%;
         }
 
@@ -183,13 +183,13 @@
                     </select>
 
                     <div class="my-info-1">
-                        <div class="chart4" style="height: 300px">
+                        <div class="chart4"  style="position: relative; height:40vh;">
                             <canvas id="chart4" class="tw-mt-4"></canvas>
                         </div>
-                        <div class="chart2 hide" style="height: 300px">
+                        <div class="chart2 hide"  style="position: relative; height:40vh;">
                             <canvas id="chart1" class="tw-mt-4"></canvas>
                         </div>
-                        <div class="chart1 hide" style="height: 300px">
+                        <div class="chart1 hide"  style="position: relative; height:40vh;">
                             <canvas id="chart2" class="tw-mt-4"></canvas>
                         </div>
                     </div>
@@ -197,7 +197,7 @@
             </div>
 
             <!-- User Graphics - Column 2 -->
-            <div class="tw-flex tw-flex-col tw-w-1/3">
+            <div class="tw-flex tw-flex-col tw-w-1/4">
                 <div class="sims-heading-md-black tw-text-center">User Graphics</div>
 
                 <div style="height: 280px">
@@ -270,34 +270,37 @@
                     <div class="tw-flex tw-flex-col tw-gap-3 tw-pr-3 tw-mx-5 tw-overflow-y-scroll tw-h-[365px] tw-scrollbar-thumb-gray-400 tw-scrollbar-thumb-rounded-lg tw-scrollbar-thin tw-scrollbar-track-gray-100">
 
                         @foreach ($users as $u )
-                        <button class="tw-flex tw-justify-between sims-card-2">
-                            <div class="tw-flex tw-gap-3">
-                                <i class="fa-solid fa-circle-user sims-icon-3xl"></i>
-                                <div class="tw-flex tw-flex-col tw-text-start">
-                                    <div class="sims-heading-sm tw-truncate sm:tw-w-24 lg:tw-w-32">{{ $u->nama }}</div>
-                                    <div class="sims-text-gray-xs">
-                                        @if ($u->role === 1)
-                                        Tata Usaha
-                                        @endif
-                                        @if ($u->role === 2)
-                                            Kesiswaan
-                                        @endif
-                                        @if ($u->role === 3)
-                                            Kurikulum
-                                        @endif
-                                        @if ($u->role === 4)
-                                            Wali Kelas
-                                        @endif
-                                        @if ($u->is_admin === 1)
-                                            Admin
-                                        @endif
+                        
+                        <form action="/account/{{ $u->id }}">
+                            <button type="submit" class="tw-flex tw-justify-between sims-card-2">
+                                <div class="tw-flex tw-gap-3">
+                                    <i class="fa-solid fa-circle-user sims-icon-3xl"></i>
+                                    <div class="tw-flex tw-flex-col tw-text-start">
+                                        <div class="sims-heading-sm tw-truncate sm:tw-w-24 lg:tw-w-32">{{ $u->nama }}</div>
+                                        <div class="sims-text-gray-xs">
+                                            @if ($u->role === 1)
+                                                Tata Usaha
+                                            @endif
+                                            @if ($u->role === 2)
+                                                Kesiswaan
+                                            @endif
+                                            @if ($u->role === 3)
+                                                Kurikulum
+                                            @endif
+                                            @if ($u->role === 4)
+                                                Wali Kelas
+                                            @endif
+                                            @if ($u->is_admin === 1)
+                                                Admin
+                                            @endif
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <a href="/account/{{ $u->id }}/edit" class="tw-text-[#979797] tw-my-auto tw-h-fit">
-                                <i class="fa-solid fa-pen-to-square hover:tw-text-[#FBB845] tw-transition-all"></i>
-                            </a>
-                        </button>
+                                <a href="/account/{{ $u->id }}/edit" class="tw-text-[#979797] tw-my-auto tw-h-fit">
+                                    <i class="fa-solid fa-pen-to-square hover:tw-text-[#FBB845] tw-transition-all"></i>
+                                </a>
+                            </button>
+                        </form>
                         @endforeach
 
                     </div>

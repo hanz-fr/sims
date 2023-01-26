@@ -7,10 +7,19 @@
             display: none;
         }
 
+        @media only screen and (max-width: 768px) {
+            .slide-container {
+                max-width: 700px;
+                width: 100%;
+            }
+        }
+
+
         .slide-container {
             max-width: 1000px;
             width: 100%;
         }
+
 
         .slide-content {
             margin: 0 40px;
@@ -303,14 +312,14 @@
 
 
             <!-- Column 2 -->
-            <div class="tw-flex tw-flex-col tw-w-full">
+            <div class="tw-flex tw-flex-col tw-w-1/2">
 
                 <!-- Row 1 -->
                 <div class="sims-card-1 tw-px-10">
 
                     <!-- Latest Activity Card -->
                     <div class="sims-card-1-noshadow">
-                        <div class="tw-flex tw-justify-around">
+                        <div class="tw-flex md:tw-flex-col tw-justify-around">
                             <div class="tw-flex tw-gap-10 tw-mx-10">
                                 <i class="fa-solid fa-clock-rotate-left sims-icon-5xl"></i>
                                 <div class="tw-flex tw-flex-col">
@@ -333,7 +342,7 @@
                                 </div>
                             </div>
                             <a href="/history/my"
-                                class="tw-border-sims-new-500 tw-border tw-text-sm tw-text-center tw-whitespace-nowrap tw-h-fit tw-my-auto tw-mr-5 tw-px-3 tw-py-3 tw-rounded-lg tw-text-sims-new-500 hover:tw-text-white hover:tw-bg-sims-new-500 tw-transition-all">
+                                class="tw-border-sims-new-500 tw-mx-auto tw-border tw-text-sm tw-text-center tw-whitespace-nowrap tw-h-fit tw-my-auto tw-mr-5 tw-px-3 tw-py-3 tw-rounded-lg tw-text-sims-new-500 hover:tw-text-white hover:tw-bg-sims-new-500 tw-transition-all">
                                 Lihat Semua Histori
                             </a>
                         </div>

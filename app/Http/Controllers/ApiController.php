@@ -2834,41 +2834,6 @@ class ApiController extends Controller
     }
 
 
-    public function viewAllKelas() {
-        
-        return view('admin.kelas.show-all-kelas', [
-            'title' => 'Data Semua Kelas',
-            'active' => '',
-        ]);
-    }
-
-    public function createKelas() {
-
-        return view('admin.kelas.tambah-kelas-admin', [
-            'title' => 'Tambah Data Kelas',
-            'active' => ''
-        ]);
-    }
-
-
-    public function editKelas() {
-
-        return view('admin.kelas.edit-kelas-admin', [
-            'title' => 'Edit Data Kelas',
-            'active' => ''
-        ]);
-    }
-
-
-    public function viewKelas() {
-
-        return view('admin.kelas.detail-kelas', [
-            'title' => 'Detail Data Kelas',
-            'active' => ''
-        ]);
-    }
-
-
     /* API LIVESEARCH (TESTING) */
     public function indexLiveSearch(Request $request) 
     {
