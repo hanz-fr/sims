@@ -50,8 +50,8 @@
                 <!-- Sort By -->
                 <div class="tw-my-auto tw-text-basic-700 tw-ml-8 tw-mr-2 tw-font-normal tw-font-satoshi">Urutkan berdasarkan</div>
                 <select name="sort-by-data" id="sort-by-data" class="tw-px-5 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-200 tw-peer tw-font-bold  bg-transparent tw-border-0 tw-border-b-2 tw-border-gray-200 tw-appearance-none tw-block">
-                    <option value="/admin/mata-pelajaran?page=@if(isset($_GET['page'])){{ $_GET['page'] }}@endif&perPage=@if(isset($_GET['perPage'])){{ $_GET['perPage'] }}@endif&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&sort_by=id&sort=@if(isset($_GET['sort'])){{ $_GET['sort'] }}@endif" @isset($_GET['sort_by']) @if($_GET['sort_by'] === 'id') selected @endif @endisset class="tw-bg-white">Id</option>
                     <option value="/admin/mata-pelajaran?page=@if(isset($_GET['page'])){{ $_GET['page'] }}@endif&perPage=@if(isset($_GET['perPage'])){{ $_GET['perPage'] }}@endif&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&sort_by=nama&sort=@if(isset($_GET['sort'])){{ $_GET['sort'] }}@endif" @isset($_GET['sort_by']) @if($_GET['sort_by'] === 'nama') selected @endif @endisset class="tw-bg-white">Nama</option>
+                    <option value="/admin/mata-pelajaran?page=@if(isset($_GET['page'])){{ $_GET['page'] }}@endif&perPage=@if(isset($_GET['perPage'])){{ $_GET['perPage'] }}@endif&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&sort_by=id&sort=@if(isset($_GET['sort'])){{ $_GET['sort'] }}@endif" @isset($_GET['sort_by']) @if($_GET['sort_by'] === 'id') selected @endif @endisset class="tw-bg-white">Id</option>
                     <option value="/admin/mata-pelajaran?page=@if(isset($_GET['page'])){{ $_GET['page'] }}@endif&perPage=@if(isset($_GET['perPage'])){{ $_GET['perPage'] }}@endif&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&sort_by=createdAt&sort=@if(isset($_GET['sort'])){{ $_GET['sort'] }}@endif" @isset($_GET['sort_by']) @if($_GET['sort_by'] === 'createdAt') selected @endif @endisset class="tw-bg-white">Tgl Dibuat</option>
                     <option value="/admin/mata-pelajaran?page=@if(isset($_GET['page'])){{ $_GET['page'] }}@endif&perPage=@if(isset($_GET['perPage'])){{ $_GET['perPage'] }}@endif&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&sort_by=updatedAt&sort=@if(isset($_GET['sort'])){{ $_GET['sort'] }}@endif" @isset($_GET['sort_by']) @if($_GET['sort_by'] === 'updatedAt') selected @endif @endisset class="tw-bg-white">Tgl Diupdate</option>
                 </select>
@@ -64,9 +64,11 @@
             </div>
 
             <div class="tw-flex md:tw-justify-center tw-items-center tw-mr-7">
-              <button type="button" data-modal-toggle="popup-modal" class="tw-bg-sims-new-500 tw-text-white hover:tw-text-white hover:tw-bg-sims-new-700 tw-font-satoshi tw-rounded-lg tw-px-8 tw-py-2 tw-mr-7">
-                Tambah Data +
-              </button>
+                <form action="/admin/mata-pelajaran/create" method="GET">
+                    <button type="submit" data-modal-toggle="popup-modal" class="tw-bg-sims-new-500 tw-text-white hover:tw-text-white hover:tw-bg-sims-new-700 tw-font-satoshi tw-rounded-lg tw-px-8 tw-py-2 tw-mr-7">
+                        Tambah Data +
+                    </button>
+                </form>
             </div>
         </div>
 
@@ -89,10 +91,10 @@
                         <td class="tw-p-8">@if($m->createdAt != null){{  \Carbon\Carbon::parse(strtotime($m->createdAt))->translatedFormat('l d F Y'); }}@endif</td>
                         <td class="tw-p-8">@if($m->updatedAt != null){{  \Carbon\Carbon::parse(strtotime($m->updatedAt))->translatedFormat('l d F Y'); }}@endif</td>
                         <td class="tw-flex tw-mt-8 tw-justify-center tw-gap-3">
-                          <a href="#" class="tw-text-kuning-500  hover:tw-text-white hover:tw-bg-kuning-500 hover:tw-shadow-md tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-w-12 tw-transition-all" title="Edit Data Siswa">
+                          <a href="/admin/mata-pelajaran/edit/{{ $m->id }}" class="tw-text-kuning-500  hover:tw-text-white hover:tw-bg-kuning-500 hover:tw-shadow-md tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-w-12 tw-transition-all" title="Edit Data Siswa">
                               <i class="fa-solid fa-pen-to-square"></i>
                           </a>
-                          <a href="#" class="tw-text-gray-400  hover:tw-text-white hover:tw-bg-gray-400 hover:tw-shadow-md tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-w-12 tw-transition-all" title="Detail Data">
+                          <a href="/admin/detail-mata-pelajaran/{{ $m->id }}" class="tw-text-gray-400  hover:tw-text-white hover:tw-bg-gray-400 hover:tw-shadow-md tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-w-12 tw-transition-all" title="Detail Data">
                               <i class="fa-regular fa-eye"></i>
                           </a>
                       </td>

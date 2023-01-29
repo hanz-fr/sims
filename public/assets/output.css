@@ -1337,6 +1337,10 @@ video {
   left: 50%;
 }
 
+.tw-left-8 {
+  left: 2rem;
+}
+
 .tw-z-10 {
   z-index: 10;
 }

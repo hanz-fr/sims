@@ -217,7 +217,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['is_admin'] , ['revalidate']
 
 
     /* JURUSAN */
-
     Route::get('/jurusan',[AdminController::class, 'viewAllJurusan']);
     Route::get('/detail-jurusan/{id}', [AdminController::class, 'viewJurusan']);
     Route::get('/jurusan/create', [AdminController::class, 'createJurusan']);
@@ -228,28 +227,14 @@ Route::group(['prefix' => 'admin', 'middleware' => ['is_admin'] , ['revalidate']
     Route::delete('/jurusan/delete/{id}', [AdminController::class, 'deleteJurusan']);
     
     // MAPEL
-    Route::get('/mata-pelajaran', [AdminController::class, 'viewAllMapel']);
+    Route::get('/mata-pelajaran', [AdminController::class, 'viewAllMapel'])->name('view-all-mapel');
+    Route::get('/detail-mata-pelajaran/{id}', [AdminController::class, 'viewDetailMapel']);
+    Route::get('/mata-pelajaran/create', [AdminController::class, 'createMapel']);
+    Route::get('/mata-pelajaran/edit/{id}', [AdminController::class, 'editMapel']);
 
-    Route::get('/detail-mata-pelajaran', function () {
-        return view('admin.all-mapel.detail-all-mapel', [
-            'title' => 'Detail Mata Pelajaran',
-            'active' => 'database'
-        ]);
-    });
-
-    Route::get('/mata-pelajaran/create', function () {
-        return view('admin.all-mapel.create-all-mapel', [
-            'title' => 'Create Mata Pelajaran',
-            'active' => 'database'
-        ]);
-    });
-
-    Route::get('/mata-pelajaran/edit', function () {
-        return view('admin.all-mapel.edit-all-mapel', [
-            'title' => 'Edit Mata Pelajaran',
-            'active' => 'database'
-        ]);
-    });
+    Route::post('/mata-pelajaran/store', [AdminController::class, 'storeMapel']);
+    Route::put('/mata-pelajaran/update/{id}', [AdminController::class, 'updateMapel']);
+    Route::delete('/mata-pelajaran/delete/{id}', [AdminController::class, 'deleteMapel']);
 
 
     /* MAPEL JURUSAN */

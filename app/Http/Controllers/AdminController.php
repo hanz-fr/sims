@@ -4,11 +4,14 @@ namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 use App\Models\Admin;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Http\Request;
+
 
 class AdminController extends Controller
 {
@@ -120,7 +123,7 @@ class AdminController extends Controller
 
         if($response->message == 'Data added successfully.') {
 
-            return redirect('/admin/jurusan')->with('success', 'Data berhasil ditambahkan.');
+            return redirect('/admin/jurusan?page=1&perPage10')->with('success', 'Data berhasil ditambahkan.');
 
         } else if ($response->message === "Jurusan with Id : '{$id}' already exist") {
 
@@ -148,7 +151,7 @@ class AdminController extends Controller
 
         if (json_decode($response)->status == 'success') {
 
-            return redirect('/admin/jurusan')->with('success', 'Data berhasil diupdate.');
+            return redirect('/admin/jurusan?page=1&perPage10')->with('success', 'Data berhasil diupdate.');
 
         } else {
 
@@ -166,11 +169,11 @@ class AdminController extends Controller
 
         if (json_decode($response)->message == 'Jurusan does not exist') {
 
-            return redirect('/admin/jurusan')->with('warning', 'Data tidak terdaftar.');
+            return redirect('/admin/jurusan?page=1&perPage10')->with('warning', 'Data tidak terdaftar.');
             
         } else {
 
-            return redirect('/admin/jurusan')->with('success', 'Data berhasil dihapus.');
+            return redirect('/admin/jurusan?page=1&perPage10')->with('success', 'Data berhasil dihapus.');
 
         }
 
@@ -193,6 +196,8 @@ class AdminController extends Controller
         $response = Http::get("{$this->api_url}/mapel?page={$page}&perPage={$perPage}&search={$search}&sort_by={$sort_by}&sort={$sort}");
         $total_mapel = json_decode(Http::get("{$this->api_url}/mapel"))->data->count;
 
+        Session::flash('backUrl', URL::current());
+
         if ($response->successful()) {
 
             return view('admin.all-mapel.all-mapel', [
@@ -210,6 +215,140 @@ class AdminController extends Controller
 
         }
 
+    }
+
+
+    /* View Detail Mapel */
+    public function viewDetailMapel(Request $request, $id) {
+
+        $response = Http::get("{$this->api_url}/mapel/{$id}");
+
+        if($response->successful()) {
+
+            return view('admin.all-mapel.detail-mapel', [
+                'title' => 'Detail Mata Pelajaran',
+                'active' => 'database',
+                'mapel' => json_decode($response)->result,
+            ]);
+
+        } else {
+
+            return view('errors.404');
+
+        }
+
+    }
+
+
+    /* Create Mapel */
+    public function createMapel(Request $request) {
+
+        if (Session::has('backUrl')) {
+            Session::keep('backUrl');
+        }
+
+        return view('admin.all-mapel.create-mapel', [
+            'title' => 'Create Mata Pelajaran',
+            'active' => 'database'
+        ]);
+
+    }
+
+
+    /* Edit Mapel */
+    public function editMapel(Request $request, $id) {
+
+        $response = Http::get("{$this->api_url}/mapel/$id");
+
+        return view('admin.all-mapel.edit-mapel', [
+            'title' => 'Edit Mata Pelajaran',
+            'active' => 'database',
+            'mapel' => json_decode($response)->result,
+        ]);
+
+    }
+
+
+    /* Store Mapel */
+    public function storeMapel(Request $request) {
+
+        $id = $request->id;
+
+        if (Session::has('backUrl')) {
+            Session::keep('backUrl');
+        }
+
+        $response = json_decode(Http::post("{$this->api_url}/mapel", [
+            'id' => $request->id,
+            'nama' => $request->nama,
+        ]));
+
+        if($response->message == 'Data added successfully.') {
+
+            return ($url = Session::get('backUrl')) 
+            ? Redirect::to($url)->with('success', 'Data berhasil ditambahkan.') 
+            : Redirect::route('view-all-mapel')->with('success', 'Data berhasil ditambahkan.') ;
+
+        } else if ($response->message === "Mata pelajaran with Id : '{$id}' already exist") {
+
+            return redirect('/admin/mata-pelajaran/create')->with(['error' => 'Mata pelajaran dengan Id tersebut sudah terdaftar.']);
+
+        } else {
+
+            return redirect('/admin/mata-pelajaran/create')->with(['error' => 'Terjadi kesalahan.']);
+
+        }
+
+    }
+
+
+    /* Update Mapel */
+    public function updateMapel(Request $request, $id) {
+
+        $response = Http::put("{$this->api_url}/mapel/{$id}", [
+            'id' => $request->id,
+            'nama' => $request->nama,
+        ]);
+
+        $response->throw();
+
+        if (json_decode($response)->status == 'success') {
+
+            // if admin redirect to edit page from detail page.
+            if($request->fromDetailPage){
+
+                return redirect("/admin/detail-mata-pelajaran/{$id}")->with('success', 'Data berhasil diupdate.');
+            
+            } else {
+
+                return redirect('/admin/mata-pelajaran?page=1&perPage10')->with('success', 'Data berhasil diupdate.');
+            
+            }
+
+        } else {
+
+            return redirect("/admin/mata-pelajaran/edit/{$id}")->with(['error' => 'Terjadi kesalahan']);
+
+        }
+
+    }
+
+
+    /* Delete Mapel */
+    public function deleteMapel(Request $request, $id) {
+        
+        $response = Http::delete("{$this->api_url}/mapel/{$id}");
+
+        if (json_decode($response)->message == "Mapel with id {$id} does not exist") {
+
+            return redirect('/admin/mata-pelajaran?page=1&perPage10')->with('warning', 'Data tidak terdaftar.');
+            
+        } else {
+
+            return redirect('/admin/mata-pelajaran?page=1&perPage10')->with('success', 'Data berhasil dihapus.');
+
+        }
+        
     }
 
 
