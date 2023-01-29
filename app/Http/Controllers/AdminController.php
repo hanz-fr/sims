@@ -4,11 +4,14 @@ namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 use App\Models\Admin;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Http\Request;
+
 
 class AdminController extends Controller
 {
@@ -193,6 +196,8 @@ class AdminController extends Controller
         $response = Http::get("{$this->api_url}/mapel?page={$page}&perPage={$perPage}&search={$search}&sort_by={$sort_by}&sort={$sort}");
         $total_mapel = json_decode(Http::get("{$this->api_url}/mapel"))->data->count;
 
+        Session::flash('backUrl', URL::current());
+
         if ($response->successful()) {
 
             return view('admin.all-mapel.all-mapel', [
@@ -238,6 +243,10 @@ class AdminController extends Controller
     /* Create Mapel */
     public function createMapel(Request $request) {
 
+        if (Session::has('backUrl')) {
+            Session::keep('backUrl');
+        }
+
         return view('admin.all-mapel.create-mapel', [
             'title' => 'Create Mata Pelajaran',
             'active' => 'database'
@@ -265,6 +274,10 @@ class AdminController extends Controller
 
         $id = $request->id;
 
+        if (Session::has('backUrl')) {
+            Session::keep('backUrl');
+        }
+
         $response = json_decode(Http::post("{$this->api_url}/mapel", [
             'id' => $request->id,
             'nama' => $request->nama,
@@ -272,7 +285,9 @@ class AdminController extends Controller
 
         if($response->message == 'Data added successfully.') {
 
-            return redirect('/admin/mata-pelajaran?page=1&perPage10')->with('success', 'Data berhasil ditambahkan.');
+            return ($url = Session::get('backUrl')) 
+            ? Redirect::to($url)->with('success', 'Data berhasil ditambahkan.') 
+            : Redirect::route('view-all-mapel')->with('success', 'Data berhasil ditambahkan.') ;
 
         } else if ($response->message === "Mata pelajaran with Id : '{$id}' already exist") {
 

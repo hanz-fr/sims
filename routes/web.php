@@ -195,7 +195,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['is_admin'] , ['revalidate']
 
 
     /* JURUSAN */
-    Route::get('/jurusan',[AdminController::class, 'viewAllJurusan']);
+    Route::get('/jurusan',[AdminController::class, 'viewAllJurusan'])->name('view-all-jurusan');
     Route::get('/detail-jurusan/{id}', [AdminController::class, 'viewJurusan']);
     Route::get('/jurusan/create', [AdminController::class, 'createJurusan']);
     Route::get('/jurusan/edit/{id}', [AdminController::class, 'editJurusan']);
@@ -205,7 +205,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['is_admin'] , ['revalidate']
     Route::delete('/jurusan/delete/{id}', [AdminController::class, 'deleteJurusan']);
     
     // MAPEL
-    Route::get('/mata-pelajaran', [AdminController::class, 'viewAllMapel']);
+    Route::get('/mata-pelajaran', [AdminController::class, 'viewAllMapel'])->name('view-all-mapel');
     Route::get('/detail-mata-pelajaran/{id}', [AdminController::class, 'viewDetailMapel']);
     Route::get('/mata-pelajaran/create', [AdminController::class, 'createMapel']);
     Route::get('/mata-pelajaran/edit/{id}', [AdminController::class, 'editMapel']);
