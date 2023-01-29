@@ -120,7 +120,7 @@ class AdminController extends Controller
 
         if($response->message == 'Data added successfully.') {
 
-            return redirect('/admin/jurusan')->with('success', 'Data berhasil ditambahkan.');
+            return redirect('/admin/jurusan?page=1&perPage10')->with('success', 'Data berhasil ditambahkan.');
 
         } else if ($response->message === "Jurusan with Id : '{$id}' already exist") {
 
@@ -148,7 +148,7 @@ class AdminController extends Controller
 
         if (json_decode($response)->status == 'success') {
 
-            return redirect('/admin/jurusan')->with('success', 'Data berhasil diupdate.');
+            return redirect('/admin/jurusan?page=1&perPage10')->with('success', 'Data berhasil diupdate.');
 
         } else {
 
@@ -166,11 +166,11 @@ class AdminController extends Controller
 
         if (json_decode($response)->message == 'Jurusan does not exist') {
 
-            return redirect('/admin/jurusan')->with('warning', 'Data tidak terdaftar.');
+            return redirect('/admin/jurusan?page=1&perPage10')->with('warning', 'Data tidak terdaftar.');
             
         } else {
 
-            return redirect('/admin/jurusan')->with('success', 'Data berhasil dihapus.');
+            return redirect('/admin/jurusan?page=1&perPage10')->with('success', 'Data berhasil dihapus.');
 
         }
 
@@ -247,8 +247,17 @@ class AdminController extends Controller
 
 
     /* Edit Mapel */
+    public function editMapel(Request $request, $id) {
 
+        $response = Http::get("{$this->api_url}/mapel/$id");
 
+        return view('admin.all-mapel.edit-mapel', [
+            'title' => 'Edit Mata Pelajaran',
+            'active' => 'database',
+            'mapel' => json_decode($response)->result,
+        ]);
+
+    }
 
 
     /* Store Mapel */
@@ -263,7 +272,7 @@ class AdminController extends Controller
 
         if($response->message == 'Data added successfully.') {
 
-            return redirect('/admin/mata-pelajaran')->with('success', 'Data berhasil ditambahkan.');
+            return redirect('/admin/mata-pelajaran?page=1&perPage10')->with('success', 'Data berhasil ditambahkan.');
 
         } else if ($response->message === "Mata pelajaran with Id : '{$id}' already exist") {
 
@@ -272,6 +281,38 @@ class AdminController extends Controller
         } else {
 
             return redirect('/admin/mata-pelajaran/create')->with(['error' => 'Terjadi kesalahan.']);
+
+        }
+
+    }
+
+
+    /* Update Mapel */
+    public function updateMapel(Request $request, $id) {
+
+        $response = Http::put("{$this->api_url}/mapel/{$id}", [
+            'id' => $request->id,
+            'nama' => $request->nama,
+        ]);
+
+        $response->throw();
+
+        if (json_decode($response)->status == 'success') {
+
+            // if admin redirect to edit page from detail page.
+            if($request->fromDetailPage){
+
+                return redirect("/admin/detail-mata-pelajaran/{$id}")->with('success', 'Data berhasil diupdate.');
+            
+            } else {
+
+                return redirect('/admin/mata-pelajaran?page=1&perPage10')->with('success', 'Data berhasil diupdate.');
+            
+            }
+
+        } else {
+
+            return redirect("/admin/mata-pelajaran/edit/{$id}")->with(['error' => 'Terjadi kesalahan']);
 
         }
 

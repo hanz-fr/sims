@@ -208,15 +208,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['is_admin'] , ['revalidate']
     Route::get('/mata-pelajaran', [AdminController::class, 'viewAllMapel']);
     Route::get('/detail-mata-pelajaran/{id}', [AdminController::class, 'viewDetailMapel']);
     Route::get('/mata-pelajaran/create', [AdminController::class, 'createMapel']);
-
-    Route::get('/mata-pelajaran/edit', function () {
-        return view('admin.all-mapel.edit-all-mapel', [
-            'title' => 'Edit Mata Pelajaran',
-            'active' => 'database'
-        ]);
-    });
+    Route::get('/mata-pelajaran/edit/{id}', [AdminController::class, 'editMapel']);
 
     Route::post('/mata-pelajaran/store', [AdminController::class, 'storeMapel']);
+    Route::put('/mata-pelajaran/update/{id}', [AdminController::class, 'updateMapel']);
     Route::delete('/mata-pelajaran/delete/{id}', [AdminController::class, 'deleteMapel']);
 
 

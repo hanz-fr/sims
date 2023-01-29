@@ -69,7 +69,8 @@
                     </div>
                 </div>
             </div>
-            <form action="/admin/jurusan/edit" method="GET">
+            <form action="/admin/mata-pelajaran/edit/{{ $mapel->id }}" method="GET">
+                <input type="hidden" name="fromDetailPage" value="true">
                 <button type="submit" class="tw-px-8 tw-py-2 tw-bg-[#FBBF24] tw-text-white tw-font-normal sims-heading-sm tw-rounded-lg tw-shadow-sm hover:tw-shadow-lg hover:tw-bg-[#daa728] tw-transition-all tw-truncate">Edit Data</button>
             </form>
         </div>
