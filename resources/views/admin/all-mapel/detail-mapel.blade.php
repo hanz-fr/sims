@@ -58,7 +58,7 @@
                             </svg>
                             <div class="tw-mb-5 tw-flex tw-justify-center tw-text-md tw-font-normal tw-text-gray-500 dark:tw-text-gray-400"> Hapus data Mata Pelajaran?</div>
                             <div class="tw-flex tw-justify-center">
-                                <form action="/admin/jurusan/delete" method="POST">
+                                <form action="/admin/mata-pelajaran/delete/{{ $mapel->id }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" data-modal-toggle="popup-modal" type="button" class="tw-text-white tw-bg-red-600 hover:tw-bg-red-800 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-red-300 dark:focus:tw-ring-red-800 tw-font-medium tw-rounded-lg tw-text-sm tw-inline-flex tw-items-center tw-py-2.5 tw-text-center tw-mr-2 tw-px-6"> Ya </button>

@@ -319,6 +319,24 @@ class AdminController extends Controller
     }
 
 
+    /* Delete Mapel */
+    public function deleteMapel(Request $request, $id) {
+        
+        $response = Http::delete("{$this->api_url}/mapel/{$id}");
+
+        if (json_decode($response)->message == "Mapel with id {$id} does not exist") {
+
+            return redirect('/admin/mata-pelajaran?page=1&perPage10')->with('warning', 'Data tidak terdaftar.');
+            
+        } else {
+
+            return redirect('/admin/mata-pelajaran?page=1&perPage10')->with('success', 'Data berhasil dihapus.');
+
+        }
+        
+    }
+
+
     /* View All Mapel Jurusan */
     public function viewAllMapelJurusan(Request $request) {
 

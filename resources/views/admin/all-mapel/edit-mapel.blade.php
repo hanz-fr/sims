@@ -30,7 +30,7 @@
                                 <p class="tw-text-sm tw-font-satoshi tw-font-normal leading-4 text-gray-600">merupakan singkatan dari mata pelajaran. (Contoh: PBO => Pemrograman Berorientasi Objek).<br><br>Untuk update mapel, Id mata pelajaran tidak dapat diubah. Anda harus membuat mata pelajaran baru dengan nama yang sama jika terdapat perubahan pada Id mata pelajaran saja.</p>
                             </div>
                         </a>
-                    <!--Code Block for white tooltip ends-->
+                        <!--Code Block for white tooltip ends-->
                     </div>
                     <input disabled required name="id" value="{{ $mapel->id }}" class="tw-border-[1.5px] tw-transition-all tw-duration-500 tw-ease-out tw-font-satoshi tw-font-normal tw-text-gray-500 tw-border-gray-300 tw-py-1 tw-px-5 tw-rounded-xl focus:tw-outline-sims-new-500">
                 </div>
