@@ -92,7 +92,7 @@
                         <td class="tw-p-8">{{ $j->nama }}</td>
                         <td class="tw-p-8">{{ $j->konsentrasi }}</td>
                         <td class="tw-p-8 tw-w-1/4">{{ $j->desc }}</td>
-                        <td>{{ $j->createdAt }}</td>
+                        <td>@if($j->createdAt != null){{  \Carbon\Carbon::parse(strtotime($j->createdAt))->translatedFormat('l d F Y'); }}@endif</td>
                         <td class="tw-flex tw-mt-8 tw-justify-center tw-gap-3">
                           <a href="/admin/jurusan/edit/{{ $j->id }}" class="tw-text-kuning-500  hover:tw-text-white hover:tw-bg-kuning-500 hover:tw-shadow-md tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-w-12 tw-transition-all" title="Edit Data Siswa">
                               <i class="fa-solid fa-pen-to-square"></i>

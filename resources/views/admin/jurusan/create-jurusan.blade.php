@@ -25,7 +25,7 @@
             </div>
             <div class="tw-flex tw-flex-col tw-gap-1">
                 <div class="sims-text-gray-sm">Deskripsi</div>
-                <textarea required name="deskripsi" class="tw-border tw-block tw-w-full tw-transition-all tw-duration-500 tw-ease-out tw-rounded-xl tw-font-satoshi tw-font-normal tw-text-gray-500 tw-py-3 tw-px-5 tw-border-gray-300 focus:tw-outline-none focus:tw-border-transparent focus:tw-ring-2 focus:tw-ring-sims-new-500 placeholder:tw-invisible"></textarea>
+                <textarea required name="desc" class="tw-border tw-block tw-w-full tw-transition-all tw-duration-500 tw-ease-out tw-rounded-xl tw-font-satoshi tw-font-normal tw-text-gray-500 tw-py-3 tw-px-5 tw-border-gray-300 focus:tw-outline-none focus:tw-border-transparent focus:tw-ring-2 focus:tw-ring-sims-new-500 placeholder:tw-invisible"></textarea>
             </div>
             @if($message = Session::get('error'))
                 <div class="sims-text-gray-xs tw-text-red-500">{{ $message }}</div>
