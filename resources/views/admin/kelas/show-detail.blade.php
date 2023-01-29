@@ -28,7 +28,7 @@
             <p>Updated : <span class="tw-font-normal">{{ $kelas->updatedAt }}</span></p>
         </div>
         <div class="tw-grid tw-grid-cols-2 tw-gap-3 tw-font-ubuntu tw-text-white tw-font-medium tw-my-auto">
-            <form action="" method="POST">
+            <form action="/admin/kelas/delete/{{ $kelas->id }}" method="POST">
                 @csrf
                 @method('DELETE')
 
@@ -73,7 +73,7 @@
                     </div>
                 </div>
             </form>
-            <a href="/kelas/edit/{{ $kelas->id }}" class="tw-bg-amber-400 hover:tw-bg-amber-500 hover:tw-text-white tw-w-fit tw-px-10 tw-py-3 tw-rounded-[11px] tw-text-base tw-text-white tw-font-satoshi"><i class="fa-regular fa-edit tw-text-lg tw-mr-2"></i>Edit Data</a>
+            <a href="/admin/kelas/edit/{{ $kelas->id }}" class="tw-bg-amber-400 hover:tw-bg-amber-500 hover:tw-text-white tw-w-fit tw-px-10 tw-py-3 tw-rounded-[11px] tw-text-base tw-text-white tw-font-satoshi"><i class="fa-regular fa-edit tw-text-lg tw-mr-2"></i>Edit Data</a>
           </div>
     </div>
 </div>

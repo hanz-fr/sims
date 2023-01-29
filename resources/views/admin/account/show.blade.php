@@ -28,7 +28,7 @@
             </div>
         </div>
         <div class="tw-float-right tw-mr-8 tw-flex tw-flex-col">
-            <form action="/account/{{ $user->id }}" method="POST" class="tw-float-right tw-text-right tw-mb-5 -tw-mt-20">
+            <form action="/admin/account/{{ $user->id }}" method="POST" class="tw-float-right tw-text-right tw-mb-5 -tw-mt-20">
                 @csrf
                 @method('DELETE')
 
@@ -93,7 +93,7 @@
             </ul>
             <ul class="sims-text-gray-xl tw-text-right tw-pl-0 tw-grid tw-gap-14">
                 <li>
-                    <a href="/account/{{ $user->id }}/edit" class="tw-text-sims-new-500 hover:tw-text-sims-new-700 tw-text-2xl"><i class="fa-solid fa-pen-line"></i></a>
+                    <a href="/admin/account/{{ $user->id }}/edit" class="tw-text-sims-new-500 hover:tw-text-sims-new-700 tw-text-2xl"><i class="fa-solid fa-pen-line"></i></a>
                 </li>
                 <li>{{ $user->nip }}</li>
                 <li>{{ $user->email }}</li>

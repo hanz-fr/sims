@@ -18,7 +18,7 @@
         </form>
         @can('admin')
         <div class="flex">
-            <a href="/account/create"
+            <a href="/admin/account/create"
                 class="tw-bg-sims-new-500 tw-text-white hover:tw-text-white hover:tw-bg-sims-new-700 tw-font-satoshi tw-rounded-lg tw-px-8 tw-py-2 tw-mr-7">
                     Tambah Data +
             </a>
@@ -75,11 +75,11 @@
                 <td class="tw-p-6">{{ $created_at }}</td>
                 <td class="tw-flex tw-justify-center tw-gap-3 tw-py-2">
                     @can('admin')
-                    <a title="Edit Data" href="/account/{{ $u->id }}/edit"
+                    <a title="Edit Data" href="/admin/account/{{ $u->id }}/edit"
                         class="tw-text-kuning-500 hover:tw-bg-kuning-500 hover:tw-text-white hover:tw-shadow-md tw-transition-all tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                         <i class="fa-solid fa-pen-to-square"></i></a>
                     </a>
-                    <a href="/account/{{ $u->id }}" class="tw-text-gray-400  hover:tw-text-white hover:tw-bg-gray-400 hover:tw-shadow-md tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-w-12 tw-transition-all" title="Detail Data">
+                    <a href="/admin/account/{{ $u->id }}" class="tw-text-gray-400  hover:tw-text-white hover:tw-bg-gray-400 hover:tw-shadow-md tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-w-12 tw-transition-all" title="Detail Data">
                         <i class="fa-regular fa-eye"></i>
                     </a>
                     @endcan

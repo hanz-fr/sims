@@ -259,7 +259,7 @@
                     <!-- heading -->
                     <div class="tw-flex tw-justify-between tw-ml-7 tw-mr-5">
                         <div class="sims-heading-xl-black">User List</div>
-                        <a href="/account" class="tw-bg-[#F1F1EF] hover:tw-bg-[#ebebeb] hover:tw-text-gray-600 tw-px-3 tw-py-1 tw-rounded-lg sims-heading-sm-black tw-text-[#979797]">Show All</a>
+                        <a href="/admin/account" class="tw-bg-[#F1F1EF] hover:tw-bg-[#ebebeb] hover:tw-text-gray-600 tw-px-3 tw-py-1 tw-rounded-lg sims-heading-sm-black tw-text-[#979797]">Show All</a>
                     </div>
 
                     <!-- spacing -->
@@ -271,7 +271,7 @@
 
                         @foreach ($users as $u )
                         
-                        <form action="/account/{{ $u->id }}">
+                        <form action="/admin/account/{{ $u->id }}">
                             <button type="submit" class="tw-flex tw-justify-between sims-card-2">
                                 <div class="tw-flex tw-gap-3">
                                     <i class="fa-solid fa-circle-user sims-icon-3xl"></i>
@@ -296,7 +296,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="/account/{{ $u->id }}/edit" class="tw-text-[#979797] tw-my-auto tw-h-fit">
+                                <a href="/admin/account/{{ $u->id }}/edit" class="tw-text-[#979797] tw-my-auto tw-h-fit">
                                     <i class="fa-solid fa-pen-to-square hover:tw-text-[#FBB845] tw-transition-all"></i>
                                 </a>
                             </button>

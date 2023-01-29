@@ -183,45 +183,15 @@ Route::group(['prefix' => 'admin', 'middleware' => ['is_admin'] , ['revalidate']
 
     Route::get('/kelas', [AdminController::class, 'viewAllKelas']);
     Route::get('/kelas/create', [AdminController::class, 'createKelas']);
-    Route::post('/admin/kelas/store', [AdminController::class, 'storeKelas']);
+    Route::post('/kelas/store', [AdminController::class, 'storeKelas']);
     Route::get('/kelas/edit/{id}', [AdminController::class, 'editKelas']);
+    Route::put('/kelas/update/{id}', [AdminController::class, 'updateKelas']);
     Route::get('/kelas/show/{id}', [AdminController::class, 'viewKelas']);
+    Route::delete('/kelas/delete/{id}', [AdminController::class, 'deleteKelas']);
 
 
     /* ACCOUNT MANAGEMENT */
     Route::resource('/account', AccountController::class);
-
-
-    // DATABASE DASHBOARD
-    Route::get('/database', function () {
-        return view('admin.dashboard-database', [
-            'title' => 'Database SIMS',
-            'active' => 'database'
-        ]);
-    });
-
-
-    /* SISWA */
-    Route::get('/siswa', function () {
-        return view('admin.siswa.all-siswa-admin', [
-            'title' => 'Data All Siswa',
-            'active' => 'database'
-        ]);
-    });
-
-    Route::get('/siswa-detail', function () {
-        return view('admin.siswa.detail-siswa-admin', [
-            'title' => 'Detail Siswa',
-            'active' => 'database'
-        ]);
-    });
-
-    Route::get('/siswa/create', function () {
-        return view('admin.siswa.add-siswa-admin', [
-            'title' => 'Create Siswa',
-            'active' => 'database'
-        ]);
-    });
 
 
     /* JURUSAN */
