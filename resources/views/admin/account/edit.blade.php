@@ -5,7 +5,7 @@
     <div class="tw-flex tw-flex-col tw-rounded-[35px] tw-bg-white lg:tw-w-1/2 sm:tw-w-full sm:tw-mx-5 tw-p-8 tw-h-full tw-mx-auto tw-my-10 tw-shadow-lg">
         <a href="/account" class="tw-text-sims-new-500 sm:tw-text-md md:tw-text-3xl tw-w-min hover:tw-text-sims-new-600"><i class="fa-solid fa-chevron-left"></i></a>
         <h3 class="tw-font-satoshi tw-font-semibold tw-mt-6 tw-mb-14 tw-text-sims-new-500 tw-text-center">Edit Akun</h3>
-        <form action="/account/{{ $user->id }}" method="POST">
+        <form action="/admin/account/{{ $user->id }}" method="POST">
           @csrf
           @method('PUT')
         
@@ -46,15 +46,6 @@
                         <small class="tw-text-red-500">{{ $message }}</small>
                     @enderror
                 </div>
-                {{-- <div class="tw-mx-auto md:tw-w-2/3 sm:tw-w-1/2">
-                    <label class="label-input" for="password">
-                        Password
-                    </label>
-                    <input @error('password') is-invalid @enderror class="input-data-minimal tw-w-full" id="password" name="password" type="password">
-                    @error('password')
-                        <small class="tw-text-red-500">{{ $message }}</small>
-                    @enderror
-                </div> --}}
                 <div class="tw-mx-auto md:tw-w-2/3 sm:tw-w-1/2">
                     <label class="label-input" for="keluar_di_kelas">
                         Role
