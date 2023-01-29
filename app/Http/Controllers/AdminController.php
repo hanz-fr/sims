@@ -253,6 +253,71 @@ class AdminController extends Controller
     }
 
 
+    /* View Detail Mapel */
+    public function viewDetailMapel(Request $request, $id) {
+
+        $response = Http::get("{$this->api_url}/mapel/{$id}");
+
+        if($response->successful()) {
+
+            return view('admin.all-mapel.detail-mapel', [
+                'title' => 'Detail Mata Pelajaran',
+                'active' => 'database',
+                'mapel' => json_decode($response)->result,
+            ]);
+
+        } else {
+
+            return view('errors.404');
+
+        }
+
+    }
+
+
+    /* Create Mapel */
+    public function createMapel(Request $request) {
+
+        return view('admin.all-mapel.create-mapel', [
+            'title' => 'Create Mata Pelajaran',
+            'active' => 'database'
+        ]);
+
+    }
+
+
+    /* Edit Mapel */
+
+
+
+
+    /* Store Mapel */
+    public function storeMapel(Request $request) {
+
+        $id = $request->id;
+
+        $response = json_decode(Http::post("{$this->api_url}/mapel", [
+            'id' => $request->id,
+            'nama' => $request->nama,
+        ]));
+
+        if($response->message == 'Data added successfully.') {
+
+            return redirect('/admin/mata-pelajaran')->with('success', 'Data berhasil ditambahkan.');
+
+        } else if ($response->message === "Mata pelajaran with Id : '{$id}' already exist") {
+
+            return redirect('/admin/mata-pelajaran/create')->with(['error' => 'Mata pelajaran dengan Id tersebut sudah terdaftar.']);
+
+        } else {
+
+            return redirect('/admin/mata-pelajaran/create')->with(['error' => 'Terjadi kesalahan.']);
+
+        }
+
+    }
+
+
     /* View All Mapel Jurusan */
     public function viewAllMapelJurusan(Request $request) {
 
