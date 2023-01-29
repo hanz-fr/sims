@@ -217,6 +217,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['is_admin'] , ['revalidate']
 
 
     /* JURUSAN */
+
     Route::get('/jurusan',[AdminController::class, 'viewAllJurusan']);
     Route::get('/detail-jurusan/{id}', [AdminController::class, 'viewJurusan']);
     Route::get('/jurusan/create', [AdminController::class, 'createJurusan']);
@@ -226,7 +227,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['is_admin'] , ['revalidate']
     Route::put('/jurusan/update/{id}', [AdminController::class, 'updateJurusan']);
     Route::delete('/jurusan/delete/{id}', [AdminController::class, 'deleteJurusan']);
     
-    // MAPEL
+    /* MAPEL */
+
     Route::get('/mata-pelajaran', [AdminController::class, 'viewAllMapel'])->name('view-all-mapel');
     Route::get('/detail-mata-pelajaran/{id}', [AdminController::class, 'viewDetailMapel']);
     Route::get('/mata-pelajaran/create', [AdminController::class, 'createMapel']);
@@ -257,66 +259,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['is_admin'] , ['revalidate']
     Route::get('/mapel-jurusan/edit', function () {
         return view('admin.mapel-jurusan.edit-mapel-jurusan', [
             'title' => 'Edit Mata Pelajaran',
-            'active' => 'database'
-        ]);
-    });
-
-
-    // RAPOR
-    Route::get('/rapor', function () {
-        return view('admin.raport.rapor', [
-            'title' => 'Rapor',
-            'active' => 'database'
-        ]);
-    });
-
-    Route::get('/detail-rapor', function () {
-        return view('admin.raport.detail-rapor', [
-            'title' => 'Detail Rapor',
-            'active' => 'database'
-        ]);
-    });
-
-    Route::get('/rapor/edit', function () {
-        return view('admin.raport.edit-rapor', [
-            'title' => 'Edit Rapor',
-            'active' => 'database'
-        ]);
-    });
-
-    Route::get('/rapor/create', function () {
-        return view('admin.raport.create-rapor', [
-            'title' => 'Create Rapor',
-            'active' => 'database'
-        ]);
-    });
-
-
-    // NILAI MAPEL
-    Route::get('/nilai-mapel', function () {
-        return view('admin.nilai-mapel.show-nilai-mapel', [
-            'title' => 'Nilai Mapel',
-            'active' => 'database'
-        ]);
-    });
-
-    Route::get('/detail-nilai-mapel', function () {
-        return view('admin.nilai-mapel.detail-nilai-mapel', [
-            'title' => 'Detail Nilai Mapel',
-            'active' => 'database'
-        ]);
-    });
-
-    Route::get('/nilai-mapel/create', function () {
-        return view('admin.nilai-mapel.create-nilai-mapel', [
-            'title' => 'Create Nilai Mapel',
-            'active' => 'database'
-        ]);
-    });
-
-    Route::get('/nilai-mapel/edit', function () {
-        return view('admin.nilai-mapel.edit-nilai-mapel', [
-            'title' => 'Edit Nilai Mapel',
             'active' => 'database'
         ]);
     });
