@@ -27,6 +27,7 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
 
     Route::get('/', [ApiController::class, 'mainDashboard']);
 
+
     /* ROUTE SISWA */
 
     Route::get('/data-induk-siswa', [ApiController::class, 'getAllSiswa']);
@@ -34,8 +35,11 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
     Route::get('/tambah-data', [ApiController::class, 'createSiswa']);
     Route::get('/edit-siswa/{nis}', [ApiController::class, 'editSiswa']);
     
+
     /* GET DATA INDUK BY JURUSAN */
+
     Route::get('/data-induk-siswa/{jurusan}/{kelas}', [ApiController::class, 'getSiswaByJurusanKelas']);
+
 
     // CRUD //
     Route::post('/api/siswa', [ApiController::class, 'storeSiswa']);
@@ -75,7 +79,6 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
     Route::get('/mutasi-keluar-pdf', [ApiController::class, 'exportMutasiKeluarPDF']);
     Route::get('/mutasi-keluar-print', [ApiController::class, 'printMutasiKeluar']);
 
-
     
     // siswa-masuk
     Route::get('/siswa-masuk', [ApiController::class, 'getAllMutasiMasuk']);
@@ -89,8 +92,6 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
     Route::get('/mutasi-masuk-excel', [ApiController::class, 'exportMutasiMasukExcel']);
     Route::get('/mutasi-masuk-pdf', [ApiController::class, 'exportMutasiMasukPDF']);
     Route::get('/mutasi-masuk-print', [ApiController::class, 'printMutasiMasuk']);
-
-
 
 
      /* REKAP NILAI */
@@ -120,6 +121,7 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
 
     Route::get('/jurusan', [ApiController::class, 'getJurusan']);
 
+    
     /* ANGKATAN SISWA */
 
     Route::get('/angkatan', [ApiController::class, 'getAngkatan']);
@@ -129,11 +131,14 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
 
     Route::get('/data-alumni', [ApiController::class, 'viewAlumni']);
     Route::get('/data-alumni/all', [ApiController::class, 'viewAlumni']);
+
     Route::get('/alumni-pdf', [ApiController::class, 'exportAlumniPDF']);
     Route::get('/alumni-print', [ApiController::class, 'printAlumni']);
     Route::get('/alumni-excel', [ApiController::class, 'exportAlumniExcel']);
+
     Route::get('/select-jurusan-alumni', [ApiController::class, 'selectJurusanAlumni']);
     Route::get('/select-angkatan-alumni', [ApiController::class, 'selectAngkatanAlumni']);
+
 
     /* REKAP SISWA */
 
@@ -150,21 +155,34 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
 
 
     /* PROFILE */
+
     Route::get('/profile', [UserController::class, 'show'])->name('profile');
-    Route::get('/edit-profile', [UserController::class, 'edit'])->name('profile.edit');
-    Route::post('/update-profile/{id}', [UserController::class, 'update']);
+    Route::get('/profile/edit', [UserController::class, 'edit'])->name('profile.edit');
+    Route::post('/profile/update/{id}', [UserController::class, 'update']);
+
+
+    /* CHANGE PASSWORD */
+
     Route::post('/change-password', [UserController::class, 'changePassword']);
 
-    Route::get('/email/verify/{id}', [UserController::class, 'sendVerifyAccount']);
-    Route::get('/email/verify-after/{token}', [UserController::class, 'verifyAccountAfter'])->name('account.verify');
+
+    /* EMAIL VERIFICATION */
+
+    Route::get('/email/verify/{token}', [UserController::class, 'verifyAccount'])->name('user.verify');
+    Route::post('/send-email/{id}', [UserController::class, 'sendVerifyAccount'])->name('user.resend');
+    // Route::post('/email/verify/{id}', [UserController::class, 'sendVerifyAccount']);
+    // Route::get('/email/verify-after/{token}', [UserController::class, 'verifyAccountAfter'])->name('account.verify');
 
 
     /* HISTORY PAGE */
+
     Route::get('/history', [ApiController::class, 'viewHistory'])->name('history');   
     Route::get('/history/my', [ApiController::class, 'viewMyHistory'])->name('myHistory');
     Route::get('/history/search', [ApiController::class, 'viewHistoryNew'])->name('historyNew');
 
+
     /* HELP CENTER */
+
     Route::get('/help', [ApiController::class, 'viewHelpCenter'])->name('help-center');
     Route::get('/help/general', [ApiController::class, 'viewGeneralHelp']);
 
@@ -178,8 +196,11 @@ Route::group(['prefix' => 'admin', 'middleware' => ['is_admin'] , ['revalidate']
 
 
     /* DASHBOARD */
+
     Route::get('/', [ApiController::class, 'adminDashboard']);
 
+
+    /* KELAS */
 
     Route::get('/kelas', [AdminController::class, 'viewAllKelas']);
     Route::get('/kelas/create', [AdminController::class, 'createKelas']);
@@ -191,10 +212,12 @@ Route::group(['prefix' => 'admin', 'middleware' => ['is_admin'] , ['revalidate']
 
 
     /* ACCOUNT MANAGEMENT */
+
     Route::resource('/account', AccountController::class);
 
 
     /* JURUSAN */
+
     Route::get('/jurusan',[AdminController::class, 'viewAllJurusan']);
     Route::get('/detail-jurusan/{id}', [AdminController::class, 'viewJurusan']);
     Route::get('/jurusan/create', [AdminController::class, 'createJurusan']);
@@ -320,22 +343,17 @@ Route::group(['prefix' => 'admin', 'middleware' => ['is_admin'] , ['revalidate']
     Route::get('/search', [ApiController::class, 'search']);
 });
 
-    /* ADMIN LOGIN */
-    // Route::get('/admin', [AdminController::class, 'index'])->name('admin.login');
-    // Route::post('/login-admin', [AdminController::class, 'handleLogin']);
-    // Route::get('/admin/logout', [AdminController::class, 'logout']);
 
+/* ROUTE USER SIMS (LOGIN & REGISTER) */
 
-// ROUTE USER SIMS (LOGIN & REGISTER)
 Route::get('/register', [UserController::class, 'registration'])->name('register.form');
 Route::get('/login', [UserController::class, 'index'])->name('login');
 Route::post('/registeruser', [UserController::class, 'register']);
 Route::post('/loginuser', [UserController::class, 'authenticate']);
 Route::get('/signout', [UserController::class, 'signOut']);
 
-Route::get('email/verify/{token}', [UserController::class, 'verifyAccount'])->name('user.verify');
-Route::post('/resend-email/{id}', [UserController::class, 'resend'])->name('user.resend');
 
+/* FORGOT PASSWORD */
 
 Route::get('/forgot-password', [UserController::class, 'showForgetPasswordForm']);
 Route::post('/forget-password', [UserController::class, 'submitForgetPasswordForm']);

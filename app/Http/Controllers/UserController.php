@@ -67,23 +67,26 @@ class UserController extends Controller
         return view('auth.register', [
             'title'  => 'Verifikasi akun anda',
             'status' => 'success',
-            'user' => $user
+            'user'   => $user
         ]);
 
     }
 
 
-    public function resend($id) {
+    public function sendVerifyAccount(Request $request, $id) {
 
         $user = User::where('id', $id)->first();
 
         $user->update([
-            'token' => Str::random(40)
+            'token' => Str::random(40),
+            'email' => $request->email
         ]);
 
         Mail::to($user->email)->send(new EmailVerification($user));
 
-        return view('auth.register', [
+        return view('auth.edit-profil', [
+            'title' => '',
+            'active' => '',
             'status' => 'success', 
             'message' => 'Link baru sudah terkirim',
             'user' => $user
@@ -97,20 +100,17 @@ class UserController extends Controller
         $user = User::where('token', $token)->first();
 
         if (!$user){
-            return redirect()->route('register.form')->with('error', 'Invalid URL');
+            return redirect()->route('profile')->with('error', 'Invalid URL');
         } else {
 
             if ($user->email_verified_at) {
-                return redirect()->route('register.form')->with('error', 'Email sudah terverifikasi');
+                return redirect()->route('profile')->with('error', 'Email sudah terverifikasi');
             } else {
                 $user->update([
                     'email_verified_at' => Carbon::now()
                 ]);
 
-                return view('auth.login', [
-                    'title'  => 'Log In',
-                    'status' => 'success'
-                ]);
+                return view('auth.profil-user')->with('success', 'Verifikasi Akun Berhasil');
 
             }
 
@@ -259,27 +259,33 @@ class UserController extends Controller
         $request->validate([
             'email' => 'required|email|exists:users',
         ]);
+
+        $user = User::where('email', $request->email)->first();
   
-        $token = Str::random(64);
-  
-        DB::table('password_resets')->insert([
-            'email' => $request->email, 
-            'token' => $token, 
-            'created_at' => Carbon::now()
-        ]);
-  
-        Mail::send('auth.email.forget-password', [
-            'token' => $token, 
-            'title' => 'Email',
-        ], function($message) use($request) {
-            $message->to($request->email);
-            $message->subject('Atur Ulang Kata Sandi');
-        });
-  
-        return view("auth.forgot-password", [
-            'title'  => 'Email Sent',
-            'status' => 'message'
-        ]);
+        if ($user->email_verified_at) {
+            $token = Str::random(64);
+    
+            DB::table('password_resets')->insert([
+                'email' => $request->email, 
+                'token' => $token, 
+                'created_at' => Carbon::now()
+            ]);
+    
+            Mail::send('auth.email.forget-password', [
+                'token' => $token, 
+                'title' => 'Email',
+            ], function($message) use($request) {
+                $message->to($request->email);
+                $message->subject('Atur Ulang Kata Sandi');
+            });
+    
+            return view("auth.forgot-password", [
+                'title'  => 'Email Sent',
+                'status' => 'message'
+            ]);
+        } else {
+            return redirect("login")->with('error', 'Email anda belum terverifikasi!');
+        }
 
       }
 

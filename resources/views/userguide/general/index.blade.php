@@ -68,8 +68,48 @@
 
             </div>
 
-            <div class="tw-text-center hc-title-3xl tw-mt-20">
-                Manfaat SIMS
+            <div class="tw-grid tw-grid-cols-2">
+                <div class="tw-bg-sims-new-200 tw-w-1/2">
+                    ini foto
+                </div>
+                <div class="text">
+                    <div class="check1">1</div>
+                    <div class="check2">2</div>
+                    <div class="check3">3</div>
+
+                    <div class="tw-grid-rows-2">
+                        <h3 class="hc-title-lg">Penyimpanan Data Terpusat</h3>
+                        <p class="tw-text-justify hc-text-base">
+                            SIMS memungkinkan operator sekolah untuk menyimpan 
+                            data-data siswa di satu tempat, sehingga dapat 
+                            mempermudah pemegang hak akses dalam melacak perubahan 
+                            pada data dan mengatur semua informasi. Mereka dapat 
+                            melakukannya tanpa harus memilah dokumen-dokumen secara manual.
+                        </p>
+                    </div>
+
+                    <div class="tw-grid-rows-2">
+                        <h3 class="hc-title-lg">Peningkatan Produktivitas</h3>
+                        <p class="tw-text-justify hc-text-base">
+                            tanpa SIMS operator sekolah harus mengisi ratusan data secara 
+                            manual dan harus memperbaharuinya dengan cara manual juga. 
+                            Tetapi dengan SIMS, penginputan data akan menjadi lebih cepat 
+                            sehingga dapat menghemat waktu pengerjaan
+                        </p>
+                    </div>
+
+                    <div class="tw-grid-rows-2">
+                        <h3 class="hc-title-lg">Pemanfaatan Sumber Daya yang Lebih Baik</h3>
+                        <p class="tw-text-justify hc-text-base">
+                            SIMS adalah sebuah transformasi digital yang artinya semua kegiatan 
+                            dilakukan secara online. Bila dimanfaatkan dengan baik tentunya dapat 
+                            menghemat banyak kertas dan sumber daya berguna lainnya.
+                        </p>
+                    </div>
+
+                </div>
+                <div class="pic"></div>
+            </div>
             </div>
         </div>
     </div>
