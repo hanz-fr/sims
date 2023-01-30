@@ -1341,6 +1341,14 @@ video {
   left: 2rem;
 }
 
+.tw-left-3 {
+  left: 0.75rem;
+}
+
+.tw-left-5 {
+  left: 1.25rem;
+}
+
 .tw-z-10 {
   z-index: 10;
 }
@@ -1367,6 +1375,10 @@ video {
 
 .tw-m-10 {
   margin: 2.5rem;
+}
+
+.tw-m-2 {
+  margin: 0.5rem;
 }
 
 .tw-mx-10 {
@@ -2267,6 +2279,10 @@ video {
   gap: 4rem;
 }
 
+.tw-gap-24 {
+  gap: 6rem;
+}
+
 .tw-gap-x-5 {
   -moz-column-gap: 1.25rem;
        column-gap: 1.25rem;
@@ -2784,19 +2800,14 @@ video {
   background-color: rgb(149 187 232 / var(--tw-bg-opacity));
 }
 
-.tw-bg-\[\#FFCF86\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 207 134 / var(--tw-bg-opacity));
-}
-
-.tw-bg-\[\#FF7575\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 117 117 / var(--tw-bg-opacity));
-}
-
 .tw-bg-sims-new-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(186 226 231 / var(--tw-bg-opacity));
+}
+
+.tw-bg-orange-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 215 170 / var(--tw-bg-opacity));
 }
 
 .tw-bg-opacity-50 {
@@ -3111,10 +3122,6 @@ video {
   padding-left: 3rem;
 }
 
-.tw-pl-8 {
-  padding-left: 2rem;
-}
-
 .tw-text-left {
   text-align: left;
 }
@@ -3237,10 +3244,6 @@ video {
 
 .tw-font-black {
   font-weight: 900;
-}
-
-.tw-font-thin {
-  font-weight: 100;
 }
 
 .tw-leading-5 {
@@ -3442,14 +3445,29 @@ video {
   color: rgb(149 187 232 / var(--tw-text-opacity));
 }
 
-.tw-text-admin-400 {
-  --tw-text-opacity: 1;
-  color: rgb(122 167 224 / var(--tw-text-opacity));
-}
-
 .tw-text-bluewood-700 {
   --tw-text-opacity: 1;
   color: rgb(53 85 105 / var(--tw-text-opacity));
+}
+
+.tw-text-orange-200 {
+  --tw-text-opacity: 1;
+  color: rgb(254 215 170 / var(--tw-text-opacity));
+}
+
+.tw-text-orange-400 {
+  --tw-text-opacity: 1;
+  color: rgb(251 146 60 / var(--tw-text-opacity));
+}
+
+.tw-text-orange-600 {
+  --tw-text-opacity: 1;
+  color: rgb(234 88 12 / var(--tw-text-opacity));
+}
+
+.tw-text-sims-new-400 {
+  --tw-text-opacity: 1;
+  color: rgb(83 176 189 / var(--tw-text-opacity));
 }
 
 .tw-underline {
@@ -4311,16 +4329,6 @@ input[type="checkbox"]:checked {
 .hover\:tw-bg-admin-600:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(70 109 202 / var(--tw-bg-opacity));
-}
-
-.hover\:tw-bg-\[\#ffba51\]:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 186 81 / var(--tw-bg-opacity));
-}
-
-.hover\:tw-bg-salmon-600:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(231 23 77 / var(--tw-bg-opacity));
 }
 
 .hover\:tw-text-sims-600:hover {

@@ -248,27 +248,16 @@ Route::group(['prefix' => 'admin', 'middleware' => ['is_admin'] , ['revalidate']
 
     /* MAPEL JURUSAN */
     Route::get('/mapel-jurusan', [MapelJurusanController::class, 'viewAllMapelJurusan']);
-
-    Route::get('/detail-mapel-jurusan', function () {
-        return view('admin.mapel-jurusan.detail-mapel-jurusan', [
-            'title' => 'Mata Pelajaran',
-            'active' => 'database'
-        ]);
-    });
-
-    Route::get('/mapel-jurusan/create', function () {
-        return view('admin.mapel-jurusan.create-mapel-jurusan', [
-            'title' => 'Create Mata Pelajaran',
-            'active' => 'database'
-        ]);
-    });
-
+    Route::get('/detail-mapel-jurusan/{id}', [MapelJurusanController::class, 'viewDetailMapelJurusan']);
+    Route::get('/mapel-jurusan/create', [MapelJurusanController::class, 'createMapelJurusan']);
     Route::get('/mapel-jurusan/edit', function () {
         return view('admin.mapel-jurusan.edit-mapel-jurusan', [
             'title' => 'Edit Mata Pelajaran',
             'active' => 'database'
         ]);
     });
+    
+    Route::post('/mapel-jurusan/store', [MapelJurusanController::class, 'storeMapelJurusan']);
 
 
     /* LIVE SEARCH TEST */

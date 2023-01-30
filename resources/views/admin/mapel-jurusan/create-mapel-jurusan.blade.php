@@ -1,62 +1,121 @@
-@extends('layouts.admin')
+@extends('layouts.main-new')
 
 @section('content')
-    <div class="tw-mx-10 tw-w-screen">
-        <div class="tw-flex tw-mt-8">
-            <a href="/admin/mapel-jurusan">
-                <i class="fa-solid fa-chevron-left tw-text-2xl tw-text-gray-300 hover:tw-text-gray-600"></i>
-            </a>
-            <div class="tw-text-2xl tw-ml-3 tw-font-pop tw-font-semibold tw-text-gray-300">Create Mata Pelajaran Jurusan
-            </div>
-        </div>
-        <div class="tw-flex tw-justify-between tw-mb-8 tw-mt-14 shadow-cs tw-rounded-xl tw-mx-auto tw-overflow-hidden">
-            <div class="tw-bg-[#5a6c7c] tw-py-6 tw-px-12 tw-flex tw-w-1/2 tw-justify-center tw-items-center">
-                <div class="tw-bg-white tw-p-10 tw-rounded-lg">
-                    <img src="{{ url('https://www.smkn11bdg.sch.id/src/images/11.png') }}" alt="" class="tw-w-44">
-                </div>
-            </div>
-            <div class="tw-flex tw-justify-center tw-bg-white tw-py-8 tw-w-full tw-px-24 tw-mx-auto">
-                <form action="">
-                    <div class="tw-font-ubuntu tw-justify-center">
-                        <label for="id" class="tw-font-bold tw-text-lg tw-flex tw-mb-2 tw-text-admin-300">ID Mapel</label>
-                        <select id="id"
-                            class="tw-border tw-w-[550px] tw-border-admin-300 tw-rounded-2xl tw-py-3 tw-px-4 focus:tw-outline-admin-300">
-                            <option selected>1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                        </select>
-                    </div>
-                    <div class="tw-font-ubuntu tw-mt-8 tw-justify-center">
-                        <label for="nama" class="tw-font-bold tw-text-lg tw-flex tw-mb-2 tw-text-admin-300">Nama Mapel</label>
-                        <input type="text" id="nama" name="Nama" class="tw-border tw-w-[550px] tw-border-admin-300 tw-rounded-2xl tw-py-3 tw-px-4 focus:tw-outline-admin-300">
-                    </div>
 
-                    <div class="tw-font-ubuntu tw-mt-8 tw-justify-center">
-                        <label for="jurusan" class="tw-font-bold tw-text-lg tw-flex tw-mb-2 tw-text-admin-300">
-                            Jurusan
-                        </label>
-                        <select id="jurusan"
-                            class="tw-border tw-w-[550px] tw-border-admin-300 tw-rounded-2xl tw-py-3 tw-px-4 focus:tw-outline-admin-300">
-                            <option selected>Pilih jurusan</option>
-                            <option value="RPL">Rekayasa Perangkat Lunak</option>
-                            <option value="TKJ">Teknik Komputer dan Jaringan</option>
-                            <option value="MLOG">Manajemen Logistik</option>
-                            <option value="AKL">Akuntansi dan Keuangan Lembaga</option>
-                        </select>
+    <div class="tw-flex tw-flex-col tw-my-10">
+
+        <div class="sims-heading-2xl tw-flex tw-justify-center">Create Mata Pelajaran Jurusan</div>
+
+        <!-- spacing -->
+        <div class="tw-my-20"></div>
+
+        <div class="tw-flex tw-justify-center">
+
+            <form action="/admin/mapel-jurusan/store" method="POST" class="tw-flex tw-flex-col tw-gap-8 tw-w-1/4">
+                @csrf
+                @method('POST')
+
+                <!-- Id MapelJurusan (AutoFill) -->
+                <div class="tw-flex tw-flex-col tw-gap-1">
+                    <div class="tw-flex tw-gap-3">
+                        <div class="sims-text-gray-sm tw-my-auto">Id Mata Pelajaran Jurusan</div>
+                        <!--Code Block for white tooltip starts-->
+                        <a tabindex="0" role="link" aria-label="tooltip 1"
+                            class="focus:outline-none focus:ring-gray-300 rounded-full focus:ring-offset-2 focus:ring-2 focus:bg-gray-200 relative mt-20 md:mt-0"
+                            onmouseover="showTooltip(1)" onfocus="showTooltip(1)" onmouseout="hideTooltip(1)">
+                            <div class=" cursor-pointer">
+                                <i data-tooltip-target="tooltip-animation"
+                                    class="fa-regular fa-circle-question tw-text-lg tw-text-sims-new-500"></i>
+                            </div>
+                            <div id="tooltip1" role="tooltip"
+                                class="z-20 tw-w-64 absolute transition duration-150 ease-in-out tw-right-0 tw-left-5 tw-top-0 ml-8 shadow-lg bg-white p-4 rounded hidden">
+                                <p class="tw-text-sm tw-font-satoshi tw-font-bold text-gray-600">Id Mata Pelajaran Jurusan</p>
+                                <p class="tw-text-sm tw-font-satoshi tw-font-normal leading-4 text-gray-600">Merupakan gabungan dari Id Jurusan dan Id Mata Pelajaran. Field ini terisi otomatis dan harus sesuai dengan Id Jurusan dan Id Mata Pelajaran dan tidak dapat diubah setelah Mapel Jurusan dibuat. <p class="tw-bg-gray-100 tw-text-red-400 tw-font-normal tw-p-2 sims-text-gray-sm">(*masukkan input pada id jurusan atau mata pelajaran jika tidak terisi otomatis)</p></p>
+                            </div>
+                        </a>
+                    <!--Code Block for white tooltip ends-->
                     </div>
-                    <div class="tw-font-ubuntu tw-flex tw-mt-12 tw-justify-center">
-                        <button type="submit"
-                            class="tw-text-white tw-bg-admin-300 hover:tw-bg-admin-600 tw-px-8 tw-py-3 tw-rounded-lg">
-                            Submit
-                        </button>
-                    </div>
-                </form>
-            </div>
+                    <input disabled required value="" name="mapelJurusanId" id="mapelJurusanId" class="tw-border-[1.5px] tw-transition-all tw-duration-500 tw-ease-out tw-font-satoshi tw-font-normal tw-text-gray-500 tw-border-gray-300 tw-py-1 tw-px-5 tw-rounded-xl focus:tw-outline-sims-new-500">
+                </div>
+
+                <!-- Id Jurusan -->
+                <div class="tw-flex tw-flex-col tw-gap-1">
+                    <div class="sims-text-gray-sm">Id Jurusan</div>
+                    <select onselect="update()" name="JurusanId" id="JurusanId" class="tw-border-[1.5px] tw-transition-all tw-duration-500 tw-ease-out tw-font-satoshi tw-font-normal tw-text-gray-500 tw-border-gray-300 tw-py-1 tw-px-5 tw-rounded-xl focus:tw-outline-sims-new-500">
+                        @foreach ($jurusan as $j)
+                        <option value="{{ $j->id }}">{{ $j->id }}</option>
+                        @endforeach
+                    </select>
+                </div>
+
+                <!-- Id Mapel -->
+                <div class="tw-flex tw-flex-col tw-gap-1">
+                    <div class="sims-text-gray-sm">Id Mata Pelajaran</div>
+                    <select onselect="update()" name="MapelId" id="MapelId" class="tw-border-[1.5px] tw-transition-all tw-duration-500 tw-ease-out tw-font-satoshi tw-font-normal tw-text-gray-500 tw-border-gray-300 tw-py-1 tw-px-5 tw-rounded-xl focus:tw-outline-sims-new-500">
+                        @foreach ($mapel as $m)
+                        <option value="{{ $m->id }}">{{ $m->id }}</option>
+                        @endforeach
+                    </select>
+                </div>
+
+                @if ($message = Session::get('error'))
+                    <div class="sims-text-gray-xs tw-text-red-500">{{ $message }}</div>
+                @endif
+
+                <div class="tw-flex tw-justify-end">
+                    <button type="submit" class="tw-bg-sims-new-500 tw-transition-all tw-w-fit tw-text-white hover:tw-text-white hover:tw-bg-sims-new-700 tw-font-satoshi tw-rounded-lg tw-px-8 tw-py-2"> Create </button>
+                </div>
+            </form>
+
         </div>
+
+
     </div>
-    </div>
+
+
+    <script>
+
+        function showTooltip(flag) {
+            switch (flag) {
+                case 1:
+                    document.getElementById("tooltip1").classList.remove("hidden");
+                    break;
+                case 2:
+                    document.getElementById("tooltip2").classList.remove("hidden");
+                    break;
+                case 3:
+                    document.getElementById("tooltip3").classList.remove("hidden");
+                    break;
+            }
+        }
+
+        function hideTooltip(flag) {
+            switch (flag) {
+                case 1:
+                    document.getElementById("tooltip1").classList.add("hidden");
+                    break;
+                case 2:
+                    document.getElementById("tooltip2").classList.add("hidden");
+                    break;
+                case 3:
+                    document.getElementById("tooltip3").classList.add("hidden");
+                    break;
+            }
+        }
+
+        /* MapelJurusanId AutoFill */
+        $(function(){
+            $('#JurusanId').on('change', function update() {
+                $("#mapelJurusanId").val($('#JurusanId').val() + "_" + $('#MapelId').val());
+            })
+        });
+
+        $(function(){
+            $('#MapelId').on('change', function update() {
+                $("#mapelJurusanId").val($('#JurusanId').val() + "_" + $('#MapelId').val());
+            })
+        });
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 @endsection
