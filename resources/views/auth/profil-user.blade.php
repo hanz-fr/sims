@@ -47,7 +47,7 @@
                     @if (auth()->user()->email_verified_at)
                         <span class="tw-text-xs tw-flex tw-ml-3 tw-py-1 tw-px-2.5 tw-text-center tw-whitespace-nowrap tw-items-center tw-justify-center tw-font-bold tw-bg-ijo-400 tw-text-white tw-rounded-full">Terverifikasi</span>
                     @else
-                        <a href="/edit-profile"><span class="tw-text-xs tw-flex tw-py-1 tw-px-2.5 tw-text-center tw-whitespace-nowrap tw-items-center tw-justify-center tw-font-bold tw-bg-gray-400 hover:tw-bg-gray-600 tw-text-white tw-rounded-full">Belum Terverifikasi</span></a>
+                        <a href="/profile/edit"><span class="tw-text-xs tw-flex tw-py-1 tw-px-2.5 tw-text-center tw-whitespace-nowrap tw-items-center tw-justify-center tw-font-bold tw-bg-gray-400 hover:tw-bg-gray-600 tw-text-white tw-rounded-full">Belum Terverifikasi</span></a>
                     @endif
                 </li>
                 <li>Bagian</li>

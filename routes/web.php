@@ -1,10 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\AdminController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\MapelController;
 use App\Http\Controllers\SiswaController;
@@ -18,7 +15,6 @@ use App\Http\Controllers\RekapNilaiController;
 use App\Http\Controllers\MutasiMasukController;
 use App\Http\Controllers\MapelJurusanController;
 use App\Http\Controllers\MutasiKeluarController;
-use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\SiswaTidakNaikController;
 use App\Http\Controllers\RekapJumlahSiswaController;
 
@@ -149,7 +145,7 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
     Route::get('/alumni-print', [AlumniController::class, 'printAlumni']);
     Route::get('/alumni-excel', [AlumniController::class, 'exportAlumniExcel']);
 
-    Route::get('/Pselect-jurusan-alumni', [AlumniController::class, 'selectJurusanAlumni']);
+    Route::get('/select-jurusan-alumni', [AlumniController::class, 'selectJurusanAlumni']);
     Route::get('/select-angkatan-alumni', [AlumniController::class, 'selectAngkatanAlumni']);
 
 
