@@ -63,9 +63,9 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                             </svg>
-                            <div class="tw-mb-5 tw-flex tw-justify-center tw-text-md tw-font-normal tw-text-gray-500 dark:tw-text-gray-400"> Hapus data Mata Pelajaran?</div>
+                            <div class="tw-mb-5 tw-flex tw-justify-center tw-text-md tw-font-normal tw-text-gray-500 dark:tw-text-gray-400"> Hapus data Mata Pelajaran Jurusan?</div>
                             <div class="tw-flex tw-justify-center">
-                                <form action="/admin/mata-pelajaran/delete/{{ $mapel_jurusan->mapelJurusanId }}" method="POST">
+                                <form action="/admin/mapel-jurusan/delete/{{ $mapel_jurusan->mapelJurusanId }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" data-modal-toggle="popup-modal" type="button" class="tw-text-white tw-bg-red-600 hover:tw-bg-red-800 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-red-300 dark:focus:tw-ring-red-800 tw-font-medium tw-rounded-lg tw-text-sm tw-inline-flex tw-items-center tw-py-2.5 tw-text-center tw-mr-2 tw-px-6"> Ya </button>
@@ -76,7 +76,7 @@
                     </div>
                 </div>
             </div>
-            <form action="/admin/mata-pelajaran/edit/{{ $mapel_jurusan->mapelJurusanId }}" method="GET">
+            <form action="/admin/mapel-jurusan/edit/{{ $mapel_jurusan->mapelJurusanId }}" method="GET">
                 <input type="hidden" name="fromDetailPage" value="true">
                 <button type="submit" class="tw-px-8 tw-py-2 tw-bg-[#FBBF24] tw-text-white tw-font-normal sims-heading-sm tw-rounded-lg tw-shadow-sm hover:tw-shadow-lg hover:tw-bg-[#daa728] tw-transition-all tw-truncate">Edit Data</button>
             </form>
