@@ -3,11 +3,24 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ApiController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\KelasController;
+use App\Http\Controllers\MapelController;
+use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\AlumniController;
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\HistoryController;
+use App\Http\Controllers\JurusanController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HelpCentreController;
+use App\Http\Controllers\RekapNilaiController;
+use App\Http\Controllers\MutasiMasukController;
+use App\Http\Controllers\MapelJurusanController;
+use App\Http\Controllers\MutasiKeluarController;
 use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\SiswaTidakNaikController;
+use App\Http\Controllers\RekapJumlahSiswaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,133 +38,133 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
 
     /* MAIN DASHBOARD */
 
-    Route::get('/', [ApiController::class, 'mainDashboard']);
+    Route::get('/', [DashboardController::class, 'mainDashboard']);
 
 
     /* ROUTE SISWA */
 
-    Route::get('/data-induk-siswa', [ApiController::class, 'getAllSiswa']);
-    Route::get('/detail/{nis}', [ApiController::class, 'getSiswa']);
-    Route::get('/tambah-data', [ApiController::class, 'createSiswa']);
-    Route::get('/edit-siswa/{nis}', [ApiController::class, 'editSiswa']);
+    Route::get('/data-induk-siswa', [SiswaController::class, 'getAllSiswa']);
+    Route::get('/detail/{nis}', [SiswaController::class, 'getSiswa']);
+    Route::get('/tambah-data', [SiswaController::class, 'createSiswa']);
+    Route::get('/edit-siswa/{nis}', [SiswaController::class, 'editSiswa']);
     
 
     /* GET DATA INDUK BY JURUSAN */
 
-    Route::get('/data-induk-siswa/{jurusan}/{kelas}', [ApiController::class, 'getSiswaByJurusanKelas']);
+    Route::get('/data-induk-siswa/{jurusan}/{kelas}', [SiswaController::class, 'getSiswaByJurusanKelas']);
 
 
     // CRUD //
-    Route::post('/api/siswa', [ApiController::class, 'storeSiswa']);
-    Route::put('/api/siswa/update/{nis}', [ApiController::class, 'updateSiswa']);
-    Route::delete('/api/siswa/delete/{nis}', [ApiController::class, 'deleteSiswa']);
+    Route::post('/api/siswa', [SiswaController::class, 'storeSiswa']);
+    Route::put('/api/siswa/update/{nis}', [SiswaController::class, 'updateSiswa']);
+    Route::delete('/api/siswa/delete/{nis}', [SiswaController::class, 'deleteSiswa']);
 
-    Route::post('/api/siswa/import', [ApiController::class, 'importDataSiswa']);
+    Route::post('/api/siswa/import', [SiswaController::class, 'importDataSiswa']);
 
-    Route::get('/data-siswa-pdf/{nis}', [ApiController::class, 'exportDataSiswaPDF'])->name('siswa.pdf');
-    Route::get('/data-siswa-print/{nis}', [ApiController::class, 'printDataSiswa'])->name('siswa.print');
+    Route::get('/data-siswa-pdf/{nis}', [SiswaController::class, 'exportDataSiswaPDF'])->name('siswa.pdf');
+    Route::get('/data-siswa-print/{nis}', [SiswaController::class, 'printDataSiswa'])->name('siswa.print');
 
-    Route::get('/data-induk-pdf', [ApiController::class, 'exportDataIndukPDF']);
-    Route::get('/data-induk-pdf/{jurusan}/{kelas}', [ApiController::class, 'exportDataIndukPDF']);
+    Route::get('/data-induk-pdf', [SiswaController::class, 'exportDataIndukPDF']);
+    Route::get('/data-induk-pdf/{jurusan}/{kelas}', [SiswaController::class, 'exportDataIndukPDF']);
 
-    Route::get('/data-induk-print', [ApiController::class, 'printDataInduk']);
-    Route::get('/data-induk-print/{jurusan}/{kelas}', [ApiController::class, 'printDataInduk']);
+    Route::get('/data-induk-print', [SiswaController::class, 'printDataInduk']);
+    Route::get('/data-induk-print/{jurusan}/{kelas}', [SiswaController::class, 'printDataInduk']);
     
-    Route::get('/data-induk-excel', [ApiController::class, 'exportDataIndukExcel']);
-    Route::get('/data-induk-excel/{jurusan}/{kelas}', [ApiController::class, 'exportDataIndukExcel']);
-    Route::get('/detail-data-induk/{nis}', [ApiController::class, 'exportDetailDataIndukExcel']);
+    Route::get('/data-induk-excel', [SiswaController::class, 'exportDataIndukExcel']);
+    Route::get('/data-induk-excel/{jurusan}/{kelas}', [SiswaController::class, 'exportDataIndukExcel']);
+    Route::get('/detail-data-induk/{nis}', [SiswaController::class, 'exportDetailDataIndukExcel']);
 
-    Route::get('/get-request', [ApiController::class, 'getRequest']);
+    Route::get('/get-request', [SiswaController::class, 'getRequest']);
 
 
     /* ROUTE MUTASI */
 
     // siswa-keluar
-    Route::get('/siswa-keluar', [ApiController::class, 'getAllMutasiKeluar']);
-    Route::get('/create-mutasi-keluar', [ApiController::class, 'createMutasiKeluar']);
-    Route::get('/edit-mutasi-keluar/{id}', [ApiController::class, 'editMutasiKeluar']);
+    Route::get('/siswa-keluar', [MutasiKeluarController::class, 'getAllMutasiKeluar']);
+    Route::get('/create-mutasi-keluar', [MutasiKeluarController::class, 'createMutasiKeluar']);
+    Route::get('/edit-mutasi-keluar/{id}', [MutasiKeluarController::class, 'editMutasiKeluar']);
 
-    Route::post('/api/mutasi-keluar/store', [ApiController::class, 'storeMutasiKeluar']);
-    Route::put('/api/mutasi-keluar/update/{id}', [ApiController::class, 'updateMutasiKeluar']);
-    Route::delete('/api/mutasi-keluar/delete/{id}', [ApiController::class, 'deleteMutasiKeluar']);
+    Route::post('/api/mutasi-keluar/store', [MutasiKeluarController::class, 'storeMutasiKeluar']);
+    Route::put('/api/mutasi-keluar/update/{id}', [MutasiKeluarController::class, 'updateMutasiKeluar']);
+    Route::delete('/api/mutasi-keluar/delete/{id}', [MutasiKeluarController::class, 'deleteMutasiKeluar']);
 
-    Route::get('/mutasi-keluar-excel', [ApiController::class, 'exportMutasiKeluarExcel']);
-    Route::get('/mutasi-keluar-pdf', [ApiController::class, 'exportMutasiKeluarPDF']);
-    Route::get('/mutasi-keluar-print', [ApiController::class, 'printMutasiKeluar']);
+    Route::get('/mutasi-keluar-excel', [MutasiKeluarController::class, 'exportMutasiKeluarExcel']);
+    Route::get('/mutasi-keluar-pdf', [MutasiKeluarController::class, 'exportMutasiKeluarPDF']);
+    Route::get('/mutasi-keluar-print', [MutasiKeluarController::class, 'printMutasiKeluar']);
 
     
     // siswa-masuk
-    Route::get('/siswa-masuk', [ApiController::class, 'getAllMutasiMasuk']);
-    Route::get('/create-mutasi-masuk', [ApiController::class, 'createMutasiMasuk']);
-    Route::get('/edit-mutasi-masuk/{id}', [ApiController::class, 'editMutasiMasuk']);
+    Route::get('/siswa-masuk', [MutasiMasukController::class, 'getAllMutasiMasuk']);
+    Route::get('/create-mutasi-masuk', [MutasiMasukController::class, 'createMutasiMasuk']);
+    Route::get('/edit-mutasi-masuk/{id}', [MutasiMasukController::class, 'editMutasiMasuk']);
 
-    Route::post('/api/mutasi-masuk/store', [ApiController::class, 'storeMutasiMasuk']);
-    Route::put('/api/mutasi-masuk/update/{id}', [ApiController::class, 'updateMutasiMasuk']);
-    Route::delete('/api/mutasi-masuk/delete/{id}', [ApiController::class, 'deleteMutasiMasuk']);
+    Route::post('/api/mutasi-masuk/store', [MutasiMasukController::class, 'storeMutasiMasuk']);
+    Route::put('/api/mutasi-masuk/update/{id}', [MutasiMasukController::class, 'updateMutasiMasuk']);
+    Route::delete('/api/mutasi-masuk/delete/{id}', [MutasiMasukController::class, 'deleteMutasiMasuk']);
 
-    Route::get('/mutasi-masuk-excel', [ApiController::class, 'exportMutasiMasukExcel']);
-    Route::get('/mutasi-masuk-pdf', [ApiController::class, 'exportMutasiMasukPDF']);
-    Route::get('/mutasi-masuk-print', [ApiController::class, 'printMutasiMasuk']);
+    Route::get('/mutasi-masuk-excel', [MutasiMasukController::class, 'exportMutasiMasukExcel']);
+    Route::get('/mutasi-masuk-pdf', [MutasiMasukController::class, 'exportMutasiMasukPDF']);
+    Route::get('/mutasi-masuk-print', [MutasiMasukController::class, 'printMutasiMasuk']);
 
 
      /* REKAP NILAI */
 
-    Route::get('/rekap-nilai/{nis}', [ApiController::class, 'getRaportSiswa']);
-    Route::get('/tambah-nilai/{nis}', [ApiController::class, 'viewTambahNilaiMapel']);
-    Route::get('/edit-rekap-nilai/{RaportId}', [ApiController::class, 'editRekapNilai']);
-    Route::post('/api/raport/tambah-nilai', [ApiController::class, 'storeTambahNilaiMapel']);
-    Route::put('/api/raport/update-nilai', [ApiController::class, 'storeUpdateNilaiMapel']);
-    Route::delete('/api/raport/delete/{RaportId}', [ApiController::class, 'deleteNilaiMapel']);
+    Route::get('/rekap-nilai/{nis}', [RekapNilaiController::class, 'getRaportSiswa']);
+    Route::get('/tambah-nilai/{nis}', [RekapNilaiController::class, 'viewTambahNilaiMapel']);
+    Route::get('/edit-rekap-nilai/{RaportId}', [RekapNilaiController::class, 'editRekapNilai']);
+    Route::post('/api/raport/tambah-nilai', [RekapNilaiController::class, 'storeTambahNilaiMapel']);
+    Route::put('/api/raport/update-nilai', [RekapNilaiController::class, 'storeUpdateNilaiMapel']);
+    Route::delete('/api/raport/delete/{RaportId}', [RekapNilaiController::class, 'deleteNilaiMapel']);
 
-    Route::get('/rekap-nilai-excel/{nis}', [ApiController::class, 'exportRekapNilaiExcel']);
-    Route::get('/rekap-nilai-print/{nis}', [ApiController::class, 'printRekapNilai']);
-    Route::get('/rekap-nilai-pdf/{nis}', [ApiController::class, 'exportRekapNilaiPDF']);
+    Route::get('/rekap-nilai-excel/{nis}', [RekapNilaiController::class, 'exportRekapNilaiExcel']);
+    Route::get('/rekap-nilai-print/{nis}', [RekapNilaiController::class, 'printRekapNilai']);
+    Route::get('/rekap-nilai-pdf/{nis}', [RekapNilaiController::class, 'exportRekapNilaiPDF']);
     
 
     /* REKAP DATA SISWA */
 
-    Route::get('/rekap-jumlah-siswa', [ApiController::class, 'rekapJumlahSiswa']);
+    Route::get('/rekap-jumlah-siswa', [RekapJumlahSiswaController::class, 'rekapJumlahSiswa']);
 
-    Route::get('/rekap-jumlah-siswa-pdf', [ApiController::class, 'exportRekapJumlahPDF']);
-    Route::get('/rekap-jumlah-siswa-print', [ApiController::class, 'printRekapJumlah']);
-    Route::get('/rekap-jumlah-siswa-excel', [ApiController::class, 'exportRekapJumlahExcel']);
+    Route::get('/rekap-jumlah-siswa-pdf', [RekapJumlahSiswaController::class, 'exportRekapJumlahPDF']);
+    Route::get('/rekap-jumlah-siswa-print', [RekapJumlahSiswaController::class, 'printRekapJumlah']);
+    Route::get('/rekap-jumlah-siswa-excel', [RekapJumlahSiswaController::class, 'exportRekapJumlahExcel']);
 
 
     /* JURUSAN SISWA*/
 
-    Route::get('/jurusan', [ApiController::class, 'getJurusan']);
+    Route::get('/jurusan', [SiswaController::class, 'getJurusan']);
 
     
     /* ANGKATAN SISWA */
 
-    Route::get('/angkatan', [ApiController::class, 'getAngkatan']);
+    Route::get('/angkatan', [SiswaController::class, 'getAngkatan']);
 
 
     /* ALUMNI */
 
-    Route::get('/data-alumni', [ApiController::class, 'viewAlumni']);
-    Route::get('/data-alumni/all', [ApiController::class, 'viewAlumni']);
+    Route::get('/data-alumni', [AlumniController::class, 'viewAlumni']);
+    Route::get('/data-alumni/all', [AlumniController::class, 'viewAlumni']);
 
-    Route::get('/alumni-pdf', [ApiController::class, 'exportAlumniPDF']);
-    Route::get('/alumni-print', [ApiController::class, 'printAlumni']);
-    Route::get('/alumni-excel', [ApiController::class, 'exportAlumniExcel']);
+    Route::get('/alumni-pdf', [AlumniController::class, 'exportAlumniPDF']);
+    Route::get('/alumni-print', [AlumniController::class, 'printAlumni']);
+    Route::get('/alumni-excel', [AlumniController::class, 'exportAlumniExcel']);
 
-    Route::get('/select-jurusan-alumni', [ApiController::class, 'selectJurusanAlumni']);
-    Route::get('/select-angkatan-alumni', [ApiController::class, 'selectAngkatanAlumni']);
+    Route::get('/Pselect-jurusan-alumni', [AlumniController::class, 'selectJurusanAlumni']);
+    Route::get('/select-angkatan-alumni', [AlumniController::class, 'selectAngkatanAlumni']);
 
 
     /* REKAP SISWA */
 
-    Route::get('/rekap-siswa', [ApiController::class, 'rekapSiswaDashboard']);
+    Route::get('/rekap-siswa', [DashboardController::class, 'rekapSiswaDashboard']);
 
 
     /* DATA TIDAK NAIK KELAS */
 
-    Route::get('/data-tidak-naik', [ApiController::class, 'siswaTidakNaik']);
+    Route::get('/data-tidak-naik', [SiswaTidakNaikController::class, 'siswaTidakNaik']);
 
-    Route::get('/data-tidak-naik-excel', [ApiController::class, 'exportDataTidakNaikExcel']);
-    Route::get('/data-tidak-naik-pdf', [ApiController::class, 'exportDataTidakNaikPDF']);
-    Route::get('/data-tidak-naik-print', [ApiController::class, 'printDataTidakNaik']);
+    Route::get('/data-tidak-naik-excel', [SiswaTidakNaikController::class, 'exportDataTidakNaikExcel']);
+    Route::get('/data-tidak-naik-pdf', [SiswaTidakNaikController::class, 'exportDataTidakNaikPDF']);
+    Route::get('/data-tidak-naik-print', [SiswaTidakNaikController::class, 'printDataTidakNaik']);
 
 
     /* PROFILE */
@@ -170,21 +183,19 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
 
     Route::get('/email/verify/{token}', [UserController::class, 'verifyAccount'])->name('user.verify');
     Route::post('/send-email/{id}', [UserController::class, 'sendVerifyAccount'])->name('user.resend');
-    // Route::post('/email/verify/{id}', [UserController::class, 'sendVerifyAccount']);
-    // Route::get('/email/verify-after/{token}', [UserController::class, 'verifyAccountAfter'])->name('account.verify');
 
 
     /* HISTORY PAGE */
 
-    Route::get('/history', [ApiController::class, 'viewHistory'])->name('history');   
-    Route::get('/history/my', [ApiController::class, 'viewMyHistory'])->name('myHistory');
-    Route::get('/history/search', [ApiController::class, 'viewHistoryNew'])->name('historyNew');
+    Route::get('/history', [HistoryController::class, 'viewHistory'])->name('history');   
+    Route::get('/history/my', [HistoryController::class, 'viewMyHistory'])->name('myHistory');
+    Route::get('/history/search', [HistoryController::class, 'viewHistoryNew'])->name('historyNew');
 
 
     /* HELP CENTER */
 
-    Route::get('/help', [ApiController::class, 'viewHelpCenter'])->name('help-center');
-    Route::get('/help/general', [ApiController::class, 'viewGeneralHelp']);
+    Route::get('/help', [HelpCentreController::class, 'viewHelpCenter'])->name('help-center');
+    Route::get('/help/general', [HelpCentreController::class, 'viewGeneralHelp']);
 
 });
 
@@ -197,18 +208,18 @@ Route::group(['prefix' => 'admin', 'middleware' => ['is_admin'] , ['revalidate']
 
     /* DASHBOARD */
 
-    Route::get('/', [ApiController::class, 'adminDashboard']);
+    Route::get('/', [DashboardController::class, 'adminDashboard']);
 
 
     /* KELAS */
 
-    Route::get('/kelas', [AdminController::class, 'viewAllKelas']);
-    Route::get('/kelas/create', [AdminController::class, 'createKelas']);
-    Route::post('/kelas/store', [AdminController::class, 'storeKelas']);
-    Route::get('/kelas/edit/{id}', [AdminController::class, 'editKelas']);
-    Route::put('/kelas/update/{id}', [AdminController::class, 'updateKelas']);
-    Route::get('/kelas/show/{id}', [AdminController::class, 'viewKelas']);
-    Route::delete('/kelas/delete/{id}', [AdminController::class, 'deleteKelas']);
+    Route::get('/kelas', [KelasController::class, 'viewAllKelas']);
+    Route::get('/kelas/create', [KelasController::class, 'createKelas']);
+    Route::post('/kelas/store', [KelasController::class, 'storeKelas']);
+    Route::get('/kelas/edit/{id}', [KelasController::class, 'editKelas']);
+    Route::put('/kelas/update/{id}', [KelasController::class, 'updateKelas']);
+    Route::get('/kelas/show/{id}', [KelasController::class, 'viewKelas']);
+    Route::delete('/kelas/delete/{id}', [KelasController::class, 'deleteKelas']);
 
 
     /* ACCOUNT MANAGEMENT */
@@ -218,29 +229,29 @@ Route::group(['prefix' => 'admin', 'middleware' => ['is_admin'] , ['revalidate']
 
     /* JURUSAN */
 
-    Route::get('/jurusan',[AdminController::class, 'viewAllJurusan']);
-    Route::get('/detail-jurusan/{id}', [AdminController::class, 'viewJurusan']);
-    Route::get('/jurusan/create', [AdminController::class, 'createJurusan']);
-    Route::get('/jurusan/edit/{id}', [AdminController::class, 'editJurusan']);
+    Route::get('/jurusan',[JurusanController::class, 'viewAllJurusan']);
+    Route::get('/detail-jurusan/{id}', [JurusanController::class, 'viewJurusan']);
+    Route::get('/jurusan/create', [JurusanController::class, 'createJurusan']);
+    Route::get('/jurusan/edit/{id}', [JurusanController::class, 'editJurusan']);
 
-    Route::post('/jurusan/store', [AdminController::class, 'storeJurusan']);
-    Route::put('/jurusan/update/{id}', [AdminController::class, 'updateJurusan']);
-    Route::delete('/jurusan/delete/{id}', [AdminController::class, 'deleteJurusan']);
+    Route::post('/jurusan/store', [JurusanController::class, 'storeJurusan']);
+    Route::put('/jurusan/update/{id}', [JurusanController::class, 'updateJurusan']);
+    Route::delete('/jurusan/delete/{id}', [JurusanController::class, 'deleteJurusan']);
     
     /* MAPEL */
 
-    Route::get('/mata-pelajaran', [AdminController::class, 'viewAllMapel'])->name('view-all-mapel');
-    Route::get('/detail-mata-pelajaran/{id}', [AdminController::class, 'viewDetailMapel']);
-    Route::get('/mata-pelajaran/create', [AdminController::class, 'createMapel']);
-    Route::get('/mata-pelajaran/edit/{id}', [AdminController::class, 'editMapel']);
+    Route::get('/mata-pelajaran', [MapelController::class, 'viewAllMapel'])->name('view-all-mapel');
+    Route::get('/detail-mata-pelajaran/{id}', [MapelController::class, 'viewDetailMapel']);
+    Route::get('/mata-pelajaran/create', [MapelController::class, 'createMapel']);
+    Route::get('/mata-pelajaran/edit/{id}', [MapelController::class, 'editMapel']);
 
-    Route::post('/mata-pelajaran/store', [AdminController::class, 'storeMapel']);
-    Route::put('/mata-pelajaran/update/{id}', [AdminController::class, 'updateMapel']);
-    Route::delete('/mata-pelajaran/delete/{id}', [AdminController::class, 'deleteMapel']);
+    Route::post('/mata-pelajaran/store', [MapelController::class, 'storeMapel']);
+    Route::put('/mata-pelajaran/update/{id}', [MapelController::class, 'updateMapel']);
+    Route::delete('/mata-pelajaran/delete/{id}', [MapelController::class, 'deleteMapel']);
 
 
     /* MAPEL JURUSAN */
-    Route::get('/mapel-jurusan', [AdminController::class, 'viewAllMapelJurusan']);
+    Route::get('/mapel-jurusan', [MapelJurusanController::class, 'viewAllMapelJurusan']);
 
     Route::get('/detail-mapel-jurusan', function () {
         return view('admin.mapel-jurusan.detail-mapel-jurusan', [
