@@ -27,14 +27,14 @@
                     <span class="tw-text-bluewood-700">Apa</span>&nbsp;itu SIMS?
                </div>
                <div class="hc-text-lg tw-text-justify">
-                Sistem Informasi Manajemen Data Siswa berbasis web yang dikembangkan 
-                sebagai alat bantu untuk sekolah dalam pengelolaan data induk siswa 
-                secara online. Pada dasarnya, SIMS memungkinkan sekolah untuk menyimpan 
-                dan mengelompokkan data di satu tempat secara digital sehingga memudahkan 
-                administrator sekolah dan guru dalam memantau kemajuan siswa dan memperbarui 
-                data secara real time. SIMS juga mempermudah sekolah dalam pelacakan data, 
-                seperti perpindahan, data alumni, dan siswa yang tidak naik kelas. Semua itu 
-                bisa dilakukan dengan lebih mudah menggunakan SIMS.
+                    Sistem Informasi Manajemen Data Siswa berbasis web yang dikembangkan 
+                    sebagai alat bantu untuk sekolah dalam pengelolaan data induk siswa 
+                    secara online. Pada dasarnya, SIMS memungkinkan sekolah untuk menyimpan 
+                    dan mengelompokkan data di satu tempat secara digital sehingga memudahkan 
+                    administrator sekolah dan guru dalam memantau kemajuan siswa dan memperbarui 
+                    data secara real time. SIMS juga mempermudah sekolah dalam pelacakan data, 
+                    seperti perpindahan, data alumni, dan siswa yang tidak naik kelas. Semua itu 
+                    bisa dilakukan dengan lebih mudah menggunakan SIMS.
                </div>
             </div>
 
@@ -42,8 +42,10 @@
                 Tujuan Kami
             </div>
 
-            <p class="tw-mb-0 hc-text-lg">Tujuan utama dari SIMS adalah mempermudah pengelolaan, penyimpanan dan pelacakan 
-            data terkait siswa. </p>
+            <p class="tw-mb-0 hc-text-lg">
+                Tujuan utama dari SIMS adalah mempermudah pengelolaan, penyimpanan dan pelacakan 
+                data terkait siswa. 
+            </p>
 
            <div class="tw-grid tw-grid-cols-3 hover:tw-text-white">
 
@@ -119,7 +121,6 @@
             </div>
         </div>
     </div>
-</div>
 
     <!-- spacing !-->
     <div class="tw-my-24"></div> 

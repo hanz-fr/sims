@@ -8,7 +8,7 @@
         }
 
         .slide-container {
-            max-width: 600px;
+            max-width: 1000px;
             width: 100%;
         }
 
@@ -183,13 +183,13 @@
                     </select>
 
                     <div class="my-info-1">
-                        <div class="chart4"  style="position: relative; height:40vh;">
+                        <div class="chart4"  style="position: relative; height:45vh;">
                             <canvas id="chart4" class="tw-mt-4"></canvas>
                         </div>
-                        <div class="chart2 hide"  style="position: relative; height:40vh;">
+                        <div class="chart2 hide"  style="position: relative; height:45vh;">
                             <canvas id="chart1" class="tw-mt-4"></canvas>
                         </div>
-                        <div class="chart1 hide"  style="position: relative; height:40vh;">
+                        <div class="chart1 hide"  style="position: relative; height:45vh;">
                             <canvas id="chart2" class="tw-mt-4"></canvas>
                         </div>
                     </div>
@@ -198,16 +198,16 @@
 
             <!-- User Graphics - Column 2 -->
             <div class="tw-flex tw-flex-col tw-w-1/4">
-                <div class="sims-heading-md-black tw-text-center">User Graphics</div>
+                <div class="sims-heading-md-black tw-text-center">Grafik Jumlah User</div>
 
-                <div style="height: 280px">
-                    <canvas id="chart3" class="tw-mt-4"></canvas>
+                <div style="height: 35vh">
+                    <canvas id="chart3" class="tw-mt-8"></canvas>
                 </div>
 
                 <!-- spacing -->
                 <div class="tw-my-2"></div>
 
-                <div class="tw-grid tw-grid-cols-2 tw-gap-x-5 tw-justify-evenly">
+                <div class="tw-grid tw-grid-cols-2 tw-gap-x-5 tw-gap-y-5 tw-pt-12 tw-justify-evenly">
                     <div
                         class="sims-card-1-noshadow tw-w-full tw-py-3 tw-px-7 tw-h-fit tw-border-l-4 hover:tw-shadow-md tw-transition-all tw-duration-200 tw-border-l-sims-new-500">
                         <div class="tw-flex tw-gap-2">
@@ -253,8 +253,8 @@
 
 
             <!-- User List - Column 3 -->
-            <div class="sims-card-1 tw-w-1/4 tw-my-0 tw-h-full">
-                <div class="tw-flex tw-flex-col tw-h-1/2">
+            <div class="sims-card-1 tw-w-1/4 tw-my-0 tw-h-fit">
+                <div class="tw-flex tw-flex-col tw-h-full">
 
                     <!-- heading -->
                     <div class="tw-flex tw-justify-between tw-ml-7 tw-mr-5">
@@ -267,7 +267,7 @@
 
                     <!-- content -->
                     {{-- SHOW 5 USERS ONLY --}}
-                    <div class="tw-flex tw-flex-col tw-gap-3 tw-pr-3 tw-mx-5 tw-overflow-y-scroll tw-h-[365px] tw-scrollbar-thumb-gray-400 tw-scrollbar-thumb-rounded-lg tw-scrollbar-thin tw-scrollbar-track-gray-100">
+                    <div class="tw-flex tw-flex-col tw-gap-3 tw-pr-3 tw-mx-5 tw-overflow-y-scroll tw-h-[50vh] tw-scrollbar-thumb-gray-400 tw-scrollbar-thumb-rounded-lg tw-scrollbar-thin tw-scrollbar-track-gray-100">
 
                         @foreach ($users as $u )
                         
@@ -319,7 +319,7 @@
 
             <!-- Overview - Column 1 -->
             <div class="tw-flex tw-flex-col">
-                <div class="sims-heading-lg-black">Overview</div>
+                <div class="sims-heading-lg-black">Manajamen Data</div>
 
                 <!-- spacing -->
                 <div class="tw-my-2"></div>
@@ -429,10 +429,8 @@
 
                 <!-- heading -->
                 <div class="tw-flex tw-justify-between tw-mx-10">
-                    <div class="sims-heading-lg-black">Latest Activity</div>
-                    <form action="/history" method="GET">
-                        <button type="submit" class="tw-bg-[#F1F1EF] hover:tw-bg-[#ebebeb] tw-px-3 tw-py-1 tw-rounded-lg sims-heading-sm-black tw-text-[#979797]">Show All</button>
-                    </form>
+                    <div class="sims-heading-lg-black">Aktifitas Terbaru</div>
+                    <button type="button" class="tw-bg-[#F1F1EF] hover:tw-bg-[#ebebeb] tw-px-3 tw-py-1 tw-rounded-lg sims-heading-sm-black tw-text-[#979797]">Show All</button>
                 </div>
 
                 <!-- spacing -->
