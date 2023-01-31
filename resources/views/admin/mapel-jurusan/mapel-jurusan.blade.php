@@ -51,7 +51,7 @@
                 <div class="tw-my-auto tw-text-basic-700 tw-ml-8 tw-mr-2 tw-font-normal tw-font-satoshi">Urutkan berdasarkan</div>
                 <select name="sort-by-data" id="sort-by-data" class="tw-px-5 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-200 tw-peer tw-font-bold  bg-transparent tw-border-0 tw-border-b-2 tw-border-gray-200 tw-appearance-none tw-block">
                     <option value="/admin/mapel-jurusan?page=@if(isset($_GET['page'])){{ $_GET['page'] }}@endif&perPage=@if(isset($_GET['perPage'])){{ $_GET['perPage'] }}@endif&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&sort_by=MapelId&sort=@if(isset($_GET['sort'])){{ $_GET['sort'] }}@endif" @isset($_GET['sort_by']) @if($_GET['sort_by'] === 'MapelId') selected @endif @endisset class="tw-bg-white">Id Mapel</option>
-                    <option value="/admin/mapel-jurusan?page=@if(isset($_GET['page'])){{ $_GET['page'] }}@endif&perPage=@if(isset($_GET['perPage'])){{ $_GET['perPage'] }}@endif&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&sort_by=mapelJurusanId&sort=@if(isset($_GET['sort'])){{ $_GET['sort'] }}@endif" @isset($_GET['sort_by']) @if($_GET['sort_by'] === 'mapelJurusanId') selected @endif @endisset class="tw-bg-white">Id MapelJurusan</option>
+                    <option value="/admin/mapel-jurusan?page=@if(isset($_GET['page'])){{ $_GET['page'] }}@endif&perPage=@if(isset($_GET['perPage'])){{ $_GET['perPage'] }}@endif&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&sort_by=mapelJurusanId&sort=@if(isset($_GET['sort'])){{ $_GET['sort'] }}@endif" @isset($_GET['sort_by']) @if($_GET['sort_by'] === 'mapelJurusanId') selected @endif @endisset class="tw-bg-white">Id Mapel Jurusan</option>
                     <option value="/admin/mapel-jurusan?page=@if(isset($_GET['page'])){{ $_GET['page'] }}@endif&perPage=@if(isset($_GET['perPage'])){{ $_GET['perPage'] }}@endif&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&sort_by=JurusanId&sort=@if(isset($_GET['sort'])){{ $_GET['sort'] }}@endif" @isset($_GET['sort_by']) @if($_GET['sort_by'] === 'JurusanId') selected @endif @endisset class="tw-bg-white">Id Jurusan</option>
                     <option value="/admin/mapel-jurusan?page=@if(isset($_GET['page'])){{ $_GET['page'] }}@endif&perPage=@if(isset($_GET['perPage'])){{ $_GET['perPage'] }}@endif&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&sort_by=createdAt&sort=@if(isset($_GET['sort'])){{ $_GET['sort'] }}@endif" @isset($_GET['sort_by']) @if($_GET['sort_by'] === 'createdAt') selected @endif @endisset class="tw-bg-white">Tgl Dibuat</option>
                     <option value="/admin/mapel-jurusan?page=@if(isset($_GET['page'])){{ $_GET['page'] }}@endif&perPage=@if(isset($_GET['perPage'])){{ $_GET['perPage'] }}@endif&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&sort_by=updatedAt&sort=@if(isset($_GET['sort'])){{ $_GET['sort'] }}@endif" @isset($_GET['sort_by']) @if($_GET['sort_by'] === 'updatedAt') selected @endif @endisset class="tw-bg-white">Tgl Diupdate</option>
@@ -82,6 +82,7 @@
                         <th scope="col" class="tw-py-5 tw-px-6">Id Jurusan</th>
                         <th scope="col" class="tw-py-5 tw-px-6">Dibuat</th>
                         <th scope="col" class="tw-py-5 tw-px-6">Diupdate</th>
+                        <th scope="col" class="tw-py-5 tw-px-10">Aksi</th>
                     </tr>
                 </thead>
                 <tbody class="tw-text-base">
@@ -93,9 +94,13 @@
                         <td class="tw-p-8">@if($m->createdAt != null){{  \Carbon\Carbon::parse(strtotime($m->createdAt))->translatedFormat('l d F Y'); }}@endif</td>
                         <td class="tw-p-8">@if($m->updatedAt != null){{  \Carbon\Carbon::parse(strtotime($m->updatedAt))->translatedFormat('l d F Y'); }}@endif</td>
                         <td class="tw-flex tw-mt-8 tw-justify-center tw-gap-3">
-                          <a href="#" class="tw-text-kuning-500  hover:tw-text-white hover:tw-bg-kuning-500 hover:tw-shadow-md tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-w-12 tw-transition-all" title="Edit Data Siswa">
+                          
+                            <!-- !! Temporary Comment !! -->
+                          {{-- <a href="/admin/mapel-jurusan/edit/{{ $m->mapelJurusanId }}" class="tw-text-kuning-500  hover:tw-text-white hover:tw-bg-kuning-500 hover:tw-shadow-md tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-w-12 tw-transition-all" title="Edit Data Siswa">
                               <i class="fa-solid fa-pen-to-square"></i>
-                          </a>
+                          </a> --}}
+                          <!-- !! Temporary Comment !! -->
+                          
                           <a href="/admin/detail-mapel-jurusan/{{ $m->mapelJurusanId }}" class="tw-text-gray-400  hover:tw-text-white hover:tw-bg-gray-400 hover:tw-shadow-md tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-w-12 tw-transition-all" title="Detail Data">
                               <i class="fa-regular fa-eye"></i>
                           </a>

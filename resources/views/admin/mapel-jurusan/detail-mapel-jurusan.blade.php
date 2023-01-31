@@ -76,10 +76,13 @@
                     </div>
                 </div>
             </div>
-            <form action="/admin/mapel-jurusan/edit/{{ $mapel_jurusan->mapelJurusanId }}" method="GET">
+
+            {{-- !! TEMPORARY COMMENT !! --}}
+            {{-- <form action="/admin/mapel-jurusan/edi2t/{{ $mapel_jurusan->mapelJurusanId }}" method="GET">
                 <input type="hidden" name="fromDetailPage" value="true">
                 <button type="submit" class="tw-px-8 tw-py-2 tw-bg-[#FBBF24] tw-text-white tw-font-normal sims-heading-sm tw-rounded-lg tw-shadow-sm hover:tw-shadow-lg hover:tw-bg-[#daa728] tw-transition-all tw-truncate">Edit Data</button>
-            </form>
+            </form> --}}
+            {{-- !! TEMPORARY COMMENT !! --}}
         </div>
 
         </div>
