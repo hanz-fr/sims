@@ -112,9 +112,12 @@ class DashboardController extends Controller
         $walikelas = User::where('role', 4)->count();
         $current_year = Carbon::now()->year; // current year
 
+        $total_mapel = Http::get("{$this->api_url}/mapel");
         $response = Http::get("{$this->api_url}/dashboard");
         $allJurusan = Http::get("{$this->api_url}/jurusan");
         $userHistory = json_decode(Http::get("{$this->api_url}/history/$user->nama/all?year={$current_year}"));
+        $allHistory = json_decode(Http::get("{$this->api_url}/history?year={$current_year}&limit=4"))->rows;
+        $totalActivityPerMonth = json_decode(Http::get("{$this->api_url}/history/count/perMonth?year={$current_year}"));
 
         /* This sets the $time variable to the current hour in the 24 hour clock format */
         $time = date("H");
@@ -151,6 +154,8 @@ class DashboardController extends Controller
                 'kesiswaan' => $kesiswaan,
                 'kurikulum' => $kurikulum,
                 'walikelas' => $walikelas,
+                'allHistory' => $allHistory,
+                'total_mapel' => json_decode($total_mapel)->data->count,
                 'mutasi' => json_decode($response)->mutasi->count,
                 'kelas' => json_decode($response)->kelas->count,
                 'siswa' => json_decode($response)->siswa->count,
@@ -172,6 +177,18 @@ class DashboardController extends Controller
                 'jumlahSiswaPPLG' => json_decode($response)->jumlahSiswaPPLG->count,
                 'jumlahSiswaTJKT' => json_decode($response)->jumlahSiswaTJKT->count,
                 'jumlahSiswaMLOG' => json_decode($response)->jumlahSiswaMLOG->count,
+                'totalActivityJanuary' => $totalActivityPerMonth->january,
+                'totalActivityFebruary' => $totalActivityPerMonth->february,
+                'totalActivityMarch' => $totalActivityPerMonth->march,
+                'totalActivityApril' => $totalActivityPerMonth->april,
+                'totalActivityMay' => $totalActivityPerMonth->may,
+                'totalActivityJune' => $totalActivityPerMonth->june,
+                'totalActivityJuly' => $totalActivityPerMonth->july,
+                'totalActivityAugust' => $totalActivityPerMonth->august,
+                'totalActivitySeptember' => $totalActivityPerMonth->september,
+                'totalActivityOctober' => $totalActivityPerMonth->october,
+                'totalActivityNovember' => $totalActivityPerMonth->november,
+                'totalActivityDecember' => $totalActivityPerMonth->december,
             ]);
 
         } else {

@@ -1787,16 +1787,8 @@ video {
   margin-bottom: 0px;
 }
 
-.tw-mr-10 {
-  margin-right: 2.5rem;
-}
-
 .tw-mb-12 {
   margin-bottom: 3rem;
-}
-
-.tw-mr-6 {
-  margin-right: 1.5rem;
 }
 
 .tw-block {
@@ -2777,9 +2769,9 @@ video {
   background-color: rgb(251 191 36 / var(--tw-bg-opacity));
 }
 
-.tw-bg-sims-new-200 {
+.tw-bg-slate-200 {
   --tw-bg-opacity: 1;
-  background-color: rgb(186 226 231 / var(--tw-bg-opacity));
+  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
 }
 
 .tw-bg-opacity-50 {

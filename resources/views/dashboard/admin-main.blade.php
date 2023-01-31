@@ -253,7 +253,7 @@
 
 
             <!-- User List - Column 3 -->
-            <div class="sims-card-1 tw-w-1/4 tw-my-0 tw-h-fit">
+            <div class="sims-card-1 tw-w-1/4 tw-my-0 tw-h-full">
                 <div class="tw-flex tw-flex-col tw-h-1/2">
 
                     <!-- heading -->
@@ -324,7 +324,7 @@
                 <!-- spacing -->
                 <div class="tw-my-2"></div>
 
-                <div class="tw-w-fit">
+                <div class="tw-w-fit tw-h-fit">
                     <div class="slide-container swiper tw-my-auto">
                         <div class="slide-content">
                             <div class="card-wrapper swiper-wrapper">
@@ -334,14 +334,14 @@
                                     <div class="tw-flex tw-flex-col">
 
                                         <!-- heading -->
-                                        <div class="tw-flex tw-gap-10 tw-justify-center">
+                                        <div class="tw-flex tw-gap-5 tw-justify-center">
                                             <div class="tw-flex tw-flex-col">
-                                                <i class="fa-solid fa-shapes sims-icon-3xl tw-mx-auto"></i>
-                                                <div class="sims-heading-md-black">Siswa</div>
+                                                <i class="fa-solid fa-user sims-icon-3xl tw-mx-auto"></i>
+                                                <div class="sims-heading-sm-black tw-truncate">Siswa</div>
                                             </div>
 
                                             <div class="tw-flex tw-gap-2 tw-my-auto">
-                                                <div class="sims-text-black-xl tw-text-3xl tw-my-auto">5400</div>
+                                                <div class="sims-text-black-xl tw-text-3xl tw-my-auto">{{ $siswa }}</div>
                                                 <div class="sims-heading-sm-black tw-font-normal">total<br>data</div>
                                             </div>
                                         </div>
@@ -349,29 +349,11 @@
                                         <!-- spacing -->
                                         <div class="tw-my-10"></div>
 
-                                        <!-- content -->
-                                        <div class="tw-flex tw-flex-col tw-mx-8 tw-gap-3">
-                                            <div class="tw-flex tw-justify-between">
-                                                <div class="sims-text-gray-sm tw-font-normal">Latest data created</div>
-                                                <div class="sims-text-gray-sm tw-font-bold">2 days ago</div>
-                                            </div>
-                                            <div class="tw-flex tw-justify-between">
-                                                <div class="sims-text-gray-sm tw-font-normal">Latest update</div>
-                                                <div class="sims-text-gray-sm tw-font-bold">2 days ago</div>
-                                            </div>
-                                            <div class="tw-flex tw-justify-between">
-                                                <div class="sims-text-gray-sm tw-font-normal">Recently created data</div>
-                                                <div class="sims-text-gray-sm tw-font-bold tw-truncate tw-w-1/3">Lorem ipsum dolor sit amet consectetur</div>
-                                            </div>
-                                        </div>
-
                                         <!-- spacing -->
                                         <div class="tw-my-3"></div>
 
                                         <!-- button -->
-                                        <button type="button" class="tw-border-sims-new-500 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all tw-border sims-text-regular-sm tw-text-center tw-rounded-lg tw-py-2">
-                                            Manage
-                                        </button>
+                                        <a href="/data-induk-siswa?page=1&perPage=10" class="tw-border-sims-new-500 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all tw-border sims-text-regular-sm tw-text-center tw-rounded-lg tw-py-2">Manage</a>
                                     </div>
                                 </div>
 
@@ -380,14 +362,14 @@
                                     <div class="tw-flex tw-flex-col">
 
                                         <!-- heading -->
-                                        <div class="tw-flex tw-gap-10 tw-justify-center">
+                                        <div class="tw-flex tw-gap-5 tw-justify-center">
                                             <div class="tw-flex tw-flex-col">
                                                 <i class="fa-solid fa-shapes sims-icon-3xl tw-mx-auto"></i>
-                                                <div class="sims-heading-md-black">Jurusan</div>
+                                                <div class="sims-heading-sm-black tw-truncate">Jurusan</div>
                                             </div>
 
                                             <div class="tw-flex tw-gap-2 tw-my-auto">
-                                                <div class="sims-text-black-xl tw-text-3xl tw-my-auto">40</div>
+                                                <div class="sims-text-black-xl tw-text-3xl tw-my-auto">{{ $jurusan }}</div>
                                                 <div class="sims-heading-sm-black tw-font-normal">total<br>data</div>
                                             </div>
                                         </div>
@@ -395,29 +377,11 @@
                                         <!-- spacing -->
                                         <div class="tw-my-10"></div>
 
-                                        <!-- content -->
-                                        <div class="tw-flex tw-flex-col tw-mx-8 tw-gap-3">
-                                            <div class="tw-flex tw-justify-between">
-                                                <div class="sims-text-gray-sm tw-font-normal">Latest data created</div>
-                                                <div class="sims-text-gray-sm tw-font-bold">2 days ago</div>
-                                            </div>
-                                            <div class="tw-flex tw-justify-between">
-                                                <div class="sims-text-gray-sm tw-font-normal">Latest update</div>
-                                                <div class="sims-text-gray-sm tw-font-bold">2 days ago</div>
-                                            </div>
-                                            <div class="tw-flex tw-justify-between">
-                                                <div class="sims-text-gray-sm tw-font-normal">Recently created data</div>
-                                                <div class="sims-text-gray-sm tw-font-bold tw-truncate tw-w-1/3">Lorem ipsum dolor sit amet consectetur</div>
-                                            </div>
-                                        </div>
-
                                         <!-- spacing -->
                                         <div class="tw-my-3"></div>
 
                                         <!-- button -->
-                                        <button type="button" class="tw-border-sims-new-500 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all tw-border sims-text-regular-sm tw-text-center tw-rounded-lg tw-py-2">
-                                            Manage
-                                        </button>
+                                        <a href="/admin/jurusan?page=1&perPage=10" class="tw-border-sims-new-500 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all tw-border sims-text-regular-sm tw-text-center tw-rounded-lg tw-py-2">Manage</a>
                                     </div>
                                 </div>
 
@@ -426,14 +390,14 @@
                                     <div class="tw-flex tw-flex-col">
 
                                         <!-- heading -->
-                                        <div class="tw-flex tw-gap-10 tw-justify-center">
+                                        <div class="tw-flex tw-gap-5 tw-justify-center">
                                             <div class="tw-flex tw-flex-col">
-                                                <i class="fa-solid fa-shapes sims-icon-3xl tw-mx-auto"></i>
-                                                <div class="sims-heading-md-black">Mata Pelajaran</div>
+                                                <i class="fa-solid fa-book sims-icon-3xl tw-mx-auto"></i>
+                                                <div class="sims-heading-sm-black tw-truncate">Mata Pelajaran</div>
                                             </div>
 
                                             <div class="tw-flex tw-gap-2 tw-my-auto">
-                                                <div class="sims-text-black-xl tw-text-3xl tw-my-auto">55</div>
+                                                <div class="sims-text-black-xl tw-text-3xl tw-my-auto">{{ $total_mapel }}</div>
                                                 <div class="sims-heading-sm-black tw-font-normal">total<br>data</div>
                                             </div>
                                         </div>
@@ -441,29 +405,11 @@
                                         <!-- spacing -->
                                         <div class="tw-my-10"></div>
 
-                                        <!-- content -->
-                                        <div class="tw-flex tw-flex-col tw-mx-8 tw-gap-2">
-                                            <div class="tw-flex tw-justify-between">
-                                                <div class="sims-text-gray-sm tw-font-normal">Latest data created</div>
-                                                <div class="sims-text-gray-sm tw-font-bold">2 days ago</div>
-                                            </div>
-                                            <div class="tw-flex tw-justify-between">
-                                                <div class="sims-text-gray-sm tw-font-normal">Latest update</div>
-                                                <div class="sims-text-gray-sm tw-font-bold">2 days ago</div>
-                                            </div>
-                                            <div class="tw-flex tw-justify-between">
-                                                <div class="sims-text-gray-sm tw-font-normal">Recently created data</div>
-                                                <div class="sims-text-gray-sm tw-font-bold tw-truncate tw-w-1/3">Lorem ipsum dolor sit amet consectetur</div>
-                                            </div>
-                                        </div>
-
                                         <!-- spacing -->
                                         <div class="tw-my-3"></div>
 
                                         <!-- button -->
-                                        <button type="button" class="tw-border-sims-new-500 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all tw-border sims-text-regular-sm tw-text-center tw-rounded-lg tw-py-2">
-                                            Manage
-                                        </button>
+                                        <a href="/admin/mata-pelajaran?page=1&perPage=10" class="tw-border-sims-new-500 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all tw-border sims-text-regular-sm tw-text-center tw-rounded-lg tw-py-2">Manage</a>
                                     </div>
                                 </div>
 
@@ -484,76 +430,31 @@
                 <!-- heading -->
                 <div class="tw-flex tw-justify-between tw-mx-10">
                     <div class="sims-heading-lg-black">Latest Activity</div>
-                    <button type="button" class="tw-bg-[#F1F1EF] hover:tw-bg-[#ebebeb] tw-px-3 tw-py-1 tw-rounded-lg sims-heading-sm-black tw-text-[#979797]">Show All</button>
+                    <form action="/history" method="GET">
+                        <button type="submit" class="tw-bg-[#F1F1EF] hover:tw-bg-[#ebebeb] tw-px-3 tw-py-1 tw-rounded-lg sims-heading-sm-black tw-text-[#979797]">Show All</button>
+                    </form>
                 </div>
 
                 <!-- spacing -->
                 <div class="tw-my-8"></div>
 
                 <!-- content -->
-                <!-- 01 -->
-                <div class="tw-flex tw-justify-between tw-mx-10">
-                    <div class="tw-flex tw-gap-3">
-                        <img src="{{ URL::asset('assets/img/activityline.png') }}" alt="..." class="tw-h-20">
-
-                        <div class="tw-flex tw-flex-col tw-my-auto">
-                            <div class="sims-heading-md-black">Ibnu Asep bin Budi</div>
-                            <div class="sims-text-regular-sm tw-font-normal tw-truncate lg:tw-w-64 sm:tw-w-48">Create Siswa dengan NIS : 200912381239</div>
-                        </div>
-
-                    </div>
-                    <div class="sims-text-gray-sm tw-font-normal tw-my-auto">
-                        2 Menit yang lalu
-                    </div>
-                </div>
-
-                <!-- 02 -->
+                @foreach($allHistory as $h)
                 <div class="tw-flex tw-justify-between tw-mx-10">
                     <div class="tw-flex tw-gap-3">
                         <img src="{{ URL::asset('assets/img/activityline2.png') }}" alt="..." class="tw-h-20">
 
                         <div class="tw-flex tw-flex-col tw-my-auto">
-                            <div class="sims-heading-md-black">Ibnu Asep bin Budi</div>
-                            <div class="sims-text-regular-sm tw-font-normal tw-truncate lg:tw-w-64 sm:tw-w-48">Update Siswa dengan NIS : 200912381239</div>
+                            <div class="sims-heading-md-black">{{ $h->activityAuthor }}</div>
+                            <div class="sims-text-regular-sm tw-font-normal tw-truncate lg:tw-w-64 sm:tw-w-48">{{ $h->activityName }}</div>
                         </div>
 
                     </div>
                     <div class="sims-text-gray-sm tw-font-normal tw-my-auto">
-                        5 Menit yang lalu
+                        {{ \Carbon\Carbon::createFromTimeStamp(strtotime($h->createdAt))->diffForHumans() }}
                     </div>
                 </div>
-
-                <!-- 03 -->
-                <div class="tw-flex tw-justify-between tw-mx-10">
-                    <div class="tw-flex tw-gap-3">
-                        <img src="{{ URL::asset('assets/img/activityline2.png') }}" alt="..." class="tw-h-20">
-
-                        <div class="tw-flex tw-flex-col tw-my-auto">
-                            <div class="sims-heading-md-black">Ibnu Asep bin Budi</div>
-                            <div class="sims-text-regular-sm tw-font-normal tw-truncate lg:tw-w-64 sm:tw-w-48">Export Data Induk dengan tipe file PDF</div>
-                        </div>
-
-                    </div>
-                    <div class="sims-text-gray-sm tw-font-normal tw-my-auto">
-                        8 Menit yang lalu
-                    </div>
-                </div>
-
-                <!-- 04 -->
-                <div class="tw-flex tw-justify-between tw-mx-10">
-                    <div class="tw-flex tw-gap-3">
-                        <img src="{{ URL::asset('assets/img/activityline2.png') }}" alt="..." class="tw-h-20">
-
-                        <div class="tw-flex tw-flex-col tw-my-auto">
-                            <div class="sims-heading-md-black">Ibnu Asep bin Budi</div>
-                            <div class="sims-text-regular-sm tw-font-normal tw-truncate lg:tw-w-64 sm:tw-w-48">Export Data Induk dengan tipe file Excel</div>
-                        </div>
-
-                    </div>
-                    <div class="sims-text-gray-sm tw-font-normal tw-my-auto">
-                        10 Menit yang lalu
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -642,7 +543,20 @@
               label: 'Jumlah Aktivitas',
               borderColor: '#3894a3',
               backgroundColor: '#53b0bd',
-              data: [12, 19, 3, 5, 2, 3, 8, 17, 9, 15, 12, 10],
+              data: [
+                {{ $totalActivityJanuary }},
+                {{ $totalActivityFebruary }}, 
+                {{ $totalActivityMarch }}, 
+                {{ $totalActivityApril }}, 
+                {{ $totalActivityMay }}, 
+                {{ $totalActivityJune }}, 
+                {{ $totalActivityJuly }}, 
+                {{ $totalActivityAugust }}, 
+                {{ $totalActivitySeptember }}, 
+                {{ $totalActivityOctober }}, 
+                {{ $totalActivityNovember }}, 
+                {{ $totalActivityDecember }}, 
+              ],
               borderWidth: 1
             }]
           },
