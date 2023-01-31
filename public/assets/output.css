@@ -1353,22 +1353,6 @@ video {
   z-index: 20;
 }
 
-.tw-order-1 {
-  order: 1;
-}
-
-.tw-order-2 {
-  order: 2;
-}
-
-.tw-order-6 {
-  order: 6;
-}
-
-.tw-order-9 {
-  order: 9;
-}
-
 .tw-float-right {
   float: right;
 }
@@ -1947,6 +1931,34 @@ video {
   height: 24rem;
 }
 
+.tw-h-\[px\] {
+  height: px;
+}
+
+.tw-h-\[500px\] {
+  height: 500px;
+}
+
+.tw-h-\[45vj\] {
+  height: 45vj;
+}
+
+.tw-h-\[45vh\] {
+  height: 45vh;
+}
+
+.tw-h-\[45v\] {
+  height: 45v;
+}
+
+.tw-h-\[5vh\] {
+  height: 5vh;
+}
+
+.tw-h-\[50vh\] {
+  height: 50vh;
+}
+
 .tw-w-full {
   width: 100%;
 }
@@ -2109,8 +2121,8 @@ video {
   width: 11rem;
 }
 
-.tw-w-\[550px\] {
-  width: 550px;
+.tw-w-96 {
+  width: 24rem;
 }
 
 .tw-max-w-3xl {
@@ -2191,20 +2203,16 @@ video {
           appearance: none;
 }
 
-.tw-grid-flow-row {
-  grid-auto-flow: row;
-}
-
-.tw-grid-flow-col {
-  grid-auto-flow: column;
-}
-
 .tw-grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .tw-grid-cols-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.tw-grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
 .tw-grid-rows-2 {
@@ -2323,6 +2331,24 @@ video {
 
 .tw-gap-y-10 {
   row-gap: 2.5rem;
+}
+
+.tw-gap-x-8 {
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+}
+
+.tw-gap-x-10 {
+  -moz-column-gap: 2.5rem;
+       column-gap: 2.5rem;
+}
+
+.tw-gap-y-5 {
+  row-gap: 1.25rem;
+}
+
+.tw-gap-y-6 {
+  row-gap: 1.5rem;
 }
 
 .tw-space-y-4 > :not([hidden]) ~ :not([hidden]) {
@@ -2828,27 +2854,20 @@ video {
   background-color: rgb(149 187 232 / var(--tw-bg-opacity));
 }
 
-.tw-bg-\[\#FFCF86\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 207 134 / var(--tw-bg-opacity));
-}
-
-.tw-bg-\[\#FF7575\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 117 117 / var(--tw-bg-opacity));
-}
-
-.tw-bg-sims-new-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(186 226 231 / var(--tw-bg-opacity));
-}
-
 .tw-bg-opacity-50 {
   --tw-bg-opacity: 0.5;
 }
 
 .tw-bg-no-repeat {
   background-repeat: no-repeat;
+}
+
+.tw-fill-amber-100 {
+  fill: #fef3c7;
+}
+
+.tw-fill-violet-900 {
+  fill: #4c1d95;
 }
 
 .tw-object-cover {
@@ -3155,20 +3174,24 @@ video {
   padding-left: 3rem;
 }
 
-.tw-pl-8 {
-  padding-left: 2rem;
-}
-
-.tw-pr-8 {
-  padding-right: 2rem;
-}
-
-.tw-pr-1 {
-  padding-right: 0.25rem;
-}
-
 .tw-pr-14 {
   padding-right: 3.5rem;
+}
+
+.tw-pt-20 {
+  padding-top: 5rem;
+}
+
+.tw-pt-1 {
+  padding-top: 0.25rem;
+}
+
+.tw-pt-16 {
+  padding-top: 4rem;
+}
+
+.tw-pt-12 {
+  padding-top: 3rem;
 }
 
 .tw-text-left {
@@ -3293,10 +3316,6 @@ video {
 
 .tw-font-black {
   font-weight: 900;
-}
-
-.tw-font-thin {
-  font-weight: 100;
 }
 
 .tw-leading-5 {
@@ -3498,9 +3517,9 @@ video {
   color: rgb(149 187 232 / var(--tw-text-opacity));
 }
 
-.tw-text-admin-400 {
+.tw-text-bluewood-800 {
   --tw-text-opacity: 1;
-  color: rgb(122 167 224 / var(--tw-text-opacity));
+  color: rgb(50 73 88 / var(--tw-text-opacity));
 }
 
 .tw-text-bluewood-700 {
@@ -3511,11 +3530,6 @@ video {
 .tw-text-emerald-500 {
   --tw-text-opacity: 1;
   color: rgb(16 185 129 / var(--tw-text-opacity));
-}
-
-.tw-text-bluewood-800 {
-  --tw-text-opacity: 1;
-  color: rgb(50 73 88 / var(--tw-text-opacity));
 }
 
 .tw-underline {
@@ -3578,11 +3592,6 @@ video {
 
 .tw-drop-shadow-lg {
   --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-}
-
-.tw-drop-shadow-md {
-  --tw-drop-shadow: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
@@ -4382,16 +4391,6 @@ input[type="checkbox"]:checked {
 .hover\:tw-bg-admin-600:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(70 109 202 / var(--tw-bg-opacity));
-}
-
-.hover\:tw-bg-\[\#ffba51\]:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 186 81 / var(--tw-bg-opacity));
-}
-
-.hover\:tw-bg-salmon-600:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(231 23 77 / var(--tw-bg-opacity));
 }
 
 .hover\:tw-text-sims-600:hover {
