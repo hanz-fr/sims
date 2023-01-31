@@ -100,6 +100,23 @@ class MapelJurusanController extends Controller
 
     }
 
+    /* Edit Mapel Jurusan */
+    public function editMapelJurusan(Request $request, $id) {
+
+        $response = Http::get("{$this->api_url}/mapel-jurusan/{$id}");
+        $jurusan = Http::get("{$this->api_url}/jurusan?perPage=500");
+        $mapel = Http::get("{$this->api_url}/mapel?perPage=500");
+
+        return view('admin.mapel-jurusan.edit-mapel-jurusan', [
+            'title' => 'Edit Mata Pelajaran',
+            'active' => 'database',
+            'mapelJurusan' => json_decode($response)->result,
+            'jurusan' => json_decode($jurusan)->data->rows,
+            'mapel' => json_decode($mapel)->data->rows,
+        ]);
+
+    }
+
 
     /* Store Mapel Jurusan */
     public function storeMapelJurusan(Request $request) {
@@ -122,6 +139,47 @@ class MapelJurusanController extends Controller
         } else {
 
             return redirect('/admin/mapel-jurusan/create')->with(['error' => 'Terjadi kesalahan.']);
+
+        }
+
+    }
+
+
+    /* Update Mapel Jurusan */
+    public function updateMapelJurusan(Request $request, $id) {
+
+        $mapelJurusanId = "{$request->JurusanId}_{$request->MapelId}";
+        
+        $response = json_decode(Http::put("{$this->api_url}/mapel-jurusan/{$id}", [
+            'MapelId' => $request->MapelId,
+            'JurusanId' => $request->JurusanId,
+        ]));
+
+        if ($response->status == 'success') {
+
+            return redirect('/admin/mapel-jurusan')->with('success', 'Data berhasil diupdate.');
+
+        } else  {
+
+            return redirect("/admin/mapel-jurusan/edit/{$id}")->with(['error', 'Terjadi kesalahan.']);
+
+        } 
+
+    }
+
+
+    /* Delete Mapel Jurusan */
+    public function deleteMapelJurusan(Request $request, $id) {
+
+        $response = Http::delete("{$this->api_url}/mapel-jurusan/{$id}");
+
+        if (json_decode($response)->message == "Mapel Jurusan does not exist") {
+
+            return redirect('/admin/mapel-jurusan?page=1&perPage10')->with('warning', 'Data tidak terdaftar.');
+            
+        } else {
+
+            return redirect('/admin/mapel-jurusan?page=1&perPage10')->with('success', 'Data berhasil dihapus.');
 
         }
 

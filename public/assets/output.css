@@ -1211,10 +1211,6 @@ video {
   color: rgb(56 148 163 / var(--tw-text-opacity));
 }
 
-.shadow-cs {
-  box-shadow: 0px 4px 35px -13px rgba(0, 0, 0, 0.25);
-}
-
 .tw-sr-only {
   position: absolute;
   width: 1px;
@@ -1341,10 +1337,6 @@ video {
   left: 2rem;
 }
 
-.tw-left-3 {
-  left: 0.75rem;
-}
-
 .tw-left-5 {
   left: 1.25rem;
 }
@@ -1375,10 +1367,6 @@ video {
 
 .tw-m-10 {
   margin: 2.5rem;
-}
-
-.tw-m-2 {
-  margin: 0.5rem;
 }
 
 .tw-mx-10 {
@@ -1799,6 +1787,10 @@ video {
   margin-bottom: 0px;
 }
 
+.tw-mr-10 {
+  margin-right: 2.5rem;
+}
+
 .tw-block {
   display: block;
 }
@@ -2083,18 +2075,6 @@ video {
 
 .tw-w-\[117px\] {
   width: 117px;
-}
-
-.tw-w-screen {
-  width: 100vw;
-}
-
-.tw-w-44 {
-  width: 11rem;
-}
-
-.tw-w-\[550px\] {
-  width: 550px;
 }
 
 .tw-max-w-3xl {
@@ -2566,11 +2546,6 @@ video {
   border-color: rgb(227 227 227 / var(--tw-border-opacity));
 }
 
-.tw-border-admin-300 {
-  --tw-border-opacity: 1;
-  border-color: rgb(149 187 232 / var(--tw-border-opacity));
-}
-
 .tw-border-l-sims-new-500 {
   --tw-border-opacity: 1;
   border-left-color: rgb(56 148 163 / var(--tw-border-opacity));
@@ -2790,24 +2765,9 @@ video {
   background-color: rgb(251 191 36 / var(--tw-bg-opacity));
 }
 
-.tw-bg-\[\#5a6c7c\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(90 108 124 / var(--tw-bg-opacity));
-}
-
-.tw-bg-admin-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(149 187 232 / var(--tw-bg-opacity));
-}
-
 .tw-bg-sims-new-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(186 226 231 / var(--tw-bg-opacity));
-}
-
-.tw-bg-orange-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(254 215 170 / var(--tw-bg-opacity));
 }
 
 .tw-bg-opacity-50 {
@@ -3015,11 +2975,6 @@ video {
 .tw-px-16 {
   padding-left: 4rem;
   padding-right: 4rem;
-}
-
-.tw-px-24 {
-  padding-left: 6rem;
-  padding-right: 6rem;
 }
 
 .tw-pt-8 {
@@ -3440,34 +3395,9 @@ video {
   color: rgb(178 254 254 / var(--tw-text-opacity));
 }
 
-.tw-text-admin-300 {
-  --tw-text-opacity: 1;
-  color: rgb(149 187 232 / var(--tw-text-opacity));
-}
-
 .tw-text-bluewood-700 {
   --tw-text-opacity: 1;
   color: rgb(53 85 105 / var(--tw-text-opacity));
-}
-
-.tw-text-orange-200 {
-  --tw-text-opacity: 1;
-  color: rgb(254 215 170 / var(--tw-text-opacity));
-}
-
-.tw-text-orange-400 {
-  --tw-text-opacity: 1;
-  color: rgb(251 146 60 / var(--tw-text-opacity));
-}
-
-.tw-text-orange-600 {
-  --tw-text-opacity: 1;
-  color: rgb(234 88 12 / var(--tw-text-opacity));
-}
-
-.tw-text-sims-new-400 {
-  --tw-text-opacity: 1;
-  color: rgb(83 176 189 / var(--tw-text-opacity));
 }
 
 .tw-underline {
@@ -3990,10 +3920,6 @@ input[type="checkbox"]:checked {
   outline-color: #3894a3;
 }
 
-.focus\:tw-outline-admin-300:focus {
-  outline-color: #95bbe8;
-}
-
 .focus\:tw-ring-1:focus {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
@@ -4324,11 +4250,6 @@ input[type="checkbox"]:checked {
 .hover\:tw-bg-amber-500:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(245 158 11 / var(--tw-bg-opacity));
-}
-
-.hover\:tw-bg-admin-600:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(70 109 202 / var(--tw-bg-opacity));
 }
 
 .hover\:tw-text-sims-600:hover {

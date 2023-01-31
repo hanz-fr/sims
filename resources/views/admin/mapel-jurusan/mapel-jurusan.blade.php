@@ -93,10 +93,14 @@
                         <td class="tw-p-8">@if($m->createdAt != null){{  \Carbon\Carbon::parse(strtotime($m->createdAt))->translatedFormat('l d F Y'); }}@endif</td>
                         <td class="tw-p-8">@if($m->updatedAt != null){{  \Carbon\Carbon::parse(strtotime($m->updatedAt))->translatedFormat('l d F Y'); }}@endif</td>
                         <td class="tw-flex tw-mt-8 tw-justify-center tw-gap-3">
-                          <a href="#" class="tw-text-kuning-500  hover:tw-text-white hover:tw-bg-kuning-500 hover:tw-shadow-md tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-w-12 tw-transition-all" title="Edit Data Siswa">
+                          
+                            <!-- !! Temporary Comment !! -->
+                          {{-- <a href="/admin/mapel-jurusan/edit/{{ $m->mapelJurusanId }}" class="tw-text-kuning-500  hover:tw-text-white hover:tw-bg-kuning-500 hover:tw-shadow-md tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-w-12 tw-transition-all" title="Edit Data Siswa">
                               <i class="fa-solid fa-pen-to-square"></i>
-                          </a>
-                          <a href="/admin/detail-mapel-jurusan/{{ $m->mapelJurusanId }}" class="tw-text-gray-400  hover:tw-text-white hover:tw-bg-gray-400 hover:tw-shadow-md tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-w-12 tw-transition-all" title="Detail Data">
+                          </a> --}}
+                          <!-- !! Temporary Comment !! -->
+                          
+                          <a href="/admin/detail-mapel-jurusan/{{ $m->mapelJurusanId }}" class="tw-text-gray-400  hover:tw-text-white hover:tw-bg-gray-400 hover:tw-shadow-md tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-mr-10 tw-w-12 tw-transition-all" title="Detail Data">
                               <i class="fa-regular fa-eye"></i>
                           </a>
                       </td>
