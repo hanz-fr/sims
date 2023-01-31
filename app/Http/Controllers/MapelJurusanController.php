@@ -63,4 +63,69 @@ class MapelJurusanController extends Controller
     }
 
 
+    /* View Detail Mapel Jurusan */
+    public function viewDetailMapelJurusan(Request $request, $id) {
+
+        $response = Http::get("{$this->api_url}/mapel-jurusan/{$id}");
+
+        if($response->successful()) {
+
+            return view('admin.mapel-jurusan.detail-mapel-jurusan', [
+                'title' => 'Mata Pelajaran Jurusan',
+                'active' => 'database',
+                'mapel_jurusan' => json_decode($response)->result,
+            ]);
+
+        } else {
+
+            return view('errors.404');
+
+        }
+
+    }
+
+
+    /* Create Mapel Jurusan */
+    public function createMapelJurusan(Request $request) {
+
+        $jurusan = Http::get("{$this->api_url}/jurusan?perPage=500");
+        $mapel = Http::get("{$this->api_url}/mapel?perPage=500");
+
+        return view('admin.mapel-jurusan.create-mapel-jurusan', [
+            'title' => 'Create Mata Pelajaran',
+            'active' => 'database',
+            'jurusan' => json_decode($jurusan)->data->rows,
+            'mapel' => json_decode($mapel)->data->rows,
+        ]);
+
+    }
+
+
+    /* Store Mapel Jurusan */
+    public function storeMapelJurusan(Request $request) {
+
+        $mapelJurusanId = "{$request->JurusanId}_{$request->MapelId}";
+
+        $response = json_decode(Http::post("{$this->api_url}/mapel-jurusan", [
+            'MapelId' => $request->MapelId,
+            'JurusanId' => $request->JurusanId,
+        ]));
+
+        if ($response->status == 'success') {
+
+            return redirect('/admin/mapel-jurusan')->with('success', 'Data berhasil ditambahkan.');
+            
+        } else if ($response->message == "MapelJurusan with id {$mapelJurusanId} already exist") {
+            
+            return redirect('/admin/mapel-jurusan/create')->with(['error' => 'Sudah ada Mapel Jurusan dengan Id tersebut.']);
+
+        } else {
+
+            return redirect('/admin/mapel-jurusan/create')->with(['error' => 'Terjadi kesalahan.']);
+
+        }
+
+    }
+
+
 }

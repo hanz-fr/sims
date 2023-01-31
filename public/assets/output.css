@@ -1341,6 +1341,10 @@ video {
   left: 2rem;
 }
 
+.tw-left-5 {
+  left: 1.25rem;
+}
+
 .tw-z-10 {
   z-index: 10;
 }
@@ -2301,6 +2305,10 @@ video {
 
 .tw-gap-16 {
   gap: 4rem;
+}
+
+.tw-gap-24 {
+  gap: 6rem;
 }
 
 .tw-gap-x-5 {

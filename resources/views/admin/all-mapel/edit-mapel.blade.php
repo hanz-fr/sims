@@ -27,7 +27,7 @@
                             <div id="tooltip1" role="tooltip"
                                 class="z-20 tw-w-64 absolute transition duration-150 ease-in-out tw-right-0 tw-left-8 tw-top-0 ml-8 shadow-lg bg-white p-4 rounded hidden">
                                 <p class="tw-text-sm tw-font-satoshi tw-font-bold text-gray-600">Id Mata Pelajaran</p>
-                                <p class="tw-text-sm tw-font-satoshi tw-font-normal leading-4 text-gray-600">merupakan singkatan dari mata pelajaran. (Contoh: PBO => Pemrograman Berorientasi Objek).<br><br>Untuk update mapel, Id mata pelajaran tidak dapat diubah. Anda harus membuat mata pelajaran baru dengan nama yang sama jika terdapat perubahan pada Id mata pelajaran saja.</p>
+                                <p class="tw-text-sm tw-font-satoshi tw-font-normal leading-4 text-gray-600">merupakan singkatan dari mata pelajaran. (Contoh: PBO => Pemrograman Berorientasi Objek).<br><br>Untuk update mapel, Id mata pelajaran tidak dapat diubah. Jika anda ingin mengubah Id mata pelajaran, anda harus menghapus data yang lama dan membuat data yang baru.</p>
                             </div>
                         </a>
                         <!--Code Block for white tooltip ends-->

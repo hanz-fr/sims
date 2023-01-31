@@ -343,7 +343,7 @@ class SiswaController extends Controller
         return view('induk.create', [
             'title' => 'Create Siswa',
             'active' => 'data-induk',
-            'kelas' => json_decode($kelas),
+            'kelas' => json_decode($kelas)->data->rows,
             'prevURL' => $prevURL,
             'prevURLwithParams' => $prevURLwithParams
         ]);
@@ -485,7 +485,7 @@ class SiswaController extends Controller
             return view('induk.edit', [
                 'title' => 'Edit siswa',
                 'active' => 'data-induk',
-                'kelas' => json_decode($kelas),
+                'kelas' => json_decode($kelas)->data->rows,
                 'siswa' => json_decode($response)->result,
                 'status' => 'success',
                 'prevURL' => $prevURL,

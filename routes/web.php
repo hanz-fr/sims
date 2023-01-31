@@ -1,10 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\AdminController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\MapelController;
 use App\Http\Controllers\SiswaController;
@@ -18,7 +15,6 @@ use App\Http\Controllers\RekapNilaiController;
 use App\Http\Controllers\MutasiMasukController;
 use App\Http\Controllers\MapelJurusanController;
 use App\Http\Controllers\MutasiKeluarController;
-use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\SiswaTidakNaikController;
 use App\Http\Controllers\RekapJumlahSiswaController;
 
@@ -149,7 +145,7 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
     Route::get('/alumni-print', [AlumniController::class, 'printAlumni']);
     Route::get('/alumni-excel', [AlumniController::class, 'exportAlumniExcel']);
 
-    Route::get('/Pselect-jurusan-alumni', [AlumniController::class, 'selectJurusanAlumni']);
+    Route::get('/select-jurusan-alumni', [AlumniController::class, 'selectJurusanAlumni']);
     Route::get('/select-angkatan-alumni', [AlumniController::class, 'selectAngkatanAlumni']);
 
 
@@ -253,27 +249,16 @@ Route::group(['prefix' => 'admin', 'middleware' => ['is_admin'] , ['revalidate']
 
     /* MAPEL JURUSAN */
     Route::get('/mapel-jurusan', [MapelJurusanController::class, 'viewAllMapelJurusan']);
-
-    Route::get('/detail-mapel-jurusan', function () {
-        return view('admin.mapel-jurusan.detail-mapel-jurusan', [
-            'title' => 'Mata Pelajaran',
-            'active' => 'database'
-        ]);
-    });
-
-    Route::get('/mapel-jurusan/create', function () {
-        return view('admin.mapel-jurusan.create-mapel-jurusan', [
-            'title' => 'Create Mata Pelajaran',
-            'active' => 'database'
-        ]);
-    });
-
+    Route::get('/detail-mapel-jurusan/{id}', [MapelJurusanController::class, 'viewDetailMapelJurusan']);
+    Route::get('/mapel-jurusan/create', [MapelJurusanController::class, 'createMapelJurusan']);
     Route::get('/mapel-jurusan/edit', function () {
         return view('admin.mapel-jurusan.edit-mapel-jurusan', [
             'title' => 'Edit Mata Pelajaran',
             'active' => 'database'
         ]);
     });
+    
+    Route::post('/mapel-jurusan/store', [MapelJurusanController::class, 'storeMapelJurusan']);
 
 
     /* LIVE SEARCH TEST */

@@ -103,7 +103,7 @@ class MutasiKeluarController extends Controller
         return view('mutasi.create-mutasi-keluar', [
             'title' => 'Create Mutasi Keluar',
             'active' => 'rekap-siswa',
-            'kelas' => json_decode($kelas),
+            'kelas' => json_decode($kelas)->data->rows,
             'prevURL' => $prevURL,
         ]);
     }
@@ -198,7 +198,7 @@ class MutasiKeluarController extends Controller
                 'active' => 'rekap-siswa',
                 'mutasi' => json_decode($response)->result,
                 'status' => 'success',
-                'kelas' => json_decode($kelas),
+                'kelas' => json_decode($kelas)->data->rows,
                 'prevURL' => $prevURL,
             ]);
         } else {

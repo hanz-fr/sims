@@ -27,7 +27,7 @@
                     @endif
 
                     <div class="tw-rounded-lg tw-py-10">
-                        <div class="tw-text-sims-new-600 tw-text-xl tw-mb-3 tw-px-6">{{ $siswa->nama_siswa }} @if($siswa->isAlumni === true)<div class="tw-text-xs tw-text-sims-new-500 tw-mt-1"><i class="fa-solid fa-graduation-cap tw-mx-1"></i>Alumni</div>@endif</div>
+                        <div class="tw-text-sims-new-500 tw-text-xl tw-mb-3 tw-px-14">{{ $siswa->nama_siswa }} @if($siswa->isAlumni === true)<div class="tw-text-xs tw-text-sims-new-500 tw-mt-1"><i class="fa-solid fa-graduation-cap tw-mx-1"></i>Alumni</div>@endif</div>
                         <div class="tw-text-gray-400 tw-text-base tw-font-normal tw-font-sg">
                             <div>{{ $siswa->nis_siswa }} / {{ $siswa->nisn_siswa }}</div>
                             <div>{{ $siswa->kelas->jurusan }}</div>
