@@ -82,6 +82,7 @@
                         <th scope="col" class="tw-py-5 tw-px-6">Id Jurusan</th>
                         <th scope="col" class="tw-py-5 tw-px-6">Dibuat</th>
                         <th scope="col" class="tw-py-5 tw-px-6">Diupdate</th>
+                        <th scope="col" class="tw-py-5 tw-px-10">Aksi</th>
                     </tr>
                 </thead>
                 <tbody class="tw-text-base">
@@ -100,7 +101,7 @@
                           </a> --}}
                           <!-- !! Temporary Comment !! -->
                           
-                          <a href="/admin/detail-mapel-jurusan/{{ $m->mapelJurusanId }}" class="tw-text-gray-400  hover:tw-text-white hover:tw-bg-gray-400 hover:tw-shadow-md tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-mr-10 tw-w-12 tw-transition-all" title="Detail Data">
+                          <a href="/admin/detail-mapel-jurusan/{{ $m->mapelJurusanId }}" class="tw-text-gray-400  hover:tw-text-white hover:tw-bg-gray-400 hover:tw-shadow-md tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-w-12 tw-transition-all" title="Detail Data">
                               <i class="fa-regular fa-eye"></i>
                           </a>
                       </td>
