@@ -430,7 +430,9 @@
                 <!-- heading -->
                 <div class="tw-flex tw-justify-between tw-mx-10">
                     <div class="sims-heading-lg-black">Aktifitas Terbaru</div>
-                    <button type="button" class="tw-bg-[#F1F1EF] hover:tw-bg-[#ebebeb] tw-px-3 tw-py-1 tw-rounded-lg sims-heading-sm-black tw-text-[#979797]">Show All</button>
+                    <form action="/history" method="GET">    
+                        <button type="submit" class="tw-bg-[#F1F1EF] hover:tw-bg-[#ebebeb] tw-px-3 tw-py-1 tw-rounded-lg sims-heading-sm-black tw-text-[#979797]">Show All</button>
+                    </form>
                 </div>
 
                 <!-- spacing -->
