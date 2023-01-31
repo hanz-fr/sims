@@ -27,5 +27,13 @@ class HelpCentreController extends Controller
 
     }
 
+    public function viewAccountHelp() {
+
+        return view('userguide.akun.index', [
+            'title' => 'Petunjuk Akun',
+            'active' => 'sims-help'
+        ]);
+    }
+
 
 }

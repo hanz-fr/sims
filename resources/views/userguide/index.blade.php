@@ -68,7 +68,7 @@
                 <div class="hc-text-base">Penyimpanan rekap nilai setiap siswa, mempermudah penginputan rekap nilai</div>
             </a>
 
-            <a href="#" class="hc-card">
+            <a href="/help/account" class="hc-card">
                 <i class="fa-regular fa-user tw-text-4xl tw-text-sims-400 tw-mb-2"></i>
                 <div class="hc-title-xl">Akun</div>
                 <div class="hc-text-base">Pelajari tentang akun dan keamaan pengguna di SIMS</div>
