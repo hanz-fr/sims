@@ -112,7 +112,10 @@ class DashboardController extends Controller
         $walikelas = User::where('role', 4)->count();
         $current_year = Carbon::now()->year; // current year
 
+        $total_kelas = Http::get("{$this->api_url}/kelas");
         $total_mapel = Http::get("{$this->api_url}/mapel");
+        $total_mapel_jurusan = Http::get("{$this->api_url}/mapel-jurusan");
+        $total_kelas = Http::get("{$this->api_url}/kelas");
         $response = Http::get("{$this->api_url}/dashboard");
         $allJurusan = Http::get("{$this->api_url}/jurusan");
         $userHistory = json_decode(Http::get("{$this->api_url}/history/$user->nama/all?year={$current_year}"));
@@ -155,6 +158,8 @@ class DashboardController extends Controller
                 'kurikulum' => $kurikulum,
                 'walikelas' => $walikelas,
                 'allHistory' => $allHistory,
+                'total_mapel_jurusan' => json_decode($total_mapel_jurusan)->data->count,
+                'total_kelas' => json_decode($total_kelas)->data->count,
                 'total_mapel' => json_decode($total_mapel)->data->count,
                 'mutasi' => json_decode($response)->mutasi->count,
                 'kelas' => json_decode($response)->kelas->count,

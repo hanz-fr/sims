@@ -10,11 +10,9 @@
 </style>
 
 <div class="tw-mt-10">
-    <div class="tw-flex lg:tw-flex-row sm:tw-flex-col tw-ml-8 tw-mr-7 tw-justify-between tw-mt-8">
-        <div class="tw-flex tw-flex-col">
-            <h4 class="sims-heading-3xl">Data Kelas</h4>
-            <h6 class="sims-heading-md-black">Total: {{ $total_kelas }}</h6>
-        </div>
+    <div class="tw-flex tw-flex-col tw-mt-8 tw-ml-8">
+        <h4 class="sims-heading-3xl">Data Kelas</h4>
+        <div class="sims-text-gray-sm">Total : {{ $total_kelas }}</div>
     </div>
 
     <div class="tw-flex tw-justify-between tw-ml-8 tw-mt-8 lg:tw-flex-row sm:tw-flex-col sm:tw-gap-5">
@@ -63,11 +61,12 @@
 
         </div>
         @can('admin')
-        <div class="flex">
-            <a href="/admin/kelas/create"
-                class="tw-bg-sims-new-500 tw-text-white hover:tw-text-white hover:tw-bg-sims-new-700 tw-font-satoshi tw-rounded-lg tw-px-8 tw-py-2 tw-mr-7">
+        <div class="tw-flex md:tw-justify-center tw-items-center tw-mr-7">
+            <form action="/admin/kelas/create" method="GET">
+                <button type="submit" data-modal-toggle="popup-modal" class="tw-bg-sims-new-500 tw-text-white hover:tw-text-white hover:tw-bg-sims-new-700 tw-font-satoshi tw-rounded-lg tw-px-8 tw-py-2 tw-mr-7">
                     Tambah Data +
-            </a>
+                </button>
+            </form>
         </div>
         @endcan
     </div>

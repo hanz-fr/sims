@@ -27,7 +27,7 @@
         <div class="tw-flex tw-justify-between">
             <div class="tw-flex tw-flex-col">
                 <div class="sims-text-gray-sm">Id Mata Pelajaran</div>
-                <div class="sims-heading-xl-black">{{ $mapel_jurusan->JurusanId }}</div>
+                <div class="sims-heading-xl-black">{{ $mapel_jurusan->MapelId }}</div>
             </div>
 
             <div class="tw-flex tw-flex-col tw-text-end tw-my-auto">
