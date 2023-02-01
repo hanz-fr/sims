@@ -100,73 +100,73 @@
                                 </td> --}}
                             </tr>
                         @endforeach
-                            <tr>
-                            <th scope="row" rowspan="4" class="bg-white tw-py-2 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap tw-border">
+                            <tr class="tw-bg-gray-50">
+                                <th scope="row" rowspan="4" class="tw-py-2 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap tw-border">
                                 Absen
-                            </th>
-                            <td class="tw-border">
+                                </th>
+                                <td class="tw-border tw-bg-gray-100">
                                 Sakit (hari)
-                            </td>
-                            <td class="tw-border">
+                                </td>
+                                <td class="tw-border tw-bg-gray-100">
                                 {{ $rp->sakit }}
-                            </td>
+                                </td>
                             </tr>
                             <tr class="tw-bg-gray-100">
-                            <td class="tw-py-2 tw-px-6 tw-border">
+                                <td class="tw-py-2 tw-px-6 tw-border">
                                 Ijin (hari)
-                            </td>
-                            <td class="tw-border">
+                                </td>
+                                <td class="tw-border">
                                 {{ $rp->ijin }}
-                            </td>
+                                </td>
                             </tr>
                             <tr class="tw-bg-gray-100">
-                            <td class="tw-py-2 tw-px-6 tw-border">
+                                <td class="tw-py-2 tw-px-6 tw-border">
                                 Alpa (hari)
-                            </td>
-                            <td class="tw-border">
+                                </td>
+                                <td class="tw-border">
                                 {{ $rp->alpa }}
-                            </td>
+                                </td>
                             </tr>
                             <tr class="tw-bg-gray-100">
-                            <td class="tw-py-2 tw-px-6 tw-border">
+                                <td class="tw-py-2 tw-px-6 tw-border">
                                 Jumlah (hari)
-                            </td>
-                            <td class="tw-border">
+                                </td>
+                                <td class="tw-border">
                                 {{ $rp->sakit + $rp->ijin + $rp->alpa  }}
-                            </td>
+                                </td>
                             </tr>
-                            <tr>
-                            <th scope="row" rowspan="3" class="tw-bg-white tw-py-2 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap tw-border">
+                            <tr class="tw-bg-gray-100">
+                                <th scope="row" rowspan="3" class="tw-bg-gray-50 tw-py-2 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap tw-border">
                                 Status Akhir Tahun
-                            </th>
-                            <td class="tw-py-2 tw-px-6 tw-border">
+                                </th>
+                                <td class="tw-py-2 tw-px-6 tw-border">
                                 Status Kenaikan
-                            </td>
-                            <td class="tw-border">
-                                @if($rp->isNaik == true)
-                                Naik
-                                @elseif($rp->isNaik == false)
-                                Tidak naik
-                                @else
-                                -
-                                @endif
-                            </td>
+                                </td>
+                                <td class="tw-border">
+                                    @if($rp->isNaik === true)
+                                    Naik
+                                    @elseif($rp->isNaik === null)
+                                    -
+                                    @elseif($rp->isNaik === false)
+                                    Tidak naik
+                                    @endif
+                                </td>
                             </tr>
                             <tr class="tw-bg-gray-100">
-                            <td class="tw-py-2 tw-px-6 tw-border">
+                                <td class="tw-py-2 tw-px-6 tw-border">
                                 Naik ke
-                            </td>
-                            <td class="tw-border">
+                                </td>
+                                <td class="tw-border">
                                 {{ $rp->naikKelas }}
-                            </td>
+                                </td>
                             </tr>
                             <tr class="tw-bg-gray-100">
-                            <td class="tw-py-2 tw-px-6 tw-border">
+                                <td class="tw-py-2 tw-px-6 tw-border">
                                 Tanggal Kenaikan
-                            </td>
-                            <td class="tw-border">
+                                </td>
+                                <td class="tw-border">
                                 {{ $rp->tgl_kenaikan }}
-                            </td>
+                                </td>
                             </tr>
                             <tr class="tw-bg-sims-new-600">
                             <td class="tw-py-10 tw-flex tw-justify-center tw-gap-10">
@@ -233,14 +233,14 @@
                         </td> --}}
                     </tr>
                     @endforeach
-                        <tr>
-                            <th scope="row" rowspan="4" class="bg-white tw-py-2 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap tw-border">
+                        <tr class="tw-bg-gray-50">
+                            <th scope="row" rowspan="4" class="tw-py-2 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap tw-border">
                             Absen
                             </th>
-                            <td class="tw-border">
+                            <td class="tw-border tw-bg-gray-100">
                             Sakit (hari)
                             </td>
-                            <td class="tw-border">
+                            <td class="tw-border tw-bg-gray-100">
                             {{ $rp->sakit }}
                             </td>
                         </tr>
@@ -268,21 +268,21 @@
                             {{ $rp->sakit + $rp->ijin + $rp->alpa  }}
                             </td>
                         </tr>
-                        <tr>
-                            <th scope="row" rowspan="3" class="tw-bg-white tw-py-2 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap tw-border">
+                        <tr class="tw-bg-gray-100">
+                            <th scope="row" rowspan="3" class="tw-bg-gray-50 tw-py-2 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap tw-border">
                             Status Akhir Tahun
                             </th>
                             <td class="tw-py-2 tw-px-6 tw-border">
                             Status Kenaikan
                             </td>
                             <td class="tw-border">
-                            @if($rp->isNaik == true)
-                            Naik
-                            @elseif($rp->isNaik == false)
-                            Tidak naik
-                            @else
-                            -
-                            @endif
+                                @if($rp->isNaik === true)
+                                Naik
+                                @elseif($rp->isNaik === null)
+                                -
+                                @elseif($rp->isNaik === false)
+                                Tidak naik
+                                @endif
                             </td>
                         </tr>
                         <tr class="tw-bg-gray-100">
@@ -365,14 +365,14 @@
                         </td> --}}
                     </tr>
                     @endforeach
-                        <tr>
-                            <th scope="row" rowspan="4" class="bg-white tw-py-2 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap tw-border">
+                        <tr class="tw-bg-gray-50">
+                            <th scope="row" rowspan="4" class="tw-py-2 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap tw-border">
                             Absen
                             </th>
-                            <td class="tw-border">
+                            <td class="tw-border tw-bg-gray-100">
                             Sakit (hari)
                             </td>
-                            <td class="tw-border">
+                            <td class="tw-border tw-bg-gray-100">
                             {{ $rp->sakit }}
                             </td>
                         </tr>
@@ -400,15 +400,21 @@
                             {{ $rp->sakit + $rp->ijin + $rp->alpa  }}
                             </td>
                         </tr>
-                        <tr>
-                            <th scope="row" rowspan="3" class="tw-bg-white tw-py-2 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap tw-border">
+                        <tr class="tw-bg-gray-100">
+                            <th scope="row" rowspan="3" class="tw-bg-gray-50 tw-py-2 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap tw-border">
                             Status Akhir Tahun
                             </th>
                             <td class="tw-py-2 tw-px-6 tw-border">
                             Status Kenaikan
                             </td>
                             <td class="tw-border">
-                            Naik
+                                @if($rp->isNaik === true)
+                                Naik
+                                @elseif($rp->isNaik === null)
+                                -
+                                @elseif($rp->isNaik === false)
+                                Tidak naik
+                                @endif
                             </td>
                         </tr>
                         <tr class="tw-bg-gray-100">
@@ -475,30 +481,30 @@
                     <tbody class="tw-text-base text-center">
                     @foreach (collect($siswa->raport)->where('semester', 4) as $rp)
                     @foreach ($rp->NilaiMapel as $nm)
-                    <tr class="tw-bg-white tw-border">
-                        <th scope="row"
-                            class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
-                            {{ $nm->MapelJurusan->MapelId }}
-                        </th>
-                        <td class="tw-py-4 tw-px-6">
-                        {{ $nm->nilai_pengetahuan }}
-                        </td>
-                        <td class="tw-py-4 tw-px-6">
-                        {{ $nm->nilai_keterampilan }}
-                        </td>
-                        {{-- <td class="tw-py-4 tw-px-6">
-                        {{ $nm->kkm }}
-                        </td> --}}
-                    </tr>
-                    @endforeach
-                        <tr>
-                            <th scope="row" rowspan="4" class="bg-white tw-py-2 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap tw-border">
+                        <tr class="tw-bg-white tw-border">
+                            <th scope="row"
+                                class="tw-py-4 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap">
+                                {{ $nm->MapelJurusan->MapelId }}
+                            </th>
+                            <td class="tw-py-4 tw-px-6">
+                            {{ $nm->nilai_pengetahuan }}
+                            </td>
+                            <td class="tw-py-4 tw-px-6">
+                            {{ $nm->nilai_keterampilan }}
+                            </td>
+                            {{-- <td class="tw-py-4 tw-px-6">
+                            {{ $nm->kkm }}
+                            </td> --}}
+                        </tr>
+                        @endforeach
+                        <tr class="tw-bg-gray-50">
+                            <th scope="row" rowspan="4" class="tw-py-2 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap tw-border">
                             Absen
                             </th>
-                            <td class="tw-border">
+                            <td class="tw-border tw-bg-gray-100">
                             Sakit (hari)
                             </td>
-                            <td class="tw-border">
+                            <td class="tw-border tw-bg-gray-100">
                             {{ $rp->sakit }}
                             </td>
                         </tr>
@@ -526,21 +532,21 @@
                             {{ $rp->sakit + $rp->ijin + $rp->alpa  }}
                             </td>
                         </tr>
-                        <tr>
-                            <th scope="row" rowspan="3" class="tw-bg-white tw-py-2 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap tw-border">
+                        <tr class="tw-bg-gray-100">
+                            <th scope="row" rowspan="3" class="tw-bg-gray-50 tw-py-2 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap tw-border">
                             Status Akhir Tahun
                             </th>
                             <td class="tw-py-2 tw-px-6 tw-border">
                             Status Kenaikan
                             </td>
                             <td class="tw-border">
-                            @if($rp->isNaik == true)
-                            Naik
-                            @elseif($rp->isNaik == false)
-                            Tidak naik
-                            @else
-                            -
-                            @endif
+                                @if($rp->isNaik === true)
+                                Naik
+                                @elseif($rp->isNaik === null)
+                                -
+                                @elseif($rp->isNaik === false)
+                                Tidak naik
+                                @endif
                             </td>
                         </tr>
                         <tr class="tw-bg-gray-100">
@@ -623,14 +629,14 @@
                         </td> --}}
                     </tr>
                     @endforeach
-                        <tr>
-                            <th scope="row" rowspan="4" class="bg-white tw-py-2 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap tw-border">
+                        <tr class="tw-bg-gray-50">
+                            <th scope="row" rowspan="4" class="tw-py-2 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap tw-border">
                             Absen
                             </th>
-                            <td class="tw-border">
+                            <td class="tw-border tw-bg-gray-100">
                             Sakit (hari)
                             </td>
-                            <td class="tw-border">
+                            <td class="tw-border tw-bg-gray-100">
                             {{ $rp->sakit }}
                             </td>
                         </tr>
@@ -658,21 +664,21 @@
                             {{ $rp->sakit + $rp->ijin + $rp->alpa  }}
                             </td>
                         </tr>
-                        <tr>
-                            <th scope="row" rowspan="3" class="tw-bg-white tw-py-2 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap tw-border">
+                        <tr class="tw-bg-gray-100">
+                            <th scope="row" rowspan="3" class="tw-bg-gray-50 tw-py-2 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap tw-border">
                             Status Akhir Tahun
                             </th>
                             <td class="tw-py-2 tw-px-6 tw-border">
                             Status Kenaikan
                             </td>
                             <td class="tw-border">
-                            @if($rp->isNaik == true)
-                            Naik
-                            @elseif($rp->isNaik == false)
-                            Tidak naik
-                            @else
-                            -
-                            @endif
+                                @if($rp->isNaik === true)
+                                Naik
+                                @elseif($rp->isNaik === null)
+                                -
+                                @elseif($rp->isNaik === false)
+                                Tidak naik
+                                @endif
                             </td>
                         </tr>
                         <tr class="tw-bg-gray-100">
@@ -779,14 +785,14 @@
                             </td>
                         </tr>
                     @endforeach
-                        <tr>
-                            <th scope="row" rowspan="4" class="bg-white tw-py-2 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap tw-border">
+                        <tr class="tw-bg-gray-50">
+                            <th scope="row" rowspan="4" class="tw-py-2 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap tw-border">
                             Absen
                             </th>
-                            <td class="tw-border">
+                            <td class="tw-border tw-bg-gray-100">
                             Sakit (hari)
                             </td>
-                            <td class="tw-border">
+                            <td class="tw-border tw-bg-gray-100">
                             {{ $rp->sakit }}
                             </td>
                         </tr>
@@ -814,21 +820,21 @@
                             {{ $rp->sakit + $rp->ijin + $rp->alpa  }}
                             </td>
                         </tr>
-                        <tr>
-                            <th scope="row" rowspan="3" class="tw-bg-white tw-py-2 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap tw-border">
+                        <tr class="tw-bg-gray-100">
+                            <th scope="row" rowspan="3" class="tw-bg-gray-50 tw-py-2 tw-px-6 tw-font-medium tw-text-basic-700 tw-whitespace-nowrap tw-border">
                             Status Akhir Tahun
                             </th>
                             <td class="tw-py-2 tw-px-6 tw-border">
                             Status Kenaikan
                             </td>
                             <td class="tw-border">
-                            @if($rp->isNaik == true)
-                            Naik
-                            @elseif($rp->isNaik == false)
-                            Tidak naik
-                            @else
-                            -
-                            @endif
+                                @if($rp->isNaik === true)
+                                Naik
+                                @elseif($rp->isNaik === null)
+                                -
+                                @elseif($rp->isNaik === false)
+                                Tidak naik
+                                @endif
                             </td>
                         </tr>
                         <tr class="tw-bg-gray-100">

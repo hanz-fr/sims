@@ -172,7 +172,7 @@
 
             <!-- Chart - Column 1 -->
             <div class="sims-card-1 tw-h-fit tw-w-1/2 tw-my-0">
-                <div class="tw-flex tw-flex-col tw-py-8 tw-mx-5">
+                <div class="tw-flex tw-flex-col tw-mx-5">
 
                     <select
                         class="div-toggle sims-heading-1 sims-heading-lg-black tw-lock tw-px-4 tw-w-full tw-bg-transparent tw-border-0 tw-border-gray-200 tw-appearance-none dark:tw-text-gray-400 dark:tw-border-gray-700 focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-200 tw-peer"
@@ -193,6 +193,8 @@
                             <canvas id="chart2" class="tw-mt-4"></canvas>
                         </div>
                     </div>
+
+                    <div class="sims-heading-sm tw-flex tw-justify-center tw-mt-5">Tahun {{ $current_year }}</div>
                 </div>
             </div>
 
@@ -296,7 +298,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="/admin/account/{{ $u->id }}/edit" class="tw-text-[#979797] tw-my-auto tw-h-fit">
+
+                                {{-- TEMPORARY COMMENT / TO BE FIXED LATER --}}
+                                <a href="/admin/account/{{ $u->id }}/edit" class="tw-text-[#979797] tw-my-auto tw-h-fit tw-z-50">
                                     <i class="fa-solid fa-pen-to-square hover:tw-text-[#FBB845] tw-transition-all"></i>
                                 </a>
                             </button>
@@ -489,7 +493,7 @@
 
                 <!-- heading -->
                 <div class="tw-flex tw-justify-between tw-mx-10">
-                    <div class="sims-heading-lg-black">Aktifitas Terbaru</div>
+                    <div class="sims-heading-lg-black">Aktivitas Terbaru</div>
                     <form action="/history" method="GET">    
                         <button type="submit" class="tw-bg-[#F1F1EF] hover:tw-bg-[#ebebeb] tw-px-3 tw-py-1 tw-rounded-lg sims-heading-sm-black tw-text-[#979797]">Show All</button>
                     </form>
@@ -500,7 +504,10 @@
 
                 <!-- content -->
                 @if($allHistory === [])
-                    <div class="sims-heading-sm">Belum ada histori</div>
+                    <div class="tw-flex tw-flex-col tw-gap-5">
+                        <img src="{{ URL::asset('assets/img/nohistory.jpg') }}" alt="no_history" class="tw-w-3/6 tw-mx-auto">
+                        <div class="sims-heading-xl tw-mx-auto">Belum ada Aktivitas.</div>
+                    </div>
                 @else
                     @foreach($allHistory as $h)
                     <div class="tw-flex tw-justify-between tw-mx-10">
@@ -630,7 +637,12 @@
                 scale: {
                     ticks: {
                         precision: 0
-                    }
+                    },
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
                 }
             },
         });

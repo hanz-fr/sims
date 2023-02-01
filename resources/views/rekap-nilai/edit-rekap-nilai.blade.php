@@ -48,11 +48,14 @@
                     <div>
                         <label for="isNaik" class="tw-font-satoshi tw-mx-3 tw-font-lg tw-font-bold tw-text-gray-400">Apakah siswa naik?</label>
                         <select type="text" id="isNaik" name="isNaik" placeholder="Naik atau Tidak Naik..." class="tw-font-sg input-account">
-                            @if($raport->isNaik == true)
+                            @if($raport->isNaik === true)
                             <option value="true">Naik</option>
-                            @else
+                            @elseif($raport->isNaik === false)
                             <option value="false">Tidak Naik</option>
+                            @elseif($raport->isNaik === null)
+                            <option value="null">-</option>
                             @endif
+                            <option value="null">-</option>
                             <option value="true">Naik</option>
                             <option value="false">Tidak Naik</option>
                         </select>

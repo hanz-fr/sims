@@ -51,7 +51,7 @@
             </a>
 
             <a href="#" class="hc-card">
-                <i class="fa-sharp fa-regular fa-book-open tw-text-4xl tw-text-sims-400 tw-mb-2"></i>
+                <i class="fa-sharp fa-regular fa-book-open-cover tw-text-4xl tw-text-sims-400 tw-mb-2"></i>
                 <div class="hc-title-xl">Data Induk</div>
                 <div class="hc-text-base">Pengelolaan dan penyimpanan data induk secara digital dan real-time</div>
             </a>

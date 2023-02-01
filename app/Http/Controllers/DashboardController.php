@@ -102,7 +102,7 @@ class DashboardController extends Controller
 
     /* ADMIN DASHBOARD */
     public function adminDashboard() {
-        
+
         $message = ''; // greetings message
         $user = User::findOrFail(Auth::id()); // current logged in user
         $users = User::all();
@@ -149,9 +149,10 @@ class DashboardController extends Controller
 
             return view('dashboard.admin-main', [
                 'title' => 'Dashboard',
-                'active' => 'dashboard-main',
+                'active' => 'admin-dashboard',
                 'message' => $message,
                 'userHistory' => $userHistory,
+                'current_year' => $current_year,
                 'users' => $users,
                 'tatausaha' => $tatausaha,
                 'kesiswaan' => $kesiswaan,

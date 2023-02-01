@@ -20,11 +20,12 @@
 
                     <!-- Homepage button -->
                     <div x-data="{ tooltip: 'Dashboard' }">
-                        @if (auth()->user()->is_admin === 1)
+                        {{-- @if (auth()->user()->is_admin === 1)
                             <a href="/admin">
                         @else
                             <a href="/">
-                        @endif
+                        @endif --}}
+                        <a href="/">
                             <button x-tooltip.placement.right.delay.500-100="tooltip" type="button"
                                 class="{{ ($active === "dashboard-main") ? 'tw-bg-sims-new-500 tw-text-white' : 'tw-text-sims-new-500' }} tw-p-5 tw-transition-colors tw-rounded-xl hover:tw-bg-sims-new-500 hover:tw-text-white focus:tw-outline-none">
                                 <i class="fa-solid fa-house tw-text-xl"></i>
@@ -38,7 +39,7 @@
                         <a href="/jurusan">
                             <button x-tooltip.placement.right.delay.500-100="tooltip" type="button"
                                 class="{{ ($active === "data-induk") ? 'tw-bg-sims-new-500 tw-text-white' : 'tw-text-sims-new-500' }} tw-p-5 tw-transition-colors tw-rounded-xl hover:tw-bg-sims-new-500 hover:tw-text-white focus:tw-outline-none">
-                                <i class="fa-sharp fa-regular fa-book-open tw-text-xl"></i>
+                                <i class="fa-solid fa-book-open-cover tw-text-xl"></i>
                             </button>
                         </a>
                     </div>
@@ -65,6 +66,17 @@
                             </button>
                         </a>
                     </div>
+
+                    @if(Auth::user()->is_admin === 1)
+                    <div x-data="{ tooltip: 'Admin Dashboard' }">
+                        <a href="/admin">
+                            <button x-tooltip.placement.right.delay.500-100="tooltip" type="button"
+                                class="{{ ($active === "admin-dashboard") ? 'tw-bg-sims-new-500 tw-text-white' : 'tw-text-sims-new-500' }} tw-p-5 tw-transition-colors tw-rounded-xl hover:tw-bg-sims-new-500 hover:tw-text-white focus:tw-outline-none">
+                                <i class="fa-solid fa-server tw-text-xl"></i>
+                            </button>
+                        </a>
+                    </div>
+                    @endif
                 </div>
 
                 <!-- Profil button -->

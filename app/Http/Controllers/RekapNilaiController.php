@@ -285,6 +285,11 @@ class RekapNilaiController extends Controller
             } elseif($request->isNaik == 'false') {
 
                 $isNaik = false;
+
+            } elseif($request->isNaik == 'null') {
+
+                $isNaik = null;
+
             }
 
             $RaportId = 'RPT' . $request->nis_siswa . '-' . $request->semester;
@@ -383,6 +388,11 @@ class RekapNilaiController extends Controller
             } elseif($request->isNaik == 'false') {
 
                 $isNaik = false;
+
+            } elseif($request->isNaik == 'null') {
+
+                $isNaik = null;
+
             }
 
              
