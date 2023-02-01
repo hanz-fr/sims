@@ -21,11 +21,13 @@
     <div class="tw-mx-60">
         <div class="tw-flex tw-flex-col">
 
-            <div class="tw-text-center hc-title-3xl">Tentang Akun</div>
 
-            <div class="tw-grid tw-grid-cols-2 tw-mt-24">
-                <div class="tw-flex tw-flex-col tw-justify-center tw-pr-10">
-                    <h3 class="tw-text-left hc-title-xl"><span class="tw-text-bluewood-800">Langkah 1:</span> Login dengan akun yang sudah ada</h3>
+            <div class="tw-text-center hc-title-3xl tw-mb-24">Tentang Akun</div>
+
+            <div class="row">
+
+                <div class="col-lg-6 tw-justify-center pr-5">
+                    <h3 class="hc-title-xl"><span class="tw-text-bluewood-800">Langkah 1:</span> Login dengan akun yang sudah ada</h3>
                     <p class="tw-text-justify tw-mt-5 hc-text-lg">
                         Agar bisa menggunakan SIMS tentunya harus memiliki akun terlebih dahulu.
                         Jika sudah memiliki akun, maka di bagian login, anda tinggal mengisikan
@@ -35,57 +37,136 @@
                     </p>
                 </div>
     
-                <div class="tw-pl-10">
+                <div class="col-lg-6 tw-pl-10">
                     <div class="tw-rounded-lg tw-overflow-hidden tw-drop-shadow-lg">
                         <img src="{{ URL::asset('assets/img/login.jpeg') }}" alt="">
                     </div>
                 </div>
+
             </div>
 
-            <div class="tw-flex tw-flex-col tw-w-full tw-justify-center tw-pr-10 tw-mt-24">
-                <div class="tw-flex tw-flex-col tw-justify-center tw-pr-10">
-                    <h3 class="tw-text-left hc-title-xl"><span class="tw-text-bluewood-800">Langkah 2:</span> Verifikasi akun anda</h3>
-                    <div class="tw-flex">
-                        <div class="tw-flex tw-flex-col tw-justify-center tw-items-center">
-                            <img src="{{ URL::asset('assets/img/login.jpeg') }}" alt="">
+            <div class="tw-flex tw-flex-col tw-justify-center tw-pr-10 tw-mt-24">
+                <h3 class="tw-text-left hc-title-xl tw-mb-16">
+                    <span class="tw-text-bluewood-800">Langkah 2:</span> 
+                    Verifikasi akun anda
+                </h3>
+                
+                <div class="tw-flex tw-gap-16 tw-mb-28 tw-flex-nowrap tw-max-w-full tw-pb-10 tw-overflow-x-scroll tw-scrollbar-thumb-gray-400 tw-scrollbar-thumb-rounded-lg tw-scrollbar-thin tw-scrollbar-track-gray-100">
+
+                    <div class="col-lg-4 flex flex-col tw-gap-y-8">
+                        <div class="tw-w-full tw-drop-shadow-lg tw-rounded-lg">
+                            <img src="{{ URL::asset('assets/img/hc-account-verif-1.svg') }}" alt="">
+                        </div>
+                        <div class="tw-text-center tw-flex tw-flex-col tw-gap-y-5">
                             <i class="fa-solid fa-circle-1 tw-text-sims-new-500 tw-text-4xl"></i>
-                            <p class="tw-text-justify tw-mt-5 hc-text-lg">
-                                Setelah anda login, anda secara otomatis akan diarahkan ke
-                                laman dashboard. Untuk memverifikasi akun anda, pertama-tama
+                            <h4 class="tw-text-bluewood-800 hc-title-xl">Akses Halaman Profil</h4>
+                            <p class="hc-text-lg">
+                                Setelah login, anda secara otomatis akan diarahkan ke
+                                laman dashboard. Untuk memverifikasi akun, pertama-tama
                                 anda harus menambahkan alamat email, yang dapat ditambahkan
                                 melalui icon profil di pojok bawah kiri.
                             </p>
                         </div>
-                        <div class="tw-flex tw-flex-col">
-                            <img src="{{ URL::asset('assets/img/login.jpeg') }}" alt="">
+                    </div>
+
+                    <div class="col-lg-4 flex flex-col tw-gap-y-8">
+                        <div class="tw-w-full tw-drop-shadow-lg tw-rounded-lg">
+                            <img src="{{ URL::asset('assets/img/hc-account-verif-2.svg') }}" alt="">
+                        </div>
+                        <div class="tw-text-center tw-flex tw-flex-col tw-gap-y-5">
                             <i class="fa-solid fa-circle-2 tw-text-sims-new-500 tw-text-4xl"></i>
-                            <p class="tw-text-justify tw-mt-5 hc-text-lg">
-                                Setelah menekan icon profil, anda akan diarahkan ke laman profil
-                                yang berisi data diri anda. Disini juga anda dapat mengubah data 
-                                diri anda dan memverifikasi akun anda melalui icon "Pena" di bagian
-                                detail, yang setelah ditekan akan mengalihkan anda ke laman edit data.
+                            <h4 class="tw-text-bluewood-800 hc-title-xl">Tekan tombol edit profil</h4>
+                            <p class="hc-text-lg">
+                                Anda akan diarahkan ke laman profil yang berisi data diri anda. 
+                                Disini juga anda dapat mengubah data diri dan memverifikasi akun 
+                                anda melalui icon "Pena" di bagian detail, yang setelah ditekan 
+                                akan mengarahkan anda ke laman edit data.
                             </p>
                         </div>
-                        <div class="tw-flex tw-flex-col">
-                            <img src="{{ URL::asset('assets/img/login.jpeg') }}" alt="">
-                            <i class="fa-solid fa-circle-2 tw-text-sims-new-500 tw-text-4xl"></i>
-                            <p class="tw-text-justify tw-mt-5 hc-text-lg">
-                                Dilaman edit data ini anda dapat mengedit data diri anda dan juga
-                                mengubah kata sandi yang anda gunakan. Untuk verifikasi juga dapat
-                                diselesaikan dibagian verifikasi akun. Setelah itu anda akan diarahkan
-                                untuk mengisi email aktif anda untuk di verifikasi dengan menekan
-                                tombol yang telah disediakan.
+                    </div>
+
+                    <div class="col-lg-4 flex flex-col tw-gap-y-8">
+                        <div class="tw-w-full tw-drop-shadow-lg tw-rounded-lg">
+                            <img src="{{ URL::asset('assets/img/hc-account-verif-3.svg') }}" alt="">
+                        </div>
+                        <div class="tw-text-center tw-flex tw-flex-col tw-gap-y-5">
+                            <i class="fa-solid fa-circle-3 tw-text-sims-new-500 tw-text-4xl"></i>
+                            <h4 class="tw-text-bluewood-800 hc-title-xl">Tekan tombol edit profil</h4>
+                            <p class="hc-text-lg">
+                                Untuk verifikasi akun, anda dapat menekan tab 'Verifikasi Akun'. 
+                                Setelah itu anda akan diarahkan untuk mengisi email aktif anda 
+                                untuk diverifikasi dengan menekan tombol di atas.
                             </p>
                         </div>
-                        <div class="tw-flex tw-flex-col">
-                            <img src="{{ URL::asset('assets/img/login.jpeg') }}" alt="">
-                            <i class="fa-solid fa-circle-2 tw-text-sims-new-500 tw-text-4xl"></i>
-                            <p class="tw-text-justify tw-mt-5 hc-text-lg">
+                    </div>
+
+                    <div class="col-lg-4 flex flex-col tw-gap-y-8">
+                        <div class="tw-w-full tw-drop-shadow-lg tw-rounded-lg">
+                            <img src="{{ URL::asset('assets/img/hc-account-verif-4.svg') }}" alt="">
+                        </div>
+                        <div class="tw-text-center tw-flex tw-flex-col tw-gap-y-5">
+                            <i class="fa-solid fa-circle-4 tw-text-sims-new-500 tw-text-4xl"></i>
+                            <h4 class="tw-text-bluewood-800 hc-title-xl">Tekan tombol edit profil</h4>
+                            <p class="hc-text-lg">
                                 Setelah menekan tombol verifikasi, maka anda akan mendapatkan
                                 pesan verifikasi di email yang telah anda isikan tadi. Jika
                                 pesan tersebut telah diterima, maka anda tinggal menekan link
                                 yang telah disediakan. Dan, Selamat! Akun anda telah terverifikasi!
                             </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-12 tw-flex tw-flex-col tw-gap-5">
+                    <h1 class="tw-text-5xl hc-title-3xl">
+                        Hak Akses Kami
+                    </h1>
+
+                    <p class="tw-text-justify hc-text-xl">
+                        Hak akses adalah izin atau hak istimewa yang diberikan kepada pengguna untuk membuat, mengubah, 
+                        menghapus atau melihat data dalam sebuah aplikasi sebagaimana ditetapkan oleh aturan yang dibuat 
+                        oleh pemilik data dan sesuai kebijakan keamanan informasi. Dalam SIMS terdapat 4 hak akses, yaitu 
+                        Tata Usaha, Kesiswaan, Wali Kelas dan Kurikulum.
+                    </p>
+
+                    <div class="tw-grid tw-grid-rows-2 tw-grid-cols-2 tw-gap-10">
+
+                        <div class="tw-py-6 tw-px-8 tw-rounded-lg hover:tw-shadow-lg tw-border tw-border-gray-200">
+                            <h3 class="tw-text-sims-new-500 tw-font-satoshi tw-font-semibold">Tata Usaha</h3>
+                            <ul class="tw-list-disc hc-text-lg">
+                                <li>Export, import, melihat, menginput, dan memperbarui semua data induk siswa</li>
+                                <li>Export, melihat, dan memperbarui data mutasi</li>
+                                <li>Export dan melihat data jumlah siswa</li>
+                                <li>Melihat, memperbarui, dan export rekap nilai siswa</li>
+                                <li>Export dan melihat data siswa tidak naik kelas</li>
+                            </ul>
+                        </div>
+                        <div class="tw-py-6 tw-px-8 tw-rounded-lg hover:tw-shadow-lg tw-border tw-border-gray-200">
+                            <h3 class="tw-text-salmon-400 tw-font-satoshi tw-font-semibold">Kesiswaan</h3>
+                            <ul class="tw-list-disc hc-text-lg">
+                                <li>Melihat semua data induk siswa</li>
+                                <li>Export, melihat, memperbarui, dan menginput data mutasi</li>
+                                <li>Export dan melihat data jumlah siswa</li>
+                                <li>Export dan melihat data jumlah siswa</li>
+                                <li>Export dan melihat data siswa tidak naik kelas</li>
+                            </ul>
+                        </div>
+                        <div class="tw-py-6 tw-px-8 tw-rounded-lg hover:tw-shadow-lg tw-border tw-border-gray-200">
+                            <h3 class="tw-text-oren-400 tw-font-satoshi tw-font-semibold">Kurikulum</h3>
+                            <ul class="tw-text-xl tw-list-disc hc-text-lg tw-pt-5">
+                                <li>Melihat semua data induk siswa</li>
+                                <li>Melihat dan export rekap nilai siswa</li>
+                                <li>Melihat dan export data siswa tidak naik kelas</li>
+                            </ul>
+                        </div>
+                        <div class="tw-py-6 tw-px-8 tw-rounded-lg hover:tw-shadow-lg tw-border tw-border-gray-200">
+                            <h3 class="tw-text-[#B4B8BC] tw-font-satoshi tw-font-semibold">Wali Kelas</h3>
+                            <ul class="tw-text-xl tw-list-disc hc-text-lg tw-pt-5">
+                                <li>Melihat semua data induk siswa</li>
+                                <li>Melihat dan export rekap nilai siswa</li>
+                                <li>Import, memperbarui, menginput, dan menghapus rekap nilai siswa</li>
+                            </ul>
                         </div>
                     </div>
                 </div>

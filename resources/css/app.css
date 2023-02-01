@@ -109,6 +109,9 @@ a {
     .hc-title-xl {
         @apply tw-font-pop tw-leading-7 tw-text-xl tw-font-bold tw-text-sims-400;
     }
+    .hc-title-2xl {
+        @apply tw-font-pop tw-leading-7 tw-text-2xl tw-font-bold tw-text-sims-400;
+    }
     .hc-title-3xl {
         @apply tw-font-pop tw-leading-7 tw-text-3xl tw-font-bold tw-text-sims-400;
     }

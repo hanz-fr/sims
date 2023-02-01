@@ -219,21 +219,21 @@
                         </div>
                     </div>
 
-                    <div class="sims-card-1-noshadow tw-w-full tw-py-3 tw-px-7 tw-h-fit tw-border-l-4 hover:tw-shadow-md tw-transition-all tw-duration-200 tw-border-l-[#FF869C]">
+                    <div class="sims-card-1-noshadow tw-w-full tw-py-3 tw-px-7 tw-h-fit tw-border-l-4 hover:tw-shadow-md tw-transition-all tw-duration-200 tw-border-l-salmon-400">
                         <div class="tw-flex tw-gap-2">
-                            <i class="fa-solid fa-user sims-icon-3xl tw-text-[#FF869C]"></i>
+                            <i class="fa-solid fa-user sims-icon-3xl tw-text-salmon-400"></i>
                             <div class="tw flex tw-flex-col">
-                                <div class="sims-heading-sm tw-text-[#FF869C]">{{ $kesiswaan }}</div>
+                                <div class="sims-heading-sm tw-text-salmon-400">{{ $kesiswaan }}</div>
                                 <div class="sims-text-black-sm tw-font-normal">Kesiswaan</div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="sims-card-1-noshadow tw-w-full tw-py-3 tw-px-7 tw-h-fit tw-border-l-4 hover:tw-shadow-md tw-transition-all tw-duration-200 tw-border-l-[#FFA386]">
+                    <div class="sims-card-1-noshadow tw-w-full tw-py-3 tw-px-7 tw-h-fit tw-border-l-4 hover:tw-shadow-md tw-transition-all tw-duration-200 tw-border-l-oren-400">
                         <div class="tw-flex tw-gap-2">
-                            <i class="fa-solid fa-user sims-icon-3xl tw-text-[#FFA386]"></i>
+                            <i class="fa-solid fa-user sims-icon-3xl tw-text-oren-400"></i>
                             <div class="tw flex tw-flex-col">
-                                <div class="sims-heading-sm tw-text-[#FFA386]">{{ $walikelas }}</div>
+                                <div class="sims-heading-sm tw-text-oren-400">{{ $walikelas }}</div>
                                 <div class="sims-text-black-sm tw-font-normal">Wali Kelas</div>
                             </div>
                         </div>
