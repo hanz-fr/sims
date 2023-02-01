@@ -357,6 +357,7 @@
                                     </div>
                                 </div>
 
+                                
                                 <!-- card 2 -->
                                 <div class="sims-card-1 tw-px-5 swiper-slide">
                                     <div class="tw-flex tw-flex-col">
@@ -384,6 +385,7 @@
                                         <a href="/admin/jurusan?page=1&perPage=10" class="tw-border-sims-new-500 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all tw-border sims-text-regular-sm tw-text-center tw-rounded-lg tw-py-2">Manage</a>
                                     </div>
                                 </div>
+
 
                                 <!-- card 3 -->
                                 <div class="sims-card-1 tw-px-5 swiper-slide">
@@ -413,6 +415,64 @@
                                     </div>
                                 </div>
 
+
+                                <!-- card 4 -->
+                                <div class="sims-card-1 tw-px-5 swiper-slide">
+                                    <div class="tw-flex tw-flex-col">
+
+                                        <!-- heading -->
+                                        <div class="tw-flex tw-gap-5 tw-justify-center">
+                                            <div class="tw-flex tw-flex-col">
+                                                <i class="fa-solid fa-book-font sims-icon-3xl tw-mx-auto"></i>
+                                                <div class="sims-heading-sm-black tw-truncate">Mapel Jurusan</div>
+                                            </div>
+
+                                            <div class="tw-flex tw-gap-2 tw-my-auto">
+                                                <div class="sims-text-black-xl tw-text-3xl tw-my-auto">{{ $total_mapel_jurusan }}</div>
+                                                <div class="sims-heading-sm-black tw-font-normal">total<br>data</div>
+                                            </div>
+                                        </div>
+
+                                        <!-- spacing -->
+                                        <div class="tw-my-10"></div>
+
+                                        <!-- spacing -->
+                                        <div class="tw-my-3"></div>
+
+                                        <!-- button -->
+                                        <a href="/admin/mapel-jurusan?page=1&perPage=10" class="tw-border-sims-new-500 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all tw-border sims-text-regular-sm tw-text-center tw-rounded-lg tw-py-2">Manage</a>
+                                    </div>
+                                </div>
+
+
+                                <!-- card 5 -->
+                                <div class="sims-card-1 tw-px-5 swiper-slide">
+                                    <div class="tw-flex tw-flex-col">
+
+                                        <!-- heading -->
+                                        <div class="tw-flex tw-gap-5 tw-justify-center">
+                                            <div class="tw-flex tw-flex-col">
+                                                <i class="fa-solid fa-chalkboard-user sims-icon-3xl tw-mx-auto"></i>
+                                                <div class="sims-heading-sm-black tw-truncate">Kelas</div>
+                                            </div>
+
+                                            <div class="tw-flex tw-gap-2 tw-my-auto">
+                                                <div class="sims-text-black-xl tw-text-3xl tw-my-auto">{{ $total_kelas }}</div>
+                                                <div class="sims-heading-sm-black tw-font-normal">total<br>data</div>
+                                            </div>
+                                        </div>
+
+                                        <!-- spacing -->
+                                        <div class="tw-my-10"></div>
+
+                                        <!-- spacing -->
+                                        <div class="tw-my-3"></div>
+
+                                        <!-- button -->
+                                        <a href="/admin/kelas?page=1&perPage=10" class="tw-border-sims-new-500 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all tw-border sims-text-regular-sm tw-text-center tw-rounded-lg tw-py-2">Manage</a>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
 
@@ -439,22 +499,26 @@
                 <div class="tw-my-8"></div>
 
                 <!-- content -->
-                @foreach($allHistory as $h)
-                <div class="tw-flex tw-justify-between tw-mx-10">
-                    <div class="tw-flex tw-gap-3">
-                        <img src="{{ URL::asset('assets/img/activityline2.png') }}" alt="..." class="tw-h-20">
+                @if($allHistory === [])
+                    <div class="sims-heading-sm">Belum ada histori</div>
+                @else
+                    @foreach($allHistory as $h)
+                    <div class="tw-flex tw-justify-between tw-mx-10">
+                        <div class="tw-flex tw-gap-3">
+                            <img src="{{ URL::asset('assets/img/activityline2.png') }}" alt="..." class="tw-h-20">
 
-                        <div class="tw-flex tw-flex-col tw-my-auto">
-                            <div class="sims-heading-md-black">{{ $h->activityAuthor }}</div>
-                            <div class="sims-text-regular-sm tw-font-normal tw-truncate lg:tw-w-64 sm:tw-w-48">{{ $h->activityName }}</div>
+                            <div class="tw-flex tw-flex-col tw-my-auto">
+                                <div class="sims-heading-md-black">{{ $h->activityAuthor }}</div>
+                                <div class="sims-text-regular-sm tw-font-normal tw-truncate lg:tw-w-64 sm:tw-w-48">{{ $h->activityName }}</div>
+                            </div>
+
                         </div>
-
+                        <div class="sims-text-gray-sm tw-font-normal tw-my-auto">
+                            {{ \Carbon\Carbon::createFromTimeStamp(strtotime($h->createdAt))->diffForHumans() }}
+                        </div>
                     </div>
-                    <div class="sims-text-gray-sm tw-font-normal tw-my-auto">
-                        {{ \Carbon\Carbon::createFromTimeStamp(strtotime($h->createdAt))->diffForHumans() }}
-                    </div>
-                </div>
-                @endforeach
+                    @endforeach
+                @endif
             </div>
         </div>
     </div>
