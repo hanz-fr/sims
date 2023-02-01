@@ -193,6 +193,7 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
     Route::get('/help', [HelpCentreController::class, 'viewHelpCenter'])->name('help-center');
     Route::get('/help/general', [HelpCentreController::class, 'viewGeneralHelp']);
     Route::get('/help/account', [HelpCentreController::class, 'viewAccountHelp']);
+    Route::get('/help/alumni', [HelpCentreController::class, 'viewAlumniHelp']);
 
 });
 
