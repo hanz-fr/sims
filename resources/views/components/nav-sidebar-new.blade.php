@@ -106,8 +106,8 @@
                       </div>
                       
                       <div x-ref="panel" x-show="open" x-transition.origin.top.left x-on:click.outside="close($refs.button)" :id="$id('dropdown-button')" style="display: none;"
-                          class="tw-absolute -tw-top-40 tw-mt-2 tw-w-32 tw-rounded-md tw-bg-white tw-shadow-md tw-font-satoshi">
-                          <div class="tw-flex tw-justify-center tw-py-5 tw-font-satoshi tw-font-bold tw-text-sm tw-text-gray-600">
+                          class="tw-absolute -tw-top-40 tw-mt-2 tw-w-32 tw-rounded-md tw-bg-white tw-shadow-md tw-border-2 tw-border-indigo-100 tw-font-satoshi">
+                          <div class="tw-flex tw-justify-center tw-px-4 tw-py-5 tw-font-satoshi tw-font-bold tw-text-sm tw-text-gray-600">
                               {{ auth()->user()->nama }}
                           </div>
                           <a href="/profile" class="tw-flex tw-items-center tw-gap-2 tw-w-full tw-font-medium tw-text-basic-700 tw-px-4 tw-py-2.5 tw-text-left tw-text-sm hover:tw-bg-sims-400 hover:tw-text-white">

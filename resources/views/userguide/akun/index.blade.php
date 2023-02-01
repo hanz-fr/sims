@@ -40,25 +40,23 @@
                 </div>
             </div>
 
-            <div class="tw-grid tw-grid-cols-2 tw-mt-24">
-                <div class="tw-flex tw-flex-col tw-justify-center tw-pr-10">
-                    <h3 class="tw-text-left hc-title-xl"><span class="tw-text-bluewood-800">Langkah 2:</span> Verifikasi akun anda</h3>
-                    <div class="tw-flex">
-                        <div class="tw-flex tw-flex-col tw-justify-center tw-items-center">
-                            <img src="{{ URL::asset('assets/img/login.jpeg') }}" alt="">
-                            <i class="fa-solid fa-circle-1 tw-text-sims-new-500 tw-text-4xl"></i>
-                            <p></p>
-                        </div>
-                        <div class="tw-flex tw-flex-col">
-                            <img src="{{ URL::asset('assets/img/login.jpeg') }}" alt="">
-                            <i class="fa-solid fa-circle-2 tw-text-sims-new-500 tw-text-4xl"></i>
-                            <p></p>
-                        </div>
-                        <div class="tw-flex tw-flex-col">
-                            <img src="{{ URL::asset('assets/img/login.jpeg') }}" alt="">
-                            <i class="fa-solid fa-circle-2 tw-text-sims-new-500 tw-text-4xl"></i>
-                            <p></p>
-                        </div>
+            <div class="tw-flex tw-flex-col tw-w-full tw-justify-center tw-pr-10 tw-mt-24">
+                <h3 class="tw-text-left hc-title-xl tw-w-full"><span class="tw-text-bluewood-800">Langkah 2:</span> Verifikasi akun anda</h3>
+                <div class="tw-flex tw-gap-10">
+                    <div class="tw-flex tw-flex-col tw-justify-center tw-items-center">
+                        <img src="{{ URL::asset('assets/img/login.jpeg') }}" alt="">
+                        <i class="fa-solid fa-circle-1 tw-text-sims-new-500 tw-text-4xl"></i>
+                        <p></p>
+                    </div>
+                    <div class="tw-flex tw-flex-col tw-justify-center tw-items-center">
+                        <img src="{{ URL::asset('assets/img/login.jpeg') }}" alt="">
+                        <i class="fa-solid fa-circle-2 tw-text-sims-new-500 tw-text-4xl"></i>
+                        <p></p>
+                    </div>
+                    <div class="tw-flex tw-flex-col tw-justify-center tw-items-center">
+                        <img src="{{ URL::asset('assets/img/login.jpeg') }}" alt="">
+                        <i class="fa-solid fa-circle-2 tw-text-sims-new-500 tw-text-4xl"></i>
+                        <p></p>
                     </div>
                 </div>
             </div>
