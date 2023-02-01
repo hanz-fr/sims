@@ -35,5 +35,13 @@ class HelpCentreController extends Controller
         ]);
     }
 
+    public function viewAlumniHelp() {
+
+        return view('userguide.alumni.index', [
+            'title' => 'Petunjuk Alumni',
+            'active' => 'sims-help'
+        ]);
+    }
+
 
 }

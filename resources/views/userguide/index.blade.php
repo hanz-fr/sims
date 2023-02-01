@@ -44,7 +44,7 @@
         <!-- card !--> 
         <div id="cardFeature" class="tw-flex tw-flex-wrap tw-justify-center tw-gap-x-7 tw-gap-y-10 tw-mb-24">
 
-            <a href="#" class="hc-card">
+            <a href="/help/alumni" class="hc-card">
                 <i class="fa-regular fa-graduation-cap tw-text-4xl tw-text-sims-400 tw-mb-2"></i>
                 <div class="hc-title-xl">Alumni</div>
                 <div class="hc-text-base">Penyimpanan data induk dari alumni sekolah selama 5 tahun terakhir!</div>
