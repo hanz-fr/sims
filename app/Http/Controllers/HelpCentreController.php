@@ -27,6 +27,7 @@ class HelpCentreController extends Controller
 
     }
 
+
     public function viewAccountHelp() {
 
         return view('userguide.akun.index', [
@@ -35,9 +36,37 @@ class HelpCentreController extends Controller
         ]);
     }
 
+
     public function viewAlumniHelp() {
 
         return view('userguide.alumni.index', [
+            'title' => 'Petunjuk Alumni',
+            'active' => 'sims-help'
+        ]);
+    }
+
+
+    public function viewIndukHelp() {
+
+        return view('userguide.induk.index', [
+            'title' => 'Petunjuk Alumni',
+            'active' => 'sims-help'
+        ]);
+    }
+
+
+    public function viewMutasiHelp() {
+
+        return view('userguide.mutasi.index', [
+            'title' => 'Petunjuk Alumni',
+            'active' => 'sims-help'
+        ]);
+    }
+
+
+    public function viewRekapNilaiHelp() {
+
+        return view('userguide.rekapnilai.index', [
             'title' => 'Petunjuk Alumni',
             'active' => 'sims-help'
         ]);

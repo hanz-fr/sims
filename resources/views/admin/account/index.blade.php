@@ -55,7 +55,7 @@
                         <span class="tw-w-fit tw-text-xs tw-py-1 tw-px-4 tw-text-center tw-whitespace-nowrap tw-items-center tw-justify-center tw-font-bold tw-bg-gray-400 hover:tw-bg-gray-500 tw-text-white tw-rounded-full">Belum Terverifikasi</span>
                     @endif
                 </td>
-                <td class="tw-p-6">
+                <td class="tw-p-6 tw-flex tw-items-center tw-justify-center">
                     @if ($u->role === 1)
                     Tata Usaha
                     @endif
@@ -69,7 +69,7 @@
                         Wali Kelas
                     @endif
                     @if ($u->is_admin === 1)
-                        Admin
+                        <i title="User ini merupakan Admin" class="fa-solid fa-shield-check tw-text-sims-500 tw-text-xl tw-ml-2"></i>
                     @endif
                 </td>
                 <td class="tw-p-6">{{ $created_at }}</td>

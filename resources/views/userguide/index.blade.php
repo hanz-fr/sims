@@ -50,19 +50,19 @@
                 <div class="hc-text-base">Penyimpanan data induk dari alumni sekolah selama 5 tahun terakhir!</div>
             </a>
 
-            <a href="#" class="hc-card">
+            <a href="/help/induk" class="hc-card">
                 <i class="fa-sharp fa-regular fa-book-open-cover tw-text-4xl tw-text-sims-400 tw-mb-2"></i>
                 <div class="hc-title-xl">Data Induk</div>
                 <div class="hc-text-base">Pengelolaan dan penyimpanan data induk secara digital dan real-time</div>
             </a>
 
-            <a href="#" class="hc-card">
+            <a href="/help/mutasi" class="hc-card">
                 <i class="fa-regular fa-users tw-text-4xl tw-text-sims-400 tw-mb-2"></i>
                 <div class="hc-title-xl">Mutasi</div>
                 <div class="hc-text-base">Mengelola data mutasi masuk dan keluar, solusi tepat untuk mengelola data mutasi</div>
             </a>
 
-            <a href="#" class="hc-card">
+            <a href="/help/rekap-nilai" class="hc-card">
                 <i class="fa-regular fa-book tw-text-4xl tw-text-sims-400 tw-mb-2"></i>
                 <div class="hc-title-xl">Rekap Nilai</div>
                 <div class="hc-text-base">Penyimpanan rekap nilai setiap siswa, mempermudah penginputan rekap nilai</div>

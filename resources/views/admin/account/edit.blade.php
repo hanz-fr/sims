@@ -57,6 +57,23 @@
                         <option value="4">Wali Kelas</option>
                     </select>
                 </div>
+                <div class="tw-mx-auto md:tw-w-2/3 sm:tw-w-1/2">
+                    <label class="label-input" for="status">
+                        Status Admin
+                    </label>
+                    <select value="{{ $user->is_admin }}" class="input-data-minimal" id="status" name="is_admin" type="text" required>
+                        @if ($user->is_admin === 1)
+                            <option value="1" selected>Ya</option>
+                            <option value="0">Tidak</option>
+                        @else
+                            <option value="1">Ya</option>
+                            <option value="0" selected>Tidak</option>
+                        @endif
+{{-- 
+                        <option value="1">Ya</option>
+                        <option value="0">Tidak</option> --}}
+                    </select>
+                </div>
                 <div class="tw-mx-auto tw-text-center tw-mt-10">
                     <button type="submit" class="tw-bg-sims-new-500 tw-font-sg tw-font-medium tw-transition hover:tw-bg-sims-new-600 tw-text-white tw-py-3 tw-px-6 tw-rounded-lg">Buat</button>
                 </div>

@@ -58,7 +58,7 @@
                     @enderror
                 </div>
                 <div class="tw-mx-auto md:tw-w-2/3 sm:tw-w-1/2">
-                    <label class="label-input" for="keluar_di_kelas">
+                    <label class="label-input" for="role">
                         Role
                     </label>
                     <select class="input-data-minimal" id="nip" name="role" type="text" required>
@@ -66,6 +66,15 @@
                         <option value="2">Kesiswaan</option>
                         <option value="3">Kurikulum</option>
                         <option value="4">Wali Kelas</option>
+                    </select>
+                </div>
+                <div class="tw-mx-auto md:tw-w-2/3 sm:tw-w-1/2">
+                    <label class="label-input" for="status">
+                        Status Admin
+                    </label>
+                    <select class="input-data-minimal" id="status" name="is_admin" type="text" required>
+                        <option value="1">Ya</option>
+                        <option value="0">Tidak</option>
                     </select>
                 </div>
                 <div class="tw-mx-auto tw-text-center tw-mt-10">

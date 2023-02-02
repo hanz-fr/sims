@@ -194,6 +194,9 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
     Route::get('/help/general', [HelpCentreController::class, 'viewGeneralHelp']);
     Route::get('/help/account', [HelpCentreController::class, 'viewAccountHelp']);
     Route::get('/help/alumni', [HelpCentreController::class, 'viewAlumniHelp']);
+    Route::get('/help/induk', [HelpCentreController::class, 'viewIndukHelp']);
+    Route::get('/help/mutasi', [HelpCentreController::class, 'viewMutasiHelp']);
+    Route::get('/help/rekap-nilai', [HelpCentreController::class, 'viewRekapNilaiHelp']);
 
 });
 
@@ -269,7 +272,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['is_admin'] , ['revalidate']
 /* ROUTE USER SIMS (LOGIN & REGISTER) */
 
 Route::get('/register', [UserController::class, 'registration'])->name('register.form');
-Route::get('/login', [UserController::class, 'index'])->name('login');
+Route::get('/login', [UserController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/registeruser', [UserController::class, 'register']);
 Route::post('/loginuser', [UserController::class, 'authenticate']);
 Route::get('/signout', [UserController::class, 'signOut']);

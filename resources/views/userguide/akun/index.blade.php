@@ -22,12 +22,13 @@
         <div class="tw-flex tw-flex-col">
 
 
-            <div class="tw-text-center hc-title-3xl tw-mb-24">Tentang Akun</div>
+            <div class="tw-text-center hc-title-3xl tw-mb-24">Petunjuk Akun</div>
 
             <div class="row">
 
+                <h3 class="hc-title-2xl tw-mb-5"><span class="tw-text-bluewood-800">Langkah 1:</span> Login dengan akun yang sudah ada</h3>
+
                 <div class="col-lg-6 tw-justify-center pr-5">
-                    <h3 class="hc-title-xl"><span class="tw-text-bluewood-800">Langkah 1:</span> Login dengan akun yang sudah ada</h3>
                     <p class="tw-text-justify tw-mt-5 hc-text-lg">
                         Agar bisa menggunakan SIMS tentunya harus memiliki akun terlebih dahulu.
                         Jika sudah memiliki akun, maka di bagian login, anda tinggal mengisikan
@@ -45,16 +46,16 @@
 
             </div>
 
-            <div class="tw-flex tw-flex-col tw-justify-center tw-pr-10 tw-mt-24">
-                <h3 class="tw-text-left hc-title-xl tw-mb-16">
+            <div class="tw-flex tw-flex-col tw-mx-12 tw-justify-center tw-pr-10 tw-mt-24">
+                <h3 class="tw-text-left hc-title-2xl tw-mb-16">
                     <span class="tw-text-bluewood-800">Langkah 2:</span> 
                     Verifikasi akun anda
                 </h3>
                 
-                <div class="tw-flex tw-gap-16 tw-mb-28 tw-flex-nowrap tw-max-w-full tw-pb-10 tw-overflow-x-scroll tw-scrollbar-thumb-gray-400 tw-scrollbar-thumb-rounded-lg tw-scrollbar-thin tw-scrollbar-track-gray-100">
+                <div class="tw-flex tw-gap-x-40 tw-pl-8 tw-pr-2 tw-mb-28 tw-flex-nowrap tw-max-w-full tw-pb-10 tw-overflow-x-scroll tw-scrollbar-thumb-gray-400 tw-scrollbar-thumb-rounded-lg tw-scrollbar-thin tw-scrollbar-track-gray-100">
 
                     <div class="col-lg-4 flex flex-col tw-gap-y-8">
-                        <div class="tw-w-full tw-drop-shadow-lg tw-rounded-lg">
+                        <div class="tw-w-full tw-flex tw-drop-shadow-lg tw-justify-center tw-rounded-lg">
                             <img src="{{ URL::asset('assets/img/hc-account-verif-1.svg') }}" alt="">
                         </div>
                         <div class="tw-text-center tw-flex tw-flex-col tw-gap-y-5">
@@ -70,7 +71,7 @@
                     </div>
 
                     <div class="col-lg-4 flex flex-col tw-gap-y-8">
-                        <div class="tw-w-full tw-drop-shadow-lg tw-rounded-lg">
+                        <div class="tw-w-full tw-flex tw-drop-shadow-lg tw-justify-center tw-rounded-lg">
                             <img src="{{ URL::asset('assets/img/hc-account-verif-2.svg') }}" alt="">
                         </div>
                         <div class="tw-text-center tw-flex tw-flex-col tw-gap-y-5">
@@ -86,7 +87,7 @@
                     </div>
 
                     <div class="col-lg-4 flex flex-col tw-gap-y-8">
-                        <div class="tw-w-full tw-drop-shadow-lg tw-rounded-lg">
+                        <div class="tw-w-full tw-flex tw-drop-shadow-lg tw-justify-center tw-rounded-lg">
                             <img src="{{ URL::asset('assets/img/hc-account-verif-3.svg') }}" alt="">
                         </div>
                         <div class="tw-text-center tw-flex tw-flex-col tw-gap-y-5">
@@ -101,7 +102,7 @@
                     </div>
 
                     <div class="col-lg-4 flex flex-col tw-gap-y-8">
-                        <div class="tw-w-full tw-drop-shadow-lg tw-rounded-lg">
+                        <div class="tw-w-full tw-flex tw-drop-shadow-lg tw-justify-center tw-rounded-lg">
                             <img src="{{ URL::asset('assets/img/hc-account-verif-4.svg') }}" alt="">
                         </div>
                         <div class="tw-text-center tw-flex tw-flex-col tw-gap-y-5">
@@ -119,7 +120,7 @@
                 </div>
 
                 <div class="col-lg-12 tw-flex tw-flex-col tw-gap-5">
-                    <h1 class="tw-text-5xl hc-title-3xl">
+                    <h1 class="hc-title-2xl">
                         Hak Akses Kami
                     </h1>
 
@@ -133,7 +134,7 @@
                     <div class="tw-grid tw-grid-rows-2 tw-grid-cols-2 tw-gap-10">
 
                         <div class="tw-py-6 tw-px-8 tw-rounded-lg hover:tw-shadow-lg tw-border tw-border-gray-200">
-                            <h3 class="tw-text-sims-new-500 tw-font-satoshi tw-font-semibold">Tata Usaha</h3>
+                            <h4 class="tw-text-sims-new-500 tw-font-satoshi tw-font-semibold">Tata Usaha</h4>
                             <ul class="tw-list-disc hc-text-lg">
                                 <li>Export, import, melihat, menginput, dan memperbarui semua data induk siswa</li>
                                 <li>Export, melihat, dan memperbarui data mutasi</li>
@@ -143,7 +144,7 @@
                             </ul>
                         </div>
                         <div class="tw-py-6 tw-px-8 tw-rounded-lg hover:tw-shadow-lg tw-border tw-border-gray-200">
-                            <h3 class="tw-text-salmon-400 tw-font-satoshi tw-font-semibold">Kesiswaan</h3>
+                            <h4 class="tw-text-salmon-400 tw-font-satoshi tw-font-semibold">Kesiswaan</h4>
                             <ul class="tw-list-disc hc-text-lg">
                                 <li>Melihat semua data induk siswa</li>
                                 <li>Export, melihat, memperbarui, dan menginput data mutasi</li>
@@ -153,7 +154,7 @@
                             </ul>
                         </div>
                         <div class="tw-py-6 tw-px-8 tw-rounded-lg hover:tw-shadow-lg tw-border tw-border-gray-200">
-                            <h3 class="tw-text-oren-400 tw-font-satoshi tw-font-semibold">Kurikulum</h3>
+                            <h4 class="tw-text-oren-400 tw-font-satoshi tw-font-semibold">Kurikulum</h4>
                             <ul class="tw-text-xl tw-list-disc hc-text-lg tw-pt-5">
                                 <li>Melihat semua data induk siswa</li>
                                 <li>Melihat dan export rekap nilai siswa</li>
@@ -161,7 +162,7 @@
                             </ul>
                         </div>
                         <div class="tw-py-6 tw-px-8 tw-rounded-lg hover:tw-shadow-lg tw-border tw-border-gray-200">
-                            <h3 class="tw-text-[#B4B8BC] tw-font-satoshi tw-font-semibold">Wali Kelas</h3>
+                            <h4 class="tw-text-[#B4B8BC] tw-font-satoshi tw-font-semibold">Wali Kelas</h4>
                             <ul class="tw-text-xl tw-list-disc hc-text-lg tw-pt-5">
                                 <li>Melihat semua data induk siswa</li>
                                 <li>Melihat dan export rekap nilai siswa</li>

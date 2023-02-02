@@ -2,15 +2,26 @@
 
 @section('content')
     <div class="tw-container tw-mx-auto">
+
+        <!-- spacing !-->
+        <div class="tw-mt-8"></div> 
+        <!-------------->
+
         <div role="status" class="tw-flex tw-justify-center">
-            <div class="lg:tw-w-1/2">
-                <img src="{{ URL::asset('assets/img/history-empty.jpg') }}" class="" alt="hc-header-img">
+            <div class="lg:tw-w-[35%]">
+                <img src="{{ URL::asset('assets/img/hc-header-alumni.svg') }}" class="" alt="hc-header-img">
             </div>
         </div>
+  
+
+        <!-- spacing !-->
+        <div class="tw-mt-12"></div> 
+        <!-------------->
+
 
         <div class="tw-mx-60 tw-mt-16">
 
-            <div class="tw-text-center hc-title-3xl tw-mb-20">Tentang Alumni</div>
+            <div class="tw-text-center hc-title-3xl tw-mb-20">Data Alumni</div>
 
             <div class="tw-text-center hc-text-lg tw-mb-20">Alumni adalah lulusan dari suatu sekolah. Lulusan-lulusan ini
                 memiliki ijazah.</div>
