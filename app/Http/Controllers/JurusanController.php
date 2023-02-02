@@ -93,7 +93,7 @@ class JurusanController extends Controller
         $response = Http::get("{$this->api_url}/jurusan/{$id}");
 
         return view('admin.jurusan.edit-jurusan', [
-            'title' => 'Create Jurusan',
+            'title' => 'Edit Jurusan',
             'active' => 'database',
             'jurusan' => json_decode($response)->result,
         ]);

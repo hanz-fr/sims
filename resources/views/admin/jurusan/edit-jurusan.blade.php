@@ -16,12 +16,12 @@
             @csrf
             @method('PUT')
             <div class="tw-flex tw-flex-col tw-gap-1">
-                <div class="sims-text-gray-sm">Nama Jurusan</div>
+                <div class="sims-text-gray-sm">Program Keahlian</div>
                 <input disabled name="nama" class="tw-border-[1.5px] tw-transition-all tw-duration-500 tw-ease-out tw-font-satoshi tw-font-normal tw-text-gray-500 tw-border-gray-300 tw-py-1 tw-px-5 tw-rounded-xl focus:tw-outline-sims-new-500" value="{{ $jurusan->nama }}">
                 <input type="hidden" name="nama" value="{{ $jurusan->nama }}">
             </div>
             <div class="tw-flex tw-flex-col tw-gap-1">
-                <div class="sims-text-gray-sm">Konsentrasi Jurusan</div>
+                <div class="sims-text-gray-sm">Konsentrasi Keahlian</div>
                 <input disabled name="konsentrasi" class="tw-border-[1.5px] tw-transition-all tw-duration-500 tw-ease-out tw-font-satoshi tw-font-normal tw-text-gray-500 tw-border-gray-300 tw-py-1 tw-px-5 tw-rounded-xl focus:tw-outline-sims-new-500" value="{{ $jurusan->konsentrasi }}">
                 <input type="hidden" name="konsentrasi" value="{{ $jurusan->konsentrasi }}">
             </div>

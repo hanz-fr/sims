@@ -14,7 +14,7 @@
 
 
                 <div class="tw-flex tw-flex-col tw-my-auto">
-                    <div class="sims-text-gray-sm tw-truncate">Nama Jurusan</div>
+                    <div class="sims-text-gray-sm tw-truncate">Program Keahlian</div>
                     <div class="sims-heading-2xl-black">{{ $jurusan->nama }}</div>
                 </div>
             </div>

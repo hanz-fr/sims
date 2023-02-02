@@ -90,7 +90,7 @@
                         <td class="tw-p-6">{{ $k->kelas }}</td>
                         <td class="tw-p-6">{{ $k->rombel }}</td>
                         <td class="tw-p-6">{{ $k->JurusanId }}</td>
-                        <td class="tw-p-6">{{ $k->createdAt }}</td>
+                        <td class="tw-p-6">@if($k->createdAt != null){{  \Carbon\Carbon::parse(strtotime($k->createdAt))->translatedFormat('l d F Y'); }}@endif</td>
                         <td class="tw-p-6">
                             {{-- <a title="Edit Data" href="/admin/kelas/edit/{{ $k->id }}"
                                 class="tw-text-kuning-500 hover:tw-bg-kuning-500 hover:tw-text-white hover:tw-shadow-md tw-transition-all tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
