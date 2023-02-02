@@ -16,11 +16,11 @@
             @csrf
             @method('POST')
             <div class="tw-flex tw-flex-col tw-gap-1">
-                <div class="sims-text-gray-sm">Nama Jurusan</div>
+                <div class="sims-text-gray-sm">Program Keahlian</div>
                 <input required name="nama" class="tw-border-[1.5px] tw-transition-all tw-duration-500 tw-ease-out tw-font-satoshi tw-font-normal tw-text-gray-500 tw-border-gray-300 tw-py-1 tw-px-5 tw-rounded-xl focus:tw-outline-sims-new-500">
             </div>
             <div class="tw-flex tw-flex-col tw-gap-1">
-                <div class="sims-text-gray-sm">Konsentrasi Jurusan</div>
+                <div class="sims-text-gray-sm">Konsentrasi Keahlian</div>
                 <input required name="konsentrasi" class="tw-border-[1.5px] tw-transition-all tw-duration-500 tw-ease-out tw-font-satoshi tw-font-normal tw-text-gray-500 tw-border-gray-300 tw-py-1 tw-px-5 tw-rounded-xl focus:tw-outline-sims-new-500">
             </div>
             <div class="tw-flex tw-flex-col tw-gap-1">

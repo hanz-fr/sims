@@ -313,9 +313,9 @@
                                 </div>
 
                                 {{-- TEMPORARY COMMENT / TO BE FIXED LATER --}}
-                                <a href="/admin/account/{{ $u->id }}/edit" class="tw-text-[#979797] tw-my-auto tw-h-fit tw-z-50">
+                                {{-- <a href="/admin/account/{{ $u->id }}/edit" class="tw-text-[#979797] tw-my-auto tw-h-fit tw-z-50">
                                     <i class="fa-solid fa-pen-to-square hover:tw-text-[#FBB845] tw-transition-all"></i>
-                                </a>
+                                </a> --}}
                             </button>
                         </form>
                         @endforeach

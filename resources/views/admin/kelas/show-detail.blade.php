@@ -24,10 +24,10 @@
 
     <div class="tw-pt-10 tw-flex tw-justify-between">
         <div class="sims-text-gray-lg">
-            <p class="tw-mb-0">Created : <span class="tw-font-normal">{{ $kelas->createdAt }}</span></p>
-            <p>Updated : <span class="tw-font-normal">{{ $kelas->updatedAt }}</span></p>
+            <p class="tw-mb-0">Created : <span class="tw-font-normal">{{ \Carbon\Carbon::parse(strtotime($kelas->createdAt))->translatedFormat('l d F Y'); }}</span></p>
+            <p>Updated : <span class="tw-font-normal">{{ \Carbon\Carbon::parse(strtotime($kelas->updatedAt))->translatedFormat('l d F Y'); }}</span></p>
         </div>
-        <div class="tw-grid tw-grid-cols-2 tw-gap-3 tw-font-ubuntu tw-text-white tw-font-medium tw-my-auto">
+        <div class="tw-flex tw-font-ubuntu tw-text-white tw-font-medium tw-my-auto">
             <form action="/admin/kelas/delete/{{ $kelas->id }}" method="POST">
                 @csrf
                 @method('DELETE')
@@ -73,7 +73,7 @@
                     </div>
                 </div>
             </form>
-            <a href="/admin/kelas/edit/{{ $kelas->id }}" class="tw-bg-amber-400 hover:tw-bg-amber-500 hover:tw-text-white tw-w-fit tw-px-10 tw-py-3 tw-rounded-[11px] tw-text-base tw-text-white tw-font-satoshi"><i class="fa-regular fa-edit tw-text-lg tw-mr-2"></i>Edit Data</a>
+            {{-- <a href="/admin/kelas/edit/{{ $kelas->id }}" class="tw-bg-amber-400 hover:tw-bg-amber-500 hover:tw-text-white tw-w-fit tw-px-10 tw-py-3 tw-rounded-[11px] tw-text-base tw-text-white tw-font-satoshi"><i class="fa-regular fa-edit tw-text-lg tw-mr-2"></i>Edit Data</a> --}}
           </div>
     </div>
 </div>

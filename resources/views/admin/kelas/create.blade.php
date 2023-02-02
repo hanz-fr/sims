@@ -33,7 +33,7 @@
                 <input type="text" name="jurusan" class="tw-border-[1.5px] tw-transition-all tw-duration-500 tw-ease-out tw-font-satoshi tw-font-normal tw-text-gray-500 tw-border-gray-300 tw-py-1 tw-px-5 tw-rounded-xl focus:tw-outline-sims-new-500"></input>
             </div>
             <div class="tw-flex tw-flex-col tw-gap-1">
-                <div class="sims-text-gray-sm">Jurusan</div>
+                <div class="sims-text-gray-sm">JurusanId</div>
                 <select name="JurusanId" class="tw-border-[1.5px] tw-transition-all tw-duration-500 tw-ease-out tw-font-satoshi tw-font-normal tw-text-gray-500 tw-border-gray-300 tw-py-1 tw-px-5 tw-rounded-xl focus:tw-outline-sims-new-500">
                     @foreach ($jurusan as $j)
                         <option value="{{ $j->id }}">{{ $j->id }}</option>
