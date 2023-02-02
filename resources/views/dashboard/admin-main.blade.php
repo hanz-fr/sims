@@ -278,14 +278,11 @@
                                 <div class="tw-flex tw-gap-3">
                                     @if ($u->role === 1)
                                         <i class="fa-solid fa-circle-user sims-icon-3xl"></i>
-                                    @endif
-                                    @if ($u->role === 2)
+                                    @elseif ($u->role === 2)
                                         <i class="fa-solid fa-circle-user tw-bg-salmon-400 sims-icon-3xl"></i>
-                                    @endif
-                                    @if ($u->role === 3)
+                                    @elseif ($u->role === 3)
                                         <i class="fa-solid fa-circle-user tw-bg-oren-400 sims-icon-3xl"></i>
-                                    @endif
-                                    @if ($u->role === 4)
+                                    @elseif ($u->role === 4)
                                         <i class="fa-solid fa-circle-user tw-bg-[#979797] sims-icon-3xl"></i>
                                     @else
                                         <i class="fa-solid fa-circle-user sims-icon-3xl"></i>
