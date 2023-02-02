@@ -27,14 +27,17 @@
                     <option value="12">12</option>
                     <option value="13">13</option>
                 </select>
+                <input type="hidden" name="kelas" value="{{ $kelas->kelas }}">
             </div>
             <div class="tw-flex tw-flex-col tw-gap-1">
                 <div class="sims-text-gray-sm">Rombel</div>
                 <input disabled type="number" name="rombel" class="tw-border-[1.5px] tw-transition-all tw-duration-500 tw-ease-out tw-font-satoshi tw-font-normal tw-text-gray-500 tw-border-gray-300 tw-py-1 tw-px-5 tw-rounded-xl focus:tw-outline-sims-new-500" value="{{ $kelas->rombel }}">
+                <input type="hidden" name="rombel" value="{{ $kelas->rombel }}">
             </div>
             <div class="tw-flex tw-flex-col tw-gap-1">
                 <div class="sims-text-gray-sm">Jurusan</div>
                 <input disabled type="text" name="jurusan" class="tw-border-[1.5px] tw-transition-all tw-duration-500 tw-ease-out tw-font-satoshi tw-font-normal tw-text-gray-500 tw-border-gray-300 tw-py-1 tw-px-5 tw-rounded-xl focus:tw-outline-sims-new-500" value="{{ $kelas->jurusan }}"></input>
+                <input type="hidden" name="jurusan" value="{{ $kelas->jurusan }}">
             </div>
             <div class="tw-flex tw-flex-col tw-gap-1">
                 <div class="sims-text-gray-sm">Jurusan</div>
@@ -46,6 +49,7 @@
                         <option value="{{ $j->id }}">{{ $j->id }}</option>
                     @endforeach
                 </select>
+                <input type="hidden" name="JurusanId" value="{{ $kelas->JurusanId }}">
             </div>
             @if($message = Session::get('error'))
                 <div class="sims-text-gray-xs tw-text-red-500">{{ $message }}</div>

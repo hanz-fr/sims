@@ -65,7 +65,7 @@ class KelasController extends Controller
     /* Create Kelas */
     public function createKelas(Request $request) {
 
-        $jurusan = json_decode(Http::get("{$this->api_url}/jurusan"))->data->rows;
+        $jurusan = json_decode(Http::get("{$this->api_url}/jurusan?perPage=500"))->data->rows;
 
         return view('admin.kelas.create', [
             'title' => 'Tambah Data Kelas',
@@ -79,7 +79,7 @@ class KelasController extends Controller
     /* Edit Kelas */
     public function editKelas($id) {
 
-        $jurusan = json_decode(Http::get("{$this->api_url}/jurusan"))->data->rows;
+        $jurusan = json_decode(Http::get("{$this->api_url}/jurusan?perPage=500"))->data->rows;
 
         $response = Http::get("{$this->api_url}/kelas/{$id}");
 
@@ -132,9 +132,7 @@ class KelasController extends Controller
             'JurusanId' => $request->JurusanId,
         ]);
 
-        $response->throw();
-
-        if (json_decode($response)->message === "Successfully updated kelas with id : '{$id}'") {
+        if (json_decode($response)->status === 'success') {
 
             return redirect('/admin/kelas')->with('success', 'Data berhasil diperbarui!');
 
