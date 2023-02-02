@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
 
@@ -70,9 +71,12 @@ class AccountController extends Controller
      */
     public function create() {
 
+        $prevPageURL = URL::previous();
+
         return view('admin.account.create', [
             'title' => 'Tambah Akun',
-            'active' => 'admin'
+            'active' => 'admin',
+            'prevPage' => $prevPageURL,
         ]);
     }
 
@@ -142,10 +146,13 @@ class AccountController extends Controller
     {
         $user = User::find($id);
 
+        $prevPageURL = URL::previous();
+
         return view('admin.account.edit', [
             'title' => 'Edit Akun',
             'active' => 'admin',
-            'user' => $user
+            'user' => $user,
+            'prevPage' => $prevPageURL,
         ]);
     }
 
