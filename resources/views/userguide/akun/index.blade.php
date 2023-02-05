@@ -46,6 +46,7 @@
 
             </div>
 
+
             <div class="tw-flex tw-flex-col tw-mx-12 tw-justify-center tw-pr-10 tw-mt-24">
                 <h3 class="tw-text-left hc-title-2xl tw-mb-16">
                     <span class="tw-text-bluewood-800">Langkah 2:</span> 
@@ -119,59 +120,66 @@
 
                 </div>
 
-                <div class="col-lg-12 tw-flex tw-flex-col tw-gap-5">
-                    <h1 class="hc-title-2xl">
-                        Hak Akses Kami
-                    </h1>
+            </div>
 
-                    <p class="tw-text-justify hc-text-xl">
-                        Hak akses adalah izin atau hak istimewa yang diberikan kepada pengguna untuk membuat, mengubah, 
-                        menghapus atau melihat data dalam sebuah aplikasi sebagaimana ditetapkan oleh aturan yang dibuat 
-                        oleh pemilik data dan sesuai kebijakan keamanan informasi. Dalam SIMS terdapat 4 hak akses, yaitu 
-                        Tata Usaha, Kesiswaan, Wali Kelas dan Kurikulum.
-                    </p>
 
-                    <div class="tw-grid tw-grid-rows-2 tw-grid-cols-2 tw-gap-10">
+            <div class="col-lg-12 tw-flex tw-flex-col tw-gap-5">
+                <h1 class="hc-title-2xl">
+                    Hak Akses Kami
+                </h1>
 
-                        <div class="tw-py-6 tw-px-8 tw-rounded-lg hover:tw-shadow-lg tw-border tw-border-gray-200">
-                            <h4 class="tw-text-sims-new-500 tw-font-satoshi tw-font-semibold">Tata Usaha</h4>
-                            <ul class="tw-list-disc hc-text-lg">
-                                <li>Export, import, melihat, menginput, dan memperbarui semua data induk siswa</li>
-                                <li>Export, melihat, dan memperbarui data mutasi</li>
-                                <li>Export dan melihat data jumlah siswa</li>
-                                <li>Melihat, memperbarui, dan export rekap nilai siswa</li>
-                                <li>Export dan melihat data siswa tidak naik kelas</li>
-                            </ul>
-                        </div>
-                        <div class="tw-py-6 tw-px-8 tw-rounded-lg hover:tw-shadow-lg tw-border tw-border-gray-200">
-                            <h4 class="tw-text-salmon-400 tw-font-satoshi tw-font-semibold">Kesiswaan</h4>
-                            <ul class="tw-list-disc hc-text-lg">
-                                <li>Melihat semua data induk siswa</li>
-                                <li>Export, melihat, memperbarui, dan menginput data mutasi</li>
-                                <li>Export dan melihat data jumlah siswa</li>
-                                <li>Export dan melihat data jumlah siswa</li>
-                                <li>Export dan melihat data siswa tidak naik kelas</li>
-                            </ul>
-                        </div>
-                        <div class="tw-py-6 tw-px-8 tw-rounded-lg hover:tw-shadow-lg tw-border tw-border-gray-200">
-                            <h4 class="tw-text-oren-400 tw-font-satoshi tw-font-semibold">Kurikulum</h4>
-                            <ul class="tw-text-xl tw-list-disc hc-text-lg tw-pt-5">
-                                <li>Melihat semua data induk siswa</li>
-                                <li>Melihat dan export rekap nilai siswa</li>
-                                <li>Melihat dan export data siswa tidak naik kelas</li>
-                            </ul>
-                        </div>
-                        <div class="tw-py-6 tw-px-8 tw-rounded-lg hover:tw-shadow-lg tw-border tw-border-gray-200">
-                            <h4 class="tw-text-[#B4B8BC] tw-font-satoshi tw-font-semibold">Wali Kelas</h4>
-                            <ul class="tw-text-xl tw-list-disc hc-text-lg tw-pt-5">
-                                <li>Melihat semua data induk siswa</li>
-                                <li>Melihat dan export rekap nilai siswa</li>
-                                <li>Import, memperbarui, menginput, dan menghapus rekap nilai siswa</li>
-                            </ul>
-                        </div>
+                <p class="tw-text-justify hc-text-xl">
+                    Hak akses adalah izin atau hak istimewa yang diberikan kepada pengguna untuk membuat, mengubah, 
+                    menghapus atau melihat data dalam sebuah aplikasi sebagaimana ditetapkan oleh aturan yang dibuat 
+                    oleh pemilik data dan sesuai kebijakan keamanan informasi. Dalam SIMS terdapat 4 hak akses, yaitu 
+                    Tata Usaha, Kesiswaan, Wali Kelas dan Kurikulum.
+                </p>
+
+                <div class="tw-grid tw-grid-rows-2 tw-grid-cols-2 tw-gap-10">
+
+                    <div class="tw-py-6 tw-px-8 tw-rounded-lg hover:tw-shadow-lg tw-border tw-border-gray-200">
+                        <h4 class="tw-text-sims-new-500 tw-font-satoshi tw-font-semibold">Tata Usaha</h4>
+                        <ul class="tw-list-disc hc-text-lg">
+                            <li>Export, import, melihat, menginput, dan memperbarui semua data induk siswa</li>
+                            <li>Export, melihat, dan memperbarui data mutasi</li>
+                            <li>Export dan melihat data jumlah siswa</li>
+                            <li>Melihat, memperbarui, dan export rekap nilai siswa</li>
+                            <li>Export dan melihat data siswa tidak naik kelas</li>
+                        </ul>
                     </div>
+
+                    <div class="tw-py-6 tw-px-8 tw-rounded-lg hover:tw-shadow-lg tw-border tw-border-gray-200">
+                        <h4 class="tw-text-salmon-400 tw-font-satoshi tw-font-semibold">Kesiswaan</h4>
+                        <ul class="tw-list-disc hc-text-lg">
+                            <li>Melihat semua data induk siswa</li>
+                            <li>Export, melihat, memperbarui, dan menginput data mutasi</li>
+                            <li>Export dan melihat data jumlah siswa</li>
+                            <li>Export dan melihat data jumlah siswa</li>
+                            <li>Export dan melihat data siswa tidak naik kelas</li>
+                        </ul>
+                    </div>
+
+                    <div class="tw-py-6 tw-px-8 tw-rounded-lg hover:tw-shadow-lg tw-border tw-border-gray-200">
+                        <h4 class="tw-text-oren-400 tw-font-satoshi tw-font-semibold">Kurikulum</h4>
+                        <ul class="tw-text-xl tw-list-disc hc-text-lg tw-pt-5">
+                            <li>Melihat semua data induk siswa</li>
+                            <li>Melihat dan export rekap nilai siswa</li>
+                            <li>Melihat dan export data siswa tidak naik kelas</li>
+                        </ul>
+                    </div>
+
+                    <div class="tw-py-6 tw-px-8 tw-rounded-lg hover:tw-shadow-lg tw-border tw-border-gray-200">
+                        <h4 class="tw-text-[#B4B8BC] tw-font-satoshi tw-font-semibold">Wali Kelas</h4>
+                        <ul class="tw-text-xl tw-list-disc hc-text-lg tw-pt-5">
+                            <li>Melihat semua data induk siswa</li>
+                            <li>Melihat dan export rekap nilai siswa</li>
+                            <li>Import, memperbarui, menginput, dan menghapus rekap nilai siswa</li>
+                        </ul>
+                    </div>
+                    
                 </div>
             </div>
+
         </div>
     </div>
 

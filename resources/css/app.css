@@ -121,6 +121,12 @@ a {
     .hc-card-general {
         @apply tw-flex tw-flex-col tw-rounded-lg tw-px-6 tw-py-8 tw-w-full hover:tw-bg-white hover:shadow-cs hover:tw-border-gray-500 hover:tw-text-white tw-transition-all;
     }
+    .hc-step {
+        @apply tw-flex tw-flex-nowrap tw-max-w-full tw-pb-10 tw-overflow-x-scroll tw-scrollbar-thumb-gray-400 tw-scrollbar-thumb-rounded-lg tw-scrollbar-thin tw-scrollbar-track-gray-100 tw-mt-10 tw-mb-28;
+    }
+    .hc-img {
+        @apply tw-flex tw-drop-shadow-lg tw-justify-center tw-overflow-hidden tw-rounded-xl tw-w-full;
+    }
 
     /* SIMS 1.0 Tailwind CSS Presets */
 
