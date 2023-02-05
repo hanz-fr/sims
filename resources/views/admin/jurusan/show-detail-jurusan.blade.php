@@ -103,8 +103,8 @@
 
                 <!-- Data CreatedAt & UpdatedAt -->
                 <div class="tw-flex tw-flex-col tw-my-8 tw-mx-auto">
-                    <div class="sims-text-gray-sm"><b>Dibuat : </b> {{ \Carbon\Carbon::parse(strtotime($jurusan->createdAt))->translatedFormat('l d F Y'); }}</div>
-                    <div class="sims-text-gray-sm"><b>Diupdate : </b> {{ \Carbon\Carbon::parse(strtotime($jurusan->updatedAt))->translatedFormat('l d F Y'); }}</div>
+                    <div class="sims-text-gray-sm"><b>Dibuat : </b>@if(! empty($jurusan->createdAt)) {{ \Carbon\Carbon::parse(strtotime($jurusan->createdAt))->translatedFormat('l d F Y'); }} @endif</div>
+                    <div class="sims-text-gray-sm"><b>Diupdate : </b>@if(! empty($jurusan->updatedAt)) {{ \Carbon\Carbon::parse(strtotime($jurusan->updatedAt))->translatedFormat('l d F Y'); }} @endif</div>
                 </div>
             </div>
         </div>

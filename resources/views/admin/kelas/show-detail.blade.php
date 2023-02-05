@@ -24,8 +24,7 @@
 
     <div class="tw-pt-10 tw-flex tw-justify-between">
         <div class="sims-text-gray-lg">
-            <p class="tw-mb-0">Created : <span class="tw-font-normal">{{ \Carbon\Carbon::parse(strtotime($kelas->createdAt))->translatedFormat('l d F Y'); }}</span></p>
-            <p>Updated : <span class="tw-font-normal">{{ \Carbon\Carbon::parse(strtotime($kelas->updatedAt))->translatedFormat('l d F Y'); }}</span></p>
+            <p class="tw-mb-0">Created : <span class="tw-font-normal">@if(! empty($kelas->createdAt)){{ \Carbon\Carbon::parse(strtotime($kelas->createdAt))->translatedFormat('l d F Y'); }}@endif</span></p>
         </div>
         <div class="tw-flex tw-font-ubuntu tw-text-white tw-font-medium tw-my-auto">
             <form action="/admin/kelas/delete/{{ $kelas->id }}" method="POST">

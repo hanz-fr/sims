@@ -81,7 +81,6 @@
                         <th scope="col" class="tw-py-5 tw-px-6">Id Mapel</th>
                         <th scope="col" class="tw-py-5 tw-px-6">Id Jurusan</th>
                         <th scope="col" class="tw-py-5 tw-px-6">Dibuat</th>
-                        <th scope="col" class="tw-py-5 tw-px-6">Diupdate</th>
                         <th scope="col" class="tw-py-5 tw-px-10">Aksi</th>
                     </tr>
                 </thead>
@@ -92,7 +91,6 @@
                         <td class="tw-p-8">{{ $m->MapelId }}</td>
                         <td class="tw-p-8">{{ $m->JurusanId }}</td>
                         <td class="tw-p-8">@if($m->createdAt != null){{  \Carbon\Carbon::parse(strtotime($m->createdAt))->translatedFormat('l d F Y'); }}@endif</td>
-                        <td class="tw-p-8">@if($m->updatedAt != null){{  \Carbon\Carbon::parse(strtotime($m->updatedAt))->translatedFormat('l d F Y'); }}@endif</td>
                         <td class="tw-flex tw-mt-8 tw-justify-center tw-gap-3">
                           
                             <!-- !! Temporary Comment !! -->

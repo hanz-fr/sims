@@ -87,7 +87,7 @@
                     @foreach($mapel as $m)
                     <tr class="tw-bg-white">
                         <td class="tw-p-8">{{ $m->id }}</td>
-                        <td class="tw-p-8">{{ $m->nama }}</td>
+                        <td class="tw-p-8 tw-w-1/4">{{ $m->nama }}</td>
                         <td class="tw-p-8">@if($m->createdAt != null){{  \Carbon\Carbon::parse(strtotime($m->createdAt))->translatedFormat('l d F Y'); }}@endif</td>
                         <td class="tw-p-8">@if($m->updatedAt != null){{  \Carbon\Carbon::parse(strtotime($m->updatedAt))->translatedFormat('l d F Y'); }}@endif</td>
                         <td class="tw-flex tw-mt-8 tw-justify-center tw-gap-3">

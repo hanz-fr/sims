@@ -24,8 +24,8 @@
             </div>
 
             <div class="tw-flex tw-flex-col tw-text-end tw-my-auto">
-                <div class="sims-text-gray-sm"><b>Dibuat : </b>{{ \Carbon\Carbon::parse(strtotime($mapel->createdAt))->translatedFormat('l d F Y'); }}</div>
-                <div class="sims-text-gray-sm"><b>Diupdate : </b>{{ \Carbon\Carbon::parse(strtotime($mapel->updatedAt))->translatedFormat('l d F Y'); }}</div>
+                <div class="sims-text-gray-sm"><b>Dibuat : </b>@if(! empty($mapel->createdAt)){{ \Carbon\Carbon::parse(strtotime($mapel->createdAt))->translatedFormat('l d F Y'); }}@endif</div>
+                <div class="sims-text-gray-sm"><b>Diupdate : </b>@if(! empty($mapel->updatedAt)){{ \Carbon\Carbon::parse(strtotime($mapel->updatedAt))->translatedFormat('l d F Y'); }}@endif</div>
             </div>
         </div>
 

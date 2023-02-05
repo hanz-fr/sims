@@ -88,7 +88,7 @@
         <div class="tw-px-14 tw-pt-14 tw-grid tw-grid-rows-6">
             <div class="sims-heading-xl tw-pl-0 tw-flex tw-justify-between">
                 <div class="tw-text-gray-400 sims-heading-2xl">Aktifitas</div>
-                <a href="" class="tw-text-sims-new-500 tw-underline tw-text-base">lihat semua histori</a>
+                <a href="/history/my" class="hover:tw-text-sims-new-400 tw-text-sims-new-500 tw-h-fit tw-underline tw-text-base">lihat semua histori</a>
             </div>
             @foreach($history as $h)
             <div class="tw-pl-0 tw-flex tw-justify-between">

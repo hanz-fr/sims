@@ -8,7 +8,7 @@
     {{-- Title --}}
     <div class="tw-flex tw-justify-between tw-h-fit tw-mb-5">
       <div class="sims-heading-2xl">
-          Riwayat Aktivitas
+          Riwayat Aktivitas SIMS
       </div>
       <a href="/history/my" class="hover:tw-text-blue-400 tw-transition-all tw-duration-75 tw-underline tw-font-satoshi tw-text-sm tw-text-blue-300">lihat histori saya <i class="fa-sharp fa-solid fa-arrow-up-right-from-square tw-text-xs tw-ml-2"></i></a>
   </div>

@@ -31,8 +31,7 @@
             </div>
 
             <div class="tw-flex tw-flex-col tw-text-end tw-my-auto">
-                <div class="sims-text-gray-sm"><b>Dibuat : </b>{{ \Carbon\Carbon::parse(strtotime($mapel_jurusan->createdAt))->translatedFormat('l d F Y'); }}</div>
-                <div class="sims-text-gray-sm"><b>Diupdate : </b>{{ \Carbon\Carbon::parse(strtotime($mapel_jurusan->updatedAt))->translatedFormat('l d F Y'); }}</div>
+                <div class="sims-text-gray-sm tw-font-normal"><b>Dibuat : </b>@if(!empty($mapel_jurusan->createdAt)){{ \Carbon\Carbon::parse(strtotime($mapel_jurusan->createdAt))->translatedFormat('l d F Y'); }}@endif</div>
             </div>
         </div>
 
