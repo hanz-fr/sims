@@ -49,7 +49,7 @@ class HelpCentreController extends Controller
     public function viewIndukHelp() {
 
         return view('userguide.induk.index', [
-            'title' => 'Petunjuk Alumni',
+            'title' => 'Petunjuk Data Induk',
             'active' => 'sims-help'
         ]);
     }
@@ -58,7 +58,7 @@ class HelpCentreController extends Controller
     public function viewMutasiHelp() {
 
         return view('userguide.mutasi.index', [
-            'title' => 'Petunjuk Alumni',
+            'title' => 'Petunjuk Mutasi',
             'active' => 'sims-help'
         ]);
     }
@@ -67,7 +67,7 @@ class HelpCentreController extends Controller
     public function viewRekapNilaiHelp() {
 
         return view('userguide.rekapnilai.index', [
-            'title' => 'Petunjuk Alumni',
+            'title' => 'Petunjuk Rekap Nilai',
             'active' => 'sims-help'
         ]);
     }

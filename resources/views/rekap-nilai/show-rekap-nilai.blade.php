@@ -56,9 +56,7 @@
                     </div>
                     @endcannot
                     
-                    @can('wali kelas')
-                        <a href="/tambah-nilai/{{ $siswa->nis_siswa }}" class="tw-bg-sims-new-500 tw-text-white hover:tw-text-white  tw-font-sg hover:tw-bg-sims-new-700 tw-px-5 tw-py-2 tw-rounded-lg">Tambah Rekap Nilai +</a>
-                    @endcan
+                    <a href="/tambah-nilai/{{ $siswa->nis_siswa }}" class="tw-bg-sims-new-500 tw-text-white hover:tw-text-white  tw-font-sg hover:tw-bg-sims-new-700 tw-px-5 tw-py-2 tw-rounded-lg">Tambah Rekap Nilai +</a>
                 </div>
             </div>
         <div x-data="{

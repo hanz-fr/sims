@@ -937,6 +937,99 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.hc-step {
+  margin-top: 2.5rem;
+  margin-bottom: 7rem;
+  display: flex;
+  max-width: 100%;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  padding-bottom: 2.5rem;
+  --scrollbar-track: initial;
+  --scrollbar-thumb: initial;
+  --scrollbar-corner: initial;
+  --scrollbar-track-hover: var(--scrollbar-track);
+  --scrollbar-thumb-hover: var(--scrollbar-thumb);
+  --scrollbar-corner-hover: var(--scrollbar-corner);
+  --scrollbar-track-active: var(--scrollbar-track-hover);
+  --scrollbar-thumb-active: var(--scrollbar-thumb-hover);
+  --scrollbar-corner-active: var(--scrollbar-corner-hover);
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  overflow: overlay;
+}
+
+.hc-step.tw-overflow-x-hidden {
+  overflow-x: hidden;
+}
+
+.hc-step.tw-overflow-y-hidden {
+  overflow-y: hidden;
+}
+
+.hc-step::-webkit-scrollbar-track {
+  background-color: var(--scrollbar-track);
+}
+
+.hc-step::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+}
+
+.hc-step::-webkit-scrollbar-corner {
+  background-color: var(--scrollbar-corner);
+}
+
+.hc-step::-webkit-scrollbar-track:hover {
+  background-color: var(--scrollbar-track-hover);
+}
+
+.hc-step::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scrollbar-thumb-hover);
+}
+
+.hc-step::-webkit-scrollbar-corner:hover {
+  background-color: var(--scrollbar-corner-hover);
+}
+
+.hc-step::-webkit-scrollbar-track:active {
+  background-color: var(--scrollbar-track-active);
+}
+
+.hc-step::-webkit-scrollbar-thumb:active {
+  background-color: var(--scrollbar-thumb-active);
+}
+
+.hc-step::-webkit-scrollbar-corner:active {
+  background-color: var(--scrollbar-corner-active);
+}
+
+.hc-step {
+  scrollbar-width: thin;
+}
+
+.hc-step::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.hc-step {
+  --scrollbar-track: #f3f4f6;
+  --scrollbar-thumb: #9ca3af;
+}
+
+.hc-step::-webkit-scrollbar-thumb {
+  border-radius: 0.5rem;
+}
+
+.hc-img {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  overflow: hidden;
+  --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+  border-radius: 0.75rem;
+}
+
 /* SIMS 1.0 Tailwind CSS Presets */
 
 /* TEXT */
@@ -1808,6 +1901,10 @@ video {
   margin-bottom: 7rem;
 }
 
+.tw-ml-12 {
+  margin-left: 3rem;
+}
+
 .tw-mb-12 {
   margin-bottom: 3rem;
 }
@@ -2192,6 +2289,10 @@ video {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.tw-grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
 .tw-grid-rows-2 {
   grid-template-rows: repeat(2, minmax(0, 1fr));
 }
@@ -2210,6 +2311,10 @@ video {
 
 .tw-flex-col {
   flex-direction: column;
+}
+
+.tw-flex-col-reverse {
+  flex-direction: column-reverse;
 }
 
 .tw-flex-wrap {
@@ -2300,6 +2405,14 @@ video {
   gap: 6rem;
 }
 
+.tw-gap-20 {
+  gap: 5rem;
+}
+
+.tw-gap-12 {
+  gap: 3rem;
+}
+
 .tw-gap-x-5 {
   -moz-column-gap: 1.25rem;
        column-gap: 1.25rem;
@@ -2325,6 +2438,16 @@ video {
 
 .tw-gap-y-8 {
   row-gap: 2rem;
+}
+
+.tw-gap-x-10 {
+  -moz-column-gap: 2.5rem;
+       column-gap: 2.5rem;
+}
+
+.tw-gap-x-12 {
+  -moz-column-gap: 3rem;
+       column-gap: 3rem;
 }
 
 .tw-space-y-4 > :not([hidden]) ~ :not([hidden]) {
@@ -3147,6 +3270,10 @@ video {
 
 .tw-pr-14 {
   padding-right: 3.5rem;
+}
+
+.tw-pb-7 {
+  padding-bottom: 1.75rem;
 }
 
 .tw-text-left {
@@ -4582,6 +4709,10 @@ input[type="checkbox"]:checked {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 
+  .sm\:tw-grid-rows-1 {
+    grid-template-rows: repeat(1, minmax(0, 1fr));
+  }
+
   .sm\:tw-flex-row {
     flex-direction: row;
   }
@@ -4639,6 +4770,11 @@ input[type="checkbox"]:checked {
 
   .md\:tw-m-auto {
     margin: auto;
+  }
+
+  .md\:tw-mx-60 {
+    margin-left: 15rem;
+    margin-right: 15rem;
   }
 
   .md\:tw-mt-3 {
@@ -4701,6 +4837,15 @@ input[type="checkbox"]:checked {
     gap: 2.5rem;
   }
 
+  .md\:tw-gap-24 {
+    gap: 6rem;
+  }
+
+  .md\:tw-gap-x-40 {
+    -moz-column-gap: 10rem;
+         column-gap: 10rem;
+  }
+
   .md\:tw-px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
@@ -4709,6 +4854,14 @@ input[type="checkbox"]:checked {
   .md\:tw-px-4 {
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+
+  .md\:tw-pl-10 {
+    padding-left: 2.5rem;
+  }
+
+  .md\:tw-text-left {
+    text-align: left;
   }
 
   .md\:tw-text-3xl {
