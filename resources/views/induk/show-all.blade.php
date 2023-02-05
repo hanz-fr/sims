@@ -33,7 +33,7 @@
             <div class="sims-text-gray-sm">Jumlah : {{ $total_siswa }} siswa</div>
         </div>
 
-        @can('tata usaha')
+        @can('manage-induk')
         <div class="tw-flex md:tw-justify-center tw-items-center md:-tw-mb-8">
             <button type="button" data-modal-toggle="modal-print" target="__blank" title="Print"><i class="fa-solid fa-print btn-export"></i></button>
 
@@ -580,7 +580,7 @@
                 </div>
             </div>
             <div class="tw-flex tw-my-auto">
-                @can('tata usaha')
+                @can('manage-induk')
                 <button type="button" data-modal-toggle="popup-modal" class="tw-bg-sims-new-500 tw-text-white hover:tw-text-white hover:tw-bg-sims-new-700 tw-font-satoshi tw-rounded-lg tw-px-8 tw-py-2 tw-mr-7">
                     Tambah Data +
                 </button>
@@ -686,7 +686,7 @@
                 </div>
             </div>
             @endcan
-    </section>
+        </section>
 
         @if(isset($siswa))
         <section class="tw-overflow-x-auto tw-relative tw-mt-7">
@@ -711,12 +711,12 @@
                         <td class="tw-p-6">{{ $s->jenis_kelamin }}</td>
                         <td class="tw-p-6">{{ $s->KelasId }}</td>
                         <td class="tw-flex tw-justify-center tw-gap-3 tw-py-2">
-                            @cannot('kes')
+                            @cannot('kesiswaan')
                             <a href="/rekap-nilai/{{ $s->nis_siswa }}" class="tw-text-sims-new-500 tw-justify-center tw-items-center  hover:tw-text-white hover:tw-bg-sims-new-500 hover:tw-shadow-md tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-w-12 tw-transition-all" title="Rekap Nilai">
                                 <i class="fa-regular fa-clipboard"></i>
                             </a>
                             @endcannot
-                            @can('tata usaha')
+                            @can('manage-induk')
                             <a href="/edit-siswa/{{ $s->nis_siswa }}" class="tw-text-kuning-500  hover:tw-text-white hover:tw-bg-kuning-500 hover:tw-shadow-md tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-w-12 tw-transition-all" title="Edit Data Siswa">
                                 <i class="fa-solid fa-pen-to-square"></i>
                             </a>

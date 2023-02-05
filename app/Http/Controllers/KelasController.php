@@ -24,6 +24,8 @@ class KelasController extends Controller
     /* View All Kelas */
     public function viewAllKelas(Request $request) {
 
+        abort_if(Gate::denies('admin-only'), 403);
+
         $search = $request->search;
         $sort_by = $request->sort_by;
         $sort = $request->sort;
@@ -49,6 +51,8 @@ class KelasController extends Controller
     /* View Detail Kelas */
     public function viewKelas(Request $request) {
 
+        abort_if(Gate::denies('admin-only'), 403);
+
         $id = $request->id;
 
         $response = Http::get("{$this->api_url}/kelas/{$id}");
@@ -65,6 +69,8 @@ class KelasController extends Controller
     /* Create Kelas */
     public function createKelas(Request $request) {
 
+        abort_if(Gate::denies('admin-only'), 403);
+
         $jurusan = json_decode(Http::get("{$this->api_url}/jurusan?perPage=500"))->data->rows;
 
         return view('admin.kelas.create', [
@@ -78,6 +84,8 @@ class KelasController extends Controller
 
     /* Edit Kelas */
     public function editKelas($id) {
+
+        abort_if(Gate::denies('admin-only'), 403);
 
         $jurusan = json_decode(Http::get("{$this->api_url}/jurusan?perPage=500"))->data->rows;
 
@@ -95,6 +103,8 @@ class KelasController extends Controller
 
     /* Store Kelas */
     public function storeKelas(Request $request) {
+
+        abort_if(Gate::denies('admin-only'), 403);
 
         $id = "{$request->kelas}{$request->jurusan}{$request->rombel}";
 
@@ -125,6 +135,8 @@ class KelasController extends Controller
     /* Update Kelas */
     public function updateKelas(Request $request, $id) { 
 
+        abort_if(Gate::denies('admin-only'), 403);
+
         $response = Http::put("{$this->api_url}/kelas/{$id}", [
             'kelas' => $request->kelas,
             'rombel' => $request->rombel,
@@ -147,6 +159,8 @@ class KelasController extends Controller
 
     /* Delete Kelas */
     public function deleteKelas(Request $request, $id) {
+
+        abort_if(Gate::denies('admin-only'), 403);
         
         $response = Http::delete("{$this->api_url}/kelas/{$id}");
 

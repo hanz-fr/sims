@@ -45,7 +45,7 @@
                     inactiveClasses: 'tw-bg-gray-200 tw-border-t tw-border-x'
                   }" class="md:tw-w-3/5 sm:tw-w-full tw-mt-5" >
                     <div class="tw-float-right tw-flex tw-gap-2">
-                        @can('tata usaha')                            
+                        @can('manage-induk')                            
                         <div>
                             <button type="button" data-modal-toggle="modal" class="tw-bg-sims-new-500 tw-text-sm tw-text-white hover:tw-text-white  tw-font-satoshi hover:tw-bg-sims-new-700 tw-px-5 tw-py-2 tw-rounded-lg">Export</button>
 
@@ -90,13 +90,13 @@
                         </div>
                         @endcan
                         
-                        @cannot('kes')
+                        @cannot('kesiswaan')
                         <a href="/rekap-nilai/{{ $siswa->nis_siswa }}"
                             class="tw-text-white tw-font-sg tw-text-sm tw-bg-sims-new-500 hover:tw-text-white hover:tw-bg-sims-new-600 tw-rounded-lg tw-py-2 tw-px-3"><i
                                 class="fa-light fa-clipboard-list mr-2"></i>Rekap Nilai</a>
                         @endcannot
 
-                        @can('tata usaha')
+                        @can('manage-induk')
                         
                         <a href="/edit-siswa/{{ $siswa->nis_siswa }}" class="tw-text-white tw-text-sm tw-font-sg  tw-bg-yellow-400 hover:tw-text-white hover:tw-bg-yellow-500 tw-rounded-lg tw-py-2 tw-px-3"><i class="fa-solid fa-pen-to-square mr-2"></i>Edit</a>
                         

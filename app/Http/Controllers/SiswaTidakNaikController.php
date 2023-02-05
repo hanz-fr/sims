@@ -30,7 +30,7 @@ class SiswaTidakNaikController extends Controller
     /* View All Siswa TIdak Naik */
     public function siswaTidakNaik(Request $request) {
 
-        abort_if(Gate::allows('wali kelas'), 403);
+        abort_if(Gate::allows('wali-kelas'), 403);
 
         $page = $request->page;
         $perPage = $request->perPage;
@@ -86,7 +86,7 @@ class SiswaTidakNaikController extends Controller
     /* Export Data Tidak Naik Excel */
     public function exportDataTidakNaikExcel(Request $request) {
 
-        abort_if(Gate::allows('wali kelas'), 403);
+        abort_if(Gate::allows('wali-kelas'), 403);
 
         ob_end_clean();
         ob_start();
@@ -116,7 +116,7 @@ class SiswaTidakNaikController extends Controller
     /* Export Data Tidak Naik PDF */
     public function exportDataTidakNaikPDF(Request $request) {
 
-        abort_if(Gate::allows('wali kelas'), 403);
+        abort_if(Gate::allows('wali-kelas'), 403);
 
         $dibuatTglDari = $request->dibuatTglDari;
         $getDibuatTglDari = Carbon::parse($dibuatTglDari)->translatedFormat('F');
@@ -153,7 +153,7 @@ class SiswaTidakNaikController extends Controller
     /* Print Data Tidak Naik */
     public function printDataTidakNaik(Request $request) {
 
-        abort_if(Gate::allows('wali kelas'), 403);
+        abort_if(Gate::allows('wali-kelas'), 403);
 
         $dibuatTglDari = $request->dibuatTglDari;
         $getDibuatTglDari = Carbon::parse($dibuatTglDari)->translatedFormat('F');

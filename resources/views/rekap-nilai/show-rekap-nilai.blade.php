@@ -13,7 +13,7 @@
                 <div class="tw-my-auto tw-flex tw-gap-5 sm:tw-mt-2 lg:tw-my-auto">
                     {{-- <button id="copy_btn" type="button" value="copy" class="tw-bg-sims-new-500 tw-text-white hover:tw-text-white tw-font-satoshi hover:tw-bg-sims-new-700 tw-px-5 tw-py-2 tw-rounded-lg">Copy</button> --}}
 
-                    @cannot('kes')
+                    @cannot('kesiswaan')
                     <button type="button" data-modal-toggle="modal" class="tw-bg-sims-new-500 tw-text-white hover:tw-text-white  tw-font-sg hover:tw-bg-sims-new-700 tw-px-5 tw-py-2 tw-rounded-lg">Export</button>
 
                     <div id="modal" tabindex="-1"
@@ -56,7 +56,9 @@
                     </div>
                     @endcannot
                     
+                    @can(manage-nilai)
                     <a href="/tambah-nilai/{{ $siswa->nis_siswa }}" class="tw-bg-sims-new-500 tw-text-white hover:tw-text-white  tw-font-sg hover:tw-bg-sims-new-700 tw-px-5 tw-py-2 tw-rounded-lg">Tambah Rekap Nilai +</a>
+                    @endcan
                 </div>
             </div>
         <div x-data="{
@@ -169,13 +171,13 @@
                             <tr class="tw-bg-sims-new-600">
                             <td class="tw-py-10 tw-flex tw-justify-center tw-gap-10">
                                 <div class="tw-flex tw-gap-5 tw-justify-center">
-                                    @can('rekap-nilai')
+                                    @can('update-nilai')
                                     <a href="/edit-rekap-nilai/{{ $rp->id }}" class="tw-text-white tw-text-sm tw-bg-yellow-400 hover:tw-text-white hover:tw-bg-yellow-500 tw-rounded-lg tw-py-2 tw-px-3">
                                         <i class="fa-solid fa-pen-to-square mr-2"></i>Edit
                                     </a>
                                     @endcan
 
-                                    @can('wali kelas')
+                                    @can('manage-nilai')
                                     <form action="/api/raport/delete/{{ $rp->id }}" method="POST">
                                         @csrf
                                         @method('DELETE')
@@ -434,13 +436,13 @@
                         <tr class="tw-bg-sims-new-600">
                             <td class="tw-py-10 tw-flex tw-justify-center tw-gap-10">
                             <div class="tw-flex tw-gap-5 tw-justify-center">
-                                @can('rekap-nilai')
+                                @can('update-nilai')
                                 <a href="/edit-rekap-nilai/{{ $rp->id }}" class="tw-text-white tw-text-sm tw-bg-yellow-400 hover:tw-text-white hover:tw-bg-yellow-500 tw-rounded-lg tw-py-2 tw-px-3">
                                     <i class="fa-solid fa-pen-to-square mr-2"></i>Edit
                                 </a>
                                 @endcan
 
-                                @can('wali kelas')
+                                @can('manage-nilai')
                                 <form action="/api/raport/delete/{{ $rp->id }}" method="POST">
                                     @csrf
                                     @method('DELETE')
@@ -566,13 +568,13 @@
                         <tr class="tw-bg-sims-new-600">
                             <td class="tw-py-10 tw-flex tw-justify-center tw-gap-10">
                             <div class="tw-flex tw-gap-5 tw-justify-center">
-                                @can('rekap-nilai')
+                                @can('update-nilai')
                                 <a href="/edit-rekap-nilai/{{ $rp->id }}" class="tw-text-white tw-text-sm tw-bg-yellow-400 hover:tw-text-white hover:tw-bg-yellow-500 tw-rounded-lg tw-py-2 tw-px-3">
                                     <i class="fa-solid fa-pen-to-square mr-2"></i>Edit
                                 </a>
                                 @endcan
 
-                                @can('wali kelas')
+                                @can('manage-nilai')
                                 <form action="/api/raport/delete/{{ $rp->id }}" method="POST">
                                     @csrf
                                     @method('DELETE')
@@ -698,13 +700,13 @@
                         <tr class="tw-bg-sims-new-600">
                             <td class="tw-py-10 tw-flex tw-justify-center tw-gap-10">
                             <div class="tw-flex tw-gap-5 tw-justify-center">
-                                @can('rekap-nilai')
+                                @can('update-nilai')
                                 <a href="/edit-rekap-nilai/{{ $rp->id }}" class="tw-text-white tw-text-sm tw-bg-yellow-400 hover:tw-text-white hover:tw-bg-yellow-500 tw-rounded-lg tw-py-2 tw-px-3">
                                     <i class="fa-solid fa-pen-to-square mr-2"></i>Edit
                                     </a>
                                 @endcan
 
-                                @can('wali kelas')
+                                @can('manage-nilai')
                                 <form action="/api/raport/delete/{{ $rp->id }}" method="POST">
                                     @csrf
                                     @method('DELETE')
@@ -854,13 +856,13 @@
                         <tr class="tw-bg-sims-new-600">
                             <td class="tw-py-10 tw-flex tw-justify-center tw-gap-10">
                             <div class="tw-flex tw-gap-5 tw-justify-center">
-                                @can('rekap-nilai')
+                                @can('update-nilai')
                                 <a href="/edit-rekap-nilai/{{ $rp->id }}" class="tw-text-white tw-text-sm tw-bg-yellow-400 hover:tw-text-white hover:tw-bg-yellow-500 tw-rounded-lg tw-py-2 tw-px-3">
                                 <i class="fa-solid fa-pen-to-square mr-2"></i>Edit
                                 </a>
                                 @endcan
 
-                                @can('wali kelas')                                    
+                                @can('manage-nilai')                                    
                                 <form action="/api/raport/delete/{{ $rp->id }}" method="POST">
                                 @csrf
                                 @method('DELETE')

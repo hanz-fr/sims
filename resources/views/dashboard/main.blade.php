@@ -186,7 +186,7 @@
                         <div class="card-wrapper swiper-wrapper">
 
                             <!-- Card 1 (Siswa Keluar) -->
-                            <a @if(! Gate::allows('rekap-siswa'))  @else href="/siswa-keluar" @endif
+                            <a @if(! Gate::allows('manage-alumni'))  @else href="/siswa-keluar" @endif
                                 class="swiper-slide tw-cursor-pointer hover:tw-drop-shadow-md tw-transition-all">
                                 <div class="sims-card-1">
                                     <div class="tw-flex tw-justify-evenly tw-px-5 tw-gap-5">
@@ -200,7 +200,7 @@
                             </a>
 
                             <!-- Card 2 (Rekap Jumlah Siswa) -->
-                            <a @if(! Gate::allows('wali kelas')) href="/rekap-jumlah-siswa" @endif class="swiper-slide">
+                            <a @if(! Gate::allows('wali-kelas')) href="/rekap-jumlah-siswa" @endif class="swiper-slide">
                                 <div class="sims-card-1 tw-cursor-pointer hover:tw-drop-shadow-md tw-transition-all">
                                     <div class="tw-flex tw-justify-evenly tw-px-5 tw-gap-5">
                                         <i class="fa-solid fa-user sims-icon-3xl tw-text-[#FFA386]"></i>
@@ -213,7 +213,7 @@
                             </a>
 
                             <!-- Card 3 (Siswa Masuk) -->
-                            <a @if(! Gate::allows('rekap-siswa')) @else href="/siswa-masuk" @endif class="swiper-slide">
+                            <a @if(! Gate::allows('manage-alumni')) @else href="/siswa-masuk" @endif class="swiper-slide">
                                 <div class="sims-card-1 tw-cursor-pointer hover:tw-drop-shadow-md tw-transition-all">
                                     <div class="tw-flex tw-justify-evenly tw-px-5 tw-gap-5">
                                         <i class="fa-solid fa-user sims-icon-3xl tw-text-[#6fc5bb]"></i>
@@ -226,7 +226,7 @@
                             </a>
 
                             <!-- Card 4 (Alumni) -->
-                            <a @if(! Gate::allows('rekap-siswa')) @else href="/select-jurusan-alumni" @endif class="swiper-slide">
+                            <a @if(! Gate::allows('manage-alumni')) @else href="/select-jurusan-alumni" @endif class="swiper-slide">
                                 <div class="sims-card-1 tw-cursor-pointer hover:tw-drop-shadow-md tw-transition-all">
                                     <div class="tw-flex tw-justify-evenly tw-px-5 tw-gap-5">
                                         <i class="fa-solid fa-user-graduate sims-icon-3xl tw-text-gray-400"></i>
@@ -239,7 +239,7 @@
                             </a>
 
                             <!-- Card 5 (Siswa Tidak Naik) -->
-                            <a @if(! Gate::allows('wali kelas')) href="/data-tidak-naik" @endif class="swiper-slide">
+                            <a @if(! Gate::allows('wali-kelas')) href="/data-tidak-naik" @endif class="swiper-slide">
                                 <div class="sims-card-1 tw-cursor-pointer hover:tw-drop-shadow-md tw-transition-all">
                                     <div class="tw-flex tw-justify-evenly tw-px-5 tw-gap-5">
                                         <i class="fa-solid fa-user sims-icon-3xl tw-text-[#e66161]"></i>
@@ -252,7 +252,7 @@
                             </a>
 
                             <!-- Card 6 (Kelas) -->
-                            <a @if(! Gate::allows('wali kelas')) href="/rekap-jumlah-siswa" @endif class="swiper-slide">
+                            <a @if(! Gate::allows('wali-kelas')) href="/rekap-jumlah-siswa" @endif class="swiper-slide">
                                 <div class="sims-card-1 tw-cursor-pointer hover:tw-drop-shadow-md tw-transition-all">
                                     <div class="tw-flex tw-justify-evenly tw-px-5 tw-gap-5">
                                         <i class="fa-solid fa-chalkboard-user sims-icon-3xl tw-text-[#7379d3]"></i>
@@ -357,7 +357,7 @@
                                 Data Induk Siswa (Umum)
                             </div>
                         </a>
-                        @can('rekap-siswa')
+                        @cannot('wali-kelas')
                         <a href="/rekap-jumlah-siswa"
                             class="sims-card-1-noshadow sims-text-regular-sm tw-text-center tw-font-normal tw-w-full tw-h-40 tw-px-3 tw-mx-2 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all">
                             <div class="tw-flex tw-flex-col tw-gap-3">
@@ -365,6 +365,8 @@
                                 Rekap Jumlah Siswa
                             </div>
                         </a>
+                        @endcannot
+                        @can('manage-alumni')
                         <a href="/siswa-keluar"
                             class="sims-card-1-noshadow sims-text-regular-sm tw-text-center tw-font-normal tw-w-full tw-h-40 tw-px-3 tw-mx-2 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all">
                             <div class="tw-flex tw-flex-col tw-gap-3">

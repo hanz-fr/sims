@@ -27,6 +27,9 @@ class MapelController extends Controller
 
     /* View All Mapel */
     public function viewAllMapel(Request $request) {
+
+        abort_if(Gate::denies('admin-only'), 403);
+
         //-- search & sorting --//
         $search = $request->search;
         $sort_by = $request->sort_by;
@@ -64,6 +67,8 @@ class MapelController extends Controller
     /* View Detail Mapel */
     public function viewDetailMapel(Request $request, $id) {
 
+        abort_if(Gate::denies('admin-only'), 403);
+
         $response = Http::get("{$this->api_url}/mapel/{$id}");
 
         if($response->successful()) {
@@ -85,6 +90,8 @@ class MapelController extends Controller
     
     /* Create Mapel */
     public function createMapel(Request $request) {
+
+        abort_if(Gate::denies('admin-only'), 403);
 
         if (Session::has('backUrl')) {
             Session::keep('backUrl');
@@ -114,6 +121,8 @@ class MapelController extends Controller
     
     /* Store Mapel */
     public function storeMapel(Request $request) {
+
+        abort_if(Gate::denies('admin-only'), 403);
 
         $id = $request->id;
 
@@ -148,6 +157,8 @@ class MapelController extends Controller
     /* Update Mapel */
     public function updateMapel(Request $request, $id) {
 
+        abort_if(Gate::denies('admin-only'), 403);
+
         $response = Http::put("{$this->api_url}/mapel/{$id}", [
             'id' => $request->id,
             'nama' => $request->nama,
@@ -179,6 +190,8 @@ class MapelController extends Controller
     
     /* Delete Mapel */
     public function deleteMapel(Request $request, $id) {
+
+        abort_if(Gate::denies('admin-only'), 403);
         
         $response = Http::delete("{$this->api_url}/mapel/{$id}");
 

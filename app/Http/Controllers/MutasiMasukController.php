@@ -31,7 +31,7 @@ class MutasiMasukController extends Controller
 
     public function getAllMutasiMasuk(Request $request) {
 
-        abort_if(Gate::denies('rekap-siswa'), 403);
+        abort_if(Gate::denies('manage-alumni'), 403);
 
         $page = $request->page;
         $perPage = $request->perPage;
@@ -94,6 +94,8 @@ class MutasiMasukController extends Controller
 
     public function createMutasiMasuk() {
 
+        abort_if(Gate::denies('manage-mutasi'), 403);
+
         $kelas = Http::get("{$this->api_url}/kelas");
 
         $prevURL = URL::previous();
@@ -109,7 +111,7 @@ class MutasiMasukController extends Controller
 
     public function storeMutasiMasuk(Request $request) {
 
-        abort_if(Gate::denies('kesiswaan'), 403);
+        abort_if(Gate::denies('manage-mutasi'), 403);
 
         // validasi nis siswa jika sudah ada
         $nis = $request->nis_siswa;
@@ -171,7 +173,7 @@ class MutasiMasukController extends Controller
 
     public function editMutasiMasuk(Request $request, $id) {
 
-        abort_if(Gate::denies('rekap-siswa'), 403);
+        abort_if(Gate::denies('manage-alumni'), 403);
 
         $response = Http::get("{$this->api_url}/mutasi/{$id}");
 
@@ -202,7 +204,7 @@ class MutasiMasukController extends Controller
 
     public function updateMutasiMasuk(Request $request, $id) {
 
-        abort_if(Gate::denies('rekap-siswa'), 403);
+        abort_if(Gate::denies('manage-alumni'), 403);
 
         // validasi nis siswa jika sudah ada
         $nis = $request->nis_siswa;
@@ -258,7 +260,7 @@ class MutasiMasukController extends Controller
 
     public function deleteMutasiMasuk($id) {
 
-        abort_if(Gate::denies('kesiswaan'), 403);
+        abort_if(Gate::denies('manage-mutasi'), 403);
 
         // validasi apakah id valid atau tidak
         $mutasiExist = Http::get("{$this->api_url}/mutasi/{$id}");
@@ -296,7 +298,7 @@ class MutasiMasukController extends Controller
 
     public function exportMutasiMasukExcel(Request $request) {
 
-        abort_if(Gate::denies('rekap-siswa'), 403);
+        abort_if(Gate::denies('manage-alumni'), 403);
 
         ob_end_clean();
         ob_start();
@@ -325,7 +327,7 @@ class MutasiMasukController extends Controller
     
     public function exportMutasiMasukPDF(Request $request) {
 
-        abort_if(Gate::denies('rekap-siswa'), 403);
+        abort_if(Gate::denies('manage-alumni'), 403);
 
         $tgl_masuk_dari = $request->tgl_masuk_dari;
         $masuk_dari = Carbon::parse($tgl_masuk_dari)->translatedFormat('F');
@@ -361,7 +363,7 @@ class MutasiMasukController extends Controller
 
     public function printMutasiMasuk(Request $request) {
 
-        abort_if(Gate::denies('rekap-siswa'), 403);
+        abort_if(Gate::denies('manage-alumni'), 403);
 
         $tgl_masuk_dari = $request->tgl_masuk_dari;
         $masuk_dari = Carbon::parse($tgl_masuk_dari)->translatedFormat('F');

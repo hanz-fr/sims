@@ -29,6 +29,9 @@ class AlumniController extends Controller
 
     /* Select Jurusan */
     public function selectJurusanAlumni(Request $request) {
+
+        abort_if(Gate::denies('manage-alumni'), 403);
+
         return view('induk.select-jurusan-alumni', [
             'title' => 'Data Alumni',
             'active' => 'data-induk',
@@ -39,6 +42,9 @@ class AlumniController extends Controller
 
     /* Select Angkatan */
     public function selectAngkatanAlumni(Request $request) {
+
+        abort_if(Gate::denies('manage-alumni'), 403);
+
         return view('induk.select-angkatan-alumni', [
             'title' => 'Data Alumni',
             'active' => 'data-induk',
@@ -50,7 +56,7 @@ class AlumniController extends Controller
     /* View Alumni */
     public function viewAlumni(Request $request) {
 
-        abort_if(Gate::denies('rekap-siswa'), 403);
+        abort_if(Gate::denies('manage-alumni'), 403);
 
         $page = $request->page;
         $perPage = $request->perPage;
@@ -156,7 +162,7 @@ class AlumniController extends Controller
 
     public function exportAlumniPDF(Request $request) {
 
-        abort_if(Gate::denies('rekap-siswa'), 403);
+        abort_if(Gate::denies('manage-alumni'), 403);
 
         $dibuatTglDari = $request->dibuatTglDari;
         $dibuatTglKe = $request->dibuatTglKe;
@@ -193,7 +199,7 @@ class AlumniController extends Controller
     
     public function printAlumni(Request $request) {
 
-        abort_if(Gate::denies('rekap-siswa'), 403);
+        abort_if(Gate::denies('manage-alumni'), 403);
 
         $dibuatTglDari = $request->dibuatTglDari;
         $dibuatTglKe = $request->dibuatTglKe;
@@ -216,7 +222,7 @@ class AlumniController extends Controller
 
     public function exportAlumniExcel(Request $request) {
 
-        abort_if(Gate::denies('rekap-siswa'), 403);
+        abort_if(Gate::denies('manage-alumni'), 403);
 
         ob_end_clean();
         ob_start();

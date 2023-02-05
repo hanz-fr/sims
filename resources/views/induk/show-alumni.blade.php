@@ -180,7 +180,7 @@
 
             </div>
            
-            @can('rekap-siswa')
+            @can('manage-alumni')
             <div class="tw-flex tw-justify-center tw-items-center">
                 <button type="button" data-modal-toggle="export-print" title="Export ke print"><i class="fa-solid fa-print btn-export"></i></button>
                     
@@ -625,9 +625,11 @@
                         <td class="tw-py-6 tw-px-6">{{ $a->jenis_kelamin }}</td>
                         <td class="tw-py-6 tw-px-6">{{ $a->KelasId }}</td>
                         <td>
+                            @can('manage-induk')
                             <a href="/edit-siswa/{{ $a->nis_siswa }}" class="tw-text-kuning-500  hover:tw-text-white hover:tw-bg-kuning-500 hover:tw-shadow-md tw-transition-all tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                                 <i class="fa-solid fa-pen-to-square"></i></a>
                             </a>
+                            @endcan
                             <a href="/detail/{{ $a->nis_siswa }}" class="tw-text-gray-400  hover:tw-text-white hover:tw-bg-gray-400 hover:tw-shadow-md tw-transition-all tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                                 <i class="fa-regular fa-eye"></i>
                             </a>

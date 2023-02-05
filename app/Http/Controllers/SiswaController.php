@@ -190,7 +190,7 @@ class SiswaController extends Controller
 
     public function exportDataIndukPDF(Request $request) {
 
-        abort_if(Gate::denies('tata usaha'), 403);
+        abort_if(Gate::denies('manage-induk'), 403);
 
         $response = Http::get("{$this->api_url}/siswa/{$request->jurusan}/{$request->kelas}?page={$request->page}&perPage={$request->perPage}&search={$request->search}&nis_siswa={$request->nis_siswa}&nisn_siswa={$request->nisn_siswa}&nama_siswa={$request->nama_siswa}&jenis_kelamin={$request->jenis_kelamin}&KelasId={$request->KelasId}&sort_by={$request->sort_by}&sort={$request->sort}&dibuatTglDari={$request->dibuatTglDari}&dibuatTglKe={$request->dibuatTglKe}&thn_ajaran={$request->thn_ajaran}&angkatan={$request->angkatan}");
 
@@ -220,7 +220,7 @@ class SiswaController extends Controller
 
     public function printDataInduk(Request $request) {
 
-        abort_if(Gate::denies('tata usaha'), 403);
+        abort_if(Gate::denies('manage-induk'), 403);
 
         $response = Http::get("{$this->api_url}/siswa/{$request->jurusan}/{$request->kelas}?page={$request->page}&perPage={$request->perPage}&search={$request->search}&nis_siswa={$request->nis_siswa}&nisn_siswa={$request->nisn_siswa}&nama_siswa={$request->nama_siswa}&jenis_kelamin={$request->jenis_kelamin}&KelasId={$request->KelasId}&sort_by={$request->sort_by}&sort={$request->sort}&dibuatTglDari={$request->dibuatTglDari}&dibuatTglKe={$request->dibuatTglKe}&thn_ajaran={$request->thn_ajaran}&angkatan={$request->angkatan}");
 
@@ -235,7 +235,7 @@ class SiswaController extends Controller
 
     public function exportDataIndukExcel(Request $request) {
 
-        abort_if(Gate::denies('tata usaha'), 403);
+        abort_if(Gate::denies('manage-induk'), 403);
 
         ob_end_clean();
         ob_start();
@@ -258,7 +258,7 @@ class SiswaController extends Controller
 
     public function exportDetailDataIndukExcel(Request $request) {
 
-        abort_if(Gate::denies('tata usaha'), 403);
+        abort_if(Gate::denies('manage-induk'), 403);
 
         ob_end_clean();
         ob_start();
@@ -333,7 +333,7 @@ class SiswaController extends Controller
     public function createSiswa()
     {
 
-        abort_if(Gate::denies('tata usaha'), 403);
+        abort_if(Gate::denies('manage-induk'), 403);
      
         $kelas = Http::get("{$this->api_url}/kelas");
 
@@ -352,7 +352,7 @@ class SiswaController extends Controller
     public function storeSiswa(Request $request)
     {
         
-        abort_if(Gate::denies('tata usaha'), 403);
+        abort_if(Gate::denies('manage-induk'), 403);
 
         // validasi nis siswa jika sudah ada
         $nis = $request->nis;
@@ -472,7 +472,7 @@ class SiswaController extends Controller
     public function editSiswa($nis)
     {
 
-        abort_if(Gate::denies('tata usaha'), 403);
+        abort_if(Gate::denies('manage-induk'), 403);
 
         $prevURL = parse_url(url()->previous(), PHP_URL_PATH);
         $prevURLwithParams = URL::previous();
@@ -505,7 +505,7 @@ class SiswaController extends Controller
     public function updateSiswa(Request $request, $nis)
     {
 
-        abort_if(Gate::denies('tata usaha'), 403);
+        abort_if(Gate::denies('manage-induk'), 403);
 
         if ($request->file('foto')) {
 
@@ -593,7 +593,7 @@ class SiswaController extends Controller
     public function deleteSiswa(Request $request, $nis)
     {
 
-        abort_if(Gate::denies('tata usaha'), 403);
+        abort_if(Gate::denies('manage-induk'), 403);
 
         /* Delete foto siswa jika memiliki foto */
         $siswa = Http::get("{$this->api_url}/siswa/{$nis}"); // get siswa with current nis
@@ -621,7 +621,7 @@ class SiswaController extends Controller
 
     public function importDataSiswa(Request $request) {
 
-        abort_if(Gate::denies('tata usaha'), 403);
+        abort_if(Gate::denies('manage-induk'), 403);
         
         $this->validate($request, [
             'uploaded_file' => 'required|file|mimes:xls,xlsx'
@@ -713,7 +713,7 @@ class SiswaController extends Controller
 
     public function exportDataSiswaPDF(Request $request) {
 
-        abort_if(Gate::denies('tata usaha'), 403);
+        abort_if(Gate::denies('manage-induk'), 403);
 
         $nis = $request->nis;
 
@@ -747,7 +747,7 @@ class SiswaController extends Controller
 
     public function printDataSiswa(Request $request) {
 
-        abort_if(Gate::denies('tata usaha'), 403);
+        abort_if(Gate::denies('manage-induk'), 403);
 
         $nis = $request->nis;
 

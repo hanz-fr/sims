@@ -24,6 +24,7 @@ class HistoryController extends Controller
     }
     
 
+    /* View All History */
     public function viewHistory(Request $request) {
 
         $current_year = Carbon::now()->year;
@@ -39,6 +40,7 @@ class HistoryController extends Controller
     }
 
 
+    /* View Personal History */
     public function viewMyHistory(Request $request) {
 
         $current_year = Carbon::now()->year;

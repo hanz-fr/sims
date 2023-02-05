@@ -32,6 +32,8 @@ class MapelJurusanController extends Controller
     /* View All Mapel Jurusan */
     public function viewAllMapelJurusan(Request $request) {
 
+        abort_if(Gate::denies('admin-only'), 403);
+
         //-- search & sorting --//
         $search = $request->search;
         $sort_by = $request->sort_by;
@@ -66,6 +68,8 @@ class MapelJurusanController extends Controller
     /* View Detail Mapel Jurusan */
     public function viewDetailMapelJurusan(Request $request, $id) {
 
+        abort_if(Gate::denies('admin-only'), 403);
+
         $response = Http::get("{$this->api_url}/mapel-jurusan/{$id}");
 
         if($response->successful()) {
@@ -88,6 +92,8 @@ class MapelJurusanController extends Controller
     /* Create Mapel Jurusan */
     public function createMapelJurusan(Request $request) {
 
+        abort_if(Gate::denies('admin-only'), 403);
+
         $jurusan = Http::get("{$this->api_url}/jurusan?perPage=500");
         $mapel = Http::get("{$this->api_url}/mapel?perPage=500");
 
@@ -100,8 +106,11 @@ class MapelJurusanController extends Controller
 
     }
 
+
     /* Edit Mapel Jurusan */
     public function editMapelJurusan(Request $request, $id) {
+
+        abort_if(Gate::denies('admin-only'), 403);
 
         $response = Http::get("{$this->api_url}/mapel-jurusan/{$id}");
         $jurusan = Http::get("{$this->api_url}/jurusan?perPage=500");
@@ -120,6 +129,8 @@ class MapelJurusanController extends Controller
 
     /* Store Mapel Jurusan */
     public function storeMapelJurusan(Request $request) {
+
+        abort_if(Gate::denies('admin-only'), 403);
 
         $mapelJurusanId = "{$request->JurusanId}_{$request->MapelId}";
 
@@ -148,6 +159,8 @@ class MapelJurusanController extends Controller
     /* Update Mapel Jurusan */
     public function updateMapelJurusan(Request $request, $id) {
 
+        abort_if(Gate::denies('admin-only'), 403);
+
         $mapelJurusanId = "{$request->JurusanId}_{$request->MapelId}";
         
         $response = json_decode(Http::put("{$this->api_url}/mapel-jurusan/{$id}", [
@@ -170,6 +183,8 @@ class MapelJurusanController extends Controller
 
     /* Delete Mapel Jurusan */
     public function deleteMapelJurusan(Request $request, $id) {
+
+        abort_if(Gate::denies('admin-only'), 403);
 
         $response = Http::delete("{$this->api_url}/mapel-jurusan/{$id}");
 

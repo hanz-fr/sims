@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Http;
 
 class DashboardController extends Controller
@@ -102,6 +103,8 @@ class DashboardController extends Controller
 
     /* ADMIN DASHBOARD */
     public function adminDashboard() {
+
+        abort_if(Gate::denies('admin-only'), 403);
 
         $message = ''; // greetings message
         $user = User::findOrFail(Auth::id()); // current logged in user

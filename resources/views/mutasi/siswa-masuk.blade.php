@@ -25,7 +25,7 @@
                     <h4 class="sims-heading-3xl">Data Mutasi Masuk</h4>
                 </div>
 
-                @can('rekap-siswa')
+                @can('manage-alumni')
                     <div class="tw-flex md:tw-justify-center tw-items-center">
                         <button type="button" data-modal-toggle="export-print" title="Print"><i class="fa-solid fa-print btn-export"></i></button>
                     
@@ -374,10 +374,12 @@
 
                 </div>
                 <div class="flex">
+                    @can('manage-mutasi')
                     <a href="/create-mutasi-masuk"
-                        class="tw-bg-sims-new-500 tw-text-white hover:tw-text-white hover:tw-bg-sims-new-700 tw-font-satoshi tw-rounded-lg tw-px-8 tw-py-2 tw-mr-7">
-                            Tambah Data +
+                    class="tw-bg-sims-new-500 tw-text-white hover:tw-text-white hover:tw-bg-sims-new-700 tw-font-satoshi tw-rounded-lg tw-px-8 tw-py-2 tw-mr-7">
+                        Tambah Data +
                     </a>
+                    @endcan
                 </div>
             </div>
 
@@ -407,7 +409,7 @@
                                 <td class="tw-p-6">{{ $m->diterima_di_kelas }}</td>
                                 <td class="tw-p-6">{{ $m->pindah_dari }}, {{ $m->alasan_mutasi }}</td>
                                 <td class="tw-flex tw-justify-center tw-my-2 tw-gap-2">
-                                @can('rekap-siswa')                                    
+                                @can('manage-alumni')                                    
                                     <a title="Edit Data" href="/edit-mutasi-masuk/{{ $m->id }}"
                                         class="tw-text-kuning-500  hover:tw-text-white hover:tw-bg-kuning-500 hover:tw-shadow-md tw-transition-all tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
                                         <i class="fa-solid fa-pen-to-square"></i></a>
@@ -422,7 +424,7 @@
                                         </button>
                                     </div>
                                     </form> --}}
-                                @can('kesiswaan')
+                                @can('manage-mutasi')
                                     <form action="{{ url('/api/mutasi-masuk/delete/' . $m->id) }}" method="post">
                                         @csrf
                                         @method('delete')

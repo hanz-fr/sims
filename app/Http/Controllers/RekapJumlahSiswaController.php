@@ -29,7 +29,7 @@ class RekapJumlahSiswaController extends Controller
 
     public function rekapJumlahSiswa() {
 
-        abort_if(Gate::allows('wali kelas'), 403);
+        abort_if(Gate::allows('wali-kelas'), 403);
 
         $semuaKelas = Http::get("{$this->api_url}/kelas/siswa-per-kelas/all");
         $kelas10 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/10");
@@ -62,7 +62,7 @@ class RekapJumlahSiswaController extends Controller
 
     public function exportRekapJumlahPDF() {
 
-        abort_if(Gate::allows('wali kelas'), 403);
+        abort_if(Gate::allows('wali-kelas'), 403);
 
         $semuaKelas = Http::get("{$this->api_url}/kelas/siswa-per-kelas/all");
         $kelas10 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/10");
@@ -95,7 +95,7 @@ class RekapJumlahSiswaController extends Controller
     
     public function printRekapJumlah() {
 
-        abort_if(Gate::allows('wali kelas'), 403);
+        abort_if(Gate::allows('wali-kelas'), 403);
 
         $semuaKelas = Http::get("{$this->api_url}/kelas/siswa-per-kelas/all");
         $kelas10 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/10");
@@ -114,7 +114,7 @@ class RekapJumlahSiswaController extends Controller
     
     public function exportRekapJumlahExcel() {
 
-        abort_if(Gate::allows('wali kelas'), 403);
+        abort_if(Gate::allows('wali-kelas'), 403);
 
         ob_end_clean();
         ob_start();

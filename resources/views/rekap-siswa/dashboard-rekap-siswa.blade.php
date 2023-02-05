@@ -70,7 +70,7 @@
           <div class="tw-text-xl my-auto tw-ml-3 tw-font-bold tw-text-gray-500">Quick Access</div>
         </div>
         <div class="tw-grid tw-grid-cols-2 tw-gap-8 tw-mt-8 tw-items-center tw-justify-center">
-          @can('rekap-siswa')
+          @can('manage-alumni')
           <a href="/siswa-masuk" class="tw-group">
             <div class="tw-flex tw-flex-col tw-justify-center tw-text-center tw-border-2 tw-py-4 tw-bg-white tw-rounded-lg group-hover:tw-text-white group-hover:tw-bg-sims-new-500 tw-transition-all tw-duration-300">
               <div class="tw-text-2xl tw-text-sims-new-500 group-hover:tw-text-white"><i class="fa-solid fa-graduation-cap"></i></div>
@@ -79,7 +79,7 @@
           </a>
           @endcan
 
-          @can('rekap-siswa')
+          @can('manage-alumni')
           <a href="/siswa-keluar" class="tw-group">
             <div class="tw-flex tw-flex-col tw-justify-center tw-text-center tw-border-2 tw-py-4 tw-bg-white tw-rounded-lg group-hover:tw-text-white group-hover:tw-bg-sims-new-500 tw-transition-all tw-duration-300">
               <div class="tw-text-2xl tw-text-sims-new-500 group-hover:tw-text-white"><i class="fa-solid fa-user-group"></i></div>

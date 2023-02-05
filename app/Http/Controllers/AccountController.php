@@ -7,11 +7,13 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
 
 class AccountController extends Controller
 {
+
 
     /* GLOBAL VARIABLES */
     public function __construct()
@@ -24,12 +26,15 @@ class AccountController extends Controller
         
     }
 
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request, User $user) {
+
+        abort_if(Gate::denies('admin-only'), 403);
 
         $users = User::where([
             ['nama', '!=', Null],
@@ -64,12 +69,15 @@ class AccountController extends Controller
 
     }
 
+
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function create() {
+
+        abort_if(Gate::denies('admin-only'), 403);
 
         $prevPageURL = URL::previous();
 
@@ -87,6 +95,8 @@ class AccountController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
+
+        abort_if(Gate::denies('admin-only'), 403);
 
         $request->validate([
             'nip'      => 'required|unique:users|min:9|max:18',
@@ -115,6 +125,7 @@ class AccountController extends Controller
 
     }
 
+
     /**
      * Display the specified resource.
      *
@@ -123,6 +134,8 @@ class AccountController extends Controller
      */
     public function show($id) {
 
+        abort_if(Gate::denies('admin-only'), 403);
+
         $user = User::findOrFail($id);
 
         $current_year = Carbon::now()->year;
@@ -130,13 +143,14 @@ class AccountController extends Controller
         $userHistory = Http::get("{$this->api_url}/history/$user->nama/all?limit=5&year=$current_year");
 
         return view('admin.account.show', [
-            'title'  => 'Detail Akun',
-            'active' => '',
-            'user'   => $user,
+            'title'   => 'Detail Akun',
+            'active'  => '',
+            'user'    => $user,
             'history' => json_decode($userHistory)->rows
         ]);
 
     }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -144,19 +158,22 @@ class AccountController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
+    public function edit($id) {
+
+        abort_if(Gate::denies('admin-only'), 403);
+
         $user = User::find($id);
 
         $prevPageURL = URL::previous();
 
         return view('admin.account.edit', [
-            'title' => 'Edit Akun',
-            'active' => 'admin',
-            'user' => $user,
+            'title'    => 'Edit Akun',
+            'active'   => 'admin',
+            'user'     => $user,
             'prevPage' => $prevPageURL,
         ]);
     }
+
 
     /**
      * Update the specified resource in storage.
@@ -166,6 +183,8 @@ class AccountController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id) {
+
+        abort_if(Gate::denies('admin-only'), 403);
 
         $this->validate($request,[
             'nip'      => 'required|min:9|max:18',
@@ -181,6 +200,7 @@ class AccountController extends Controller
 
     }
 
+    
     /**
      * Remove the specified resource from storage.
      *
@@ -188,6 +208,8 @@ class AccountController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id) {
+
+        abort_if(Gate::denies('admin-only'), 403);
 
         $user = User::find($id);
 

@@ -23,6 +23,7 @@ class JurusanController extends Controller
 
     /* View All Jurusan */
     public function viewAllJurusan(Request $request) {
+        
         //-- search & sorting --//
         $search = $request->search;
         $sort_by = $request->sort_by;

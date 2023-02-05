@@ -185,7 +185,7 @@ class RekapNilaiController extends Controller
     /* Create Rekap Nilai */
     public function viewTambahNilaiMapel($nis) {
 
-        abort_if(Gate::denies('rekap-nilai'), 403);
+        abort_if(Gate::denies('manage-nilai'), 403);
 
         $siswa = Http::get("{$this->api_url}/siswa/{$nis}");
         $jurusanSiswa = json_decode($siswa)->result->kelas->JurusanId;
@@ -223,7 +223,7 @@ class RekapNilaiController extends Controller
     /* Edit Rekap Nilai */
     public function editRekapNilai($RaportId) {
 
-        abort_if(Gate::denies('rekap-nilai'), 403);
+        abort_if(Gate::denies('update-nilai'), 403);
 
         $raport = Http::get("{$this->api_url}/raport/{$RaportId}");
         $nis_siswa = json_decode($raport)->result->nis_siswa;
@@ -258,7 +258,7 @@ class RekapNilaiController extends Controller
     /* Update Rekap Nilai */
     public function storeUpdateNilaiMapel(Request $request) {
 
-        abort_if(Gate::denies('rekap-nilai'), 403);
+        abort_if(Gate::denies('update-nilai'), 403);
 
         $nis = $request->nis_siswa;
 
@@ -361,7 +361,7 @@ class RekapNilaiController extends Controller
     /* Store Rekap Nilai */
     public function storeTambahNilaiMapel(Request $request) {
 
-        abort_if(Gate::denies('wali kelas'), 403);
+        abort_if(Gate::denies('manage-nilai'), 403);
 
         $nis = $request->nis_siswa;
 
@@ -471,7 +471,7 @@ class RekapNilaiController extends Controller
     /* Delete Rekap Nilai */
     public function deleteNilaiMapel($RaportId) {
 
-        abort_if(Gate::denies('wali kelas'), 403);
+        abort_if(Gate::denies('manage-nilai'), 403);
 
         Http::delete("{$this->api_url}/raport/{$RaportId}");
 
