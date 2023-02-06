@@ -111,7 +111,7 @@
 
             <p class="tw-text-justify hc-text-xl tw-mb-8">
                 Terdapat 3 role yang dapat mengakses rekap nilai, yaitu 
-                Tata Usaha dan Wali Kelas.
+                Tata Usaha, Kurikulum, dan Wali Kelas.
             </p>
 
             <div class="tw-grid tw-grid-cols-3 tw-gap-10">

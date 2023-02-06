@@ -17,7 +17,7 @@
                         NIP *
                     </label>
                     <input @error('nip') is-invalid @enderror class="input-data-minimal tw-w-full" id="nip" name="nip" type="text" maxlength="10" required>
-                    @error('nis')
+                    @error('nip')
                         <small class="tw-text-red-500">{{ $message }}</small>
                     @enderror
                 </div>

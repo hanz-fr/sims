@@ -476,7 +476,7 @@
             </div>
         </div>
        
-        @can('rekap-siswa')
+        @can('manage-alumni')
         <div class="tw-flex tw-justify-center tw-items-center">
             <button type="button" data-modal-toggle="export-print" title="Export ke print"><i class="fa-solid fa-print btn-export"></i></button>
                 

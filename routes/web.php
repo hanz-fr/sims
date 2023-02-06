@@ -271,7 +271,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['is_admin'] , ['revalidate']
 
 /* ROUTE USER SIMS (LOGIN & REGISTER) */
 
-Route::get('/register', [UserController::class, 'registration'])->name('register.form');
+// Route::get('/register', [UserController::class, 'registration'])->name('register.form');
 Route::get('/login', [UserController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/registeruser', [UserController::class, 'register']);
 Route::post('/loginuser', [UserController::class, 'authenticate']);

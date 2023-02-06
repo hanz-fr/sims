@@ -105,9 +105,9 @@
                         <li>
                             <button type="submit" class="tw-bg-[#90C2C2] tw-w-full tw-py-3 tw-text-sm tw-font-medium tw-text-white hover:tw-bg-[#5B9C9C]">Masuk</button>
                         </li>
-                        <li class="tw-text-center">
+                        {{-- <li class="tw-text-center">
                             <a href="/register" class="tw-text-sims-new-500 tw-underline tw-text-sm">Tidak punya akun?</a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </form>
             </section>

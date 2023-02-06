@@ -50,7 +50,9 @@
                     <label class="label-input" for="nis_siswa">
                         NIS *
                     </label>
-                    <input value="{{ old('nis_siswa') }}" @error('nis_siswa') is-invalid @enderror class="input-data-minimal tw-w-full" id="nis_siswa" name="nis_siswa" type="text" maxlength="10" required>
+                    <input list="browsers" value="{{ old('nis_siswa') }}" @error('nis_siswa') is-invalid @enderror class="input-data-minimal tw-w-full" id="nis_siswa" name="nis_siswa" type="text" maxlength="10" required>
+                    
+                    
                     @error('nis')
                         <small class="tw-text-red-500">{{ $message }}</small>
                     @enderror

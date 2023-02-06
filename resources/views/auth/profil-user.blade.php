@@ -24,7 +24,12 @@
                         Wali Kelas
                     @endif
                 </div>
-                <div class="sims-heading-3xl-black">{{ auth()->user()->nama }}</div>
+                <div class="sims-heading-3xl-black">
+                    {{ auth()->user()->nama }}
+                @can('admin-only')
+                    <i title="User ini merupakan Admin" class="fa-solid fa-shield-check tw-text-sims-500 tw-text-2xl tw-ml-1"></i>
+                @endcan
+                </div>
             </div>
         </div>
         <div class="tw-float-right tw-mr-8 tw-flex tw-flex-col">

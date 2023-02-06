@@ -27,7 +27,7 @@
             inactiveClasses: 'tw-bg-gray-200 tw-border'
             }" class="">
             <div class="tw-float-right">
-                @can('rekap-siswa')
+                @can('manage-alumni')
                 <div class="tw-flex tw-items-center -tw-mt-4">
                     <a href="/rekap-jumlah-siswa-print" target="__blank" title="Print"><i class="fa-solid fa-print btn-export"></i></a>
                     <a href="/rekap-jumlah-siswa-excel" title="Export ke Excel" title="Export ke Excel"><i class="fa-solid fa-file-excel btn-export"></i></a>

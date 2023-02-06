@@ -37,7 +37,7 @@ class AuthServiceProvider extends ServiceProvider
                 return true;
             }
 
-            if ($user->is_admin === true) {
+            if ($user->is_admin === 1) {
                 return true;
             }
 
@@ -54,7 +54,7 @@ class AuthServiceProvider extends ServiceProvider
                 return true;
             }
 
-            if ($user->is_admin === true) {
+            if ($user->is_admin === 1) {
                 return true;
             }
 
@@ -67,7 +67,7 @@ class AuthServiceProvider extends ServiceProvider
                 return true;
             }
 
-            if ($user->is_admin === true) {
+            if ($user->is_admin === 1) {
                 return true;
             }
 
@@ -80,7 +80,7 @@ class AuthServiceProvider extends ServiceProvider
                 return true;
             }
 
-            if ($user->is_admin === true) {
+            if ($user->is_admin === 1) {
                 return true;
             }
 
@@ -97,7 +97,7 @@ class AuthServiceProvider extends ServiceProvider
                 return true;
             }
 
-            if ($user->is_admin === true) {
+            if ($user->is_admin === 1) {
                 return true;
             }
 

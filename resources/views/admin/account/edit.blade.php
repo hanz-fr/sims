@@ -15,7 +15,7 @@
                         NIP *
                     </label>
                     <input value="{{ $user->nip }}" @error('nip') is-invalid @enderror class="input-data-minimal tw-w-full" id="nip" name="nip" type="text" maxlength="10" required>
-                    @error('nis')
+                    @error('nip')
                         <small class="tw-text-red-500">{{ $message }}</small>
                     @enderror
                 </div>
@@ -69,13 +69,10 @@
                             <option value="1">Ya</option>
                             <option value="0" selected>Tidak</option>
                         @endif
-{{-- 
-                        <option value="1">Ya</option>
-                        <option value="0">Tidak</option> --}}
                     </select>
                 </div>
                 <div class="tw-mx-auto tw-text-center tw-mt-10">
-                    <button type="submit" class="tw-bg-sims-new-500 tw-font-sg tw-font-medium tw-transition hover:tw-bg-sims-new-600 tw-text-white tw-py-3 tw-px-6 tw-rounded-lg">Buat</button>
+                    <button type="submit" class="tw-bg-sims-new-500 tw-font-sg tw-font-medium tw-transition hover:tw-bg-sims-new-600 tw-text-white tw-py-3 tw-px-6 tw-rounded-lg">Simpan</button>
                 </div>
             </div>
         </form>

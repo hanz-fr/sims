@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use PDF;
 use Illuminate\Http\Request;
 use App\Exports\RekapNilaiExport;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Http;
+use Maatwebsite\Excel\Facades\Excel;
 
 class RekapNilaiController extends Controller
 {
@@ -53,132 +55,6 @@ class RekapNilaiController extends Controller
             ]);
 
         }
-    }
-
-
-    /* Print Rekap Nilai */
-    public function printRekapNilai(Request $request) {
-
-        abort_if(Gate::allows('kesiswaan'), 403);
-
-        $nis = $request->nis;
-
-        $response = Http::get("{$this->api_url}/siswa/{$nis}");
-        $nis = json_decode($response)->result->nis_siswa;
-        $jurusanSiswa = json_decode($response)->result->kelas->JurusanId;
-        $mapel = Http::get("{$this->api_url}/mapel-jurusan/get/by-jurusan/$jurusanSiswa");
-        
-        $raportId = "RPT{$nis}";
-
-        $raport01 = Http::get("{$this->api_url}/nilai-mapel/get-by/{$raportId}-1");
-        $raport02 = Http::get("{$this->api_url}/nilai-mapel/get-by/{$raportId}-2");
-        $raport03 = Http::get("{$this->api_url}/nilai-mapel/get-by/{$raportId}-3");
-        $raport04 = Http::get("{$this->api_url}/nilai-mapel/get-by/{$raportId}-4");
-        $raport05 = Http::get("{$this->api_url}/nilai-mapel/get-by/{$raportId}-5");
-        $raport06 = Http::get("{$this->api_url}/nilai-mapel/get-by/{$raportId}-6");
-
-        /* return json_decode($raport01)->rows; */
-
-
-
-        return view('rekap-nilai.pdf.rekap-nilai', [
-            'siswa' => json_decode($response)->result,
-            'mapel' => json_decode($mapel),
-            'raport01' => json_decode($raport01)->rows,
-            'raport02' => json_decode($raport02)->rows,
-            'raport03' => json_decode($raport03)->rows,
-            'raport04' => json_decode($raport04)->rows,
-            'raport05' => json_decode($raport05)->rows,
-            'raport06' => json_decode($raport06)->rows,
-        ]);
-
-    }
-
-
-    /* Export Rekap Nilai PDF */
-    public function exportRekapNilaiPDF(Request $request) {
-
-        abort_if(Gate::allows('kesiswaan'), 403);
-
-        $nis = $request->nis;
-
-        $response = Http::get("{$this->api_url}/siswa/{$nis}");
-        $nis = json_decode($response)->result->nis_siswa;
-        $jurusanSiswa = json_decode($response)->result->kelas->JurusanId;
-        $mapel = Http::get("{$this->api_url}/mapel-jurusan/get/by-jurusan/$jurusanSiswa");
-
-
-        $raportId = "RPT{$nis}";
-
-        $raport01 = Http::get("{$this->api_url}/nilai-mapel/get-by/{$raportId}-1");
-        $raport02 = Http::get("{$this->api_url}/nilai-mapel/get-by/{$raportId}-2");
-        $raport03 = Http::get("{$this->api_url}/nilai-mapel/get-by/{$raportId}-3");
-        $raport04 = Http::get("{$this->api_url}/nilai-mapel/get-by/{$raportId}-4");
-        $raport05 = Http::get("{$this->api_url}/nilai-mapel/get-by/{$raportId}-5");
-        $raport06 = Http::get("{$this->api_url}/nilai-mapel/get-by/{$raportId}-6");
-
-        /* return json_decode($raport01)->rows; */
-
-
-        $pdf = PDF::loadView('rekap-nilai.pdf.rekap-nilai', [
-            'siswa' => json_decode($response)->result,
-            'raport1' => json_decode($response)->result->raport[0],
-            'mapel' => json_decode($mapel),
-            'raport01' => json_decode($raport01)->rows,
-            'raport02' => json_decode($raport02)->rows,
-            'raport03' => json_decode($raport03)->rows,
-            'raport04' => json_decode($raport04)->rows,
-            'raport05' => json_decode($raport05)->rows,
-            'raport06' => json_decode($raport06)->rows,
-        ])->setPaper('A4_PLUS_PAPER', 'landscape');
-
-        $nama = json_decode($response)->result->nama_siswa;
-
-        $rekapnilai = 'rekap_nilai_siswa_'.$nama.'.pdf';
-
-        $user = Auth::user();
-
-        Http::post("{$this->api_url}/history", [
-        
-            'activityName' => 'Export Rekap Nilai',
-            'activityAuthor' => "$user->nama",
-            'activityDesc' => "$user->nama mengexport data rekap nilai dengan tipe file PDF."
-        
-        ]);
-        
-        return $pdf->download($rekapnilai);
-
-    }
-
-
-    /* Export Rekap Nilai Excel */
-    public function exportRekapNilaiExcel(Request $request) {
-
-        abort_if(Gate::allows('kesiswaan'), 403);
-
-        ob_end_clean();
-        ob_start();
-
-        $nis = $request->nis;
-
-        $response = Http::get("{$this->api_url}/siswa/{$nis}");
-
-        $nama = json_decode($response)->result->nama_siswa;
-
-        $rekapnilai = 'rekap_nilai_siswa_'.$nama.'.xlsx';
-
-        $user = Auth::user();
-
-        Http::post("{$this->api_url}/history", [
-        
-            'activityName' => 'Export Rekap Nilai',
-            'activityAuthor' => "$user->nama",
-            'activityDesc' => "$user->nama mengexport data rekap nilai dengan tipe file excel."
-        
-        ]);
-
-        return Excel::download(new RekapNilaiExport, $rekapnilai);
-
     }
     
 
@@ -488,5 +364,132 @@ class RekapNilaiController extends Controller
         return redirect()->back()->with('success', 'Rekap nilai berhasil dihapus.');
 
     }
+
+
+        /* Print Rekap Nilai */
+        public function printRekapNilai(Request $request) {
+
+            abort_if(Gate::allows('kesiswaan'), 403);
+    
+            $nis = $request->nis;
+    
+            $response = Http::get("{$this->api_url}/siswa/{$nis}");
+            $nis = json_decode($response)->result->nis_siswa;
+            $jurusanSiswa = json_decode($response)->result->kelas->JurusanId;
+            $mapel = Http::get("{$this->api_url}/mapel-jurusan/get/by-jurusan/$jurusanSiswa");
+            
+            $raportId = "RPT{$nis}";
+    
+            $raport01 = Http::get("{$this->api_url}/nilai-mapel/get-by/{$raportId}-1");
+            $raport02 = Http::get("{$this->api_url}/nilai-mapel/get-by/{$raportId}-2");
+            $raport03 = Http::get("{$this->api_url}/nilai-mapel/get-by/{$raportId}-3");
+            $raport04 = Http::get("{$this->api_url}/nilai-mapel/get-by/{$raportId}-4");
+            $raport05 = Http::get("{$this->api_url}/nilai-mapel/get-by/{$raportId}-5");
+            $raport06 = Http::get("{$this->api_url}/nilai-mapel/get-by/{$raportId}-6");
+    
+            /* return json_decode($raport01)->rows; */
+    
+    
+    
+            return view('rekap-nilai.pdf.rekap-nilai', [
+                'siswa' => json_decode($response)->result,
+                'mapel' => json_decode($mapel),
+                'raport01' => json_decode($raport01)->rows,
+                'raport02' => json_decode($raport02)->rows,
+                'raport03' => json_decode($raport03)->rows,
+                'raport04' => json_decode($raport04)->rows,
+                'raport05' => json_decode($raport05)->rows,
+                'raport06' => json_decode($raport06)->rows,
+            ]);
+    
+        }
+    
+    
+        /* Export Rekap Nilai PDF */
+        public function exportRekapNilaiPDF(Request $request) {
+    
+            abort_if(Gate::allows('kesiswaan'), 403);
+    
+            $nis = $request->nis;
+    
+            $response = Http::get("{$this->api_url}/siswa/{$nis}");
+            $nis = json_decode($response)->result->nis_siswa;
+            $jurusanSiswa = json_decode($response)->result->kelas->JurusanId;
+            $mapel = Http::get("{$this->api_url}/mapel-jurusan/get/by-jurusan/$jurusanSiswa");
+    
+    
+            $raportId = "RPT{$nis}";
+    
+            $raport01 = Http::get("{$this->api_url}/nilai-mapel/get-by/{$raportId}-1");
+            $raport02 = Http::get("{$this->api_url}/nilai-mapel/get-by/{$raportId}-2");
+            $raport03 = Http::get("{$this->api_url}/nilai-mapel/get-by/{$raportId}-3");
+            $raport04 = Http::get("{$this->api_url}/nilai-mapel/get-by/{$raportId}-4");
+            $raport05 = Http::get("{$this->api_url}/nilai-mapel/get-by/{$raportId}-5");
+            $raport06 = Http::get("{$this->api_url}/nilai-mapel/get-by/{$raportId}-6");
+    
+            /* return json_decode($raport01)->rows; */
+    
+    
+            $pdf = PDF::loadView('rekap-nilai.pdf.rekap-nilai', [
+                'siswa' => json_decode($response)->result,
+                'raport1' => json_decode($response)->result->raport[0],
+                'mapel' => json_decode($mapel),
+                'raport01' => json_decode($raport01)->rows,
+                'raport02' => json_decode($raport02)->rows,
+                'raport03' => json_decode($raport03)->rows,
+                'raport04' => json_decode($raport04)->rows,
+                'raport05' => json_decode($raport05)->rows,
+                'raport06' => json_decode($raport06)->rows,
+            ])->setPaper('A4_PLUS_PAPER', 'landscape');
+    
+            $nama = json_decode($response)->result->nama_siswa;
+    
+            $rekapnilai = 'rekap_nilai_siswa_'.$nama.'.pdf';
+    
+            $user = Auth::user();
+    
+            Http::post("{$this->api_url}/history", [
+            
+                'activityName' => 'Export Rekap Nilai',
+                'activityAuthor' => "$user->nama",
+                'activityDesc' => "$user->nama mengexport data rekap nilai dengan tipe file PDF."
+            
+            ]);
+            
+            return $pdf->download($rekapnilai);
+    
+        }
+    
+    
+        /* Export Rekap Nilai Excel */
+        public function exportRekapNilaiExcel(Request $request) {
+    
+            abort_if(Gate::allows('kesiswaan'), 403);
+    
+            ob_end_clean();
+            ob_start();
+    
+            $nis = $request->nis;
+    
+            $response = Http::get("{$this->api_url}/siswa/{$nis}");
+    
+            $nama = json_decode($response)->result->nama_siswa;
+    
+            $rekapnilai = 'rekap_nilai_siswa_'.$nama.'.xlsx';
+    
+            $user = Auth::user();
+    
+            Http::post("{$this->api_url}/history", [
+            
+                'activityName' => 'Export Rekap Nilai',
+                'activityAuthor' => "$user->nama",
+                'activityDesc' => "$user->nama mengexport data rekap nilai dengan tipe file excel."
+            
+            ]);
+    
+            return Excel::download(new RekapNilaiExport, $rekapnilai);
+    
+        }
+
 
 }

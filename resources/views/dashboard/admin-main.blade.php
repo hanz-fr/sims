@@ -279,16 +279,26 @@
                                     @if ($u->role === 1)
                                         <i class="fa-solid fa-circle-user sims-icon-3xl"></i>
                                     @elseif ($u->role === 2)
-                                        <i class="fa-solid fa-circle-user tw-bg-salmon-400 sims-icon-3xl"></i>
+                                        <i class="fa-solid fa-circle-user tw-text-salmon-400 sims-icon-3xl"></i>
                                     @elseif ($u->role === 3)
-                                        <i class="fa-solid fa-circle-user tw-bg-oren-400 sims-icon-3xl"></i>
+                                        <i class="fa-solid fa-circle-user tw-text-oren-400 sims-icon-3xl"></i>
                                     @elseif ($u->role === 4)
-                                        <i class="fa-solid fa-circle-user tw-bg-[#979797] sims-icon-3xl"></i>
+                                        <i class="fa-solid fa-circle-user tw-text-[#979797] sims-icon-3xl"></i>
                                     @else
                                         <i class="fa-solid fa-circle-user sims-icon-3xl"></i>
                                     @endif
                                     <div class="tw-flex tw-flex-col tw-text-start">
-                                        <div class="sims-heading-sm tw-truncate sm:tw-w-24 lg:tw-w-32">{{ $u->nama }}</div>
+                                        @if ($u->role === 1)
+                                            <div class="sims-heading-sm tw-truncate sm:tw-w-24 lg:tw-w-32">{{ $u->nama }}</div>
+                                        @elseif ($u->role === 2)
+                                            <div class="tw-text-salmon-400 sims-heading-sm tw-truncate sm:tw-w-24 lg:tw-w-32">{{ $u->nama }}</div>
+                                        @elseif ($u->role === 3)
+                                            <div class="tw-text-oren-400 sims-heading-sm tw-truncate sm:tw-w-24 lg:tw-w-32">{{ $u->nama }}</div>
+                                        @elseif ($u->role === 4)
+                                            <div class="tw-text-[#979797] sims-heading-sm tw-truncate sm:tw-w-24 lg:tw-w-32">{{ $u->nama }}</div>
+                                        @else
+                                            <div class="sims-heading-sm tw-truncate sm:tw-w-24 lg:tw-w-32">{{ $u->nama }}</div>
+                                        @endif
                                         <div class="sims-text-gray-xs tw-flex tw-items-center">
                                             @if ($u->role === 1)
                                                 Tata Usaha
