@@ -2,41 +2,73 @@
 
 namespace App\Http\Controllers;
 
-use Carbon\Carbon;
 use App\Models\User;
-use App\Models\Admin;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Http;
 
 class AccountController extends Controller
 {
+
+
+    /* GLOBAL VARIABLES */
+    public function __construct()
+    {
+
+        $this->api_url = '127.0.0.1:3000'; // Ganti link NGROK disini
+    
+
+        $this->sims_url = 'http://127.0.0.1:8000'; // SIMS URL
+        
+    }
+
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() {
+    public function index(Request $request, User $user) {
 
-        $tatausaha = User::where('role',1)->count();
-        $kesiswaan = User::where('role',2)->count();
-        $kurikulum = User::where('role',3)->count();
-        $walikelas = User::where('role',4)->count();
-        $admin = Admin::all()->count();
+        abort_if(Gate::denies('admin-only'), 403);
 
-        $user = User::all();
+        $users = User::where([
+            ['nama', '!=', Null],
+            [function ($query) use ($request) {
+                if (($s = $request->s)) {
+                    $query->orWhere('nama', 'LIKE', '%' . $s . '%')
+                        ->orWhere('email', 'LIKE', '%' . $s . '%')
+                        ->orWhere('role', 'LIKE', '%' . $s . '%')
+                        ->get();
+                }
+            }]
+        ])->simplePaginate(7);
 
-        return view('admin.dashboard', [
-            'title'     => 'Manage User SIMS',
-            'active'    => 'admin',
-            'user'      => $user,
-            'admin'     => $admin,
-            'tatausaha' => $tatausaha,
-            'kesiswaan' => $kesiswaan,
-            'kurikulum' => $kurikulum,
-            'walikelas' => $walikelas
-        ]);
+        $created_at = Carbon::parse($user->created_at)->translatedFormat('d F Y');
+
+        if($user) {
+            return view('admin.account.index', [
+                'title'     => 'Manajemen Akun SIMS',
+                'active'    => '',
+                'status'    => '',
+                'users'      => $users,
+                'created_at' => $created_at
+            ]);
+        } else {
+            return view('induk.show-all', [
+                'status' => 'error',
+                'title' => 'Data Induk',
+                'active' => 'data-induk',
+                'message' => 'Halaman yang kamu cari tidak dapat ditemukan :('
+            ]);
+        }
 
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -45,9 +77,14 @@ class AccountController extends Controller
      */
     public function create() {
 
+        abort_if(Gate::denies('admin-only'), 403);
+
+        $prevPageURL = URL::previous();
+
         return view('admin.account.create', [
-            'title' => 'Create Account',
-            'active' => 'admin'
+            'title' => 'Tambah Akun',
+            'active' => 'admin',
+            'prevPage' => $prevPageURL,
         ]);
     }
 
@@ -59,11 +96,15 @@ class AccountController extends Controller
      */
     public function store(Request $request) {
 
+        abort_if(Gate::denies('admin-only'), 403);
+
         $request->validate([
             'nip'      => 'required|unique:users|min:9|max:18',
             'nama'     => 'required',
             'email'    => 'required|email|unique:users',
+            'no_telp'  => 'unique:users',
             'role'     => 'required',
+            'is_admin' => 'required',
             'password' => 'required|min:6',
         ]);
         
@@ -71,15 +112,19 @@ class AccountController extends Controller
             'nip'      => $request->nip,
             'nama'     => $request->nama,
             'email'    => $request->email,
+            'no_telp'  => $request->no_telp,
             'role'     => $request->role,
+            'is_admin' => $request->is_admin,
             'password' => Hash::make($request->password),
+            'token'    => Str::random(40),
         ]);
 
         $user->save();
          
-        return redirect()->route('manage.index')->with('success','Account created successfully');
+        return redirect()->route('account.index')->with('success','Akun berhasil dibuat');
 
     }
+
 
     /**
      * Display the specified resource.
@@ -89,15 +134,23 @@ class AccountController extends Controller
      */
     public function show($id) {
 
-        $user = User::find($id);
+        abort_if(Gate::denies('admin-only'), 403);
 
-        return view('admin.account.show-detail', [
-            'title' => 'Account Details',
-            'active' => 'admin',
-            'user' => $user
+        $user = User::findOrFail($id);
+
+        $current_year = Carbon::now()->year;
+
+        $userHistory = Http::get("{$this->api_url}/history/$user->nama/all?limit=5&year=$current_year");
+
+        return view('admin.account.show', [
+            'title'   => 'Detail Akun',
+            'active'  => '',
+            'user'    => $user,
+            'history' => json_decode($userHistory)->rows
         ]);
 
     }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -105,16 +158,22 @@ class AccountController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
+    public function edit($id) {
+
+        abort_if(Gate::denies('admin-only'), 403);
+
         $user = User::find($id);
 
+        $prevPageURL = URL::previous();
+
         return view('admin.account.edit', [
-            'title' => 'Edit Account',
-            'active' => 'admin',
-            'user' => $user
+            'title'    => 'Edit Akun',
+            'active'   => 'admin',
+            'user'     => $user,
+            'prevPage' => $prevPageURL,
         ]);
     }
+
 
     /**
      * Update the specified resource in storage.
@@ -125,20 +184,23 @@ class AccountController extends Controller
      */
     public function update(Request $request, $id) {
 
+        abort_if(Gate::denies('admin-only'), 403);
+
         $this->validate($request,[
-            'nip'   => 'required|min:9|max:18',
-            'nama'  => 'required',
-            'email' => 'required|email'
+            'nip'      => 'required|min:9|max:18',
+            'nama'     => 'required',
+            'email'    => 'required|email',
         ]);
 
         $user = User::find($id);
 
         $user->update($request->all());
 
-        return redirect()->route('manage.index')->with('success','Account has been updated successfully');
+        return redirect()->route('account.index')->with('success','Akun berhasil diperbarui!');
 
     }
 
+    
     /**
      * Remove the specified resource from storage.
      *
@@ -147,19 +209,14 @@ class AccountController extends Controller
      */
     public function destroy($id) {
 
+        abort_if(Gate::denies('admin-only'), 403);
+
         $user = User::find($id);
 
         $user->delete();
 
-        return redirect()->route('manage.index')->with('success','Account has been deleted successfully');
+        return redirect()->route('account.index')->with('success','Akun berhasil dihapus');
 
-    }
-
-    public function destroyAll() {
-
-        User::truncate(); 
-
-        return redirect()->route('manage.index')->with('success','All account has been deleted successfully');
     }
 }
  

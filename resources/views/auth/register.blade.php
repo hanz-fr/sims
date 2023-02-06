@@ -10,6 +10,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,301,701,300,501,401,901,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     {{-- css --}}
     <link rel="stylesheet" href="{{ URL::asset('assets/output.css') }}">
@@ -23,13 +26,13 @@
     <div class="tw-mx-auto tw-flex tw-justify-center tw-items-center tw-h-screen tw-container">
 
         @if($status == 'success')
-        <section class="tw-bg-white tw-font-pop tw-rounded-[50px] tw-flex tw-flex-col tw-mx-auto tw-my-28 tw-px-20 tw-py-11 tw-top-1/2 tw-w-3/5 tw-h-fit tw-border tw-border-slate-200 tw-shadow-xl tw-text-center">
+        <section class="tw-bg-white tw-font-satoshi tw-rounded-[50px] tw-flex tw-flex-col tw-mx-auto tw-my-28 tw-px-20 tw-py-11 tw-top-1/2 tw-w-3/5 tw-h-fit tw-border tw-border-slate-200 tw-shadow-xl tw-text-center">
             <img class="tw-w-1/2 tw-mx-auto" src="{{ URL::asset('assets/img/email-sent.svg') }}" alt="Registration Success">
-            <div class="tw-text-3xl tw-font-bold tw-text-sims-400 tw-mt-5">Verifikasi akun anda</div>
+            <div class="tw-text-3xl tw-font-bold tw-text-sims-new-500 tw-mt-5">Verifikasi akun anda</div>
             <div class="tw-text-sm tw-text-basic-300 tw-font-medium tw-mt-3">Kami sudah mengirimkan link verifikasi, silahkan check email anda.</div>
             <form action="{{ route('user.resend', $user->id) }}" method="post">
                 @csrf
-                <button type="submit" class="tw-font-ubuntu tw-bg-[#90C2C2] tw-py-3 text-md tw-mx-auto tw-font-medium tw-text-white tw-mt-9 hover:tw-bg-[#5B9C9C] tw-w-2/4">
+                <button type="submit" class="tw-font-sg tw-bg-[#90C2C2] tw-py-3 text-md tw-mx-auto tw-font-medium tw-text-white tw-mt-9 hover:tw-bg-[#5B9C9C] tw-w-2/4">
                     Kirim Ulang
                 </button>
             </form>
@@ -39,8 +42,8 @@
         <div class="tw-bg-white tw-flex lg:tw-flex-row sm:tw-flex-col-reverse tw-mx-auto tw-px-20 tw-py-12 tw-w-2/3 tw-h-fit tw-border tw-border-slate-200 tw-shadow-xl tw-p-5">
             <!-- form section -->
             <section class="lg:tw-w-3/5 sm:tw-w-full tw-font-pop">
-                <div class="tw-text-3xl tw-text-sims-400 tw-font-bold md:tw-mt-3 sm:tw-text-center lg:tw-text-left">Registrasi</div>
-                <div class="tw-text-sm tw-mt-2 tw-text-slate-400 sm:tw-text-center lg:tw-text-left">Daftar untuk membuat akun baru</div>
+                <div class="sims-heading-3xl md:tw-mt-3 sm:tw-text-center lg:tw-text-left">Registrasi</div>
+                <div class="tw-text-sm tw-font-sg tw-mt-2 tw-text-gray-400 sm:tw-text-center lg:tw-text-left">Daftar untuk membuat akun baru</div>
 
             <form action="/registeruser" method="post" class="tw-mt-10 lg:tw-pr-8">
                 @csrf
@@ -109,10 +112,10 @@
                         </select>
                     </li>
                     <li>
-                        <button type="submit" class="tw-font-ubuntu tw-bg-[#90C2C2] tw-w-full tw-py-4 tw-text-sm tw-font-medium tw-text-white hover:tw-bg-[#5B9C9C]">Daftar</button>
+                        <button type="submit" class="tw-font-sg tw-bg-[#90C2C2] tw-w-full tw-py-4 tw-text-sm tw-font-medium tw-text-white hover:tw-bg-[#5B9C9C]">Daftar</button>
                     </li>
                     <li class="tw-text-center">
-                        <a href="/login" class="tw-font-ubuntu tw-text-sims-400 tw-underline tw-text-sm">Sudah punya akun?</a>
+                        <a href="/login" class="tw-font-sg tw-text-sims-new-500 tw-underline tw-text-sm">Sudah punya akun?</a>
                     </li>
                 </ul>
             </form>

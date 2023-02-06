@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.main-new')
 
 @section('content')
 <div class="tw-mx-10">
@@ -18,28 +18,28 @@
 
     <div x-data="{
 		step: 1,
-		activeClasses: 'tw-border-4 tw-border-sims-400',
-		inactiveClasses: 'tw-border-2 tw-bg-sims-400 tw-border-sims-400'
+		activeClasses: 'tw-border-4 tw-border-sims-new-500',
+		inactiveClasses: 'tw-border-2 tw-bg-sims-new-500 tw-border-sims-new-500'
 	        }" class="tw-flex tw-flex-col tw-rounded-[35px] tw-bg-white tw-w-4/5 tw-p-8 tw-h-full tw-mx-auto tw-my-10 tw-shadow-lg">
-      <a href="{{ url()->previous() }}" class="tw-text-sims-400 tw-text-3xl tw-w-min hover:tw-text-sims-500"><i class="fa-solid fa-chevron-left"></i></a>
-      <h3 class="tw-font-pop tw-font-semibold tw-mt-6 tw-text-sims-400 tw-text-center">Tambah Data Siswa</h3>
+      <a href="{{ url()->previous() }}" class="tw-text-sims-new-500 tw-text-3xl tw-w-min hover:tw-text-sims-new-600"><i class="fa-solid fa-chevron-left"></i></a>
+      <h3 class="tw-font-satoshi tw-font-semibold tw-mt-6 tw-text-sims-new-500 tw-text-center">Tambah Data Siswa</h3>
 
-        <div class="tw-flex tw-items-center tw-w-full lg:tw-mx-auto sm:tw-px-10 tw-max-w-3xl tw-font-pop tw-mt-10">
-            <div :class="step === 1 ? 'tw-text-sims-400' : 'tw-text-gray-400'" class="tw-flex tw-items-center tw-relative">
+        <div class="tw-flex tw-items-center tw-w-full lg:tw-mx-auto sm:tw-px-10 tw-max-w-3xl tw-font-sg tw-mt-10">
+            <div :class="step === 1 ? 'tw-text-sims-new-500' : 'tw-text-gray-400'" class="tw-flex tw-items-center tw-relative">
                 <div @click="step = 1" :class="step === 1 ? activeClasses : inactiveClasses" class="tw-rounded-full tw-transition tw-duration-500 tw-ease-in-out tw-h-7 tw-w-7">
                 </div>
                 <div class="tw-absolute tw-top-0 tw-text-center tw-w-[7rem] tw--ml-10 tw-mt-10 tw-font-medium">Data Siswa</div>
             </div>
-            <div :class="step === 1 ? 'tw-border-gray-300' : 'tw-border-sims-400'" class="tw-flex-auto tw-border-t-4 tw-transition tw-duration-500 tw-ease-in-out"></div>
+            <div :class="step === 1 ? 'tw-border-gray-300' : 'tw-border-sims-new-500'" class="tw-flex-auto tw-border-t-4 tw-transition tw-duration-500 tw-ease-in-out"></div>
 
-            <div :class="step === 2 ? 'tw-text-sims-400' : 'tw-text-gray-400'" class="tw-flex tw-items-center tw-relative">
+            <div :class="step === 2 ? 'tw-text-sims-new-500' : 'tw-text-gray-400'" class="tw-flex tw-items-center tw-relative">
                 <div @click="step = 2" :class="step === 1 ? 'tw-bg-gray-300' : '' || step === 2 ? activeClasses : inactiveClasses" class="tw-rounded-full tw-transition tw-duration-500 tw-ease-in-out tw-h-7 tw-w-7">
                 </div>
                 <div class="tw-absolute tw-top-0 tw-text-center tw-w-40 tw--ml-14 tw-mt-10 tw-font-medium">Orang Tua/Wali</div>
             </div>
-            <div :class="step === 2 ? 'tw-border-gray-300' : 'tw-border-sims-400' && step === 1 ? 'tw-border-gray-300' : 'tw-border-sims-400'" class="tw-flex-auto tw-border-t-4 tw-transition tw-duration-500 tw-ease-in-out"></div>
+            <div :class="step === 2 ? 'tw-border-gray-300' : 'tw-border-sims-new-500' && step === 1 ? 'tw-border-gray-300' : 'tw-border-sims-new-500'" class="tw-flex-auto tw-border-t-4 tw-transition tw-duration-500 tw-ease-in-out"></div>
 
-            <div :class="step === 3 ? 'tw-text-sims-400' : 'tw-text-gray-400'" class="tw-flex tw-items-center tw-relative">
+            <div :class="step === 3 ? 'tw-text-sims-new-500' : 'tw-text-gray-400'" class="tw-flex tw-items-center tw-relative">
                 <div @click="step = 3" :class="step === 3 ? activeClasses : 'tw-bg-gray-300'" class="tw-rounded-full tw-transition tw-duration-500 tw-ease-in-out tw-h-7 tw-w-7">
                 </div>
                 <div class="tw-absolute tw-top-0 tw-w-32 tw--ml-12 tw-text-center tw-mt-10 tw-font-medium">Lainnya</div>
@@ -47,7 +47,7 @@
         </div>
         
         <form method="POST" action="/api/siswa" enctype="multipart/form-data"  
-          class="tw-w-full lg:tw-mx-auto sm:tw-px-10 tw-my-8 tw-max-w-3xl tw-font-pop">
+          class="tw-w-full lg:tw-mx-auto sm:tw-px-10 tw-my-8 tw-max-w-3xl tw-font-satoshi">
           @csrf
           @method('POST')
 
@@ -57,7 +57,7 @@
             {{-- biodata --}}
             <div x-show.transition.in="step === 1" x-transition:enter.duration.300ms>
 
-                <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims-400 tw-mt-24">A.  Biodata Peserta Didik</div>
+                <div class="tw-font-satoshi tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims-new-500 tw-mt-24">A.  Biodata Peserta Didik</div>
                 <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
                     <div class="tw-w-full lg:tw-w-1/2 tw-px-3 tw-mb-6 md:tw-mb-0">
                         <label class="label-input" for="nis">
@@ -211,7 +211,7 @@
                 </div>
 
                 {{-- Diterima di sekolah ini --}}
-                <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-mb-8 tw-mt-20 tw-text-sims-400">B.  Diterima di sekolah ini</div>
+                <div class="tw-font-satoshi tw-text-2xl tw-font-semibold tw-mb-8 tw-mt-20 tw-text-sims-new-500">B.  Diterima di sekolah ini</div>
                 <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
                     <div class="tw-w-full tw-px-3">
                         <label class="label-input" for="diterima_di_kelas">
@@ -261,7 +261,7 @@
                 </div>
 
                 {{-- sekolah asal --}}
-                <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-mb-8 tw-mt-20 tw-text-sims-400">C.  Sekolah Asal</div>
+                <div class="tw-font-satoshi tw-text-2xl tw-font-semibold tw-mb-8 tw-mt-20 tw-text-sims-new-500">C.  Sekolah Asal</div>
                 <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
                     <div class="tw-w-full tw-px-3">
                         <label class="label-input" for="nama_sekolah_asal">
@@ -283,7 +283,7 @@
                 </div>
 
                 {{-- ijazah smp --}}
-                <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-mb-8 tw-mt-20 tw-text-sims-400">D.  Ijazah SMP/MTs</div>
+                <div class="tw-font-satoshi tw-text-2xl tw-font-semibold tw-mb-8 tw-mt-20 tw-text-sims-new-500">D.  Ijazah SMP/MTs</div>
                 <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
                     <div class="tw-w-full tw-px-3">
                         <label class="label-input" for="nomor_ijazah_smp">
@@ -301,7 +301,7 @@
                     </div>
                 </div>
 
-                <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-mb-8 tw-mt-20 tw-text-sims-400">E.  SKHUN SMP/Mts</div>
+                <div class="tw-font-satoshi tw-text-2xl tw-font-semibold tw-mb-8 tw-mt-20 tw-text-sims-new-500">E.  SKHUN SMP/Mts</div>
                 <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
                     <div class="tw-w-full tw-px-3">
                         <label class="label-input" for="nomor_skhun">
@@ -326,7 +326,7 @@
             <div x-show.transition.in="step === 2" x-transition:enter.duration.300ms>
 
                 {{-- data orang tua --}}
-                <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims-400 tw-mt-24">F.  Data Orang Tua</div>
+                <div class="tw-font-satoshi tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims-new-500 tw-mt-24">F.  Data Orang Tua</div>
                 <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
                         <div class="tw-w-full tw-px-3">
                             <label class="label-input" for="nama_ayah">
@@ -367,7 +367,7 @@
                 </div>
             
                 {{-- wali --}}
-                <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims-400 tw-mt-20">G.  Data Wali</div>
+                <div class="tw-font-satoshi tw-text-2xl tw-font-semibold tw-my-8 tw-text-sims-new-500 tw-mt-20">G.  Data Wali</div>
                 <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
                         <div class="tw-w-full tw-px-3">
                             <label class="label-input" for="nama_wali">
@@ -408,7 +408,7 @@
             <div x-show.transition.in="step === 3" x-transition:enter.duration.300ms>
                 
                 {{-- keterangan jasmani dan kesehatan siswa --}}
-                <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-mb-8 tw-mt-20 tw-text-sims-400">H.  Keterangan Jasmani dan Kesehatan Siswa</div>
+                <div class="tw-font-satoshi tw-text-2xl tw-font-semibold tw-mb-8 tw-mt-20 tw-text-sims-new-500">H.  Keterangan Jasmani dan Kesehatan Siswa</div>
                 <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
                     <div class="tw-w-full tw-px-3">
                         <label class="label-input" for="berat_badan">
@@ -443,7 +443,7 @@
                 </div>
 
                 {{-- keterangan lain2 --}}
-                <div class="tw-font-pop tw-text-2xl tw-font-semibold tw-mb-8 tw-mt-20 tw-text-sims-400">I.  Keterangan Lain-lain</div>
+                <div class="tw-font-satoshi tw-text-2xl tw-font-semibold tw-mb-8 tw-mt-20 tw-text-sims-new-500">I.  Keterangan Lain-lain</div>
                 <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
                     <div class="tw-w-full tw-px-3">
                         <textarea class="input-data-minimal" id="keterangan_lain" type="text" name="keterangan_lain"></textarea>
@@ -476,7 +476,7 @@
                         <button type="button"
                             x-show="step > 1"
                             @click="step--"
-                            class="tw-bg-sims-400 tw-font-medium tw-text-white tw-py-3 tw-px-6 tw-rounded-lg" 
+                            class="tw-bg-sims-new-500 tw-font-medium tw-text-white tw-py-3 tw-px-6 tw-rounded-lg" 
                             >Previous</button>
                         </div>
             
@@ -484,13 +484,13 @@
                         <button type="button"
                             x-show="step < 3"
                             @click="step++"
-                            class="tw-bg-sims-400 tw-font-medium tw-text-white tw-py-3 tw-px-6 tw-rounded-lg" 
+                            class="tw-bg-sims-new-500 tw-font-medium tw-text-white tw-py-3 tw-px-6 tw-rounded-lg" 
                             >Next</button>
 
                         <button
                         type="submit"
                             x-show="step === 3"
-                            class="tw-bg-sims-400 tw-font-medium tw-text-white tw-py-3 tw-px-6 tw-rounded-lg" 
+                            class="tw-bg-sims-new-500 tw-font-medium tw-text-white tw-py-3 tw-px-6 tw-rounded-lg" 
                             >Upload Data</button>
                         </div>
                     </div>

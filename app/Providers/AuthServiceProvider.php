@@ -27,17 +27,81 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        Gate::define('tata usaha', fn(User $user) => $user->role === 1);
-        Gate::define('kesiswaan', fn(User $user) => $user->role === 2);
-        Gate::define('kurikulum', fn(User $user) => $user->role === 3);
-        Gate::define('wali kelas', fn(User $user) => $user->role === 4); 
+        Gate::define('kesiswaan', fn (User $user) => $user->role === 2 );
+        Gate::define('wali-kelas', fn (User $user) => $user->role === 4 );
+        Gate::define('admin-only', fn (User $user) => $user->is_admin === 1 );
 
-        Gate::define('rekap-siswa', function($user){
-            return in_array($user->role, [1, 2]);
+        Gate::define('manage-induk', function (User $user) {
+
+            if ($user->role === 1) {
+                return true;
+            }
+
+            if ($user->is_admin === 1) {
+                return true;
+            }
+
+            return false;
+        });
+        
+        Gate::define('manage-alumni', function (User $user) {
+
+            if ($user->role === 1) {
+                return true;
+            }
+
+            if ($user->role === 2) {
+                return true;
+            }
+
+            if ($user->is_admin === 1) {
+                return true;
+            }
+
+            return false;
         });
 
-        Gate::define('rekap-nilai', function($user){
-            return in_array($user->role, [1, 4]);
+        Gate::define('manage-mutasi', function (User $user) {
+
+            if ($user->role === 2) {
+                return true;
+            }
+
+            if ($user->is_admin === 1) {
+                return true;
+            }
+
+            return false;
+        });
+
+        Gate::define('manage-nilai', function (User $user) {
+
+            if ($user->role === 4) {
+                return true;
+            }
+
+            if ($user->is_admin === 1) {
+                return true;
+            }
+
+            return false;
+        });
+
+        Gate::define('update-nilai', function (User $user) {
+
+            if ($user->role === 1) {
+                return true;
+            }
+
+            if ($user->role === 4) {
+                return true;
+            }
+
+            if ($user->is_admin === 1) {
+                return true;
+            }
+
+            return false;
         });
     }
 }

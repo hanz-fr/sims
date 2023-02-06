@@ -23,6 +23,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,301,701,300,501,401,901,400&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   {{-- flowbite --}}
@@ -39,6 +40,7 @@
   {{-- AJAX (DO NOT REMOVE) --}}
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   
+
   {{-- icon --}}
   <link rel="stylesheet" href="{{ URL::asset('font-awesome/css/all.min.css') }}">
   <title>SIMS | {{ $title }}</title>
@@ -49,7 +51,6 @@
 
   @include('components.nav-sidebar-new')
 
-<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.min.js" defer></script>
   <script>
       const setup = () => {
           return {
@@ -66,7 +67,8 @@
     }
   </script>
 
-  <script src="https://unpkg.com/flowbite@1.5.5/dist/flowbite.js"></script>
+
+
 
   <script src="{{ URL::asset('assets/main.js') }}"></script>
 
@@ -74,7 +76,7 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   
   {{-- flowbite --}}
-  <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+  <script src="https://unpkg.com/flowbite@1.5.5/dist/flowbite.js"></script>
   
   {{-- AOS --}}
   <script>

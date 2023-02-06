@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.main-new')
 
 @section('content')
 <div class="tw-mx-10">
@@ -64,7 +64,7 @@
 
                     <div x-init="$dispatch('register', {id: 1})"  
                       x-intersect:enter.half="setIndex(0)" x-transition.duration.500ms>
-                      @can('rekap-siswa')
+                      @can('manage-alumni')
                         <a href="/siswa-keluar">
                       @endcan
                             <div class="card-dashboard tw-transition-all hover:tw-shadow-xl">
@@ -83,7 +83,7 @@
 
                     <div x-init="$dispatch('register', {id: 2})"  
                       x-intersect:enter.half="setIndex(1)" x-transition.duration.500ms>
-                      @cannot('wali kelas')
+                      @cannot('wali-kelas')
                         <a href="/rekap-jumlah-siswa">
                       @endcannot
                             <div class="card-dashboard tw-transition-all hover:tw-shadow-xl">
@@ -102,7 +102,7 @@
 
                     <div x-init="$dispatch('register', {id: 3})"  
                       x-intersect:enter.half="setIndex(2)" x-transition.duration.500ms>
-                      @can('rekap-siswa')
+                      @can('manage-alumni')
                         <a href="/siswa-masuk">
                       @endcan
                             <div class="card-dashboard tw-transition-all hover:tw-shadow-xl">
@@ -121,7 +121,7 @@
 
                     <div x-init="$dispatch('register', {id: 4})"  
                       x-intersect:enter.half="setIndex(3)" x-transition.duration.500ms>
-                      @can('rekap-siswa')
+                      @can('manage-alumni')
                         <a href="/select-jurusan-alumni">
                       @endcan
                             <div class="card-dashboard tw-transition-all hover:tw-shadow-xl">
@@ -140,7 +140,7 @@
 
                     <div x-init="$dispatch('register', {id: 5})"  
                     x-intersect:enter.half="setIndex(4)" x-transition.duration.500ms>
-                    @cannot('wali kelas')
+                    @cannot('wali-kelas')
                       <a href="/data-tidak-naik">
                     @endcannot
                           <div class="card-dashboard tw-transition-all hover:tw-shadow-xl">
@@ -151,7 +151,7 @@
                                   </div>
                               </div>
                               <div> 
-                                  <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Siswa TIdak Naik</div>
+                                  <div class="tw-text-sm tw-text-gray-500 tw-font-base tw-text-center tw-mt-2">Siswa Tidak Naik</div>
                               </div>
                           </div>
                       </a>
@@ -159,7 +159,7 @@
 
                     <div x-init="$dispatch('register', {id: 6})"  
                       x-intersect:enter.half="setIndex(5)" x-transition.duration.500ms>
-                      @cannot('wali kelas')
+                      @cannot('wali-kelas')
                         <a href="/rekap-jumlah-siswa">
                       @endcannot
                             <div class="card-dashboard tw-transition-all hover:tw-shadow-xl">
@@ -200,7 +200,7 @@
             <section class="tw-bg-white tw-w-full tw-items-center tw-justify-center tw-shadow-lg tw-font-pop tw-border tw-mt-6 tw-flex tw-h-fit tw-py-10 tw-flex-col">
               <div class="tw-text-xl tw-text-gray-400 tw-font-bold tw-mb-10">Quick Access</div>
                 <div class="tw-flex lg:tw-flex-row sm:tw-flex-col tw-justify-between tw-gap-3 tw-p-2">
-                    @can('rekap-siswa')
+                    @can('manage-alumni')
                     <a href="/rekap-jumlah-siswa" class="tw-group">
                         <div class="tw-h-full tw-justify-center tw-flex lg:tw-flex-col sm:tw-flex-row tw-text-center tw-border-2 tw-p-6 tw-items-center tw-bg-white tw-rounded-lg group-hover:tw-text-white group-hover:tw-bg-sims-400 tw-transition-all tw-duration-300">
                             <div class="tw-text-4xl tw-text-sims-400 group-hover:tw-text-white"><i class="fa-solid fa-graduation-cap"></i></div>
@@ -210,11 +210,11 @@
                     @endcan
                     <a href="/data-induk-siswa?perPage=10&page=1" class="tw-group">
                         <div class="tw-h-full tw-justify-center tw-flex lg:tw-flex-col sm:tw-flex-row  tw-text-center tw-border-2 tw-p-6 tw-items-center tw-bg-white tw-rounded-lg group-hover:tw-bg-sims-400 group-hover:tw-text-white tw-transition-all tw-duration-300">
-                            <div class="tw-text-4xl tw-text-sims-400 group-hover:tw-text-white"><i class="fa-regular fa-book-open"></i></div>
+                            <div class="tw-text-4xl tw-text-sims-400 group-hover:tw-text-white"><i class="fa-regular fa-book-open-cover"></i></div>
                             <div class="tw-text-gray-500 tw-text-sm tw-font-normal lg:tw-mt-4 sm:tw-ml-4 group-hover:tw-text-white">Data Induk Siswa<br>(Umum)</div>
                         </div>
                     </a>
-                    @can('rekap-siswa')
+                    @can('manage-alumni')
                     <a href="/siswa-keluar" class="tw-group">
                         <div class="tw-h-full tw-justify-center tw-flex lg:tw-flex-col sm:tw-flex-row  tw-text-center tw-border-2 tw-p-6 tw-items-center tw-bg-white tw-rounded-lg group-hover:tw-bg-sims-400 group-hover:tw-text-white  tw-transition-all tw-duration-300">
                             <div class="tw-text-4xl tw-text-sims-400 group-hover:tw-text-white"><i class="fa-solid fa-user-group"></i></div>

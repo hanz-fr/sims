@@ -1,4 +1,4 @@
-@extends('layouts.white-bg')
+@extends('layouts.main-new')
 
 @section('content')
 
@@ -7,7 +7,6 @@
     <!-- spacing !-->
     <div class="tw-mt-10"></div> 
     <!-------------->
-
     
     <div role="status" class="tw-flex tw-justify-center">
         <div class="lg:tw-w-1/2">
@@ -17,159 +16,108 @@
     
 
     <!-- spacing !-->
-    <div class="tw-mt-24"></div> 
+    <div class="tw-mt-12"></div> 
     <!-------------->
 
     <div class="tw-mx-60">
         <div class="tw-flex tw-flex-col tw-gap-10">
-           <div class="hc-title-3xl tw-flex tw-justify-center"> 
-                Apa itu SIMS?
-           </div>
-           <div class="hc-text-base">
-               Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-               In dicta dolore expedita ex totam cupiditate asperiores, 
-               aperiam magni delectus excepturi quis distinctio laboriosam 
-               ea quidem, aliquam eius? Eveniet in ab fuga placeat, 
-               excepturi fugit sit eius nam illo accusantium iusto, 
-               harum numquam commodi possimus rerum dolores enim 
-               debitis consectetur ipsam sequi laudantium tempora? 
-               Suscipit incidunt provident recusandae fugit in esse 
-               doloremque neque porro minima! Maxime aut dolor 
-               suscipit hic deleniti, dolores excepturi autem. 
-               Enim, distinctio aspernatur labore, 
-               similique voluptates facilis porro tenetur 
-               esse at accusantium laborum architecto odio 
-               voluptatibus earum rerum perspiciatis, 
-               quas cum aperiam reprehenderit cumque. 
-               Enim, nisi quo!
-           </div>
-           <div class="hc-text-base">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Dolores nihil enim dolore quas, fugit soluta ut eveniet iste ipsum ea, 
-                magnam illo veritatis eligendi saepe cupiditate? Deserunt iure est iusto
-                fugiat odio pariatur fuga quae quidem a explicabo aspernatur ipsa, 
-                laborum amet necessitatibus quo dignissimos itaque perferendis debitis 
-                ad voluptatibus quibusdam et laboriosam libero. Quis aut atque, nisi 
-                tempore harum iste architecto at repellendus nesciunt nam similique 
-                voluptatum facere eligendi aliquid, sit recusandae molestias debitis 
-                reiciendis dolore placeat! Inventore sed alias quis iste quibusdam 
-                veniam cupiditate id asperiores unde fuga, doloremque officiis ratione
-                facilis non animi rerum totam nisi soluta est debitis et cum dolores!
-                Repellat modi minus laboriosam perspiciatis assumenda sapiente reiciendis
-                saepe amet nulla earum molestiae nisi sit quibusdam, id a asperiores 
-                ad distinctio impedit veniam? Soluta ea impedit exercitationem quibusdam 
-                perferendis, illo repellendus possimus! Fuga doloribus dolor quis 
-                possimus debitis. Debitis deserunt ut vero omnis natus illo quaerat
-                totam error, sint fugiat veniam, culpa suscipit unde voluptate?
-                Repellat dolorum tempore harum illo. Cumque dignissimos laborum hic 
-                temporibus minus cupiditate repellat autem deleniti, numquam 
-                accusamus, ullam excepturi odit voluptas at. Accusantium sint, 
-                facere exercitationem omnis laboriosam tenetur adipisci 
-                molestiae ipsum odio accusamus natus ea. Consequuntur 
-                explicabo eveniet recusandae.
+
+            <div class="tw-py-8 tw-px-10 tw-rounded-lg tw-shadow-lg tw-border tw-border-gray-200 tw-mb-24">
+                <div class="hc-title-3xl tw-flex tw-justify-center tw-mb-4"> 
+                    <span class="tw-text-bluewood-700">Apa</span>&nbsp;itu SIMS?
+               </div>
+               <div class="hc-text-lg tw-text-justify">
+                    Sistem Informasi Manajemen Data Siswa berbasis web yang dikembangkan 
+                    sebagai alat bantu untuk sekolah dalam pengelolaan data induk siswa 
+                    secara online. Pada dasarnya, SIMS memungkinkan sekolah untuk menyimpan 
+                    dan mengelompokkan data di satu tempat secara digital sehingga memudahkan 
+                    administrator sekolah dan guru dalam memantau kemajuan siswa dan memperbarui 
+                    data secara real time. SIMS juga mempermudah sekolah dalam pelacakan data, 
+                    seperti perpindahan, data alumni, dan siswa yang tidak naik kelas. Semua itu 
+                    bisa dilakukan dengan lebih mudah menggunakan SIMS.
+               </div>
             </div>
-            <div class="hc-text-base">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                Facere blanditiis totam placeat, necessitatibus asperiores 
-                non facilis suscipit esse doloribus, eius corrupti ab
-                dolorem molestias enim assumenda aliquam praesentium, 
-                fugit qui ipsum voluptatem! At accusamus quis commodi 
-                blanditiis fugiat corporis mollitia vitae hic, eius 
-                quidem asperiores incidunt vero nobis adipisci impedit 
-                temporibus perferendis aliquid facilis quaerat 
-                necessitatibus qui inventore quod? Iste in expedita 
-                libero sint soluta facilis porro facere saepe, 
-                quos ut impedit error, officiis, reprehenderit 
-                rerum nisi esse doloribus maiores neque! Asperiores, 
-                quae nihil. A alias optio quidem repudiandae esse, 
-                expedita modi inventore molestiae ratione sunt 
-                deleniti, iusto labore officia quo magni officiis 
-                vitae, dignissimos tempore fugit explicabo! 
-                Quasi dolorum expedita quo quae itaque, pariatur 
-                dicta impedit ut rerum eum voluptate, reprehenderit 
-                magnam deleniti iure voluptatem dignissimos! 
-                Iusto assumenda corporis reprehenderit exercitationem 
-                sequi magni officia perferendis debitis sint nam at,
-                libero perspiciatis doloremque rem, consectetur quis 
-                nisi nemo quibusdam ducimus aliquam soluta et ipsam! 
-                Consequatur molestias, dicta itaque error, repudiandae 
-                praesentium facilis iusto, velit ut minima exercitationem
-                quam voluptatibus sint modi eaque obcaecati. 
-                Necessitatibus natus illo molestias assumenda 
-                iure ipsum harum fuga, expedita tenetur praesentium
-                ratione repudiandae, nostrum quos, voluptatum 
-                deserunt maiores at. Explicabo non odit quisquam? 
-                Ullam labore dolorem tenetur veritatis, obcaecati 
-                fugiat iste mollitia optio blanditiis! Ducimus iusto, 
-                unde sapiente, aut voluptatibus ipsa quas laborum 
-                eaque eligendi, nisi voluptate deserunt odio 
-                perferendis a recusandae tenetur tempore magni 
-                sunt sint perspiciatis quam quo quisquam 
-                voluptatem veniam? Necessitatibus itaque sunt 
-                voluptates dolore possimus eum corporis qui 
-                voluptatum nisi ut vero tempore temporibus 
-                minus magni eligendi, soluta quasi. Pariatur 
-                dicta dolore aspernatur fuga inventore 
-                obcaecati recusandae suscipit ea minus 
-                odit. Eveniet esse unde aut quae error 
-                eum rem minima alias neque, dolorem aliquam a 
-                harum beatae voluptate asperiores pariatur nam 
-                at laudantium amet, architecto qui veniam 
-                aliquid mollitia? Rem fuga cum, assumenda impedit 
-                nam excepturi voluptatibus sequi facilis voluptas 
-                illo numquam dolorum blanditiis aliquid minus! 
-                Nisi optio numquam perferendis tempora! Esse et, 
-                porro iste tempore ut at. Repellat consequatur 
-                recusandae dolores quis aliquid nihil nemo veritatis 
-                iusto? Cum, veniam reprehenderit. Totam, quidem rerum 
-                iusto eveniet expedita iste animi magnam saepe? 
-                Temporibus suscipit asperiores ipsa voluptatum quo! 
-                Quod dolor ut est animi rerum quis nisi sed, amet 
-                omnis quae vitae ea repellat similique dolore officia 
-                laborum ab culpa harum nulla numquam ipsum? Deserunt 
-                fugit voluptas vel aspernatur labore ab aliquam 
-                officia tempora aperiam, in unde nihil praesentium 
-                natus eaque eum. Dolorem, architecto.
+
+           <div class="tw-text-left hc-title-3xl"> 
+                Tujuan Kami
             </div>
-            <div class="hc-text-base">
-                Consequatur molestias, dicta itaque error, repudiandae 
-                praesentium facilis iusto, velit ut minima exercitationem
-                quam voluptatibus sint modi eaque obcaecati. 
-                Necessitatibus natus illo molestias assumenda 
-                iure ipsum harum fuga, expedita tenetur praesentium
-                ratione repudiandae, nostrum quos, voluptatum 
-                deserunt maiores at. Explicabo non odit quisquam? 
-                Ullam labore dolorem tenetur veritatis, obcaecati 
-                fugiat iste mollitia optio blanditiis! Ducimus iusto, 
-                unde sapiente, aut voluptatibus ipsa quas laborum 
-                eaque eligendi, nisi voluptate deserunt odio 
-                perferendis a recusandae tenetur tempore magni 
-                sunt sint perspiciatis quam quo quisquam 
-                voluptatem veniam? Necessitatibus itaque sunt 
-                voluptates dolore possimus eum corporis qui 
-                voluptatum nisi ut vero tempore temporibus 
-                minus magni eligendi, soluta quasi. Pariatur 
-                dicta dolore aspernatur fuga inventore 
-                obcaecati recusandae suscipit ea minus 
-                odit. Eveniet esse unde aut quae error 
-                eum rem minima alias neque, dolorem aliquam a 
-                harum beatae voluptate asperiores pariatur nam 
-                at laudantium amet, architecto qui veniam 
-                aliquid mollitia? Rem fuga cum, assumenda impedit 
-                nam excepturi voluptatibus sequi facilis voluptas 
-                illo numquam dolorum blanditiis aliquid minus! 
-                Nisi optio numquam perferendis tempora! Esse et, 
-                porro iste tempore ut at. Repellat consequatur 
-                recusandae dolores quis aliquid nihil nemo veritatis 
-                iusto? Cum, veniam reprehenderit. Totam, quidem rerum 
-                iusto eveniet expedita iste animi magnam saepe? 
-                Temporibus suscipit asperiores ipsa voluptatum quo! 
-                Quod dolor ut est animi rerum quis nisi sed, amet 
-                omnis quae vitae ea repellat similique dolore officia 
-                laborum ab culpa harum nulla numquam ipsum? Deserunt 
-                fugit voluptas vel aspernatur labore ab aliquam 
-                officia tempora aperiam, in unde nihil praesentium 
-                natus eaque eum. Dolorem, architecto.
+
+            <p class="tw-mb-0 hc-text-lg">
+                Tujuan utama dari SIMS adalah mempermudah pengelolaan, penyimpanan dan pelacakan 
+                data terkait siswa. 
+            </p>
+
+           <div class="tw-grid tw-grid-cols-3 hover:tw-text-white">
+
+                <div class="hc-card-general">
+                    <i class="fa-regular fa-computer-speaker tw-text-4xl tw-text-sims-new-500"></i>
+                    <h4 class="hc-title-lg tw-mt-3">Transformasi Digital</h4>
+                    <p class="tw-text-justify hc-text-base tw-mt-2">dari penginputan manual di buku induk menjadi penyimpanan data digital. 
+                    Singkatnya, SIMS adalah Buku Induk Siswa versi digital.</p>
+                </div>
+
+                <div class="hc-card-general">
+                    <i class="fa-light fa-screen-users tw-text-4xl tw-text-sims-new-500"></i>
+                    <h4 class="hc-title-lg tw-mt-3">Peningkatan kinerja operator sekolah</h4>
+                    <p class="tw-text-justify hc-text-base tw-mt-2">SIMS mampu meningkatkan kinerja operator sekolah, efektifitas, dan efisiensi waktu 
+                    khususnya dalam penginputan data induk.</p>
+                </div>
+                <div class="hc-card-general">
+                    <i class="fa-regular fa-people-arrows tw-text-4xl tw-text-sims-new-500"></i>
+                    <h4 class="hc-title-lg tw-mt-3">Peningkatan keefektifan komunikasi</h4>
+                    <p class="tw-text-justify hc-text-base tw-mt-2">SIMS memungkinkan data ditransfer dengan lancar dari satu bagian ke bagian lainnya. </p>
+                </div>
+
+            </div>
+
+            <div class="tw-grid tw-grid-cols-2 tw-mt-24">
+
+                <div class="tw-flex tw-pr-14">
+                    <img src="{{ URL::asset('assets/img/hc-content-general.svg') }}" class="tw-w-full" alt="hc-header-img">
+                </div>
+
+                <div class="tw-grid-rows-3">
+                    <div class="hc-title-3xl tw-mb-12"><span class="tw-text-bluewood-700">Manfaat</span> SIMS</div>
+                    <div class="tw-flex">
+                        <i class="fa-regular fa-circle-check tw-text-emerald-500 tw-text-3xl"></i>
+                        <div class="tw-grid-rows-2 tw-ml-6">
+                            <h3 class="hc-title-lg">Penyimpanan Data Terpusat</h3>
+                            <p class="tw-text-justify hc-text-base">
+                                SIMS memungkinkan operator sekolah untuk menyimpan 
+                                data-data siswa di satu tempat, sehingga dapat 
+                                mempermudah pemegang hak akses dalam melacak perubahan 
+                                pada data dan mengatur semua informasi. Mereka dapat 
+                                melakukannya tanpa harus memilah dokumen-dokumen secara manual.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="tw-flex">
+                        <i class="fa-regular fa-circle-check tw-text-emerald-500 tw-text-3xl"></i>
+                        <div class="tw-grid-rows-2 tw-ml-6">
+                            <h3 class="hc-title-lg">Peningkatan Produktivitas</h3>
+                            <p class="tw-text-justify hc-text-base">
+                                tanpa SIMS operator sekolah harus mengisi ratusan data secara 
+                                manual dan harus memperbaharuinya dengan cara manual juga. 
+                                Tetapi dengan SIMS, penginputan data akan menjadi lebih cepat 
+                                sehingga dapat menghemat waktu pengerjaan
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="tw-flex">
+                        <i class="fa-regular fa-circle-check tw-text-emerald-500 tw-text-3xl"></i>
+                        <div class="tw-grid-rows-2 tw-ml-6">
+                            <h3 class="hc-title-lg">Pemanfaatan Sumber Daya yang Lebih Baik</h3>
+                            <p class="tw-text-justify hc-text-base">
+                                SIMS adalah sebuah transformasi digital yang artinya semua kegiatan 
+                                dilakukan secara online. Bila dimanfaatkan dengan baik tentunya dapat 
+                                menghemat banyak kertas dan sumber daya berguna lainnya.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
