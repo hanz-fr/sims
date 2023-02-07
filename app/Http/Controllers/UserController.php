@@ -220,6 +220,7 @@ class UserController extends Controller
 
     }
 
+    
 
     // change password 
     public function changePassword(Request $request)  {

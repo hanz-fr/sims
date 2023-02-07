@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
         
         User::create([
             'nip'      => '123123123',
-            'nama'     => 'Supra Admin',
+            'nama'     => 'Super Admin',
             'email'    => 'contactsims11@gmail.com',
             'role'     => 0,
             'is_admin' => true,
