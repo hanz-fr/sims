@@ -88,10 +88,10 @@
           </a>
           @endcan
 
-          <a href="/data-induk-siswa" class="tw-group">
+          <a href="/select-jurusan-alumni" class="tw-group">
             <div class="tw-flex tw-flex-col tw-justify-center tw-text-center tw-border-2 tw-py-4 tw-bg-white tw-rounded-lg group-hover:tw-text-white group-hover:tw-bg-sims-new-500 tw-transition-all tw-duration-300">
-              <div class="tw-text-2xl tw-text-sims-new-500 group-hover:tw-text-white"><i class="fa-regular fa-book-open-cover"></i></div>
-              <div class="tw-text-base tw-text-gray-500 tw-font-normal tw-mt-3 group-hover:tw-text-white">Data Induk Siswa</div>
+              <div class="tw-text-2xl tw-text-sims-new-500 group-hover:tw-text-white"><i class="fa-solid fa-user-graduate"></i></div>
+              <div class="tw-text-base tw-text-gray-500 tw-font-normal tw-mt-3 group-hover:tw-text-white">Data Alumni</div>
             </div>
           </a>
           @cannot('wali-kelas')

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
 
 class KelasController extends Controller
@@ -117,6 +118,16 @@ class KelasController extends Controller
 
         if($response->status === 'success') {
 
+            $user = Auth::user();
+
+            Http::post("{$this->api_url}/history", [
+
+                'activityName' => 'Create Kelas',
+                'activityAuthor' => "$user->nama",
+                'activityDesc' => "$user->nama membuat kelas dengan Id Kelas : $id"
+
+            ]);
+
             return redirect('/admin/kelas')->with('success', 'Data berhasil ditambahkan.');
 
         } else if ($response->message === "kelas with Id : '{$id}' already exist") {
@@ -145,6 +156,16 @@ class KelasController extends Controller
         ]);
 
         if (json_decode($response)->status === 'success') {
+
+            $user = Auth::user();
+
+            Http::post("{$this->api_url}/history", [
+
+                'activityName' => 'Update Kelas',
+                'activityAuthor' => "$user->nama",
+                'activityDesc' => "$user->nama memperbarui kelas dengan Id Kelas : $id"
+
+            ]);
 
             return redirect('/admin/kelas')->with('success', 'Data berhasil diperbarui!');
 

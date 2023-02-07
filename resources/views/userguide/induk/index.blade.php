@@ -85,20 +85,6 @@
                     </div>
                 </div>
 
-                <div class="tw-grid md:tw-grid-cols-2 sm:tw-grid-rows-1">
-                    <div class="hc-img">
-                        <img src="{{ URL::asset('assets/img/hc-rekapnilai-akses-3.svg') }}" alt="Halaman Rekap Nilai">
-                    </div>
-                    <div class="tw-flex tw-flex-col md:tw-text-left tw-text-center tw-gap-y-5 tw-justify-center">
-                        <h4 class="tw-text-bluewood-800 hc-title-xl">Melalui Quick Access di Rekap Siswa</h4>
-                        <p class="hc-text-lg">
-                            Jika anda sedang berada di halaman rekap siswa, anda juga dapat mengakses 
-                            halaman rekap nilai dengan menekan tombol dengan ikon buku di kolom 'Quick Access'.
-                            Setelah itu anda akan diarahkan ke halaman data induk siswa seluruh kelas.
-                        </p>
-                    </div>
-                </div>
-
             </div>
 
         </div>
