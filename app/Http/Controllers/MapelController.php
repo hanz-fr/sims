@@ -138,6 +138,16 @@ class MapelController extends Controller
 
         if($response->message == 'Data added successfully.') {
 
+            $user = Auth::user();
+
+            Http::post("{$this->api_url}/history", [
+
+                'activityName' => 'Create Mapel',
+                'activityAuthor' => "$user->nama",
+                'activityDesc' => "$user->nama membuat mapel dengan Id Mapel : $id"
+
+            ]);
+
             return ($url = Session::get('backUrl')) 
             ? Redirect::to($url)->with('success', 'Data berhasil ditambahkan.') 
             : Redirect::route('view-all-mapel')->with('success', 'Data berhasil ditambahkan.') ;
@@ -172,6 +182,16 @@ class MapelController extends Controller
             // if admin redirect to edit page from detail page.
             if($request->fromDetailPage){
 
+                $user = Auth::user();
+
+                Http::post("{$this->api_url}/history", [
+    
+                    'activityName' => 'Update Mapel',
+                    'activityAuthor' => "$user->nama",
+                    'activityDesc' => "$user->nama memperbarui Mapel dengan Id Mapel : $id"
+    
+                ]);
+
                 return redirect("/admin/detail-mata-pelajaran/{$id}")->with('success', 'Data berhasil diupdate.');
             
             } else {
@@ -197,6 +217,16 @@ class MapelController extends Controller
         $response = Http::delete("{$this->api_url}/mapel/{$id}");
 
         if (json_decode($response)->message == "Mapel with id {$id} does not exist") {
+
+            $user = Auth::user();
+
+            Http::post("{$this->api_url}/history", [
+
+                'activityName' => 'Delete Mapel',
+                'activityAuthor' => "$user->nama",
+                'activityDesc' => "$user->nama menghapus Mapel dengan Id Mapel : $id"
+
+            ]);
 
             return redirect('/admin/mata-pelajaran?page=1&perPage10')->with('warning', 'Data tidak terdaftar.');
             
