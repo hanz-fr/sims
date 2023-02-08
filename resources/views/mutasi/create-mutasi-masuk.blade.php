@@ -14,7 +14,7 @@
                         <div class="tw-flex tw-justify-center">
                             <button onclick="hidemodal();" id="okbtn" type="button" class="tw-text-gray-500 tw-bg-white hover:tw-bg-gray-100 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-gray-200 tw-rounded-lg tw-border tw-border-gray-200 tw-text-sm tw-font-medium tw-py-2.5 hover:tw-text-gray-900 focus:tw-z-10 dark:tw-bg-gray-700 dark:tw-text-gray-300 dark:tw-border-gray-500 dark:hover:tw-text-white dark:hover:tw-bg-gray-600 dark:focus:tw-ring-gray-600 tw-px-4">OK</button>
                         </div>
-                    </div>
+                    </div>  
                 </div>
             </div>
         </div>

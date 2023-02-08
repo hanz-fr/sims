@@ -151,7 +151,7 @@ class MutasiKeluarController extends Controller
             ]);
 
 
-            if ($response->successful() || $response2->successfull()) {
+            if ($response->successful() || $response2->successful()) {
 
                 $user = Auth::user();
 
@@ -282,7 +282,7 @@ class MutasiKeluarController extends Controller
         // validasi apakah id valid atau tidak
         $mutasiExist = Http::get("{$this->api_url}/mutasi/{$id}");
 
-        $sk_mutasi = json_decode($mutasiExist)->sk_mutasi;
+        $sk_mutasi = json_decode($mutasiExist)->result->sk_mutasi;
 
         if (json_decode($mutasiExist)->message) {
 

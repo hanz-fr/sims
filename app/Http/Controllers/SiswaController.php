@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Http;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\DetailDataIndukExport;
+use Illuminate\Support\Facades\DB;
 use PhpOffice\PhpSpreadsheet\Reader\Exception;
 use Illuminate\Support\Facades\Auth;
 use PhpOffice\PhpSpreadsheet\IOFactory;
@@ -140,7 +141,8 @@ class SiswaController extends Controller
         $angkatan = $request->angkatan;
 
         $response = Http::get("{$this->api_url}/siswa/{$request->jurusan}/{$request->kelas}?page={$page}&perPage={$perPage}&search={$search}&nis_siswa={$nis_siswa}&nisn_siswa={$nisn_siswa}&nama_siswa={$nama_siswa}&jenis_kelamin={$jenis_kelamin}&KelasId={$KelasId}&sort_by={$sort_by}&sort={$sort}&dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}&thn_ajaran={$thn_ajaran}&angkatan={$angkatan}");
-        $total = json_decode(Http::get("{$this->api_url}/siswa/{$request->jurusan}/{$request->kelas}?page={$page}&perPage={$perPage}"))->data->count; 
+        $total = json_decode(Http::get("{$this->api_url}/siswa/{$request->jurusan}/{$request->kelas}?page={$page}&perPage={$perPage}&angkatan={$angkatan}"))->data->count; 
+
 
         if ($response->successful()) {
             
@@ -580,11 +582,16 @@ class SiswaController extends Controller
 
         $user = Auth::user();
 
-        Http::post("{$this->api_url}/history", [
-            'activityName' => 'Update Data Siswa',
-            'activityAuthor' => "$user->nama",
-            'activityDesc' => "$user->nama mengupdate data siswa dengan NIS : $request->nis"
-        ]);
+        // Http::post("{$this->api_url}/history", [
+        //     'activityName' => 'Update Data Siswa',
+        //     'activityAuthor' => "$user->nama",
+        //     'activityDesc' => "$user->nama mengupdate data siswa dengan NIS : $request->nis"
+        // ]);
+
+        // DB::select(
+        //     'call PostHistory', 
+
+        // )
 
         return redirect("{$request->prevURLwithParams}")->with('success', 'Data berhasil diubah.');
 
@@ -700,6 +707,8 @@ class SiswaController extends Controller
                 'activityAuthor' => "$user->nama",
                 'activityDesc' => "$user->nama mengimport data siswa dengan tipe file excel."
             ]);
+
+
             
         } catch (Exception $e) {
             $error_code = $e->errorInfo[1];
