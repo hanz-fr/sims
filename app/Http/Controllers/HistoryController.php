@@ -29,12 +29,17 @@ class HistoryController extends Controller
 
         $current_year = Carbon::now()->year;
 
-        $history = Http::get("{$this->api_url}/history?year={$current_year}");
+        $all_history = Http::get("{$this->api_url}/history?year={$current_year}");
+
+        $today_history = Http::get("{$this->api_url}/history/today");
+        $older_history = Http::get("{$this->api_url}/history/older");
 
         return view('history.index', [
             'title' => 'History',
             'active' => 'history',
-            'history' => json_decode($history)->rows,
+            'history' => json_decode($all_history)->rows,
+            'today_history' => json_decode($today_history)->result,
+            'older_history' => json_decode($older_history)->result,
         ]);
 
     }

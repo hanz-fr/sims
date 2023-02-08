@@ -275,10 +275,10 @@
     const chart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Masuk', 'Keluar', 'Tidak Naik', 'Alumni'],
+            labels: ['Masuk', 'Keluar', 'Tidak Naik'],
             datasets: [{
                 label: 'Jumlah ',
-                data: [{{ $siswaMasuk }}, {{ $siswaKeluar }}, {{ $siswaTdkNaik }}, {{ $alumni }}],
+                data: [{{ $siswaMasuk }}, {{ $siswaKeluar }}, {{ $siswaTdkNaik }}],
                 backgroundColor: [
                     'rgba(54, 162, 235, 0.2)',
                     'rgba(255, 99, 132, 0.2)',

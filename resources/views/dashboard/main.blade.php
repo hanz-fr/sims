@@ -198,8 +198,21 @@
                                     </div>
                                 </div>
                             </a>
+                            
+                            <!-- Card 2 (Siswa Masuk) -->
+                            <a @if(! Gate::allows('manage-alumni')) @else href="/siswa-masuk" @endif class="swiper-slide">
+                                <div class="sims-card-1 tw-cursor-pointer hover:tw-drop-shadow-md tw-transition-all">
+                                    <div class="tw-flex tw-justify-evenly tw-px-5 tw-gap-5">
+                                        <i class="fa-solid fa-user sims-icon-3xl tw-text-[#6fc5bb]"></i>
+                                        <div class="tw-flex tw-flex-col">
+                                            <div class="sims-heading-xl tw-font-black">{{ $siswaMasuk }}</div>
+                                            <div class="sims-text-gray-sm">Siswa Masuk</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
 
-                            <!-- Card 2 (Rekap Jumlah Siswa) -->
+                            <!-- Card 3 (Rekap Jumlah Siswa) -->
                             <a @if(! Gate::allows('wali-kelas')) href="/rekap-jumlah-siswa" @endif class="swiper-slide">
                                 <div class="sims-card-1 tw-cursor-pointer hover:tw-drop-shadow-md tw-transition-all">
                                     <div class="tw-flex tw-justify-evenly tw-px-5 tw-gap-5">
@@ -212,18 +225,6 @@
                                 </div>
                             </a>
 
-                            <!-- Card 3 (Siswa Masuk) -->
-                            <a @if(! Gate::allows('manage-alumni')) @else href="/siswa-masuk" @endif class="swiper-slide">
-                                <div class="sims-card-1 tw-cursor-pointer hover:tw-drop-shadow-md tw-transition-all">
-                                    <div class="tw-flex tw-justify-evenly tw-px-5 tw-gap-5">
-                                        <i class="fa-solid fa-user sims-icon-3xl tw-text-[#6fc5bb]"></i>
-                                        <div class="tw-flex tw-flex-col">
-                                            <div class="sims-heading-xl tw-font-black">{{ $siswaMasuk }}</div>
-                                            <div class="sims-text-gray-sm">Siswa Masuk</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
 
                             <!-- Card 4 (Alumni) -->
                             <a @if(! Gate::allows('manage-alumni')) @else href="/select-jurusan-alumni" @endif class="swiper-slide">
@@ -292,7 +293,7 @@
                         <select
                             class="div-toggle sims-heading-1 sims-heading-lg-black tw-lock tw-px-4 tw-w-full tw-bg-transparent tw-border-0 tw-border-gray-200 tw-appearance-none dark:tw-text-gray-400 dark:tw-border-gray-700 focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-200 tw-peer"
                             data-target=".my-info-1">
-                            <option value="chart2" data-show=".chart2">Jumlah Siswa Mutasi & Alumni</option>
+                            <option value="chart2" data-show=".chart2">Jumlah Siswa Mutasi & Tidak Naik</option>
                             <option value="chart1" data-show=".chart1">Grafik Jumlah Siswa</option>
                         </select>
 
@@ -420,12 +421,10 @@
             const chart = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: ['Masuk', 'Keluar', 'Tidak Naik', 'Alumni'],
+                    labels: ['Masuk', 'Keluar', 'Tidak Naik'],
                     datasets: [{
                         label: 'Jumlah ',
-                        data: [{{ $siswaMasuk }}, {{ $siswaKeluar }}, {{ $siswaTdkNaik }},
-                            {{ $alumni }}
-                        ],
+                        data: [{{ $siswaMasuk }}, {{ $siswaKeluar }}, {{ $siswaTdkNaik }},],
                         backgroundColor: [
                             'rgba(54, 162, 235, 0.2)',
                             'rgba(255, 99, 132, 0.2)',

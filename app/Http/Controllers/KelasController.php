@@ -63,6 +63,7 @@ class KelasController extends Controller
             'title' => 'Detail Data Kelas',
             'active' => '',
             'kelas' => json_decode($response)->result,
+            'total_siswa' => json_decode($response)->siswa,
         ]);
 
     }

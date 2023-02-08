@@ -19,6 +19,7 @@
         <div class="sims-text-black-xl tw-font-bold tw-items-end tw-text-end tw-flex tw-py-5 tw-px-10">
             <h5 class="tw-flex-col tw-flex tw-text-left"><span class="tw-text-sm tw-font-normal">Id Jurusan</span> {{ $kelas->JurusanId }}</h5>
             <h5 class="tw-flex tw-flex-col tw-text-left tw-ml-20"><span class="tw-text-sm tw-font-normal">Kelas</span> {{ $kelas->kelas }}</h5>
+            <h5 class="tw-flex tw-flex-col tw-text-left tw-ml-20"><span class="tw-text-sm tw-font-normal">Jumlah Siswa</span> {{ $total_siswa }}</h5>
         </div>
     </div>
 

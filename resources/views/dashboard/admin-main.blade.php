@@ -178,7 +178,7 @@
                         class="div-toggle sims-heading-1 sims-heading-lg-black tw-lock tw-px-4 tw-w-full tw-bg-transparent tw-border-0 tw-border-gray-200 tw-appearance-none dark:tw-text-gray-400 dark:tw-border-gray-700 focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-200 tw-peer"
                         data-target=".my-info-1">
                         <option value="chart4" data-show=".chart4">Aktivitas</option>
-                        <option value="chart2" data-show=".chart2">Jumlah Siswa Mutasi & Alumni</option>
+                        <option value="chart2" data-show=".chart2">Jumlah Siswa Mutasi & Tidak Naik</option>
                         <option value="chart1" data-show=".chart1">Grafik Jumlah Siswa</option>
                     </select>
 

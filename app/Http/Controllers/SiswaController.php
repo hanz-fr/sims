@@ -143,7 +143,6 @@ class SiswaController extends Controller
         $response = Http::get("{$this->api_url}/siswa/{$request->jurusan}/{$request->kelas}?page={$page}&perPage={$perPage}&search={$search}&nis_siswa={$nis_siswa}&nisn_siswa={$nisn_siswa}&nama_siswa={$nama_siswa}&jenis_kelamin={$jenis_kelamin}&KelasId={$KelasId}&sort_by={$sort_by}&sort={$sort}&dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}&thn_ajaran={$thn_ajaran}&angkatan={$angkatan}");
         $total = json_decode(Http::get("{$this->api_url}/siswa/{$request->jurusan}/{$request->kelas}?page={$page}&perPage={$perPage}&angkatan={$angkatan}"))->data->count; 
 
-
         if ($response->successful()) {
             
             if(json_decode($response)->data->rows == []) {
@@ -582,11 +581,11 @@ class SiswaController extends Controller
 
         $user = Auth::user();
 
-        // Http::post("{$this->api_url}/history", [
-        //     'activityName' => 'Update Data Siswa',
-        //     'activityAuthor' => "$user->nama",
-        //     'activityDesc' => "$user->nama mengupdate data siswa dengan NIS : $request->nis"
-        // ]);
+        Http::post("{$this->api_url}/history", [
+            'activityName' => 'Update Data Siswa',
+            'activityAuthor' => "$user->nama",
+            'activityDesc' => "$user->nama mengupdate data siswa dengan NIS : $request->nis"
+        ]);
 
         // DB::select(
         //     'call PostHistory', 
