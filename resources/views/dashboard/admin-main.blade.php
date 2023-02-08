@@ -194,7 +194,7 @@
                         </div>
                     </div>
 
-                    <div class="sims-heading-sm tw-flex tw-justify-center tw-mt-5">Tahun {{ $current_year }}</div>
+                    <div data-show=".chart4" class="sims-heading-sm tw-flex tw-justify-center tw-mt-5">Tahun {{ $current_year }}</div>
                 </div>
             </div>
 
@@ -560,12 +560,10 @@
         const chart1 = new Chart(ctx1, {
             type: 'bar',
             data: {
-                labels: ['Masuk', 'Keluar', 'Tidak Naik', 'Alumni'],
+                labels: ['Masuk', 'Keluar', 'Tidak Naik'],
                 datasets: [{
                     label: 'Jumlah ',
-                    data: [{{ $siswaMasuk }}, {{ $siswaKeluar }}, {{ $siswaTdkNaik }},
-                        {{ $alumni }}
-                    ],
+                    data: [{{ $siswaMasuk }}, {{ $siswaKeluar }}, {{ $siswaTdkNaik }},],
                     backgroundColor: [
                         'rgba(54, 162, 235, 0.2)',
                         'rgba(255, 99, 132, 0.2)',
