@@ -143,6 +143,16 @@ class MapelJurusanController extends Controller
 
         if ($response->status == 'success') {
 
+            $user = Auth::user();
+
+            Http::post("{$this->api_url}/history", [
+
+                'activityName' => 'Create Mapel Jurusan',
+                'activityAuthor' => "$user->nama",
+                'activityDesc' => "$user->nama membuat Mapel Jurusan dengan Id Mapel Jurusan : $id"
+
+            ]);
+
             return redirect('/admin/mapel-jurusan')->with('success', 'Data berhasil ditambahkan.');
             
         } else if ($response->message == "MapelJurusan with id {$mapelJurusanId} already exist") {
@@ -172,6 +182,16 @@ class MapelJurusanController extends Controller
 
         if ($response->status == 'success') {
 
+            $user = Auth::user();
+
+            Http::post("{$this->api_url}/history", [
+
+                'activityName' => 'Update Mapel Jurusan',
+                'activityAuthor' => "$user->nama",
+                'activityDesc' => "$user->nama memperbarui Mapel Jurusan dengan Id Mapel Jurusan : $id"
+
+            ]);
+
             return redirect('/admin/mapel-jurusan')->with('success', 'Data berhasil diupdate.');
 
         } else  {
@@ -195,6 +215,16 @@ class MapelJurusanController extends Controller
             return redirect('/admin/mapel-jurusan?page=1&perPage10')->with('warning', 'Data tidak terdaftar.');
             
         } else {
+
+            $user = Auth::user();
+
+            Http::post("{$this->api_url}/history", [
+
+                'activityName' => 'Delete Mapel Jurusan',
+                'activityAuthor' => "$user->nama",
+                'activityDesc' => "$user->nama menghapus Mapel Jurusan dengan Id Mapel Jurusan : $id"
+
+            ]);
 
             return redirect('/admin/mapel-jurusan?page=1&perPage10')->with('success', 'Data berhasil dihapus.');
 

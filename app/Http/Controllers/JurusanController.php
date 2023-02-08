@@ -116,6 +116,16 @@ class JurusanController extends Controller
 
         if($response->message == 'Data added successfully.') {
 
+            $user = Auth::user();
+
+            Http::post("{$this->api_url}/history", [
+
+                'activityName' => 'Create Jurusan',
+                'activityAuthor' => "$user->nama",
+                'activityDesc' => "$user->nama membuat Jurusan dengan Id Jurusan : $id"
+
+            ]);
+
             return redirect('/admin/jurusan?page=1&perPage10')->with('success', 'Data berhasil ditambahkan.');
 
         } else if ($response->message === "Jurusan with Id : '{$id}' already exist") {
@@ -144,6 +154,16 @@ class JurusanController extends Controller
 
         if (json_decode($response)->status == 'success') {
 
+            $user = Auth::user();
+
+            Http::post("{$this->api_url}/history", [
+
+                'activityName' => 'Update Jurusan',
+                'activityAuthor' => "$user->nama",
+                'activityDesc' => "$user->nama memperbarui Jurusan dengan Id Jurusan : $id"
+
+            ]);
+
             return redirect('/admin/jurusan?page=1&perPage10')->with('success', 'Data berhasil diupdate.');
 
         } else {
@@ -165,6 +185,16 @@ class JurusanController extends Controller
             return redirect('/admin/jurusan?page=1&perPage10')->with('warning', 'Data tidak terdaftar.');
             
         } else {
+
+            $user = Auth::user();
+
+            Http::post("{$this->api_url}/history", [
+
+                'activityName' => 'Delete Jurusan',
+                'activityAuthor' => "$user->nama",
+                'activityDesc' => "$user->nama menghapus Jurusan dengan Id Jurusan : $id"
+
+            ]);
 
             return redirect('/admin/jurusan?page=1&perPage10')->with('success', 'Data berhasil dihapus.');
 

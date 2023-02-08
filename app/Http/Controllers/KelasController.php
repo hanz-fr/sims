@@ -192,6 +192,16 @@ class KelasController extends Controller
             
         } else {
 
+            $user = Auth::user();
+
+            Http::post("{$this->api_url}/history", [
+
+                'activityName' => 'Delete Kelas',
+                'activityAuthor' => "$user->nama",
+                'activityDesc' => "$user->nama menghapus kelas dengan Id Kelas : $id"
+
+            ]);
+
             return redirect('/admin/kelas')->with('success', 'Data berhasil dihapus.');
 
         }
