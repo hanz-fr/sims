@@ -335,7 +335,7 @@ class SiswaController extends Controller
 
         abort_if(Gate::denies('manage-induk'), 403);
      
-        $kelas = Http::get("{$this->api_url}/kelas");
+        $kelas = Http::get("{$this->api_url}/kelas?perPage=1000");
 
         $prevURL = parse_url(url()->previous(), PHP_URL_PATH);
         $prevURLwithParams = URL::previous();
@@ -479,7 +479,7 @@ class SiswaController extends Controller
 
         $response = Http::get("{$this->api_url}/siswa/{$nis}");
 
-        $kelas = Http::get("{$this->api_url}/kelas");
+        $kelas = Http::get("{$this->api_url}/kelas?perPage=1000");
 
         if ($response->successful()) {
             return view('induk.edit', [

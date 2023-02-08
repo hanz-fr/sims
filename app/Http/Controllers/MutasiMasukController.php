@@ -96,7 +96,7 @@ class MutasiMasukController extends Controller
 
         abort_if(Gate::denies('manage-mutasi'), 403);
 
-        $kelas = Http::get("{$this->api_url}/kelas");
+        $kelas = Http::get("{$this->api_url}/kelas?perPage=1000");
 
         $prevURL = URL::previous();
 
@@ -181,7 +181,7 @@ class MutasiMasukController extends Controller
 
         if ($response->successful()) {
 
-            $kelas = Http::get("{$this->api_url}/kelas");
+            $kelas = Http::get("{$this->api_url}/kelas?perPage=1000");
 
             return view('mutasi.edit-mutasi-masuk', [
                 'title' => 'Edit Mutasi Masuk',
