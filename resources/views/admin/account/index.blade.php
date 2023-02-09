@@ -72,7 +72,7 @@
                         <i title="User ini merupakan Admin" class="fa-solid fa-shield-check tw-text-sims-500 tw-text-xl tw-ml-2"></i>
                     @endif
                 </td>
-                <td class="tw-p-6">@if(!empty($createdAt)) {{ $created_at }} @endif</td>
+                <td class="tw-p-6">@if(!empty($created_at)) {{ $created_at }} @endif</td>
                 <td class="tw-flex tw-justify-center tw-gap-3 tw-py-2">
                     @can('admin-only')
                     <a title="Edit Data" href="/admin/account/{{ $u->id }}/edit"

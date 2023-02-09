@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('password');
             $table->tinyInteger('role');
             /* Users: Tata Usaha, Kesiswaan, Kurikulum, Wali Kelas */
-            $table->boolean('is_admin')->nullable();
+            $table->boolean('is_admin');
             $table->rememberToken();
             $table->timestamps();
         });

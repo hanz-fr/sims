@@ -88,6 +88,7 @@ class AccountController extends Controller
         ]);
     }
 
+
     /**
      * Store a newly created resource in storage.
      *
@@ -190,6 +191,7 @@ class AccountController extends Controller
             'nip'      => 'required|min:9|max:18',
             'nama'     => 'required',
             'email'    => 'required|email',
+            'is_admin' => 'required'
         ]);
 
         $user = User::find($id);

@@ -5,6 +5,7 @@
     <div class="tw-flex tw-flex-col tw-rounded-[35px] tw-bg-white lg:tw-w-1/2 sm:tw-w-full sm:tw-mx-5 tw-p-8 tw-h-full tw-mx-auto tw-my-10 tw-shadow-lg">
         <a href="{{ $prevPage }}" class="tw-text-sims-new-500 sm:tw-text-md md:tw-text-3xl tw-w-min hover:tw-text-sims-new-600"><i class="fa-solid fa-chevron-left"></i></a>
         <h3 class="tw-font-satoshi tw-font-semibold tw-mt-6 tw-mb-14 tw-text-sims-new-500 tw-text-center">Edit Akun</h3>
+        
         <form action="/admin/account/{{ $user->id }}" method="POST">
           @csrf
           @method('PUT')
@@ -50,25 +51,20 @@
                     <label class="label-input" for="keluar_di_kelas">
                         Role
                     </label>
-                    <select value="{{ $user->role }}" class="input-data-minimal" id="nip" name="role" type="text" required>
-                        <option value="1">Tata Usaha</option>
-                        <option value="2">Kesiswaan</option>
-                        <option value="3">Kurikulum</option>
-                        <option value="4">Wali Kelas</option>
+                    <select value="{{ $user->role }}" class="input-data-minimal" id="nip" name="role" type="text">
+                        <option value="1" @if($user->role === 1) selected @endif>Tata Usaha</option>
+                        <option value="2" @if($user->role === 2) selected @endif>Kesiswaan</option>
+                        <option value="3" @if($user->role === 3) selected @endif>Kurikulum</option>
+                        <option value="4" @if($user->role === 4) selected @endif>Wali Kelas</option>
                     </select>
                 </div>
                 <div class="tw-mx-auto md:tw-w-2/3 sm:tw-w-1/2">
                     <label class="label-input" for="status">
                         Status Admin
                     </label>
-                    <select value="{{ $user->is_admin }}" class="input-data-minimal" id="status" name="is_admin" type="text" required>
-                        @if ($user->is_admin === 1)
-                            <option value="1" selected>Ya</option>
-                            <option value="0">Tidak</option>
-                        @else
-                            <option value="1">Ya</option>
-                            <option value="0" selected>Tidak</option>
-                        @endif
+                    <select value="{{ $user->is_admin }}" class="input-data-minimal" id="status" name="is_admin" required>
+                        <option value="1" @if($user->is_admin === 1) selected @endif>Ya</option>
+                        <option value="0" @if($user->is_admin === 0) selected @endif>Tidak</option>
                     </select>
                 </div>
                 <div class="tw-mx-auto tw-text-center tw-mt-10">
