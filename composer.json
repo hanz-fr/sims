@@ -8,6 +8,7 @@
         "php": "^8.0.2",
         "barryvdh/laravel-dompdf": "^2.0",
         "guzzlehttp/guzzle": "^7.2",
+        "jamesmills/laravel-timezone": "^1.11",
         "jenssegers/date": "^4.0",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
@@ -64,7 +65,8 @@
         "preferred-install": "dist",
         "sort-packages": true,
         "allow-plugins": {
-            "pestphp/pest-plugin": true
+            "pestphp/pest-plugin": true,
+            "treeware/plant": true
         }
     },
     "minimum-stability": "dev",

@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
 
-
 class MapelJurusanController extends Controller
 {
     
@@ -148,7 +147,7 @@ class MapelJurusanController extends Controller
 
                 'activityName' => 'Create Mapel Jurusan',
                 'activityAuthor' => "$user->nama",
-                'activityDesc' => "$user->nama membuat Mapel Jurusan dengan Id Mapel Jurusan : $id"
+                'activityDesc' => "$user->nama membuat Mapel Jurusan dengan Id Mapel Jurusan : $mapelJurusanId"
 
             ]);
 

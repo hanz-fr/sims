@@ -1645,6 +1645,11 @@ video {
   margin-bottom: 6rem;
 }
 
+.tw-my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .tw-mt-8 {
   margin-top: 2rem;
 }
@@ -2492,6 +2497,18 @@ video {
   border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
 }
 
+.tw-divide-x-0 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-x-reverse: 0;
+  border-right-width: calc(0px * var(--tw-divide-x-reverse));
+  border-left-width: calc(0px * calc(1 - var(--tw-divide-x-reverse)));
+}
+
+.tw-divide-x-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-x-reverse: 0;
+  border-right-width: calc(2px * var(--tw-divide-x-reverse));
+  border-left-width: calc(2px * calc(1 - var(--tw-divide-x-reverse)));
+}
+
 .tw-divide-gray-100 > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-opacity: 1;
   border-color: rgb(243 244 246 / var(--tw-divide-opacity));
@@ -2599,6 +2616,18 @@ video {
 
 .tw-border-\[1\.5px\] {
   border-width: 1.5px;
+}
+
+.tw-border-\[2px\] {
+  border-width: 2px;
+}
+
+.tw-border-\[1px\] {
+  border-width: 1px;
+}
+
+.tw-border-\[0\.5px\] {
+  border-width: 0.5px;
 }
 
 .tw-border-y {
@@ -2717,6 +2746,11 @@ video {
 .tw-border-\[\#E3E3E3\] {
   --tw-border-opacity: 1;
   border-color: rgb(227 227 227 / var(--tw-border-opacity));
+}
+
+.tw-border-slate-300 {
+  --tw-border-opacity: 1;
+  border-color: rgb(203 213 225 / var(--tw-border-opacity));
 }
 
 .tw-border-l-sims-new-500 {
