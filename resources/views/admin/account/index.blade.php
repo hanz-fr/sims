@@ -11,7 +11,7 @@
         <form action="{{ route('account.index') }}" method="GET">
             <div class="relative tw-border-[1.5px] tw-border-gray-300 tw-rounded-xl focus:tw-ring-sims-new-500">
                 
-                <input type="text" name="s" id="search" class="tw-block tw-py-1 tw-px-5 tw-border-none tw-rounded-xl"> 
+                <input type="text" name="s" @if($_GET['s'])value="{{ $_GET['s'] }}"@endif id="search" class="tw-block tw-py-1 tw-px-5 tw-border-none tw-rounded-xl"> 
 
                 <i class="fa-thin fa-magnifying-glass tw-absolute tw-text-gray-400 right-0 tw-inset-y-1.5 tw-pr-5 tw-text-sm"></i>
             </div>
