@@ -34,13 +34,28 @@ class HistoryController extends Controller
         $today_history = Http::get("{$this->api_url}/history/today");
         $older_history = Http::get("{$this->api_url}/history/older");
 
-        return view('history.index', [
-            'title' => 'History',
-            'active' => 'history',
-            'history' => json_decode($all_history)->rows,
-            'today_history' => json_decode($today_history)->result,
-            'older_history' => json_decode($older_history)->result,
-        ]);
+
+        /* History Error Handler */
+        /* klo belum buat procedure nya, pake all history dulu */
+        if (json_decode($today_history)->status === 'error' || json_decode($older_history)->status === 'error') {
+        
+            return view('history.index', [
+                'title' => 'History',
+                'active' => 'history',
+                'history' => json_decode($all_history)->rows,
+            ]);
+
+        } else {
+
+            /* klo udh buat procedure nya, pake yg todayhistory & olderhistory */
+            return view('history.index', [
+                'title' => 'History',
+                'active' => 'history',
+                'history' => json_decode($all_history)->rows,
+                'today_history' => json_decode($today_history)->result,
+                'older_history' => json_decode($older_history)->result,
+            ]);
+        }
 
     }
 

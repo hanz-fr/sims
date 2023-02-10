@@ -141,12 +141,18 @@ class AccountController extends Controller
 
         $current_year = Carbon::now()->year;
 
+        $usercount = User::all()->count();
+
+        $admincount = User::where('is_admin', 1)->count();
+
         $userHistory = Http::get("{$this->api_url}/history/$user->nama/all?limit=5&year=$current_year");
 
         return view('admin.account.show', [
             'title'   => 'Detail Akun',
             'active'  => '',
             'user'    => $user,
+            'usercount' => $usercount,
+            'admincount' => $admincount,
             'history' => json_decode($userHistory)->rows
         ]);
 
