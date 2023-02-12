@@ -45,7 +45,7 @@
                     {{ $th->activityDesc }}
                   </p>
                   <p class="tw-font-satoshi tw-text-xs tw-text-gray-400">
-                    {{ \Carbon\Carbon::parse(strtotime($th->createdAt))->setTimezone('+14')->translatedFormat('l d F Y') }}, {{ \Carbon\Carbon::parse(strtotime($th->createdAt))->setTimezone('+14')->format('H:i') }}
+                    {{ \Carbon\Carbon::parse(strtotime($th->createdAt))->translatedFormat('l d F Y') }}, {{ \Carbon\Carbon::parse(strtotime($th->createdAt))->setTimezone('+7')->format('H:i') }}
                   </p>
                 </div>
             </div>
