@@ -14,7 +14,7 @@
                     {{-- <button id="copy_btn" type="button" value="copy" class="tw-bg-sims-new-500 tw-text-white hover:tw-text-white tw-font-satoshi hover:tw-bg-sims-new-700 tw-px-5 tw-py-2 tw-rounded-lg">Copy</button> --}}
 
                     @cannot('kesiswaan')
-                    <button type="button" data-modal-toggle="modal" class="tw-bg-sims-new-500 tw-text-white hover:tw-text-white  tw-font-sg hover:tw-bg-sims-new-700 tw-px-5 tw-py-2 tw-rounded-lg">Export</button>
+                    <button type="button" data-modal-toggle="modal" class="tw-bg-sims-new-500 tw-text-white hover:tw-text-white tw-font-sg hover:tw-bg-sims-new-700 tw-transition-all tw-px-5 tw-py-2 tw-rounded-lg">Export</button>
 
                     <div id="modal" tabindex="-1"
                      class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full">
@@ -57,7 +57,7 @@
                     @endcannot
                     
                     @can('manage-nilai')
-                    <a href="/tambah-nilai/{{ $siswa->nis_siswa }}" class="tw-bg-sims-new-500 tw-text-white hover:tw-text-white  tw-font-sg hover:tw-bg-sims-new-700 tw-px-5 tw-py-2 tw-rounded-lg">Tambah Rekap Nilai +</a>
+                    <a href="/tambah-nilai/{{ $siswa->nis_siswa }}" class="tw-bg-sims-new-500 tw-text-white hover:tw-text-white  tw-font-sg hover:tw-bg-sims-new-700 tw-transition-all tw-px-5 tw-py-2 tw-rounded-lg">Tambah Rekap Nilai +</a>
                     @endcan
                 </div>
             </div>

@@ -32,10 +32,13 @@ class AlumniController extends Controller
 
         abort_if(Gate::denies('manage-alumni'), 403);
 
+        $jurusan = Http::get("{$this->api_url}/jurusan?perPage=1000");
+
         return view('induk.select-jurusan-alumni', [
             'title' => 'Data Alumni',
             'active' => 'data-induk',
             'status' => 'error',
+            'jurusan' => json_decode($jurusan)->data->rows,
         ]);
     }
 

@@ -254,9 +254,9 @@
                 <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
                     <div class="tw-w-full tw-px-3">
                         <label class="label-input" for="angkatan">
-                            Angkatan
+                            Angkatan *
                         </label>
-                        <input class="input-data-minimal" id="angkatan" type="number" name="angkatan">
+                        <input class="input-data-minimal" id="angkatan" type="number" name="angkatan" required>
                     </div>
                 </div>
 

@@ -99,7 +99,7 @@
 
             <div class="tw-grid tw-grid-cols-2 tw-gap-10">
 
-                <div class="tw-py-6 tw-px-8 tw-rounded-lg hover:tw-shadow-lg tw-border tw-border-gray-200">
+                <div class="tw-py-6 tw-px-8 tw-rounded-lg hover:tw-shadow-lg tw-transition-all tw-border tw-border-gray-200">
                     <h4 class="tw-text-center tw-pb-2 tw-text-salmon-400 tw-font-satoshi tw-font-semibold">Kesiswaan</h4>
                     <ul class="tw-list-disc hc-text-lg">
                         <li>Melihat data alumni</li>
@@ -108,7 +108,7 @@
                     </ul>
                 </div>
 
-                <div class="tw-py-6 tw-px-8 tw-rounded-lg hover:tw-shadow-lg tw-border tw-border-gray-200">
+                <div class="tw-py-6 tw-px-8 tw-rounded-lg hover:tw-shadow-lg tw-transition-all tw-border tw-border-gray-200">
                     <h4 class="tw-text-center tw-pb-2 tw-text-sims-new-500 tw-font-satoshi tw-font-semibold">Tata Usaha</h4>
                     <ul class="tw-list-disc hc-text-lg">
                         <li>Melihat data alumni</li>
