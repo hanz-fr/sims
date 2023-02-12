@@ -3261,6 +3261,14 @@ video {
   padding-bottom: 1.75rem;
 }
 
+.tw-pb-3 {
+  padding-bottom: 0.75rem;
+}
+
+.tw-pb-5 {
+  padding-bottom: 1.25rem;
+}
+
 .tw-text-left {
   text-align: left;
 }
@@ -3383,6 +3391,10 @@ video {
 
 .tw-font-black {
   font-weight: 900;
+}
+
+.tw-font-thin {
+  font-weight: 100;
 }
 
 .tw-leading-5 {
@@ -4446,6 +4458,11 @@ input[type="checkbox"]:checked {
   background-color: rgb(107 114 128 / var(--tw-bg-opacity));
 }
 
+.hover\:tw-bg-red-600:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 38 38 / var(--tw-bg-opacity));
+}
+
 .hover\:tw-bg-\[\#d45656\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(212 86 86 / var(--tw-bg-opacity));
@@ -4459,16 +4476,6 @@ input[type="checkbox"]:checked {
 .hover\:tw-bg-amber-500:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(245 158 11 / var(--tw-bg-opacity));
-}
-
-.hover\:tw-bg-red-600:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(220 38 38 / var(--tw-bg-opacity));
-}
-
-.hover\:tw-bg-red-700:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(185 28 28 / var(--tw-bg-opacity));
 }
 
 .hover\:tw-text-sims-600:hover {

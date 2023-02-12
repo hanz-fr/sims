@@ -181,7 +181,7 @@
             </div>
             @endforeach
             <div class="tw-flex justify-center tw-mt-4">
-                <button type="submit" class="tw-bg-sims-new-500 tw-font-satoshi tw-font-medium tw-text-white tw-py-3 tw-px-6 tw-rounded-lg">Update Data</button>
+                <button type="submit" class="tw-bg-sims-new-500 hover:tw-bg-sims-new-600 tw-transition-all tw-font-satoshi tw-font-medium tw-text-white tw-py-3 tw-px-6 tw-rounded-lg">Update Data</button>
             </div>
         </form>
    </div>

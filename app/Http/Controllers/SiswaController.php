@@ -107,9 +107,14 @@ class SiswaController extends Controller
     }
 
     public function getJurusan() {
+
+        $jurusan = Http::get("{$this->api_url}/jurusan?perPage=1000");
+        $total_siswa = Http::get("{$this->api_url}/jurusan/count-siswa/");
+
         return view('induk.select-jurusan', [
             'title' => 'Pilih Jurusan',
-            'active' => 'data-induk'
+            'active' => 'data-induk',
+            'jurusan' => json_decode($jurusan)->data->rows,
         ]);
     }
 

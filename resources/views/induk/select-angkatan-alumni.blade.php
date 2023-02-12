@@ -9,7 +9,7 @@
             @for ($i = \Carbon\Carbon::now()->year - 5; $i < \Carbon\Carbon::now()->year; $i++)
                 @while($i != $n)
                 <a href="/data-alumni?jurusan={{ $_GET['jurusan'] }}&angkatan={{ $i++ }}&page=1&perPage=10&search=">
-                  <div class="tw-bg-white tw-shadow-md hover:tw-bg-sims-500 hover:tw-text-white tw-text-sims-500 tw-p-5 tw-rounded-xl tw-transition-all tw-delay-[100] hover:-tw-translate-y-1 hover:tw-shadow-lg tw-ease-in">
+                  <div class="tw-bg-white tw-shadow-md hover:tw-bg-sims-new-500 hover:tw-text-white tw-text-sims-new-500 tw-p-5 tw-rounded-xl tw-transition-all tw-delay-[100] hover:-tw-translate-y-1 hover:tw-shadow-lg tw-ease-in">
                       <div class="tw-flex tw-pl-10">
                           <i class="fa-regular fa-graduation-cap tw-text-2xl"></i>
                             <span class="tw-font-satoshi tw-font-regular tw-my-auto tw-ml-5 tw-text-lg tw-h-fit">
