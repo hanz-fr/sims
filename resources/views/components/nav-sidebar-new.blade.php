@@ -11,7 +11,7 @@
                 class="tw-z-20 tw-flex-col tw-items-center tw-flex-shrink-0 tw-hidden tw-w-24 tw-py-4 tw-bg-white tw-border-r-2 tw-border-indigo-100 sm:tw-flex">
                 <!-- Logo -->
                 <div class="tw-flex-shrink-0 tw-py-4">
-                    <a href="#">
+                    <a href="/">
                         <img class="tw-w-20 tw-h-auto" src="{{ URL::asset('assets/img/sims-new-logo.png') }}"
                             alt="K-UI" />
                     </a>

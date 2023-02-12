@@ -19,12 +19,12 @@
 
                 <!-- Searching -->
                 <form action="/admin/jurusan"> 
-                    <div class="relative tw-border-[1.5px] tw-border-gray-300 tw-rounded-xl focus:tw-ring-sims-new-500">
+                    <div class="relative tw-border-[1.5px] tw-border-gray-300 tw-rounded-xl">
                         
                         <input name="page" value="1" type="hidden">
                         <input name="perPage" value="10" type="hidden">
                         
-                        <input type="text" id="search" name="search" class="tw-block tw-py-1 tw-px-5 tw-border-none tw-rounded-xl" value="{{ request()->search }}">
+                        <input type="text" id="search" name="search" class="tw-block tw-py-1 tw-px-5 tw-border-none tw-rounded-xl focus:tw-ring-sims-new-500" value="{{ request()->search }}">
                         @if(isset($_GET['sort_by']))
                         <input name="sort_by" value="{{ $_GET['sort_by'] }}" type="hidden">
                         @endif
@@ -39,7 +39,7 @@
 
                 <!-- Limit -->
                 <div class="tw-my-auto tw-text-basic-700 tw-ml-8 tw-mr-2 tw-font-normal tw-font-satoshi">Tampilkan</div>
-                <select name="show-data-perpage" id="show-data-perpage" class="tw-px-5 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-200 tw-peer tw-font-bold  bg-transparent tw-border-0 tw-border-b-2 tw-border-gray-200 tw-appearance-none tw-block">
+                <select name="show-data-perpage" id="show-data-perpage" class="tw-pl-4 tw-px-7 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-200 tw-peer tw-font-bold  bg-transparent tw-border-0 tw-border-b-2 tw-border-gray-200 tw-appearance-none tw-block">
                     <option value="/admin/jurusan?page=@if(isset($_GET['page'])){{ $_GET['page'] }}@endif&perPage=10&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&sort_by=@if(isset($_GET['sort_by'])){{ $_GET['sort_by'] }}@endif&sort=@if(isset($_GET['sort'])){{ $_GET['sort'] }}@endif" @isset($_GET['perPage']) @if($_GET['perPage'] === '10') selected @endif @endisset class="tw-bg-white">10</option>
                     <option value="/admin/jurusan?page=@if(isset($_GET['page'])){{ $_GET['page'] }}@endif&perPage=25&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&sort_by=@if(isset($_GET['sort_by'])){{ $_GET['sort_by'] }}@endif&sort=@if(isset($_GET['sort'])){{ $_GET['sort'] }}@endif" @isset($_GET['perPage']) @if($_GET['perPage'] === '25') selected @endif @endisset class="tw-bg-white">25</option>
                     <option value="/admin/jurusan?page=@if(isset($_GET['page'])){{ $_GET['page'] }}@endif&perPage=50&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&sort_by=@if(isset($_GET['sort_by'])){{ $_GET['sort_by'] }}@endif&sort=@if(isset($_GET['sort'])){{ $_GET['sort'] }}@endif" @isset($_GET['perPage']) @if($_GET['perPage'] === '50') selected @endif @endisset class="tw-bg-white">50</option>
@@ -58,7 +58,7 @@
                 </select>
 
                 <!-- Sort -->
-                <select name="sort-data" id="sort-data" class="tw-px-10 tw-mx-5 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-200 tw-peer tw-font-bold  bg-transparent tw-border-0 tw-border-b-2 tw-border-gray-200 tw-appearance-none tw-block">
+                <select name="sort-data" id="sort-data" class="tw-pl-5 tw-px-10 tw-mx-5 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-200 tw-peer tw-font-bold  bg-transparent tw-border-0 tw-border-b-2 tw-border-gray-200 tw-appearance-none tw-block">
                     <option value="/admin/jurusan?page=@if(isset($_GET['page'])){{ $_GET['page'] }}@endif&perPage=@if(isset($_GET['perPage'])){{ $_GET['perPage'] }}@endif&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&sort_by=@if(isset($_GET['sort_by'])){{ $_GET['sort_by'] }}@endif&sort=ASC" @isset($_GET['sort']) @if($_GET['sort'] === 'ASC') selected @endif @endisset class="tw-bg-white">A-Z</option>
                     <option value="/admin/jurusan?page=@if(isset($_GET['page'])){{ $_GET['page'] }}@endif&perPage=@if(isset($_GET['perPage'])){{ $_GET['perPage'] }}@endif&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&sort_by=@if(isset($_GET['sort_by'])){{ $_GET['sort_by'] }}@endif&sort=DESC" @isset($_GET['sort']) @if($_GET['sort'] === 'DESC') selected @endif @endisset class="tw-bg-white">Z-A</option>
                 </select>
@@ -66,7 +66,7 @@
 
             <div class="tw-flex md:tw-justify-center tw-items-center tw-mr-7">
                 <form action="/admin/jurusan/create" method="GET">
-                    <button type="submit" data-modal-toggle="popup-modal" class="tw-bg-sims-new-500 tw-text-white hover:tw-text-white hover:tw-bg-sims-new-700 tw-font-satoshi tw-rounded-lg tw-px-8 tw-py-2 tw-mr-7">
+                    <button type="submit" data-modal-toggle="popup-modal" class="tw-bg-sims-new-500 tw-text-white hover:tw-text-white hover:tw-bg-sims-new-700 tw-font-satoshi tw-rounded-lg tw-px-8 tw-py-2 tw-mr-4">
                         Tambah Data +
                     </button>
                 </form>
@@ -94,10 +94,10 @@
                         <td class="tw-p-8 tw-w-1/4">{{ $j->desc }}</td>
                         <td>@if($j->createdAt != null){{  \Carbon\Carbon::parse(strtotime($j->createdAt))->translatedFormat('l d F Y'); }}@endif</td>
                         <td class="tw-flex tw-mt-8 tw-justify-center tw-gap-3">
-                          <a href="/admin/jurusan/edit/{{ $j->id }}" class="tw-text-kuning-500  hover:tw-text-white hover:tw-bg-kuning-500 hover:tw-shadow-md tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-w-12 tw-transition-all" title="Edit Data Siswa">
+                          <a href="/admin/jurusan/edit/{{ $j->id }}" class="tw-text-kuning-500  hover:tw-text-white hover:tw-bg-kuning-500 hover:tw-shadow-md tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-w-12 tw-transition-all" title="Edit Data">
                               <i class="fa-solid fa-pen-to-square"></i>
                           </a>
-                          <a href="/admin/detail-jurusan/{{ $j->id }}" class="tw-text-gray-400  hover:tw-text-white hover:tw-bg-gray-400 hover:tw-shadow-md tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-w-12 tw-transition-all" title="Detail Data">
+                          <a href="/admin/detail-jurusan/{{ $j->id }}" class="tw-text-gray-400  hover:tw-text-white hover:tw-bg-gray-400 hover:tw-shadow-md tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-w-12 tw-transition-all" title="Lihat Detail Data">
                               <i class="fa-regular fa-eye"></i>
                           </a>
                       </td>

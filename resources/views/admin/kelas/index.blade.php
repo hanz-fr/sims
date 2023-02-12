@@ -18,11 +18,11 @@
     <div class="tw-flex tw-justify-between tw-ml-8 tw-mt-8 lg:tw-flex-row sm:tw-flex-col sm:tw-gap-5">
         <div class="tw-flex tw-my-auto">
             <form action="/admin/kelas">
-                <div class="relative tw-border-[1.5px] tw-border-gray-300 tw-rounded-xl focus:tw-ring-sims-new-500">
+                <div class="relative tw-border-[1.5px] tw-border-gray-300 tw-rounded-xl">
                     
                     <input name="page" value="1" type="hidden">
                     <input name="perPage" value="10" type="hidden">
-                    <input type="text" name="search" id="search" class="tw-block tw-py-1 tw-px-5 tw-border-none tw-rounded-xl" value="{{ request()->search }}"> 
+                    <input type="text" name="search" id="search" class="tw-block tw-py-1 tw-px-5 tw-border-none tw-rounded-xl focus:tw-ring-sims-new-500" value="{{ request()->search }}"> 
                     
                     @if(isset($_GET['id'])) <input name="id" value="{{ $_GET['id'] }}" type="hidden"> @endif
                     @if(isset($_GET['kelas'])) <input name="kelas" value="{{ $_GET['kelas'] }}" type="hidden"> @endif
@@ -35,7 +35,7 @@
 
             {{-- limit --}}
             <div class="tw-my-auto tw-text-basic-700 tw-ml-8 tw-mr-2 tw-font-normal tw-font-satoshi">Tampilkan</div>
-            <select name="show-data-perpage" id="show-data-perpage" class="tw-px-5 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-200 tw-peer tw-font-bold  bg-transparent tw-border-0 tw-border-b-2 tw-border-gray-200 tw-appearance-none tw-block">
+            <select name="show-data-perpage" id="show-data-perpage" class="tw-pl-4 tw-px-7 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-200 tw-peer tw-font-bold  bg-transparent tw-border-0 tw-border-b-2 tw-border-gray-200 tw-appearance-none tw-block">
                 <option value="/admin/kelas?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=10&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&id=@isset($_GET['id']){{ $_GET['id'] }}@endisset&kelas=@isset($_GET['kelas']){{ $_GET['kelas'] }}@endisset&rombel=@isset($_GET['rombel']){{ $_GET['rombel'] }}@endisset&JurusanId=@isset($_GET['JurusanId']){{ $_GET['JurusanId'] }}@endisset&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '10') selected @endif @endisset class="tw-bg-white">10</option>
                 <option value="/admin/kelas?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=25&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&id=@isset($_GET['id']){{ $_GET['id'] }}@endisset&kelas=@isset($_GET['kelas']){{ $_GET['kelas'] }}@endisset&rombel=@isset($_GET['rombel']){{ $_GET['rombel'] }}@endisset&JurusanId=@isset($_GET['JurusanId']){{ $_GET['JurusanId'] }}@endisset&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '25') selected @endif @endisset class="tw-bg-white">25</option>
                 <option value="/admin/kelas?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=50&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&id=@isset($_GET['id']){{ $_GET['id'] }}@endisset&kelas=@isset($_GET['kelas']){{ $_GET['kelas'] }}@endisset&rombel=@isset($_GET['rombel']){{ $_GET['rombel'] }}@endisset&JurusanId=@isset($_GET['JurusanId']){{ $_GET['JurusanId'] }}@endisset&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '50') selected @endif @endisset class="tw-bg-white">50</option>
@@ -54,7 +54,7 @@
             </select>
 
             {{-- sort --}}
-            <select name="sort-data" id="sort-data" class="tw-px-10 tw-mx-5 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-200 tw-peer tw-font-bold  bg-transparent tw-border-0 tw-border-b-2 tw-border-gray-200 tw-appearance-none tw-block">
+            <select name="sort-data" id="sort-data" class="tw-pl-5 tw-px-10 tw-mx-5 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-200 tw-peer tw-font-bold  bg-transparent tw-border-0 tw-border-b-2 tw-border-gray-200 tw-appearance-none tw-block">
                 <option value="/admin/kelas?page=@if(isset($_GET['page'])){{ $_GET['page'] }}@endif&perPage=@if(isset($_GET['perPage'])){{ $_GET['perPage'] }}@endif&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&sort_by=@if(isset($_GET['sort_by'])){{ $_GET['sort_by'] }}@endif&sort=ASC" @isset($_GET['sort']) @if($_GET['sort'] === 'ASC') selected @endif @endisset class="tw-bg-white">A-Z</option>
                 <option value="/admin/kelas?page=@if(isset($_GET['page'])){{ $_GET['page'] }}@endif&perPage=@if(isset($_GET['perPage'])){{ $_GET['perPage'] }}@endif&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&sort_by=@if(isset($_GET['sort_by'])){{ $_GET['sort_by'] }}@endif&sort=DESC" @isset($_GET['sort']) @if($_GET['sort'] === 'DESC') selected @endif @endisset class="tw-bg-white">Z-A</option>
             </select>

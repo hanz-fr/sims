@@ -248,7 +248,7 @@
                         </div>
                     </div>
 
-                    <div class="sims-card-1-noshadow tw-w-full tw-py-3 xl:tw-px-7 tw-h-fit tw-border-l-4 hover:tw-shadow-md tw-transition-all tw-duration-200 tw-border-l-[#B4B8BC]">
+                    <div class="sims-card-1-noshadow tw-w-full tw-py-3 tw-px-7 tw-h-fit tw-border-l-4 hover:tw-shadow-md tw-transition-all tw-duration-200 tw-border-l-[#B4B8BC]">
                         <div class="tw-flex tw-gap-2">
                             <i class="fa-solid fa-user sims-icon-3xl tw-text-[#B4B8BC]"></i>
                             <div class="tw flex tw-flex-col">
@@ -266,7 +266,7 @@
                 <div class="tw-flex tw-flex-col tw-h-full">
 
                     <!-- heading -->
-                    <div class="tw-flex tw-justify-between tw-ml-7 tw-mr-5">
+                    <div class="tw-flex tw-justify-between tw-ml-7 tw-mr-7">
                         <div class="sims-heading-xl-black">User List</div>
                         <a href="/admin/account" class="tw-bg-[#F1F1EF] hover:tw-bg-[#ebebeb] hover:tw-text-gray-600 tw-px-3 tw-py-1 tw-rounded-lg sims-heading-sm-black tw-text-[#979797]">Show All</a>
                     </div>
@@ -350,12 +350,12 @@
 
             <!-- Overview - Column 1 -->
             <div class="tw-flex tw-flex-col">
-                <div class="sims-heading-lg-black">Manajamen Data</div>
+                <div class="tw-text-center sims-heading-xl-black tw-pt-10">Manajamen Data</div>
 
                 <!-- spacing -->
                 <div class="tw-my-2"></div>
 
-                <div class="tw-w-fit tw-h-fit">
+                <div class="tw-w-fit tw-h-fit tw-my-auto">
                     <div class="slide-container swiper tw-my-auto">
                         <div class="slide-content">
                             <div class="card-wrapper swiper-wrapper">

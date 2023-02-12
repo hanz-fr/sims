@@ -27,7 +27,7 @@
         <div x-show.transition.in="openTab === 1" x-transition:enter.duration.300ms class="tw-mx-auto tw-w-2/5 tw-flex tw-flex-col tw-pb-16 tw-pt-10">
             <h4 class="sims-heading-2xl tw-mb-8">Edit Profil</h4>
             <div class="tw-flex tw-items-center">
-                <i class="fa-solid fa-user tw-text-center tw-text-6xl tw-bg-sims-new-500 tw-rounded-full tw-drop-shadow-xl tw-pt-5 tw-overflow-hidden tw-text-white tw-w-20 tw-h-20 tw-mb-8"></i>
+                <i class="fa-solid fa-user tw-text-center tw-text-7xl tw-bg-sims-new-500 tw-rounded-full tw-drop-shadow-xl tw-pt-5 tw-overflow-hidden tw-text-white tw-w-20 tw-h-20 tw-mb-8"></i>
                 <div class="tw-grid-rows-2 tw-ml-4 -tw-mt-3">
                     <h3 class="sims-heading-lg-black">{{ auth()->user()->nama }}</h3>
                     <h4 class="sims-text-gray-md -tw-mt-1">Kelola informasi pribadi anda, verifikasi akun, dan lainnya</h4>

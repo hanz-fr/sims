@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="tw-flex tw-flex-col tw-my-10 tw-mx-10">
-        <div class="tw-my-10">
+        <div class="tw-mb-10">
             <h4 class="sims-heading-3xl">Detail Jurusan</h4>
         </div>
 

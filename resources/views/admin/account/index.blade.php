@@ -9,9 +9,9 @@
 
     <div class="tw-flex tw-justify-between tw-ml-8 tw-mt-8 lg:tw-flex-row sm:tw-flex-col sm:tw-gap-5">
         <form action="{{ route('account.index') }}" method="GET">
-            <div class="relative tw-border-[1.5px] tw-border-gray-300 tw-rounded-xl focus:tw-ring-sims-new-500">
+            <div class="relative tw-border-[1.5px] tw-border-gray-300 tw-rounded-xl">
                 
-                <input type="text" name="s" @if(isset($_GET['s']))value="{{ $_GET['s'] }}"@endif id="search" class="tw-block tw-py-1 tw-px-5 tw-border-none tw-rounded-xl"> 
+                <input type="text" name="s" @if(isset($_GET['s']))value="{{ $_GET['s'] }}"@endif id="search" class="tw-block tw-py-1 tw-px-5 tw-border-none tw-rounded-xl focus:tw-ring-sims-new-500"> 
 
                 <i class="fa-thin fa-magnifying-glass tw-absolute tw-text-gray-400 right-0 tw-inset-y-1.5 tw-pr-5 tw-text-sm"></i>
             </div>
@@ -73,7 +73,7 @@
                     @endif
                 </td>
                 <td class="tw-p-6">@if(!empty($created_at)) {{ $created_at }} @endif</td>
-                <td class="tw-flex tw-justify-center tw-gap-3 tw-py-2">
+                <td class="tw-flex tw-justify-center tw-gap-3 tw-p-6">
                     @can('admin-only')
                     <a title="Edit Data" href="/admin/account/{{ $u->id }}/edit"
                         class="tw-text-kuning-500 hover:tw-bg-kuning-500 hover:tw-text-white hover:tw-shadow-md tw-transition-all tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">

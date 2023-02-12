@@ -16,7 +16,7 @@
         <div class="tw-flex tw-justify-between tw-ml-8 tw-mt-8 lg:tw-flex-row sm:tw-flex-col sm:tw-gap-5">
             <div class="tw-flex tw-my-auto">
                 <form action="/data-tidak-naik"> 
-                    <div class="relative tw-border-[1.5px] tw-border-gray-300 tw-rounded-xl focus:tw-ring-sims-new-500">
+                    <div class="relative tw-border-[1.5px] tw-border-gray-300 tw-rounded-xl">
                         
                         <input name="page" value="1" type="hidden">
                         <input name="perPage" value="10" type="hidden">
@@ -31,13 +31,13 @@
                         @if(isset($_GET['dibuatTglDari'])) <input name="dibuatTglDari" value="{{ $_GET['dibuatTglDari'] }}" type="hidden"> @endif
                         @if(isset($_GET['dibuatTglKe'])) <input name="dibuatTglKe" value="{{ $_GET['dibuatTglKe'] }}" type="hidden"> @endif
 
-                        <input type="text" id="search" name="search" class="tw-block tw-py-1 tw-px-5 tw-border-none tw-rounded-xl" value="{{ request()->search }}">
+                        <input type="text" id="search" name="search" class="tw-block tw-py-1 tw-px-5 tw-border-none tw-rounded-xl focus:tw-ring-sims-new-500" value="{{ request()->search }}">
                         <i class="fa-thin fa-magnifying-glass tw-absolute tw-text-gray-400 right-0 tw-inset-y-1.5 tw-pr-5 tw-text-sm"></i>
                     </div>
                 </form>
 
                 <div class="tw-my-auto tw-text-basic-700 tw-ml-8 tw-mr-2 tw-font-normal tw-font-satoshi">Tampilkan</div>
-                <select name="show-data-perpage" id="show-data-perpage" class="tw-px-5 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-200 tw-peer tw-font-bold  bg-transparent tw-border-0 tw-border-b-2 tw-border-gray-200 tw-appearance-none tw-block">
+                <select name="show-data-perpage" id="show-data-perpage" class="tw-pl-4 tw-px-7 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-200 tw-peer tw-font-bold  bg-transparent tw-border-0 tw-border-b-2 tw-border-gray-200 tw-appearance-none tw-block">
                     <option value="/data-tidak-naik?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=10&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&tinggal_di_Kelas=@isset($_GET['tinggal_di_Kelas']){{ $_GET['tinggal_di_Kelas'] }}@endisset&alasan_tidak_naik=@isset($_GET['alasan_tidak_naik']){{ $_GET['alasan_tidak_naik'] }}@endisset&tmp_lahir=@isset($_GET['tmp_lahir']){{ $_GET['tmp_lahir'] }}@endisset&tgl_lahir=@isset($_GET['tgl_lahir']){{ $_GET['tgl_lahir'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '10') selected @endif @endisset class="tw-bg-white">10</option>
                     <option value="/data-tidak-naik?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=25&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&tinggal_di_Kelas=@isset($_GET['tinggal_di_Kelas']){{ $_GET['tinggal_di_Kelas'] }}@endisset&alasan_tidak_naik=@isset($_GET['alasan_tidak_naik']){{ $_GET['alasan_tidak_naik'] }}@endisset&tmp_lahir=@isset($_GET['tmp_lahir']){{ $_GET['tmp_lahir'] }}@endisset&tgl_lahir=@isset($_GET['tgl_lahir']){{ $_GET['tgl_lahir'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '25') selected @endif @endisset class="tw-bg-white">25</option>
                     <option value="/data-tidak-naik?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=50&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&tinggal_di_Kelas=@isset($_GET['tinggal_di_Kelas']){{ $_GET['tinggal_di_Kelas'] }}@endisset&alasan_tidak_naik=@isset($_GET['alasan_tidak_naik']){{ $_GET['alasan_tidak_naik'] }}@endisset&tmp_lahir=@isset($_GET['tmp_lahir']){{ $_GET['tmp_lahir'] }}@endisset&tgl_lahir=@isset($_GET['tgl_lahir']){{ $_GET['tgl_lahir'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '50') selected @endif @endisset class="tw-bg-white">50</option>
@@ -216,7 +216,7 @@
 
             <div class="tw-flex md:tw-justify-center tw-items-center tw-mr-7">
                 @cannot('wali-kelas')
-                <button type="button" data-modal-toggle="export-print" title="Export ke print"><i class="fa-solid fa-print btn-export"></i></button>
+                <button type="button" data-modal-toggle="export-print" title="Cetak data"><i class="fa-solid fa-print btn-export"></i></button>
                     
                 <div id="export-print" tabindex="-1"
                     class="hidden overflow-y-auto overflow-x-hidden fixed  z-50 md:tw-inset-0 h-modal md:h-full">
@@ -236,7 +236,7 @@
                             <form action="/data-tidak-naik-print" target="__blank" method="">
                                 @csrf
                                 <div class="tw-p-6">
-                                    <div class="tw-text-gray-400 tw-font-pop tw-text-center tw-font-semibold tw-text-lg">Print Data</div>
+                                    <div class="tw-text-gray-400 tw-font-pop tw-text-center tw-font-semibold tw-text-lg">Cetak Data</div>
                                     <div class="tw-flex tw-gap-3 tw-justify-between tw-mt-5 tw-mx-5">
                                         <div>
                                             <div class="tw-text-xs tw-mb-2 tw-font-pop tw-font-normal tw-text-gray-400">Dari tanggal</div>
@@ -248,7 +248,7 @@
                                         </div>
                                     </div>
                                     <div class="tw-flex tw-justify-center tw-mt-3">
-                                        <button type="submit" class="tw-w-full tw-rounded-lg tw-mx-3 tw-font-pop tw-text-white tw-text-sm tw-font-medium tw-mb-2 tw-py-2 tw-bg-sims-new-500 hover:tw-bg-sims-new-600 tw-transition-all tw-ease-in-out">Print</button>
+                                        <button type="submit" class="tw-w-full tw-rounded-lg tw-mx-3 tw-font-pop tw-text-white tw-text-sm tw-font-medium tw-mb-2 tw-py-2 tw-bg-sims-new-500 hover:tw-bg-sims-new-600 tw-transition-all tw-ease-in-out">Cetak</button>
                                     </div>
                                 </div>
                             </form>
@@ -257,7 +257,7 @@
                 </div>
                 {{-- <button id="copy_btn" title="Copy Data" type="button" value="copy"><i class="fa-solid fa-copy btn-export"></i></button> --}}
 
-                <button type="button" data-modal-toggle="export-excel" title="Export ke excel"><i class="fa-solid fa-file-excel btn-export"></i></button>
+                <button type="button" data-modal-toggle="export-excel" title="Ekspor ke excel"><i class="fa-solid fa-file-excel btn-export"></i></button>
                     
                 <div id="export-excel" tabindex="-1"
                     class="hidden overflow-y-auto overflow-x-hidden fixed  z-50 md:tw-inset-0 h-modal md:h-full">
@@ -277,7 +277,7 @@
                             <form action="/data-tidak-naik-excel" method="">
                                 @csrf
                                 <div class="tw-p-6">
-                                    <div class="tw-text-gray-400 tw-font-pop tw-text-center tw-font-semibold tw-text-lg">Export Data Excel</div>
+                                    <div class="tw-text-gray-400 tw-font-pop tw-text-center tw-font-semibold tw-text-lg">Ekspor Data ke Excel</div>
                                     <div class="tw-flex tw-gap-3 tw-justify-between tw-mt-5 tw-mx-5">
                                         <div>
                                             <div class="tw-text-xs tw-mb-2 tw-font-pop tw-font-normal tw-text-gray-400">Dari tanggal</div>
@@ -289,7 +289,7 @@
                                         </div>
                                     </div>
                                     <div class="tw-flex tw-justify-center tw-mt-3">
-                                        <button type="submit" class="tw-w-full tw-rounded-lg tw-mx-3 tw-font-pop tw-text-white tw-text-sm tw-font-medium tw-mb-2 tw-py-2 tw-bg-sims-new-500 hover:tw-bg-sims-new-600 tw-transition-all tw-ease-in-out">Export</button>
+                                        <button type="submit" class="tw-w-full tw-rounded-lg tw-mx-3 tw-font-pop tw-text-white tw-text-sm tw-font-medium tw-mb-2 tw-py-2 tw-bg-sims-new-500 hover:tw-bg-sims-new-600 tw-transition-all tw-ease-in-out">Ekspor</button>
                                     </div>
                                 </div>
                             </form>
@@ -297,7 +297,7 @@
                     </div>
                 </div>
 
-                <button type="button" data-modal-toggle="export-pdf" title="Export ke PDF"><i class="fa-solid fa-file-pdf btn-export tw-mr-0"></i></button>
+                <button type="button" data-modal-toggle="export-pdf" title="Ekspor ke PDF"><i class="fa-solid fa-file-pdf btn-export tw-mr-0"></i></button>
                     
                 <div id="export-pdf" tabindex="-1"
                     class="hidden overflow-y-auto overflow-x-hidden fixed  z-50 md:tw-inset-0 h-modal md:h-full">
@@ -317,7 +317,7 @@
                             <form action="/data-tidak-naik-pdf" method="">
                                 @csrf
                                 <div class="tw-p-6">
-                                    <div class="tw-text-gray-400 tw-font-pop tw-text-center tw-font-semibold tw-text-lg">Export Data PDF</div>
+                                    <div class="tw-text-gray-400 tw-font-pop tw-text-center tw-font-semibold tw-text-lg">Ekspor Data ke PDF</div>
                                     <div class="tw-flex tw-gap-3 tw-justify-between tw-mt-5 tw-mx-5">
                                         <div>
                                             <div class="tw-text-xs tw-mb-2 tw-font-pop tw-font-normal tw-text-gray-400">Dari tanggal</div>
@@ -329,7 +329,7 @@
                                         </div>
                                     </div>
                                     <div class="tw-flex tw-justify-center tw-mt-3">
-                                        <button type="submit" class="tw-w-full tw-rounded-lg tw-mx-3 tw-font-pop tw-text-white tw-text-sm tw-font-medium tw-mb-2 tw-py-2 tw-bg-sims-new-500 hover:tw-bg-sims-new-600 tw-transition-all tw-ease-in-out">Export</button>
+                                        <button type="submit" class="tw-w-full tw-rounded-lg tw-mx-3 tw-font-pop tw-text-white tw-text-sm tw-font-medium tw-mb-2 tw-py-2 tw-bg-sims-new-500 hover:tw-bg-sims-new-600 tw-transition-all tw-ease-in-out">Ekspor</button>
                                     </div>
                                 </div>
                             </form>
