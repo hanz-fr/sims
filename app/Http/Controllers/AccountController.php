@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Hash;
@@ -36,7 +37,7 @@ class AccountController extends Controller
 
         abort_if(Gate::denies('admin-only'), 403);
 
-        $users = User::where([
+        $users = DB::table('user_data')->where([
             ['nama', '!=', Null],
             [function ($query) use ($request) {
                 if (($s = $request->s)) {
@@ -52,11 +53,11 @@ class AccountController extends Controller
 
         if($user) {
             return view('admin.account.index', [
-                'title'     => 'Manajemen Akun SIMS',
-                'active'    => '',
-                'status'    => '',
+                'title'      => 'Manajemen Akun SIMS',
+                'active'     => '',
+                'status'     => '',
                 'users'      => $users,
-                'created_at' => $created_at
+                'created_at' => $created_at,
             ]);
         } else {
             return view('induk.show-all', [
