@@ -35,12 +35,12 @@
 
         @can('manage-induk')
         <div class="tw-flex md:tw-justify-center tw-items-center md:-tw-mb-8">
-            <button type="button" data-modal-toggle="modal-print" target="__blank" title="Print"><i class="fa-solid fa-print btn-export"></i></button>
+            <button type="button" data-modal-toggle="modal-print" target="__blank" title="Cetak data"><i class="fa-solid fa-print btn-export"></i></button>
 
             <div id="modal-print" tabindex="-1"
               class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full">
                 <div class="relative p-4 w-full max-w-md h-full md:h-auto">
-                    <div class="tw-relative tw-bg-white tw-rounded-lg tw-shadow dark:tw-bg-slate-100 tw-font-pop">
+                    <div class="tw-relative tw-bg-white tw-rounded-lg tw-shadow dark:tw-bg-slate-100 tw-font-satoshi">
                         <button type="button"
                           class="tw-absolute tw-top-3 tw-right-2.5 tw-text-gray-400 tw-bg-transparent hover:tw-bg-gray-200 hover:tw-text-gray-900 tw-rounded-lg tw-text-sm tw-p-1.5 tw-ml-auto tw-inline-flex tw-items-center"
                           data-modal-toggle="modal-print">
@@ -55,12 +55,12 @@
                         </button>
                         <div class="tw-p-6">
                             <div class="tw-mb-8 tw-mt-5 tw-flex tw-justify-center tw-text-2xl tw-font-semibold tw-text-sims-new-500">
-                                Print Data
+                                Cetak Data
                             </div>
                             @if( ! empty($jurusan) && ! empty($kelas))
                             <form action="/data-induk-print/{{ $jurusan }}/{{ $kelas }}" method="" class="tw-flex tw-flex-col">
                                 <div class="tw-flex tw-justify-center tw-mb-4">
-                                    <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Export</div>
+                                    <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Ekspor</div>
 
                                     <input name="perPage" @if(!empty($_GET['perPage'])) value="{{ $_GET['perPage'] }}" @endif type="number" class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block">
                                     
@@ -90,13 +90,13 @@
                                 @if(isset($_GET['thn_ajaran'])) <input name="thn_ajaran" value="{{ $_GET['thn_ajaran'] }}" type="hidden"> @endif
 
                                 <div class="tw-flex tw-justify-center tw-mt-3">
-                                    <button type="submit" class="tw-text-white tw-bg-sims-new-500 hover:tw-bg-sims-new-700 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-sims-new-300 dark:focus:tw-ring-red-800 tw-font-medium tw-rounded-lg tw-text-sm tw-inline-flex tw-items-center tw-py-2.5 tw-text-center tw-mr-2 tw-px-6">Export</button>
+                                    <button type="submit" class="tw-text-white tw-bg-sims-new-500 hover:tw-bg-sims-new-700 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-sims-new-300 dark:focus:tw-ring-red-800 tw-font-medium tw-rounded-lg tw-text-sm tw-inline-flex tw-items-center tw-py-2.5 tw-text-center tw-mr-2 tw-px-6">Ekspor</button>
                                 </div>
                             </form>
                             @else
                             <form action="/data-induk-print" method="" class="tw-flex tw-flex-col">
                                 <div class="tw-flex tw-justify-center tw-mb-4">
-                                    <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Export</div>
+                                    <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Ekspor</div>
                                     
                                     <input name="perPage" @if(!empty($_GET['perPage'])) value="{{ $_GET['perPage'] }}" @endif type="number" class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block">
                                     
@@ -124,7 +124,7 @@
                                 @if(isset($_GET['thn_ajaran'])) <input name="thn_ajaran" value="{{ $_GET['thn_ajaran'] }}" type="hidden"> @endif
                                 
                                 <div class="tw-flex tw-justify-center tw-mt-3">
-                                    <button type="submit" class="tw-text-white tw-bg-sims-new-500 hover:tw-bg-sims-new-700 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-sims-new-300 tw-font-medium tw-rounded-lg tw-text-sm tw-inline-flex tw-items-center tw-py-2.5 tw-text-center tw-mr-2 tw-px-6">Export</button>
+                                    <button type="submit" class="tw-text-white tw-bg-sims-new-500 hover:tw-bg-sims-new-700 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-sims-new-300 tw-font-medium tw-rounded-lg tw-text-sm tw-inline-flex tw-items-center tw-py-2.5 tw-text-center tw-mr-2 tw-px-6">Ekspor</button>
                                 </div>
                             </form>
                             @endif
@@ -132,12 +132,12 @@
                     </div>
                 </div>
             </div>
-            <button type="button" data-modal-toggle="modal-export-excel" target="__blank" title="Export ke Excel"><i class="fa-solid fa-file-excel btn-export"></i></button>
+            <button type="button" data-modal-toggle="modal-export-excel" target="__blank" title="Ekspor ke Excel"><i class="fa-solid fa-file-excel btn-export"></i></button>
 
             <div id="modal-export-excel" tabindex="-1"
               class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full">
                 <div class="relative p-4 w-full max-w-md h-full md:h-auto">
-                    <div class="tw-relative tw-bg-white tw-rounded-lg tw-shadow dark:tw-bg-slate-100 tw-font-pop">
+                    <div class="tw-relative tw-bg-white tw-rounded-lg tw-shadow dark:tw-bg-slate-100 tw-font-satoshi">
                         <button type="button"
                           class="tw-absolute tw-top-3 tw-right-2.5 tw-text-gray-400 tw-bg-transparent hover:tw-bg-gray-200 hover:tw-text-gray-900 tw-rounded-lg tw-text-sm tw-p-1.5 tw-ml-auto tw-inline-flex tw-items-center"
                           data-modal-toggle="modal-export-excel">
@@ -152,12 +152,12 @@
                         </button>
                         <div class="tw-p-6">
                             <div class="tw-mb-8 tw-mt-5 tw-flex tw-justify-center tw-text-2xl tw-font-semibold tw-text-sims-new-500">
-                                Export Excel
+                                Ekspor Excel
                             </div>
                             @if( ! empty($jurusan) && ! empty($kelas))
                             <form action="/data-induk-excel/{{ $jurusan }}/{{ $kelas }}?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=100" method="" class="tw-flex tw-flex-col">
                                 <div class="tw-flex tw-justify-center tw-mb-4">
-                                    <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Export</div>
+                                    <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Ekspor</div>
 
                                     <input name="perPage" @if(!empty($_GET['perPage'])) value="{{ $_GET['perPage'] }}" @endif type="number" class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block">
                                     
@@ -187,13 +187,13 @@
                                 @if(isset($_GET['thn_ajaran'])) <input name="thn_ajaran" value="{{ $_GET['thn_ajaran'] }}" type="hidden"> @endif
 
                                 <div class="tw-flex tw-justify-center tw-mt-3">
-                                    <button type="submit" class="tw-text-white tw-bg-sims-new-500 hover:tw-bg-sims-new-700 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-red-300 dark:focus:tw-ring-red-800 tw-font-medium tw-rounded-lg tw-text-sm tw-inline-flex tw-items-center tw-py-2.5 tw-text-center tw-mr-2 tw-px-6">Export</button>
+                                    <button type="submit" class="tw-text-white tw-bg-sims-new-500 hover:tw-bg-sims-new-700 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-red-300 dark:focus:tw-ring-red-800 tw-font-medium tw-rounded-lg tw-text-sm tw-inline-flex tw-items-center tw-py-2.5 tw-text-center tw-mr-2 tw-px-6">Ekspor</button>
                                 </div>
                             </form>
                             @else
                             <form action="/data-induk-excel" method="" class="tw-flex tw-flex-col">
                                 <div class="tw-flex tw-justify-center tw-mb-4">
-                                    <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Export</div>
+                                    <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Ekspor</div>
                                     
                                     <input name="perPage" @if(!empty($_GET['perPage'])) value="{{ $_GET['perPage'] }}" @endif type="number" class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block">
                                     
@@ -221,7 +221,7 @@
                                 @if(isset($_GET['thn_ajaran'])) <input name="thn_ajaran" value="{{ $_GET['thn_ajaran'] }}" type="hidden"> @endif
                                 
                                 <div class="tw-flex tw-justify-center tw-mt-3">
-                                    <button type="submit" class="tw-text-white tw-bg-sims-new-500 hover:tw-bg-sims-new-700 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-sims-new-300 tw-font-medium tw-rounded-lg tw-text-sm tw-inline-flex tw-items-center tw-py-2.5 tw-text-center tw-mr-2 tw-px-6">Export</button>
+                                    <button type="submit" class="tw-text-white tw-bg-sims-new-500 hover:tw-bg-sims-new-700 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-sims-new-300 tw-font-medium tw-rounded-lg tw-text-sm tw-inline-flex tw-items-center tw-py-2.5 tw-text-center tw-mr-2 tw-px-6">Ekspor</button>
                                 </div>
                             </form>
                             @endif
@@ -229,12 +229,12 @@
                     </div>
                 </div>
             </div>
-            <button type="button" data-modal-toggle="modal-export-pdf" target="__blank" title="Export ke PDF"><i class="fa-solid fa-file-pdf btn-export tw-mr-0"></i></button>
+            <button type="button" data-modal-toggle="modal-export-pdf" target="__blank" title="Ekspor ke PDF"><i class="fa-solid fa-file-pdf btn-export tw-mr-0"></i></button>
 
             <div id="modal-export-pdf" tabindex="-1"
               class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full">
                 <div class="relative p-4 w-full max-w-md h-full md:h-auto">
-                    <div class="tw-relative tw-bg-white tw-rounded-lg tw-shadow dark:tw-bg-slate-100 tw-font-pop">
+                    <div class="tw-relative tw-bg-white tw-rounded-lg tw-shadow dark:tw-bg-slate-100 tw-font-satoshi">
                         <button type="button"
                           class="tw-absolute tw-top-3 tw-right-2.5 tw-text-gray-400 tw-bg-transparent hover:tw-bg-gray-200 hover:tw-text-gray-900 tw-rounded-lg tw-text-sm tw-p-1.5 tw-ml-auto tw-inline-flex tw-items-center"
                           data-modal-toggle="modal-export-pdf">
@@ -249,12 +249,12 @@
                         </button>
                         <div class="tw-p-6">
                             <div class="tw-mb-8 tw-mt-5 tw-flex tw-justify-center tw-text-2xl tw-font-semibold tw-text-sims-new-500">
-                                Export ke PDF
+                                Ekspor ke PDF
                             </div>
                             @if( ! empty($jurusan) && ! empty($kelas))
                             <form action="/data-induk-pdf/{{ $jurusan }}/{{ $kelas }}?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=100" method="" class="tw-flex tw-flex-col">
                                 <div class="tw-flex tw-justify-center tw-mb-4">
-                                    <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Export</div>
+                                    <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Ekspor</div>
 
                                     <input name="perPage" @if(!empty($_GET['perPage'])) value="{{ $_GET['perPage'] }}" @endif type="number" class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block">
                                     
@@ -284,13 +284,13 @@
                                 @if(isset($_GET['thn_ajaran'])) <input name="thn_ajaran" value="{{ $_GET['thn_ajaran'] }}" type="hidden"> @endif
 
                                 <div class="tw-flex tw-justify-center tw-mt-3">
-                                    <button type="submit" class="tw-text-white tw-bg-sims-new-500 hover:tw-bg-sims-new-700 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-sims-new-300 tw-font-medium tw-rounded-lg tw-text-sm tw-inline-flex tw-items-center tw-py-2.5 tw-text-center tw-mr-2 tw-px-6">Export</button>
+                                    <button type="submit" class="tw-text-white tw-bg-sims-new-500 hover:tw-bg-sims-new-700 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-sims-new-300 tw-font-medium tw-rounded-lg tw-text-sm tw-inline-flex tw-items-center tw-py-2.5 tw-text-center tw-mr-2 tw-px-6">Ekspor</button>
                                 </div>
                             </form>
                             @else
                             <form action="/data-induk-pdf" method="" class="tw-flex tw-flex-col">
                                 <div class="tw-flex tw-justify-center tw-mb-4">
-                                    <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Export</div>
+                                    <div class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">Ekspor</div>
                                     
                                     <input name="perPage" @if(!empty($_GET['perPage'])) value="{{ $_GET['perPage'] }}" @endif type="number" class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block">
                                     
@@ -318,7 +318,7 @@
                                 @if(isset($_GET['thn_ajaran'])) <input name="thn_ajaran" value="{{ $_GET['thn_ajaran'] }}" type="hidden"> @endif
                                 
                                 <div class="tw-flex tw-justify-center tw-mt-3">
-                                    <button type="submit" class="tw-text-white tw-bg-sims-new-500 hover:tw-bg-sims-new-700 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-sims-new-300 tw-font-medium tw-rounded-lg tw-text-sm tw-inline-flex tw-items-center tw-py-2.5 tw-text-center tw-mr-2 tw-px-6">Export</button>
+                                    <button type="submit" class="tw-text-white tw-bg-sims-new-500 hover:tw-bg-sims-new-700 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-sims-new-300 tw-font-medium tw-rounded-lg tw-text-sm tw-inline-flex tw-items-center tw-py-2.5 tw-text-center tw-mr-2 tw-px-6">Ekspor</button>
                                 </div>
                             </form>
                             @endif
@@ -358,11 +358,11 @@
                 </form>
                 @else
                 <form action="/data-induk-siswa"> 
-                    <div class="relative tw-border-[1.5px] tw-border-gray-300 tw-rounded-xl focus:tw-ring-sims-new-500">
+                    <div class="relative tw-border-[1.5px] tw-border-gray-300 tw-rounded-xl">
                         
                         <input name="page" value="1" type="hidden">
                         <input name="perPage" value="10" type="hidden">
-                        <input type="text" id="search" name="search" class="tw-block tw-py-1 tw-px-5 tw-border-none tw-rounded-xl" value="{{ request()->search }}">
+                        <input type="text" id="search" name="search" class="tw-block tw-py-1 tw-px-5 tw-border-none tw-rounded-xl focus:tw-ring-sims-new-500" value="{{ request()->search }}">
     
                         @if(isset($_GET['nis_siswa'])) <input name="nis_siswa" value="{{ $_GET['nis_siswa'] }}" type="hidden"> @endif
                         @if(isset($_GET['nisn_siswa'])) <input name="nisn_siswa" value="{{ $_GET['nisn_siswa'] }}" type="hidden"> @endif
@@ -382,14 +382,14 @@
                 <div class="tw-flex tw-my-auto">
                     <div class="tw-my-auto tw-text-basic-700 tw-ml-8 tw-mr-2 tw-font-normal tw-font-satoshi">Tampilkan</div>
                     @if( ! empty($jurusan) && ! empty($kelas))
-                    <select name="show-data-perpage" id="show-data-perpage" class="tw-px-5 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-200 tw-peer tw-font-bold  bg-transparent tw-border-0 tw-border-b-2 tw-border-gray-200 tw-appearance-none tw-block">
+                    <select name="show-data-perpage" id="show-data-perpage" class="tw-pl-4 tw-px-7 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-200 tw-peer tw-font-bold  bg-transparent tw-border-0 tw-border-b-2 tw-border-gray-200 tw-appearance-none tw-block">
                             <option value="/data-induk-siswa/{{ $jurusan }}/{{ $kelas }}?angkatan={{ $_GET['angkatan'] }}&page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=10&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&nis_siswa=@isset($_GET['nis_siswa']){{ $_GET['nis_siswa'] }}@endisset&nisn_siswa=@isset($_GET['nisn_siswa']){{ $_GET['nisn_siswa'] }}@endisset&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&jenis_kelamin=@isset($_GET['jenis_kelamin']){{ $_GET['jenis_kelamin'] }}@endisset&KelasId=@isset($_GET['KelasId']){{ $_GET['KelasId'] }}@endisset&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset&dibuatTglDari=@isset($_GET['dibuatTglDari']){{ $_GET['dibuatTglDari'] }}@endisset&dibuatTglKe=@isset($_GET['dibuatTglKe']){{ $_GET['dibuatTglKe'] }}@endisset&thn_ajaran=@isset($_GET['thn_ajaran']){{ $_GET['thn_ajaran'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '10') selected @endif @endisset class="tw-bg-white">10</option>
                             <option value="/data-induk-siswa/{{ $jurusan }}/{{ $kelas }}?angkatan={{ $_GET['angkatan'] }}&page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=25&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&nis_siswa=@isset($_GET['nis_siswa']){{ $_GET['nis_siswa'] }}@endisset&nisn_siswa=@isset($_GET['nisn_siswa']){{ $_GET['nisn_siswa'] }}@endisset&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&jenis_kelamin=@isset($_GET['jenis_kelamin']){{ $_GET['jenis_kelamin'] }}@endisset&KelasId=@isset($_GET['KelasId']){{ $_GET['KelasId'] }}@endisset&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset&dibuatTglDari=@isset($_GET['dibuatTglDari']){{ $_GET['dibuatTglDari'] }}@endisset&dibuatTglKe=@isset($_GET['dibuatTglKe']){{ $_GET['dibuatTglKe'] }}@endisset&thn_ajaran=@isset($_GET['thn_ajaran']){{ $_GET['thn_ajaran'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '25') selected @endif @endisset class="tw-bg-white">25</option>
                             <option value="/data-induk-siswa/{{ $jurusan }}/{{ $kelas }}?angkatan={{ $_GET['angkatan'] }}&page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=50&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&nis_siswa=@isset($_GET['nis_siswa']){{ $_GET['nis_siswa'] }}@endisset&nisn_siswa=@isset($_GET['nisn_siswa']){{ $_GET['nisn_siswa'] }}@endisset&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&jenis_kelamin=@isset($_GET['jenis_kelamin']){{ $_GET['jenis_kelamin'] }}@endisset&KelasId=@isset($_GET['KelasId']){{ $_GET['KelasId'] }}@endisset&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset&dibuatTglDari=@isset($_GET['dibuatTglDari']){{ $_GET['dibuatTglDari'] }}@endisset&dibuatTglKe=@isset($_GET['dibuatTglKe']){{ $_GET['dibuatTglKe'] }}@endisset&thn_ajaran=@isset($_GET['thn_ajaran']){{ $_GET['thn_ajaran'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '50') selected @endif @endisset class="tw-bg-white">50</option>
                             <option value="/data-induk-siswa/{{ $jurusan }}/{{ $kelas }}?angkatan={{ $_GET['angkatan'] }}&page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=100&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&nis_siswa=@isset($_GET['nis_siswa']){{ $_GET['nis_siswa'] }}@endisset&nisn_siswa=@isset($_GET['nisn_siswa']){{ $_GET['nisn_siswa'] }}@endisset&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&jenis_kelamin=@isset($_GET['jenis_kelamin']){{ $_GET['jenis_kelamin'] }}@endisset&KelasId=@isset($_GET['KelasId']){{ $_GET['KelasId'] }}@endisset&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset&dibuatTglDari=@isset($_GET['dibuatTglDari']){{ $_GET['dibuatTglDari'] }}@endisset&dibuatTglKe=@isset($_GET['dibuatTglKe']){{ $_GET['dibuatTglKe'] }}@endisset&thn_ajaran=@isset($_GET['thn_ajaran']){{ $_GET['thn_ajaran'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '100') selected @endif @endisset class="tw-bg-white">100</option>
                     </select>
                     @else
-                    <select name="show-data-perpage" id="show-data-perpage" class="tw-px-5 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-200 tw-peer tw-font-bold  bg-transparent tw-border-0 tw-border-b-2 tw-border-gray-200 tw-appearance-none tw-block">
+                    <select name="show-data-perpage" id="show-data-perpage" class="tw-pl-4 tw-px-7 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-200 tw-peer tw-font-bold  bg-transparent tw-border-0 tw-border-b-2 tw-border-gray-200 tw-appearance-none tw-block">
                             <option value="/data-induk-siswa?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=10&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&nis_siswa=@isset($_GET['nis_siswa']){{ $_GET['nis_siswa'] }}@endisset&nisn_siswa=@isset($_GET['nisn_siswa']){{ $_GET['nisn_siswa'] }}@endisset&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&jenis_kelamin=@isset($_GET['jenis_kelamin']){{ $_GET['jenis_kelamin'] }}@endisset&KelasId=@isset($_GET['KelasId']){{ $_GET['KelasId'] }}@endisset&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset&dibuatTglDari=@isset($_GET['dibuatTglDari']){{ $_GET['dibuatTglDari'] }}@endisset&dibuatTglKe=@isset($_GET['dibuatTglKe']){{ $_GET['dibuatTglKe'] }}@endisset&thn_ajaran=@isset($_GET['thn_ajaran']){{ $_GET['thn_ajaran'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '10') selected @endif @endisset class="tw-bg-white">10</option>
                             <option value="/data-induk-siswa?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=25&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&nis_siswa=@isset($_GET['nis_siswa']){{ $_GET['nis_siswa'] }}@endisset&nisn_siswa=@isset($_GET['nisn_siswa']){{ $_GET['nisn_siswa'] }}@endisset&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&jenis_kelamin=@isset($_GET['jenis_kelamin']){{ $_GET['jenis_kelamin'] }}@endisset&KelasId=@isset($_GET['KelasId']){{ $_GET['KelasId'] }}@endisset&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset&dibuatTglDari=@isset($_GET['dibuatTglDari']){{ $_GET['dibuatTglDari'] }}@endisset&dibuatTglKe=@isset($_GET['dibuatTglKe']){{ $_GET['dibuatTglKe'] }}@endisset&thn_ajaran=@isset($_GET['thn_ajaran']){{ $_GET['thn_ajaran'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '25') selected @endif @endisset class="tw-bg-white">25</option>
                             <option value="/data-induk-siswa?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=50&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&nis_siswa=@isset($_GET['nis_siswa']){{ $_GET['nis_siswa'] }}@endisset&nisn_siswa=@isset($_GET['nisn_siswa']){{ $_GET['nisn_siswa'] }}@endisset&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&jenis_kelamin=@isset($_GET['jenis_kelamin']){{ $_GET['jenis_kelamin'] }}@endisset&KelasId=@isset($_GET['KelasId']){{ $_GET['KelasId'] }}@endisset&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset&dibuatTglDari=@isset($_GET['dibuatTglDari']){{ $_GET['dibuatTglDari'] }}@endisset&dibuatTglKe=@isset($_GET['dibuatTglKe']){{ $_GET['dibuatTglKe'] }}@endisset&thn_ajaran=@isset($_GET['thn_ajaran']){{ $_GET['thn_ajaran'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '50') selected @endif @endisset class="tw-bg-white">50</option>
@@ -404,7 +404,7 @@
 
                     <!-- filter menu -->
                     <div id="filter-dd" class="hidden tw-z-10 tw-w-72 tw-bg-white tw-rounded tw-divide-y tw-divide-gray-100 tw-shadow-md">
-                        <div class="tw-font-pop tw-text-xs tw-text-gray-400 tw-my-2 tw-mx-5">Cari berdasarkan...</div>
+                        <div class="tw-font-satoshi tw-text-xs tw-text-gray-400 tw-my-2 tw-mx-5">Cari berdasarkan...</div>
                         
                         @if( ! empty($jurusan) && ! empty($kelas))
                         <form action="/data-induk-siswa/{{ $jurusan }}/{{ $kelas }}">
@@ -588,7 +588,7 @@
                 <div id="popup-modal" tabindex="-1"
                   class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full">
                     <div class="relative p-4 w-full max-w-md h-full md:h-auto">
-                        <div class="tw-relative tw-bg-white tw-rounded-lg tw-shadow dark:tw-bg-slate-100 tw-font-pop">
+                        <div class="tw-relative tw-bg-white tw-rounded-lg tw-shadow dark:tw-bg-slate-100">
                             <button type="button"
                               class="tw-absolute tw-top-3 tw-right-2.5 tw-text-gray-400 tw-bg-transparent hover:tw-bg-gray-200 hover:tw-text-gray-900 tw-rounded-lg tw-text-sm tw-p-1.5 tw-ml-auto tw-inline-flex tw-items-center"
                               data-modal-toggle="popup-modal">
@@ -601,25 +601,27 @@
                                 </svg>
                                 <span class="sr-only">Close modal</span>
                             </button>
-                            <div class="tw-p-6">
-                                <div class="tw-mb-8 tw-mt-5 tw-flex tw-justify-center tw-text-2xl tw-font-semibold tw-text-sims-new-500">
-                                    Add Data
+                            <div class="tw-p-6 tw-font-sg">
+                                <div class="tw-mb-8 tw-mt-5 tw-flex tw-justify-center sims-heading-2xl">
+                                    Pilih metode:
                                 </div>
-                                <div class="tw-gap-3 tw-grid">
-                                    <a href="/tambah-data" data-modal-toggle="popup-modal"
-                                      class="tw-text-white tw-justify-center tw-bg-sims-new-500 tw-w-full hover:tw-bg-sims-500 hover:tw-text-white tw-font-medium tw-text-xl tw-inline-flex tw-items-center tw-py-8 tw-text-center">
-                                        Input Data
-                                    </a>
+                                <div class="tw-gap-2 tw-grid tw-grid-cols-2">
+                                    <form action="/tambah-data">
+                                        <button type="submit" data-modal-toggle="popup-modal"
+                                        class="tw-flex tw-items-center tw-justify-center tw-w-full tw-h-full tw-py-2 tw-px-5 tw-bg-sims-new-500 hover:tw-bg-sims-new-600 tw-text-white tw-rounded-lg">
+                                            Input Data<i class="fa-regular fa-input-pipe tw-ml-2 tw-text-lg"></i>
+                                        </button>
+                                    </form>
 
                                     <button type="button" data-modal-toggle="popup-data"
-                                      class="tw-text-white tw-justify-center tw-bg-[#1D6F42] tw-w-full hover:tw-bg-green-800 hover:tw-text-white tw-font-medium tw-text-xl tw-inline-flex tw-items-center tw-py-8 tw-text-center">
-                                        Import data dari excel
+                                      class="tw-flex tw-items-center tw-justify-center tw-w-full tw-h-full tw-py-2 tw-px-5 tw-bg-[#1D6F42] hover:tw-bg-green-800 tw-text-white tw-rounded-lg">
+                                        Import data dari excel<i class="fa-solid fa-file-excel tw-ml-1 tw-text-lg"></i>
                                     </button>
 
                                     <div id="popup-data" tabindex="-1"
                                       class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 md:h-full">
                                         <div class="relative p-4 w-full max-w-md h-full md:h-auto">
-                                            <div class="tw-relative tw-mb-5 tw-bg-white tw-rounded-lg tw-shadow dark:tw-bg-slate-100 tw-font-pop">
+                                            <div class="tw-relative tw-mb-5 tw-bg-white tw-rounded-lg tw-shadow dark:tw-bg-slate-100">
                                                 <button type="button"
                                                     class="tw-absolute tw-top-1.5 tw-right-1.5 tw-text-gray-400 tw-bg-transparent hover:tw-bg-gray-200 hover:tw-text-gray-900 tw-rounded-lg tw-text-sm tw-p-1.5 tw-ml-auto tw-inline-flex tw-items-center"
                                                     data-modal-toggle="popup-data">
@@ -665,7 +667,7 @@
                                                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                                             d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
                                                                     </svg>
-                                                                        <p class="tw-text-gray-700">Drag your files here or click in this area.</p>
+                                                                        <p class="tw-text-gray-700">Seret berkas anda kesini atau klik di area ini.</p>
                                                                     </div>
                                                                 </template>
                                                             </label>
@@ -758,7 +760,7 @@
             <div class="tw-py-3 tw-my-auto tw-h-min tw-flex tw-justify-center">
                 <form action="/data-induk-siswa/{{ $jurusan }}/{{ $kelas }}" class="tw-text-center">
 
-                    <input type="number" name="page" class="tw-bg-white tw-border tw-border-slate-200 tw-w-1/2 tw-font-pop tw-font-medium tw-text-slate-500 tw-rounded-md tw-text-center focus:tw-ring-gray-200 focus:tw-border-gray-200 no-spin" min="1" @if(isset($_GET['page'])) value="{{ $_GET['page'] }}"@endif>
+                    <input type="number" name="page" class="tw-bg-white tw-border tw-border-slate-200 tw-w-1/2 tw-font-satoshi tw-font-medium tw-text-slate-500 tw-rounded-md tw-text-center focus:tw-ring-gray-200 focus:tw-border-gray-200 no-spin" min="1" @if(isset($_GET['page'])) value="{{ $_GET['page'] }}"@endif>
                     
                     <input name="angkatan" type="hidden" value="{{ $_GET['angkatan'] }}">
                     
@@ -786,7 +788,7 @@
             <div class="tw-py-3 tw-my-auto tw-h-min tw-flex tw-justify-center">
                 <form action="/data-induk-siswa" class="tw-text-center">
 
-                    <input type="number" name="page" class="tw-bg-white tw-border tw-border-slate-200 tw-w-1/2 tw-font-pop tw-font-medium tw-text-slate-500 tw-rounded-md tw-text-center focus:tw-ring-gray-200 focus:tw-border-gray-200 no-spin" min="1" @if(isset($_GET['page'])) value="{{ $_GET['page'] }}"@endif>
+                    <input type="number" name="page" class="tw-bg-white tw-border tw-border-slate-200 tw-w-1/2 tw-font-satoshi tw-font-medium tw-text-slate-500 tw-rounded-md tw-text-center focus:tw-ring-gray-200 focus:tw-border-gray-200 no-spin" min="1" @if(isset($_GET['page'])) value="{{ $_GET['page'] }}"@endif>
                     
                     @if(isset($_GET['perPage']))
                     <input name="perPage" value="{{ $_GET['perPage'] }}" type="hidden">

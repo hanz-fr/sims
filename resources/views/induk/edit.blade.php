@@ -74,13 +74,13 @@
             <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
                 <div class="tw-w-max md:tw-w-1/2 tw-px-3 tw-mb-6 md:tw-mb-0">
                     <label class="label-input" for="nis">
-                        NIS
+                        NIS *
                     </label>
                     <input class="input-data-minimal tw-w-full" id="nis" name="nis" type="text" maxlength="10" value="{{ $siswa->nis_siswa }}">
                 </div>
                 <div class="tw-w-fit md:tw-w-1/2 tw-px-3">
                     <label class="label-input" for="nisn">
-                        NISN
+                        NISN *
                     </label>
                     <input class="input-data-minimal tw-w-full" id="nisn" name="nisn" type="text" maxlength="10" value="{{ $siswa->nisn_siswa }}">
                 </div>
@@ -106,7 +106,7 @@
             <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
                 <div class="tw-w-full tw-px-3">
                     <label class="label-input" for="nama">
-                        Nama Peserta Didik
+                        Nama Peserta Didik *
                     </label>
                     <input class="input-data-minimal" id="nama" type="text" name="nama" value="{{ $siswa->nama_siswa }}">
                 </div>
@@ -114,13 +114,13 @@
             <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
                 <div class="tw-w-full md:tw-w-1/2 tw-px-3 tw-mb-6 md:tw-mb-0">
                     <label class="label-input" for="tmp_lahir">
-                        Tempat Lahir
+                        Tempat Lahir *
                     </label>
                     <input class="input-data-minimal" id="tmp_lahir" name="tmp_lahir" type="text" value="{{ $siswa->tmp_lahir }}">
                 </div>
                 <div class="tw-w-full md:tw-w-1/2 tw-px-3">
                     <label class="label-input" for="tgl_lahir">
-                        Tanggal Lahir
+                        Tanggal Lahir *
                     </label>
                     <input class="input-data-minimal" id="tgl_lahir" name="tgl_lahir" type="date" placeholder="dd/mm/yyyy" value="{{ $siswa->tgl_lahir }}">
                 </div>
@@ -128,7 +128,7 @@
             <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
                 <div class="tw-w-full tw-px-3">
                     <label class="label-input" for="agama">
-                        Agama
+                        Agama *
                     </label>
                     <input class="input-data-minimal" id="agama" type="text" name="agama" value="{{ $siswa->agama }}">
                 </div>
@@ -136,13 +136,13 @@
             <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
                 <div class="tw-w-full md:tw-w-1/2 tw-px-3 tw-mb-6 md:tw-mb-0">
                     <label class="label-input" for="anak_ke">
-                        Anak-Ke
+                        Anak-Ke *
                     </label>
                     <input class="input-data-minimal" id="anak_ke" name="anak_ke" type="number" max="99" min="1" value="{{ $siswa->anak_ke }}">
                 </div>
                 <div class="tw-w-full md:tw-w-1/2 tw-px-3">
                     <label class="label-input" for="jenis_kelamin">
-                        Jenis Kelamin
+                        Jenis Kelamin *
                     </label>
                     <select class="input-data-minimal" id="jenis_kelamin" name="jenis_kelamin" value="{{ $siswa->jenis_kelamin }}">
                         @if($siswa->jenis_kelamin == 'L')
@@ -200,7 +200,7 @@
             <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
                 <div class="tw-w-full md:tw-w-1/2 tw-px-3 tw-mb-6 md:tw-mb-0">
                     <label class="label-input" for="no_telp">
-                        No. HP
+                        No. HP *
                     </label>
                     <input class="input-data-minimal" id="no_telp" type="text" name="no_telp" value="{{ $siswa->no_telp_siswa }}"  maxlength="20">
                 </div>
@@ -218,7 +218,7 @@
             <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
                 <div class="tw-w-full tw-px-3">
                     <label class="label-input" for="diterima_di_kelas">
-                        Di kelas
+                        Di kelas *
                     </label>
                     <select class="input-data-minimal" id="diterima_di_kelas" name="diterima_di_kelas">
                     <option selected value="{{ $siswa->KelasId }}">{{ $siswa->KelasId }}</option>
@@ -266,7 +266,7 @@
             <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
                 <div class="tw-w-full tw-px-3">
                     <label class="label-input" for="nama_sekolah_asal">
-                        Nama Sekolah
+                        Nama Sekolah *
                     </label>
                     <input class="input-data-minimal" id="nama_sekolah_asal" type="text" name="nama_sekolah_asal" value="{{ $siswa->sekolah_asal }}">
                 </div>
@@ -274,7 +274,7 @@
             <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
                 <div class="tw-w-full tw-px-3">
                     <label class="label-input" for="alamat_sekolah_asal">
-                        Alamat Sekolah
+                        Alamat Sekolah *
                     </label>
                     <input class="input-data-minimal" id="alamat_sekolah_asal" type="text" name="alamat_sekolah_asal" value="{{ $siswa->alamat_sekolah_asal }}">
                 </div>

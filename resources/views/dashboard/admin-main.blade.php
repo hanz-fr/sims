@@ -8,8 +8,15 @@
         }
 
         .slide-container {
-            max-width: 1000px;
+            max-width: 37rem;
             width: 100%;
+        }
+
+        @media only screen and (min-width: 1370px) {
+            .slide-container {
+                max-width: 60rem;
+                width: 100%;
+            }
         }
 
         .slide-content {
@@ -241,7 +248,7 @@
                         </div>
                     </div>
 
-                    <div class="sims-card-1-noshadow tw-w-full tw-py-3 tw-px-7 tw-h-fit tw-border-l-4 hover:tw-shadow-md tw-transition-all tw-duration-200 tw-border-l-[#B4B8BC]">
+                    <div class="sims-card-1-noshadow tw-w-full tw-py-3 xl:tw-px-7 tw-h-fit tw-border-l-4 hover:tw-shadow-md tw-transition-all tw-duration-200 tw-border-l-[#B4B8BC]">
                         <div class="tw-flex tw-gap-2">
                             <i class="fa-solid fa-user sims-icon-3xl tw-text-[#B4B8BC]"></i>
                             <div class="tw flex tw-flex-col">

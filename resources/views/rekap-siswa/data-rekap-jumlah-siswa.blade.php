@@ -4,7 +4,7 @@
     <div class="tw-mx-10">
         <div class="tw-flex tw-justify-between tw-gap-5 tw-mt-8">
             <div class="tw-flex tw-flex-row tw-justify-around">
-                <h4 class="sims-heading-2xl">Data Rekap Jumlah Siswa</h4>
+                <h4 role="status" class="sims-heading-2xl">Data Rekap Jumlah Siswa</h4>
             </div>
             <div class="tw-flex tw-mx-4 tw-my-auto">
                 <!--Code Block for white tooltip starts-->
@@ -29,12 +29,11 @@
             <div class="tw-float-right">
                 @can('manage-alumni')
                 <div class="tw-flex tw-items-center -tw-mt-4">
-                    <a href="/rekap-jumlah-siswa-print" target="__blank" title="Print"><i class="fa-solid fa-print btn-export"></i></a>
-                    <a href="/rekap-jumlah-siswa-excel" title="Export ke Excel" title="Export ke Excel"><i class="fa-solid fa-file-excel btn-export"></i></a>
-                    <a href="/rekap-jumlah-siswa-pdf" title="Export ke PDF"><i class="fa-solid fa-file-pdf btn-export"></i></a>
+                    <a href="/rekap-jumlah-siswa-print" target="__blank" title="Cetak data"><i class="fa-solid fa-print btn-export"></i></a>
+                    <a href="/rekap-jumlah-siswa-excel" title="Ekspor ke Excel"><i class="fa-solid fa-file-excel btn-export"></i></a>
+                    <a href="/rekap-jumlah-siswa-pdf" title="Ekspor ke PDF"><i class="fa-solid fa-file-pdf btn-export"></i></a>
                 </div>
                 @endcan
-                {{-- <a href="" class="tw-bg-sims-new-500 tw-text-white hover:tw-text-white tw-font-satoshi hover:tw-bg-sims-600 tw-px-5 tw-py-2 tw-rounded-lg tw-mr-5">Ekspor</a> --}}
             </div>
             <ul class="tw-flex mb-0 mt-4 tw--ml-6 tw-font-sg tw-text-xl">
                 <li @click="openTab = 1" :class="{ 'tw--mb-px': openTab === 1 }">
@@ -515,6 +514,11 @@
                 </table>
             </div>
         </div>
+
+        <button onclick="topFunction()" id="myBtn" class="tw-bg-sims-400 tw-px-5 tw-py-3 tw-rounded-lg tw-transition-all tw-duration-150 hover:-tw-translate-y-0.5 hover:tw-bg-sims-500" style="display: none; position: fixed; bottom: 40px; right: -200px; z-index: 99; border: none; outline: none; cursor: pointer;">
+            <i class="fa-solid fa-chevron-up tw-text-white tw-text-lg"></i>
+        </button>
+
     </div>
 
     <script src="index.js"></script>
@@ -545,24 +549,32 @@
       }
     }
     </script>
-@endsection
 
-{{-- @push('scripts')
-    <script>
-        var copyBtn = document.querySelector('#copy_btn');
+<script>
+    /* smooth scrolling to top */
+    /* $("a[href='#top']").click(function() {
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+        return false;
+    }); */
     
-        copyBtn.addEventListener('click', function () {
-
-        var urlField = document.querySelector('table');
-        
-        var range = document.createRange();  
-
-        range.selectNode(urlField);
-
-        window.getSelection().addRange(range);
-        
-        document.execCommand('copy');
-    }, 
-    false);
+    // Get the button
+    let mybutton = document.getElementById("myBtn");
+    
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+      if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+        mybutton.style.display = "block";
+        mybutton.style.right = "50px";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+    
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
     </script>
-@endpush --}}
+@endsection

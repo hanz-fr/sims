@@ -28,7 +28,7 @@
 
                 @can('manage-alumni')
                 <div class="tw-flex md:tw-justify-center tw-items-center">
-                    <button type="button" data-modal-toggle="export-print" title="Print"><i class="fa-solid fa-print btn-export"></i></button>
+                    <button type="button" data-modal-toggle="export-print" title="Cetak data"><i class="fa-solid fa-print btn-export"></i></button>
                     <div id="export-print" tabindex="-1"
                     class="hidden overflow-y-auto overflow-x-hidden fixed  z-50 md:tw-inset-0 h-modal md:h-full">
                     <div class="tw-relative tw-p-4 tw-w-full tw-max-w-md tw-h-full md:tw-h-auto">
@@ -47,7 +47,7 @@
                             <form action="/mutasi-keluar-print" target="__blank" method="">
                                 @csrf
                                 <div class="tw-p-6">
-                                    <div class="tw-text-gray-400 tw-font-pop tw-text-center tw-font-semibold tw-text-lg">Print Data</div>
+                                    <div class="tw-text-gray-400 tw-font-pop tw-text-center tw-font-semibold tw-text-lg">Cetak Data</div>
                                     <div class="tw-flex tw-gap-3 tw-justify-between tw-mt-5 tw-mx-5">
                                         <div>
                                             <div class="tw-text-xs tw-mb-2 tw-font-pop tw-font-normal tw-text-gray-400">Dari tanggal</div>
@@ -58,16 +58,15 @@
                                             <input class="input-data tw-text-xs tw-font-pop" id="tgl_keluar_ke" name="tgl_keluar_ke" type="date" placeholder="dd/mm/yyyy" @if(isset($_GET['tgl_keluar_ke'])) value="{{ $_GET['tgl_keluar_ke'] }}" @endif>
                                         </div>
                                     </div>
-                                    <div class="tw-flex tw-justify-center tw-mt-3">
-                                        <button type="submit" target="__blank" class="tw-w-full tw-rounded-lg tw-mx-3 tw-font-pop tw-text-white tw-text-sm tw-font-medium tw-mb-2 tw-py-2 tw-bg-sims-new-500 hover:tw-bg-sims-new-600 tw-transition-all tw-ease-in-out">Print</button>
+                                    <div class="tw-flex tw-justify-center tw-mt-5">
+                                        <button type="submit" target="__blank" class="tw-w-full tw-rounded-lg tw-mx-3 tw-font-pop tw-text-white tw-text-sm tw-font-medium tw-mb-2 tw-py-2 tw-bg-sims-new-500 hover:tw-bg-sims-new-600 tw-transition-all tw-ease-in-out">Cetak</button>
                                     </div>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
-                    {{-- <button id="copy_btn" title="Copy Data" type="button" value="copy"><i class="fa-solid fa-copy btn-export"></i></button> --}}
-                    <button type="button" data-modal-toggle="export-excel" title="Export ke Excel"><i class="fa-solid fa-file-excel btn-export"></i></button>
+                    <button type="button" data-modal-toggle="export-excel" title="Ekspor ke Excel"><i class="fa-solid fa-file-excel btn-export"></i></button>
                     <div id="export-excel" tabindex="-1"
                         class="hidden overflow-y-auto overflow-x-hidden fixed  z-50 md:tw-inset-0 h-modal md:h-full">
                         <div class="tw-relative tw-p-4 tw-w-full tw-max-w-md tw-h-full md:tw-h-auto">
@@ -86,7 +85,7 @@
                                 <form action="/mutasi-keluar-excel" method="">
                                     @csrf
                                     <div class="tw-p-6">
-                                        <div class="tw-text-gray-400 tw-font-pop tw-text-center tw-font-semibold tw-text-lg">Export Data Excel</div>
+                                        <div class="tw-text-gray-400 tw-font-pop tw-text-center tw-font-semibold tw-text-lg">Ekspor Data ke Excel</div>
                                         <div class="tw-flex tw-gap-3 tw-justify-between tw-mt-5 tw-mx-5">
                                             <div>
                                                 <div class="tw-text-xs tw-mb-2 tw-font-pop tw-font-normal tw-text-gray-400">Dari tanggal</div>
@@ -97,15 +96,15 @@
                                                 <input class="input-data tw-text-xs tw-font-pop" id="tgl_keluar_ke" name="tgl_keluar_ke" type="date" placeholder="dd/mm/yyyy" @if(isset($_GET['tgl_keluar_ke'])) value="{{ $_GET['tgl_keluar_ke'] }}" @endif>
                                             </div>
                                         </div>
-                                        <div class="tw-flex tw-justify-center tw-mt-3">
-                                            <button type="submit" class="tw-w-full tw-rounded-lg tw-mx-3 tw-font-pop tw-text-white tw-text-sm tw-font-medium tw-mb-2 tw-py-2 tw-bg-sims-new-500 hover:tw-bg-sims-new-600 tw-transition-all tw-ease-in-out">Export</button>
+                                        <div class="tw-flex tw-justify-center tw-mt-5">
+                                            <button type="submit" class="tw-w-full tw-rounded-lg tw-mx-3 tw-font-pop tw-text-white tw-text-sm tw-font-medium tw-mb-2 tw-py-2 tw-bg-sims-new-500 hover:tw-bg-sims-new-600 tw-transition-all tw-ease-in-out">Ekspor</button>
                                         </div>
                                     </div>
                                 </form>
                             </div>
                         </div>
                     </div>
-                    <button type="button" data-modal-toggle="export-pdf" title="Export ke PDF"><i class="fa-solid fa-file-pdf btn-export tw-mr-0"></i></button>
+                    <button type="button" data-modal-toggle="export-pdf" title="Ekspor ke PDF"><i class="fa-solid fa-file-pdf btn-export tw-mr-0"></i></button>
                     <div id="export-pdf" tabindex="-1"
                         class="hidden overflow-y-auto overflow-x-hidden fixed  z-50 md:tw-inset-0 h-modal md:h-full">
                         <div class="tw-relative tw-p-4 tw-w-full tw-max-w-md tw-h-full md:tw-h-auto">
@@ -124,7 +123,7 @@
                                 <form action="/mutasi-keluar-pdf" method="">
                                     @csrf
                                     <div class="tw-p-6">
-                                        <div class="tw-text-gray-400 tw-font-pop tw-text-center tw-font-semibold tw-text-lg">Export Data PDF</div>
+                                        <div class="tw-text-gray-400 tw-font-pop tw-text-center tw-font-semibold tw-text-lg">Ekspor Data ke PDF</div>
                                         <div class="tw-flex tw-gap-3 tw-justify-between tw-mt-5 tw-mx-5">
                                             <div>
                                                 <div class="tw-text-xs tw-mb-2 tw-font-pop tw-font-normal tw-text-gray-400">Dari tanggal</div>
@@ -135,8 +134,8 @@
                                                 <input class="input-data tw-text-xs tw-font-pop" id="tgl_keluar_ke" name="tgl_keluar_ke" type="date" placeholder="dd/mm/yyyy" @if(isset($_GET['tgl_keluar_ke'])) value="{{ $_GET['tgl_keluar_ke'] }}" @endif>
                                             </div>
                                         </div>
-                                        <div class="tw-flex tw-justify-center tw-mt-3">
-                                            <button type="submit" class="tw-w-full tw-rounded-lg tw-mx-3 tw-font-pop tw-text-white tw-text-sm tw-font-medium tw-mb-2 tw-py-2 tw-bg-sims-new-500 hover:tw-bg-sims-new-600 tw-transition-all tw-ease-in-out">Export</button>
+                                        <div class="tw-flex tw-justify-center tw-mt-5">
+                                            <button type="submit" class="tw-w-full tw-rounded-lg tw-mx-3 tw-font-pop tw-text-white tw-text-sm tw-font-medium tw-mb-2 tw-py-2 tw-bg-sims-new-500 hover:tw-bg-sims-new-600 tw-transition-all tw-ease-in-out">Ekspor</button>
                                         </div>
                                     </div>
                                 </form>
@@ -150,11 +149,11 @@
             <div class="tw-flex tw-justify-between tw-ml-8 tw-mt-8 lg:tw-flex-row sm:tw-flex-col sm:tw-gap-5">
                 <div class="tw-flex tw-my-auto">
                     <form action="/siswa-keluar">
-                        <div class="relative tw-border-[1.5px] tw-border-gray-300 tw-rounded-xl focus:tw-ring-sims-new-500">
+                        <div class="relative tw-border-[1.5px] tw-border-gray-300 tw-rounded-xl">
                             
                             <input name="page" value="1" type="hidden">
                             <input name="perPage" value="10" type="hidden">
-                            <input type="text" name="search" id="search" class="tw-block tw-py-1 tw-px-5 tw-border-none tw-rounded-xl" value="{{ request()->search }}"> 
+                            <input type="text" name="search" id="search" class="tw-block tw-py-1 tw-px-5 tw-border-none tw-rounded-xl focus:tw-ring-sims-new-500" value="{{ request()->search }}"> 
                             
                             @if(isset($_GET['nama_siswa'])) <input name="nama_siswa" value="{{ $_GET['nama_siswa'] }}" type="hidden"> @endif
                             @if(isset($_GET['nis_siswa'])) <input name="nis_siswa" value="{{ $_GET['nis_siswa'] }}" type="hidden"> @endif
@@ -172,7 +171,7 @@
                     </form>
 
                     <div class="tw-my-auto tw-text-basic-700 tw-ml-8 tw-mr-2 tw-font-normal tw-font-satoshi">Tampilkan</div>
-                    <select name="show-data-perpage" id="show-data-perpage" class="tw-px-5 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-200 tw-peer tw-font-bold  bg-transparent tw-border-0 tw-border-b-2 tw-border-gray-200 tw-appearance-none tw-block">
+                    <select name="show-data-perpage" id="show-data-perpage" class="tw-pl-4 tw-px-7 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-200 tw-peer tw-font-bold  bg-transparent tw-border-0 tw-border-b-2 tw-border-gray-200 tw-appearance-none tw-block">
                         <option value="/siswa-keluar?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=10&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&nis_siswa=@isset($_GET['nis_siswa']){{ $_GET['nis_siswa'] }}@endisset&keluar_di_kelas=@isset($_GET['keluar_di_kelas']){{ $_GET['keluar_di_kelas'] }}@endisset&tgl_mutasi=@isset($_GET['tgl_mutasi']){{ $_GET['tgl_mutasi'] }}@endisset&sk_mutasi=@isset($_GET['sk_mutasi']){{ $_GET['sk_mutasi'] }}@endisset&alasan_mutasi=@isset($_GET['alasan_mutasi']){{ $_GET['alasan_mutasi'] }}@endisset&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset&tgl_keluar_dari=@isset($_GET['tgl_keluar_dari']){{ $_GET['tgl_keluar_dari'] }}@endisset&tgl_keluar_ke=@isset($_GET['tgl_keluar_ke']){{ $_GET['tgl_keluar_ke'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '10') selected @endif @endisset class="tw-bg-white">10</option>
                         <option value="/siswa-keluar?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=25&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&nis_siswa=@isset($_GET['nis_siswa']){{ $_GET['nis_siswa'] }}@endisset&keluar_di_kelas=@isset($_GET['keluar_di_kelas']){{ $_GET['keluar_di_kelas'] }}@endisset&tgl_mutasi=@isset($_GET['tgl_mutasi']){{ $_GET['tgl_mutasi'] }}@endisset&sk_mutasi=@isset($_GET['sk_mutasi']){{ $_GET['sk_mutasi'] }}@endisset&alasan_mutasi=@isset($_GET['alasan_mutasi']){{ $_GET['alasan_mutasi'] }}@endisset&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset&tgl_keluar_dari=@isset($_GET['tgl_keluar_dari']){{ $_GET['tgl_keluar_dari'] }}@endisset&tgl_keluar_ke=@isset($_GET['tgl_keluar_ke']){{ $_GET['tgl_keluar_ke'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '25') selected @endif @endisset class="tw-bg-white">25</option>
                         <option value="/siswa-keluar?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=50&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&nis_siswa=@isset($_GET['nis_siswa']){{ $_GET['nis_siswa'] }}@endisset&keluar_di_kelas=@isset($_GET['keluar_di_kelas']){{ $_GET['keluar_di_kelas'] }}@endisset&tgl_mutasi=@isset($_GET['tgl_mutasi']){{ $_GET['tgl_mutasi'] }}@endisset&sk_mutasi=@isset($_GET['sk_mutasi']){{ $_GET['sk_mutasi'] }}@endisset&alasan_mutasi=@isset($_GET['alasan_mutasi']){{ $_GET['alasan_mutasi'] }}@endisset&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset&tgl_keluar_dari=@isset($_GET['tgl_keluar_dari']){{ $_GET['tgl_keluar_dari'] }}@endisset&tgl_keluar_ke=@isset($_GET['tgl_keluar_ke']){{ $_GET['tgl_keluar_ke'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '50') selected @endif @endisset class="tw-bg-white">50</option>

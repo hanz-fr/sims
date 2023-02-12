@@ -7,17 +7,16 @@
             display: none;
         }
 
-        @media only screen and (max-width: 768px) {
-            .slide-container {
-                max-width: 700px;
-                width: 100%;
-            }
+        .slide-container {
+            max-width: 37rem;
+            width: 100%;
         }
 
-
-        .slide-container {
-            max-width: 1000px;
-            width: 100%;
+        @media only screen and (min-width: 1370px) {
+            .slide-container {
+                max-width: 60rem;
+                width: 100%;
+            }
         }
 
 
@@ -160,15 +159,13 @@
 
     <!-- Welcome Banner -->
     <div class="tw-flex tw-flex-col tw-my-10 tw-mx-10">
-        <div class="sims-card-1 tw-py-8">
-            <div class="tw-flex tw-justify-between tw-mx-16">
-                <div class="tw-flex tw-flex-col tw-gap-1">
-                    <div class="lg:sims-heading-3xl sm:sims-heading-xl">{{ $message }}, <div
-                            class="tw-inline tw-font-black">
-                            {{ auth()->user()->nama }}</div>
-                    </div>
-                    <div class="lg:sims-text-gray-md sm:sims-text-gray-xs">Apa yang akan anda lakukan hari ini?</div>
+        <div class="tw-w-1/2 md:tw-w-full sims-card-1 tw-py-8 tw-px-16">
+            <div class="tw-flex tw-flex-col tw-gap-1">
+                <div class="lg:sims-heading-3xl sm:sims-heading-xl">{{ $message }}, <div
+                        class="tw-inline tw-font-black">
+                        {{ auth()->user()->nama }}</div>
                 </div>
+                <div class="lg:sims-text-gray-md sm:sims-text-gray-xs">Apa yang akan anda lakukan hari ini?</div>
             </div>
         </div>
 
@@ -176,7 +173,7 @@
         <div class="tw-my-2"></div>
 
         <!-- Content -->
-        <div class="tw-flex tw-gap-10">
+        <div class="tw-flex md:tw-flex-row tw-flex-col tw-gap-10">
 
             <!-- Column 1 -->
             <!-- Carousel -->
@@ -414,6 +411,7 @@
 
 
         </div>
+    </div>
 
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script>
