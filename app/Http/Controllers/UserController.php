@@ -110,7 +110,7 @@ class UserController extends Controller
                     'email_verified_at' => Carbon::now()
                 ]);
 
-                return view('auth.register', [
+                return view('auth.profil-user', [
                     'title'  => 'Verifikasi akun anda',
                     'status' => 'success',
                     'user'   => $user,
