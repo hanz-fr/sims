@@ -220,7 +220,7 @@ class UserController extends Controller
         $user = User::find($id);
 
         if ($user->email_verified_at) {
-            $user->update(['email_verified_at' => null]);
+            $user->email_verified_at = null;
         }
 
         $user->update($request->all());

@@ -25,6 +25,8 @@ class JurusanController extends Controller
 
     /* View All Jurusan */
     public function viewAllJurusan(Request $request) {
+
+        abort_if(Gate::denies('admin-only'), 403);
         
         //-- search & sorting --//
         $search = $request->search;
@@ -61,6 +63,8 @@ class JurusanController extends Controller
     /* View Detail Jurusan */
     public function viewJurusan(Request $request, $id) {
 
+        abort_if(Gate::denies('admin-only'), 403);
+
         $response = Http::get("{$this->api_url}/jurusan/{$id}");
 
         if($response->successful()) {
@@ -83,6 +87,8 @@ class JurusanController extends Controller
     /* Create Jurusan */
     public function createJurusan() {
 
+        abort_if(Gate::denies('admin-only'), 403);
+
         return view('admin.jurusan.create-jurusan', [
             'title' => 'Create Jurusan',
             'active' => 'database',
@@ -92,6 +98,8 @@ class JurusanController extends Controller
     
     /* Edit Jurusan */
     public function editJurusan($id) {
+
+        abort_if(Gate::denies('admin-only'), 403);
 
         $response = Http::get("{$this->api_url}/jurusan/{$id}");
 
@@ -106,6 +114,8 @@ class JurusanController extends Controller
     
     /* Store Jurusan */
     public function storeJurusan(Request $request) {
+
+        abort_if(Gate::denies('admin-only'), 403);
 
         $id = "{$request->nama}-{$request->konsentrasi}";
 
@@ -145,6 +155,8 @@ class JurusanController extends Controller
     /* Update Jurusan */
     public function updateJurusan(Request $request, $id) {
 
+        abort_if(Gate::denies('admin-only'), 403);
+
         $response = Http::put("{$this->api_url}/jurusan/{$id}", [
             'nama' => $request->nama,
             'konsentrasi' => $request->konsentrasi,
@@ -178,6 +190,8 @@ class JurusanController extends Controller
     
     /* Delete Jurusan */
     public function deleteJurusan(Request $request, $id) {
+
+        abort_if(Gate::denies('admin-only'), 403);
 
         $response = Http::delete("{$this->api_url}/jurusan/{$id}");
 
