@@ -110,7 +110,12 @@ class UserController extends Controller
                     'email_verified_at' => Carbon::now()
                 ]);
 
-                return view('auth.profil-user')->with('success', 'Verifikasi Akun Berhasil');
+                return view('auth.register', [
+                    'title'  => 'Verifikasi akun anda',
+                    'status' => 'success',
+                    'user'   => $user,
+                    'message'=> 'Verifikasi Akun Berhasil'
+                ]);
 
             }
 
@@ -213,6 +218,10 @@ class UserController extends Controller
         ]);
 
         $user = User::find($id);
+
+        if ($user->email_verified_at) {
+            $user->update(['email_verified_at' => null]);
+        }
 
         $user->update($request->all());
 
