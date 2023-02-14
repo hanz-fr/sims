@@ -82,7 +82,7 @@
                 <label class="label-input" for="old_password">
                     Kata Sandi Lama
                 </label>
-                    <input class="input-data-minimal" id="old_password" type="password" name="old_password" :type="show ? 'password' : 'text'">
+                    <input class="input-data-minimal" @error('old_password') is-invalid @enderror id="old_password" type="password" name="old_password" :type="show ? 'password' : 'text'">
                     <div class="tw-absolute tw-inset-y-0 tw-right-0 tw-pt-7 tw-pr-3 tw-flex tw-items-center tw-text-sm tw-leading-5">
                         
                         <svg class="tw-h-5 tw-text-gray-500" fill="none" @click="show = !show"
@@ -111,14 +111,17 @@
                         </path>
                         </svg>
                     </div>
+                    @error('old_password')
+                        <div class="tw-text-sm tw-text-pink-700 tw-mt-1 tw-font-sg">{{ $message }}</div>
+                    @enderror
                 </div>
             </div>
             <div x-data="{ show: true }" class="tw-flex tw-flex-wrap tw-mb-6">
                 <div class="tw-relative tw-w-full">
-                <label class="label-input" for="old_password">
+                <label class="label-input" for="new_password">
                     Kata Sandi Baru
                 </label>
-                    <input class="input-data-minimal" id="new_password" type="password" name="new_password" :type="show ? 'password' : 'text'">
+                    <input class="input-data-minimal" @error('new_password') is-invalid @enderror id="new_password" type="password" name="new_password" :type="show ? 'password' : 'text'">
                     <div class="tw-absolute tw-inset-y-0 tw-right-0 tw-pr-3 tw-pt-7 tw-flex tw-items-center tw-text-sm tw-leading-5">
                         
                         <svg class="tw-h-5 tw-text-gray-500" fill="none" @click="show = !show"
@@ -147,14 +150,17 @@
                         </path>
                         </svg>
                     </div>
+                    @error('new_password')
+                        <div class="tw-text-sm tw-text-pink-700 tw-mt-1 tw-font-sg">{{ $message }}</div>
+                    @enderror
                 </div>
             </div>
             <div x-data="{ show: true }" class="tw-flex tw-flex-wrap tw-mb-6">
                 <div class="tw-relative tw-w-full">
-                <label class="label-input" for="old_password">
+                <label class="label-input" for="new_password_confirmation">
                     Ulangi Kata Sandi Baru
                 </label>
-                    <input class="input-data-minimal" id="new_password_confirmation" type="password" name="new_password_confirmation" :type="show ? 'password' : 'text'">
+                    <input class="input-data-minimal" @error('new_password_confirmation') is-invalid @enderror id="new_password_confirmation" type="password" name="new_password_confirmation" :type="show ? 'password' : 'text'">
                     <div class="tw-absolute tw-inset-y-0 tw-right-0 tw-pr-3 tw-pt-7 tw-flex tw-items-center tw-text-sm tw-leading-5">
                         
                         <svg class="tw-h-5 tw-text-gray-500" fill="none" @click="show = !show"
@@ -183,6 +189,9 @@
                         </path>
                         </svg>
                     </div>
+                    @error('new_password_confirmation')
+                        <div class="tw-text-sm tw-text-pink-700 tw-mt-1 tw-font-sg">{{ $message }}</div>
+                    @enderror
                 </div>
             </div>
             <div class="tw-mx-auto tw-text-center tw-mt-10 ">

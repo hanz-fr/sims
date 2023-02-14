@@ -39,11 +39,11 @@ class KelasController extends Controller
         $total_kelas = json_decode(Http::get("{$this->api_url}/kelas"))->data->count;
         
         return view('admin.kelas.index', [
-            'title' => 'Data Semua Kelas',
-            'active' => '',
-            'response' => json_decode($response),
-            'kelas' => json_decode($response)->data->rows,
-            'total' => json_decode($response)->data->count,
+            'title'       => 'Data Semua Kelas',
+            'active'      => 'admin-dashboard',
+            'response'    => json_decode($response),
+            'kelas'       => json_decode($response)->data->rows,
+            'total'       => json_decode($response)->data->count,
             'total_kelas' => $total_kelas,
         ]);
 
@@ -60,9 +60,9 @@ class KelasController extends Controller
         $response = Http::get("{$this->api_url}/kelas/{$id}");
 
         return view('admin.kelas.show-detail', [
-            'title' => 'Detail Data Kelas',
-            'active' => '',
-            'kelas' => json_decode($response)->result,
+            'title'       => 'Detail Data Kelas',
+            'active'      => 'admin-dashboard',
+            'kelas'       => json_decode($response)->result,
             'total_siswa' => json_decode($response)->siswa,
         ]);
 
@@ -77,8 +77,8 @@ class KelasController extends Controller
         $jurusan = json_decode(Http::get("{$this->api_url}/jurusan?perPage=500"))->data->rows;
 
         return view('admin.kelas.create', [
-            'title' => 'Tambah Data Kelas',
-            'active' => '',
+            'title'   => 'Tambah Data Kelas',
+            'active'  => 'admin-dashboard',
             'jurusan' => $jurusan,
         ]);
 
@@ -95,9 +95,9 @@ class KelasController extends Controller
         $response = Http::get("{$this->api_url}/kelas/{$id}");
 
         return view('admin.kelas.edit', [
-            'title' => 'Edit Data Kelas',
-            'active' => '',
-            'kelas' => json_decode($response)->result,
+            'title'   => 'Edit Data Kelas',
+            'active'  => 'admin-dashboard',
+            'kelas'   => json_decode($response)->result,
             'jurusan' => $jurusan
         ]);
 
@@ -112,9 +112,9 @@ class KelasController extends Controller
         $id = "{$request->kelas}{$request->jurusan}{$request->rombel}";
 
         $response = json_decode(Http::post("{$this->api_url}/kelas", [
-            'kelas' => $request->kelas,
-            'rombel' => $request->rombel,
-            'jurusan' => $request->jurusan,
+            'kelas'     => $request->kelas,
+            'rombel'    => $request->rombel,
+            'jurusan'   => $request->jurusan,
             'JurusanId' => $request->JurusanId
         ]));
 
@@ -124,9 +124,9 @@ class KelasController extends Controller
 
             Http::post("{$this->api_url}/history", [
 
-                'activityName' => 'Create Kelas',
+                'activityName'   => 'Create Kelas',
                 'activityAuthor' => "$user->nama",
-                'activityDesc' => "$user->nama membuat kelas dengan Id Kelas : $id"
+                'activityDesc'   => "$user->nama membuat kelas dengan Id Kelas : $id"
 
             ]);
 

@@ -111,7 +111,7 @@
                               :aria-expanded="open"
                               :aria-controls="$id('dropdown-button')"
                               type="button" x-tooltip.placement.right.delay.500-100="tooltip" type="button"
-                              class="tw-text-sims-new-500 tw-p-5 tw-transition-colors tw-rounded-xl hover:tw-bg-sims-new-500 hover:tw-text-white focus:tw-outline-none">
+                              class="{{ ($active === "profile") ? 'tw-bg-sims-new-500 tw-text-white' : 'tw-text-sims-new-500' }} tw-p-5 tw-transition-colors tw-rounded-xl hover:tw-bg-sims-new-500 hover:tw-text-white focus:tw-outline-none">
                               <span class="sr-only">Toggle sidebar</span>
                               <i class="fa-solid fa-circle-user tw-text-3xl"></i>
                           </button>

@@ -54,7 +54,7 @@ class AccountController extends Controller
         if($user) {
             return view('admin.account.index', [
                 'title'      => 'Manajemen Akun SIMS',
-                'active'     => '',
+                'active'     => 'admin-dashboard',
                 'status'     => '',
                 'users'      => $users,
                 'created_at' => $created_at,
@@ -84,7 +84,7 @@ class AccountController extends Controller
 
         return view('admin.account.create', [
             'title' => 'Tambah Akun',
-            'active' => 'admin',
+            'active' => 'admin-dashboard',
             'prevPage' => $prevPageURL,
         ]);
     }
@@ -150,7 +150,7 @@ class AccountController extends Controller
 
         return view('admin.account.show', [
             'title'   => 'Detail Akun',
-            'active'  => '',
+            'active'  => 'admin-dashboard',
             'user'    => $user,
             'usercount' => $usercount,
             'admincount' => $admincount,
@@ -176,7 +176,7 @@ class AccountController extends Controller
 
         return view('admin.account.edit', [
             'title'    => 'Edit Akun',
-            'active'   => 'admin',
+            'active'   => 'admin-dashboard',
             'user'     => $user,
             'prevPage' => $prevPageURL,
         ]);

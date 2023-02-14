@@ -30,7 +30,7 @@ class UserController extends Controller
     }
 
 
-    // registrasi
+    /* registrasi */
     public function registration() {
     
         return view('auth.register', [
@@ -40,7 +40,7 @@ class UserController extends Controller
 
     }
 
-
+    /* registration form */
     public function register(Request $request) {
 
         $request->validate([
@@ -73,6 +73,7 @@ class UserController extends Controller
     }
 
 
+    /* send verify code */
     public function sendVerifyAccount(Request $request, $id) {
 
         $user = User::where('id', $id)->first();
@@ -85,16 +86,17 @@ class UserController extends Controller
         Mail::to($user->email)->send(new EmailVerification($user));
 
         return view('auth.edit-profil', [
-            'title' => '',
-            'active' => '',
-            'status' => 'success', 
+            'title'   => 'Edit Profil',
+            'active'  => 'profile',
+            'status'  => 'success', 
             'message' => 'Link baru sudah terkirim',
-            'user' => $user
+            'user'    => $user
         ]);
 
     }
 
 
+    
     public function verifyAccount($token) {
         
         $user = User::where('token', $token)->first();
@@ -134,6 +136,7 @@ class UserController extends Controller
 
     }
 
+
     public function authenticate(Request $request) {
 
         $request->validate([
@@ -162,6 +165,7 @@ class UserController extends Controller
         return redirect("login")->with('error', 'Detail login tidak valid!');
     }
 
+
     // logout
     public function signOut() {
 
@@ -185,7 +189,7 @@ class UserController extends Controller
 
         return view('auth.profil-user', [
             'title'  => 'Profil User',
-            'active' => '',
+            'active' => 'profile',
             'history' => json_decode($userHistory)->rows,
         ], 
         compact('user'));
@@ -200,7 +204,7 @@ class UserController extends Controller
 
         return view('auth.edit-profil', [
             'title'  => 'Profil User',
-            'active' => '',
+            'active' => 'profile',
             'status' => ''
         ], 
         compact('user'));
@@ -212,9 +216,9 @@ class UserController extends Controller
     public function update(Request $request, User $user, $id) {
 
         $this->validate($request,[
-            'nip'   => 'required|min:9|max:18',
-            'nama'  => 'required',
-            'email' => 'required|email'
+            'nip'     => 'required|min:9|max:18',
+            'nama'    => 'required',
+            'no_telp' => '',
         ]);
 
         $user = User::find($id);
@@ -223,9 +227,15 @@ class UserController extends Controller
             $user->email_verified_at = null;
         }
 
-        $user->update($request->all());
+        if ($user->update($request->all())) {
 
-        return redirect()->route('profile')->with('success','Data berhasil Di Update');
+            return redirect()->route('profile')->with('success','Profil anda berhasil diupdate');
+
+        } else {
+
+            return back()->with('error', 'Profil anda gagal diupdate');
+
+        }
 
     }
 
@@ -235,20 +245,33 @@ class UserController extends Controller
     public function changePassword(Request $request)  {
         
         $request->validate([
-        'old_password' => 'required',
-        'new_password' => 'required|confirmed',
-        'new_password_confirmation' => 'required|same:new_password'
+            'old_password' => 'required',
+            'new_password' => 'required|confirmed',
+            'new_password_confirmation' => 'required|same:new_password'
         ]);
 
         if(!Hash::check($request->old_password, auth()->user()->password)) {
             return back()->with('error', 'Kata Sandi lama tidak cocok!');
         }
 
-        User::whereId(auth()->user()->id)->update([
-            'password' => Hash::make($request->new_password)
-        ]);
+        if(strcmp($request->old_password, $request->new_password) === 0) {
+            return back()->with('error', 'Kata sandi baru tidak bisa sama dengan yang lama!');
+        }
 
-        return back()->with('success', 'Kata Sandi berhasil diubah!');
+        if(strcmp($request->new_password, $request->new_password_confirmation) === 0) {
+            return back()->with('error', 'Konfimasi kata sandi harus cocok!');
+        }
+        
+        $user = User::find(auth()->user()->id);
+
+        $user->password = Hash::make($request->new_password);
+
+        if ($user->save()) {
+            return back()->with('success', 'Kata Sandi berhasil diubah!');
+        } else {
+            return back()->with('error', 'Kata Sandi gagal diubah!');
+        }
+
 
     }
 
