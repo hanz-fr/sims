@@ -260,12 +260,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['is_admin'] , ['revalidate']
     Route::post('/mapel-jurusan/store', [MapelJurusanController::class, 'storeMapelJurusan']);
     Route::put('/mapel-jurusan/update/{id}', [MapelJurusanController::class, 'updateMapelJurusan']);
     Route::delete('/mapel-jurusan/delete/{id}', [MapelJurusanController::class, 'deleteMapelJurusan']);
-
-
-    /* LIVE SEARCH TEST */
-    Route::get('/live-search-test', [ApiController::class, 'indexLiveSearch']);
-
-    Route::get('/search', [ApiController::class, 'search']);
 });
 
 
