@@ -48,7 +48,8 @@
                     {{ \Carbon\Carbon::parse(strtotime($th->createdAt))->translatedFormat('l d F Y') }}, {{ \Carbon\Carbon::parse(strtotime($th->createdAt))->setTimezone('+7')->format('H:i') }}
                   </p>
                 </div>
-            </div>
+            </div>image.png
+            
           </div>
           @endforeach
           

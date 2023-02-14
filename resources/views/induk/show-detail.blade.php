@@ -713,6 +713,15 @@
                                                         {{ $siswa->golongan_darah }}
                                                     </td>
                                                 </tr>
+                                                <tr class="tw-bg-white tw-border">
+                                                    <th scope="row"
+                                                        class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-whitespace-nowrap">
+                                                        Lama siswa sekolah sejak tanggal diterima
+                                                    </th>
+                                                    <td class="tw-py-4 tw-px-6">
+                                                        {{ $lama_siswa_sekolah }}
+                                                    </td>
+                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>

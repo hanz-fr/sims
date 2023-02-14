@@ -295,6 +295,8 @@ class SiswaController extends Controller
 
         $response = Http::get("{$this->api_url}/siswa/{$nis}");
 
+        $lama_siswa_sekolah = Http::get("{$this->api_url}/dbquery/function/lama-siswa-sekolah?nis_siswa=$nis");
+
         if ($response->successful()) {
 
             // Parse siswa birthdate
@@ -321,7 +323,8 @@ class SiswaController extends Controller
                 'updatedAt' => $updatedAt,
                 'createdAt' => $createdAt,
                 'tgl_lahir_siswa' => $tgl_lahir_siswa,
-                'prevURL' => $prevURL
+                'prevURL' => $prevURL,
+                'lama_siswa_sekolah' => json_decode($lama_siswa_sekolah)[0]->lama_siswa_sekolah,
             ]);
         } else {
 
