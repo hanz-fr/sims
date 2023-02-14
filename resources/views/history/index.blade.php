@@ -48,17 +48,16 @@
                     {{ \Carbon\Carbon::parse(strtotime($th->createdAt))->translatedFormat('l d F Y') }}, {{ \Carbon\Carbon::parse(strtotime($th->createdAt))->setTimezone('+7')->format('H:i') }}
                   </p>
                 </div>
-            </div>image.png
+            </div>
             
           </div>
           @endforeach
+          <div class="tw-flex tw-border-2 tw-mx-10 tw-my-16 tw-border-slate-200"></div>
           
         @endif
 
         {{-- kalau misal ada aktivitas di hari kemarin dan seterusnya --}}
         @if($older_history != [])
-
-          <div class="tw-flex tw-border-2 tw-mx-10 tw-my-16 tw-border-slate-200"></div>
 
           @foreach($older_history as $h)
           {{-- Accordion --}}

@@ -681,7 +681,7 @@
                                     </div>
                                 </div>
                                 <div x-show="selected === 2">
-                                    <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl tw-mb-[20.5rem]">
+                                    <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl tw-mb-[16.5rem]">
                                         <table class="tw-w-full tw-text-basic-700 tw-text-left">
                                             <thead
                                                 class="tw-text-lg tw-bg-gray-100 tw-border tw-font-satoshi">
@@ -719,7 +719,7 @@
                                                         Lama siswa sekolah sejak tanggal diterima
                                                     </th>
                                                     <td class="tw-py-4 tw-px-6">
-                                                        {{ $lama_siswa_sekolah }}
+                                                        {{ $lama_siswa_sekolah }} hari
                                                     </td>
                                                 </tr>
                                             </tbody>

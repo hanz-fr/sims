@@ -297,6 +297,7 @@ class SiswaController extends Controller
 
         $lama_siswa_sekolah = Http::get("{$this->api_url}/dbquery/function/lama-siswa-sekolah?nis_siswa=$nis");
 
+
         if ($response->successful()) {
 
             // Parse siswa birthdate
@@ -315,17 +316,37 @@ class SiswaController extends Controller
                 $updatedAt = Carbon::parse(json_decode($response)->result->updatedAt)->diffForHumans();
             }
 
-            return view('induk.show-detail', [
-                'title' => 'Data Siswa',
-                'active' => 'data-induk',
-                'status' => 'success',
-                'siswa' => json_decode($response)->result,
-                'updatedAt' => $updatedAt,
-                'createdAt' => $createdAt,
-                'tgl_lahir_siswa' => $tgl_lahir_siswa,
-                'prevURL' => $prevURL,
-                'lama_siswa_sekolah' => json_decode($lama_siswa_sekolah)[0]->lama_siswa_sekolah,
-            ]);
+            if (json_decode($lama_siswa_sekolah)->status === 'success') {
+
+                return view('induk.show-detail', [
+                    'title' => 'Data Siswa',
+                    'active' => 'data-induk',
+                    'status' => 'success',
+                    'siswa' => json_decode($response)->result,
+                    'updatedAt' => $updatedAt,
+                    'createdAt' => $createdAt,
+                    'tgl_lahir_siswa' => $tgl_lahir_siswa,
+                    'prevURL' => $prevURL,
+                    'lama_siswa_sekolah' => json_decode($lama_siswa_sekolah)->results[0]->lama_siswa_sekolah,
+                ]);
+
+            } else {
+
+                return view('induk.show-detail', [
+                    'title' => 'Data Siswa',
+                    'active' => 'data-induk',
+                    'status' => 'success',
+                    'siswa' => json_decode($response)->result,
+                    'updatedAt' => $updatedAt,
+                    'createdAt' => $createdAt,
+                    'tgl_lahir_siswa' => $tgl_lahir_siswa,
+                    'prevURL' => $prevURL,
+                    'lama_siswa_sekolah' => '(?)',
+                ]);
+
+            }
+            
+
         } else {
 
             return view('induk.show-detail', [
