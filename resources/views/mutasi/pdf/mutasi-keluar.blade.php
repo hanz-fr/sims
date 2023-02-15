@@ -75,12 +75,17 @@
                 <td style="padding-left: 70px"></td>
                 <td style="padding-left: 160px">Bandung, {{ date('d F Y') }}</td>
             </tr>
-            <tr>
+            <tr style="color:white;">
                 <td></td>
                 <td></td>
                 <td></td>
             </tr>
-            <tr>
+            <tr style="color:white;">
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="color:white;">
                 <td></td>
                 <td></td>
                 <td></td>
