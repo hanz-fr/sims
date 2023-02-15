@@ -76,18 +76,18 @@
                 <td style="padding-left: 160px">Bandung, {{ date('d F Y') }}</td>
             </tr>
             <tr>
-                <td>.</td>
                 <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>.</td>
                 <td></td>
                 <td></td>
             </tr>
             <tr>
                 <td></td>
-                <td>.</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
                 <td></td>
             </tr>
             <tr>
@@ -113,6 +113,20 @@
                 <td ></td>
                 <td style="padding-left: 70px"></td>
                 <td style="padding-left: 190px">Parwanto, S.Pd</td>
+                {{-- <td style="padding-left: 70px">NIP. 19810521 201001 1 008</td> --}}
+            </tr>
+            <tr>
+                <td></td>
+                <td ></td>
+                <td style="padding-left: 70px"></td>
+                <td style="padding-left: 70px"></td>
+                <td ></td>
+                <td style="padding-left: 70px"></td>
+                <td style="padding-left: 70px"></td>
+                <td ></td>
+                <td style="padding-left: 70px"></td>
+                <td style="padding-left: 160px">NIP. 19810521 201001 1 008</td>
+                {{-- <td style="padding-left: 70px">NIP. 19810521 201001 1 008</td> --}}
             </tr>
         </tbody>
     </table>

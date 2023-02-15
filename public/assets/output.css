@@ -2421,6 +2421,10 @@ video {
   gap: 3rem;
 }
 
+.tw-gap-0 {
+  gap: 0px;
+}
+
 .tw-gap-x-5 {
   -moz-column-gap: 1.25rem;
        column-gap: 1.25rem;
