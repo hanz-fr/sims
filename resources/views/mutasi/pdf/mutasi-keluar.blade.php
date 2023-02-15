@@ -12,13 +12,13 @@
         text-align: center;
     }
 
-    table {
+    #data {
         text-transform: capitalize;
         border-collapse: collapse;
         width: 100%;
         font-size: 9px;
     }
-    td, th {
+    #data td, th {
         border: 1px solid black;
         padding: 10px 5px;
         color: black;
@@ -58,6 +58,63 @@
                 <td>{{ $m->alasan_mutasi }}</td>
             </tr>
         @endforeach
+    </table>
+    <br>
+    <br>
+    <table class="footer">
+        <tbody style="font-size: 12px;">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td style="padding-left: 70px"></td>
+                <td ></td>
+                <td style="padding-left: 70px"></td>
+                <td style="padding-left: 70px"></td>
+                <td ></td>
+                <td style="padding-left: 70px"></td>
+                <td style="padding-left: 160px">Bandung, {{ date('d F Y') }}</td>
+            </tr>
+            <tr>
+                <td>.</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>.</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td style="padding-left: 160px">______________________</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td ></td>
+                <td style="padding-left: 70px"></td>
+                <td style="padding-left: 70px"></td>
+                <td ></td>
+                <td style="padding-left: 70px"></td>
+                <td style="padding-left: 70px"></td>
+                <td ></td>
+                <td style="padding-left: 70px"></td>
+                <td style="padding-left: 190px">Parwanto, S.Pd</td>
+            </tr>
+        </tbody>
     </table>
 
     <script type="text/javascript">
