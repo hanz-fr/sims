@@ -11,22 +11,22 @@
             <i class="fa-solid fa-user tw-text-center text-9xl tw-bg-sims-new-500 tw-rounded-full tw-drop-shadow-xl tw-pt-10 tw-overflow-hidden tw-text-white tw-w-40 tw-h-40"></i>
             <div class="tw-ml-8">
                 <div class="sims-text-gray-xl">
-                    @if ($user->role === 1)
+                    @if ($user->role == 1)
                         Tata Usaha
                     @endif
-                    @if ($user->role === 2)
+                    @if ($user->role == 2)
                         Kesiswaan
                     @endif
-                    @if ($user->role === 3)
+                    @if ($user->role == 3)
                         Kurikulum
                     @endif
-                    @if ($user->role === 4)
+                    @if ($user->role == 4)
                         Wali Kelas
                     @endif
                 </div>
                 <div class="sims-heading-3xl-black">
                     {{ $user->nama }} 
-                    @if ($user->is_admin === 1)
+                    @if ($user->is_admin == 1)
                         <i title="User ini merupakan Admin" class="fa-solid fa-shield-check tw-text-sims-500 tw-text-2xl tw-ml-1"></i>
                     @endif
                 </div>                 
@@ -108,19 +108,19 @@
                 <li>{{ $user->nip }}</li>
                 <li>{{ $user->email }}</li>
                 <li>                
-                    @if ($user->role === 1)
+                    @if ($user->role == 1)
                         Tata Usaha
                     @endif
-                    @if ($user->role === 2)
+                    @if ($user->role == 2)
                         Kesiswaan
                     @endif
-                    @if ($user->role === 3)
+                    @if ($user->role == 3)
                         Kurikulum
                     @endif
-                    @if ($user->role === 4)
+                    @if ($user->role == 4)
                         Wali Kelas
                     @endif
-                    @if ($user->is_admin === 1)
+                    @if ($user->is_admin == 1)
                         Admin
                     @endif
                 </li>

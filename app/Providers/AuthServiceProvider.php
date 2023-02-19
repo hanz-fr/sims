@@ -27,17 +27,17 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        Gate::define('kesiswaan', fn (User $user) => $user->role === 2 );
-        Gate::define('wali-kelas', fn (User $user) => $user->role === 4 );
-        Gate::define('admin-only', fn (User $user) => $user->is_admin === 1 );
+        Gate::define('kesiswaan', fn (User $user) => $user->role == 2 );
+        Gate::define('wali-kelas', fn (User $user) => $user->role == 4 );
+        Gate::define('admin-only', fn (User $user) => $user->is_admin == 1 );
 
         Gate::define('manage-induk', function (User $user) {
 
-            if ($user->role === 1) {
+            if ($user->role == 1) {
                 return true;
             }
 
-            if ($user->is_admin === 1) {
+            if ($user->is_admin == 1) {
                 return true;
             }
 
@@ -46,15 +46,15 @@ class AuthServiceProvider extends ServiceProvider
         
         Gate::define('manage-alumni', function (User $user) {
 
-            if ($user->role === 1) {
+            if ($user->role == 1) {
                 return true;
             }
 
-            if ($user->role === 2) {
+            if ($user->role == 2) {
                 return true;
             }
 
-            if ($user->is_admin === 1) {
+            if ($user->is_admin == 1) {
                 return true;
             }
 
@@ -63,11 +63,11 @@ class AuthServiceProvider extends ServiceProvider
 
         Gate::define('manage-mutasi', function (User $user) {
 
-            if ($user->role === 2) {
+            if ($user->role == 2) {
                 return true;
             }
 
-            if ($user->is_admin === 1) {
+            if ($user->is_admin == 1) {
                 return true;
             }
 
@@ -76,11 +76,11 @@ class AuthServiceProvider extends ServiceProvider
 
         Gate::define('manage-nilai', function (User $user) {
 
-            if ($user->role === 4) {
+            if ($user->role == 4) {
                 return true;
             }
 
-            if ($user->is_admin === 1) {
+            if ($user->is_admin == 1) {
                 return true;
             }
 
@@ -89,15 +89,15 @@ class AuthServiceProvider extends ServiceProvider
 
         Gate::define('update-nilai', function (User $user) {
 
-            if ($user->role === 1) {
+            if ($user->role == 1) {
                 return true;
             }
 
-            if ($user->role === 4) {
+            if ($user->role == 4) {
                 return true;
             }
 
-            if ($user->is_admin === 1) {
+            if ($user->is_admin == 1) {
                 return true;
             }
 

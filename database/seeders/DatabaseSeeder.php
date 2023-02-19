@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
             'nip'      => '123123123',
             'nama'     => 'Super Admin',
             'email'    => 'contactsims11@gmail.com',
-            'role'     => 0,
+            'role'     => 1,
             'is_admin' => true,
             'password' => bcrypt('123123'),
             'token'    => Str::random(40),

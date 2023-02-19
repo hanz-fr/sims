@@ -283,43 +283,43 @@
                         <form action="/admin/account/{{ $u->id }}">
                             <button type="submit" class="tw-flex tw-justify-between sims-card-2">
                                 <div class="tw-flex tw-gap-3">
-                                    @if ($u->role === 1)
+                                    @if ($u->role == 1)
                                         <i class="fa-solid fa-circle-user sims-icon-3xl"></i>
-                                    @elseif ($u->role === 2)
+                                    @elseif ($u->role == 2)
                                         <i class="fa-solid fa-circle-user tw-text-salmon-400 sims-icon-3xl"></i>
-                                    @elseif ($u->role === 3)
+                                    @elseif ($u->role == 3)
                                         <i class="fa-solid fa-circle-user tw-text-[#979797]  sims-icon-3xl"></i>
-                                    @elseif ($u->role === 4)
+                                    @elseif ($u->role == 4)
                                         <i class="fa-solid fa-circle-user tw-text-oren-400 sims-icon-3xl"></i>
                                     @else
                                         <i class="fa-solid fa-circle-user sims-icon-3xl"></i>
                                     @endif
                                     <div class="tw-flex tw-flex-col tw-text-start">
-                                        @if ($u->role === 1)
+                                        @if ($u->role == 1)
                                             <div class="sims-heading-sm tw-truncate sm:tw-w-24 lg:tw-w-32">{{ $u->nama }}</div>
-                                        @elseif ($u->role === 2)
+                                        @elseif ($u->role == 2)
                                             <div class="tw-text-salmon-400 sims-heading-sm tw-truncate sm:tw-w-24 lg:tw-w-32">{{ $u->nama }}</div>
-                                        @elseif ($u->role === 3)
+                                        @elseif ($u->role == 3)
                                             <div class=" tw-text-[#979797] sims-heading-sm tw-truncate sm:tw-w-24 lg:tw-w-32">{{ $u->nama }}</div>
-                                        @elseif ($u->role === 4)
+                                        @elseif ($u->role == 4)
                                             <div class="tw-text-oren-400 sims-heading-sm tw-truncate sm:tw-w-24 lg:tw-w-32">{{ $u->nama }}</div>
                                         @else
                                             <div class="sims-heading-sm tw-truncate sm:tw-w-24 lg:tw-w-32">{{ $u->nama }}</div>
                                         @endif
                                         <div class="sims-text-gray-xs tw-flex tw-items-center">
-                                            @if ($u->role === 1)
+                                            @if ($u->role == 1)
                                                 Tata Usaha
                                             @endif
-                                            @if ($u->role === 2)
+                                            @if ($u->role == 2)
                                                 Kesiswaan
                                             @endif
-                                            @if ($u->role === 3)
+                                            @if ($u->role == 3)
                                                 Kurikulum
                                             @endif
-                                            @if ($u->role === 4)
+                                            @if ($u->role == 4)
                                                 Wali Kelas
                                             @endif
-                                            @if ($u->is_admin === 1)
+                                            @if ($u->is_admin == 1)
                                                 <i title="User ini merupakan Admin" class="fa-solid fa-shield-check tw-text-sims-500 tw-text-sm tw-ml-2"></i>
                                             @endif
                                         </div>

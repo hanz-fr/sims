@@ -67,7 +67,7 @@
                         </a>
                     </div>
 
-                    @if(Auth::user()->is_admin === 1)
+                    @if(Auth::user()->is_admin == 1)
                     <div x-data="{ tooltip: 'Admin Dashboard' }">
                         <a href="/admin">
                             <button x-tooltip.placement.right.delay.500-100="tooltip" type="button"

@@ -56,19 +56,19 @@
                     @endif
                 </td>
                 <td class="tw-p-6 tw-flex tw-items-center tw-justify-center">
-                    @if ($u->role === 1)
+                    @if ($u->role == 1)
                     Tata Usaha
                     @endif
-                    @if ($u->role === 2)
+                    @if ($u->role == 2)
                         Kesiswaan
                     @endif
-                    @if ($u->role === 3)
+                    @if ($u->role == 3)
                         Kurikulum
                     @endif
-                    @if ($u->role === 4)
+                    @if ($u->role == 4)
                         Wali Kelas
                     @endif
-                    @if ($u->is_admin === 1)
+                    @if ($u->is_admin == 1)
                         <i title="User ini merupakan Admin" class="fa-solid fa-shield-check tw-text-sims-500 tw-text-xl tw-ml-2"></i>
                     @endif
                 </td>

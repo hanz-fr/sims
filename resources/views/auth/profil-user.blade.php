@@ -11,16 +11,16 @@
             <i class="fa-solid fa-user tw-text-center text-9xl tw-bg-sims-new-500 tw-rounded-full tw-drop-shadow-xl tw-pt-10 tw-overflow-hidden tw-text-white tw-w-40 tw-h-40"></i>
             <div class="tw-ml-8">
                 <div class="sims-text-gray-xl">
-                    @if (auth()->user()->role === 1)
+                    @if (auth()->user()->role == 1)
                         Tata Usaha
                     @endif
-                    @if (auth()->user()->role === 2)
+                    @if (auth()->user()->role == 2)
                         Kesiswaan
                     @endif
-                    @if (auth()->user()->role === 3)
+                    @if (auth()->user()->role == 3)
                         Kurikulum
                     @endif
-                    @if (auth()->user()->role === 4)
+                    @if (auth()->user()->role == 4)
                         Wali Kelas
                     @endif
                 </div>
@@ -65,19 +65,19 @@
                 <li>{{ auth()->user()->nip }}</li>
                 <li>{{ auth()->user()->email }}</li>
                 <li>                
-                    @if (auth()->user()->role === 1)
+                    @if (auth()->user()->role == 1)
                         Tata Usaha
                     @endif
-                    @if (auth()->user()->role === 2)
+                    @if (auth()->user()->role == 2)
                         Kesiswaan
                     @endif
-                    @if (auth()->user()->role === 3)
+                    @if (auth()->user()->role == 3)
                         Kurikulum
                     @endif
-                    @if (auth()->user()->role === 4)
+                    @if (auth()->user()->role == 4)
                         Wali Kelas
                     @endif
-                    @if (auth()->user()->is_admin === 1)
+                    @if (auth()->user()->is_admin == 1)
                         Admin
                     @endif
                 </li>

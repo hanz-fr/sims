@@ -52,10 +52,10 @@
                         Role
                     </label>
                     <select value="{{ $user->role }}" class="input-data-minimal" id="nip" name="role" type="text">
-                        <option value="1" @if($user->role === 1) selected @endif>Tata Usaha</option>
-                        <option value="2" @if($user->role === 2) selected @endif>Kesiswaan</option>
-                        <option value="3" @if($user->role === 3) selected @endif>Kurikulum</option>
-                        <option value="4" @if($user->role === 4) selected @endif>Wali Kelas</option>
+                        <option value="1" @if($user->role == 1) selected @endif>Tata Usaha</option>
+                        <option value="2" @if($user->role == 2) selected @endif>Kesiswaan</option>
+                        <option value="3" @if($user->role == 3) selected @endif>Kurikulum</option>
+                        <option value="4" @if($user->role == 4) selected @endif>Wali Kelas</option>
                     </select>
                 </div>
                 <div class="tw-mx-auto md:tw-w-2/3 sm:tw-w-1/2">
@@ -63,8 +63,8 @@
                         Status Admin
                     </label>
                     <select value="{{ $user->is_admin }}" class="input-data-minimal" id="status" name="is_admin" required>
-                        <option value="1" @if($user->is_admin === 1) selected @endif>Ya</option>
-                        <option value="0" @if($user->is_admin === 0) selected @endif>Tidak</option>
+                        <option value="1" @if($user->is_admin == 1) selected @endif>Ya</option>
+                        <option value="0" @if($user->is_admin == 0) selected @endif>Tidak</option>
                     </select>
                 </div>
                 <div class="tw-mx-auto tw-text-center tw-mt-10">
