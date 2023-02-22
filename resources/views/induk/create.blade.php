@@ -467,6 +467,19 @@
                         @endif
                     </select>
                 </div>
+
+                <div class="tw-flex tw-flex-wrap tw--mx-3 tw-my-6">
+                    <div class="tw-w-full tw-px-3">
+                        <label class="label-input" for="KelasId">
+                            Aktif di Kelas *
+                        </label>
+                        <select class="input-data-minimal" id="KelasId" name="KelasId">
+                        @foreach ($kelas as $k)
+                        <option value="{{ $k->id }}">{{ $k->id }}</option>
+                        @endforeach
+                        </select>
+                    </div>
+                </div>
             </div>
             
             <div class="tw-mx-auto tw-text-center tw-mt-16">

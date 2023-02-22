@@ -381,7 +381,6 @@ class SiswaController extends Controller
 
     public function storeSiswa(Request $request)
     {
-        
         abort_if(Gate::denies('manage-induk'), 403);
 
         // validasi nis siswa jika sudah ada
@@ -438,7 +437,7 @@ class SiswaController extends Controller
                 'nis_siswa' => $request->nis,
                 'nisn_siswa' => $request->nisn,
                 'nama_siswa' => $request->nama,
-                'KelasId' =>  $request->diterima_di_kelas,
+                'KelasId' =>  $request->KelasId,
                 'email_siswa' => $request->email,
                 'tmp_lahir' => $request->tmp_lahir,
                 'tgl_lahir' => $request->tgl_lahir,
@@ -562,7 +561,7 @@ class SiswaController extends Controller
             'nis_siswa' => $request->nis,
             'nisn_siswa' => $request->nisn,
             'nama_siswa' => $request->nama,
-            'KelasId' =>  $request->diterima_di_kelas,
+            'KelasId' =>  $request->KelasId,
             'email_siswa' => $request->email,
             'tmp_lahir' => $request->tmp_lahir,
             'tgl_lahir' => $request->tgl_lahir,
