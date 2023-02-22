@@ -57,9 +57,8 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                 </svg>
-                                <div
-                                    class="tw-mb-5 tw-flex tw-justify-center tw-text-md tw-font-normal tw-text-gray-500 dark:tw-text-gray-400">
-                                    Hapus akun?</div>
+                                <div class="tw-mb-5 tw-flex tw-justify-center tw-text-md tw-font-normal tw-text-gray-500 dark:tw-text-gray-400">Anda yakin ingin menghapus data kelas?</div>
+                                <div class="tw-mb-5 tw-flex tw-justify-center tw-text-sm tw-font-normal tw-text-red-500 tw-text-center tw-bg-gray-200 tw-py-2">NOTE : Seluruh data siswa di kelas ini akan terhapus.</div>
                                 <div class="tw-flex tw-justify-center">
                                     <button type="submit" data-modal-toggle="popup-modal" type="button"
                                         class="tw-text-white tw-bg-red-600 hover:tw-bg-red-800 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-red-300 dark:focus:tw-ring-red-800 tw-font-medium tw-rounded-lg tw-text-sm tw-inline-flex tw-items-center tw-py-2.5 tw-text-center tw-mr-2 tw-px-6">
