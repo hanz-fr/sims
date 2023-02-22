@@ -23,18 +23,19 @@
 </head>
 <body>
 
-    <div style="display:flex; flex-direction: row; justify-content: space-between; font-size: 12px">
-        <div></div>
-        <h4 style="font-weight: bold; text-align: center; font-family:Arial, Helvetica, sans-serif">HASIL PENCAPAIAN KOMPETENSI PESERTA DIDIK</h4>
-        <h4 style="font-weight: bold; text-align: center; font-family:Arial, Helvetica, sans-serif">Program Kompetensi Keahlian: </h4>
-    </div>
 
+    <div style="display:flex; flex-direction: row; justify-content: space-between; font-size: 12px; margin-top: -20px;">
+        <div class=""></div>
+        <h4 style="font-weight: bold; text-align: center; font-family:Arial, Helvetica, sans-serif">HASIL PENCAPAIAN KOMPETENSI PESERTA DIDIK</h4>
+        <h4 style="font-weight: bold; text-align: center; font-family:Arial, Helvetica, sans-serif">Program Kompetensi Keahlian: {{ $kelas }}</h4>
+    </div>
+    <h4 style="font-weight: bold; text-align: left; font-family:Arial, Helvetica, sans-serif; font-size: 10px; margin-top: -10px">Nama Peserta Didik: {{ $nama }}</h4>
 
     <table>
         <thead>
             <tr>
                 <th scope="col" rowspan="3" colspan="3">
-                    Nama Mapel
+                    Mata Pelajaran
                 </th>
 
                 <!-- semester 1 --> 

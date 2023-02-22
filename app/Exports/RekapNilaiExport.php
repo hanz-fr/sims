@@ -48,7 +48,8 @@ class RekapNilaiExport implements FromView, ShouldAutoSize, WithEvents
 
         return view('rekap-nilai.pdf.rekap-nilai', [
             'siswa' => json_decode($response)->result,
-            'raport1' => json_decode($response)->result->raport[0],
+            'nama'     => json_decode($response)->result->nama_siswa,
+            'kelas'    => $jurusanSiswa,
             'mapel' => json_decode($mapel),
             'raport01' => json_decode($raport01)->rows,
             'raport02' => json_decode($raport02)->rows,
@@ -71,7 +72,7 @@ class RekapNilaiExport implements FromView, ShouldAutoSize, WithEvents
                 ->getAlignment()
                 ->setHorizontal(Alignment::HORIZONTAL_CENTER_CONTINUOUS);
                 
-                $event->sheet->getDelegate()->getStyle('A3:S23')->applyFromArray([
+                $event->sheet->getDelegate()->getStyle('A4:S26')->applyFromArray([
                     'borders' => [
                         'allBorders' => [
                             'borderStyle' => Border::BORDER_THIN,
@@ -83,7 +84,7 @@ class RekapNilaiExport implements FromView, ShouldAutoSize, WithEvents
                 ->setWrapText(true)
                 ->setVertical(Alignment::VERTICAL_CENTER);
 
-                $event->sheet->getDelegate()->getStyle('A3:S5')
+                $event->sheet->getDelegate()->getStyle('A4:S4')
                 ->getAlignment()
                 ->setHorizontal(Alignment::HORIZONTAL_CENTER_CONTINUOUS);
             },

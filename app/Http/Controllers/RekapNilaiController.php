@@ -392,8 +392,10 @@ class RekapNilaiController extends Controller
     
     
             return view('rekap-nilai.pdf.rekap-nilai', [
-                'siswa' => json_decode($response)->result,
-                'mapel' => json_decode($mapel),
+                'siswa'    => json_decode($response)->result,
+                'mapel'    => json_decode($mapel),
+                'nama'     => json_decode($response)->result->nama_siswa,
+                'kelas'    => $jurusanSiswa,
                 'raport01' => json_decode($raport01)->rows,
                 'raport02' => json_decode($raport02)->rows,
                 'raport03' => json_decode($raport03)->rows,
@@ -431,9 +433,10 @@ class RekapNilaiController extends Controller
     
     
             $pdf = PDF::loadView('rekap-nilai.pdf.rekap-nilai', [
-                'siswa' => json_decode($response)->result,
-                'raport1' => json_decode($response)->result->raport[0],
-                'mapel' => json_decode($mapel),
+                'siswa'    => json_decode($response)->result,
+                'mapel'    => json_decode($mapel),
+                'nama'     => json_decode($response)->result->nama_siswa,
+                'kelas'    => $jurusanSiswa,
                 'raport01' => json_decode($raport01)->rows,
                 'raport02' => json_decode($raport02)->rows,
                 'raport03' => json_decode($raport03)->rows,
