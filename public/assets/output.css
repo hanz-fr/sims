@@ -1443,6 +1443,14 @@ video {
   left: 1.25rem;
 }
 
+.tw-bottom-4 {
+  bottom: 1rem;
+}
+
+.tw-bottom-44 {
+  bottom: 11rem;
+}
+
 .tw-z-10 {
   z-index: 10;
 }
@@ -1570,6 +1578,11 @@ video {
   margin-right: -0.25rem;
 }
 
+.tw-my-6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
 .tw-my-32 {
   margin-top: 8rem;
   margin-bottom: 8rem;
@@ -1643,11 +1656,6 @@ video {
 .tw-my-24 {
   margin-top: 6rem;
   margin-bottom: 6rem;
-}
-
-.tw-my-6 {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
 }
 
 .tw-mt-8 {
@@ -2949,6 +2957,16 @@ video {
 .tw-bg-amber-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(251 191 36 / var(--tw-bg-opacity));
+}
+
+.tw-bg-ijo-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(50 181 80 / var(--tw-bg-opacity));
+}
+
+.tw-bg-ijo-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(144 229 163 / var(--tw-bg-opacity));
 }
 
 .tw-bg-opacity-50 {
@@ -4476,6 +4494,16 @@ input[type="checkbox"]:checked {
 .hover\:tw-bg-amber-500:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(245 158 11 / var(--tw-bg-opacity));
+}
+
+.hover\:tw-bg-ijo-300:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(144 229 163 / var(--tw-bg-opacity));
+}
+
+.hover\:tw-bg-ijo-500:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(50 181 80 / var(--tw-bg-opacity));
 }
 
 .hover\:tw-text-sims-600:hover {
