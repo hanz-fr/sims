@@ -33,7 +33,7 @@
   <h5 style="margin-bottom: -15px">SMK NEGERI 11 BANDUNG</h5>
   <h5>TAHUN AJARAN {{ date('Y') }}/{{ date('Y') + 1 }}</h5>
 
-  <h6 style="margin-bottom: -2px">Periode : {{ $keluar_dari }} - {{ $keluar_ke }}</h6>
+  <h6 style="margin-bottom: -2px">Periode : @if($keluar_dari == $keluar_ke) {{ $keluar_dari }} @else {{ $keluar_dari }} - {{ $keluar_ke }} @endif</h6>
 
   <hr style="margin-bottom: 25px; border: solid 1px black">
     
@@ -54,8 +54,8 @@
                 <td>{{ $m->nis_siswa }}</td>
                 <td>{{ $m->keluar_di_kelas }}</td>
                 <td>{{ $m->tgl_mutasi }}</td>
-                <td>{{ $m->sk_mutasi }}</td>
-                <td>{{ $m->alasan_mutasi }}</td>
+                <td>@if ($m->sk_mutasi) {{ $m->sk_mutasi }} @else - @endif</td>
+                <td>@if ($m->alasan_mutasi) {{ $m->alasan_mutasi }} @else - @endif</td>
             </tr>
         @endforeach
     </table>
@@ -76,36 +76,24 @@
                 <td style="padding-left: 160px">Bandung, {{ date('d F Y') }}</td>
             </tr>
             <tr style="color:white;">
+                <td>.</td>
                 <td></td>
+                <td></td>
+            </tr>
+            <tr style="color:white;">
+                <td>.</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr style="color:white;">
+                <td>.</td>
                 <td></td>
                 <td></td>
             </tr>
             <tr style="color:white;">
                 <td></td>
+                <td>.</td>
                 <td></td>
-                <td></td>
-            </tr>
-            <tr style="color:white;">
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td style="padding-left: 160px">______________________</td>
             </tr>
             <tr>
                 <td></td>
@@ -117,8 +105,31 @@
                 <td style="padding-left: 70px"></td>
                 <td ></td>
                 <td style="padding-left: 70px"></td>
-                <td style="padding-left: 190px">Parwanto, S.Pd</td>
-                {{-- <td style="padding-left: 70px">NIP. 19810521 201001 1 008</td> --}}
+                <td style="padding-left: 180px; font-weight:700;">PARWANTO, S.Pd</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td ></td>
+                <td style="padding-left: 70px"></td>
+                <td style="padding-left: 70px"></td>
+                <td ></td>
+                <td style="padding-left: 70px"></td>
+                <td style="padding-left: 70px"></td>
+                <td ></td>
+                <td style="padding-left: 70px"></td>
+                {{-- <td style="padding-left: 160px;">NIP. 19810521 201001 1 008</td> --}}
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td style="padding-left: 160px">_______________________</td>
             </tr>
             <tr>
                 <td></td>
@@ -131,7 +142,6 @@
                 <td ></td>
                 <td style="padding-left: 70px"></td>
                 <td style="padding-left: 160px">NIP. 19810521 201001 1 008</td>
-                {{-- <td style="padding-left: 70px">NIP. 19810521 201001 1 008</td> --}}
             </tr>
         </tbody>
     </table>

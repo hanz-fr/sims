@@ -390,19 +390,26 @@ class RekapNilaiController extends Controller
             /* return json_decode($raport01)->rows; */
     
     
+            try {
+            
+                return view('rekap-nilai.pdf.rekap-nilai', [
+                    'siswa'    => json_decode($response)->result,
+                    'mapel'    => json_decode($mapel),
+                    'nama'     => json_decode($response)->result->nama_siswa,
+                    'kelas'    => $jurusanSiswa,
+                    'raport01' => json_decode($raport01)->rows,
+                    'raport02' => json_decode($raport02)->rows,
+                    'raport03' => json_decode($raport03)->rows,
+                    'raport04' => json_decode($raport04)->rows,
+                    'raport05' => json_decode($raport05)->rows,
+                    'raport06' => json_decode($raport06)->rows,
+                ]);
     
-            return view('rekap-nilai.pdf.rekap-nilai', [
-                'siswa'    => json_decode($response)->result,
-                'mapel'    => json_decode($mapel),
-                'nama'     => json_decode($response)->result->nama_siswa,
-                'kelas'    => $jurusanSiswa,
-                'raport01' => json_decode($raport01)->rows,
-                'raport02' => json_decode($raport02)->rows,
-                'raport03' => json_decode($raport03)->rows,
-                'raport04' => json_decode($raport04)->rows,
-                'raport05' => json_decode($raport05)->rows,
-                'raport06' => json_decode($raport06)->rows,
-            ]);
+            } catch (\Exception $e) {
+                
+                return back()->with('warning', 'Terjadi kesalahan, tidak dapat mengekspor data');
+    
+            }
     
         }
     
@@ -431,36 +438,43 @@ class RekapNilaiController extends Controller
     
             /* return json_decode($raport01)->rows; */
     
-    
-            $pdf = PDF::loadView('rekap-nilai.pdf.rekap-nilai', [
-                'siswa'    => json_decode($response)->result,
-                'mapel'    => json_decode($mapel),
-                'nama'     => json_decode($response)->result->nama_siswa,
-                'kelas'    => $jurusanSiswa,
-                'raport01' => json_decode($raport01)->rows,
-                'raport02' => json_decode($raport02)->rows,
-                'raport03' => json_decode($raport03)->rows,
-                'raport04' => json_decode($raport04)->rows,
-                'raport05' => json_decode($raport05)->rows,
-                'raport06' => json_decode($raport06)->rows,
-            ])->setPaper('A4_PLUS_PAPER', 'landscape');
-    
-            $nama = json_decode($response)->result->nama_siswa;
-    
-            $rekapnilai = 'rekap_nilai_siswa_'.$nama.'.pdf';
-    
-            $user = Auth::user();
-    
-            Http::post("{$this->api_url}/history", [
+            try {
             
-                'activityName' => 'Export Rekap Nilai',
-                'activityAuthor' => "$user->nama",
-                'activityDesc' => "$user->nama mengexport data rekap nilai dengan tipe file PDF."
-            
-            ]);
-            
-            return $pdf->download($rekapnilai);
+                return $pdf->download($rekapnilai);
+
+                $pdf = PDF::loadView('rekap-nilai.pdf.rekap-nilai', [
+                    'siswa'    => json_decode($response)->result,
+                    'mapel'    => json_decode($mapel),
+                    'nama'     => json_decode($response)->result->nama_siswa,
+                    'kelas'    => $jurusanSiswa,
+                    'raport01' => json_decode($raport01)->rows,
+                    'raport02' => json_decode($raport02)->rows,
+                    'raport03' => json_decode($raport03)->rows,
+                    'raport04' => json_decode($raport04)->rows,
+                    'raport05' => json_decode($raport05)->rows,
+                    'raport06' => json_decode($raport06)->rows,
+                ])->setPaper('A4_PLUS_PAPER', 'landscape');
+        
+                $nama = json_decode($response)->result->nama_siswa;
+        
+                $rekapnilai = 'rekap_nilai_siswa_'.$nama.'.pdf';
+        
+                $user = Auth::user();
+        
+                Http::post("{$this->api_url}/history", [
+                
+                    'activityName' => 'Export Rekap Nilai',
+                    'activityAuthor' => "$user->nama",
+                    'activityDesc' => "$user->nama mengexport data rekap nilai dengan tipe file PDF."
+                
+                ]);
     
+            } catch (\Exception $e) {
+                
+                return back()->with('warning', 'Terjadi kesalahan, tidak dapat mengekspor data');
+    
+            }
+                
         }
     
     
@@ -479,19 +493,27 @@ class RekapNilaiController extends Controller
             $nama = json_decode($response)->result->nama_siswa;
     
             $rekapnilai = 'rekap_nilai_siswa_'.$nama.'.xlsx';
-    
-            $user = Auth::user();
-    
-            Http::post("{$this->api_url}/history", [
+
+            try {
             
-                'activityName' => 'Export Rekap Nilai',
-                'activityAuthor' => "$user->nama",
-                'activityDesc' => "$user->nama mengexport data rekap nilai dengan tipe file excel."
-            
-            ]);
+                return Excel::download(new RekapNilaiExport, $rekapnilai);
+
+                $user = Auth::user();
     
-            return Excel::download(new RekapNilaiExport, $rekapnilai);
+                Http::post("{$this->api_url}/history", [
+                
+                    'activityName' => 'Export Rekap Nilai',
+                    'activityAuthor' => "$user->nama",
+                    'activityDesc' => "$user->nama mengexport data rekap nilai dengan tipe file excel."
+                
+                ]);
     
+            } catch (\Exception $e) {
+                
+                return back()->with('warning', 'Terjadi kesalahan, tidak dapat mengekspor data');
+    
+            }
+        
         }
 
 

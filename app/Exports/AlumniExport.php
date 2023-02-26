@@ -35,19 +35,19 @@ class AlumniExport implements FromView, ShouldAutoSize, WithEvents, WithColumnWi
         $request = request();
 
         $dibuatTglDari = $request->dibuatTglDari;
-        $dibuatTglKe = $request->dibuatTglKe;
+        $dibuatTglKe   = $request->dibuatTglKe;
 
         $tahun_dari = Carbon::parse($dibuatTglDari)->translatedFormat('Y');
-        $tahun_ke = Carbon::parse($dibuatTglDari)->translatedFormat('Y');
+        $tahun_ke   = Carbon::parse($dibuatTglDari)->translatedFormat('Y');
 
-        $alumni = Http::get("{$this->url}/dashboard/alumni/get?dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}");
+        $alumni = Http::get("{$this->url}/dashboard/alumni/all?page={$request->page}&perPage={$request->perPage}&dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}&angkatan={$request->angkatan}");
 
         return view('induk.pdf.alumni', [
-            'alumni' => json_decode($alumni)->data->rows,
+            'alumni'        => json_decode($alumni)->data->rows,
             'dibuatTglDari' => $dibuatTglDari,
-            'dibuatTglKe' => $dibuatTglKe,
-            'TglDari' => $tahun_dari,
-            'TglKe' => $tahun_ke
+            'dibuatTglKe'   => $dibuatTglKe,
+            'TglDari'       => $tahun_dari,
+            'TglKe'         => $tahun_ke
         ]);
     }
     
@@ -58,31 +58,36 @@ class AlumniExport implements FromView, ShouldAutoSize, WithEvents, WithColumnWi
     {
         return [
             AfterSheet::class => function(AfterSheet $event) {
+
+                // merge cells
                 $event->sheet->getDelegate()->mergeCells('A1:G1');
                 $event->sheet->getDelegate()->mergeCells('A2:G2');
                 $event->sheet->getDelegate()->mergeCells('A3:G3');
 
 
-                $event->sheet->getDelegate()->getStyle('A1:A3')
+                // set alignment
+                $event->sheet->getDelegate()->getStyle("A1:G{$event->sheet->getHighestRow()}")
                 ->getAlignment()
+                ->setWrapText(true)
+                ->setVertical(Alignment::VERTICAL_CENTER)
                 ->setHorizontal(Alignment::HORIZONTAL_CENTER_CONTINUOUS);
                 
-                $event->sheet->getDelegate()->getStyle('A7:G17')->applyFromArray([
+
+                // set borders to table
+                $event->sheet->getDelegate()->getStyle("A7:G{$event->sheet->getHighestRow()}")->applyFromArray([
                     'borders' => [
                         'allBorders' => [
                             'borderStyle' => Border::BORDER_THIN,
                             'color' => ['argb' => '000000'],
                         ],
                     ],
-                ])
-                ->getAlignment()
-                ->setWrapText(true)
-                ->setVertical(Alignment::VERTICAL_CENTER)
-                ->setHorizontal(Alignment::HORIZONTAL_CENTER_CONTINUOUS);
+                ]);
             },
         ];
     }
 
+
+    // set column widths
     public function columnWidths(): array
     {
         return [

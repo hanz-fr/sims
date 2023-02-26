@@ -200,26 +200,34 @@ class SiswaController extends Controller
 
         $response = Http::get("{$this->api_url}/siswa/{$request->jurusan}/{$request->kelas}?page={$request->page}&perPage={$request->perPage}&search={$request->search}&nis_siswa={$request->nis_siswa}&nisn_siswa={$request->nisn_siswa}&nama_siswa={$request->nama_siswa}&jenis_kelamin={$request->jenis_kelamin}&KelasId={$request->KelasId}&sort_by={$request->sort_by}&sort={$request->sort}&dibuatTglDari={$request->dibuatTglDari}&dibuatTglKe={$request->dibuatTglKe}&thn_ajaran={$request->thn_ajaran}&angkatan={$request->angkatan}");
 
-        $pdf = PDF::loadView('induk.pdf.data-induk', [
-            'jurusan' => $request->jurusan,
-            'kelas' => $request->kelas,
-            'siswa' => json_decode($response)->data->rows
-        ])->setPaper('A4_PLUS_PAPER', 'potrait');
+        try {
 
-        $jurusan = $request->jurusan;
-        $kelas = $request->kelas;
+            $pdf = PDF::loadView('induk.pdf.data-induk', [
+                'jurusan' => $request->jurusan,
+                'kelas' => $request->kelas,
+                'siswa' => json_decode($response)->data->rows
+            ])->setPaper('A4_PLUS_PAPER', 'potrait');
+    
+            $jurusan = $request->jurusan;
+            $kelas = $request->kelas;
+    
+            $daftarnama = 'daftar_nama_buku_induk_'.$kelas.$jurusan.'.pdf';
+    
+            return $pdf->download($daftarnama);
+    
+            $user = Auth::user();
+    
+            Http::post("{$this->api_url}/history", [
+                'activityName' => 'Export Data Induk',
+                'activityAuthor' => "$user->nama",
+                'activityDesc' => "$user->nama mengexport data induk dengan tipe file PDF."
+            ]);
 
-        $daftarnama = 'daftar_nama_buku_induk_'.$kelas.$jurusan.'.pdf';
+        } catch (\Exception $e) {
 
-        $user = Auth::user();
+            return back()->with('warning','Terjadi kesalahan, tidak dapat mengekspor data.');
 
-        Http::post("{$this->api_url}/history", [
-            'activityName' => 'Export Data Induk',
-            'activityAuthor' => "$user->nama",
-            'activityDesc' => "$user->nama mengexport data induk dengan tipe file PDF."
-        ]);
-
-        return $pdf->download($daftarnama);
+        }
 
     }
 
@@ -230,11 +238,19 @@ class SiswaController extends Controller
 
         $response = Http::get("{$this->api_url}/siswa/{$request->jurusan}/{$request->kelas}?page={$request->page}&perPage={$request->perPage}&search={$request->search}&nis_siswa={$request->nis_siswa}&nisn_siswa={$request->nisn_siswa}&nama_siswa={$request->nama_siswa}&jenis_kelamin={$request->jenis_kelamin}&KelasId={$request->KelasId}&sort_by={$request->sort_by}&sort={$request->sort}&dibuatTglDari={$request->dibuatTglDari}&dibuatTglKe={$request->dibuatTglKe}&thn_ajaran={$request->thn_ajaran}&angkatan={$request->angkatan}");
 
-        return view('induk.pdf.data-induk', [
-            'jurusan' => $request->jurusan,
-            'kelas' => $request->kelas,
-            'siswa' => json_decode($response)->data->rows
-        ]);
+        try {
+
+            return view('induk.pdf.data-induk', [
+                'jurusan' => $request->jurusan,
+                'kelas' => $request->kelas,
+                'siswa' => json_decode($response)->data->rows
+            ]);
+
+        } catch (\Exception $e) {
+
+            return back()->with('warning','Terjadi kesalahan, tidak dapat mengekspor data.');
+
+        }
 
     }
 
@@ -248,41 +264,26 @@ class SiswaController extends Controller
 
         $daftarnama = 'daftar_nama_buku_induk_'.date('Y-m-d_H-i-s').'.xlsx';
 
-        $user = Auth::user();
+        try {
 
-        Http::post("{$this->api_url}/history", [
-        
-            'activityName' => 'Export Data Induk',
-            'activityAuthor' => "$user->nama",
-            'activityDesc' => "$user->nama mengexport data induk dengan tipe file excel."
-        
-        ]);
+            return Excel::download(new DataIndukExport, $daftarnama);
 
-        return Excel::download(new DataIndukExport, $daftarnama);
-        
-    }
+            $user = Auth::user();
+    
+            Http::post("{$this->api_url}/history", [
+            
+                'activityName' => 'Export Data Induk',
+                'activityAuthor' => "$user->nama",
+                'activityDesc' => "$user->nama mengexport data induk dengan tipe file excel."
+            
+            ]);
 
-    public function exportDetailDataIndukExcel(Request $request) {
+        } catch (\Exception $e) {
 
-        abort_if(Gate::denies('manage-induk'), 403);
+            return back()->with('warning','Terjadi kesalahan, tidak dapat mengekspor data.');
 
-        ob_end_clean();
-        ob_start();
+        }
 
-        $detailsiswa = 'daftar_detail_nama_buku_induk_'.date('Y-m-d_H-i-s').'.xlsx';
-
-        $user = Auth::user();
-
-        Http::post("{$this->api_url}/history", [
-        
-            'activityName' => 'Export Detail Data Induk',
-            'activityAuthor' => "$user->nama",
-            'activityDesc' => "$user->nama mengexport detail data induk dengan tipe file excel."
-        
-        ]);
-
-        return Excel::download(new DetailDataIndukExport($request->nis), $detailsiswa);
-        
     }
 
 
@@ -750,14 +751,13 @@ class SiswaController extends Controller
                         'activityDesc' => "$user->nama mengimport data siswa dengan tipe file excel."
                     ]);
 
-                    return back()->with('success','Great! Data has been successfully imported.');
+                    return back()->with('success','Selamat! Data anda berhasil diimpor.');
     
                 }
                             
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
 
-            $error_code = $e->errorInfo[1];
-            return back()->with('error','There was a problem uploading the data!');
+            return back()->with('warning','Terjadi kesalahan, tidak dapat mengimpor data.');
 
         }
 
@@ -777,24 +777,32 @@ class SiswaController extends Controller
         $tgl_lahir_siswa = Carbon::parse($getSiswaBirthDate)->translatedFormat('l d F Y');
 
 
-        $pdf = PDF::loadView('induk.pdf.data-induk-detail', [
-            'siswa' => json_decode($response)->result,
-            'tgl_lahir_siswa' => $tgl_lahir_siswa,
-        ])->setPaper('A4_PLUS_PAPER', 'potrait');
+        try {
 
-        $nama = json_decode($response)->result->nama_siswa;
+            $pdf = PDF::loadView('induk.pdf.data-induk-detail', [
+                'siswa' => json_decode($response)->result,
+                'tgl_lahir_siswa' => $tgl_lahir_siswa,
+            ])->setPaper('A4_PLUS_PAPER', 'potrait');
+    
+            $nama = json_decode($response)->result->nama_siswa;
+    
+            $datasiswa = 'data_induk_'.$nama.'.pdf';
+    
+            return $pdf->download($datasiswa);
+    
+            $user = Auth::user();
+    
+            Http::post("{$this->api_url}/history", [
+                'activityName' => 'Export Data Siswa',
+                'activityAuthor' => "$user->nama",
+                'activityDesc' => "$user->nama mengekspor data siswa dengan tipe file PDF."
+            ]);
 
-        $datasiswa = 'data_induk_'.$nama.'.pdf';
+        } catch (\Exception $e) {
 
-        $user = Auth::user();
+            return back()->with('warning','Terjadi kesalahan, tidak dapat mengekspor data.');
 
-        Http::post("{$this->api_url}/history", [
-            'activityName' => 'Export Data Siswa',
-            'activityAuthor' => "$user->nama",
-            'activityDesc' => "$user->nama mengexport data siswa dengan tipe file PDF."
-        ]);
-
-        return $pdf->download($datasiswa);
+        }
 
     }
 
@@ -810,11 +818,51 @@ class SiswaController extends Controller
         $getSiswaBirthDate = json_decode($response)->result->tgl_lahir;
         $tgl_lahir_siswa = Carbon::parse($getSiswaBirthDate)->translatedFormat('l d F Y');
 
-        return view('induk.pdf.data-induk-detail', [
-            'siswa' => json_decode($response)->result,
-            'tgl_lahir_siswa' => $tgl_lahir_siswa,
-        ]);
+        try {
 
+            return view('induk.pdf.data-induk-detail', [
+                'siswa' => json_decode($response)->result,
+                'tgl_lahir_siswa' => $tgl_lahir_siswa,
+            ]);
+
+        } catch (\Exception $e) {
+
+            return back()->with('warning','Terjadi kesalahan, tidak dapat mengekspor data.');
+
+        }
+
+    }
+
+
+    public function exportDetailDataIndukExcel(Request $request) {
+
+        abort_if(Gate::denies('manage-induk'), 403);
+
+        ob_end_clean();
+        ob_start();
+
+        $detailsiswa = 'daftar_detail_nama_buku_induk_'.date('Y-m-d_H-i-s').'.xlsx';
+
+        try {
+
+            return Excel::download(new DetailDataIndukExport($request->nis), $detailsiswa);
+
+            $user = Auth::user();
+    
+            Http::post("{$this->api_url}/history", [
+            
+                'activityName' => 'Export Detail Data Induk',
+                'activityAuthor' => "$user->nama",
+                'activityDesc' => "$user->nama mengexport detail data induk dengan tipe file excel."
+            
+            ]);
+
+        } catch (\Exception $e) {
+
+            return back()->with('warning','Terjadi kesalahan, tidak dapat mengekspor data.');
+
+        }
+        
     }
 
 }

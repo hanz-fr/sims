@@ -1427,8 +1427,8 @@ video {
   top: 2.5rem;
 }
 
-.tw-bottom-32 {
-  bottom: 8rem;
+.tw-bottom-44 {
+  bottom: 11rem;
 }
 
 .tw-left-1\/2 {
@@ -1441,14 +1441,6 @@ video {
 
 .tw-left-5 {
   left: 1.25rem;
-}
-
-.tw-bottom-4 {
-  bottom: 1rem;
-}
-
-.tw-bottom-44 {
-  bottom: 11rem;
 }
 
 .tw-z-10 {
@@ -2959,16 +2951,6 @@ video {
   background-color: rgb(251 191 36 / var(--tw-bg-opacity));
 }
 
-.tw-bg-ijo-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(50 181 80 / var(--tw-bg-opacity));
-}
-
-.tw-bg-ijo-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(144 229 163 / var(--tw-bg-opacity));
-}
-
 .tw-bg-opacity-50 {
   --tw-bg-opacity: 0.5;
 }
@@ -4218,6 +4200,16 @@ input[type="checkbox"]:checked {
   --tw-ring-color: rgb(209 213 219 / var(--tw-ring-opacity));
 }
 
+.focus\:tw-ring-sims-300:focus {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(127 201 198 / var(--tw-ring-opacity));
+}
+
+.focus\:tw-ring-sims-new-600:focus {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(49 120 137 / var(--tw-ring-opacity));
+}
+
 .focus\:tw-ring-offset-0:focus {
   --tw-ring-offset-width: 0px;
 }
@@ -4426,6 +4418,11 @@ input[type="checkbox"]:checked {
   background-color: rgb(22 101 52 / var(--tw-bg-opacity));
 }
 
+.hover\:tw-bg-ijo-500:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(50 181 80 / var(--tw-bg-opacity));
+}
+
 .hover\:tw-bg-sims-300:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(127 201 198 / var(--tw-bg-opacity));
@@ -4494,16 +4491,6 @@ input[type="checkbox"]:checked {
 .hover\:tw-bg-amber-500:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(245 158 11 / var(--tw-bg-opacity));
-}
-
-.hover\:tw-bg-ijo-300:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(144 229 163 / var(--tw-bg-opacity));
-}
-
-.hover\:tw-bg-ijo-500:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(50 181 80 / var(--tw-bg-opacity));
 }
 
 .hover\:tw-text-sims-600:hover {

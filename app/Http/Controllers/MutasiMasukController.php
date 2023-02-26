@@ -309,22 +309,29 @@ class MutasiMasukController extends Controller
 
         $laporan = 'laporan_mutasi_masuk_'.$tgl_masuk_dari.'_'.$tgl_masuk_ke.'.xlsx';
 
-        $user = Auth::user();
+        try {
+            
+            return Excel::download(new MutasiMasukExport, $laporan);
 
-        Http::post("{$this->api_url}/history", [
-        
-            'activityName' => 'Export Mutasi Masuk',
-            'activityAuthor' => "$user->nama",
-            'activityDesc' => "$user->nama mengexport data mutasi masuk dengan tipe file excel."
-        
-        ]);
+            $user = Auth::user();
 
-        return Excel::download(new MutasiMasukExport, $laporan);
+            Http::post("{$this->api_url}/history", [
+            
+                'activityName' => 'Export Mutasi Masuk',
+                'activityAuthor' => "$user->nama",
+                'activityDesc' => "$user->nama mengexport data mutasi masuk dengan tipe file excel."
+            
+            ]);
+
+        } catch (\Exception $e) {
+            
+            return back()->with('warning', 'Terjadi kesalahan, tidak dapat mengekspor data');
+
+        }
         
     }
 
 
-    
     public function exportMutasiMasukPDF(Request $request) {
 
         abort_if(Gate::denies('manage-alumni'), 403);
@@ -334,29 +341,37 @@ class MutasiMasukController extends Controller
         $tgl_masuk_ke = $request->tgl_masuk_ke;
         $masuk_ke = Carbon::parse($tgl_masuk_ke)->translatedFormat('F');
 
-        $response = Http::get("{$this->api_url}/mutasi/siswa-masuk?tgl_masuk_dari={$tgl_masuk_dari}&tgl_masuk_ke={$tgl_masuk_ke}");
+        try {
+            
+            $response = Http::get("{$this->api_url}/mutasi/siswa-masuk?tgl_masuk_dari={$tgl_masuk_dari}&tgl_masuk_ke={$tgl_masuk_ke}");
 
-        $pdf = PDF::loadView('mutasi.pdf.mutasi-masuk', [
-            'mutasi' => json_decode($response)->data->rows,
-            'tgl_masuk_dari' => $tgl_masuk_dari,
-            'tgl_masuk_ke' => $tgl_masuk_ke,
-            'masuk_dari' => $masuk_dari,
-            'masuk_ke' => $masuk_ke
-        ])->setPaper('A4_PLUS_PAPER', 'potrait');
+            $pdf = PDF::loadView('mutasi.pdf.mutasi-masuk', [
+                'mutasi' => json_decode($response)->data->rows,
+                'tgl_masuk_dari' => $tgl_masuk_dari,
+                'tgl_masuk_ke' => $tgl_masuk_ke,
+                'masuk_dari' => $masuk_dari,
+                'masuk_ke' => $masuk_ke
+            ])->setPaper('A4_PLUS_PAPER', 'potrait');
+    
+            $laporan = 'laporan_mutasi_masuk_'.$tgl_masuk_dari.'_'.$tgl_masuk_ke.'.pdf';
+    
+            return $pdf->download($laporan);
+    
+            $user = Auth::user();
+    
+            Http::post("{$this->api_url}/history", [
+            
+                'activityName' => 'Export Mutasi Masuk',
+                'activityAuthor' => "$user->nama",
+                'activityDesc' => "$user->nama mengexport data mutasi masuk dengan tipe file PDF."
+            
+            ]);
 
-        $laporan = 'laporan_mutasi_masuk_'.$tgl_masuk_dari.'_'.$tgl_masuk_ke.'.pdf';
+        } catch (\Exception $e) {
+            
+            return back()->with('warning', 'Terjadi kesalahan, tidak dapat mengekspor data');
 
-        $user = Auth::user();
-
-        Http::post("{$this->api_url}/history", [
-        
-            'activityName' => 'Export Mutasi Masuk',
-            'activityAuthor' => "$user->nama",
-            'activityDesc' => "$user->nama mengexport data mutasi masuk dengan tipe file PDF."
-        
-        ]);
-
-        return $pdf->download($laporan);
+        }
 
     }
 
@@ -372,13 +387,21 @@ class MutasiMasukController extends Controller
 
         $response = Http::get("{$this->api_url}/mutasi/siswa-masuk?tgl_masuk_dari={$tgl_masuk_dari}&tgl_masuk_ke={$tgl_masuk_ke}");
 
-        return view('mutasi.pdf.mutasi-masuk', [
-            'mutasi' => json_decode($response)->data->rows,
-            'tgl_masuk_dari' => $tgl_masuk_dari,
-            'tgl_masuk_ke' => $tgl_masuk_ke,
-            'masuk_dari' => $masuk_dari,
-            'masuk_ke' => $masuk_ke
-        ]);
+        try {
+            
+            return view('mutasi.pdf.mutasi-masuk', [
+                'mutasi' => json_decode($response)->data->rows,
+                'tgl_masuk_dari' => $tgl_masuk_dari,
+                'tgl_masuk_ke' => $tgl_masuk_ke,
+                'masuk_dari' => $masuk_dari,
+                'masuk_ke' => $masuk_ke
+            ]);
+
+        } catch (\Exception $e) {
+            
+            return back()->with('warning', 'Terjadi kesalahan, tidak dapat mengekspor data');
+
+        }
 
     }
 }

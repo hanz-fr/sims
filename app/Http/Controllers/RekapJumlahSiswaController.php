@@ -69,26 +69,35 @@ class RekapJumlahSiswaController extends Controller
         $kelas11 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/11");
         $kelas12 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/12");
 
-        $pdf = PDF::loadView('rekap-siswa.pdf.rekap-jumlah-siswa', [
-            'semua_kelas' => json_decode($semuaKelas)->result,
-            'kelas10' => json_decode($kelas10)->result,
-            'kelas11' => json_decode($kelas11)->result,
-            'kelas12' => json_decode($kelas12)->result
-        ])->setPaper('A4_PLUS_PAPER', 'landscape');
+        try {
 
-        $datajumlah = 'data_rekap_jumlah_siswa_'.date('Y-m-d').'.pdf';
+            return $pdf->download($datajumlah);
 
-        $user = Auth::user();
+            $pdf = PDF::loadView('rekap-siswa.pdf.rekap-jumlah-siswa', [
+                'semua_kelas' => json_decode($semuaKelas)->result,
+                'kelas10' => json_decode($kelas10)->result,
+                'kelas11' => json_decode($kelas11)->result,
+                'kelas12' => json_decode($kelas12)->result
+            ])->setPaper('A4_PLUS_PAPER', 'landscape');
+    
+            $datajumlah = 'data_rekap_jumlah_siswa_'.date('Y-m-d').'.pdf';
+    
+            $user = Auth::user();
+    
+            Http::post("{$this->api_url}/history", [
+            
+                'activityName' => 'Export Rekap Jumlah Siswa',
+                'activityAuthor' => "$user->nama",
+                'activityDesc' => "$user->nama mengexport data rekap jumlah siswa dengan tipe file PDF."
+            
+            ]);
 
-        Http::post("{$this->api_url}/history", [
-        
-            'activityName' => 'Export Rekap Jumlah Siswa',
-            'activityAuthor' => "$user->nama",
-            'activityDesc' => "$user->nama mengexport data rekap jumlah siswa dengan tipe file PDF."
-        
-        ]);
 
-        return $pdf->download($datajumlah);
+        } catch (\Exception $e) {
+            
+            return back()->with('warning', 'Terjadi kesalahan, tidak dapat mengekspor data');
+
+        }
 
     }
     
@@ -102,12 +111,20 @@ class RekapJumlahSiswaController extends Controller
         $kelas11 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/11");
         $kelas12 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/12");
 
-        return view('rekap-siswa.pdf.rekap-jumlah-siswa', [
-            'semua_kelas' => json_decode($semuaKelas)->result,
-            'kelas10' => json_decode($kelas10)->result,
-            'kelas11' => json_decode($kelas11)->result,
-            'kelas12' => json_decode($kelas12)->result
-        ]);
+        try {
+
+            return view('rekap-siswa.pdf.rekap-jumlah-siswa', [
+                'semua_kelas' => json_decode($semuaKelas)->result,
+                'kelas10' => json_decode($kelas10)->result,
+                'kelas11' => json_decode($kelas11)->result,
+                'kelas12' => json_decode($kelas12)->result
+            ]);
+
+        } catch (\Exception $e) {
+
+            return back()->with('warning', 'Terjadi kesalahan, tidak dapat mengekspor data');
+
+        }
 
     } 
 
@@ -121,17 +138,25 @@ class RekapJumlahSiswaController extends Controller
 
         $datajumlah = 'data_rekap_jumlah_siswa_'.date('Y-m-d').'.xlsx';
 
-        $user = Auth::user();
+        try {
 
-        Http::post("{$this->api_url}/history", [
-        
-            'activityName' => 'Export Rekap Jumlah Siswa',
-            'activityAuthor' => "$user->nama",
-            'activityDesc' => "$user->nama mengexport data rekap jumlah siswa dengan tipe file excel."
-        
-        ]);
-        
-        return Excel::download(new JumlahSiswaExport, $datajumlah);
+            return Excel::download(new JumlahSiswaExport, $datajumlah);
+
+            $user = Auth::user();
+
+            Http::post("{$this->api_url}/history", [
+            
+                'activityName' => 'Export Rekap Jumlah Siswa',
+                'activityAuthor' => "$user->nama",
+                'activityDesc' => "$user->nama mengexport data rekap jumlah siswa dengan tipe file excel."
+            
+            ]);
+
+        } catch (\Exception) {
+            
+            return back()->with('warning', 'Terjadi kesalahan, tidak dapat mengekspor data');
+
+        }
 
     }
 
