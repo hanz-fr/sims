@@ -55,6 +55,7 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
     Route::put('/api/siswa/update/{nis}', [SiswaController::class, 'updateSiswa']);
     Route::delete('/api/siswa/delete/{nis}', [SiswaController::class, 'deleteSiswa']);
 
+    Route::get('/siswa/download', [SiswaController::class, 'downloadImport']);
     Route::post('/api/siswa/import', [SiswaController::class, 'importDataSiswa']);
 
     Route::get('/data-siswa-pdf/{nis}', [SiswaController::class, 'exportDataSiswaPDF'])->name('siswa.pdf');

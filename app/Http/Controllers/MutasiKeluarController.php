@@ -326,17 +326,25 @@ class MutasiKeluarController extends Controller
 
         $laporan = 'laporan_mutasi_keluar_'.$tgl_keluar_dari.'_'.$tgl_keluar_ke.'.xlsx';
 
-        $user = Auth::user();
+        try {
+            
+            return Excel::download(new MutasiKeluarExport, $laporan);
 
-        Http::post("{$this->api_url}/history", [
-        
-            'activityName' => 'Export Mutasi Keluar',
-            'activityAuthor' => "$user->nama",
-            'activityDesc' => "$user->nama mengexport data mutasi keluar dengan tipe file excel."
-        
-        ]);
+            $user = Auth::user();
 
-        return Excel::download(new MutasiKeluarExport, $laporan);
+            Http::post("{$this->api_url}/history", [
+            
+                'activityName' => 'Export Mutasi Keluar',
+                'activityAuthor' => "$user->nama",
+                'activityDesc' => "$user->nama mengexport data mutasi keluar dengan tipe file excel."
+            
+            ]);
+
+        } catch (\Exception $e) {
+            
+            return back()->with('warning', 'Terjadi kesalahan, tidak dapat mengekspor data');
+
+        }
         
     }
 
@@ -363,17 +371,25 @@ class MutasiKeluarController extends Controller
 
         $laporan = 'laporan_mutasi_keluar_'.$tgl_keluar_dari.'_'.$tgl_keluar_ke.'.pdf';
 
-        $user = Auth::user();
+        try {
+            
+            return $pdf->download($laporan);
 
-        Http::post("{$this->api_url}/history", [
-        
-            'activityName' => 'Export Mutasi Keluar',
-            'activityAuthor' => "$user->nama",
-            'activityDesc' => "$user->nama mengexport data mutasi keluar dengan tipe file PDF."
-        
-        ]);
+            $user = Auth::user();
+    
+            Http::post("{$this->api_url}/history", [
+            
+                'activityName' => 'Export Mutasi Keluar',
+                'activityAuthor' => "$user->nama",
+                'activityDesc' => "$user->nama mengexport data mutasi keluar dengan tipe file PDF."
+            
+            ]);
 
-        return $pdf->download($laporan);
+        } catch (\Exception $e) {
+            
+            return back()->with('warning', 'Terjadi kesalahan, tidak dapat mengekspor data');
+
+        }
 
     }
 
@@ -387,15 +403,23 @@ class MutasiKeluarController extends Controller
         $tgl_keluar_ke = $request->tgl_keluar_ke;
         $keluar_ke = Carbon::parse($tgl_keluar_ke)->translatedFormat('F');
 
-        $response = Http::get("{$this->api_url}/mutasi/siswa-keluar?tgl_keluar_dari={$tgl_keluar_dari}&tgl_keluar_ke={$tgl_keluar_ke}");
+        try {
+            
+            $response = Http::get("{$this->api_url}/mutasi/siswa-keluar?tgl_keluar_dari={$tgl_keluar_dari}&tgl_keluar_ke={$tgl_keluar_ke}");
 
-        return view('mutasi.pdf.mutasi-keluar', [
-            'mutasi' => json_decode($response)->data->rows,
-            'tgl_keluar_dari' => $tgl_keluar_dari,
-            'tgl_keluar_ke' => $tgl_keluar_ke,
-            'keluar_dari' => $keluar_dari,
-            'keluar_ke' => $keluar_ke
-        ]);
+            return view('mutasi.pdf.mutasi-keluar', [
+                'mutasi' => json_decode($response)->data->rows,
+                'tgl_keluar_dari' => $tgl_keluar_dari,
+                'tgl_keluar_ke' => $tgl_keluar_ke,
+                'keluar_dari' => $keluar_dari,
+                'keluar_ke' => $keluar_ke
+            ]);
+
+        } catch (\Exception $e) {
+            
+            return back()->with('warning', 'Terjadi kesalahan, tidak dapat mengekspor data');
+
+        }
 
     }
 }

@@ -35,9 +35,9 @@ class DataIndukExport implements FromView, ShouldAutoSize, WithEvents, WithColum
         $siswa = Http::get("{$this->url}/siswa/{$request->jurusan}/{$request->kelas}?page={$request->page}&perPage={$request->perPage}&search={$request->search}&nis_siswa={$request->nis_siswa}&nisn_siswa={$request->nisn_siswa}&nama_siswa={$request->nama_siswa}&jenis_kelamin={$request->jenis_kelamin}&KelasId={$request->KelasId}&sort_by={$request->sort_by}&sort={$request->sort}&dibuatTglDari={$request->dibuatTglDari}&dibuatTglKe={$request->dibuatTglKe}&thn_ajaran={$request->thn_ajaran}&angkatan={$request->angkatan}");
         
         return view('induk.pdf.data-induk', [
-            'siswa' => json_decode($siswa)->data->rows,
+            'siswa'   => json_decode($siswa)->data->rows,
             'jurusan' => $request->jurusan,
-            'kelas' => $request->kelas
+            'kelas'   => $request->kelas
         ]);
 
     }
@@ -49,27 +49,34 @@ class DataIndukExport implements FromView, ShouldAutoSize, WithEvents, WithColum
     {
         return [
             AfterSheet::class => function(AfterSheet $event) {
+                
+                // merge cells
                 $event->sheet->getDelegate()->mergeCells('A1:F1');
-                $event->sheet->getDelegate()->getStyle('A1')
+
+
+                // set alignment
+                $event->sheet->getDelegate()->getStyle("A1:F{$event->sheet->getHighestRow()}")
                 ->getAlignment()
+                ->setWrapText(true)
+                ->setVertical(Alignment::VERTICAL_CENTER)
                 ->setHorizontal(Alignment::HORIZONTAL_CENTER_CONTINUOUS);
                 
-                $event->sheet->getDelegate()->getStyle('A2:F102')->applyFromArray([
+
+                // set borders to table
+                $event->sheet->getDelegate()->getStyle("A2:F{$event->sheet->getHighestRow()}")->applyFromArray([
                     'borders' => [
                         'allBorders' => [
                             'borderStyle' => Border::BORDER_THIN,
                             'color' => ['argb' => '000000'],
                         ],
                     ],
-                ])
-                ->getAlignment()
-                ->setWrapText(true)
-                ->setVertical(Alignment::VERTICAL_CENTER)
-                ->setHorizontal(Alignment::HORIZONTAL_CENTER_CONTINUOUS);
+                ]);
             },
         ];
     }
 
+
+    // set column widths
     public function columnWidths(): array
     {
         return [

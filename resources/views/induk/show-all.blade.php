@@ -189,7 +189,7 @@
                                 @if(isset($_GET['rombel'])) <input name="rombel" value="{{ $_GET['rombel'] }}" type="hidden"> @endif
 
                                 <div class="tw-flex tw-justify-center tw-mt-3">
-                                    <button type="submit" class="tw-text-white tw-bg-sims-new-500 hover:tw-bg-sims-new-700 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-red-300 dark:focus:tw-ring-red-800 tw-font-medium tw-rounded-lg tw-text-sm tw-inline-flex tw-items-center tw-py-2.5 tw-text-center tw-mr-2 tw-px-6">Ekspor</button>
+                                    <button type="submit" class="tw-text-white tw-bg-sims-new-500 hover:tw-bg-sims-new-700 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-sims-new-600 tw-font-medium tw-rounded-lg tw-text-sm tw-inline-flex tw-items-center tw-py-2.5 tw-text-center tw-mr-2 tw-px-6">Ekspor</button>
                                 </div>
                             </form>
                             @else
@@ -650,7 +650,7 @@
                                                             @csrf
                                                             <label class="tw-flex tw-flex-col tw-w-full tw-h-56 tw-border-4 tw-border-admin-200 tw-border-dashed tw-justify-center tw-items-center hover:tw-bg-gray-100 hover:tw-border-gray-300 tw-px-10" for="">
                                                                 <input type="file" name="uploaded_file" multiple
-                                                                    class="tw-absolute tw-outline-none tw-top-10 tw-bottom-32 tw-opacity-0"
+                                                                    class="tw-absolute tw-outline-none tw-top-10 tw-bottom-44 tw-opacity-0"
                                                                     x-on:change="files = $event.target.files; console.log($event.target.files);"
                                                                     x-on:dragover="$el.classList.add('active')" x-on:dragleave="$el.classList.remove('active')" x-on:drop="$el.classList.remove('active')"
                                                                 >
@@ -681,6 +681,7 @@
                                                                 </template>
                                                             </label>
                                                             <div class="tw-grid tw-gap-3 tw-mt-3">
+                                                                <a href="/siswa/download" class="tw-w-full tw-px-5 tw-py-2 tw-text-center tw-text-white tw-bg-ijo-400 hover:tw-bg-ijo-500 hover:tw-text-white tw-rounded tw-shadow-xl">Unduh Format File Import (.xlsx)</a>
                                                                 <button type="submit" class="tw-w-full tw-px-5 tw-py-2 tw-text-white tw-bg-sims-new-500 hover:tw-bg-sims-300 tw-rounded tw-shadow-xl">Import</button>
                                                                 <button type="button" data-modal-toggle="popup-data" class="tw-w-full tw-px-5 tw-py-2 tw-text-white tw-bg-gray-500 hover:tw-bg-gray-400 tw-rounded tw-shadow-xl">Batal</button>
                                                             </div>

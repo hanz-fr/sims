@@ -62,15 +62,22 @@ class MutasiKeluarExport implements FromView, ShouldAutoSize, WithEvents, WithCo
     {
         return [
             AfterSheet::class => function(AfterSheet $event) {
+
+                // merge cells
                 $event->sheet->getDelegate()->mergeCells('A1:G1');
                 $event->sheet->getDelegate()->mergeCells('A2:G2');
                 $event->sheet->getDelegate()->mergeCells('A3:G3');
 
-                $event->sheet->getDelegate()->getStyle('A1:A3')
+
+                // set alignment
+                $event->sheet->getDelegate()->getStyle("A1:G{$event->sheet->getHighestRow()}")
                 ->getAlignment()
+                ->setWrapText(true)
+                ->setVertical(Alignment::VERTICAL_CENTER)
                 ->setHorizontal(Alignment::HORIZONTAL_CENTER_CONTINUOUS);
 
                 
+                // set borders to table
                 $event->sheet->getDelegate()->getStyle('A8:G18')->applyFromArray([
                     'borders' => [
                         'allBorders' => [
@@ -78,11 +85,7 @@ class MutasiKeluarExport implements FromView, ShouldAutoSize, WithEvents, WithCo
                             'color' => ['argb' => '000000'],
                         ],
                     ],
-                ])
-                ->getAlignment()
-                ->setWrapText(true)
-                ->setVertical(Alignment::VERTICAL_CENTER)
-                ->setHorizontal(Alignment::HORIZONTAL_CENTER_CONTINUOUS);
+                ]);
             },
         ];
     }

@@ -34,7 +34,6 @@
   </style>
 </head>
 <body>
-
   <h4 style="font-weight: bold; text-align: center; font-family:Arial, Helvetica, sans-serif; margin-top: -10px">DAFTAR NAMA PESERTA DIDIK DALAM BUKU INDUK</h4>
 
     <table id="data">

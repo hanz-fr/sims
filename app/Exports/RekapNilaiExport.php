@@ -32,10 +32,10 @@ class RekapNilaiExport implements FromView, ShouldAutoSize, WithEvents
 
         $nis = $request->nis;
 
-        $response = Http::get("{$this->api_url}/siswa/{$nis}");
-        $nis = json_decode($response)->result->nis_siswa;
+        $response     = Http::get("{$this->api_url}/siswa/{$nis}");
+        $nis          = json_decode($response)->result->nis_siswa;
         $jurusanSiswa = json_decode($response)->result->kelas->JurusanId;
-        $mapel = Http::get("{$this->api_url}/mapel-jurusan/get/by-jurusan/$jurusanSiswa");
+        $mapel        = Http::get("{$this->api_url}/mapel-jurusan/get/by-jurusan/$jurusanSiswa");
         
         $raportId = "RPT{$nis}";
 
@@ -47,10 +47,10 @@ class RekapNilaiExport implements FromView, ShouldAutoSize, WithEvents
         $raport06 = Http::get("{$this->api_url}/nilai-mapel/get-by/{$raportId}-6");
 
         return view('rekap-nilai.pdf.rekap-nilai', [
-            'siswa' => json_decode($response)->result,
+            'siswa'    => json_decode($response)->result,
             'nama'     => json_decode($response)->result->nama_siswa,
             'kelas'    => $jurusanSiswa,
-            'mapel' => json_decode($mapel),
+            'mapel'    => json_decode($mapel),
             'raport01' => json_decode($raport01)->rows,
             'raport02' => json_decode($raport02)->rows,
             'raport03' => json_decode($raport03)->rows,
@@ -67,26 +67,28 @@ class RekapNilaiExport implements FromView, ShouldAutoSize, WithEvents
     {
         return [
             AfterSheet::class => function(AfterSheet $event) {
+
+                // merge cells
                 $event->sheet->getDelegate()->mergeCells('A1:S2');
-                $event->sheet->getDelegate()->getStyle('A1')
+
+
+                // set alignment
+                $event->sheet->getDelegate()->getStyle("A1:S{$event->sheet->getHighestRow()}")
                 ->getAlignment()
+                ->setWrapText(true)
+                ->setVertical(Alignment::VERTICAL_CENTER)
                 ->setHorizontal(Alignment::HORIZONTAL_CENTER_CONTINUOUS);
                 
-                $event->sheet->getDelegate()->getStyle('A4:S26')->applyFromArray([
+
+                // set borders to table
+                $event->sheet->getDelegate()->getStyle("A4:S{$event->sheet->getHighestRow()}")->applyFromArray([
                     'borders' => [
                         'allBorders' => [
                             'borderStyle' => Border::BORDER_THIN,
                             'color' => ['argb' => '000000'],
                         ],
                     ],
-                ])
-                ->getAlignment()
-                ->setWrapText(true)
-                ->setVertical(Alignment::VERTICAL_CENTER);
-
-                $event->sheet->getDelegate()->getStyle('A4:S4')
-                ->getAlignment()
-                ->setHorizontal(Alignment::HORIZONTAL_CENTER_CONTINUOUS);
+                ]);
             },
         ];
     }

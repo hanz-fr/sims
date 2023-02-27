@@ -33,7 +33,7 @@
   <h5 style="margin-bottom: -15px">SMK NEGERI 11 BANDUNG</h5>
   <h5>TAHUN AJARAN {{ date('Y') }}/{{ date('Y') + 1 }}</h5>
 
-  <h6 style="margin-bottom: -2px">Periode : {{ $TglDari }} - {{ $TglKe }}</h6>
+  <h6 style="margin-bottom: -2px">Periode : @if($TglDari == $TglKe) {{ $TglDari }} @else {{ $TglDari }} - {{ $TglKe }} @endif</h6>
 
   <hr style="margin-bottom: 25px; border: solid 1px black">
 
@@ -54,7 +54,7 @@
               <td>{{ $r->siswa->nama_siswa }}</td>
               <td>{{ $r->siswa->tmp_lahir }}, {{ $r->siswa->tgl_lahir }}</td>
               <td>{{ $r->tinggal_di_Kelas }}</td>
-              <td>{{ $r->alasan_tidak_naik }}</td>
+              <td>@if ($r->alasan_tidak_naik) {{ $r->alasan_tidak_naik }} @else - @endif</td>
           </tr>
           @endforeach
         </tbody>

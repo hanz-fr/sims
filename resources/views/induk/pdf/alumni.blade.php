@@ -29,8 +29,7 @@
 
   <h5 style="margin-bottom: -15px">DATA ALUMNI</h5>
   <h5 style="margin-bottom: -15px">SMK NEGERI 11 BANDUNG</h5>
-
-  <h6 style="margin-bottom: -2px">Periode : {{ $TglDari }} - {{ $TglKe }}</h6>
+  <h5>ANGKATAN @if($TglDari == $TglKe) {{ $TglDari }} @else {{ $TglDari }} - {{ $TglKe }} @endif</h5>
 
   <hr style="margin-bottom: 25px; border: solid 1px black">
 

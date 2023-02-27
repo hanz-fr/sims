@@ -98,17 +98,25 @@ class SiswaTidakNaikController extends Controller
 
         $tidaknaik = 'daftar_nama_tidak_naik_'.$getDibuatTglDari.'_'.$getDibuatTglKe.'.xlsx';
 
-        $user = Auth::user();
+        try {
 
-        Http::post("{$this->api_url}/history", [
-        
-            'activityName' => 'Export Data Tidak Naik',
-            'activityAuthor' => "$user->nama",
-            'activityDesc' => "$user->nama mengexport data siswa tidak naik dengan tipe file excel."
-        
-        ]);
+            return Excel::download(new DataTidakNaikExport, $tidaknaik);
 
-        return Excel::download(new DataTidakNaikExport, $tidaknaik);
+            $user = Auth::user();
+    
+            Http::post("{$this->api_url}/history", [
+            
+                'activityName' => 'Export Data Tidak Naik',
+                'activityAuthor' => "$user->nama",
+                'activityDesc' => "$user->nama mengexport data siswa tidak naik dengan tipe file excel."
+            
+            ]);
+
+        } catch (\Exception $e) {
+
+            return back()->with('warning', 'Terjadi kesalahan, tidak dapat mengekspor data');
+
+        }
         
     }
 
@@ -125,27 +133,35 @@ class SiswaTidakNaikController extends Controller
 
         $response = Http::get("{$this->api_url}/dashboard/siswa-tidak-naik?dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}");
 
-        $pdf = PDF::loadView('rekap-siswa.pdf.tidak-naik', [
-            'raport' => json_decode($response)->data->rows,
-            'dibuatTglDari' => $dibuatTglDari,
-            'dibuatTglKe' => $dibuatTglKe,
-            'TglDari' => $getDibuatTglDari,
-            'TglKe' => $getDibuatTglKe            
-        ])->setPaper('A4_PLUS_PAPER', 'potrait');
+        try {
 
-        $tidaknaik = 'data_tidak_naik_kelas_periode_'.$getDibuatTglDari.'_'.$getDibuatTglKe.'.pdf';
+            $pdf = PDF::loadView('rekap-siswa.pdf.tidak-naik', [
+                'raport' => json_decode($response)->data->rows,
+                'dibuatTglDari' => $dibuatTglDari,
+                'dibuatTglKe' => $dibuatTglKe,
+                'TglDari' => $getDibuatTglDari,
+                'TglKe' => $getDibuatTglKe            
+            ])->setPaper('A4_PLUS_PAPER', 'potrait');
+    
+            $tidaknaik = 'data_tidak_naik_kelas_periode_'.$getDibuatTglDari.'_'.$getDibuatTglKe.'.pdf';
+    
+            return $pdf->download($tidaknaik);
+    
+            $user = Auth::user();
+    
+            Http::post("{$this->api_url}/history", [
+            
+                'activityName' => 'Export Data Tidak Naik',
+                'activityAuthor' => "$user->nama",
+                'activityDesc' => "$user->nama mengexport data siswa tidak naik dengan tipe file PDF."
+            
+            ]);
 
-        $user = Auth::user();
+        } catch (\Exception $e) {
 
-        Http::post("{$this->api_url}/history", [
-        
-            'activityName' => 'Export Data Tidak Naik',
-            'activityAuthor' => "$user->nama",
-            'activityDesc' => "$user->nama mengexport data siswa tidak naik dengan tipe file PDF."
-        
-        ]);
+            return back()->with('warning', 'Terjadi kesalahan, tidak dapat mengekspor data');
 
-        return $pdf->download($tidaknaik);
+        }
         
     }
 
@@ -164,13 +180,21 @@ class SiswaTidakNaikController extends Controller
 
         $tidaknaik = 'daftar_nama_tidak_naik_'.$dibuatTglDari.'_'.$dibuatTglKe.'.xlsx';
 
-        return view('rekap-siswa.pdf.tidak-naik', [
-            'raport' => json_decode($response)->data->rows,
-            'dibuatTglDari' => $dibuatTglDari,
-            'dibuatTglKe' => $dibuatTglKe,
-            'TglDari' => $getDibuatTglDari,
-            'TglKe' => $getDibuatTglKe   
-        ]);
+        try {
+
+            return view('rekap-siswa.pdf.tidak-naik', [
+                'raport' => json_decode($response)->data->rows,
+                'dibuatTglDari' => $dibuatTglDari,
+                'dibuatTglKe' => $dibuatTglKe,
+                'TglDari' => $getDibuatTglDari,
+                'TglKe' => $getDibuatTglKe   
+            ]);
+
+        } catch (\Exception $e) {
+
+            return back()->with('warning', 'Terjadi kesalahan, tidak dapat mengekspor data');
+
+        }
         
     }
 

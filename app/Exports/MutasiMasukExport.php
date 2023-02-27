@@ -35,21 +35,21 @@ class MutasiMasukExport implements FromView, ShouldAutoSize, WithEvents, WithCol
     {
         $request = request();
 
-        $sort_by = $request->sort_by;
-        $sort = $request->sort;
+        $sort_by        = $request->sort_by;
+        $sort           = $request->sort;
         $tgl_masuk_dari = $request->tgl_masuk_dari;
-        $masuk_dari = Carbon::parse($tgl_masuk_dari)->translatedFormat('F');
-        $tgl_masuk_ke = $request->tgl_masuk_ke;
-        $masuk_ke = Carbon::parse($tgl_masuk_ke)->translatedFormat('F');
+        $masuk_dari     = Carbon::parse($tgl_masuk_dari)->translatedFormat('F');
+        $tgl_masuk_ke   = $request->tgl_masuk_ke;
+        $masuk_ke       = Carbon::parse($tgl_masuk_ke)->translatedFormat('F');
 
         $mutasi = Http::get("{$this->url}/mutasi/siswa-masuk?sort_by={$sort_by}&sort={$sort}&tgl_masuk_dari={$tgl_masuk_dari}&tgl_masuk_ke={$tgl_masuk_ke}");
 
         return view('mutasi.pdf.mutasi-masuk', [
-            'mutasi' => json_decode($mutasi)->data->rows,
+            'mutasi'         => json_decode($mutasi)->data->rows,
             'tgl_masuk_dari' => $tgl_masuk_dari,
-            'tgl_masuk_ke' => $tgl_masuk_ke,
-            'masuk_dari' => $masuk_dari,
-            'masuk_ke' => $masuk_ke
+            'tgl_masuk_ke'   => $tgl_masuk_ke,
+            'masuk_dari'     => $masuk_dari,
+            'masuk_ke'       => $masuk_ke
         ]);
     }
 
@@ -60,30 +60,36 @@ class MutasiMasukExport implements FromView, ShouldAutoSize, WithEvents, WithCol
     {
         return [
             AfterSheet::class => function(AfterSheet $event) {
+
+                // merge cells
                 $event->sheet->getDelegate()->mergeCells('A1:G1');
                 $event->sheet->getDelegate()->mergeCells('A2:G2');
                 $event->sheet->getDelegate()->mergeCells('A3:G3');
 
-                $event->sheet->getDelegate()->getStyle('A1:A3')
+
+                // set alignment
+                $event->sheet->getDelegate()->getStyle("A1:G{$event->sheet->getHighestRow()}")
                 ->getAlignment()
+                ->setWrapText(true)
+                ->setVertical(Alignment::VERTICAL_CENTER)
                 ->setHorizontal(Alignment::HORIZONTAL_CENTER_CONTINUOUS);
                 
-                $event->sheet->getDelegate()->getStyle('A8:G18')->applyFromArray([
+
+                // set borders to table
+                $event->sheet->getDelegate()->getStyle("A8:G{$event->sheet->getHighestRow()}")->applyFromArray([
                     'borders' => [
                         'allBorders' => [
                             'borderStyle' => Border::BORDER_THIN,
                             'color' => ['argb' => '000000'],
                         ],
                     ],
-                ])
-                ->getAlignment()
-                ->setWrapText(true)
-                ->setVertical(Alignment::VERTICAL_CENTER)
-                ->setHorizontal(Alignment::HORIZONTAL_CENTER_CONTINUOUS);
+                ]);
             },
         ];
     }
 
+
+    // set column width
     public function columnWidths(): array
     {
         return [

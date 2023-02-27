@@ -32,7 +32,7 @@
     <h5 style="margin-bottom: -15px">SMK NEGERI 11 BANDUNG</h5>
     <h5>TAHUN AJARAN {{ date('Y') }}/{{ date('Y') + 1 }}</h5>
   
-    <h6 style="margin-bottom: -2px">Periode : {{ $masuk_dari }} - {{ $masuk_ke }}</h6>
+    <h6 style="margin-bottom: -2px">Periode : @if($masuk_dari == $masuk_ke) {{ $masuk_dari }} @else {{ $masuk_dari }} - {{ $masuk_ke }} @endif</h6>
   
     <hr style="margin-bottom: 25px; border: solid 1px black">
 

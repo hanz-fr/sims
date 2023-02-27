@@ -29,15 +29,15 @@ class JumlahSiswaExport implements FromView, ShouldAutoSize, WithEvents
     {
         
         $semuaKelas = Http::get("{$this->api_url}/kelas/siswa-per-kelas/all");
-        $kelas10 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/10");
-        $kelas11 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/11");
-        $kelas12 = Http::get("{$this->api_url}/kelas/siswa-per-kelas/12");
+        $kelas10    = Http::get("{$this->api_url}/kelas/siswa-per-kelas/10");
+        $kelas11    = Http::get("{$this->api_url}/kelas/siswa-per-kelas/11");
+        $kelas12    = Http::get("{$this->api_url}/kelas/siswa-per-kelas/12");
 
         return view('rekap-siswa.pdf.rekap-jumlah-siswa', [
             'semua_kelas' => json_decode($semuaKelas)->result,
-            'kelas10' => json_decode($kelas10)->result,
-            'kelas11' => json_decode($kelas11)->result,
-            'kelas12' => json_decode($kelas12)->result
+            'kelas10'     => json_decode($kelas10)->result,
+            'kelas11'     => json_decode($kelas11)->result,
+            'kelas12'     => json_decode($kelas12)->result
         ]);
     }
 
@@ -48,14 +48,22 @@ class JumlahSiswaExport implements FromView, ShouldAutoSize, WithEvents
     {
         return [
             AfterSheet::class => function(AfterSheet $event) {
+
+                // merge cells
                 $event->sheet->getDelegate()->mergeCells('A1:M1');
                 $event->sheet->getDelegate()->mergeCells('A2:M2');
                 $event->sheet->getDelegate()->mergeCells('A3:M3');
 
-                $event->sheet->getDelegate()->getStyle('A1:A3')
+
+                // set alignment
+                $event->sheet->getDelegate()->getStyle("A1:M{$event->sheet->getHighestRow()}")
                 ->getAlignment()
-                ->setHorizontal(Alignment::HORIZONTAL_CENTER_CONTINUOUS);     
+                ->setWrapText(true)
+                ->setVertical(Alignment::VERTICAL_CENTER)
+                ->setHorizontal(Alignment::HORIZONTAL_CENTER_CONTINUOUS);
                 
+
+                // set border to table
                 $event->sheet->getDelegate()->getStyle('A5:M79')->applyFromArray([
                     'borders' => [
                         'allBorders' => [
@@ -63,11 +71,7 @@ class JumlahSiswaExport implements FromView, ShouldAutoSize, WithEvents
                             'color' => ['argb' => '000000'],
                         ],
                     ],
-                ])
-                ->getAlignment()
-                ->setWrapText(true)
-                ->setVertical(Alignment::VERTICAL_CENTER)
-                ->setHorizontal(Alignment::HORIZONTAL_CENTER_CONTINUOUS);
+                ]);
             },
         ];
     }

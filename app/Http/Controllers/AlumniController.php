@@ -173,29 +173,36 @@ class AlumniController extends Controller
         $tahun_dari = Carbon::parse($dibuatTglDari)->translatedFormat('Y');
         $tahun_ke = Carbon::parse($dibuatTglDari)->translatedFormat('Y');
 
-        $response = Http::get("{$this->api_url}/dashboard/alumni/get?dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}");
+        $response = Http::get("{$this->api_url}/dashboard/alumni/all?dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}&angkatan={$request->angkatan}");
 
-        $pdf = PDF::loadView('induk.pdf.alumni', [
-            'alumni' => json_decode($response)->data->rows,
-            'dibuatTglDari' => $dibuatTglDari,
-            'dibuatTglKe' => $dibuatTglKe,
-            'TglDari' => $tahun_dari,
-            'TglKe' => $tahun_ke
-        ])->setPaper('A4_PLUS_PAPER', 'potrait');
+        try {
 
-        $dataalumni = 'data_alumni_tahun_'.$tahun_dari.'-'.$tahun_ke.'.pdf';
+            $pdf = PDF::loadView('induk.pdf.alumni', [
+                'alumni' => json_decode($response)->data->rows,
+                'dibuatTglDari' => $dibuatTglDari,
+                'dibuatTglKe' => $dibuatTglKe,
+                'TglDari' => $tahun_dari,
+                'TglKe' => $tahun_ke
+            ])->setPaper('A4_PLUS_PAPER', 'potrait');
 
-        $user = Auth::user();
+            $dataalumni = 'data_alumni_tahun_'.$tahun_dari.'-'.$tahun_ke.'.pdf';
 
-        Http::post("{$this->api_url}/history", [
-        
-            'activityName' => 'Export Data Alumni',
-            'activityAuthor' => "$user->nama",
-            'activityDesc' => "$user->nama mengexport data alumni dengan tipe file PDF."
-        
-        ]);
+            return $pdf->download($dataalumni);
 
-        return $pdf->download($dataalumni);
+            $user = Auth::user();
+    
+            Http::post("{$this->api_url}/history", [
+            
+                'activityName' => 'Export Data Alumni',
+                'activityAuthor' => "$user->nama",
+                'activityDesc' => "$user->nama mengekspor data alumni dengan tipe file PDF."
+            
+            ]);
+
+        } catch (\Exception $e) {
+
+            return back()->with('warning', 'Terjadi kesalahan, tidak dapat mengekspor data');
+        }
 
     }
 
@@ -210,15 +217,22 @@ class AlumniController extends Controller
         $tahun_dari = Carbon::parse($dibuatTglDari)->translatedFormat('Y');
         $tahun_ke = Carbon::parse($dibuatTglDari)->translatedFormat('Y');
 
-        $response = Http::get("{$this->api_url}/dashboard/alumni/get?dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}");
+        $response = Http::get("{$this->api_url}/dashboard/alumni/all?dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}");
 
-        return view('induk.pdf.alumni', [
-            'alumni' => json_decode($response)->data->rows,
-            'dibuatTglDari' => $dibuatTglDari,
-            'dibuatTglKe' => $dibuatTglKe,
-            'TglDari' => $tahun_dari,
-            'TglKe' => $tahun_ke
-        ]);
+        try {
+
+            return view('induk.pdf.alumni', [
+                'alumni' => json_decode($response)->data->rows,
+                'dibuatTglDari' => $dibuatTglDari,
+                'dibuatTglKe' => $dibuatTglKe,
+                'TglDari' => $tahun_dari,
+                'TglKe' => $tahun_ke
+            ]);
+
+        } catch (\Exception $e) {
+
+            return back()->with('warning', 'Terjadi kesalahan, tidak dapat mengekspor data');
+        }
 
     }
 
@@ -238,17 +252,23 @@ class AlumniController extends Controller
 
         $dataalumni = 'data_alumni_tahun_'.$tahun_dari.'-'.$tahun_ke.'.xlsx';
 
-        $user = Auth::user();
+        try {
 
-        Http::post("{$this->api_url}/history", [
-        
-            'activityName' => 'Export Data Alumni',
-            'activityAuthor' => "$user->nama",
-            'activityDesc' => "$user->nama mengexport data alumni dengan tipe file excel."
-        
-        ]);
-        
-        return Excel::download(new AlumniExport, $dataalumni);
+            return Excel::download(new AlumniExport, $dataalumni);
 
+            $user = Auth::user();
+            Http::post("{$this->api_url}/history", [
+            
+                'activityName' => 'Export Data Alumni',
+                'activityAuthor' => "$user->nama",
+                'activityDesc' => "$user->nama mengexport data alumni dengan tipe file excel."
+            
+            ]);
+
+        } catch (\Exception $e) {
+
+            return back()->with('warning', 'Terjadi kesalahan, tidak dapat mengekspor data');
+        }
+        
     }
 }
