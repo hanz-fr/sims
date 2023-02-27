@@ -100,6 +100,9 @@
                 <li>Email</li>
                 <li>Bagian</li>
                 <li>Nomor Telepon</li>
+                @if($user->role == 4)
+                <li>Walikelas</li>
+                @endif
             </ul>
             <ul class="sims-text-gray-xl tw-text-right tw-pl-0 tw-grid tw-gap-14">
                 <li>
@@ -125,12 +128,21 @@
                     @endif
                 </li>
                 <li>{{ $user->no_telp }}</li>
+                @if(auth()->user()->role == 4)
+                <li>
+                    @if(!empty($kelas_walkel))
+                        {{ $kelas_walkel }}
+                    @else
+                        Kelas belum ditentukan.
+                    @endif
+                </li>
+                @endif
             </ul>
         </div>
         @if($history === [])
         <div class="tw-flex tw-flex-col tw-px-14 tw-pt-14">
             <img src="{{ URL::asset('assets/img/history-empty.jpg') }}" class="tw-mx-auto" alt="no_history" width="50%">
-            <div class="tw-text-gray-400 tw-font-light sims-text-gray-sm tw-mt-5 tw-text-center">Anda belum memiliki aktifitas.</div>
+            <div class="tw-text-gray-400 tw-font-light sims-text-gray-sm tw-mt-5 tw-text-center">Belum memiliki aktifitas.</div>
         </div>
         @else
         <div class="tw-px-14 tw-pt-14 tw-grid tw-grid-rows-6">

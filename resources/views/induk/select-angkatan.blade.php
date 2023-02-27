@@ -2,7 +2,10 @@
 
 @section('content')
 <div class="tw-mx-10">
-    <h1 class="sims-heading-3xl tw-my-9">Angkatan Kelas</h1>
+    <div class="tw-flex tw-flex-col tw-my-10">
+        <h1 class="sims-heading-3xl">Angkatan Kelas</h1>
+        <div class="tw-font-bold sims-text-gray-lg">{{ $jurusan }}</div>
+    </div>
     <div class="tw-grid lg:tw-grid-cols-3 md:tw-grid-cols-2 tw-gap-5 tw-mt-8 sm:tw-grid-cols-1 tw-font-satoshi  ">
         
         <a href="/data-induk-siswa/{{ $jurusan }}/10?angkatan={{ \Carbon\Carbon::now()->year + 2 }}&page=1&perPage=10&search=">

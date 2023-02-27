@@ -348,13 +348,23 @@
 
                     <!-- Quick Access Card -->
                     <div class="tw-flex">
-                        <a href="/data-induk-siswa?perPage=10&page=1"
-                            class="sims-card-1-noshadow sims-text-regular-sm tw-text-center tw-font-normal tw-w-full tw-h-40 tw-px-3 tw-mx-2 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all">
-                            <div class="tw-flex tw-flex-col tw-gap-3">
-                                <i class="fa-regular fa-book-open-cover tw-text-3xl tw-m-auto"></i>
-                                Data Induk Siswa (Umum)
-                            </div>
-                        </a>
+                        @if(auth()->user()->role == 4)
+                            @if($kelas_walikelas != '')
+                                <a href="/data-induk-siswa/{{ $kelas_walikelas->JurusanId }}/{{ $kelas_walikelas->kelas }}?rombel={{ $kelas_walikelas->rombel }}" class="sims-card-1-noshadow sims-text-regular-sm tw-text-center tw-font-normal tw-w-full tw-h-40 tw-px-3 tw-mx-2 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all">
+                                    <div class="tw-flex tw-flex-col tw-gap-3">
+                                        <i class="fa-regular fa-book-open-cover tw-text-3xl tw-m-auto"></i>
+                                        Data Induk Siswa ({{$kelas_walikelas->id}})
+                                    </div> 
+                                </a>
+                            @endif
+                        @else
+                            <a href="/data-induk-siswa?perPage=10&page=1" class="sims-card-1-noshadow sims-text-regular-sm tw-text-center tw-font-normal tw-w-full tw-h-40 tw-px-3 tw-mx-2 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all">
+                                <div class="tw-flex tw-flex-col tw-gap-3">
+                                    <i class="fa-regular fa-book-open-cover tw-text-3xl tw-m-auto"></i>
+                                    Data Induk Siswa (Umum)
+                                </div>
+                            </a>
+                        @endif
                         @cannot('wali-kelas')
                         <a href="/rekap-jumlah-siswa"
                             class="sims-card-1-noshadow sims-text-regular-sm tw-text-center tw-font-normal tw-w-full tw-h-40 tw-px-3 tw-mx-2 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all">

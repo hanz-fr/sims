@@ -33,9 +33,9 @@
                         </a>
                     </div>
 
-
+                    @if(auth()->user()->role != 4)
                     <!-- Data Induk button -->
-                    <div x-data="{ tooltip: 'Buku Induk' }">
+                    <div x-data="{ tooltip: 'Buku Induk Siswa' }">
                         <a href="/jurusan">
                             <button x-tooltip.placement.right.delay.500-100="tooltip" type="button"
                                 class="{{ ($active === "data-induk") ? 'tw-bg-sims-new-500 tw-text-white' : 'tw-text-sims-new-500' }} tw-p-5 tw-transition-colors tw-rounded-xl hover:tw-bg-sims-new-500 hover:tw-text-white focus:tw-outline-none">
@@ -43,7 +43,7 @@
                             </button>
                         </a>
                     </div>
-
+                    @endif
 
                     @cannot('wali-kelas')
                     <!-- Rekap Siswa button -->

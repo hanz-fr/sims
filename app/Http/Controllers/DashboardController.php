@@ -31,6 +31,19 @@ class DashboardController extends Controller
         $message = ''; // greetings message
         $user = User::findOrFail(Auth::id()); // current logged in user
         $current_year = Carbon::now()->year; // current year
+        $kelas = ''; // kelas walikelas
+        
+        if ($user->role == 4) {
+
+            $kelas = Http::get("{$this->api_url}/kelas/get-by-walkel/$user->nip");
+
+            if(json_decode($kelas)->status === 'error') {
+                $kelas = '';
+            } else {
+                $kelas = json_decode($kelas)->kelas;
+            }
+
+        }
 
         $response = Http::get("{$this->api_url}/dashboard");
         $allJurusan = Http::get("{$this->api_url}/jurusan");
@@ -58,7 +71,6 @@ class DashboardController extends Controller
             $message = "Selamat Malam";
         }
 
-
         if ($response->successful()) {
 
             return view('dashboard.main', [
@@ -66,6 +78,7 @@ class DashboardController extends Controller
                 'active' => 'dashboard-main',
                 'message' => $message,
                 'userHistory' => $userHistory,
+                'kelas_walikelas' => $kelas,
                 'mutasi' => json_decode($response)->mutasi->count,
                 'kelas' => json_decode($response)->kelas->count,
                 'siswa' => json_decode($response)->siswa->count,

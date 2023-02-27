@@ -182,6 +182,23 @@ class UserController extends Controller
     public function show() {
 
         $user = User::findOrFail(Auth::id());
+        $kelas_walkel = '';
+        
+        if ($user->role == 4) {
+
+            $response = json_decode(Http::get("{$this->api_url}/kelas/get-by-walkel/{$user->nip}"));
+
+            if ($response->status == 'success') {
+
+                $kelas_walkel = $response->kelas->id;
+
+            } else {
+
+                $kelas_walkel = '';
+
+            }
+
+        }
 
         $current_year = Carbon::now()->year;
 
@@ -190,6 +207,7 @@ class UserController extends Controller
         return view('auth.profil-user', [
             'title'  => 'Profil User',
             'active' => 'profile',
+            'kelas_walkel' => $kelas_walkel,
             'history' => json_decode($userHistory)->rows,
         ], 
         compact('user'));
