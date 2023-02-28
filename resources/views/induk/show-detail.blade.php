@@ -5,14 +5,16 @@
         <div class="tw-flex tw-justify-center">
             <div class="tw-block tw-my-32">
                 <img src="{{ asset('assets/img/error_img.svg') }}" alt="error_img">
-                <h1 class="tw-flex tw-justify-center tw-font-satoshi tw-font-bold tw-mt-6 tw-text-sims-new-500">404 Not Found</h1>
+                <h1 class="tw-flex tw-justify-center tw-font-satoshi tw-font-bold tw-mt-6 tw-text-sims-new-500">404 Not Found
+                </h1>
                 <p class="tw-flex tw-justify-center tw-font-satoshi tw-text-md tw-font-semibold tw-text-gray-400 tw-mt-5">
                     {{ $message }}</p>
             </div>
         </div>
     @else
         <div class="tw-mx-10 tw-my-10">
-            <div class="tw-text-3xl tw-text-sims-new-500 tw-font-satoshi tw-font-semibold tw-flex tw-mt-9 tw-mx-9">Data Siswa</div>
+            <div class="tw-text-3xl tw-text-sims-new-500 tw-font-satoshi tw-font-semibold tw-flex tw-mt-9 tw-mx-9">Data Siswa
+            </div>
             {{-- foto profil --}}
             <div class="tw-flex tw-flex-col md:tw-flex-row tw-font-satoshi">
                 <div
@@ -27,136 +29,148 @@
                     @endif
 
                     <div class="tw-rounded-lg tw-py-10">
-                        <div class="tw-text-sims-new-500 tw-text-xl tw-mb-3 tw-px-14">{{ $siswa->nama_siswa }} @if($siswa->isAlumni === true)<div class="tw-text-xs tw-text-sims-new-500 tw-mt-1"><i class="fa-solid fa-graduation-cap tw-mx-1"></i>Alumni</div>@endif</div>
+                        <div class="tw-text-sims-new-500 tw-text-xl tw-mb-3 tw-px-14">{{ $siswa->nama_siswa }} @if ($siswa->isAlumni === true)
+                                <div class="tw-text-xs tw-text-sims-new-500 tw-mt-1"><i
+                                        class="fa-solid fa-graduation-cap tw-mx-1"></i>Alumni</div>
+                            @endif
+                        </div>
                         <div class="tw-text-gray-400 tw-text-base tw-font-normal tw-font-sg">
                             <div>{{ $siswa->nis_siswa }} / {{ $siswa->nisn_siswa }}</div>
                             <div>{{ $siswa->kelas->jurusan }}</div>
                             <div>{{ $siswa->kelas->id }}</div>
-                            <div class="tw-text-basic-200 tw-text-sm tw-font-normal tw-mt-8"><b>Dibuat : </b>{{ $createdAt }}</div>
-                            <div class="tw-text-basic-200 tw-text-sm tw-font-normal"><b>Update terakhir : </b>{{ $updatedAt }}</div>
+                            <div class="tw-text-basic-200 tw-text-sm tw-font-normal tw-mt-8"><b>Dibuat :
+                                </b>{{ $createdAt }}</div>
+                            <div class="tw-text-basic-200 tw-text-sm tw-font-normal"><b>Update terakhir :
+                                </b>{{ $updatedAt }}</div>
                         </div>
                     </div>
                 </div>
 
-                
+
 
                 {{-- data siswa --}}
                 <div x-data="{
                     open: 1,
                     activeClasses: 'tw-bg-white tw-border',
                     inactiveClasses: 'tw-bg-gray-200 tw-border-t tw-border-x'
-                  }" class="md:tw-w-3/5 sm:tw-w-full tw-mt-5" >
-                  
-                  <div class="tw-justify-end tw-flex tw-gap-2">
-                    @can('manage-induk')                            
-                    <div>
-                        <button type="button" data-modal-toggle="modal" class="tw-bg-sims-new-500 tw-h-full tw-text-sm tw-text-white hover:tw-text-white  tw-font-satoshi hover:tw-bg-sims-new-700 tw-px-5 tw-py-2 tw-rounded-lg">Ekspor</button>
+                }" class="md:tw-w-3/5 sm:tw-w-full tw-mt-5">
 
-                        <div id="modal" tabindex="-1"
-                         class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full">
-                          <div class="relative p-4 w-full max-w-md h-full md:h-auto">
-                              <div class="tw-relative tw-bg-white tw-rounded-lg tw-shadow dark:tw-bg-slate-100 tw-font-satoshi">
-                                  <button type="button"
-                                    class="tw-absolute tw-top-3 tw-right-2.5 tw-text-gray-400 tw-bg-transparent hover:tw-bg-gray-200 hover:tw-text-gray-900 tw-rounded-lg tw-text-sm tw-p-1.5 tw-ml-auto tw-inline-flex tw-items-center"
-                                    data-modal-toggle="modal">
-                                      <svg aria-hidden="true" class="tw-w-5 tw-h-5" fill="currentColor"
-                                          viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                          <path fill-rule="evenodd"
-                                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                            clip-rule="evenodd">
-                                          </path>
-                                      </svg>
-                                      <span class="sr-only">Close modal</span>
-                                  </button>
-                                  <div class="tw-p-6">
-                                      <div class="tw-mb-8 tw-mt-5 tw-flex tw-justify-center tw-text-2xl tw-font-semibold tw-text-sims-new-500">
-                                          Ekspor Data
-                                      </div>
-                                      <div class="tw-gap-3 tw-grid tw-font-sg">
-                                          <a href="/data-siswa-print/{{ $siswa->nis_siswa }}" target="__blank"
-                                            class="tw-text-white tw-justify-center tw-bg-sims-new-500 tw-w-full hover:tw-bg-sims-new-600 hover:tw-text-white tw-font-medium tw-text-xl tw-inline-flex tw-items-center tw-py-8 tw-text-center">
-                                              Cetak data&nbsp;&nbsp;<i class="fa-solid fa-print tw-text-2xl"></i>
-                                          </a>
-                                          <a href="/detail-data-induk/{{ $siswa->nis_siswa }}"
-                                            class="tw-text-white tw-justify-center tw-bg-[#1D6F42] tw-w-full hover:tw-bg-green-800 hover:tw-text-white tw-font-medium tw-text-xl tw-inline-flex tw-items-center tw-py-8 tw-text-center">
-                                              Ekspor data ke Excel&nbsp;&nbsp;<i class="fa-solid fa-file-excel tw-text-2xl"></i>
-                                          </a>
-                                          <a href="/data-siswa-pdf/{{ $siswa->nis_siswa }}"
-                                            class="tw-text-white tw-justify-center tw-bg-danger-500 tw-w-full hover:tw-bg-danger-700 hover:tw-text-white tw-font-medium tw-text-xl tw-inline-flex tw-items-center tw-py-8 tw-text-center">
-                                              Ekspor data ke PDF&nbsp;&nbsp;<i class="fa-solid fa-file-pdf tw-text-2xl"></i>
-                                        </a>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                        </div>
-                    </div>
-                    @endcan
-                    
-                    @cannot('kesiswaan')
-                    <a href="/rekap-nilai/{{ $siswa->nis_siswa }}"
-                        class="tw-text-white tw-font-sg tw-text-sm tw-bg-sims-new-500 hover:tw-text-white hover:tw-bg-sims-new-600 tw-rounded-lg tw-py-2 tw-px-3"><i
-                            class="fa-light fa-clipboard-list mr-2"></i>Rekap Nilai</a>
-                    @endcannot
+                    <div class="tw-justify-end tw-flex tw-gap-2">
+                        @can('manage-induk')
+                            <div>
+                                <button type="button" data-modal-toggle="modal"
+                                    class="tw-bg-sims-new-500 tw-h-full tw-text-sm tw-text-white hover:tw-text-white  tw-font-satoshi hover:tw-bg-sims-new-700 tw-px-5 tw-py-2 tw-rounded-lg">Ekspor</button>
 
-                    @can('manage-induk')
-                    
-                    <a href="/edit-siswa/{{ $siswa->nis_siswa }}" class="tw-text-white tw-text-sm tw-font-sg  tw-bg-yellow-400 hover:tw-text-white hover:tw-bg-yellow-500 tw-rounded-lg tw-py-2 tw-px-3"><i class="fa-solid fa-pen-to-square mr-2"></i>Edit</a>
-                    
-                    <form action="/api/siswa/delete/{{ $siswa->nis_siswa }}" method="POST">
-                        @csrf
-                        @method('DELETE')
-
-                        <input type="hidden" name="prevURLwithParams" value="{{ URL::previous() }}">
-
-                        <button type="button" data-modal-toggle="popup-modal"
-                            class="tw-text-white tw-text-sm tw-font-sg tw-bg-red-400 hover:tw-bg-red-500 hover:tw-text-white tw-rounded-lg tw-py-2 tw-px-3">
-                            <i class="fa-solid fa-trash mr-2"></i> Hapus
-                        </button>
-
-                        <input type="hidden" name="prevURL" value="{{ $prevURL }}">
-
-                        <div id="popup-modal" tabindex="-1"
-                            class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full">
-                            <div class="relative p-4 w-full max-w-md h-full md:h-auto">
-                                <div class="tw-relative tw-bg-white tw-rounded-lg tw-shadow dark:tw-bg-slate-100">
-                                    <button type="button"
-                                        class="tw-absolute tw-top-3 tw-right-2.5 tw-text-gray-400 tw-bg-transparent hover:tw-bg-gray-200 hover:tw-text-gray-900 tw-rounded-lg tw-text-sm tw-p-1.5 tw-ml-auto tw-inline-flex tw-items-center"
-                                        data-modal-toggle="popup-modal">
-                                        <svg aria-hidden="true" class="tw-w-5 tw-h-5" fill="currentColor"
-                                            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd"
-                                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                                clip-rule="evenodd"></path>
-                                        </svg>
-                                        <span class="sr-only">Close modal</span>
-                                    </button>
-                                    <div class="tw-p-6">
-                                        <svg aria-hidden="true"
-                                            class="tw-mx-auto tw-mb-4 tw-w-14 tw-h-14 tw-text-gray-400 dark:tw-text-gray-200"
-                                            fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                        </svg>
+                                <div id="modal" tabindex="-1"
+                                    class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full">
+                                    <div class="relative p-4 w-full max-w-md h-full md:h-auto">
                                         <div
-                                            class="tw-mb-5 tw-flex tw-justify-center tw-text-md tw-font-normal tw-text-gray-500 dark:tw-text-gray-400">
-                                            Hapus data siswa?</div>
-                                        <div class="tw-flex tw-justify-center">
-                                            <button type="submit" data-modal-toggle="popup-modal" type="button"
-                                                class="tw-text-white tw-bg-red-600 hover:tw-bg-red-800 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-red-300 dark:focus:tw-ring-red-800 tw-font-medium tw-rounded-lg tw-text-sm tw-inline-flex tw-items-center tw-py-2.5 tw-text-center tw-mr-2 tw-px-6">
-                                                Ya
+                                            class="tw-relative tw-bg-white tw-rounded-lg tw-shadow dark:tw-bg-slate-100 tw-font-satoshi">
+                                            <button type="button"
+                                                class="tw-absolute tw-top-3 tw-right-2.5 tw-text-gray-400 tw-bg-transparent hover:tw-bg-gray-200 hover:tw-text-gray-900 tw-rounded-lg tw-text-sm tw-p-1.5 tw-ml-auto tw-inline-flex tw-items-center"
+                                                data-modal-toggle="modal">
+                                                <svg aria-hidden="true" class="tw-w-5 tw-h-5" fill="currentColor"
+                                                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd"
+                                                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                                        clip-rule="evenodd">
+                                                    </path>
+                                                </svg>
+                                                <span class="sr-only">Close modal</span>
                                             </button>
-                                            <button data-modal-toggle="popup-modal" type="button"
-                                                class="tw-text-gray-500 tw-bg-white hover:tw-bg-gray-100 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-gray-200 tw-rounded-lg tw-border tw-border-gray-200 tw-text-sm tw-font-medium tw-py-2.5 hover:tw-text-gray-900 focus:tw-z-10 dark:tw-bg-gray-700 dark:tw-text-gray-300 dark:tw-border-gray-500 dark:hover:tw-text-white dark:hover:tw-bg-gray-600 dark:focus:tw-ring-gray-600 tw-px-4">Tidak</button>
+                                            <div class="tw-p-6">
+                                                <div
+                                                    class="tw-mb-8 tw-mt-5 tw-flex tw-justify-center tw-text-2xl tw-font-semibold tw-text-sims-new-500">
+                                                    Ekspor Data
+                                                </div>
+                                                <div class="tw-gap-3 tw-grid tw-font-sg">
+                                                    <a href="/data-siswa-print/{{ $siswa->nis_siswa }}" target="__blank"
+                                                        class="tw-text-white tw-justify-center tw-bg-sims-new-500 tw-w-full hover:tw-bg-sims-new-600 hover:tw-text-white tw-font-medium tw-text-xl tw-inline-flex tw-items-center tw-py-8 tw-text-center">
+                                                        Cetak data&nbsp;&nbsp;<i class="fa-solid fa-print tw-text-2xl"></i>
+                                                    </a>
+                                                    <a href="/detail-data-induk/{{ $siswa->nis_siswa }}"
+                                                        class="tw-text-white tw-justify-center tw-bg-[#1D6F42] tw-w-full hover:tw-bg-green-800 hover:tw-text-white tw-font-medium tw-text-xl tw-inline-flex tw-items-center tw-py-8 tw-text-center">
+                                                        Ekspor data ke Excel&nbsp;&nbsp;<i
+                                                            class="fa-solid fa-file-excel tw-text-2xl"></i>
+                                                    </a>
+                                                    <a href="/data-siswa-pdf/{{ $siswa->nis_siswa }}"
+                                                        class="tw-text-white tw-justify-center tw-bg-danger-500 tw-w-full hover:tw-bg-danger-700 hover:tw-text-white tw-font-medium tw-text-xl tw-inline-flex tw-items-center tw-py-8 tw-text-center">
+                                                        Ekspor data ke PDF&nbsp;&nbsp;<i
+                                                            class="fa-solid fa-file-pdf tw-text-2xl"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </form>
-                    @endcan
-                  </div>
+                        @endcan
+
+                        @cannot('kesiswaan')
+                            <a href="/rekap-nilai/{{ $siswa->nis_siswa }}"
+                                class="tw-text-white tw-font-sg tw-text-sm tw-bg-sims-new-500 hover:tw-text-white hover:tw-bg-sims-new-600 tw-rounded-lg tw-py-2 tw-px-3"><i
+                                    class="fa-light fa-clipboard-list mr-2"></i>Rekap Nilai</a>
+                        @endcannot
+
+                        @can('manage-induk')
+                            <a href="/edit-siswa/{{ $siswa->nis_siswa }}"
+                                class="tw-text-white tw-text-sm tw-font-sg  tw-bg-yellow-400 hover:tw-text-white hover:tw-bg-yellow-500 tw-rounded-lg tw-py-2 tw-px-3"><i
+                                    class="fa-solid fa-pen-to-square mr-2"></i>Edit</a>
+
+                            <form action="/api/siswa/delete/{{ $siswa->nis_siswa }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+
+                                <input type="hidden" name="prevURLwithParams" value="{{ URL::previous() }}">
+
+                                <button type="button" data-modal-toggle="popup-modal"
+                                    class="tw-text-white tw-text-sm tw-font-sg tw-bg-red-400 hover:tw-bg-red-500 hover:tw-text-white tw-rounded-lg tw-py-2 tw-px-3">
+                                    <i class="fa-solid fa-trash mr-2"></i> Hapus
+                                </button>
+
+                                <input type="hidden" name="prevURL" value="{{ $prevURL }}">
+
+                                <div id="popup-modal" tabindex="-1"
+                                    class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full">
+                                    <div class="relative p-4 w-full max-w-md h-full md:h-auto">
+                                        <div class="tw-relative tw-bg-white tw-rounded-lg tw-shadow dark:tw-bg-slate-100">
+                                            <button type="button"
+                                                class="tw-absolute tw-top-3 tw-right-2.5 tw-text-gray-400 tw-bg-transparent hover:tw-bg-gray-200 hover:tw-text-gray-900 tw-rounded-lg tw-text-sm tw-p-1.5 tw-ml-auto tw-inline-flex tw-items-center"
+                                                data-modal-toggle="popup-modal">
+                                                <svg aria-hidden="true" class="tw-w-5 tw-h-5" fill="currentColor"
+                                                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd"
+                                                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                                        clip-rule="evenodd"></path>
+                                                </svg>
+                                                <span class="sr-only">Close modal</span>
+                                            </button>
+                                            <div class="tw-p-6">
+                                                <svg aria-hidden="true"
+                                                    class="tw-mx-auto tw-mb-4 tw-w-14 tw-h-14 tw-text-gray-400 dark:tw-text-gray-200"
+                                                    fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                        d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                                </svg>
+                                                <div
+                                                    class="tw-mb-5 tw-flex tw-justify-center tw-text-md tw-font-normal tw-text-gray-500 dark:tw-text-gray-400">
+                                                    Hapus data siswa?</div>
+                                                <div class="tw-flex tw-justify-center">
+                                                    <button type="submit" data-modal-toggle="popup-modal" type="button"
+                                                        class="tw-text-white tw-bg-red-600 hover:tw-bg-red-800 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-red-300 dark:focus:tw-ring-red-800 tw-font-medium tw-rounded-lg tw-text-sm tw-inline-flex tw-items-center tw-py-2.5 tw-text-center tw-mr-2 tw-px-6">
+                                                        Ya
+                                                    </button>
+                                                    <button data-modal-toggle="popup-modal" type="button"
+                                                        class="tw-text-gray-500 tw-bg-white hover:tw-bg-gray-100 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-gray-200 tw-rounded-lg tw-border tw-border-gray-200 tw-text-sm tw-font-medium tw-py-2.5 hover:tw-text-gray-900 focus:tw-z-10 dark:tw-bg-gray-700 dark:tw-text-gray-300 dark:tw-border-gray-500 dark:hover:tw-text-white dark:hover:tw-bg-gray-600 dark:focus:tw-ring-gray-600 tw-px-4">Tidak</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        @endcan
+                    </div>
                     <ul class="tw-flex mb-0 tw-mt-4 tw--ml-6 tw-font-sg">
                         <li @click="open = 1" :class="{ 'tw--mb-px': open === 1 }" class="tw--mb-px tw-mr-1">
                             <button :class="open === 1 ? activeClasses : inactiveClasses"
@@ -190,8 +204,7 @@
                                 <div x-show="selected === 1">
                                     <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
                                         <table class="tw-w-full tw-text-left tw-text-basic-700">
-                                            <thead
-                                                class="tw-text-lg tw-bg-gray-100 tw-border tw-font-satoshi">
+                                            <thead class="tw-text-lg tw-bg-gray-100 tw-border tw-font-satoshi">
                                                 <tr>
                                                     <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">
                                                         Data Diri
@@ -284,8 +297,7 @@
                                 <div x-show="selected === 2">
                                     <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
                                         <table class="tw-w-full tw-text-left tw-text-basic-700">
-                                            <thead
-                                                class="tw-text-lg tw-bg-gray-100 tw-border tw-font-satoshi">
+                                            <thead class="tw-text-lg tw-bg-gray-100 tw-border tw-font-satoshi">
                                                 <tr>
                                                     <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">
                                                         Data Diri
@@ -364,10 +376,10 @@
                                     </div>
                                 </div>
                                 <div x-show="selected === 3">
-                                    <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl tw-mb-[103px]">
+                                    <div
+                                        class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl tw-mb-[103px]">
                                         <table class="tw-w-full tw-text-left tw-text-basic-700">
-                                            <thead
-                                                class="tw-text-lg tw-bg-gray-100 tw-border tw-font-satoshi">
+                                            <thead class="tw-text-lg tw-bg-gray-100 tw-border tw-font-satoshi">
                                                 <tr>
                                                     <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">
                                                         Data Diri
@@ -461,8 +473,7 @@
                                 <div x-show="selected === 1">
                                     <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
                                         <table class="tw-w-full tw-text-left tw-text-basic-700">
-                                            <thead
-                                                class="tw-text-lg tw-bg-gray-100 tw-border tw-font-satoshi">
+                                            <thead class="tw-text-lg tw-bg-gray-100 tw-border tw-font-satoshi">
                                                 <tr>
                                                     <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">
                                                         Data Orang Tua/Wali
@@ -541,10 +552,10 @@
                                     </div>
                                 </div>
                                 <div x-show="selected === 2">
-                                    <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl tw-mb-[20.5rem]">
+                                    <div
+                                        class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl tw-mb-[20.5rem]">
                                         <table class="tw-w-full tw-text-basic-700 tw-text-left">
-                                            <thead
-                                                class="tw-text-lg tw-bg-gray-100 tw-border tw-font-satoshi">
+                                            <thead class="tw-text-lg tw-bg-gray-100 tw-border tw-font-satoshi">
                                                 <tr>
                                                     <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">
                                                         Data Orang Tua/Wali
@@ -555,7 +566,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody class="tw-font-medium">
-                                                <tr class= "tw-bg-white tw-border">
+                                                <tr class="tw-bg-white tw-border">
                                                     <th scope="row"
                                                         class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-whitespace-nowrap">
                                                         Nomor Telepon/HP Wali
@@ -601,8 +612,7 @@
                                 <div x-show="selected === 1">
                                     <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
                                         <table class="tw-w-full tw-text-basic-700 tw-text-left">
-                                            <thead
-                                                class="tw-text-lg tw-bg-gray-100 tw-border tw-font-satoshi">
+                                            <thead class="tw-text-lg tw-bg-gray-100 tw-border tw-font-satoshi">
                                                 <tr>
                                                     <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">
                                                         Data
@@ -681,10 +691,10 @@
                                     </div>
                                 </div>
                                 <div x-show="selected === 2">
-                                    <div class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl tw-mb-[16.5rem]">
+                                    <div
+                                        class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl tw-mb-[16.5rem]">
                                         <table class="tw-w-full tw-text-basic-700 tw-text-left">
-                                            <thead
-                                                class="tw-text-lg tw-bg-gray-100 tw-border tw-font-satoshi">
+                                            <thead class="tw-text-lg tw-bg-gray-100 tw-border tw-font-satoshi">
                                                 <tr>
                                                     <th scope="col" class="tw-py-3 tw-px-6 tw-border-r">
                                                         Data

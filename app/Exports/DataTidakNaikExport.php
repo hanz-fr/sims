@@ -62,11 +62,12 @@ class DataTidakNaikExport implements FromView, ShouldAutoSize, WithEvents, WithC
             AfterSheet::class => function(AfterSheet $event) {
 
                 // merge cells
-                $event->sheet->getDelegate()->mergeCells('A1:E1');
-                $event->sheet->getDelegate()->mergeCells('A2:E2');
-                $event->sheet->getDelegate()->mergeCells('A3:E3');
-                $event->sheet->getDelegate()->mergeCells('A4:E4');
-                $event->sheet->getDelegate()->mergeCells('A6:E6');
+                $event->sheet->getDelegate()
+                ->mergeCells('A1:E1')
+                ->mergeCells('A2:E2')
+                ->mergeCells('A3:E3')
+                ->mergeCells('A4:E4')
+                ->mergeCells('A6:E6');
 
 
                 // set alignment

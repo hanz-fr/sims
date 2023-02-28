@@ -50,9 +50,10 @@ class JumlahSiswaExport implements FromView, ShouldAutoSize, WithEvents
             AfterSheet::class => function(AfterSheet $event) {
 
                 // merge cells
-                $event->sheet->getDelegate()->mergeCells('A1:M1');
-                $event->sheet->getDelegate()->mergeCells('A2:M2');
-                $event->sheet->getDelegate()->mergeCells('A3:M3');
+                $event->sheet->getDelegate()
+                ->mergeCells('A1:M1')
+                ->mergeCells('A2:M2')
+                ->mergeCells('A3:M3');
 
 
                 // set alignment

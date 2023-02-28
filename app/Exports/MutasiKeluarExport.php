@@ -64,9 +64,10 @@ class MutasiKeluarExport implements FromView, ShouldAutoSize, WithEvents, WithCo
             AfterSheet::class => function(AfterSheet $event) {
 
                 // merge cells
-                $event->sheet->getDelegate()->mergeCells('A1:G1');
-                $event->sheet->getDelegate()->mergeCells('A2:G2');
-                $event->sheet->getDelegate()->mergeCells('A3:G3');
+                $event->sheet->getDelegate()
+                ->mergeCells('A1:G1')
+                ->mergeCells('A2:G2')
+                ->mergeCells('A3:G3');
 
 
                 // set alignment

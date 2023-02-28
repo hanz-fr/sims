@@ -1,12 +1,12 @@
 @extends('layouts.main-new')
 
 @section('content')
-<div class="tw-mx-10">
-    <h1 class="sims-heading-3xl tw-my-9">Buku Induk Siswa</h1>
-    
+    <div class="tw-mx-10">
+        <h1 class="sims-heading-3xl tw-my-9">Buku Induk Siswa</h1>
 
-    {{-- TEMPORARY COMMENT, DO NOT DELETE --}}
-    {{-- <div class="tw-grid lg:tw-grid-cols-4 md:tw-grid-cols-2 tw-gap-4 sm:tw-grid-cols-1 tw-font-satoshi">
+
+        {{-- TEMPORARY COMMENT, DO NOT DELETE --}}
+        {{-- <div class="tw-grid lg:tw-grid-cols-4 md:tw-grid-cols-2 tw-gap-4 sm:tw-grid-cols-1 tw-font-satoshi">
         <form action="/angkatan">
             <button type="submit" class="tw-flex tw-transition-all tw-ease-in tw-delay-[100] hover:-tw-translate-y-1 hover:tw-shadow-lg tw-w-full tw-text-white tw-bg-[#1b4cff] tw-p-5 tw-rounded-xl tw-shadow-md hover:tw-bg-blue-700 hover:tw-text-white tw-h-36 tw-items-center">
                 <input type="hidden" name="jurusan" value="AKL">
@@ -58,20 +58,21 @@
         </form>
     </div> --}}
 
-    <div class="tw-grid lg:tw-grid-cols-4 md:tw-grid-cols-2 tw-gap-4 sm:tw-grid-cols-1 tw-font-satoshi">
-        @foreach($jurusan as $j)
-            <form action="/angkatan">
-                <button type="submit" class="tw-flex tw-transition-all tw-ease-in tw-delay-[100] hover:-tw-translate-y-1 hover:tw-shadow-lg tw-w-full tw-text-sims-new-500 tw-bg-white tw-p-5 tw-rounded-xl tw-shadow-md hover:tw-bg-sims-new-500 hover:tw-text-white tw-h-36 tw-items-center">
-                    <input type="hidden" name="jurusan" value="{{ $j->id }}">
-                    {{-- <i class="fa-solid fa-money-bills tw-text-6xl tw-text tw-py-5"></i> --}}
-                    <div class="tw-flex tw-flex-col">
-                        <p class="tw-text-xl tw-text-left fw-bolder tw-pt-5">{{ $j->id }}</p>
-                        <p class="tw-text-sm tw-text-left tw-font-normal tw-pb-5">{{ $j->desc }}</p>
-                    </div>
-                </button>
-            </form>
-        @endforeach
+        <div class="tw-grid lg:tw-grid-cols-4 md:tw-grid-cols-2 tw-gap-4 sm:tw-grid-cols-1 tw-font-satoshi">
+            @foreach ($jurusan as $j)
+                <form action="/angkatan">
+                    <button type="submit"
+                        class="tw-flex tw-transition-all tw-ease-in tw-delay-[100] hover:-tw-translate-y-1 hover:tw-shadow-lg tw-w-full tw-text-sims-new-500 tw-bg-white tw-p-5 tw-rounded-xl tw-shadow-md hover:tw-bg-sims-new-500 hover:tw-text-white tw-h-36 tw-items-center">
+                        <input type="hidden" name="jurusan" value="{{ $j->id }}">
+                        {{-- <i class="fa-solid fa-money-bills tw-text-6xl tw-text tw-py-5"></i> --}}
+                        <div class="tw-flex tw-flex-col">
+                            <p class="tw-text-xl tw-text-left fw-bolder tw-pt-5">{{ $j->id }}</p>
+                            <p class="tw-text-sm tw-text-left tw-font-normal tw-pb-5">{{ $j->desc }}</p>
+                        </div>
+                    </button>
+                </form>
+            @endforeach
+        </div>
+
     </div>
-    
-</div>
 @endsection

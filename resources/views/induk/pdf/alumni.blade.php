@@ -1,37 +1,45 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <style>
-  @font-face {
-    font-family: 'Times New Roman', Times, serif;
-  }
-  h5 {
-  font-weight: bold;
-  text-align: center;
-  }
+    <style>
+        @font-face {
+            font-family: 'Times New Roman', Times, serif;
+        }
 
-  #data {
-    border-collapse: collapse;
-    width: 100%;
-    font-size: 10px
-  }
+        h5 {
+            font-weight: bold;
+            text-align: center;
+        }
 
-  #data td, #data th {
-    border: 1px solid black;
-    padding: 10px 7px;
-    color: black;
-    text-align: center;
-  }
+        #data {
+            border-collapse: collapse;
+            width: 100%;
+            font-size: 10px
+        }
 
-  </style>
+        #data td,
+        #data th {
+            border: 1px solid black;
+            padding: 10px 7px;
+            color: black;
+            text-align: center;
+        }
+    </style>
 </head>
+
 <body>
 
-  <h5 style="margin-bottom: -15px">DATA ALUMNI</h5>
-  <h5 style="margin-bottom: -15px">SMK NEGERI 11 BANDUNG</h5>
-  <h5>ANGKATAN @if($TglDari == $TglKe) {{ $TglDari }} @else {{ $TglDari }} - {{ $TglKe }} @endif</h5>
+    <h5 style="margin-bottom: -15px">DATA ALUMNI</h5>
+    <h5 style="margin-bottom: -15px">SMK NEGERI 11 BANDUNG</h5>
+    <h5>ANGKATAN @if ($TglDari == $TglKe)
+            {{ $TglDari }}
+        @else
+            {{ $TglDari }} - {{ $TglKe }}
+        @endif
+    </h5>
 
-  <hr style="margin-bottom: 25px; border: solid 1px black">
+    <hr style="margin-bottom: 25px; border: solid 1px black">
 
     <table id="data">
         <tr>
@@ -43,7 +51,6 @@
             <th>KELAS</th>
         </tr>
         @foreach ($alumni as $key => $a)
-
             <tr>
                 <td>{{ $key + 1 }}</td>
                 <td>{{ $a->nis_siswa }}</td>
@@ -59,4 +66,5 @@
         window.print();
     </script>
 </body>
+
 </html>

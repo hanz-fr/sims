@@ -8,13 +8,19 @@
             </div>
             <div class="tw-flex tw-mx-4 tw-my-auto">
                 <!--Code Block for white tooltip starts-->
-                <a tabindex="0" role="link" aria-label="tooltip 1" class="focus:outline-none focus:ring-gray-300 rounded-full focus:ring-offset-2 focus:ring-2 focus:bg-gray-200 relative mt-20 md:mt-0" onmouseover="showTooltip(1)" onfocus="showTooltip(1)" onmouseout="hideTooltip(1)">
+                <a tabindex="0" role="link" aria-label="tooltip 1"
+                    class="focus:outline-none focus:ring-gray-300 rounded-full focus:ring-offset-2 focus:ring-2 focus:bg-gray-200 relative mt-20 md:mt-0"
+                    onmouseover="showTooltip(1)" onfocus="showTooltip(1)" onmouseout="hideTooltip(1)">
                     <div class=" cursor-pointer">
-                        <i data-tooltip-target="tooltip-animation" class="fa-regular fa-circle-question tw-text-2xl tw-text-sims-new-500"></i>
+                        <i data-tooltip-target="tooltip-animation"
+                            class="fa-regular fa-circle-question tw-text-2xl tw-text-sims-new-500"></i>
                     </div>
-                    <div id="tooltip1" role="tooltip" class="z-20 tw-w-64 absolute transition duration-150 ease-in-out right-0 ml-8 shadow-lg bg-white p-4 rounded hidden">
+                    <div id="tooltip1" role="tooltip"
+                        class="z-20 tw-w-64 absolute transition duration-150 ease-in-out right-0 ml-8 shadow-lg bg-white p-4 rounded hidden">
                         <p class="tw-text-sm tw-font-satoshi tw-font-bold text-gray-600">Rekap Jumlah Siswa</p>
-                        <p class="tw-text-sm tw-font-satoshi tw-font-normal leading-4 text-gray-600">Data siswa yang ditampilkan di tabel berikut adalah siswa yang sedang aktif sekolah dan tidak memiliki surat mutasi.</p>
+                        <p class="tw-text-sm tw-font-satoshi tw-font-normal leading-4 text-gray-600">Data siswa yang
+                            ditampilkan di tabel berikut adalah siswa yang sedang aktif sekolah dan tidak memiliki surat
+                            mutasi.</p>
                     </div>
                 </a>
                 <!--Code Block for white tooltip ends-->
@@ -25,14 +31,17 @@
             openTab: 1,
             activeClasses: 'tw-bg-white tw-border tw-border-b-white',
             inactiveClasses: 'tw-bg-gray-200 tw-border'
-            }" class="">
+        }" class="">
             <div class="tw-float-right">
                 @can('manage-alumni')
-                <div class="tw-flex tw-items-center -tw-mt-4">
-                    <a href="/rekap-jumlah-siswa-print" target="__blank" title="Cetak data"><i class="fa-solid fa-print btn-export"></i></a>
-                    <a href="/rekap-jumlah-siswa-excel" title="Ekspor ke Excel"><i class="fa-solid fa-file-excel btn-export"></i></a>
-                    <a href="/rekap-jumlah-siswa-pdf" title="Ekspor ke PDF"><i class="fa-solid fa-file-pdf btn-export"></i></a>
-                </div>
+                    <div class="tw-flex tw-items-center -tw-mt-4">
+                        <a href="/rekap-jumlah-siswa-print" target="__blank" title="Cetak data"><i
+                                class="fa-solid fa-print btn-export"></i></a>
+                        <a href="/rekap-jumlah-siswa-excel" title="Ekspor ke Excel"><i
+                                class="fa-solid fa-file-excel btn-export"></i></a>
+                        <a href="/rekap-jumlah-siswa-pdf" title="Ekspor ke PDF"><i
+                                class="fa-solid fa-file-pdf btn-export"></i></a>
+                    </div>
                 @endcan
             </div>
             <ul class="tw-flex mb-0 mt-4 tw--ml-6 tw-font-sg tw-text-xl">
@@ -69,7 +78,8 @@
                             <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border">JUMLAH SISWA AWAL BULAN</th>
                             <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border">JUMLAH SISWA KELUAR</th>
                             <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border">JUMLAH SISWA MASUK</th>
-                            <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border">JUMLAH SISWA AKHIR BULAN</th>
+                            <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border">JUMLAH SISWA AKHIR BULAN
+                            </th>
                         </tr>
                         <tr>
                             <th class="tw-border tw-py-3 tw-px-6">P</th>
@@ -145,7 +155,7 @@
                                 <td class="tw-py-4 tw-px-6 tw-border">
                                     {{ $k->jumlahSiswaLaki - $k->siswaLakiKeluar + $k->siswaLakiMasuk }}</td>
                                 <td class="tw-py-4 tw-px-6 tw-border">
-                                   {{ $k->jumlahSiswaPerempuan - $k->siswaPerempuanKeluar + $k->siswaPerempuanMasuk + $k->jumlahSiswaLaki - $k->siswaLakiKeluar + $k->siswaLakiMasuk }}
+                                    {{ $k->jumlahSiswaPerempuan - $k->siswaPerempuanKeluar + $k->siswaPerempuanMasuk + $k->jumlahSiswaLaki - $k->siswaLakiKeluar + $k->siswaLakiMasuk }}
                                 </td>
                             </tr>
                             <?php $sum_total_siswa_p += $k->jumlahSiswaPerempuan; ?>
@@ -178,7 +188,8 @@
                         <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_masuk }}</th>
                         <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_p_akhir }}</th>
                         <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_l_akhir }}</th>
-                        <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_p_akhir + $sum_total_siswa_l_akhir }}</th>
+                        <th class="tw-border tw-py-3 tw-px-6">{{ $sum_total_siswa_p_akhir + $sum_total_siswa_l_akhir }}
+                        </th>
                     </tfoot>
                 </table>
             </div>
@@ -187,10 +198,13 @@
                     <thead class="tw-text-md tw-bg-gray-100 tw-text-basic-700 tw-border tw-font-satoshi">
                         <tr>
                             <th scope="col" rowspan="2" class="tw-py-3 tw-px-6 tw-border-r">KELAS</th>
-                            <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border-r">JUMLAH SISWA AWAL BULAN</th>
-                            <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border-r">JUMLAH SISWA KELUAR</th>
+                            <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border-r">JUMLAH SISWA AWAL BULAN
+                            </th>
+                            <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border-r">JUMLAH SISWA KELUAR
+                            </th>
                             <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border-r">JUMLAH SISWA MASUK</th>
-                            <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border-r">JUMLAH SISWA AKHIR BULAN</th>
+                            <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border-r">JUMLAH SISWA AKHIR
+                                BULAN</th>
                         </tr>
                         <tr>
                             <th class="tw-border tw-py-3 tw-px-6">P</th>
@@ -298,10 +312,13 @@
                     <thead class="tw-text-md tw-bg-gray-100 tw-text-basic-700 tw-border tw-font-satoshi">
                         <tr>
                             <th scope="col" rowspan="2" class="tw-py-3 tw-px-6 tw-border-r">KELAS</th>
-                            <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border-r">JUMLAH SISWA AWAL BULAN</th>
-                            <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border-r">JUMLAH SISWA KELUAR</th>
+                            <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border-r">JUMLAH SISWA AWAL BULAN
+                            </th>
+                            <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border-r">JUMLAH SISWA KELUAR
+                            </th>
                             <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border-r">JUMLAH SISWA MASUK</th>
-                            <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border-r">JUMLAH SISWA AKHIR BULAN</th>
+                            <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border-r">JUMLAH SISWA AKHIR
+                                BULAN</th>
                         </tr>
                         <tr>
                             <th class="tw-border tw-py-3 tw-px-6">P</th>
@@ -407,10 +424,12 @@
                     <thead class="tw-text-md tw-bg-gray-100 tw-text-basic-700 tw-border tw-font-satoshi">
                         <tr>
                             <th scope="col" rowspan="2" class="tw-py-3 tw-px-6 tw-border">KELAS</th>
-                            <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border">JUMLAH SISWA AWAL BULAN</th>
+                            <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border">JUMLAH SISWA AWAL BULAN
+                            </th>
                             <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border">JUMLAH SISWA KELUAR</th>
                             <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border">JUMLAH SISWA MASUK</th>
-                            <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border">JUMLAH SISWA AKHIR BULAN</th>
+                            <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border">JUMLAH SISWA AKHIR BULAN
+                            </th>
                         </tr>
                         <tr>
                             <th class="tw-border tw-py-3 tw-px-6">P</th>
@@ -515,66 +534,72 @@
             </div>
         </div>
 
-        <button onclick="topFunction()" id="myBtn" class="tw-bg-sims-400 tw-px-5 tw-py-3 tw-rounded-lg tw-transition-all tw-duration-150 hover:-tw-translate-y-0.5 hover:tw-bg-sims-500" style="display: none; position: fixed; bottom: 40px; right: -200px; z-index: 99; border: none; outline: none; cursor: pointer;">
+        <button onclick="topFunction()" id="myBtn"
+            class="tw-bg-sims-400 tw-px-5 tw-py-3 tw-rounded-lg tw-transition-all tw-duration-150 hover:-tw-translate-y-0.5 hover:tw-bg-sims-500"
+            style="display: none; position: fixed; bottom: 40px; right: -200px; z-index: 99; border: none; outline: none; cursor: pointer;">
             <i class="fa-solid fa-chevron-up tw-text-white tw-text-lg"></i>
         </button>
 
     </div>
 
     <script src="index.js"></script>
-    <script>function showTooltip(flag) {
-        switch (flag) {
-          case 1:
-            document.getElementById("tooltip1").classList.remove("hidden");
-            break;
-          case 2:
-            document.getElementById("tooltip2").classList.remove("hidden");
-            break;
-          case 3:
-            document.getElementById("tooltip3").classList.remove("hidden");
-            break;
+    <script>
+        function showTooltip(flag) {
+            switch (flag) {
+                case 1:
+                    document.getElementById("tooltip1").classList.remove("hidden");
+                    break;
+                case 2:
+                    document.getElementById("tooltip2").classList.remove("hidden");
+                    break;
+                case 3:
+                    document.getElementById("tooltip3").classList.remove("hidden");
+                    break;
+            }
         }
-    }
-    function hideTooltip(flag) {
-      switch (flag) {
-        case 1:
-          document.getElementById("tooltip1").classList.add("hidden");
-          break;
-        case 2:
-          document.getElementById("tooltip2").classList.add("hidden");
-          break;
-        case 3:
-          document.getElementById("tooltip3").classList.add("hidden");
-          break;
-      }
-    }
+
+        function hideTooltip(flag) {
+            switch (flag) {
+                case 1:
+                    document.getElementById("tooltip1").classList.add("hidden");
+                    break;
+                case 2:
+                    document.getElementById("tooltip2").classList.add("hidden");
+                    break;
+                case 3:
+                    document.getElementById("tooltip3").classList.add("hidden");
+                    break;
+            }
+        }
     </script>
 
-<script>
-    /* smooth scrolling to top */
-    /* $("a[href='#top']").click(function() {
-        $("html, body").animate({ scrollTop: 0 }, "slow");
-        return false;
-    }); */
-    
-    // Get the button
-    let mybutton = document.getElementById("myBtn");
-    
-    // When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function() {scrollFunction()};
-    
-    function scrollFunction() {
-      if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-        mybutton.style.display = "block";
-        mybutton.style.right = "50px";
-      } else {
-        mybutton.style.display = "none";
-      }
-    }
-    
-    function topFunction() {
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-    }
+    <script>
+        /* smooth scrolling to top */
+        /* $("a[href='#top']").click(function() {
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+            return false;
+        }); */
+
+        // Get the button
+        let mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+                mybutton.style.display = "block";
+                mybutton.style.right = "50px";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
     </script>
 @endsection

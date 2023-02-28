@@ -4185,9 +4185,9 @@ input[type="checkbox"]:checked {
   --tw-ring-color: rgb(138 205 214 / var(--tw-ring-opacity));
 }
 
-.focus\:tw-ring-red-300:focus {
+.focus\:tw-ring-sims-new-600:focus {
   --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(252 165 165 / var(--tw-ring-opacity));
+  --tw-ring-color: rgb(49 120 137 / var(--tw-ring-opacity));
 }
 
 .focus\:tw-ring-gray-200:focus {
@@ -4195,19 +4195,14 @@ input[type="checkbox"]:checked {
   --tw-ring-color: rgb(229 231 235 / var(--tw-ring-opacity));
 }
 
+.focus\:tw-ring-red-300:focus {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(252 165 165 / var(--tw-ring-opacity));
+}
+
 .focus\:tw-ring-gray-300:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(209 213 219 / var(--tw-ring-opacity));
-}
-
-.focus\:tw-ring-sims-300:focus {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(127 201 198 / var(--tw-ring-opacity));
-}
-
-.focus\:tw-ring-sims-new-600:focus {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(49 120 137 / var(--tw-ring-opacity));
 }
 
 .focus\:tw-ring-offset-0:focus {
