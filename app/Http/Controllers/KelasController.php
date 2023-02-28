@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
+use App\Models\User;
 
 class KelasController extends Controller
 {
@@ -57,13 +58,26 @@ class KelasController extends Controller
 
         $id = $request->id;
 
-        $response = Http::get("{$this->api_url}/kelas/{$id}");
+        $response = json_decode(Http::get("{$this->api_url}/kelas/{$id}"));
+
+        $walkel = User::where('nip', $response->result->walikelas)->first();
+
+        if (!empty($walkel)) {
+
+            $walkel = $walkel->nama;
+        
+        } else {
+            
+            $walkel = '';
+        
+        }
 
         return view('admin.kelas.show-detail', [
             'title'       => 'Detail Data Kelas',
             'active'      => 'admin-dashboard',
-            'kelas'       => json_decode($response)->result,
-            'total_siswa' => json_decode($response)->siswa,
+            'kelas'       => $response->result,
+            'total_siswa' => $response->siswa,
+            'walikelas' => $walkel,
         ]);
 
     }
@@ -76,10 +90,13 @@ class KelasController extends Controller
 
         $jurusan = json_decode(Http::get("{$this->api_url}/jurusan?perPage=500"))->data->rows;
 
+        $walikelas = User::where('role', 4)->get();
+
         return view('admin.kelas.create', [
             'title'   => 'Tambah Data Kelas',
             'active'  => 'admin-dashboard',
             'jurusan' => $jurusan,
+            'walikelas' => $walikelas,
         ]);
 
     }
@@ -92,13 +109,16 @@ class KelasController extends Controller
 
         $jurusan = json_decode(Http::get("{$this->api_url}/jurusan?perPage=500"))->data->rows;
 
+        $walikelas = User::where('role', 4)->get();
+
         $response = Http::get("{$this->api_url}/kelas/{$id}");
 
         return view('admin.kelas.edit', [
             'title'   => 'Edit Data Kelas',
             'active'  => 'admin-dashboard',
             'kelas'   => json_decode($response)->result,
-            'jurusan' => $jurusan
+            'jurusan' => $jurusan,
+            'walikelas' => $walikelas,
         ]);
 
     }
@@ -111,11 +131,21 @@ class KelasController extends Controller
 
         $id = "{$request->kelas}{$request->jurusan}{$request->rombel}";
 
+        $kelas_occupied = json_decode(Http::get("{$this->api_url}/kelas/get-by-walkel/{$request->walikelas}"));
+
+        // check if there is kelas with inputed walikelas nip.
+        if($kelas_occupied->status == 'success') {
+
+            return redirect('/admin/kelas/create')->with('error', 'Sudah ada kelas dengan walikelas tersebut');
+
+        }
+
         $response = json_decode(Http::post("{$this->api_url}/kelas", [
             'kelas'     => $request->kelas,
             'rombel'    => $request->rombel,
             'jurusan'   => $request->jurusan,
-            'JurusanId' => $request->JurusanId
+            'JurusanId' => $request->JurusanId,
+            'walikelas' => $request->walikelas
         ]));
 
         if($response->status === 'success') {

@@ -96,68 +96,74 @@
             </div>
 
 
-            {{-- account details and history --}}
-            <div class="tw-border-t-2 tw-border-indigo-100 tw-bg-white tw-grid tw-grid-cols-2 tw-mt-8">
-                <div class="tw-grid tw-grid-cols-2 tw-px-14 tw-bg-white tw-border-r-2 tw-border-indigo-100 tw-pt-14">
-                    <ul class="sims-heading-xl tw-grid tw-gap-14 tw-pl-0">
-                        <li class="tw-text-gray-400 sims-heading-2xl">Detail</li>
-                        <li>NIP</li>
-                        <li>Email</li>
-                        <li>Bagian</li>
-                        <li>Nomor Telepon</li>
-                    </ul>
-                    <ul class="sims-text-gray-xl tw-text-right tw-pl-0 tw-grid tw-gap-14">
-                        <li>
-                            <a href="/admin/account/{{ $user->id }}/edit"
-                                class="tw-text-sims-new-500 tw-transition-all hover:tw-text-sims-new-700 tw-text-2xl"><i
-                                    class="fa-solid fa-pen-line"></i></a>
-                        </li>
-                        <li>{{ $user->nip }}</li>
-                        <li>{{ $user->email }}</li>
-                        <li>
-                            @if ($user->role == 1)
-                                Tata Usaha
-                            @endif
-                            @if ($user->role == 2)
-                                Kesiswaan
-                            @endif
-                            @if ($user->role == 3)
-                                Kurikulum
-                            @endif
-                            @if ($user->role == 4)
-                                Wali Kelas
-                            @endif
-                            @if ($user->is_admin == 1)
-                                Admin
-                            @endif
-                        </li>
-                        <li>{{ $user->no_telp }}</li>
-                    </ul>
-                </div>
-                @if ($history === [])
-                    <div class="tw-flex tw-flex-col tw-px-14 tw-pt-14">
-                        <img src="{{ URL::asset('assets/img/history-empty.jpg') }}" class="tw-mx-auto" alt="no_history"
-                            width="50%">
-                        <div class="tw-text-gray-400 tw-font-light sims-text-gray-sm tw-mt-5 tw-text-center">Anda belum
-                            memiliki aktifitas.</div>
-                    </div>
-                @else
-                    <div class="tw-px-14 tw-pt-14 tw-grid tw-grid-rows-6">
-                        <div class="sims-heading-xl tw-pl-0 tw-flex tw-justify-between">
-                            <div class="tw-text-gray-400 sims-heading-2xl">Aktivitas</div>
-                            {{-- <a href="/history/my" class="tw-text-sims-new-500 hover:tw-text-sims-600 tw-underline tw-text-base">lihat semua histori</a> --}}
-                        </div>
-                        @foreach ($history as $h)
-                            <div class="tw-pl-0 tw-flex tw-justify-between">
-                                <div class="sims-heading-xl">{{ $h->activityName }}</div>
-                                <div class="sims-text-gray-xl">
-                                    {{ \Carbon\Carbon::createFromTimeStamp(strtotime($h->createdAt))->diffForHumans() }}
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
+    {{-- account details and history --}}
+    <div class="tw-border-t-2 tw-border-indigo-100 tw-bg-white tw-grid tw-grid-cols-2 tw-mt-8">
+        <div class="tw-grid tw-grid-cols-2 tw-px-14 tw-bg-white tw-border-r-2 tw-border-indigo-100 tw-pt-14">
+            <ul class="sims-heading-xl tw-grid tw-gap-14 tw-pl-0">
+                <li class="tw-text-gray-400 sims-heading-2xl">Detail</li>
+                <li>NIP</li>
+                <li>Email</li>
+                <li>Bagian</li>
+                <li>Nomor Telepon</li>
+                @if($user->role == 4)
+                <li>Walikelas</li>
                 @endif
-            </div>
+            </ul>
+            <ul class="sims-text-gray-xl tw-text-right tw-pl-0 tw-grid tw-gap-14">
+                <li>
+                    <a href="/admin/account/{{ $user->id }}/edit" class="tw-text-sims-new-500 tw-transition-all hover:tw-text-sims-new-700 tw-text-2xl"><i class="fa-solid fa-pen-line"></i></a>
+                </li>
+                <li>{{ $user->nip }}</li>
+                <li>{{ $user->email }}</li>
+                <li>                
+                    @if ($user->role == 1)
+                        Tata Usaha
+                    @endif
+                    @if ($user->role == 2)
+                        Kesiswaan
+                    @endif
+                    @if ($user->role == 3)
+                        Kurikulum
+                    @endif
+                    @if ($user->role == 4)
+                        Wali Kelas
+                    @endif
+                    @if ($user->is_admin == 1)
+                        Admin
+                    @endif
+                </li>
+                <li>{{ $user->no_telp }}</li>
+                @if(auth()->user()->role == 4)
+                <li>
+                    @if(!empty($kelas_walkel))
+                        {{ $kelas_walkel }}
+                    @else
+                        Kelas belum ditentukan.
+                    @endif
+                </li>
+                @endif
+            </ul>
         </div>
+        @if($history === [])
+        <div class="tw-flex tw-flex-col tw-px-14 tw-pt-14">
+            <img src="{{ URL::asset('assets/img/history-empty.jpg') }}" class="tw-mx-auto" alt="no_history" width="50%">
+            <div class="tw-text-gray-400 tw-font-light sims-text-gray-sm tw-mt-5 tw-text-center">Belum memiliki aktifitas.</div>
+        </div>
+        @else
+        <div class="tw-px-14 tw-pt-14 tw-grid tw-grid-rows-6">
+            <div class="sims-heading-xl tw-pl-0 tw-flex tw-justify-between">
+                <div class="tw-text-gray-400 sims-heading-2xl">Aktivitas</div>
+                {{-- <a href="/history/my" class="tw-text-sims-new-500 hover:tw-text-sims-600 tw-underline tw-text-base">lihat semua histori</a> --}}
+            </div>
+            @foreach($history as $h)
+            <div class="tw-pl-0 tw-flex tw-justify-between">
+                <div class="sims-heading-xl">{{ $h->activityName }}</div>
+                <div class="sims-text-gray-xl">{{ \Carbon\Carbon::createFromTimeStamp(strtotime($h->createdAt))->diffForHumans() }}</div>
+            </div>
+            @endforeach
+        </div>
+        @endif
     </div>
+  </div>
+</div>
 @endsection

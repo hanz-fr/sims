@@ -2,7 +2,10 @@
 
 @section('content')
     <div class="tw-mx-10">
-        <h1 class="sims-heading-3xl tw-my-9">Angkatan Alumni</h1>
+      <div class="tw-flex tw-flex-col tw-my-9">
+        <h1 class="sims-heading-3xl">Angkatan Alumni</h1>
+        <p class="tw-font-bold sims-text-gray-lg">{{ $_GET['jurusan'] }}</p>
+      </div>
         <div class="tw-grid lg:tw-grid-cols-3 md:tw-grid-cols-2 tw-gap-5 tw-mt-8 sm:tw-grid-cols-1">
 
             @php $n = \Carbon\Carbon::now()->year @endphp

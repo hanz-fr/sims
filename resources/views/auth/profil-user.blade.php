@@ -23,6 +23,7 @@
                     @if (auth()->user()->role == 4)
                         Wali Kelas
                     @endif
+
                 </div>
                 <div class="sims-heading-3xl-black">
                     {{ auth()->user()->nama }}
@@ -57,6 +58,9 @@
                 </li>
                 <li>Bagian</li>
                 <li>Nomor Telepon</li>
+                @if(auth()->user()->role == 4)
+                <li>Walikelas</li>
+                @endif
             </ul>
             <ul class="sims-text-gray-xl tw-text-right tw-pl-0 tw-grid tw-gap-14">
                 <li>
@@ -82,6 +86,15 @@
                     @endif
                 </li>
                 <li>{{ auth()->user()->no_telp }}</li>
+                @if(auth()->user()->role == 4)
+                <li>
+                    @if(!empty($kelas_walkel))
+                        {{ $kelas_walkel }}
+                    @else
+                        Kelas belum ditentukan.
+                    @endif
+                </li>
+                @endif
             </ul>
         </div>
         @if($history === [])

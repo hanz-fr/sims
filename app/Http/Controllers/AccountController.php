@@ -49,15 +49,12 @@ class AccountController extends Controller
             }]
         ])->simplePaginate(7);
 
-        $created_at = Carbon::parse($user->created_at)->translatedFormat('d F Y');
-
         if($user) {
             return view('admin.account.index', [
                 'title'      => 'Manajemen Akun SIMS',
                 'active'     => 'admin-dashboard',
                 'status'     => '',
                 'users'      => $users,
-                'created_at' => $created_at,
             ]);
         } else {
             return view('induk.show-all', [
@@ -139,20 +136,35 @@ class AccountController extends Controller
         abort_if(Gate::denies('admin-only'), 403);
 
         $user = User::findOrFail($id);
-
+        $kelas_walkel = '';
         $current_year = Carbon::now()->year;
-
         $usercount = User::all()->count();
-
         $admincount = User::where('is_admin', 1)->count();
-
         $userHistory = Http::get("{$this->api_url}/history/$user->nama/all?limit=5&year=$current_year");
+
+        /* Check if there's kelas with currently viewed walikelas */
+        if ($user->role == 4) {
+
+            $response = json_decode(Http::get("{$this->api_url}/kelas/get-by-walkel/{$user->nip}"));
+
+            if ($response->status == 'success') {
+
+                $kelas_walkel = $response->kelas->id;
+
+            } else {
+
+                $kelas_walkel = '';
+
+            }
+
+        }
 
         return view('admin.account.show', [
             'title'   => 'Detail Akun',
             'active'  => 'admin-dashboard',
             'user'    => $user,
             'usercount' => $usercount,
+            'kelas_walkel' => $kelas_walkel,
             'admincount' => $admincount,
             'history' => json_decode($userHistory)->rows
         ]);

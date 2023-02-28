@@ -10,30 +10,29 @@
         }
     </style>
 
-    {{-- error msg --}}
-    @if ($status == 'error')
-        <div class="tw-flex tw-justify-center">
-            <div class="tw-block tw-my-32 tw-font-pop">
-                <img src="{{ asset('assets/img/error_img.svg') }}" alt="error_img">
-                <h1 class="tw-flex tw-justify-center tw-font-bold tw-mt-6 tw-text-sims-new-500">404 Not Found</h1>
-                <p class="tw-flex tw-justify-center tw-font-pop tw-text-md tw-font-semibold tw-text-gray-400 tw-mt-5">
-                    {{ $message }}</p>
-                <p class="tw-flex tw-justify-center tw-text-gray-400 tw-text-sm">Coba hubungi admin untuk penyelesaian lebih
-                    lanjut.</p>
-            </div>
+{{-- error msg --}}
+@if($status == 'error')
+    <div class="tw-flex tw-justify-center">
+        <div class="tw-block tw-my-32 tw-font-pop">
+            <img src="{{asset('assets/img/error_img.svg')}}" alt="error_img">
+            <h1 class="tw-flex tw-justify-center tw-font-bold tw-mt-6 tw-text-sims-new-500">404 Not Found</h1>
+            <p class="tw-flex tw-justify-center tw-font-pop tw-text-md tw-font-semibold tw-text-gray-400 tw-mt-5">{{ $message }}</p>
+            <p class="tw-flex tw-justify-center tw-text-gray-400 tw-text-sm">Coba hubungi admin untuk penyelesaian lebih lanjut.</p>
         </div>
-    @else
-        <div class="tw-mt-10">
-            <div class="tw-flex tw-ml-8 tw-mr-7 lg:tw-flex-row sm:tw-flex-col lg:tw-justify-between lg:tw-gap-5">
-                <div class="tw-flex tw-flex-col">
-                    <h4 class="sims-heading-3xl">Data Induk Siswa</h4>
-                    @if (!empty($jurusan) && !empty($kelas))
-                        <h6 class="sims-heading-md-black">{{ $jurusan }} - Kelas {{ $kelas }}</h6>
-                    @else
-                        <h6 class="sims-heading-md-black">Seluruh Kelas</h6>
-                    @endif
-                    <div class="sims-text-gray-sm">Jumlah : {{ $total_siswa }} siswa</div>
-                </div>
+    </div>
+@else
+
+<div class="tw-mt-10">
+    <div class="tw-flex tw-ml-8 tw-mr-7 lg:tw-flex-row sm:tw-flex-col lg:tw-justify-between lg:tw-gap-5">
+        <div class="tw-flex tw-flex-col">
+            <h4 class="sims-heading-3xl">Data Induk Siswa</h4>
+            @if( ! empty($jurusan) && ! empty($kelas))
+            <h6 class="sims-heading-md-black">{{ $jurusan }} - Kelas {{ $kelas }} @if(!empty($_GET['rombel']))- Rombel {{ $_GET['rombel'] }}@endif</h6>
+            @else
+            <h6 class="sims-heading-md-black">Seluruh Kelas</h6>
+            @endif
+            <div class="sims-text-gray-sm">Jumlah : {{ $total_siswa }} siswa</div>
+        </div>
 
                 @can('manage-induk')
                     <div class="tw-flex md:tw-justify-center tw-items-center md:-tw-mb-8">
@@ -95,39 +94,16 @@
                                                     <input name="search" value="{{ $_GET['search'] }}" type="hidden">
                                                 @endif
 
-                                                @if (isset($_GET['nis_siswa']))
-                                                    <input name="nis_siswa" value="{{ $_GET['nis_siswa'] }}" type="hidden">
-                                                @endif
-                                                @if (isset($_GET['nisn_siswa']))
-                                                    <input name="nisn_siswa" value="{{ $_GET['nisn_siswa'] }}" type="hidden">
-                                                @endif
-                                                @if (isset($_GET['nama_siswa']))
-                                                    <input name="nama_siswa" value="{{ $_GET['nama_siswa'] }}" type="hidden">
-                                                @endif
-                                                @if (isset($_GET['jenis_kelamin']))
-                                                    <input name="jenis_kelamin" value="{{ $_GET['jenis_kelamin'] }}"
-                                                        type="hidden">
-                                                @endif
-                                                @if (isset($_GET['KelasId']))
-                                                    <input name="KelasId" value="{{ $_GET['KelasId'] }}" type="hidden">
-                                                @endif
-                                                @if (isset($_GET['sort_by']))
-                                                    <input name="sort_by" value="{{ $_GET['sort_by'] }}" type="hidden">
-                                                @endif
-                                                @if (isset($_GET['sort']))
-                                                    <input name="sort" value="{{ $_GET['sort'] }}" type="hidden">
-                                                @endif
-                                                @if (isset($_GET['dibuatTglDari']))
-                                                    <input name="dibuatTglDari" value="{{ $_GET['dibuatTglDari'] }}"
-                                                        type="hidden">
-                                                @endif
-                                                @if (isset($_GET['dibuatTglKe']))
-                                                    <input name="dibuatTglKe" value="{{ $_GET['dibuatTglKe'] }}"
-                                                        type="hidden">
-                                                @endif
-                                                @if (isset($_GET['thn_ajaran']))
-                                                    <input name="thn_ajaran" value="{{ $_GET['thn_ajaran'] }}" type="hidden">
-                                                @endif
+                                @if(isset($_GET['nis_siswa'])) <input name="nis_siswa" value="{{ $_GET['nis_siswa'] }}" type="hidden"> @endif
+                                @if(isset($_GET['nisn_siswa'])) <input name="nisn_siswa" value="{{ $_GET['nisn_siswa'] }}" type="hidden"> @endif
+                                @if(isset($_GET['nama_siswa'])) <input name="nama_siswa" value="{{ $_GET['nama_siswa'] }}" type="hidden"> @endif
+                                @if(isset($_GET['jenis_kelamin'])) <input name="jenis_kelamin" value="{{ $_GET['jenis_kelamin'] }}" type="hidden"> @endif
+                                @if(isset($_GET['KelasId'])) <input name="KelasId" value="{{ $_GET['KelasId'] }}" type="hidden"> @endif
+                                @if(isset($_GET['sort_by'])) <input name="sort_by" value="{{ $_GET['sort_by'] }}" type="hidden"> @endif
+                                @if(isset($_GET['sort'])) <input name="sort" value="{{ $_GET['sort'] }}" type="hidden"> @endif
+                                @if(isset($_GET['dibuatTglDari'])) <input name="dibuatTglDari" value="{{ $_GET['dibuatTglDari'] }}" type="hidden"> @endif
+                                @if(isset($_GET['dibuatTglKe'])) <input name="dibuatTglKe" value="{{ $_GET['dibuatTglKe'] }}" type="hidden"> @endif
+                                @if(isset($_GET['thn_ajaran'])) <input name="thn_ajaran" value="{{ $_GET['thn_ajaran'] }}" type="hidden"> @endif
 
                                                 <div class="tw-flex tw-justify-center tw-mt-3">
                                                     <button type="submit"
@@ -270,42 +246,16 @@
                                                     <input name="search" value="{{ $_GET['search'] }}" type="hidden">
                                                 @endif
 
-                                                @if (isset($_GET['nis_siswa']))
-                                                    <input name="nis_siswa" value="{{ $_GET['nis_siswa'] }}" type="hidden">
-                                                @endif
-                                                @if (isset($_GET['nisn_siswa']))
-                                                    <input name="nisn_siswa" value="{{ $_GET['nisn_siswa'] }}"
-                                                        type="hidden">
-                                                @endif
-                                                @if (isset($_GET['nama_siswa']))
-                                                    <input name="nama_siswa" value="{{ $_GET['nama_siswa'] }}"
-                                                        type="hidden">
-                                                @endif
-                                                @if (isset($_GET['jenis_kelamin']))
-                                                    <input name="jenis_kelamin" value="{{ $_GET['jenis_kelamin'] }}"
-                                                        type="hidden">
-                                                @endif
-                                                @if (isset($_GET['KelasId']))
-                                                    <input name="KelasId" value="{{ $_GET['KelasId'] }}" type="hidden">
-                                                @endif
-                                                @if (isset($_GET['sort_by']))
-                                                    <input name="sort_by" value="{{ $_GET['sort_by'] }}" type="hidden">
-                                                @endif
-                                                @if (isset($_GET['sort']))
-                                                    <input name="sort" value="{{ $_GET['sort'] }}" type="hidden">
-                                                @endif
-                                                @if (isset($_GET['dibuatTglDari']))
-                                                    <input name="dibuatTglDari" value="{{ $_GET['dibuatTglDari'] }}"
-                                                        type="hidden">
-                                                @endif
-                                                @if (isset($_GET['dibuatTglKe']))
-                                                    <input name="dibuatTglKe" value="{{ $_GET['dibuatTglKe'] }}"
-                                                        type="hidden">
-                                                @endif
-                                                @if (isset($_GET['thn_ajaran']))
-                                                    <input name="thn_ajaran" value="{{ $_GET['thn_ajaran'] }}"
-                                                        type="hidden">
-                                                @endif
+                                @if(isset($_GET['nis_siswa'])) <input name="nis_siswa" value="{{ $_GET['nis_siswa'] }}" type="hidden"> @endif
+                                @if(isset($_GET['nisn_siswa'])) <input name="nisn_siswa" value="{{ $_GET['nisn_siswa'] }}" type="hidden"> @endif
+                                @if(isset($_GET['nama_siswa'])) <input name="nama_siswa" value="{{ $_GET['nama_siswa'] }}" type="hidden"> @endif
+                                @if(isset($_GET['jenis_kelamin'])) <input name="jenis_kelamin" value="{{ $_GET['jenis_kelamin'] }}" type="hidden"> @endif
+                                @if(isset($_GET['KelasId'])) <input name="KelasId" value="{{ $_GET['KelasId'] }}" type="hidden"> @endif
+                                @if(isset($_GET['sort_by'])) <input name="sort_by" value="{{ $_GET['sort_by'] }}" type="hidden"> @endif
+                                @if(isset($_GET['sort'])) <input name="sort" value="{{ $_GET['sort'] }}" type="hidden"> @endif
+                                @if(isset($_GET['dibuatTglDari'])) <input name="dibuatTglDari" value="{{ $_GET['dibuatTglDari'] }}" type="hidden"> @endif
+                                @if(isset($_GET['dibuatTglKe'])) <input name="dibuatTglKe" value="{{ $_GET['dibuatTglKe'] }}" type="hidden"> @endif
+                                @if(isset($_GET['thn_ajaran'])) <input name="thn_ajaran" value="{{ $_GET['thn_ajaran'] }}" type="hidden"> @endif
 
                                                 <div class="tw-flex tw-justify-center tw-mt-3">
                                                     <button type="submit"
@@ -442,7 +392,7 @@
                                                         class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block">
                                                 </div>
 
-                                                <input name="angkatan" type="hidden" value="{{ $_GET['angkatan'] }}">
+                                <input name="angkatan" type="hidden" value="{{ $_GET['angkatan'] }}">
 
                                                 @if (isset($_GET['search']))
                                                     <input name="search" value="{{ $_GET['search'] }}" type="hidden">
@@ -577,142 +527,68 @@
                     @if (!empty($jurusan) && !empty($kelas))
                         <form action="/data-induk-siswa/{{ $jurusan }}/{{ $kelas }}">
 
-                            <div
-                                class="relative tw-border-[1.5px] tw-border-gray-300 tw-rounded-xl focus:tw-ring-sims-new-500">
-                                <input name="angkatan" type="hidden" value="{{ $_GET['angkatan'] }}">
+                    <div class="relative tw-border-[1.5px] tw-border-gray-300 tw-rounded-xl focus:tw-ring-sims-new-500">
+                        <input name="angkatan" type="hidden" value="{{ $_GET['angkatan'] }}">
 
-                                <input name="page" value="1" type="hidden">
-                                <input name="perPage" value="10" type="hidden">
-                                <input type="text" id="search" name="search"
-                                    class="tw-block tw-py-1 tw-px-5 tw-border-none tw-rounded-xl"
-                                    value="{{ request()->search }}">
-
-                                @if (isset($_GET['nis_siswa']))
-                                    <input name="nis_siswa" value="{{ $_GET['nis_siswa'] }}" type="hidden">
-                                @endif
-                                @if (isset($_GET['nisn_siswa']))
-                                    <input name="nisn_siswa" value="{{ $_GET['nisn_siswa'] }}" type="hidden">
-                                @endif
-                                @if (isset($_GET['nama_siswa']))
-                                    <input name="nama_siswa" value="{{ $_GET['nama_siswa'] }}" type="hidden">
-                                @endif
-                                @if (isset($_GET['jenis_kelamin']))
-                                    <input name="jenis_kelamin" value="{{ $_GET['jenis_kelamin'] }}" type="hidden">
-                                @endif
-                                @if (isset($_GET['KelasId']))
-                                    <input name="KelasId" value="{{ $_GET['KelasId'] }}" type="hidden">
-                                @endif
-                                @if (isset($_GET['sort_by']))
-                                    <input name="sort_by" value="{{ $_GET['sort_by'] }}" type="hidden">
-                                @endif
-                                @if (isset($_GET['sort']))
-                                    <input name="sort" value="{{ $_GET['sort'] }}" type="hidden">
-                                @endif
-                                @if (isset($_GET['dibuatTglDari']))
-                                    <input name="dibuatTglDari" value="{{ $_GET['dibuatTglDari'] }}" type="hidden">
-                                @endif
-                                @if (isset($_GET['dibuatTglKe']))
-                                    <input name="dibuatTglKe" value="{{ $_GET['dibuatTglKe'] }}" type="hidden">
-                                @endif
-                                @if (isset($_GET['thn_ajaran']))
-                                    <input name="thn_ajaran" value="{{ $_GET['thn_ajaran'] }}" type="hidden">
-                                @endif
-
-                                <i
-                                    class="fa-thin fa-magnifying-glass tw-absolute tw-text-gray-400 right-0 tw-inset-y-1.5 tw-pr-5 tw-text-sm"></i>
-                            </div>
-                        </form>
+                        <input name="page" value="1" type="hidden">
+                        <input name="perPage" value="10" type="hidden">
+                        <input type="text" id="search" name="search" class="tw-block tw-py-1 tw-px-5 tw-border-none tw-rounded-xl" value="{{ request()->search }}">
+    
+                        @if(isset($_GET['nis_siswa'])) <input name="nis_siswa" value="{{ $_GET['nis_siswa'] }}" type="hidden"> @endif
+                        @if(isset($_GET['nisn_siswa'])) <input name="nisn_siswa" value="{{ $_GET['nisn_siswa'] }}" type="hidden"> @endif
+                        @if(isset($_GET['nama_siswa'])) <input name="nama_siswa" value="{{ $_GET['nama_siswa'] }}" type="hidden"> @endif
+                        @if(isset($_GET['jenis_kelamin'])) <input name="jenis_kelamin" value="{{ $_GET['jenis_kelamin'] }}" type="hidden"> @endif
+                        @if(isset($_GET['KelasId'])) <input name="KelasId" value="{{ $_GET['KelasId'] }}" type="hidden"> @endif
+                        @if(isset($_GET['sort_by'])) <input name="sort_by" value="{{ $_GET['sort_by'] }}" type="hidden"> @endif
+                        @if(isset($_GET['sort'])) <input name="sort" value="{{ $_GET['sort'] }}" type="hidden"> @endif
+                        @if(isset($_GET['dibuatTglDari'])) <input name="dibuatTglDari" value="{{ $_GET['dibuatTglDari'] }}" type="hidden"> @endif
+                        @if(isset($_GET['dibuatTglKe'])) <input name="dibuatTglKe" value="{{ $_GET['dibuatTglKe'] }}" type="hidden"> @endif
+                        @if(isset($_GET['thn_ajaran'])) <input name="thn_ajaran" value="{{ $_GET['thn_ajaran'] }}" type="hidden"> @endif
+    
+                        <i class="fa-thin fa-magnifying-glass tw-absolute tw-text-gray-400 right-0 tw-inset-y-1.5 tw-pr-5 tw-text-sm"></i>
+                    </div>
+                </form>
+                @else
+                <form action="/data-induk-siswa"> 
+                    <div class="relative tw-border-[1.5px] tw-border-gray-300 tw-rounded-xl">
+                        
+                        <input name="page" value="1" type="hidden">
+                        <input name="perPage" value="10" type="hidden">
+                        <input type="text" id="search" name="search" class="tw-block tw-py-1 tw-px-5 tw-border-none tw-rounded-xl focus:tw-ring-sims-new-500" value="{{ request()->search }}">
+    
+                        @if(isset($_GET['nis_siswa'])) <input name="nis_siswa" value="{{ $_GET['nis_siswa'] }}" type="hidden"> @endif
+                        @if(isset($_GET['nisn_siswa'])) <input name="nisn_siswa" value="{{ $_GET['nisn_siswa'] }}" type="hidden"> @endif
+                        @if(isset($_GET['nama_siswa'])) <input name="nama_siswa" value="{{ $_GET['nama_siswa'] }}" type="hidden"> @endif
+                        @if(isset($_GET['jenis_kelamin'])) <input name="jenis_kelamin" value="{{ $_GET['jenis_kelamin'] }}" type="hidden"> @endif
+                        @if(isset($_GET['KelasId'])) <input name="KelasId" value="{{ $_GET['KelasId'] }}" type="hidden"> @endif
+                        @if(isset($_GET['sort_by'])) <input name="sort_by" value="{{ $_GET['sort_by'] }}" type="hidden"> @endif
+                        @if(isset($_GET['sort'])) <input name="sort" value="{{ $_GET['sort'] }}" type="hidden"> @endif
+                        @if(isset($_GET['dibuatTglDari'])) <input name="dibuatTglDari" value="{{ $_GET['dibuatTglDari'] }}" type="hidden"> @endif
+                        @if(isset($_GET['dibuatTglKe'])) <input name="dibuatTglKe" value="{{ $_GET['dibuatTglKe'] }}" type="hidden"> @endif
+                        @if(isset($_GET['thn_ajaran'])) <input name="thn_ajaran" value="{{ $_GET['thn_ajaran'] }}" type="hidden"> @endif
+    
+                        <i class="fa-thin fa-magnifying-glass tw-absolute tw-text-gray-400 right-0 tw-inset-y-1.5 tw-pr-5 tw-text-sm"></i>
+                    </div>
+                </form>
+                @endif
+                <div class="tw-flex tw-my-auto">
+                    <div class="tw-my-auto tw-text-basic-700 tw-ml-8 tw-mr-2 tw-font-normal tw-font-satoshi">Tampilkan</div>
+                    @if( ! empty($jurusan) && ! empty($kelas))
+                    <select name="show-data-perpage" id="show-data-perpage" class="tw-pl-4 tw-px-7 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-200 tw-peer tw-font-bold  bg-transparent tw-border-0 tw-border-b-2 tw-border-gray-200 tw-appearance-none tw-block">
+                            <option value="/data-induk-siswa/{{ $jurusan }}/{{ $kelas }}?angkatan={{ $_GET['angkatan'] }}&page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=10&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&nis_siswa=@isset($_GET['nis_siswa']){{ $_GET['nis_siswa'] }}@endisset&nisn_siswa=@isset($_GET['nisn_siswa']){{ $_GET['nisn_siswa'] }}@endisset&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&jenis_kelamin=@isset($_GET['jenis_kelamin']){{ $_GET['jenis_kelamin'] }}@endisset&KelasId=@isset($_GET['KelasId']){{ $_GET['KelasId'] }}@endisset&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset&dibuatTglDari=@isset($_GET['dibuatTglDari']){{ $_GET['dibuatTglDari'] }}@endisset&dibuatTglKe=@isset($_GET['dibuatTglKe']){{ $_GET['dibuatTglKe'] }}@endisset&thn_ajaran=@isset($_GET['thn_ajaran']){{ $_GET['thn_ajaran'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '10') selected @endif @endisset class="tw-bg-white">10</option>
+                            <option value="/data-induk-siswa/{{ $jurusan }}/{{ $kelas }}?angkatan={{ $_GET['angkatan'] }}&page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=25&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&nis_siswa=@isset($_GET['nis_siswa']){{ $_GET['nis_siswa'] }}@endisset&nisn_siswa=@isset($_GET['nisn_siswa']){{ $_GET['nisn_siswa'] }}@endisset&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&jenis_kelamin=@isset($_GET['jenis_kelamin']){{ $_GET['jenis_kelamin'] }}@endisset&KelasId=@isset($_GET['KelasId']){{ $_GET['KelasId'] }}@endisset&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset&dibuatTglDari=@isset($_GET['dibuatTglDari']){{ $_GET['dibuatTglDari'] }}@endisset&dibuatTglKe=@isset($_GET['dibuatTglKe']){{ $_GET['dibuatTglKe'] }}@endisset&thn_ajaran=@isset($_GET['thn_ajaran']){{ $_GET['thn_ajaran'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '25') selected @endif @endisset class="tw-bg-white">25</option>
+                            <option value="/data-induk-siswa/{{ $jurusan }}/{{ $kelas }}?angkatan={{ $_GET['angkatan'] }}&page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=50&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&nis_siswa=@isset($_GET['nis_siswa']){{ $_GET['nis_siswa'] }}@endisset&nisn_siswa=@isset($_GET['nisn_siswa']){{ $_GET['nisn_siswa'] }}@endisset&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&jenis_kelamin=@isset($_GET['jenis_kelamin']){{ $_GET['jenis_kelamin'] }}@endisset&KelasId=@isset($_GET['KelasId']){{ $_GET['KelasId'] }}@endisset&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset&dibuatTglDari=@isset($_GET['dibuatTglDari']){{ $_GET['dibuatTglDari'] }}@endisset&dibuatTglKe=@isset($_GET['dibuatTglKe']){{ $_GET['dibuatTglKe'] }}@endisset&thn_ajaran=@isset($_GET['thn_ajaran']){{ $_GET['thn_ajaran'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '50') selected @endif @endisset class="tw-bg-white">50</option>
+                            <option value="/data-induk-siswa/{{ $jurusan }}/{{ $kelas }}?angkatan={{ $_GET['angkatan'] }}&page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=100&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&nis_siswa=@isset($_GET['nis_siswa']){{ $_GET['nis_siswa'] }}@endisset&nisn_siswa=@isset($_GET['nisn_siswa']){{ $_GET['nisn_siswa'] }}@endisset&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&jenis_kelamin=@isset($_GET['jenis_kelamin']){{ $_GET['jenis_kelamin'] }}@endisset&KelasId=@isset($_GET['KelasId']){{ $_GET['KelasId'] }}@endisset&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset&dibuatTglDari=@isset($_GET['dibuatTglDari']){{ $_GET['dibuatTglDari'] }}@endisset&dibuatTglKe=@isset($_GET['dibuatTglKe']){{ $_GET['dibuatTglKe'] }}@endisset&thn_ajaran=@isset($_GET['thn_ajaran']){{ $_GET['thn_ajaran'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '100') selected @endif @endisset class="tw-bg-white">100</option>
+                    </select>
                     @else
-                        <form action="/data-induk-siswa">
-                            <div class="relative tw-border-[1.5px] tw-border-gray-300 tw-rounded-xl">
-
-                                <input name="page" value="1" type="hidden">
-                                <input name="perPage" value="10" type="hidden">
-                                <input type="text" id="search" name="search"
-                                    class="tw-block tw-py-1 tw-px-5 tw-border-none tw-rounded-xl focus:tw-ring-sims-new-500"
-                                    value="{{ request()->search }}">
-
-                                @if (isset($_GET['nis_siswa']))
-                                    <input name="nis_siswa" value="{{ $_GET['nis_siswa'] }}" type="hidden">
-                                @endif
-                                @if (isset($_GET['nisn_siswa']))
-                                    <input name="nisn_siswa" value="{{ $_GET['nisn_siswa'] }}" type="hidden">
-                                @endif
-                                @if (isset($_GET['nama_siswa']))
-                                    <input name="nama_siswa" value="{{ $_GET['nama_siswa'] }}" type="hidden">
-                                @endif
-                                @if (isset($_GET['jenis_kelamin']))
-                                    <input name="jenis_kelamin" value="{{ $_GET['jenis_kelamin'] }}" type="hidden">
-                                @endif
-                                @if (isset($_GET['KelasId']))
-                                    <input name="KelasId" value="{{ $_GET['KelasId'] }}" type="hidden">
-                                @endif
-                                @if (isset($_GET['sort_by']))
-                                    <input name="sort_by" value="{{ $_GET['sort_by'] }}" type="hidden">
-                                @endif
-                                @if (isset($_GET['sort']))
-                                    <input name="sort" value="{{ $_GET['sort'] }}" type="hidden">
-                                @endif
-                                @if (isset($_GET['dibuatTglDari']))
-                                    <input name="dibuatTglDari" value="{{ $_GET['dibuatTglDari'] }}" type="hidden">
-                                @endif
-                                @if (isset($_GET['dibuatTglKe']))
-                                    <input name="dibuatTglKe" value="{{ $_GET['dibuatTglKe'] }}" type="hidden">
-                                @endif
-                                @if (isset($_GET['thn_ajaran']))
-                                    <input name="thn_ajaran" value="{{ $_GET['thn_ajaran'] }}" type="hidden">
-                                @endif
-
-                                <i
-                                    class="fa-thin fa-magnifying-glass tw-absolute tw-text-gray-400 right-0 tw-inset-y-1.5 tw-pr-5 tw-text-sm"></i>
-                            </div>
-                        </form>
+                    <select name="show-data-perpage" id="show-data-perpage" class="tw-pl-4 tw-px-7 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-200 tw-peer tw-font-bold  bg-transparent tw-border-0 tw-border-b-2 tw-border-gray-200 tw-appearance-none tw-block">
+                            <option value="/data-induk-siswa?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=10&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&nis_siswa=@isset($_GET['nis_siswa']){{ $_GET['nis_siswa'] }}@endisset&nisn_siswa=@isset($_GET['nisn_siswa']){{ $_GET['nisn_siswa'] }}@endisset&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&jenis_kelamin=@isset($_GET['jenis_kelamin']){{ $_GET['jenis_kelamin'] }}@endisset&KelasId=@isset($_GET['KelasId']){{ $_GET['KelasId'] }}@endisset&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset&dibuatTglDari=@isset($_GET['dibuatTglDari']){{ $_GET['dibuatTglDari'] }}@endisset&dibuatTglKe=@isset($_GET['dibuatTglKe']){{ $_GET['dibuatTglKe'] }}@endisset&thn_ajaran=@isset($_GET['thn_ajaran']){{ $_GET['thn_ajaran'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '10') selected @endif @endisset class="tw-bg-white">10</option>
+                            <option value="/data-induk-siswa?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=25&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&nis_siswa=@isset($_GET['nis_siswa']){{ $_GET['nis_siswa'] }}@endisset&nisn_siswa=@isset($_GET['nisn_siswa']){{ $_GET['nisn_siswa'] }}@endisset&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&jenis_kelamin=@isset($_GET['jenis_kelamin']){{ $_GET['jenis_kelamin'] }}@endisset&KelasId=@isset($_GET['KelasId']){{ $_GET['KelasId'] }}@endisset&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset&dibuatTglDari=@isset($_GET['dibuatTglDari']){{ $_GET['dibuatTglDari'] }}@endisset&dibuatTglKe=@isset($_GET['dibuatTglKe']){{ $_GET['dibuatTglKe'] }}@endisset&thn_ajaran=@isset($_GET['thn_ajaran']){{ $_GET['thn_ajaran'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '25') selected @endif @endisset class="tw-bg-white">25</option>
+                            <option value="/data-induk-siswa?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=50&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&nis_siswa=@isset($_GET['nis_siswa']){{ $_GET['nis_siswa'] }}@endisset&nisn_siswa=@isset($_GET['nisn_siswa']){{ $_GET['nisn_siswa'] }}@endisset&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&jenis_kelamin=@isset($_GET['jenis_kelamin']){{ $_GET['jenis_kelamin'] }}@endisset&KelasId=@isset($_GET['KelasId']){{ $_GET['KelasId'] }}@endisset&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset&dibuatTglDari=@isset($_GET['dibuatTglDari']){{ $_GET['dibuatTglDari'] }}@endisset&dibuatTglKe=@isset($_GET['dibuatTglKe']){{ $_GET['dibuatTglKe'] }}@endisset&thn_ajaran=@isset($_GET['thn_ajaran']){{ $_GET['thn_ajaran'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '50') selected @endif @endisset class="tw-bg-white">50</option>
+                            <option value="/data-induk-siswa?page=@if(!empty($_GET['page'])){{ $_GET['page'] }}@endif&perPage=100&search=@if(isset($_GET['search'])){{ $_GET['search'] }}@endif&nis_siswa=@isset($_GET['nis_siswa']){{ $_GET['nis_siswa'] }}@endisset&nisn_siswa=@isset($_GET['nisn_siswa']){{ $_GET['nisn_siswa'] }}@endisset&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&jenis_kelamin=@isset($_GET['jenis_kelamin']){{ $_GET['jenis_kelamin'] }}@endisset&KelasId=@isset($_GET['KelasId']){{ $_GET['KelasId'] }}@endisset&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset&dibuatTglDari=@isset($_GET['dibuatTglDari']){{ $_GET['dibuatTglDari'] }}@endisset&dibuatTglKe=@isset($_GET['dibuatTglKe']){{ $_GET['dibuatTglKe'] }}@endisset&thn_ajaran=@isset($_GET['thn_ajaran']){{ $_GET['thn_ajaran'] }}@endisset" @isset($_GET['perPage']) @if( $_GET['perPage'] === '100') selected @endif @endisset class="tw-bg-white">100</option>
+                    </select>
                     @endif
-                    <div class="tw-flex tw-my-auto">
-                        <div class="tw-my-auto tw-text-basic-700 tw-ml-8 tw-mr-2 tw-font-normal tw-font-satoshi">Tampilkan
-                        </div>
-                        @if (!empty($jurusan) && !empty($kelas))
-                            <select name="show-data-perpage" id="show-data-perpage"
-                                class="tw-pl-4 tw-px-7 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-200 tw-peer tw-font-bold  bg-transparent tw-border-0 tw-border-b-2 tw-border-gray-200 tw-appearance-none tw-block">
-                                <option
-                                    value="/data-induk-siswa/{{ $jurusan }}/{{ $kelas }}?angkatan={{ $_GET['angkatan'] }}&page=@if (!empty($_GET['page'])) {{ $_GET['page'] }} @endif&perPage=10&search=@if (isset($_GET['search'])) {{ $_GET['search'] }} @endif&nis_siswa=@isset($_GET['nis_siswa']){{ $_GET['nis_siswa'] }}@endisset&nisn_siswa=@isset($_GET['nisn_siswa']){{ $_GET['nisn_siswa'] }}@endisset&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&jenis_kelamin=@isset($_GET['jenis_kelamin']){{ $_GET['jenis_kelamin'] }}@endisset&KelasId=@isset($_GET['KelasId']){{ $_GET['KelasId'] }}@endisset&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset&dibuatTglDari=@isset($_GET['dibuatTglDari']){{ $_GET['dibuatTglDari'] }}@endisset&dibuatTglKe=@isset($_GET['dibuatTglKe']){{ $_GET['dibuatTglKe'] }}@endisset&thn_ajaran=@isset($_GET['thn_ajaran']){{ $_GET['thn_ajaran'] }}@endisset"
-                                    @isset($_GET['perPage']) @if ($_GET['perPage'] === '10') selected @endif @endisset
-                                    class="tw-bg-white">10</option>
-                                <option
-                                    value="/data-induk-siswa/{{ $jurusan }}/{{ $kelas }}?angkatan={{ $_GET['angkatan'] }}&page=@if (!empty($_GET['page'])) {{ $_GET['page'] }} @endif&perPage=25&search=@if (isset($_GET['search'])) {{ $_GET['search'] }} @endif&nis_siswa=@isset($_GET['nis_siswa']){{ $_GET['nis_siswa'] }}@endisset&nisn_siswa=@isset($_GET['nisn_siswa']){{ $_GET['nisn_siswa'] }}@endisset&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&jenis_kelamin=@isset($_GET['jenis_kelamin']){{ $_GET['jenis_kelamin'] }}@endisset&KelasId=@isset($_GET['KelasId']){{ $_GET['KelasId'] }}@endisset&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset&dibuatTglDari=@isset($_GET['dibuatTglDari']){{ $_GET['dibuatTglDari'] }}@endisset&dibuatTglKe=@isset($_GET['dibuatTglKe']){{ $_GET['dibuatTglKe'] }}@endisset&thn_ajaran=@isset($_GET['thn_ajaran']){{ $_GET['thn_ajaran'] }}@endisset"
-                                    @isset($_GET['perPage']) @if ($_GET['perPage'] === '25') selected @endif @endisset
-                                    class="tw-bg-white">25</option>
-                                <option
-                                    value="/data-induk-siswa/{{ $jurusan }}/{{ $kelas }}?angkatan={{ $_GET['angkatan'] }}&page=@if (!empty($_GET['page'])) {{ $_GET['page'] }} @endif&perPage=50&search=@if (isset($_GET['search'])) {{ $_GET['search'] }} @endif&nis_siswa=@isset($_GET['nis_siswa']){{ $_GET['nis_siswa'] }}@endisset&nisn_siswa=@isset($_GET['nisn_siswa']){{ $_GET['nisn_siswa'] }}@endisset&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&jenis_kelamin=@isset($_GET['jenis_kelamin']){{ $_GET['jenis_kelamin'] }}@endisset&KelasId=@isset($_GET['KelasId']){{ $_GET['KelasId'] }}@endisset&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset&dibuatTglDari=@isset($_GET['dibuatTglDari']){{ $_GET['dibuatTglDari'] }}@endisset&dibuatTglKe=@isset($_GET['dibuatTglKe']){{ $_GET['dibuatTglKe'] }}@endisset&thn_ajaran=@isset($_GET['thn_ajaran']){{ $_GET['thn_ajaran'] }}@endisset"
-                                    @isset($_GET['perPage']) @if ($_GET['perPage'] === '50') selected @endif @endisset
-                                    class="tw-bg-white">50</option>
-                                <option
-                                    value="/data-induk-siswa/{{ $jurusan }}/{{ $kelas }}?angkatan={{ $_GET['angkatan'] }}&page=@if (!empty($_GET['page'])) {{ $_GET['page'] }} @endif&perPage=100&search=@if (isset($_GET['search'])) {{ $_GET['search'] }} @endif&nis_siswa=@isset($_GET['nis_siswa']){{ $_GET['nis_siswa'] }}@endisset&nisn_siswa=@isset($_GET['nisn_siswa']){{ $_GET['nisn_siswa'] }}@endisset&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&jenis_kelamin=@isset($_GET['jenis_kelamin']){{ $_GET['jenis_kelamin'] }}@endisset&KelasId=@isset($_GET['KelasId']){{ $_GET['KelasId'] }}@endisset&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset&dibuatTglDari=@isset($_GET['dibuatTglDari']){{ $_GET['dibuatTglDari'] }}@endisset&dibuatTglKe=@isset($_GET['dibuatTglKe']){{ $_GET['dibuatTglKe'] }}@endisset&thn_ajaran=@isset($_GET['thn_ajaran']){{ $_GET['thn_ajaran'] }}@endisset"
-                                    @isset($_GET['perPage']) @if ($_GET['perPage'] === '100') selected @endif @endisset
-                                    class="tw-bg-white">100</option>
-                            </select>
-                        @else
-                            <select name="show-data-perpage" id="show-data-perpage"
-                                class="tw-pl-4 tw-px-7 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-200 tw-peer tw-font-bold  bg-transparent tw-border-0 tw-border-b-2 tw-border-gray-200 tw-appearance-none tw-block">
-                                <option
-                                    value="/data-induk-siswa?page=@if (!empty($_GET['page'])) {{ $_GET['page'] }} @endif&perPage=10&search=@if (isset($_GET['search'])) {{ $_GET['search'] }} @endif&nis_siswa=@isset($_GET['nis_siswa']){{ $_GET['nis_siswa'] }}@endisset&nisn_siswa=@isset($_GET['nisn_siswa']){{ $_GET['nisn_siswa'] }}@endisset&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&jenis_kelamin=@isset($_GET['jenis_kelamin']){{ $_GET['jenis_kelamin'] }}@endisset&KelasId=@isset($_GET['KelasId']){{ $_GET['KelasId'] }}@endisset&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset&dibuatTglDari=@isset($_GET['dibuatTglDari']){{ $_GET['dibuatTglDari'] }}@endisset&dibuatTglKe=@isset($_GET['dibuatTglKe']){{ $_GET['dibuatTglKe'] }}@endisset&thn_ajaran=@isset($_GET['thn_ajaran']){{ $_GET['thn_ajaran'] }}@endisset"
-                                    @isset($_GET['perPage']) @if ($_GET['perPage'] === '10') selected @endif @endisset
-                                    class="tw-bg-white">10</option>
-                                <option
-                                    value="/data-induk-siswa?page=@if (!empty($_GET['page'])) {{ $_GET['page'] }} @endif&perPage=25&search=@if (isset($_GET['search'])) {{ $_GET['search'] }} @endif&nis_siswa=@isset($_GET['nis_siswa']){{ $_GET['nis_siswa'] }}@endisset&nisn_siswa=@isset($_GET['nisn_siswa']){{ $_GET['nisn_siswa'] }}@endisset&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&jenis_kelamin=@isset($_GET['jenis_kelamin']){{ $_GET['jenis_kelamin'] }}@endisset&KelasId=@isset($_GET['KelasId']){{ $_GET['KelasId'] }}@endisset&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset&dibuatTglDari=@isset($_GET['dibuatTglDari']){{ $_GET['dibuatTglDari'] }}@endisset&dibuatTglKe=@isset($_GET['dibuatTglKe']){{ $_GET['dibuatTglKe'] }}@endisset&thn_ajaran=@isset($_GET['thn_ajaran']){{ $_GET['thn_ajaran'] }}@endisset"
-                                    @isset($_GET['perPage']) @if ($_GET['perPage'] === '25') selected @endif @endisset
-                                    class="tw-bg-white">25</option>
-                                <option
-                                    value="/data-induk-siswa?page=@if (!empty($_GET['page'])) {{ $_GET['page'] }} @endif&perPage=50&search=@if (isset($_GET['search'])) {{ $_GET['search'] }} @endif&nis_siswa=@isset($_GET['nis_siswa']){{ $_GET['nis_siswa'] }}@endisset&nisn_siswa=@isset($_GET['nisn_siswa']){{ $_GET['nisn_siswa'] }}@endisset&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&jenis_kelamin=@isset($_GET['jenis_kelamin']){{ $_GET['jenis_kelamin'] }}@endisset&KelasId=@isset($_GET['KelasId']){{ $_GET['KelasId'] }}@endisset&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset&dibuatTglDari=@isset($_GET['dibuatTglDari']){{ $_GET['dibuatTglDari'] }}@endisset&dibuatTglKe=@isset($_GET['dibuatTglKe']){{ $_GET['dibuatTglKe'] }}@endisset&thn_ajaran=@isset($_GET['thn_ajaran']){{ $_GET['thn_ajaran'] }}@endisset"
-                                    @isset($_GET['perPage']) @if ($_GET['perPage'] === '50') selected @endif @endisset
-                                    class="tw-bg-white">50</option>
-                                <option
-                                    value="/data-induk-siswa?page=@if (!empty($_GET['page'])) {{ $_GET['page'] }} @endif&perPage=100&search=@if (isset($_GET['search'])) {{ $_GET['search'] }} @endif&nis_siswa=@isset($_GET['nis_siswa']){{ $_GET['nis_siswa'] }}@endisset&nisn_siswa=@isset($_GET['nisn_siswa']){{ $_GET['nisn_siswa'] }}@endisset&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&jenis_kelamin=@isset($_GET['jenis_kelamin']){{ $_GET['jenis_kelamin'] }}@endisset&KelasId=@isset($_GET['KelasId']){{ $_GET['KelasId'] }}@endisset&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset&dibuatTglDari=@isset($_GET['dibuatTglDari']){{ $_GET['dibuatTglDari'] }}@endisset&dibuatTglKe=@isset($_GET['dibuatTglKe']){{ $_GET['dibuatTglKe'] }}@endisset&thn_ajaran=@isset($_GET['thn_ajaran']){{ $_GET['thn_ajaran'] }}@endisset"
-                                    @isset($_GET['perPage']) @if ($_GET['perPage'] === '100') selected @endif @endisset
-                                    class="tw-bg-white">100</option>
-                            </select>
-                        @endif
-                        <div class="tw-my-auto tw-mx-2 tw-font-satoshi tw-font-normal tw-text-basic-700">data</div>
+                    <div class="tw-my-auto tw-mx-2 tw-font-satoshi tw-font-normal tw-text-basic-700">data</div>
 
 
                         {{-- FILTER DROPDOWN --}}
@@ -721,18 +597,16 @@
                             type="button">Filters <i
                                 class="tw-text-xl tw-ml-5 fa-duotone fa-sliders-simple"></i></button>
 
-                        <!-- filter menu -->
-                        <div id="filter-dd"
-                            class="hidden tw-z-10 tw-w-72 tw-bg-white tw-rounded tw-divide-y tw-divide-gray-100 tw-shadow-md">
-                            <div class="tw-font-satoshi tw-text-xs tw-text-gray-400 tw-my-2 tw-mx-5">Cari berdasarkan...
-                            </div>
-
-                            @if (!empty($jurusan) && !empty($kelas))
-                                <form action="/data-induk-siswa/{{ $jurusan }}/{{ $kelas }}">
-                                    <input name="angkatan" type="hidden" value="{{ $_GET['angkatan'] }}">
-                                @else
-                                    <form action="/data-induk-siswa">
-                            @endif
+                    <!-- filter menu -->
+                    <div id="filter-dd" class="hidden tw-z-10 tw-w-72 tw-bg-white tw-rounded tw-divide-y tw-divide-gray-100 tw-shadow-md">
+                        <div class="tw-font-satoshi tw-text-xs tw-text-gray-400 tw-my-2 tw-mx-5">Cari berdasarkan...</div>
+                        
+                        @if( ! empty($jurusan) && ! empty($kelas))
+                        <form action="/data-induk-siswa/{{ $jurusan }}/{{ $kelas }}">
+                        <input name="angkatan" type="hidden" value="{{ $_GET['angkatan'] }}">
+                        @else
+                        <form action="/data-induk-siswa">
+                        @endif
 
 
                             @if (isset($_GET['page']))
@@ -899,19 +773,16 @@
                         <!-- end filter menu -->
 
 
-                        {{-- DATA PERIODIK DROPDOWN --}}
-                        <button id="dropdownToggleButton" data-dropdown-toggle="periodik-dd"
-                            class="tw-text-sims-new-500 hover:tw-text-white tw-font-satoshi focus:tw-ring-0 focus:tw-outline-none tw-font-medium tw-rounded-md tw-text-sm tw-px-4 tw-py-0.5 tw-ml-4 tw-text-center tw-inline-flex tw-items-center dark:tw-bg-white dark:hover:tw-bg-sims-new-500 tw-shadow-md tw-transition-all tw-ease-in-out"
-                            type="button">Data Periodik <i class="fa-duotone fa-calendar tw-ml-4"></i></button>
-
-                        <div id="periodik-dd"
-                            class="hidden tw-z-10 tw-w-auto tw-bg-white tw-rounded tw-divide-y tw-divide-gray-100 tw-shadow-md">
-                            @if (!empty($jurusan) && !empty($kelas))
-                                <form action="/data-induk-siswa/{{ $jurusan }}/{{ $kelas }}">
-                                    <input name="angkatan" type="hidden" value="{{ $_GET['angkatan'] }}">
-                                @else
-                                    <form action="/data-induk-siswa">
-                            @endif
+                    {{-- DATA PERIODIK DROPDOWN --}}
+                    <button id="dropdownToggleButton" data-dropdown-toggle="periodik-dd" class="tw-text-sims-new-500 hover:tw-text-white tw-font-satoshi focus:tw-ring-0 focus:tw-outline-none tw-font-medium tw-rounded-md tw-text-sm tw-px-4 tw-py-0.5 tw-ml-4 tw-text-center tw-inline-flex tw-items-center dark:tw-bg-white dark:hover:tw-bg-sims-new-500 tw-shadow-md tw-transition-all tw-ease-in-out" type="button">Data Periodik <i class="fa-duotone fa-calendar tw-ml-4"></i></button>
+                
+                    <div id="periodik-dd" class="hidden tw-z-10 tw-w-auto tw-bg-white tw-rounded tw-divide-y tw-divide-gray-100 tw-shadow-md">
+                        @if( ! empty($jurusan) && ! empty($kelas))
+                        <form action="/data-induk-siswa/{{ $jurusan }}/{{ $kelas }}">
+                        <input name="angkatan" type="hidden" value="{{ $_GET['angkatan'] }}">
+                        @else
+                        <form action="/data-induk-siswa">
+                        @endif
 
                             @if (isset($_GET['nis_siswa']))
                                 <input name="nis_siswa" value="{{ $_GET['nis_siswa'] }}" type="hidden">
@@ -1208,55 +1079,33 @@
                         <form action="/data-induk-siswa/{{ $jurusan }}/{{ $kelas }}"
                             class="tw-text-center">
 
-                            <input type="number" name="page"
-                                class="tw-bg-white tw-border tw-border-slate-200 tw-w-1/2 tw-font-satoshi tw-font-medium tw-text-slate-500 tw-rounded-md tw-text-center focus:tw-ring-gray-200 focus:tw-border-gray-200 no-spin"
-                                min="1" @if (isset($_GET['page'])) value="{{ $_GET['page'] }}" @endif>
-
-                            <input name="angkatan" type="hidden" value="{{ $_GET['angkatan'] }}">
-
-                            @if (isset($_GET['perPage']))
-                                <input name="perPage" value="{{ $_GET['perPage'] }}" type="hidden">
-                            @endif
+                    <input type="number" name="page" class="tw-bg-white tw-border tw-border-slate-200 tw-w-1/2 tw-font-satoshi tw-font-medium tw-text-slate-500 tw-rounded-md tw-text-center focus:tw-ring-gray-200 focus:tw-border-gray-200 no-spin" min="1" @if(isset($_GET['page'])) value="{{ $_GET['page'] }}"@endif>
+                    
+                    <input name="angkatan" type="hidden" value="{{ $_GET['angkatan'] }}">
+                    
+                    @if(isset($_GET['perPage']))
+                    <input name="perPage" value="{{ $_GET['perPage'] }}" type="hidden">
+                    @endif
 
                             @if (isset($_GET['search']))
                                 <input name="search" value="{{ $_GET['search'] }}" type="hidden">
                             @endif
 
-                            @if (isset($_GET['nis_siswa']))
-                                <input name="nis_siswa" value="{{ $_GET['nis_siswa'] }}" type="hidden">
-                            @endif
-                            @if (isset($_GET['nisn_siswa']))
-                                <input name="nisn_siswa" value="{{ $_GET['nisn_siswa'] }}" type="hidden">
-                            @endif
-                            @if (isset($_GET['nama_siswa']))
-                                <input name="nama_siswa" value="{{ $_GET['nama_siswa'] }}" type="hidden">
-                            @endif
-                            @if (isset($_GET['jenis_kelamin']))
-                                <input name="jenis_kelamin" value="{{ $_GET['jenis_kelamin'] }}" type="hidden">
-                            @endif
-                            @if (isset($_GET['KelasId']))
-                                <input name="KelasId" value="{{ $_GET['KelasId'] }}" type="hidden">
-                            @endif
-                            @if (isset($_GET['sort_by']))
-                                <input name="sort_by" value="{{ $_GET['sort_by'] }}" type="hidden">
-                            @endif
-                            @if (isset($_GET['sort']))
-                                <input name="sort" value="{{ $_GET['sort'] }}" type="hidden">
-                            @endif
-                            @if (isset($_GET['dibuatTglDari']))
-                                <input name="dibuatTglDari" value="{{ $_GET['dibuatTglDari'] }}" type="hidden">
-                            @endif
-                            @if (isset($_GET['dibuatTglKe']))
-                                <input name="dibuatTglKe" value="{{ $_GET['dibuatTglKe'] }}" type="hidden">
-                            @endif
-                            @if (isset($_GET['thn_ajaran']))
-                                <input name="thn_ajaran" value="{{ $_GET['thn_ajaran'] }}" type="hidden">
-                            @endif
-                        </form>
-                    </div>
-                @else
-                    <div class="tw-py-3 tw-my-auto tw-h-min tw-flex tw-justify-center">
-                        <form action="/data-induk-siswa" class="tw-text-center">
+                    @if(isset($_GET['nis_siswa'])) <input name="nis_siswa" value="{{ $_GET['nis_siswa'] }}" type="hidden"> @endif
+                    @if(isset($_GET['nisn_siswa'])) <input name="nisn_siswa" value="{{ $_GET['nisn_siswa'] }}" type="hidden"> @endif
+                    @if(isset($_GET['nama_siswa'])) <input name="nama_siswa" value="{{ $_GET['nama_siswa'] }}" type="hidden"> @endif
+                    @if(isset($_GET['jenis_kelamin'])) <input name="jenis_kelamin" value="{{ $_GET['jenis_kelamin'] }}" type="hidden"> @endif
+                    @if(isset($_GET['KelasId'])) <input name="KelasId" value="{{ $_GET['KelasId'] }}" type="hidden"> @endif
+                    @if(isset($_GET['sort_by'])) <input name="sort_by" value="{{ $_GET['sort_by'] }}" type="hidden"> @endif
+                    @if(isset($_GET['sort'])) <input name="sort" value="{{ $_GET['sort'] }}" type="hidden"> @endif
+                    @if(isset($_GET['dibuatTglDari'])) <input name="dibuatTglDari" value="{{ $_GET['dibuatTglDari'] }}" type="hidden"> @endif
+                    @if(isset($_GET['dibuatTglKe'])) <input name="dibuatTglKe" value="{{ $_GET['dibuatTglKe'] }}" type="hidden"> @endif
+                    @if(isset($_GET['thn_ajaran'])) <input name="thn_ajaran" value="{{ $_GET['thn_ajaran'] }}" type="hidden"> @endif
+                </form>
+            </div>
+            @else
+            <div class="tw-py-3 tw-my-auto tw-h-min tw-flex tw-justify-center">
+                <form action="/data-induk-siswa" class="tw-text-center">
 
                             <input type="number" name="page"
                                 class="tw-bg-white tw-border tw-border-slate-200 tw-w-1/2 tw-font-satoshi tw-font-medium tw-text-slate-500 tw-rounded-md tw-text-center focus:tw-ring-gray-200 focus:tw-border-gray-200 no-spin"
