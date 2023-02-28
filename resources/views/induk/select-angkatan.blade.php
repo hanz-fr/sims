@@ -14,29 +14,24 @@
                     <i class="fa-regular fa-graduation-cap tw-text-7xl"></i>
                     <span class="fw-bolder tw-text-lg tw-pl-3 tw-py-5">KELAS X (Angkatan {{ \Carbon\Carbon::now()->year + 2 }})</span>
                 </div>
-            </a>
-            <a
-                href="/data-induk-siswa/{{ $jurusan }}/11?angkatan={{ \Carbon\Carbon::now()->year + 1 }}&page=1&perPage=10&search=">
-                <div
-                    class="tw-bg-[#EF5C76] hover:tw-bg-[#c14a60] tw-text-white tw-p-5 tw-rounded-xl tw-transition-all tw-delay-[100] hover:-tw-translate-y-1 hover:tw-shadow-lg tw-ease-in">
-                    <div class="tw-flex">
-                        <i class="fa-regular fa-graduation-cap tw-text-7xl"></i>
-                        <span class="fw-bolder tw-text-lg tw-pl-3 tw-py-5">KELAS XI (Angkatan
-                            {{ \Carbon\Carbon::now()->year + 1 }})</span>
-                    </div>
+            </div>
+        </a>
+        <a href="/data-induk-siswa/{{ $jurusan }}/11?angkatan={{ \Carbon\Carbon::now()->year + 1 }}&page=1&perPage=10&search=">
+            <div class="tw-bg-[#EF5C76] hover:tw-bg-[#c14a60] tw-text-white tw-p-5 tw-rounded-xl tw-transition-all tw-delay-[100] hover:-tw-translate-y-1 hover:tw-shadow-lg tw-ease-in">
+                <div class="tw-flex">
+                    <i class="fa-regular fa-graduation-cap tw-text-7xl"></i>
+                    <span class="fw-bolder tw-text-lg tw-pl-3 tw-py-5">KELAS XI (Angkatan {{ \Carbon\Carbon::now()->year + 1 }})</span>
                 </div>
-            </a>
-            <a
-                href="/data-induk-siswa/{{ $jurusan }}/12?angkatan={{ \Carbon\Carbon::now()->year }}&page=1&perPage=10&search=">
-                <div
-                    class="tw-bg-[#527DB9] hover:tw-bg-[#44689b] tw-text-white tw-p-5 tw-rounded-xl tw-transition-all tw-delay-[100] hover:-tw-translate-y-1 hover:tw-shadow-lg tw-ease-in">
-                    <div class="tw-flex">
-                        <i class="fa-regular fa-graduation-cap tw-text-7xl"></i>
-                        <span class="fw-bolder tw-text-lg tw-pl-3 tw-py-5">KELAS XII (Angkatan
-                            {{ \Carbon\Carbon::now()->year }})</span>
-                    </div>
+            </div>
+        </a>
+        <a href="/data-induk-siswa/{{ $jurusan }}/12?angkatan={{ \Carbon\Carbon::now()->year }}&page=1&perPage=10&search=">
+            <div class="tw-bg-[#527DB9] hover:tw-bg-[#44689b] tw-text-white tw-p-5 tw-rounded-xl tw-transition-all tw-delay-[100] hover:-tw-translate-y-1 hover:tw-shadow-lg tw-ease-in">
+                <div class="tw-flex">
+                    <i class="fa-regular fa-graduation-cap tw-text-7xl"></i>
+                    <span class="fw-bolder tw-text-lg tw-pl-3 tw-py-5">KELAS XII (Angkatan {{ \Carbon\Carbon::now()->year }})</span>
                 </div>
-            </a>
-        </div>
+            </div>
+        </a>
     </div>
+</div>
 @endsection
