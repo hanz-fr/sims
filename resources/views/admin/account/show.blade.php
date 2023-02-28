@@ -133,12 +133,12 @@
                     @endif
                 </li>
                 <li>{{ $user->no_telp }}</li>
-                @if(auth()->user()->role == 4)
+                @if($user->role == 4)
                 <li>
                     @if(!empty($kelas_walkel))
                         {{ $kelas_walkel }}
                     @else
-                        Kelas belum ditentukan.
+                        <b class="tw-text-red-400">Kelas belum ditentukan.</b>
                     @endif
                 </li>
                 @endif
