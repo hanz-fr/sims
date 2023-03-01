@@ -323,7 +323,7 @@ class MutasiMasukController extends Controller
             
             ]);
 
-        } catch (\Exception $e) {
+        } catch (\Exception) {
             
             return back()->with('warning', 'Terjadi kesalahan, tidak dapat mengekspor data');
 
@@ -367,7 +367,7 @@ class MutasiMasukController extends Controller
             
             ]);
 
-        } catch (\Exception $e) {
+        } catch (\Exception) {
             
             return back()->with('warning', 'Terjadi kesalahan, tidak dapat mengekspor data');
 
@@ -397,7 +397,7 @@ class MutasiMasukController extends Controller
                 'masuk_ke' => $masuk_ke
             ]);
 
-        } catch (\Exception $e) {
+        } catch (\Exception) {
             
             return back()->with('warning', 'Terjadi kesalahan, tidak dapat mengekspor data');
 

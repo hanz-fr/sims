@@ -136,7 +136,7 @@ class KelasController extends Controller
         // check if there is kelas with inputed walikelas nip.
         if($kelas_occupied->status == 'success') {
 
-            return redirect('/admin/kelas/create')->with('error', 'Sudah ada kelas dengan walikelas tersebut');
+            return redirect('/admin/kelas/create')->with('warning', 'Sudah ada kelas dengan walikelas tersebut');
 
         }
 
@@ -203,7 +203,7 @@ class KelasController extends Controller
 
         } else {
 
-            return redirect("/admin/kelas/edit/{$id}")->with('error', 'Terjadi Kesalahan');
+            return redirect("/admin/kelas/edit/{$id}")->with('warning', 'Terjadi Kesalahan');
 
         }
 

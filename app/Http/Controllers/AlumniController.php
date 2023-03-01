@@ -199,7 +199,7 @@ class AlumniController extends Controller
             
             ]);
 
-        } catch (\Exception $e) {
+        } catch (\Exception) {
 
             return back()->with('warning', 'Terjadi kesalahan, tidak dapat mengekspor data');
         }
@@ -229,7 +229,7 @@ class AlumniController extends Controller
                 'TglKe' => $tahun_ke
             ]);
 
-        } catch (\Exception $e) {
+        } catch (\Exception) {
 
             return back()->with('warning', 'Terjadi kesalahan, tidak dapat mengekspor data');
         }
@@ -265,7 +265,7 @@ class AlumniController extends Controller
             
             ]);
 
-        } catch (\Exception $e) {
+        } catch (\Exception) {
 
             return back()->with('warning', 'Terjadi kesalahan, tidak dapat mengekspor data');
         }

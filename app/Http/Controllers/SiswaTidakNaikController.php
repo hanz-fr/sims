@@ -112,7 +112,7 @@ class SiswaTidakNaikController extends Controller
             
             ]);
 
-        } catch (\Exception $e) {
+        } catch (\Exception) {
 
             return back()->with('warning', 'Terjadi kesalahan, tidak dapat mengekspor data');
 
@@ -157,7 +157,7 @@ class SiswaTidakNaikController extends Controller
             
             ]);
 
-        } catch (\Exception $e) {
+        } catch (\Exception) {
 
             return back()->with('warning', 'Terjadi kesalahan, tidak dapat mengekspor data');
 
@@ -190,7 +190,7 @@ class SiswaTidakNaikController extends Controller
                 'TglKe' => $getDibuatTglKe   
             ]);
 
-        } catch (\Exception $e) {
+        } catch (\Exception) {
 
             return back()->with('warning', 'Terjadi kesalahan, tidak dapat mengekspor data');
 

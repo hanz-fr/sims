@@ -173,7 +173,7 @@ class MutasiKeluarController extends Controller
 
         } else {
 
-            return redirect('/create-mutasi-keluar')->with('error', 'Siswa dengan NIS tersebut tidak terdaftar.');
+            return redirect('/create-mutasi-keluar')->with('warning', 'Siswa dengan NIS tersebut tidak terdaftar.');
 
         }
 
@@ -340,7 +340,7 @@ class MutasiKeluarController extends Controller
             
             ]);
 
-        } catch (\Exception $e) {
+        } catch (\Exception) {
             
             return back()->with('warning', 'Terjadi kesalahan, tidak dapat mengekspor data');
 
@@ -385,7 +385,7 @@ class MutasiKeluarController extends Controller
             
             ]);
 
-        } catch (\Exception $e) {
+        } catch (\Exception) {
             
             return back()->with('warning', 'Terjadi kesalahan, tidak dapat mengekspor data');
 
@@ -415,7 +415,7 @@ class MutasiKeluarController extends Controller
                 'keluar_ke' => $keluar_ke
             ]);
 
-        } catch (\Exception $e) {
+        } catch (\Exception) {
             
             return back()->with('warning', 'Terjadi kesalahan, tidak dapat mengekspor data');
 

@@ -405,7 +405,7 @@ class RekapNilaiController extends Controller
                     'raport06' => json_decode($raport06)->rows,
                 ]);
     
-            } catch (\Exception $e) {
+            } catch (\Exception) {
                 
                 return back()->with('warning', 'Terjadi kesalahan, tidak dapat mengekspor data');
     
@@ -469,7 +469,7 @@ class RekapNilaiController extends Controller
                 
                 ]);
     
-            } catch (\Exception $e) {
+            } catch (\Exception) {
                 
                 return back()->with('warning', 'Terjadi kesalahan, tidak dapat mengekspor data');
     
@@ -508,7 +508,7 @@ class RekapNilaiController extends Controller
                 
                 ]);
     
-            } catch (\Exception $e) {
+            } catch (\Exception) {
                 
                 return back()->with('warning', 'Terjadi kesalahan, tidak dapat mengekspor data');
     

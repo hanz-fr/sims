@@ -93,7 +93,7 @@ class RekapJumlahSiswaController extends Controller
             ]);
 
 
-        } catch (\Exception $e) {
+        } catch (\Exception) {
             
             return back()->with('warning', 'Terjadi kesalahan, tidak dapat mengekspor data');
 
@@ -120,7 +120,7 @@ class RekapJumlahSiswaController extends Controller
                 'kelas12' => json_decode($kelas12)->result
             ]);
 
-        } catch (\Exception $e) {
+        } catch (\Exception) {
 
             return back()->with('warning', 'Terjadi kesalahan, tidak dapat mengekspor data');
 

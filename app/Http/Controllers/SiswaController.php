@@ -225,7 +225,7 @@ class SiswaController extends Controller
                 'activityDesc' => "$user->nama mengexport data induk dengan tipe file PDF."
             ]);
 
-        } catch (\Exception $e) {
+        } catch (\Exception) {
 
             return back()->with('warning','Terjadi kesalahan, tidak dapat mengekspor data.');
 
@@ -248,7 +248,7 @@ class SiswaController extends Controller
                 'siswa' => json_decode($response)->data->rows
             ]);
 
-        } catch (\Exception $e) {
+        } catch (\Exception) {
 
             return back()->with('warning','Terjadi kesalahan, tidak dapat mengekspor data.');
 
@@ -280,7 +280,7 @@ class SiswaController extends Controller
             
             ]);
 
-        } catch (\Exception $e) {
+        } catch (\Exception) {
 
             return back()->with('warning','Terjadi kesalahan, tidak dapat mengekspor data.');
 
@@ -690,53 +690,53 @@ class SiswaController extends Controller
             
             foreach ( $row_range as $row ) {
     
-                        $response = Http::post("{$this->api_url}/siswa", [
-                            'nis_siswa'                   => $sheet->getCell( 'B' . $row )->getValue(),
-                            'nisn_siswa'                  => $sheet->getCell( 'C' . $row )->getValue(),
-                            'nama_siswa'                  => $sheet->getCell( 'D' . $row )->getValue(),
-                            'KelasId'                     => $sheet->getCell( 'E' . $row )->getValue(),
-                            'email_siswa'                 => $sheet->getCell( 'F' . $row )->getValue(),
-                            'no_telp_siswa'               => $sheet->getCell( 'G' . $row )->getValue(),
-                            'alamat_siswa'                => $sheet->getCell( 'H' . $row )->getValue(),
-                            'tmp_lahir'                   => $sheet->getCell( 'I' . $row )->getValue(),
-                            'tgl_lahir'                   => $sheet->getCell( 'J' . $row )->getValue(),
-                            'jenis_kelamin'               => $sheet->getCell( 'K' . $row )->getValue(),
-                            'agama'                       => $sheet->getCell( 'L' . $row )->getValue(),
-                            'anak_ke'                     => $sheet->getCell( 'M' . $row )->getValue(),
-                            'status'                      => $sheet->getCell( 'N' . $row )->getValue(),
-                            'no_ijazah_smp'               => $sheet->getCell( 'O' . $row )->getValue(),
-                            'thn_ijazah_smp'              => $sheet->getCell( 'P' . $row )->getValue(),
-                            'no_skhun_smp'                => $sheet->getCell( 'Q' . $row )->getValue(),
-                            'thn_skhun_smp'               => $sheet->getCell( 'R' . $row )->getValue(),
-                            'sekolah_asal'                => $sheet->getCell( 'S' . $row )->getValue(),
-                            'alamat_sekolah_asal'         => $sheet->getCell( 'T' . $row )->getValue(),
-                            'diterima_di_kelas'           => $sheet->getCell( 'U' . $row )->getValue(),
-                            'semester_diterima'           => $sheet->getCell( 'V' . $row )->getValue(),
-                            'tgl_diterima'                => $sheet->getCell( 'W' . $row )->getValue(),
-                            'status_siswa'                => $sheet->getCell( 'X' . $row )->getValue(),
-                            'no_ijazah_smk'               => $sheet->getCell( 'Y' . $row )->getValue(),
-                            'nama_ayah'                   => $sheet->getCell( 'Z' . $row )->getValue(),
-                            'nama_ibu'                    => $sheet->getCell( 'AA' . $row )->getValue(),
-                            'alamat_ortu'                 => $sheet->getCell( 'AB' . $row )->getValue(),
-                            'no_telp_ortu'                => $sheet->getCell( 'AC' . $row )->getValue(),
-                            'email_ortu'                  => $sheet->getCell( 'AD' . $row )->getValue(),
-                            'nama_wali'                   => $sheet->getCell( 'AE' . $row )->getValue(),
-                            'alamat_wali'                 => $sheet->getCell( 'AF' . $row )->getValue(),
-                            'no_telp_wali'                => $sheet->getCell( 'AG' . $row )->getValue(),
-                            'pekerjaan_wali'              => $sheet->getCell( 'AH' . $row )->getValue(),
-                            'tgl_meninggalkan_sekolah'    => $sheet->getCell( 'AI' . $row )->getValue(),
-                            'alasan_meninggalkan_sekolah' => $sheet->getCell( 'AJ' . $row )->getValue(),
-                            'berat_badan'                 => $sheet->getCell( 'AK' . $row )->getValue(),
-                            'tinggi_badan'                => $sheet->getCell( 'AL' . $row )->getValue(),
-                            'lingkar_kepala'              => $sheet->getCell( 'AM' . $row )->getValue(),
-                            'golongan_darah'              => $sheet->getCell( 'AN' . $row )->getValue(),
-                            'isAlumni'                    => $sheet->getCell( 'AO' . $row )->getValue(),
-                            'angkatan'                    => $sheet->getCell( 'AP' . $row )->getValue()
-                        ]);
+                $response = Http::post("{$this->api_url}/siswa", [
+                    'nis_siswa'                   => $sheet->getCell( 'B' . $row )->getValue(),
+                    'nisn_siswa'                  => $sheet->getCell( 'C' . $row )->getValue(),
+                    'nama_siswa'                  => $sheet->getCell( 'D' . $row )->getValue(),
+                    'KelasId'                     => $sheet->getCell( 'E' . $row )->getValue(),
+                    'email_siswa'                 => $sheet->getCell( 'F' . $row )->getValue(),
+                    'no_telp_siswa'               => $sheet->getCell( 'G' . $row )->getValue(),
+                    'alamat_siswa'                => $sheet->getCell( 'H' . $row )->getValue(),
+                    'tmp_lahir'                   => $sheet->getCell( 'I' . $row )->getValue(),
+                    'tgl_lahir'                   => $sheet->getCell( 'J' . $row )->getValue(),
+                    'jenis_kelamin'               => $sheet->getCell( 'K' . $row )->getValue(),
+                    'agama'                       => $sheet->getCell( 'L' . $row )->getValue(),
+                    'anak_ke'                     => $sheet->getCell( 'M' . $row )->getValue(),
+                    'status'                      => $sheet->getCell( 'N' . $row )->getValue(),
+                    'no_ijazah_smp'               => $sheet->getCell( 'O' . $row )->getValue(),
+                    'thn_ijazah_smp'              => $sheet->getCell( 'P' . $row )->getValue(),
+                    'no_skhun_smp'                => $sheet->getCell( 'Q' . $row )->getValue(),
+                    'thn_skhun_smp'               => $sheet->getCell( 'R' . $row )->getValue(),
+                    'sekolah_asal'                => $sheet->getCell( 'S' . $row )->getValue(),
+                    'alamat_sekolah_asal'         => $sheet->getCell( 'T' . $row )->getValue(),
+                    'diterima_di_kelas'           => $sheet->getCell( 'U' . $row )->getValue(),
+                    'semester_diterima'           => $sheet->getCell( 'V' . $row )->getValue(),
+                    'tgl_diterima'                => $sheet->getCell( 'W' . $row )->getValue(),
+                    'status_siswa'                => $sheet->getCell( 'X' . $row )->getValue(),
+                    'no_ijazah_smk'               => $sheet->getCell( 'Y' . $row )->getValue(),
+                    'nama_ayah'                   => $sheet->getCell( 'Z' . $row )->getValue(),
+                    'nama_ibu'                    => $sheet->getCell( 'AA' . $row )->getValue(),
+                    'alamat_ortu'                 => $sheet->getCell( 'AB' . $row )->getValue(),
+                    'no_telp_ortu'                => $sheet->getCell( 'AC' . $row )->getValue(),
+                    'email_ortu'                  => $sheet->getCell( 'AD' . $row )->getValue(),
+                    'nama_wali'                   => $sheet->getCell( 'AE' . $row )->getValue(),
+                    'alamat_wali'                 => $sheet->getCell( 'AF' . $row )->getValue(),
+                    'no_telp_wali'                => $sheet->getCell( 'AG' . $row )->getValue(),
+                    'pekerjaan_wali'              => $sheet->getCell( 'AH' . $row )->getValue(),
+                    'tgl_meninggalkan_sekolah'    => $sheet->getCell( 'AI' . $row )->getValue(),
+                    'alasan_meninggalkan_sekolah' => $sheet->getCell( 'AJ' . $row )->getValue(),
+                    'berat_badan'                 => $sheet->getCell( 'AK' . $row )->getValue(),
+                    'tinggi_badan'                => $sheet->getCell( 'AL' . $row )->getValue(),
+                    'lingkar_kepala'              => $sheet->getCell( 'AM' . $row )->getValue(),
+                    'golongan_darah'              => $sheet->getCell( 'AN' . $row )->getValue(),
+                    'isAlumni'                    => $sheet->getCell( 'AO' . $row )->getValue(),
+                    'angkatan'                    => $sheet->getCell( 'AP' . $row )->getValue()
+                ]);
 
-                        $startcount++;
+                $startcount++;
     
-                        // $response->throw();
+                // $response->throw();
                 }
 
                 if (json_decode($response)->status === 'error') {
@@ -757,7 +757,7 @@ class SiswaController extends Controller
     
                 }
                             
-        } catch (\Exception $e) {
+        } catch (\Exception) {
 
             return back()->with('warning','Terjadi kesalahan, tidak dapat mengimpor data.');
 
@@ -800,7 +800,7 @@ class SiswaController extends Controller
                 'activityDesc' => "$user->nama mengekspor data siswa dengan tipe file PDF."
             ]);
 
-        } catch (\Exception $e) {
+        } catch (\Exception) {
 
             return back()->with('warning','Terjadi kesalahan, tidak dapat mengekspor data.');
 
@@ -827,7 +827,7 @@ class SiswaController extends Controller
                 'tgl_lahir_siswa' => $tgl_lahir_siswa,
             ]);
 
-        } catch (\Exception $e) {
+        } catch (\Exception) {
 
             return back()->with('warning','Terjadi kesalahan, tidak dapat mengekspor data.');
 
@@ -859,7 +859,7 @@ class SiswaController extends Controller
             
             ]);
 
-        } catch (\Exception $e) {
+        } catch (\Exception) {
 
             return back()->with('warning','Terjadi kesalahan, tidak dapat mengekspor data.');
 

@@ -102,11 +102,11 @@ class UserController extends Controller
         $user = User::where('token', $token)->first();
 
         if (!$user){
-            return redirect()->route('profile')->with('error', 'Invalid URL');
+            return redirect()->route('profile')->with('warning', 'Invalid URL');
         } else {
 
             if ($user->email_verified_at) {
-                return redirect()->route('profile')->with('error', 'Email sudah terverifikasi');
+                return redirect()->route('profile')->with('warning', 'Email sudah terverifikasi');
             } else {
                 $user->update([
                     'email_verified_at' => Carbon::now()
@@ -162,7 +162,7 @@ class UserController extends Controller
             Auth::setRememberDuration(43200); // equivalent to 1 month
         endif;
   
-        return redirect("login")->with('error', 'Detail login tidak valid!');
+        return redirect("login")->with('warning', 'Detail login tidak valid!');
     }
 
 
@@ -269,15 +269,15 @@ class UserController extends Controller
         ]);
 
         if(!Hash::check($request->old_password, auth()->user()->password)) {
-            return back()->with('error', 'Kata Sandi lama tidak cocok!');
+            return back()->with('warning', 'Kata Sandi lama tidak cocok!');
         }
 
         if(strcmp($request->old_password, $request->new_password) === 0) {
-            return back()->with('error', 'Kata sandi baru tidak bisa sama dengan yang lama!');
+            return back()->with('warning', 'Kata sandi baru tidak bisa sama dengan yang lama!');
         }
 
-        if(strcmp($request->new_password, $request->new_password_confirmation) === 0) {
-            return back()->with('error', 'Konfimasi kata sandi harus cocok!');
+        if(strcmp($request->new_password, $request->new_password_confirmation)) {
+            return back()->with('warning', 'Konfimasi kata sandi harus cocok!');
         }
         
         $user = User::find(auth()->user()->id);
@@ -287,7 +287,7 @@ class UserController extends Controller
         if ($user->save()) {
             return back()->with('success', 'Kata Sandi berhasil diubah!');
         } else {
-            return back()->with('error', 'Kata Sandi gagal diubah!');
+            return back()->with('warning', 'Kata Sandi gagal diubah!');
         }
 
 
@@ -335,7 +335,7 @@ class UserController extends Controller
                 'status' => 'message'
             ]);
         } else {
-            return redirect("login")->with('error', 'Email anda belum terverifikasi!');
+            return redirect("login")->with('warning', 'Email anda belum terverifikasi!');
         }
 
       }
@@ -364,10 +364,10 @@ class UserController extends Controller
         if ($user) {
             $user['password'] = Hash::make($request->password);
             $user->save();
-            return redirect()->route('login')->with('success', 'Password has been changed');
+            return redirect()->route('login')->with('success', 'Kata sandi berhasil diubah');
         }
 
-        return redirect()->route('update.password')->with('error', 'Failed! something went wrong');
+        return redirect()->route('update.password')->with('warning', 'Terjadi kesalahan, gagal mengubah kata sandi');
 
     }
 
