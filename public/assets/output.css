@@ -3476,6 +3476,11 @@ video {
   color: rgb(59 144 145 / var(--tw-text-opacity));
 }
 
+.tw-text-red-400 {
+  --tw-text-opacity: 1;
+  color: rgb(248 113 113 / var(--tw-text-opacity));
+}
+
 .tw-text-slate-400 {
   --tw-text-opacity: 1;
   color: rgb(148 163 184 / var(--tw-text-opacity));
@@ -3534,11 +3539,6 @@ video {
 .tw-text-\[\#f0d897\] {
   --tw-text-opacity: 1;
   color: rgb(240 216 151 / var(--tw-text-opacity));
-}
-
-.tw-text-red-400 {
-  --tw-text-opacity: 1;
-  color: rgb(248 113 113 / var(--tw-text-opacity));
 }
 
 .tw-text-gray-300 {
@@ -4431,6 +4431,11 @@ input[type="checkbox"]:checked {
 .hover\:tw-bg-kuning-500:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(255 193 7 / var(--tw-bg-opacity));
+}
+
+.hover\:tw-bg-sims-new-400:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(83 176 189 / var(--tw-bg-opacity));
 }
 
 .hover\:tw-bg-danger-700:hover {
