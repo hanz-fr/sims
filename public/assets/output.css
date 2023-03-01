@@ -4433,6 +4433,11 @@ input[type="checkbox"]:checked {
   background-color: rgb(255 193 7 / var(--tw-bg-opacity));
 }
 
+.hover\:tw-bg-sims-new-400:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(83 176 189 / var(--tw-bg-opacity));
+}
+
 .hover\:tw-bg-danger-700:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(193 20 20 / var(--tw-bg-opacity));
