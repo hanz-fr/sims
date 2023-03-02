@@ -301,36 +301,82 @@
                                         </svg>
                                         <span class="tw-sr-only">Close modal</span>
                                     </button>
-                                    <form action="/alumni-print" method="">
-                                        @csrf
-                                        <div class="tw-p-6">
-                                            <div
-                                                class="tw-text-gray-400 tw-font-satoshi tw-text-center tw-font-semibold tw-text-lg">
-                                                Cetak Data</div>
-                                            <div class="tw-flex tw-gap-3 tw-justify-between tw-mt-5 tw-mx-5">
-                                                <div>
-                                                    <div
-                                                        class="tw-text-xs tw-mb-2 tw-font-satoshi tw-font-normal tw-text-gray-400">
-                                                        Dari tanggal</div>
-                                                    <input class="input-data tw-text-xs tw-font-satoshi" id="dibuatTglDari"
-                                                        name="dibuatTglDari" type="date" placeholder="dd/mm/yyyy"
-                                                        @if (isset($_GET['dibuatTglDari'])) value="{{ $_GET['dibuatTglDari'] }}" @endif>
-                                                </div>
-                                                <div>
-                                                    <div
-                                                        class="tw-text-xs tw-mb-2 tw-font-satoshi tw-font-normal tw-text-gray-400">
-                                                        Ke tanggal</div>
-                                                    <input class="input-data tw-text-xs tw-font-satoshi" id="dibuatTglKe"
-                                                        name="dibuatTglKe" type="date" placeholder="dd/mm/yyyy"
-                                                        @if (isset($_GET['dibuatTglKe'])) value="{{ $_GET['dibuatTglKe'] }}" @endif>
-                                                </div>
+                                    <div class="tw-p-6">
+                                        <div
+                                            class="tw-mb-8 tw-mt-5 tw-flex tw-justify-center tw-text-2xl tw-font-semibold tw-text-sims-new-500">
+                                            Ekspor Print
+                                        </div>
+                                        <form
+                                            action="/alumni-print/{{ $_GET['jurusan'] }}/{{ $_GET['angkatan'] }}?page=@if (!empty($_GET['page'])) {{ $_GET['page'] }} @endif&perPage=100"
+                                            method="" class="tw-flex tw-flex-col">
+                                            <div class="tw-flex tw-justify-center tw-mb-4">
+                                                <div
+                                                    class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">
+                                                    Ekspor</div>
+
+                                                <input name="perPage"
+                                                    @if (!empty($_GET['perPage'])) value="{{ $_GET['perPage'] }}" @endif
+                                                    type="number"
+                                                    class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block">
+
+                                                <div
+                                                    class="tw-my-auto tw-ml-2 tw-font-satoshi tw-font-normal tw-text-lg tw-text-basic-700">
+                                                    data</div>
                                             </div>
+
+                                            <div class="tw-flex tw-justify-center tw-mb-3">
+                                                <div
+                                                    class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">
+                                                    Page</div>
+                                                <input type="number" name="page"
+                                                    @if (!empty($_GET['page'])) value="{{ $_GET['page'] }}" @endif
+                                                    class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block">
+                                            </div>
+
+                                            <input name="angkatan" type="hidden" value="{{ $_GET['angkatan'] }}">
+
+                                            @if (isset($_GET['search']))
+                                                <input name="search" value="{{ $_GET['search'] }}" type="hidden">
+                                            @endif
+
+                                            @if (isset($_GET['nis_siswa']))
+                                                <input name="nis_siswa" value="{{ $_GET['nis_siswa'] }}" type="hidden">
+                                            @endif
+                                            @if (isset($_GET['nisn_siswa']))
+                                                <input name="nisn_siswa" value="{{ $_GET['nisn_siswa'] }}" type="hidden">
+                                            @endif
+                                            @if (isset($_GET['nama_siswa']))
+                                                <input name="nama_siswa" value="{{ $_GET['nama_siswa'] }}" type="hidden">
+                                            @endif
+                                            @if (isset($_GET['jenis_kelamin']))
+                                                <input name="jenis_kelamin" value="{{ $_GET['jenis_kelamin'] }}"
+                                                    type="hidden">
+                                            @endif
+                                            @if (isset($_GET['KelasId']))
+                                                <input name="KelasId" value="{{ $_GET['KelasId'] }}" type="hidden">
+                                            @endif
+                                            @if (isset($_GET['sort_by']))
+                                                <input name="sort_by" value="{{ $_GET['sort_by'] }}" type="hidden">
+                                            @endif
+                                            @if (isset($_GET['sort']))
+                                                <input name="sort" value="{{ $_GET['sort'] }}" type="hidden">
+                                            @endif
+                                            @if (isset($_GET['dibuatTglDari']))
+                                                <input name="dibuatTglDari" value="{{ $_GET['dibuatTglDari'] }}"
+                                                    type="hidden">
+                                            @endif
+                                            @if (isset($_GET['dibuatTglKe']))
+                                                <input name="dibuatTglKe" value="{{ $_GET['dibuatTglKe'] }}" type="hidden">
+                                            @endif
+                                            @if (isset($_GET['thn_ajaran']))
+                                                <input name="thn_ajaran" value="{{ $_GET['thn_ajaran'] }}" type="hidden">
+                                            @endif
                                             <div class="tw-flex tw-justify-center tw-mt-3">
                                                 <button type="submit"
-                                                    class="tw-w-full tw-rounded-lg tw-mx-3 tw-font-satoshi tw-text-white tw-text-sm tw-font-medium tw-mb-2 tw-py-2 tw-bg-sims-new-500 hover:tw-bg-sims-new-600 tw-transition-all tw-ease-in-out">Cetak</button>
+                                                    class="tw-text-white tw-bg-sims-new-500 hover:tw-bg-sims-new-700 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-sims-new-600 tw-font-medium tw-rounded-lg tw-text-sm tw-inline-flex tw-items-center tw-py-2.5 tw-text-center tw-mr-2 tw-px-6">Ekspor</button>
                                             </div>
-                                        </div>
-                                    </form>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -354,36 +400,84 @@
                                         </svg>
                                         <span class="tw-sr-only">Close modal</span>
                                     </button>
-                                    <form action="/alumni-excel" method="">
-                                        @csrf
-                                        <div class="tw-p-6">
-                                            <div
-                                                class="tw-text-gray-400 tw-font-satoshi tw-text-center tw-font-semibold tw-text-lg">
-                                                Ekspor Data ke Excel</div>
-                                            <div class="tw-flex tw-gap-3 tw-justify-between tw-mt-5 tw-mx-5">
-                                                <div>
-                                                    <div
-                                                        class="tw-text-xs tw-mb-2 tw-font-satoshi tw-font-normal tw-text-gray-400">
-                                                        Dari tanggal</div>
-                                                    <input class="input-data tw-text-xs tw-font-satoshi" id="dibuatTglDari"
-                                                        name="dibuatTglDari" type="date" placeholder="dd/mm/yyyy"
-                                                        @if (isset($_GET['dibuatTglDari'])) value="{{ $_GET['dibuatTglDari'] }}" @endif>
-                                                </div>
-                                                <div>
-                                                    <div
-                                                        class="tw-text-xs tw-mb-2 tw-font-satoshi tw-font-normal tw-text-gray-400">
-                                                        Ke tanggal</div>
-                                                    <input class="input-data tw-text-xs tw-font-satoshi" id="dibuatTglKe"
-                                                        name="dibuatTglKe" type="date" placeholder="dd/mm/yyyy"
-                                                        @if (isset($_GET['dibuatTglKe'])) value="{{ $_GET['dibuatTglKe'] }}" @endif>
-                                                </div>
+                                    <div class="tw-p-6">
+                                        <div
+                                            class="tw-mb-8 tw-mt-5 tw-flex tw-justify-center tw-text-2xl tw-font-semibold tw-text-sims-new-500">
+                                            Ekspor Excel
+                                        </div>
+                                        <form
+                                            action="/alumni-excel/{{ $_GET['jurusan'] }}/{{ $_GET['angkatan'] }}?page=@if (!empty($_GET['page'])) {{ $_GET['page'] }} @endif&perPage=100"
+                                            method="" class="tw-flex tw-flex-col">
+                                            <div class="tw-flex tw-justify-center tw-mb-4">
+                                                <div
+                                                    class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">
+                                                    Ekspor</div>
+
+                                                <input name="perPage"
+                                                    @if (!empty($_GET['perPage'])) value="{{ $_GET['perPage'] }}" @endif
+                                                    type="number"
+                                                    class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block">
+
+                                                <div
+                                                    class="tw-my-auto tw-ml-2 tw-font-satoshi tw-font-normal tw-text-lg tw-text-basic-700">
+                                                    data</div>
                                             </div>
+
+                                            <div class="tw-flex tw-justify-center tw-mb-3">
+                                                <div
+                                                    class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">
+                                                    Page</div>
+                                                <input type="number" name="page"
+                                                    @if (!empty($_GET['page'])) value="{{ $_GET['page'] }}" @endif
+                                                    class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block">
+                                            </div>
+
+                                            <input name="angkatan" type="hidden" value="{{ $_GET['angkatan'] }}">
+
+                                            @if (isset($_GET['search']))
+                                                <input name="search" value="{{ $_GET['search'] }}" type="hidden">
+                                            @endif
+
+                                            @if (isset($_GET['nis_siswa']))
+                                                <input name="nis_siswa" value="{{ $_GET['nis_siswa'] }}" type="hidden">
+                                            @endif
+                                            @if (isset($_GET['nisn_siswa']))
+                                                <input name="nisn_siswa" value="{{ $_GET['nisn_siswa'] }}" type="hidden">
+                                            @endif
+                                            @if (isset($_GET['nama_siswa']))
+                                                <input name="nama_siswa" value="{{ $_GET['nama_siswa'] }}" type="hidden">
+                                            @endif
+                                            @if (isset($_GET['jenis_kelamin']))
+                                                <input name="jenis_kelamin" value="{{ $_GET['jenis_kelamin'] }}"
+                                                    type="hidden">
+                                            @endif
+                                            @if (isset($_GET['KelasId']))
+                                                <input name="KelasId" value="{{ $_GET['KelasId'] }}" type="hidden">
+                                            @endif
+                                            @if (isset($_GET['sort_by']))
+                                                <input name="sort_by" value="{{ $_GET['sort_by'] }}" type="hidden">
+                                            @endif
+                                            @if (isset($_GET['sort']))
+                                                <input name="sort" value="{{ $_GET['sort'] }}" type="hidden">
+                                            @endif
+                                            @if (isset($_GET['dibuatTglDari']))
+                                                <input name="dibuatTglDari" value="{{ $_GET['dibuatTglDari'] }}"
+                                                    type="hidden">
+                                            @endif
+                                            @if (isset($_GET['dibuatTglKe']))
+                                                <input name="dibuatTglKe" value="{{ $_GET['dibuatTglKe'] }}"
+                                                    type="hidden">
+                                            @endif
+                                            @if (isset($_GET['thn_ajaran']))
+                                                <input name="thn_ajaran" value="{{ $_GET['thn_ajaran'] }}" type="hidden">
+                                            @endif
+
                                             <div class="tw-flex tw-justify-center tw-mt-3">
                                                 <button type="submit"
-                                                    class="tw-w-full tw-rounded-lg tw-mx-3 tw-font-satoshi tw-text-white tw-text-sm tw-font-medium tw-mb-2 tw-py-2 tw-bg-sims-new-500 hover:tw-bg-sims-new-600 tw-transition-all tw-ease-in-out">Ekspor</button>
+                                                    class="tw-text-white tw-bg-sims-new-500 hover:tw-bg-sims-new-700 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-sims-new-600 tw-font-medium tw-rounded-lg tw-text-sm tw-inline-flex tw-items-center tw-py-2.5 tw-text-center tw-mr-2 tw-px-6">Ekspor</button>
                                             </div>
-                                        </div>
-                                    </form>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -406,36 +500,84 @@
                                         </svg>
                                         <span class="tw-sr-only">Close modal</span>
                                     </button>
-                                    <form action="/alumni-pdf" method="">
-                                        @csrf
-                                        <div class="tw-p-6">
-                                            <div
-                                                class="tw-text-gray-400 tw-font-satoshi tw-text-center tw-font-semibold tw-text-lg">
-                                                Ekspor Data ke PDF</div>
-                                            <div class="tw-flex tw-gap-3 tw-justify-between tw-mt-5 tw-mx-5">
-                                                <div>
-                                                    <div
-                                                        class="tw-text-xs tw-mb-2 tw-font-satoshi tw-font-normal tw-text-gray-400">
-                                                        Dari tanggal</div>
-                                                    <input class="input-data tw-text-xs tw-font-satoshi" id="dibuatTglDari"
-                                                        name="dibuatTglDari" type="date" placeholder="dd/mm/yyyy"
-                                                        @if (isset($_GET['dibuatTglDari'])) value="{{ $_GET['dibuatTglDari'] }}" @endif>
-                                                </div>
-                                                <div>
-                                                    <div
-                                                        class="tw-text-xs tw-mb-2 tw-font-satoshi tw-font-normal tw-text-gray-400">
-                                                        Ke tanggal</div>
-                                                    <input class="input-data tw-text-xs tw-font-satoshi" id="dibuatTglKe"
-                                                        name="dibuatTglKe" type="date" placeholder="dd/mm/yyyy"
-                                                        @if (isset($_GET['dibuatTglKe'])) value="{{ $_GET['dibuatTglKe'] }}" @endif>
-                                                </div>
+                                    <div class="tw-p-6">
+                                        <div
+                                            class="tw-mb-8 tw-mt-5 tw-flex tw-justify-center tw-text-2xl tw-font-semibold tw-text-sims-new-500">
+                                            Ekspor PDF
+                                        </div>
+                                        <form
+                                            action="/alumni-pdf/{{ $_GET['jurusan'] }}/{{ $_GET['angkatan'] }}?page=@if (!empty($_GET['page'])) {{ $_GET['page'] }} @endif&perPage=100"
+                                            method="" class="tw-flex tw-flex-col">
+                                            <div class="tw-flex tw-justify-center tw-mb-4">
+                                                <div
+                                                    class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">
+                                                    Ekspor</div>
+
+                                                <input name="perPage"
+                                                    @if (!empty($_GET['perPage'])) value="{{ $_GET['perPage'] }}" @endif
+                                                    type="number"
+                                                    class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block">
+
+                                                <div
+                                                    class="tw-my-auto tw-ml-2 tw-font-satoshi tw-font-normal tw-text-lg tw-text-basic-700">
+                                                    data</div>
                                             </div>
+
+                                            <div class="tw-flex tw-justify-center tw-mb-3">
+                                                <div
+                                                    class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">
+                                                    Page</div>
+                                                <input type="number" name="page"
+                                                    @if (!empty($_GET['page'])) value="{{ $_GET['page'] }}" @endif
+                                                    class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block">
+                                            </div>
+
+                                            <input name="angkatan" type="hidden" value="{{ $_GET['angkatan'] }}">
+
+                                            @if (isset($_GET['search']))
+                                                <input name="search" value="{{ $_GET['search'] }}" type="hidden">
+                                            @endif
+
+                                            @if (isset($_GET['nis_siswa']))
+                                                <input name="nis_siswa" value="{{ $_GET['nis_siswa'] }}" type="hidden">
+                                            @endif
+                                            @if (isset($_GET['nisn_siswa']))
+                                                <input name="nisn_siswa" value="{{ $_GET['nisn_siswa'] }}" type="hidden">
+                                            @endif
+                                            @if (isset($_GET['nama_siswa']))
+                                                <input name="nama_siswa" value="{{ $_GET['nama_siswa'] }}" type="hidden">
+                                            @endif
+                                            @if (isset($_GET['jenis_kelamin']))
+                                                <input name="jenis_kelamin" value="{{ $_GET['jenis_kelamin'] }}"
+                                                    type="hidden">
+                                            @endif
+                                            @if (isset($_GET['KelasId']))
+                                                <input name="KelasId" value="{{ $_GET['KelasId'] }}" type="hidden">
+                                            @endif
+                                            @if (isset($_GET['sort_by']))
+                                                <input name="sort_by" value="{{ $_GET['sort_by'] }}" type="hidden">
+                                            @endif
+                                            @if (isset($_GET['sort']))
+                                                <input name="sort" value="{{ $_GET['sort'] }}" type="hidden">
+                                            @endif
+                                            @if (isset($_GET['dibuatTglDari']))
+                                                <input name="dibuatTglDari" value="{{ $_GET['dibuatTglDari'] }}"
+                                                    type="hidden">
+                                            @endif
+                                            @if (isset($_GET['dibuatTglKe']))
+                                                <input name="dibuatTglKe" value="{{ $_GET['dibuatTglKe'] }}"
+                                                    type="hidden">
+                                            @endif
+                                            @if (isset($_GET['thn_ajaran']))
+                                                <input name="thn_ajaran" value="{{ $_GET['thn_ajaran'] }}" type="hidden">
+                                            @endif
+
                                             <div class="tw-flex tw-justify-center tw-mt-3">
                                                 <button type="submit"
-                                                    class="tw-w-full tw-rounded-lg tw-mx-3 tw-font-satoshi tw-text-white tw-text-sm tw-font-medium tw-mb-2 tw-py-2 tw-bg-sims-new-500 hover:tw-bg-sims-new-600 tw-transition-all tw-ease-in-out">Ekspor</button>
+                                                    class="tw-text-white tw-bg-sims-new-500 hover:tw-bg-sims-new-700 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-sims-new-600 tw-font-medium tw-rounded-lg tw-text-sm tw-inline-flex tw-items-center tw-py-2.5 tw-text-center tw-mr-2 tw-px-6">Ekspor</button>
                                             </div>
-                                        </div>
-                                    </form>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -739,40 +881,83 @@
                                         </svg>
                                         <span class="tw-sr-only">Close modal</span>
                                     </button>
-                                    <form action="/alumni-print" method="">
-                                        @csrf
-                                        <div class="tw-p-6">
-                                            <div
-                                                class="tw-text-gray-400 tw-font-satoshi tw-text-center tw-font-semibold tw-text-lg">
-                                                Cetak Data</div>
-                                            <div class="tw-flex tw-gap-3 tw-justify-between tw-mt-5 tw-mx-5">
-                                                <div>
-                                                    <div
-                                                        class="tw-text-xs tw-mb-2 tw-font-satoshi tw-font-normal tw-text-gray-400">
-                                                        Dari tanggal</div>
-                                                    <input class="input-data tw-text-xs tw-font-satoshi" id="dibuatTglDari"
-                                                        name="dibuatTglDari" type="date" placeholder="dd/mm/yyyy"
-                                                        @if (isset($_GET['dibuatTglDari'])) value="{{ $_GET['dibuatTglDari'] }}" @endif>
-                                                </div>
-                                                <div>
-                                                    <div
-                                                        class="tw-text-xs tw-mb-2 tw-font-satoshi tw-font-normal tw-text-gray-400">
-                                                        Ke tanggal</div>
-                                                    <input class="input-data tw-text-xs tw-font-satoshi" id="dibuatTglKe"
-                                                        name="dibuatTglKe" type="date" placeholder="dd/mm/yyyy"
-                                                        @if (isset($_GET['dibuatTglKe'])) value="{{ $_GET['dibuatTglKe'] }}" @endif>
-                                                </div>
+                                    <div class="tw-p-6">
+                                        <div
+                                            class="tw-mb-8 tw-mt-5 tw-flex tw-justify-center tw-text-2xl tw-font-semibold tw-text-sims-new-500">
+                                            Ekspor Print
+                                        </div>
+                                        <form action="/alumni-print" method="" class="tw-flex tw-flex-col">
+                                            <div class="tw-flex tw-justify-center tw-mb-4">
+                                                <div
+                                                    class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">
+                                                    Ekspor</div>
+
+                                                <input name="perPage"
+                                                    @if (!empty($_GET['perPage'])) value="{{ $_GET['perPage'] }}" @endif
+                                                    type="number"
+                                                    class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block">
+
+                                                <div
+                                                    class="tw-my-auto tw-ml-2 tw-font-satoshi tw-font-normal tw-text-lg tw-text-basic-700">
+                                                    data</div>
                                             </div>
+
+                                            <div class="tw-flex tw-justify-center tw-mb-3">
+                                                <div
+                                                    class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">
+                                                    Page</div>
+                                                <input type="number" name="page"
+                                                    @if (!empty($_GET['page'])) value="{{ $_GET['page'] }}" @endif
+                                                    class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block">
+                                            </div>
+
+                                            @if (isset($_GET['search']))
+                                                <input name="search" value="{{ $_GET['search'] }}" type="hidden">
+                                            @endif
+
+                                            @if (isset($_GET['nis_siswa']))
+                                                <input name="nis_siswa" value="{{ $_GET['nis_siswa'] }}" type="hidden">
+                                            @endif
+                                            @if (isset($_GET['nisn_siswa']))
+                                                <input name="nisn_siswa" value="{{ $_GET['nisn_siswa'] }}" type="hidden">
+                                            @endif
+                                            @if (isset($_GET['nama_siswa']))
+                                                <input name="nama_siswa" value="{{ $_GET['nama_siswa'] }}" type="hidden">
+                                            @endif
+                                            @if (isset($_GET['jenis_kelamin']))
+                                                <input name="jenis_kelamin" value="{{ $_GET['jenis_kelamin'] }}"
+                                                    type="hidden">
+                                            @endif
+                                            @if (isset($_GET['KelasId']))
+                                                <input name="KelasId" value="{{ $_GET['KelasId'] }}" type="hidden">
+                                            @endif
+                                            @if (isset($_GET['sort_by']))
+                                                <input name="sort_by" value="{{ $_GET['sort_by'] }}" type="hidden">
+                                            @endif
+                                            @if (isset($_GET['sort']))
+                                                <input name="sort" value="{{ $_GET['sort'] }}" type="hidden">
+                                            @endif
+                                            @if (isset($_GET['dibuatTglDari']))
+                                                <input name="dibuatTglDari" value="{{ $_GET['dibuatTglDari'] }}"
+                                                    type="hidden">
+                                            @endif
+                                            @if (isset($_GET['dibuatTglKe']))
+                                                <input name="dibuatTglKe" value="{{ $_GET['dibuatTglKe'] }}"
+                                                    type="hidden">
+                                            @endif
+                                            @if (isset($_GET['thn_ajaran']))
+                                                <input name="thn_ajaran" value="{{ $_GET['thn_ajaran'] }}" type="hidden">
+                                            @endif
+
                                             <div class="tw-flex tw-justify-center tw-mt-3">
                                                 <button type="submit"
-                                                    class="tw-w-full tw-rounded-lg tw-mx-3 tw-font-satoshi tw-text-white tw-text-sm tw-font-medium tw-mb-2 tw-py-2 tw-bg-sims-new-500 hover:tw-bg-sims-new-600 tw-transition-all tw-ease-in-out">Cetak</button>
+                                                    class="tw-text-white tw-bg-sims-new-500 hover:tw-bg-sims-new-700 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-sims-new-300 tw-font-medium tw-rounded-lg tw-text-sm tw-inline-flex tw-items-center tw-py-2.5 tw-text-center tw-mr-2 tw-px-6">Ekspor</button>
                                             </div>
-                                        </div>
-                                    </form>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        {{-- <button id="copy_btn" title="Copy Data" type="button" value="copy"><i class="fa-solid fa-copy btn-export"></i></button> --}}
 
                         <button type="button" data-modal-toggle="export-excel" title="Ekspor ke excel"><i
                                 class="fa-solid fa-file-excel btn-export"></i></button>
@@ -792,36 +977,80 @@
                                         </svg>
                                         <span class="tw-sr-only">Close modal</span>
                                     </button>
-                                    <form action="/alumni-excel" method="">
-                                        @csrf
-                                        <div class="tw-p-6">
-                                            <div
-                                                class="tw-text-gray-400 tw-font-satoshi tw-text-center tw-font-semibold tw-text-lg">
-                                                Ekspor Data ke Excel</div>
-                                            <div class="tw-flex tw-gap-3 tw-justify-between tw-mt-5 tw-mx-5">
-                                                <div>
-                                                    <div
-                                                        class="tw-text-xs tw-mb-2 tw-font-satoshi tw-font-normal tw-text-gray-400">
-                                                        Dari tanggal</div>
-                                                    <input class="input-data tw-text-xs tw-font-satoshi" id="dibuatTglDari"
-                                                        name="dibuatTglDari" type="date" placeholder="dd/mm/yyyy"
-                                                        @if (isset($_GET['dibuatTglDari'])) value="{{ $_GET['dibuatTglDari'] }}" @endif>
-                                                </div>
-                                                <div>
-                                                    <div
-                                                        class="tw-text-xs tw-mb-2 tw-font-satoshi tw-font-normal tw-text-gray-400">
-                                                        Ke tanggal</div>
-                                                    <input class="input-data tw-text-xs tw-font-satoshi" id="dibuatTglKe"
-                                                        name="dibuatTglKe" type="date" placeholder="dd/mm/yyyy"
-                                                        @if (isset($_GET['dibuatTglKe'])) value="{{ $_GET['dibuatTglKe'] }}" @endif>
-                                                </div>
+                                    <div class="tw-p-6">
+                                        <div
+                                            class="tw-mb-8 tw-mt-5 tw-flex tw-justify-center tw-text-2xl tw-font-semibold tw-text-sims-new-500">
+                                            Ekspor Excel
+                                        </div>
+                                        <form action="/alumni-excel" method="" class="tw-flex tw-flex-col">
+                                            <div class="tw-flex tw-justify-center tw-mb-4">
+                                                <div
+                                                    class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">
+                                                    Ekspor</div>
+
+                                                <input name="perPage"
+                                                    @if (!empty($_GET['perPage'])) value="{{ $_GET['perPage'] }}" @endif
+                                                    type="number"
+                                                    class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block">
+
+                                                <div
+                                                    class="tw-my-auto tw-ml-2 tw-font-satoshi tw-font-normal tw-text-lg tw-text-basic-700">
+                                                    data</div>
                                             </div>
+
+                                            <div class="tw-flex tw-justify-center tw-mb-3">
+                                                <div
+                                                    class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">
+                                                    Page</div>
+                                                <input type="number" name="page"
+                                                    @if (!empty($_GET['page'])) value="{{ $_GET['page'] }}" @endif
+                                                    class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block">
+                                            </div>
+
+                                            @if (isset($_GET['search']))
+                                                <input name="search" value="{{ $_GET['search'] }}" type="hidden">
+                                            @endif
+
+                                            @if (isset($_GET['nis_siswa']))
+                                                <input name="nis_siswa" value="{{ $_GET['nis_siswa'] }}" type="hidden">
+                                            @endif
+                                            @if (isset($_GET['nisn_siswa']))
+                                                <input name="nisn_siswa" value="{{ $_GET['nisn_siswa'] }}" type="hidden">
+                                            @endif
+                                            @if (isset($_GET['nama_siswa']))
+                                                <input name="nama_siswa" value="{{ $_GET['nama_siswa'] }}" type="hidden">
+                                            @endif
+                                            @if (isset($_GET['jenis_kelamin']))
+                                                <input name="jenis_kelamin" value="{{ $_GET['jenis_kelamin'] }}"
+                                                    type="hidden">
+                                            @endif
+                                            @if (isset($_GET['KelasId']))
+                                                <input name="KelasId" value="{{ $_GET['KelasId'] }}" type="hidden">
+                                            @endif
+                                            @if (isset($_GET['sort_by']))
+                                                <input name="sort_by" value="{{ $_GET['sort_by'] }}" type="hidden">
+                                            @endif
+                                            @if (isset($_GET['sort']))
+                                                <input name="sort" value="{{ $_GET['sort'] }}" type="hidden">
+                                            @endif
+                                            @if (isset($_GET['dibuatTglDari']))
+                                                <input name="dibuatTglDari" value="{{ $_GET['dibuatTglDari'] }}"
+                                                    type="hidden">
+                                            @endif
+                                            @if (isset($_GET['dibuatTglKe']))
+                                                <input name="dibuatTglKe" value="{{ $_GET['dibuatTglKe'] }}"
+                                                    type="hidden">
+                                            @endif
+                                            @if (isset($_GET['thn_ajaran']))
+                                                <input name="thn_ajaran" value="{{ $_GET['thn_ajaran'] }}" type="hidden">
+                                            @endif
+
                                             <div class="tw-flex tw-justify-center tw-mt-3">
                                                 <button type="submit"
-                                                    class="tw-w-full tw-rounded-lg tw-mx-3 tw-font-satoshi tw-text-white tw-text-sm tw-font-medium tw-mb-2 tw-py-2 tw-bg-sims-new-500 hover:tw-bg-sims-new-600 tw-transition-all tw-ease-in-out">Ekspor</button>
+                                                    class="tw-text-white tw-bg-sims-new-500 hover:tw-bg-sims-new-700 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-sims-new-300 tw-font-medium tw-rounded-lg tw-text-sm tw-inline-flex tw-items-center tw-py-2.5 tw-text-center tw-mr-2 tw-px-6">Ekspor</button>
                                             </div>
-                                        </div>
-                                    </form>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -844,36 +1073,80 @@
                                         </svg>
                                         <span class="tw-sr-only">Close modal</span>
                                     </button>
-                                    <form action="/alumni-pdf" method="">
-                                        @csrf
-                                        <div class="tw-p-6">
-                                            <div
-                                                class="tw-text-gray-400 tw-font-satoshi tw-text-center tw-font-semibold tw-text-lg">
-                                                Ekspor Data PDF</div>
-                                            <div class="tw-flex tw-gap-3 tw-justify-between tw-mt-5 tw-mx-5">
-                                                <div>
-                                                    <div
-                                                        class="tw-text-xs tw-mb-2 tw-font-satoshi tw-font-normal tw-text-gray-400">
-                                                        Dari tanggal</div>
-                                                    <input class="input-data tw-text-xs tw-font-satoshi" id="dibuatTglDari"
-                                                        name="dibuatTglDari" type="date" placeholder="dd/mm/yyyy"
-                                                        @if (isset($_GET['dibuatTglDari'])) value="{{ $_GET['dibuatTglDari'] }}" @endif>
-                                                </div>
-                                                <div>
-                                                    <div
-                                                        class="tw-text-xs tw-mb-2 tw-font-satoshi tw-font-normal tw-text-gray-400">
-                                                        Ke tanggal</div>
-                                                    <input class="input-data tw-text-xs tw-font-satoshi" id="dibuatTglKe"
-                                                        name="dibuatTglKe" type="date" placeholder="dd/mm/yyyy"
-                                                        @if (isset($_GET['dibuatTglKe'])) value="{{ $_GET['dibuatTglKe'] }}" @endif>
-                                                </div>
+                                    <div class="tw-p-6">
+                                        <div
+                                            class="tw-mb-8 tw-mt-5 tw-flex tw-justify-center tw-text-2xl tw-font-semibold tw-text-sims-new-500">
+                                            Ekspor PDF
+                                        </div>
+                                        <form action="/alumni-pdf" method="" class="tw-flex tw-flex-col">
+                                            <div class="tw-flex tw-justify-center tw-mb-4">
+                                                <div
+                                                    class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">
+                                                    Ekspor</div>
+
+                                                <input name="perPage"
+                                                    @if (!empty($_GET['perPage'])) value="{{ $_GET['perPage'] }}" @endif
+                                                    type="number"
+                                                    class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block">
+
+                                                <div
+                                                    class="tw-my-auto tw-ml-2 tw-font-satoshi tw-font-normal tw-text-lg tw-text-basic-700">
+                                                    data</div>
                                             </div>
+
+                                            <div class="tw-flex tw-justify-center tw-mb-3">
+                                                <div
+                                                    class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">
+                                                    Page</div>
+                                                <input type="number" name="page"
+                                                    @if (!empty($_GET['page'])) value="{{ $_GET['page'] }}" @endif
+                                                    class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block">
+                                            </div>
+
+                                            @if (isset($_GET['search']))
+                                                <input name="search" value="{{ $_GET['search'] }}" type="hidden">
+                                            @endif
+
+                                            @if (isset($_GET['nis_siswa']))
+                                                <input name="nis_siswa" value="{{ $_GET['nis_siswa'] }}" type="hidden">
+                                            @endif
+                                            @if (isset($_GET['nisn_siswa']))
+                                                <input name="nisn_siswa" value="{{ $_GET['nisn_siswa'] }}" type="hidden">
+                                            @endif
+                                            @if (isset($_GET['nama_siswa']))
+                                                <input name="nama_siswa" value="{{ $_GET['nama_siswa'] }}" type="hidden">
+                                            @endif
+                                            @if (isset($_GET['jenis_kelamin']))
+                                                <input name="jenis_kelamin" value="{{ $_GET['jenis_kelamin'] }}"
+                                                    type="hidden">
+                                            @endif
+                                            @if (isset($_GET['KelasId']))
+                                                <input name="KelasId" value="{{ $_GET['KelasId'] }}" type="hidden">
+                                            @endif
+                                            @if (isset($_GET['sort_by']))
+                                                <input name="sort_by" value="{{ $_GET['sort_by'] }}" type="hidden">
+                                            @endif
+                                            @if (isset($_GET['sort']))
+                                                <input name="sort" value="{{ $_GET['sort'] }}" type="hidden">
+                                            @endif
+                                            @if (isset($_GET['dibuatTglDari']))
+                                                <input name="dibuatTglDari" value="{{ $_GET['dibuatTglDari'] }}"
+                                                    type="hidden">
+                                            @endif
+                                            @if (isset($_GET['dibuatTglKe']))
+                                                <input name="dibuatTglKe" value="{{ $_GET['dibuatTglKe'] }}"
+                                                    type="hidden">
+                                            @endif
+                                            @if (isset($_GET['thn_ajaran']))
+                                                <input name="thn_ajaran" value="{{ $_GET['thn_ajaran'] }}" type="hidden">
+                                            @endif
+
                                             <div class="tw-flex tw-justify-center tw-mt-3">
                                                 <button type="submit"
-                                                    class="tw-w-full tw-rounded-lg tw-mx-3 tw-font-satoshi tw-text-white tw-text-sm tw-font-medium tw-mb-2 tw-py-2 tw-bg-sims-new-500 hover:tw-bg-sims-new-600 tw-transition-all tw-ease-in-out">Ekspor</button>
+                                                    class="tw-text-white tw-bg-sims-new-500 hover:tw-bg-sims-new-700 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-sims-new-300 tw-font-medium tw-rounded-lg tw-text-sm tw-inline-flex tw-items-center tw-py-2.5 tw-text-center tw-mr-2 tw-px-6">Ekspor</button>
                                             </div>
-                                        </div>
-                                    </form>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -30,20 +30,34 @@ class AlumniExport implements FromView, ShouldAutoSize, WithEvents, WithColumnWi
     {
         $request = request();
 
+        $page = $request->page;
+        $perPage = $request->perPage;
+        $search = $request->search;
+        $nis_siswa = $request->nis_siswa;
+        $nisn_siswa = $request->nisn_siswa;
+        $nama_siswa = $request->nama_siswa;
+        $jenis_kelamin = $request->jenis_kelamin;
+        $KelasId = $request->KelasId;
+        $sort_by = $request->sort_by;
+        $sort = $request->sort;
         $dibuatTglDari = $request->dibuatTglDari;
         $dibuatTglKe = $request->dibuatTglKe;
+        $angkatan = $request->angkatan;
+        $jurusan = $request->jurusan;
 
-        $tahun_dari = Carbon::parse($dibuatTglDari)->translatedFormat('Y');
-        $tahun_ke = Carbon::parse($dibuatTglDari)->translatedFormat('Y');
+        if(is_null($request->jurusan)) {
+        
+            $alumni = Http::get("{$this->url}/dashboard/alumni/all?page={$page}&perPage={$perPage}&search={$search}&nis_siswa={$nis_siswa}&nisn_siswa={$nisn_siswa}&nama_siswa={$nama_siswa}&jenis_kelamin={$jenis_kelamin}&KelasId={$KelasId}&sort_by={$sort_by}&sort={$sort}&dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}");
 
-        $alumni = Http::get("{$this->url}/dashboard/alumni/all?page={$request->page}&perPage={$request->perPage}&dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}&angkatan={$request->angkatan}");
+        } else {
+
+            $alumni = Http::get("{$this->url}/dashboard/alumni/get/{$jurusan}/{$angkatan}?page={$page}&perPage={$perPage}&search={$search}&nis_siswa={$nis_siswa}&nisn_siswa={$nisn_siswa}&nama_siswa={$nama_siswa}&jenis_kelamin={$jenis_kelamin}&KelasId={$KelasId}&sort_by={$sort_by}&sort={$sort}&dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}");
+
+        }
 
         return view('induk.pdf.alumni', [
             'alumni' => json_decode($alumni)->data->rows,
-            'dibuatTglDari' => $dibuatTglDari,
-            'dibuatTglKe' => $dibuatTglKe,
-            'TglDari' => $tahun_dari,
-            'TglKe' => $tahun_ke,
+            'angkatan' => $angkatan,
         ]);
     }
 
