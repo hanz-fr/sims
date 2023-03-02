@@ -15,7 +15,9 @@ return new class extends Migration
     public function up()
     {
         DB::statement("CREATE VIEW user_data AS
-                        SELECT *     
+                        SELECT users.id, users.nip, users.nama, 
+                        users.email, users.email_verified_at, 
+                        users.role, users.is_admin, users.created_at
                         FROM users");
     }
 
