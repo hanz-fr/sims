@@ -64,7 +64,7 @@
 
                         </div>
                     @endforeach
-                    <div class="tw-flex tw-border-2 tw-mx-10 tw-my-16 tw-border-slate-200"></div>
+                    <div class="tw-flex tw-mx-10 tw-border-b-2 tw-my-16 tw-border-slate-200"></div>
                 @endif
 
                 {{-- kalau misal ada aktivitas di hari kemarin dan seterusnya --}}
