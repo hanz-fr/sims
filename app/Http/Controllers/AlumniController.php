@@ -162,7 +162,7 @@ class AlumniController extends Controller
     }
 
 
-
+    /* Export Alumni ke file PDF */
     public function exportAlumniPDF(Request $request) {
 
         abort_if(Gate::denies('manage-alumni'), 403);
@@ -182,14 +182,16 @@ class AlumniController extends Controller
         $angkatan = $request->angkatan;
         $jurusan = $request->jurusan;
 
+
         if(is_null($request->jurusan)) {
 
-            $response = Http::get("{$this->api_url}/dashboard/alumni/all?page={$page}&perPage={$perPage}&search={$search}&nis_siswa={$nis_siswa}&nisn_siswa={$nisn_siswa}&nama_siswa={$nama_siswa}&jenis_kelamin={$jenis_kelamin}&KelasId={$KelasId}&sort_by={$sort_by}&sort={$sort}&dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}");
+            $response = Http::get("{$this->api_url}/dashboard/alumni/all?page={$page}&perPage={$perPage}&search={$search}&nis_siswa={$nis_siswa}&nisn_siswa={$nisn_siswa}&nama_siswa={$nama_siswa}&jenis_kelamin={$jenis_kelamin}&KelasId={$KelasId}&sort_by={$sort_by}&sort={$sort}&dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}&angkatan={$angkatan}");
 
             try {
 
                 $pdf = PDF::loadView('induk.pdf.alumni', [
                     'alumni' => json_decode($response)->data->rows,
+                    'jurusan' => $jurusan,
                     'angkatan' => $angkatan,
                 ])->setPaper('A4_PLUS_PAPER', 'potrait');
     
@@ -214,12 +216,13 @@ class AlumniController extends Controller
             
         } else {
 
-            $response = Http::get("{$this->api_url}/dashboard/alumni/get/{$jurusan}/{$angkatan}?page={$page}&perPage={$perPage}&search={$search}&nis_siswa={$nis_siswa}&nisn_siswa={$nisn_siswa}&nama_siswa={$nama_siswa}&jenis_kelamin={$jenis_kelamin}&KelasId={$KelasId}&sort_by={$sort_by}&sort={$sort}&dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}");
+            $response = Http::get("{$this->api_url}/dashboard/alumni/get/{$jurusan}/{$angkatan}?page={$page}&perPage={$perPage}&search={$search}&nis_siswa={$nis_siswa}&nisn_siswa={$nisn_siswa}&nama_siswa={$nama_siswa}&jenis_kelamin={$jenis_kelamin}&KelasId={$KelasId}&sort_by={$sort_by}&sort={$sort}&dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}");            $response = Http::get("{$this->api_url}/dashboard/alumni/get/{$jurusan}/{$angkatan}?page={$page}&perPage={$perPage}&search={$search}&nis_siswa={$nis_siswa}&nisn_siswa={$nisn_siswa}&nama_siswa={$nama_siswa}&jenis_kelamin={$jenis_kelamin}&KelasId={$KelasId}&sort_by={$sort_by}&sort={$sort}&dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}");
 
             try {
 
                 $pdf = PDF::loadView('induk.pdf.alumni', [
                     'alumni' => json_decode($response)->data->rows,
+                    'jurusan' => $jurusan,
                     'angkatan' => $angkatan,
                 ])->setPaper('A4_PLUS_PAPER', 'potrait');
     
@@ -246,6 +249,7 @@ class AlumniController extends Controller
     }
 
     
+    /* Print Data Alumni */
     public function printAlumni(Request $request) {
 
         abort_if(Gate::denies('manage-alumni'), 403);
@@ -268,12 +272,13 @@ class AlumniController extends Controller
 
         if(is_null($request->jurusan)) {
 
-            $response = Http::get("{$this->api_url}/dashboard/alumni/all?page={$page}&perPage={$perPage}&search={$search}&nis_siswa={$nis_siswa}&nisn_siswa={$nisn_siswa}&nama_siswa={$nama_siswa}&jenis_kelamin={$jenis_kelamin}&KelasId={$KelasId}&sort_by={$sort_by}&sort={$sort}&dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}");
+            $response = Http::get("{$this->api_url}/dashboard/alumni/all?page={$page}&perPage={$perPage}&search={$search}&nis_siswa={$nis_siswa}&nisn_siswa={$nisn_siswa}&nama_siswa={$nama_siswa}&jenis_kelamin={$jenis_kelamin}&KelasId={$KelasId}&sort_by={$sort_by}&sort={$sort}&dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}&angkatan={$angkatan}");
 
             try {
 
                 return view('induk.pdf.alumni', [
                     'alumni' => json_decode($response)->data->rows,
+                    'jurusan' => $jurusan,
                     'angkatan' => $angkatan,
                 ]);
     
@@ -291,6 +296,7 @@ class AlumniController extends Controller
 
                 return view('induk.pdf.alumni', [
                     'alumni' => json_decode($response)->data->rows,
+                    'jurusan' => $jurusan,
                     'angkatan' => $angkatan,
                 ]);
 
@@ -303,6 +309,7 @@ class AlumniController extends Controller
     }
 
 
+    /* Export Alumni ke file Excel */
     public function exportAlumniExcel(Request $request) {
 
         abort_if(Gate::denies('manage-alumni'), 403);

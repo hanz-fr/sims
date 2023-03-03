@@ -32,11 +32,11 @@
 
     <h5 style="margin-bottom: -15px">DATA ALUMNI</h5>
     <h5>SMK NEGERI 11 BANDUNG</h5>
-    @if ($angkatan)
-    <h5 style="margin-top: -15px">ANGKATAN
-            {{ $angkatan }}
+    
+    <h5 style="margin-top: -15px">
+        @if ($jurusan) JURUSAN {{ $jurusan }} @endif 
+        @if ($angkatan) ANGKATAN {{ $angkatan }} @endif
     </h5>
-    @endif
 
     <hr style="margin-bottom: 25px; border: solid 1px black">
 

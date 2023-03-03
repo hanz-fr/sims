@@ -142,12 +142,12 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
     Route::get('/data-alumni', [AlumniController::class, 'viewAlumni']);
     Route::get('/data-alumni/all', [AlumniController::class, 'viewAlumni']);
 
+    Route::get('/alumni-pdf/all', [AlumniController::class, 'exportAlumniPDF']);
     Route::get('/alumni-pdf', [AlumniController::class, 'exportAlumniPDF']);
-    Route::get('/alumni-pdf/{jurusan}/{angkatan}', [AlumniController::class, 'exportAlumniPDF']);
+    Route::get('/alumni-print/all', [AlumniController::class, 'printAlumni']);
     Route::get('/alumni-print', [AlumniController::class, 'printAlumni']);
-    Route::get('/alumni-print/{jurusan}/{angkatan}', [AlumniController::class, 'printAlumni']);
+    Route::get('/alumni-excel/all', [AlumniController::class, 'exportAlumniExcel']);
     Route::get('/alumni-excel', [AlumniController::class, 'exportAlumniExcel']);
-    Route::get('/alumni-excel/{jurusan}/{angkatan}', [AlumniController::class, 'exportAlumniExcel']);
 
 
     Route::get('/select-jurusan-alumni', [AlumniController::class, 'selectJurusanAlumni']);

@@ -47,7 +47,7 @@ class AlumniExport implements FromView, ShouldAutoSize, WithEvents, WithColumnWi
 
         if(is_null($request->jurusan)) {
         
-            $alumni = Http::get("{$this->url}/dashboard/alumni/all?page={$page}&perPage={$perPage}&search={$search}&nis_siswa={$nis_siswa}&nisn_siswa={$nisn_siswa}&nama_siswa={$nama_siswa}&jenis_kelamin={$jenis_kelamin}&KelasId={$KelasId}&sort_by={$sort_by}&sort={$sort}&dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}");
+            $alumni = Http::get("{$this->url}/dashboard/alumni/all?page={$page}&perPage={$perPage}&search={$search}&nis_siswa={$nis_siswa}&nisn_siswa={$nisn_siswa}&nama_siswa={$nama_siswa}&jenis_kelamin={$jenis_kelamin}&KelasId={$KelasId}&sort_by={$sort_by}&sort={$sort}&dibuatTglDari={$dibuatTglDari}&dibuatTglKe={$dibuatTglKe}&angkatan={$angkatan}");
 
         } else {
 

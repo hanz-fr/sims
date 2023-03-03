@@ -307,7 +307,7 @@
                                             Ekspor Print
                                         </div>
                                         <form
-                                            action="/alumni-print/{{ $_GET['jurusan'] }}/{{ $_GET['angkatan'] }}?page=@if (!empty($_GET['page'])) {{ $_GET['page'] }} @endif&perPage=100"
+                                            action="/alumni-print?jurusan={{ $_GET['jurusan'] }}&angkatan={{ $_GET['angkatan'] }}&search=@if (isset($_GET['search'])) {{ $_GET['search'] }} @endif&nis_siswa=@isset($_GET['nis_siswa']){{ $_GET['nis_siswa'] }}@endisset&nisn_siswa=@isset($_GET['nisn_siswa']){{ $_GET['nisn_siswa'] }}@endisset&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&jenis_kelamin=@isset($_GET['jenis_kelamin']){{ $_GET['jenis_kelamin'] }}@endisset&KelasId=@isset($_GET['KelasId']){{ $_GET['KelasId'] }}@endisset&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset&dibuatTglDari=@isset($_GET['dibuatTglDari']){{ $_GET['dibuatTglDari'] }}@endisset&dibuatTglKe=@isset($_GET['dibuatTglKe']){{ $_GET['dibuatTglKe'] }}@endisset&thn_ajaran=@isset($_GET['thn_ajaran']){{ $_GET['thn_ajaran'] }}@endisset"
                                             method="" class="tw-flex tw-flex-col">
                                             <div class="tw-flex tw-justify-center tw-mb-4">
                                                 <div
@@ -332,6 +332,8 @@
                                                     @if (!empty($_GET['page'])) value="{{ $_GET['page'] }}" @endif
                                                     class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block">
                                             </div>
+
+                                            <input name="jurusan" type="hidden" value="{{ $_GET['jurusan'] }}">
 
                                             <input name="angkatan" type="hidden" value="{{ $_GET['angkatan'] }}">
 
@@ -380,7 +382,6 @@
                                 </div>
                             </div>
                         </div>
-                        {{-- <button id="copy_btn" title="Copy Data" type="button" value="copy"><i class="fa-solid fa-copy btn-export"></i></button> --}}
 
                         <button type="button" data-modal-toggle="export-excel" title="Ekspor ke excel"><i
                                 class="fa-solid fa-file-excel btn-export"></i></button>
@@ -406,7 +407,7 @@
                                             Ekspor Excel
                                         </div>
                                         <form
-                                            action="/alumni-excel/{{ $_GET['jurusan'] }}/{{ $_GET['angkatan'] }}?page=@if (!empty($_GET['page'])) {{ $_GET['page'] }} @endif&perPage=100"
+                                            action="/alumni-excel?jurusan={{ $_GET['jurusan'] }}&angkatan={{ $_GET['angkatan'] }}&page=@if (!empty($_GET['page'])) {{ $_GET['page'] }} @endif&perPage=10&search=@if (isset($_GET['search'])) {{ $_GET['search'] }} @endif&nis_siswa=@isset($_GET['nis_siswa']){{ $_GET['nis_siswa'] }}@endisset&nisn_siswa=@isset($_GET['nisn_siswa']){{ $_GET['nisn_siswa'] }}@endisset&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&jenis_kelamin=@isset($_GET['jenis_kelamin']){{ $_GET['jenis_kelamin'] }}@endisset&KelasId=@isset($_GET['KelasId']){{ $_GET['KelasId'] }}@endisset&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset&dibuatTglDari=@isset($_GET['dibuatTglDari']){{ $_GET['dibuatTglDari'] }}@endisset&dibuatTglKe=@isset($_GET['dibuatTglKe']){{ $_GET['dibuatTglKe'] }}@endisset&thn_ajaran=@isset($_GET['thn_ajaran']){{ $_GET['thn_ajaran'] }}@endisset"
                                             method="" class="tw-flex tw-flex-col">
                                             <div class="tw-flex tw-justify-center tw-mb-4">
                                                 <div
@@ -431,6 +432,8 @@
                                                     @if (!empty($_GET['page'])) value="{{ $_GET['page'] }}" @endif
                                                     class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block">
                                             </div>
+
+                                            <input name="jurusan" type="hidden" value="{{ $_GET['jurusan'] }}">
 
                                             <input name="angkatan" type="hidden" value="{{ $_GET['angkatan'] }}">
 
@@ -506,7 +509,7 @@
                                             Ekspor PDF
                                         </div>
                                         <form
-                                            action="/alumni-pdf/{{ $_GET['jurusan'] }}/{{ $_GET['angkatan'] }}?page=@if (!empty($_GET['page'])) {{ $_GET['page'] }} @endif&perPage=100"
+                                            action="/alumni-pdf?jurusan={{ $_GET['jurusan'] }}&angkatan={{ $_GET['angkatan'] }}&page=@if (!empty($_GET['page'])) {{ $_GET['page'] }} @endif&perPage=10&search=@if (isset($_GET['search'])) {{ $_GET['search'] }} @endif&nis_siswa=@isset($_GET['nis_siswa']){{ $_GET['nis_siswa'] }}@endisset&nisn_siswa=@isset($_GET['nisn_siswa']){{ $_GET['nisn_siswa'] }}@endisset&nama_siswa=@isset($_GET['nama_siswa']){{ $_GET['nama_siswa'] }}@endisset&jenis_kelamin=@isset($_GET['jenis_kelamin']){{ $_GET['jenis_kelamin'] }}@endisset&KelasId=@isset($_GET['KelasId']){{ $_GET['KelasId'] }}@endisset&sort_by=@isset($_GET['sort_by']){{ $_GET['sort_by'] }}@endisset&sort=@isset($_GET['sort']){{ $_GET['sort'] }}@endisset&dibuatTglDari=@isset($_GET['dibuatTglDari']){{ $_GET['dibuatTglDari'] }}@endisset&dibuatTglKe=@isset($_GET['dibuatTglKe']){{ $_GET['dibuatTglKe'] }}@endisset&thn_ajaran=@isset($_GET['thn_ajaran']){{ $_GET['thn_ajaran'] }}@endisset"
                                             method="" class="tw-flex tw-flex-col">
                                             <div class="tw-flex tw-justify-center tw-mb-4">
                                                 <div
@@ -531,6 +534,8 @@
                                                     @if (!empty($_GET['page'])) value="{{ $_GET['page'] }}" @endif
                                                     class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block">
                                             </div>
+
+                                            <input name="jurusan" type="hidden" value="{{ $_GET['jurusan'] }}">
 
                                             <input name="angkatan" type="hidden" value="{{ $_GET['angkatan'] }}">
 
@@ -886,7 +891,7 @@
                                             class="tw-mb-8 tw-mt-5 tw-flex tw-justify-center tw-text-2xl tw-font-semibold tw-text-sims-new-500">
                                             Ekspor Print
                                         </div>
-                                        <form action="/alumni-print" method="" class="tw-flex tw-flex-col">
+                                        <form action="/alumni-print/all" method="" class="tw-flex tw-flex-col">
                                             <div class="tw-flex tw-justify-center tw-mb-4">
                                                 <div
                                                     class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">
@@ -910,6 +915,25 @@
                                                     @if (!empty($_GET['page'])) value="{{ $_GET['page'] }}" @endif
                                                     class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block">
                                             </div>
+
+                                            <select id="show-angkatan"
+                                                name="angkatan"
+                                                class="tw-text-sims-new-500 tw-text-lg tw-mb-3 hover:tw-text-white tw-font-satoshi focus:tw-ring-0 focus:tw-outline-none tw-font-medium tw-rounded-lg tw-px-4 tw-py-1 tw-ml-8 tw-text-center tw-inline-flex tw-items-center dark:tw-bg-white dark:hover:tw-bg-sims-new-500 tw-shadow-md tw-transition-all tw-ease-in-out"
+                                                style="cursor: pointer;">
+                                                <option
+                                                    value=""
+                                                    class="tw-bg-white tw-text-gray-600">- Semua Angkatan -</option>
+                                                @php $n = 2018 @endphp
+                                                @for ($i = \Carbon\Carbon::now()->year; $i > 2018; $i--)
+                                                    @while ($i != $n - 1)
+                                                    <option
+                                                        value="{{ $i }}"
+                                                        class="tw-bg-white tw-text-gray-600">Angkatan {{ $i-- }}</option>
+                                                    @endwhile
+                                                @endfor
+                                            </select>
+
+                                            {{-- <input name="angkatan" type="hidden" value="{{ $_GET['angkatan'] }}"> --}}
 
                                             @if (isset($_GET['search']))
                                                 <input name="search" value="{{ $_GET['search'] }}" type="hidden">
@@ -982,7 +1006,7 @@
                                             class="tw-mb-8 tw-mt-5 tw-flex tw-justify-center tw-text-2xl tw-font-semibold tw-text-sims-new-500">
                                             Ekspor Excel
                                         </div>
-                                        <form action="/alumni-excel" method="" class="tw-flex tw-flex-col">
+                                        <form action="/alumni-excel/all" method="" class="tw-flex tw-flex-col">
                                             <div class="tw-flex tw-justify-center tw-mb-4">
                                                 <div
                                                     class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">
@@ -1006,6 +1030,23 @@
                                                     @if (!empty($_GET['page'])) value="{{ $_GET['page'] }}" @endif
                                                     class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block">
                                             </div>
+
+                                            <select id="show-angkatan"
+                                                name="angkatan"
+                                                class="tw-text-sims-new-500 tw-text-lg tw-mb-3 hover:tw-text-white tw-font-satoshi focus:tw-ring-0 focus:tw-outline-none tw-font-medium tw-rounded-lg tw-px-4 tw-py-1 tw-ml-8 tw-text-center tw-inline-flex tw-items-center dark:tw-bg-white dark:hover:tw-bg-sims-new-500 tw-shadow-md tw-transition-all tw-ease-in-out"
+                                                style="cursor: pointer;">
+                                                <option
+                                                    value=""
+                                                    class="tw-bg-white tw-text-gray-600">- Semua Angkatan -</option>
+                                                @php $n = 2018 @endphp
+                                                @for ($i = \Carbon\Carbon::now()->year; $i > 2018; $i--)
+                                                    @while ($i != $n - 1)
+                                                    <option
+                                                        value="{{ $i }}"
+                                                        class="tw-bg-white tw-text-gray-600">Angkatan {{ $i-- }}</option>
+                                                    @endwhile
+                                                @endfor
+                                            </select>
 
                                             @if (isset($_GET['search']))
                                                 <input name="search" value="{{ $_GET['search'] }}" type="hidden">
@@ -1078,7 +1119,7 @@
                                             class="tw-mb-8 tw-mt-5 tw-flex tw-justify-center tw-text-2xl tw-font-semibold tw-text-sims-new-500">
                                             Ekspor PDF
                                         </div>
-                                        <form action="/alumni-pdf" method="" class="tw-flex tw-flex-col">
+                                        <form action="/alumni-pdf/all" method="" class="tw-flex tw-flex-col">
                                             <div class="tw-flex tw-justify-center tw-mb-4">
                                                 <div
                                                     class="tw-my-auto tw-text-basic-700 tw-mr-2 tw-font-normal tw-text-lg tw-font-satoshi">
@@ -1102,6 +1143,23 @@
                                                     @if (!empty($_GET['page'])) value="{{ $_GET['page'] }}" @endif
                                                     class="tw-px-2 tw-w-16 tw-text-sm focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-300 tw-border-gray-300 tw-peer tw-font-bold  bg-transparent tw-appearance-none tw-block">
                                             </div>
+                                            
+                                            <select id="show-angkatan"
+                                                name="angkatan"
+                                                class="tw-text-sims-new-500 tw-text-lg tw-mb-3 hover:tw-text-white tw-font-satoshi focus:tw-ring-0 focus:tw-outline-none tw-font-medium tw-rounded-lg tw-px-4 tw-py-1 tw-ml-8 tw-text-center tw-inline-flex tw-items-center dark:tw-bg-white dark:hover:tw-bg-sims-new-500 tw-shadow-md tw-transition-all tw-ease-in-out"
+                                                style="cursor: pointer;">
+                                                <option
+                                                    value=""
+                                                    class="tw-bg-white tw-text-gray-600">- Semua Angkatan -</option>
+                                                @php $n = 2018 @endphp
+                                                @for ($i = \Carbon\Carbon::now()->year; $i > 2018; $i--)
+                                                    @while ($i != $n - 1)
+                                                    <option
+                                                        value="{{ $i }}"
+                                                        class="tw-bg-white tw-text-gray-600">Angkatan {{ $i-- }}</option>
+                                                    @endwhile
+                                                @endfor
+                                            </select>
 
                                             @if (isset($_GET['search']))
                                                 <input name="search" value="{{ $_GET['search'] }}" type="hidden">
