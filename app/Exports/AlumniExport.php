@@ -18,6 +18,8 @@ class AlumniExport implements FromView, ShouldAutoSize, WithEvents, WithColumnWi
 {
     use Exportable;
 
+    private $alumni;
+
     public function __construct()
     {
         $this->url = '127.0.0.1:3000';

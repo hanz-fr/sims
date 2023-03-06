@@ -1455,14 +1455,6 @@ video {
   z-index: 50;
 }
 
-.tw-z-\[\] {
-  z-index: ;
-}
-
-.tw-z-\[99999\] {
-  z-index: 99999;
-}
-
 .tw-z-\[999999\] {
   z-index: 999999;
 }
@@ -2058,12 +2050,12 @@ video {
   height: 2.25rem;
 }
 
-.tw-h-\[138px\] {
-  height: 138px;
+.tw-h-28 {
+  height: 7rem;
 }
 
-.tw-h-1 {
-  height: 0.25rem;
+.tw-h-\[138px\] {
+  height: 138px;
 }
 
 .tw-w-full {
@@ -2202,6 +2194,10 @@ video {
 
 .tw-w-64 {
   width: 16rem;
+}
+
+.tw-w-28 {
+  width: 7rem;
 }
 
 .tw-w-11\/12 {
@@ -3894,6 +3890,70 @@ a {
     src: url(/fonts/proxima-nova/500-medium.woff) format("woff");
   }
 } */
+
+.progress-loader {
+  margin-left: 230px;
+  transform: translate(-50%, -50%);
+  width: 220px;
+  background: rgba(236, 236, 238, 0.253);
+  height: 2px;
+  border-radius: 7px;
+}
+
+.progress-bars {
+  content: "";
+  width: 1px;
+  height: 2px;
+  border-radius: 7px;
+  background: #3894a3;
+  transition: 0.5s;
+  -webkit-animation: loading1274 2s ease infinite;
+          animation: loading1274 2s ease infinite;
+}
+
+@-webkit-keyframes loading1274 {
+  0% {
+    width: 0%;
+  }
+
+  10% {
+    width: 10%;
+  }
+
+  50% {
+    width: 40%;
+  }
+
+  60% {
+    width: 60%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes loading1274 {
+  0% {
+    width: 0%;
+  }
+
+  10% {
+    width: 10%;
+  }
+
+  50% {
+    width: 40%;
+  }
+
+  60% {
+    width: 60%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
 
 .text-xxl {
   font-size: 11rem;
