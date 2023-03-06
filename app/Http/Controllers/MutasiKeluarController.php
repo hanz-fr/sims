@@ -32,7 +32,7 @@ class MutasiKeluarController extends Controller
     /* View All Mutasi Keluar */
     public function getAllMutasiKeluar(Request $request) {
 
-        abort_if(Gate::denies('manage-mutasi'), 403);
+        abort_if(Gate::denies('manage-alumni'), 403);
         
         $page = $request->page;
         $perPage = $request->perPage;
