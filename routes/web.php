@@ -272,7 +272,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['is_admin'] , ['revalidate']
 
 // Route::get('/register', [UserController::class, 'registration'])->name('register.form');
 Route::get('/login', [UserController::class, 'index'])->name('login')->middleware('guest');
-Route::post('/registeruser', [UserController::class, 'register']);
+// Route::post('/registeruser', [UserController::class, 'register']);
 Route::post('/loginuser', [UserController::class, 'authenticate']);
 Route::get('/signout', [UserController::class, 'signOut']);
 

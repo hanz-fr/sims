@@ -54,6 +54,12 @@
 
 <body>
 
+    @if(Request::is('/') && session()->has('message'))
+        <div class="preloader-wrapper tw-bg-white tw-z-[999999] tw-absolute tw-w-full tw-h-full tw-flex tw-justify-center tw-items-center">
+            <img class="tw-w-20 tw-h-20 tw-animate-bounce tw-animate-pulse" src="{{ URL::asset('assets/img/sims-new-logo.png') }}" alt="">
+        </div>
+    @endif
+
     @include('components.nav-sidebar-new')
 
     <script>
@@ -72,7 +78,11 @@
         }
     </script>
 
-
+    <script>
+        $(window).on('load', function() {
+            $('.preloader-wrapper').delay(1000).fadeOut(800);
+        });
+    </script>
 
 
     <script src="{{ URL::asset('assets/main.js') }}"></script>

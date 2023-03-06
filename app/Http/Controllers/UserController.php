@@ -154,7 +154,7 @@ class UserController extends Controller
             if (auth()->user()->is_admin == 1) {
                 return redirect()->intended('/admin')->with('success', 'Signed In');
             }else{
-                return redirect()->intended('/')->with('success', 'Signed In');
+                return redirect()->intended('/')->with('message', '');
             }
         }
 

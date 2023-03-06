@@ -668,25 +668,34 @@ class SiswaController extends Controller
     }
 
 
+    /* Import Data Siswa */
     public function importDataSiswa(Request $request) {
 
         abort_if(Gate::denies('manage-induk'), 403);
         
+        /* Validasi file yang diupload */
         $this->validate($request, [
             'uploaded_file' => 'required|file|mimes:xls,xlsx'
         ]);
 
         $the_file = $request->file('uploaded_file');
 
-
         try {
+
             $spreadsheet  = IOFactory::load($the_file->getRealPath());
             $sheet        = $spreadsheet->getActiveSheet();
+
+
+            /* menentukan batas baris dan kolom berdasarkan highest data row & column */
             $row_limit    = $sheet->getHighestDataRow();
             $column_limit = $sheet->getHighestDataColumn();
+
+
+            /* menentukan range baris dan kolom berdasarkan awal dan limit */
             $row_range    = range( 6, $row_limit );
             $column_range = range( 'B', $column_limit );
             $startcount   = 6;
+            
             
             foreach ( $row_range as $row ) {
     
