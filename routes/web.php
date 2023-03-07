@@ -209,7 +209,7 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
 
 
 /* ROUTE SUPER ADMIN */
-Route::group(['prefix' => 'admin', 'middleware' => ['is_admin'] , ['revalidate']], function () {
+Route::group(['prefix' => 'admin', 'middleware' => ['auth:web', 'revalidate']], function () {
 
 
     /* DASHBOARD */
