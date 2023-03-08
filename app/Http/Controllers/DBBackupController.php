@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Storage;
 
 class DBBackupController extends Controller
 {
@@ -12,8 +14,8 @@ class DBBackupController extends Controller
     /* GLOBAL VARIABLES */
     public function __construct()
     {
-        $this->api_url = '127.0.0.1:3000'; // Ganti link NGROK disini
-        $this->sims_url = 'http://127.0.0.1:8000'; // SIMS URL
+        $this->api_url = '127.0.0.1:3000'; 
+        $this->sims_url = 'http://127.0.0.1:8000'; 
     }
 
 
@@ -28,19 +30,35 @@ class DBBackupController extends Controller
 
 
     public function backupDB(Request $request) {
+
+        $db = $request->database;
+        $table = $request->table;
+
+        $date = Carbon::now()->toDateString();
+        $hour = Carbon::now()->format('H');
+        $minute = Carbon::now()->format('i');
+        $seconds = Carbon::now()->format('s');
+        $time = $hour.$minute.$seconds;
+        $path = public_path()."/db_backup";
+
+        $fn = $date.'_'.$time.'_'.$db.'_'.$table.'-table'.'_backup.sql'; // filename
+
+        $response = json_decode(Http::get("{$this->api_url}/dbquery/function/backupDB?db=$db&table=$table&fn=$fn&path=$path")); // backup via backend
+
+        $file = public_path()."/db_backup/$fn"; // path to the file
         
-        Http::get("{$this->api_url}/dbquery/function/backupDB");
+        if ($response->status == 'success') {
 
-        return $request;
+            sleep(2);
 
-        //PDF file is stored under project/public/download/info.pdf
-        $file = public_path(). "/db_backup";
+            return Response::download($file);
 
-        $headers = array(
-            'Content-Type: application/pdf',
-        );
+        } else {
 
-        return Response::download($file, 'filename.pdf', $headers);
+            return redirect('/admin/db/backup')->with('error', 'Terjadi kesalahan.');
+
+        }
+
         
     }
 }
