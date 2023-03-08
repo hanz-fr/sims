@@ -50,7 +50,7 @@ class MapelController extends Controller
 
             return view('admin.all-mapel.all-mapel', [
                 'title' => 'Mata Pelajaran',
-                'active' => 'database',
+                'active' => 'admin-dashboard',
                 'response' =>  json_decode($response),
                 'mapel' => json_decode($response)->data->rows,
                 'total' => json_decode($response)->data->count,
@@ -77,7 +77,7 @@ class MapelController extends Controller
 
             return view('admin.all-mapel.detail-mapel', [
                 'title' => 'Detail Mata Pelajaran',
-                'active' => 'database',
+                'active' => 'admin-dashboard',
                 'mapel' => json_decode($response)->result,
             ]);
 
@@ -101,7 +101,7 @@ class MapelController extends Controller
 
         return view('admin.all-mapel.create-mapel', [
             'title' => 'Create Mata Pelajaran',
-            'active' => 'database'
+            'active' => 'admin-dashboard'
         ]);
 
     }
@@ -114,7 +114,7 @@ class MapelController extends Controller
 
         return view('admin.all-mapel.edit-mapel', [
             'title' => 'Edit Mata Pelajaran',
-            'active' => 'database',
+            'active' => 'admin-dashboard',
             'mapel' => json_decode($response)->result,
         ]);
 

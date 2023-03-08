@@ -10,6 +10,7 @@ use App\Http\Controllers\AccountController;
 use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DbBackupController;
 use App\Http\Controllers\HelpCentreController;
 use App\Http\Controllers\RekapNilaiController;
 use App\Http\Controllers\MutasiMasukController;
@@ -265,6 +266,11 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:web', 'revalidate']], 
     Route::post('/mapel-jurusan/store', [MapelJurusanController::class, 'storeMapelJurusan']);
     Route::put('/mapel-jurusan/update/{id}', [MapelJurusanController::class, 'updateMapelJurusan']);
     Route::delete('/mapel-jurusan/delete/{id}', [MapelJurusanController::class, 'deleteMapelJurusan']);
+
+
+    /* Backup DB */
+    Route::get('/db/backup', [DBBackupController::class, 'backup_index']);
+    Route::post('/db/backup', [DBBackupController::class, 'backupDB']);
 });
 
 
