@@ -221,7 +221,7 @@
             <tr>
                 <th></th>
                 <td>a. Ayah</td>
-                <td>: {{ $siswa->nama_ayah }}</td>
+                <td>: {{ $siswa->ortu->nama_ayah }}</td>
                 <td rowspan="15" style="padding-left: 100px">
                     <div class="pas-foto">
                         <h3 style="text-align: center;">SMKN 11 <br> BANDUNG</h3>
@@ -236,22 +236,22 @@
             <tr>
                 <th></th>
                 <td>b. Ibu</td>
-                <td>: {{ $siswa->nama_ibu }}</td>
+                <td>: {{ $siswa->ortu->nama_ibu }}</td>
             </tr>
             <tr>
                 <th>13.</th>
                 <td>Alamat Orang Tua</td>
-                <td>: {{ $siswa->alamat_ortu }}</td>
+                <td>: {{ $siswa->ortu->alamat_ortu }}</td>
             </tr>
             <tr>
                 <th></th>
                 <th> </th>
-                <td>No. Telp/HP : {{ $siswa->no_telp_ortu }}</td>
+                <td>No. Telp/HP : {{ $siswa->ortu->no_telp_ortu }}</td>
             </tr>
             <tr>
                 <th></th>
                 <td>Alamat e-mail</td>
-                <td>: {{ $siswa->email_ortu }}</td>
+                <td>: {{ $siswa->ortu->email_ortu }}</td>
             </tr>
             <tr>
                 <th>14.</th>
@@ -261,22 +261,22 @@
             <tr>
                 <th></th>
                 <td>a. Nama</td>
-                <td>: {{ $siswa->nama_wali }}</td>
+                <td>: {{ $siswa->ortu->nama_wali }}</td>
             </tr>
             <tr>
                 <th></th>
                 <td>b. Alamat</td>
-                <td>: {{ $siswa->alamat_wali }}</td>
+                <td>: {{ $siswa->ortu->alamat_wali }}</td>
             </tr>
             <tr>
                 <th></th>
                 <th> </th>
-                <td>No. Telp/HP : {{ $siswa->no_telp_wali }}</td>
+                <td>No. Telp/HP : {{ $siswa->ortu->no_telp_wali }}</td>
             </tr>
             <tr>
                 <th></th>
                 <td>c. Pekerjaan</td>
-                <td>: {{ $siswa->pekerjaan_wali }}</td>
+                <td>: {{ $siswa->ortu->pekerjaan_wali }}</td>
             </tr>
             <tr>
                 <th>15.</th>

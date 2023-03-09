@@ -70,7 +70,7 @@
                 <div class="sims-text-gray-xs tw-text-red-500">{{ $message }}</div>
             @endif
             <div class="tw-flex tw-justify-end">
-                <button type="submit" class="tw-bg-sims-new-500 tw-transition-all tw-w-fit tw-text-white hover:tw-text-white hover:tw-bg-sims-new-700 tw-font-satoshi tw-rounded-lg tw-px-8 tw-py-2">
+                <button type="submit" class="tw-bg-sims-new-500 tw-transition-all tw-w-fit tw-text-white hover:tw-text-white hover:tw-bg-sims-new-700 tw-font-satoshi tw-transition-all tw-rounded-lg tw-px-8 tw-py-2">
                     Update
                 </button>
             </div>

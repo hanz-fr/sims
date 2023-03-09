@@ -156,7 +156,8 @@
 
             <div class="tw-flex tw-justify-between">
                 <div id="info-text" class="sims-heading-sm tw-animate-pulse tw-font-normal tw-my-auto tw-transition-all tw-text-slate-500"></div>
-                <button onclick="showLoader()" id="submit-btn" type="submit" class="tw-bg-sims-new-500 tw-transition-all tw-w-fit tw-text-white hover:tw-text-white hover:tw-bg-sims-new-700 tw-font-satoshi tw-rounded-lg tw-px-8 tw-py-2">
+                <button onclick="showLoader()" id="submit-btn" type="submit" class="tw-bg-sims-new-500 tw-transition-all tw-w-fit tw-text-white hover:tw-text-white hover:tw-bg-sims-new-700 tw-font-satoshi tw-transition-all tw-rounded-lg tw-px-8 tw-py-2">
+                  {{-- IGNORE THE CSS CONFLICT --}}
                   <div class="tw-inline tw-hidden" id="loading-spinner">
                     <svg aria-hidden="true" class="tw-w-5 tw-h-5 tw-my-auto tw-animate-spin tw-mr-2 tw-inline tw-text-slate-400 tw-fill-white" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>

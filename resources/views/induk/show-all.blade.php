@@ -866,7 +866,7 @@
                 <div class="tw-flex tw-my-auto">
                     @can('manage-induk')
                         <button type="button" data-modal-toggle="popup-modal"
-                            class="tw-bg-sims-new-500 tw-text-white hover:tw-text-white hover:tw-bg-sims-new-700 tw-font-satoshi tw-rounded-lg tw-px-8 tw-py-2 tw-mr-7">
+                            class="tw-bg-sims-new-500 tw-text-white hover:tw-text-white hover:tw-bg-sims-new-700 tw-font-satoshi tw-transition-all tw-rounded-lg tw-px-8 tw-py-2 tw-mr-7">
                             Tambah Data +
                         </button>
 
