@@ -54,9 +54,11 @@
 
 <body>
 
-    @if(Request::is('/') && session()->has('message'))
-        <div class="preloader-wrapper tw-bg-white tw-z-[999999] tw-absolute tw-w-full tw-h-full tw-flex tw-flex-col tw-justify-center tw-items-center">
-            <img class="tw-w-28 tw-h-28 tw-animate-bounce tw-animate-pulse" src="{{ URL::asset('assets/img/sims-new-logo.png') }}" alt="">
+    @if (Request::is('/') && session()->has('message'))
+        <div
+            class="preloader-wrapper tw-bg-white tw-z-[999999] tw-absolute tw-w-full tw-h-full tw-flex tw-flex-col tw-justify-center tw-items-center">
+            <img class="tw-w-28 tw-h-28 tw-animate-bounce tw-animate-pulse"
+                src="{{ URL::asset('assets/img/sims-new-logo.png') }}" alt="">
             <div class="tw-mt-3 progress-loader">
                 <div class="progress-bars"></div>
             </div>

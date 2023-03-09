@@ -77,7 +77,7 @@ class DashboardController extends Controller
                 'title' => 'Dashboard',
                 'active' => 'dashboard-main',
                 'message' => $message,
-                'status' => '',
+                'status' => 'message',
                 'userHistory' => $userHistory,
                 'kelas_walikelas' => $kelas,
                 'mutasi' => json_decode($response)->mutasi->count,
