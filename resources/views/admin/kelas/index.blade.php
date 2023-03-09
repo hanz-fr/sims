@@ -80,6 +80,7 @@
                         <th scope="col" class="tw-py-5 tw-px-6">Rombel</th>
                         <th scope="col" class="tw-py-5 tw-px-6">Id Jurusan</th>
                         <th scope="col" class="tw-py-5 tw-px-6">Dibuat</th>
+                        <th scope="col" class="tw-py-5 tw-px-6">NIP Walikelas</th>
                         <th scope="col" class="tw-py-5 tw-px-6">Aksi</th>
                     </tr>
                 </thead>
@@ -91,11 +92,12 @@
                         <td class="tw-p-6">{{ $k->rombel }}</td>
                         <td class="tw-p-6">{{ $k->JurusanId }}</td>
                         <td class="tw-p-6">@if($k->createdAt != null){{  \Carbon\Carbon::parse(strtotime($k->createdAt))->translatedFormat('l d F Y'); }}@endif</td>
+                        <td class="tw-p-6">{{ $k->walikelas }}</td>
                         <td class="tw-p-6">
-                            {{-- <a title="Edit Data" href="/admin/kelas/edit/{{ $k->id }}"
-                                class="tw-text-kuning-500 hover:tw-bg-kuning-500 hover:tw-text-white hover:tw-shadow-md tw-transition-all tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
+                            <a title="Edit Data" href="/admin/kelas/edit/{{ $k->id }}"
+                                class="tw-text-kuning-500 hover:tw-bg-kuning-500 hover:tw-text-white hover:tw-shadow-md tw-transition-all tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-mr-2">
                                 <i class="fa-solid fa-pen-to-square"></i></a>
-                            </a> --}}
+                            </a>
                             <a href="/admin/kelas/show/{{ $k->id }}" class="tw-text-gray-400  hover:tw-text-white hover:tw-bg-gray-400 hover:tw-shadow-md tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-w-12 tw-transition-all" title="Detail Data">
                                 <i class="fa-regular fa-eye"></i>
                             </a>

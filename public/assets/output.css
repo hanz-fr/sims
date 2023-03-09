@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.1.8 | MIT License | https://tailwindcss.com
+! tailwindcss v3.2.4 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -30,6 +30,7 @@
 2. Prevent adjustments of font size after orientation changes in iOS.
 3. Use a more readable tab size.
 4. Use the user's configured `sans` font-family by default.
+5. Use the user's configured `sans` font-feature-settings by default.
 */
 
 html {
@@ -44,6 +45,8 @@ html {
   /* 3 */
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   /* 4 */
+  font-feature-settings: normal;
+  /* 5 */
 }
 
 /*
@@ -410,59 +413,18 @@ video {
   height: auto;
 }
 
+/* Make elements with the HTML hidden attribute stay hidden by default */
+
+[hidden] {
+  display: none;
+}
+
 * {
   scrollbar-color: initial;
   scrollbar-width: initial;
 }
 
 *, ::before, ::after {
-  --tw-border-spacing-x: 0;
-  --tw-border-spacing-y: 0;
-  --tw-translate-x: 0;
-  --tw-translate-y: 0;
-  --tw-rotate: 0;
-  --tw-skew-x: 0;
-  --tw-skew-y: 0;
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
-  --tw-pan-x:  ;
-  --tw-pan-y:  ;
-  --tw-pinch-zoom:  ;
-  --tw-scroll-snap-strictness: proximity;
-  --tw-ordinal:  ;
-  --tw-slashed-zero:  ;
-  --tw-numeric-figure:  ;
-  --tw-numeric-spacing:  ;
-  --tw-numeric-fraction:  ;
-  --tw-ring-inset:  ;
-  --tw-ring-offset-width: 0px;
-  --tw-ring-offset-color: #fff;
-  --tw-ring-color: rgb(59 130 246 / 0.5);
-  --tw-ring-offset-shadow: 0 0 #0000;
-  --tw-ring-shadow: 0 0 #0000;
-  --tw-shadow: 0 0 #0000;
-  --tw-shadow-colored: 0 0 #0000;
-  --tw-blur:  ;
-  --tw-brightness:  ;
-  --tw-contrast:  ;
-  --tw-grayscale:  ;
-  --tw-hue-rotate:  ;
-  --tw-invert:  ;
-  --tw-saturate:  ;
-  --tw-sepia:  ;
-  --tw-drop-shadow:  ;
-  --tw-backdrop-blur:  ;
-  --tw-backdrop-brightness:  ;
-  --tw-backdrop-contrast:  ;
-  --tw-backdrop-grayscale:  ;
-  --tw-backdrop-hue-rotate:  ;
-  --tw-backdrop-invert:  ;
-  --tw-backdrop-opacity:  ;
-  --tw-backdrop-saturate:  ;
-  --tw-backdrop-sepia:  ;
-}
-
-::-webkit-backdrop {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
   --tw-translate-x: 0;
@@ -815,7 +777,6 @@ video {
 
 .card-dashboard {
   display: flex;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   width: 14rem;
@@ -1228,7 +1189,6 @@ video {
 .sims-card-1 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   width: 100%;
@@ -1248,7 +1208,6 @@ video {
 .sims-card-1-noshadow {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   width: 100%;
@@ -1265,7 +1224,6 @@ video {
 .sims-card-2 {
   margin-top: 0px;
   margin-bottom: 0px;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   width: 100%;
@@ -1318,6 +1276,24 @@ video {
   margin-bottom: auto;
   font-size: 1.5rem;
   line-height: 2rem;
+  --tw-text-opacity: 1;
+  color: rgb(56 148 163 / var(--tw-text-opacity));
+}
+
+.sims-icon-sm {
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  --tw-text-opacity: 1;
+  color: rgb(56 148 163 / var(--tw-text-opacity));
+}
+
+.sims-icon-xs {
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 0.75rem;
+  line-height: 1rem;
   --tw-text-opacity: 1;
   color: rgb(56 148 163 / var(--tw-text-opacity));
 }
@@ -1972,7 +1948,6 @@ video {
 }
 
 .tw-h-fit {
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
 }
@@ -2034,7 +2009,6 @@ video {
 }
 
 .tw-h-min {
-  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
 }
@@ -2065,6 +2039,14 @@ video {
 
 .tw-h-\[138px\] {
   height: 138px;
+}
+
+.tw-h-3 {
+  height: 0.75rem;
+}
+
+.tw-h-6 {
+  height: 1.5rem;
 }
 
 .tw-w-full {
@@ -2132,7 +2114,6 @@ video {
 }
 
 .tw-w-fit {
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
@@ -2150,7 +2131,6 @@ video {
 }
 
 .tw-w-min {
-  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
 }
@@ -2164,7 +2144,6 @@ video {
 }
 
 .tw-w-max {
-  width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
 }
@@ -2229,6 +2208,14 @@ video {
   width: 117px;
 }
 
+.tw-w-3 {
+  width: 0.75rem;
+}
+
+.tw-w-6 {
+  width: 1.5rem;
+}
+
 .tw-max-w-3xl {
   max-width: 48rem;
 }
@@ -2280,12 +2267,6 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-@-webkit-keyframes tw-pulse {
-  50% {
-    opacity: .5;
-  }
-}
-
 @keyframes tw-pulse {
   50% {
     opacity: .5;
@@ -2293,41 +2274,33 @@ video {
 }
 
 .tw-animate-pulse {
-  -webkit-animation: tw-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-          animation: tw-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-@-webkit-keyframes tw-bounce {
-  0%, 100% {
-    transform: translateY(-25%);
-    -webkit-animation-timing-function: cubic-bezier(0.8,0,1,1);
-            animation-timing-function: cubic-bezier(0.8,0,1,1);
-  }
-
-  50% {
-    transform: none;
-    -webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
-            animation-timing-function: cubic-bezier(0,0,0.2,1);
-  }
+  animation: tw-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 @keyframes tw-bounce {
   0%, 100% {
     transform: translateY(-25%);
-    -webkit-animation-timing-function: cubic-bezier(0.8,0,1,1);
-            animation-timing-function: cubic-bezier(0.8,0,1,1);
+    animation-timing-function: cubic-bezier(0.8,0,1,1);
   }
 
   50% {
     transform: none;
-    -webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
-            animation-timing-function: cubic-bezier(0,0,0.2,1);
+    animation-timing-function: cubic-bezier(0,0,0.2,1);
   }
 }
 
 .tw-animate-bounce {
-  -webkit-animation: tw-bounce 1s infinite;
-          animation: tw-bounce 1s infinite;
+  animation: tw-bounce 1s infinite;
+}
+
+@keyframes tw-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.tw-animate-spin {
+  animation: tw-spin 1s linear infinite;
 }
 
 .tw-cursor-pointer {
@@ -3000,9 +2973,24 @@ video {
   background-color: rgb(251 191 36 / var(--tw-bg-opacity));
 }
 
+.tw-bg-slate-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(148 163 184 / var(--tw-bg-opacity));
+}
+
 .tw-bg-amber-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(251 191 36 / var(--tw-bg-opacity));
+}
+
+.tw-bg-slate-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+}
+
+.tw-bg-slate-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
 }
 
 .tw-bg-opacity-50 {
@@ -3011,6 +2999,14 @@ video {
 
 .tw-bg-no-repeat {
   background-repeat: no-repeat;
+}
+
+.tw-fill-blue-600 {
+  fill: #2563eb;
+}
+
+.tw-fill-white {
+  fill: #fff;
 }
 
 .tw-object-cover {
@@ -3675,9 +3671,13 @@ video {
   color: rgb(16 185 129 / var(--tw-text-opacity));
 }
 
+.tw-text-gray-200 {
+  --tw-text-opacity: 1;
+  color: rgb(229 231 235 / var(--tw-text-opacity));
+}
+
 .tw-underline {
-  -webkit-text-decoration-line: underline;
-          text-decoration-line: underline;
+  text-decoration-line: underline;
 }
 
 .tw-antialiased {
@@ -3745,17 +3745,15 @@ video {
 }
 
 .tw-transition-colors {
-  transition-property: color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
 
 .tw-transition {
-  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -3916,30 +3914,7 @@ a {
   border-radius: 7px;
   background: #3894a3;
   transition: 0.5s;
-  -webkit-animation: loading1274 2s ease infinite;
-          animation: loading1274 2s ease infinite;
-}
-
-@-webkit-keyframes loading1274 {
-  0% {
-    width: 0%;
-  }
-
-  10% {
-    width: 10%;
-  }
-
-  50% {
-    width: 40%;
-  }
-
-  60% {
-    width: 60%;
-  }
-
-  100% {
-    width: 100%;
-  }
+  animation: loading1274 2s ease infinite;
 }
 
 @keyframes loading1274 {
@@ -4745,6 +4720,11 @@ input[type="checkbox"]:checked {
     color: rgb(248 113 113 / var(--tw-text-opacity));
   }
 
+  .dark\:tw-text-gray-600 {
+    --tw-text-opacity: 1;
+    color: rgb(75 85 99 / var(--tw-text-opacity));
+  }
+
   .dark\:focus\:tw-ring-red-800:focus {
     --tw-ring-opacity: 1;
     --tw-ring-color: rgb(153 27 27 / var(--tw-ring-opacity));
@@ -4782,24 +4762,6 @@ input[type="checkbox"]:checked {
 }
 
 @media (min-width: 640px) {
-  .sm\:sims-heading-xl {
-    font-family: Satoshi;
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-    font-weight: 700;
-    --tw-text-opacity: 1;
-    color: rgb(56 148 163 / var(--tw-text-opacity));
-  }
-
-  .sm\:sims-text-gray-xs {
-    font-family: Space Grotesk;
-    font-size: 0.75rem;
-    line-height: 1rem;
-    font-weight: 600;
-    --tw-text-opacity: 1;
-    color: rgb(156 163 175 / var(--tw-text-opacity));
-  }
-
   .sm\:tw-mx-5 {
     margin-left: 1.25rem;
     margin-right: 1.25rem;
@@ -4823,6 +4785,24 @@ input[type="checkbox"]:checked {
 
   .sm\:tw-flex {
     display: flex;
+  }
+
+  .sm\:sims-heading-xl {
+    font-family: Satoshi;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 700;
+    --tw-text-opacity: 1;
+    color: rgb(56 148 163 / var(--tw-text-opacity));
+  }
+
+  .sm\:sims-text-gray-xs {
+    font-family: Space Grotesk;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 600;
+    --tw-text-opacity: 1;
+    color: rgb(156 163 175 / var(--tw-text-opacity));
   }
 
   .sm\:tw-w-full {
@@ -5011,24 +4991,6 @@ input[type="checkbox"]:checked {
 }
 
 @media (min-width: 1024px) {
-  .lg\:sims-heading-3xl {
-    font-family: Satoshi;
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-    font-weight: 700;
-    --tw-text-opacity: 1;
-    color: rgb(56 148 163 / var(--tw-text-opacity));
-  }
-
-  .lg\:sims-text-gray-md {
-    font-family: Space Grotesk;
-    font-size: 1rem;
-    line-height: 1.5rem;
-    font-weight: 600;
-    --tw-text-opacity: 1;
-    color: rgb(156 163 175 / var(--tw-text-opacity));
-  }
-
   .lg\:tw-mx-auto {
     margin-left: auto;
     margin-right: auto;
@@ -5047,8 +5009,26 @@ input[type="checkbox"]:checked {
     margin-right: 2rem;
   }
 
+  .lg\:sims-heading-3xl {
+    font-family: Satoshi;
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-weight: 700;
+    --tw-text-opacity: 1;
+    color: rgb(56 148 163 / var(--tw-text-opacity));
+  }
+
   .lg\:tw-hidden {
     display: none;
+  }
+
+  .lg\:sims-text-gray-md {
+    font-family: Space Grotesk;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+    --tw-text-opacity: 1;
+    color: rgb(156 163 175 / var(--tw-text-opacity));
   }
 
   .lg\:tw-w-1\/2 {
