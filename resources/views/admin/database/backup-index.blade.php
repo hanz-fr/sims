@@ -137,6 +137,16 @@
                 <div class="sims-text-gray-sm">Tabel</div>
                 <select name="table" id="table" class="tw-border-[1.5px] tw-transition-all tw-duration-500 tw-ease-out tw-font-satoshi tw-font-normal tw-text-gray-500 tw-border-gray-300 tw-py-1 tw-px-5 tw-rounded-xl focus:tw-outline-sims-new-500">
                     <option value="">-- pilih tabel --</option>
+                    <option value="all">Semua Tabel</option>
+                    <option value="siswa">siswa</option>
+                    <option value="mutasi">mutasi</option>
+                    <option value="jurusan">jurusan</option>
+                    <option value="history">history</option>
+                    <option value="mapel">mapel</option>
+                    <option value="mapel_jurusan">mapel_jurusan</option>
+                    <option value="nilai_mapel">nilai_mapel</option>
+                    <option value="kelas">kelas</option>
+                    <option value="raport">raport</option>
                 </select>
             </div>
 
