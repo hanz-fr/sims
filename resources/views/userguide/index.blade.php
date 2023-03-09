@@ -98,7 +98,7 @@
                         data-accordion-target="#accordion-flush-body" aria-expanded="false"
                         aria-controls="accordion-flush-body">
                         <div>
-                            <span class="tw-text-lg tw-font-medium">Question</span>
+                            <span class="tw-text-lg tw-font-medium">Bagaimana cara memasukkkan data siswa sekaligus melalui fitur impor?</span>
                         </div>
                         <div class="tw-flex">
                             <svg data-accordion-icon class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20"
@@ -113,11 +113,46 @@
                 <div id="accordion-flush-body" class="hidden" aria-labelledby="accordion-flush-heading">
                     <div class="tw-py-5 tw-font-normal tw-border-b tw-border-gray-200">
                         <p class="tw-font-satoshi tw-text-base tw-font-medium tw-text-gray-400 tw-w-full">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto fugiat fuga laudantium
-                            minima vero consequuntur itaque maiores nobis nemo recusandae?
+                            Cara menggunaka fitur impor data
                         </p>
-                        <p class="tw-font-satoshi tw-text-xs tw-text-gray-400">
-                            Admin
+                        <p class="tw-font-satoshi tw-text-gray-400">
+                            Untuk menggunakan fitur impor anda bisa mengunduh format file impor yang sudah disediakan terlebih dahulu,
+                            setelah itu anda dapat menambahkan data ke dalam file impor sesuai dengan petunjuk pengisian. Jika sudah, 
+                            anda dapat menyeret atau menekan form import untuk menambahkan file dan tekan tombol impor
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+                        <div id="accordion-flush" data-accordion="collapse" data-active-classes="tw-bg-white tw-text-sims-new-500"
+                data-inactive-classes="tw-text-gray-500" class="tw-mx-40 tw-mt-8">
+                <h2 id="accordion-flush-heading">
+                    <button type="button"
+                        class="hover:tw-text-sims-300 tw-transition-all tw-ease-out tw-flex tw-font-satoshi tw-items-center tw-justify-between tw-w-full tw-py-5 tw-font-medium tw-text-left tw-text-gray-500 tw-border-b tw-border-gray-200"
+                        data-accordion-target="#accordion-flush-body" aria-expanded="false"
+                        aria-controls="accordion-flush-body">
+                        <div>
+                            <span class="tw-text-lg tw-font-medium">Bagaimana cara memasukkkan data siswa sekaligus melalui fitur impor?</span>
+                        </div>
+                        <div class="tw-flex">
+                            <svg data-accordion-icon class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                    </button>
+                </h2>
+                <div id="accordion-flush-body" class="hidden" aria-labelledby="accordion-flush-heading">
+                    <div class="tw-py-5 tw-font-normal tw-border-b tw-border-gray-200">
+                        <p class="tw-font-satoshi tw-text-base tw-font-medium tw-text-gray-400 tw-w-full">
+                            Cara menggunaka fitur impor data
+                        </p>
+                        <p class="tw-font-satoshi tw-text-gray-400">
+                            Untuk menggunakan fitur impor anda bisa mengunduh format file impor yang sudah disediakan terlebih dahulu,
+                            setelah itu anda dapat menambahkan data ke dalam file impor sesuai dengan petunjuk pengisian. Jika sudah, 
+                            anda dapat menyeret atau menekan form import untuk menambahkan file dan tekan tombol impor
                         </p>
                     </div>
                 </div>

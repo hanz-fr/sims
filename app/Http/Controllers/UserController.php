@@ -148,21 +148,37 @@ class UserController extends Controller
    
         $credentials = $request->only('nip', 'password');
 
-        if (Auth::attempt($credentials, $remember_me)) {
-            // $request->session()->regenerate();
+        try {
 
-            if (auth()->user()->is_admin == 1) {
-                return redirect()->intended('/admin')->with('success', 'Signed In');
-            }else{
-                return redirect()->intended('/')->with('message', '');
+            if (Auth::attempt($credentials, $remember_me)) {
+            
+                $request->session()->regenerate();
+    
+                // kalau user adalah admin
+                if (auth()->user()->is_admin == 1) {
+    
+                    return redirect()->intended('/admin')->with('success', 'Signed In');
+    
+                } else {
+    
+                    return redirect()->intended('/')->with('message', 'Successfully logged in');
+    
+                }
             }
+    
+            if($request->get('remember')):
+                Auth::setRememberDuration(43200); // equivalent to 1 month
+            endif;
+
+        } catch (\Exception) {
+    
+            return back()->with('warning', 'Detail login tidak valid!');
         }
 
-        if($request->get('remember')):
-            Auth::setRememberDuration(43200); // equivalent to 1 month
-        endif;
+        // throw ValidationException::withMessages([
+        //     'password' => ['Kata sandi salah!']
+        // ]);
   
-        return redirect("login")->with('warning', 'Detail login tidak valid!');
     }
 
 
@@ -251,7 +267,7 @@ class UserController extends Controller
 
         } else {
 
-            return back()->with('error', 'Profil anda gagal diupdate');
+            return back()->with('warning', 'Profil anda gagal diupdate');
 
         }
 
