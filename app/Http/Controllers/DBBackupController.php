@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Storage;
@@ -48,8 +49,8 @@ class DBBackupController extends Controller
         $file = public_path()."/db_backup/$fn"; // path to the file
         
         if ($response->status == 'success') {
-
-            sleep(2);
+            
+            sleep(5);
 
             return Response::download($file);
 

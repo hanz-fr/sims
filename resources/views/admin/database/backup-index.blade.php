@@ -3,6 +3,58 @@
 @section('content')
 
 <style>
+
+    .fade-out {
+      animation: fadeOut ease 3s;
+      -webkit-animation: fadeOut ease 3s;
+      -moz-animation: fadeOut ease 3s;
+      -o-animation: fadeOut ease 3s;
+      -ms-animation: fadeOut ease 3s;
+    }
+    @keyframes fadeOut {
+      0% {
+        opacity:1;
+      }
+      100% {
+        opacity:0;
+      }
+    }
+    
+    @-moz-keyframes fadeOut {
+      0% {
+        opacity:1;
+      }
+      100% {
+        opacity:0;
+      }
+    }
+    
+    @-webkit-keyframes fadeOut {
+      0% {
+        opacity:1;
+      }
+      100% {
+        opacity:0;
+      }
+    }
+    
+    @-o-keyframes fadeOut {
+      0% {
+        opacity:1;
+      }
+      100% {
+        opacity:0;
+      }
+    }
+    
+    @-ms-keyframes fadeOut {
+      0% {
+        opacity:1;
+      }
+      100% {
+        opacity:0;
+    }
+    }
     .loader {
      --height-of-loader: 5px;
      --loader-color: #3894a3;
@@ -92,8 +144,9 @@
                 <div class="sims-text-gray-xs tw-text-red-500">{{ $message }}</div>
             @endif
 
-            <div class="tw-flex tw-justify-end">
-                <button onclick="showLoader()" type="submit" class="tw-bg-sims-new-500 tw-transition-all tw-w-fit tw-text-white hover:tw-text-white hover:tw-bg-sims-new-700 tw-font-satoshi tw-rounded-lg tw-px-8 tw-py-2"> Backup </button>
+            <div class="tw-flex tw-justify-between">
+                <div id="info-text" class="sims-heading-sm tw-animate-pulse tw-font-normal tw-my-auto tw-transition-all tw-text-slate-500"></div>
+                <button onclick="showLoader()" id="submit-btn" type="submit" class="tw-bg-sims-new-500 tw-transition-all tw-w-fit tw-text-white hover:tw-text-white hover:tw-bg-sims-new-700 tw-font-satoshi tw-rounded-lg tw-px-8 tw-py-2"> Backup </button>
             </div>
         </form>
     </div>
@@ -113,16 +166,31 @@
         });x
     });
 
+    const info_text = document.getElementById("info-text");
     const loader = document.querySelector(".loader");
 
     function showLoader() {
         loader.style.display = 'flex';
+        info_text.innerHTML = "Backing up... please wait"
 
-        const timeout = 1700;
+        const timeout = 5000;
         const timer = setTimeout(() => {
+            info_text.classList.remove("tw-animate-pulse");
+            info_text.innerHTML = "DB has been backed up successfully.";
             loader.style.display = 'none';
+            
+            setTimeout(() => {
+                info_text.classList.add("fade-out");
+
+                setTimeout(() => {
+                    info_text.innerHTML = "";
+                    info_text.classList.remove("fade-out");
+                    info_text.classList.add("tw-animate-pulse");
+                }, 3000);
+            }, 3000);
+
         }, timeout);
-        
+
     }
 
     $.ajax({
