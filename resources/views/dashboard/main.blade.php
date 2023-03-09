@@ -286,7 +286,7 @@
                 <!-- Chart -->
                 <div class="sims-card-1">
                     <div class="tw-flex tw-flex-col tw-mx-5">
-
+                        <div></div>
                         <select
                             class="div-toggle sims-heading-1 sims-heading-lg-black tw-lock tw-px-4 tw-w-full tw-bg-transparent tw-border-0 tw-border-gray-200 tw-appearance-none dark:tw-text-gray-400 dark:tw-border-gray-700 focus:tw-outline-none focus:tw-ring-0 focus:tw-border-gray-200 tw-peer"
                             data-target=".my-info-1">
