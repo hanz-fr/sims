@@ -504,6 +504,35 @@
                                     </div>
                                 </div>
 
+                                <!-- card 6 -->
+                                <div class="sims-card-1 tw-px-5 swiper-slide">
+                                    <div class="tw-flex tw-flex-col">
+
+                                        <!-- heading -->
+                                        <div class="tw-flex tw-gap-5 tw-justify-center">
+                                           
+                                                <div class="tw-flex tw-my-auto tw-mx-auto">
+                                                    <i class="fa-solid fa-server sims-icon-2xl tw-mx-2"></i>
+                                                    <div class="sims-text-black-xl tw-text-xl tw-my-auto">Backup Data</div>
+                                                </div>
+                                            
+                                        </div>
+
+                                        <!-- spacing -->
+                                        <div class="tw-my-5"></div>
+                                        
+                                        <div class="sims-heading-sm-black tw-font-normal tw-mx-5 tw-text-center">
+                                            Export database secara keseluruhan ataupun per tabel ke dalam file SQL. Data yang berharga harus dilindungi.
+                                        </div>
+
+                                        <!-- spacing -->
+                                        <div class="tw-my-6"></div>
+
+                                        <!-- button -->
+                                        <a href="/admin/db/backup" class="tw-border-sims-new-500 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all tw-border sims-text-regular-sm tw-text-center tw-rounded-lg tw-py-2">Manage</a>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
 

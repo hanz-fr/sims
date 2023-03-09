@@ -44,7 +44,7 @@ class JurusanController extends Controller
 
             return view('admin.jurusan.show-jurusan', [
                 'title' => 'Jurusan',
-                'active' => 'database',
+                'active' => 'admin-dashboard',
                 'response' =>  json_decode($response),
                 'jurusan' => json_decode($response)->data->rows,
                 'total' => json_decode($response)->data->count,
@@ -71,7 +71,7 @@ class JurusanController extends Controller
 
             return view('admin.jurusan.show-detail-jurusan', [
                 'title' => 'Detail Jurusan',
-                'active' => 'database',
+                'active' => 'admin-dashboard',
                 'jurusan' => json_decode($response)->result
             ]);
 
@@ -91,7 +91,7 @@ class JurusanController extends Controller
 
         return view('admin.jurusan.create-jurusan', [
             'title' => 'Create Jurusan',
-            'active' => 'database',
+            'active' => 'admin-dashboard',
         ]);
     
     }
@@ -105,7 +105,7 @@ class JurusanController extends Controller
 
         return view('admin.jurusan.edit-jurusan', [
             'title' => 'Edit Jurusan',
-            'active' => 'database',
+            'active' => 'admin-dashboard',
             'jurusan' => json_decode($response)->result,
         ]);
 

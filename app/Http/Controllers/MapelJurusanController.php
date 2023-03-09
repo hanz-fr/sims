@@ -50,7 +50,7 @@ class MapelJurusanController extends Controller
 
             return view('admin.mapel-jurusan.mapel-jurusan', [
                 'title' => 'Mata Pelajaran Jurusan',
-                'active' => 'database',
+                'active' => 'admin-dashboard',
                 'response' =>  json_decode($response),
                 'mapel_jurusan' => json_decode($response)->data->rows,
                 'total' => json_decode($response)->data->count,
@@ -76,7 +76,7 @@ class MapelJurusanController extends Controller
 
             return view('admin.mapel-jurusan.detail-mapel-jurusan', [
                 'title' => 'Mata Pelajaran Jurusan',
-                'active' => 'database',
+                'active' => 'admin-dashboard',
                 'mapel_jurusan' => json_decode($response)->result,
             ]);
 
@@ -99,7 +99,7 @@ class MapelJurusanController extends Controller
 
         return view('admin.mapel-jurusan.create-mapel-jurusan', [
             'title' => 'Create Mata Pelajaran',
-            'active' => 'database',
+            'active' => 'admin-dashboard',
             'jurusan' => json_decode($jurusan)->data->rows,
             'mapel' => json_decode($mapel)->data->rows,
         ]);
@@ -118,7 +118,7 @@ class MapelJurusanController extends Controller
 
         return view('admin.mapel-jurusan.edit-mapel-jurusan', [
             'title' => 'Edit Mata Pelajaran',
-            'active' => 'database',
+            'active' => 'admin-dashboard',
             'mapelJurusan' => json_decode($response)->result,
             'jurusan' => json_decode($jurusan)->data->rows,
             'mapel' => json_decode($mapel)->data->rows,
