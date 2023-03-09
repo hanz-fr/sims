@@ -5,28 +5,15 @@ namespace App\Http\Controllers;
 use PDF;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use App\Exports\AlumniExport;
 use App\Exports\DataIndukExport;
-use App\Exports\RekapNilaiExport;
-use App\Exports\JumlahSiswaExport;
-use App\Exports\MutasiMasukExport;
-use App\Exports\MutasiKeluarExport;
 use Illuminate\Support\Facades\URL;
-use App\Exports\DataTidakNaikExport;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Http;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\DetailDataIndukExport;
-use Illuminate\Support\Facades\DB;
-use PhpOffice\PhpSpreadsheet\Reader\Exception;
 use Illuminate\Support\Facades\Auth;
 use PhpOffice\PhpSpreadsheet\IOFactory;
-use App\Models\User;
-use function PHPUnit\Framework\isEmpty;
-use Illuminate\Support\Facades\Session;
-use PhpOffice\PhpSpreadsheet\Spreadsheet;
-use PhpOffice\PhpSpreadsheet\Writer\Xls;
 
 class SiswaController extends Controller
 {
@@ -297,7 +284,6 @@ class SiswaController extends Controller
 
         $lama_siswa_sekolah = Http::get("{$this->api_url}/dbquery/function/lama-siswa-sekolah?nis_siswa=$nis");
 
-
         if ($response->successful()) {
 
             // Parse siswa birthdate
@@ -316,7 +302,7 @@ class SiswaController extends Controller
                 $updatedAt = Carbon::parse(json_decode($response)->result->updatedAt)->diffForHumans();
             }
 
-            if (json_decode($lama_siswa_sekolah)->status === 'success') {
+            if (json_decode($lama_siswa_sekolah)->results != []) {
 
                 return view('induk.show-detail', [
                     'title' => 'Data Siswa',
@@ -431,7 +417,6 @@ class SiswaController extends Controller
                 $destinationPath = public_path() . '/foto';
                 $file->move($destinationPath, $fileName);
             }
-
 
             $response = Http::post("{$this->api_url}/siswa", [
                 'nis_siswa' => $request->nis,

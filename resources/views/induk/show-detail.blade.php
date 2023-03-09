@@ -490,7 +490,7 @@
                                                         Nama Ayah
                                                     </th>
                                                     <td class="tw-py-4 tw-px-6">
-                                                        {{ $siswa->nama_ayah }}
+                                                        {{ $siswa->ortu->nama_ayah }}
                                                     </td>
                                                 </tr>
                                                 <tr class="tw-bg-gray-100 tw-border">
@@ -499,7 +499,7 @@
                                                         Nama Ibu
                                                     </th>
                                                     <td class="tw-py-4 tw-px-6">
-                                                        {{ $siswa->nama_ibu }}
+                                                        {{ $siswa->ortu->nama_ibu }}
                                                     </td>
                                                 </tr>
                                                 <tr class="tw-bg-white tw-border">
@@ -508,7 +508,7 @@
                                                         Alamat Orang Tua
                                                     </th>
                                                     <td class="tw-py-4 tw-px-6">
-                                                        {{ $siswa->alamat_ortu }}
+                                                        {{ $siswa->ortu->alamat_ortu }}
                                                     </td>
                                                 </tr>
                                                 <tr class="tw-bg-gray-100 tw-border">
@@ -517,7 +517,7 @@
                                                         Nomor Telepon/HP Orang Tua
                                                     </th>
                                                     <td class="tw-py-4 tw-px-6">
-                                                        {{ $siswa->no_telp_ortu }}
+                                                        {{ $siswa->ortu->no_telp_ortu }}
                                                     </td>
                                                 </tr>
                                                 <tr class="tw-bg-white tw-border">
@@ -526,7 +526,7 @@
                                                         Alamat e-mail Orang Tua
                                                     </th>
                                                     <td class="tw-py-4 tw-px-6">
-                                                        {{ $siswa->email_ortu }}
+                                                        {{ $siswa->ortu->email_ortu }}
                                                     </td>
                                                 </tr>
                                                 <tr class="tw-border tw-bg-gray-100">
@@ -535,7 +535,7 @@
                                                         Nama Wali
                                                     </th>
                                                     <td class="tw-py-4 tw-px-6">
-                                                        {{ $siswa->nama_wali }}
+                                                        {{ $siswa->ortu->nama_wali }}
                                                     </td>
                                                 </tr>
                                                 <tr class="tw-bg-white tw-border">
@@ -544,7 +544,7 @@
                                                         Alamat Wali
                                                     </th>
                                                     <td class="tw-py-4 tw-px-6">
-                                                        {{ $siswa->alamat_wali }}
+                                                        {{ $siswa->ortu->alamat_wali }}
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -572,7 +572,7 @@
                                                         Nomor Telepon/HP Wali
                                                     </th>
                                                     <td class="tw-py-4 tw-px-6">
-                                                        {{ $siswa->no_telp_wali }}
+                                                        {{ $siswa->ortu->no_telp_wali }}
                                                     </td>
                                                 </tr>
                                                 <tr class="tw-bg-gray-100 tw-border">
@@ -581,7 +581,7 @@
                                                         Pekerjaan Wali
                                                     </th>
                                                     <td class="tw-py-4 tw-px-6">
-                                                        {{ $siswa->pekerjaan_wali }}
+                                                        {{ $siswa->ortu->pekerjaan_wali }}
                                                     </td>
                                                 </tr>
                                             </tbody>
