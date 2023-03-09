@@ -723,6 +723,7 @@
                                                         {{ $siswa->golongan_darah }}
                                                     </td>
                                                 </tr>
+                                                @if($siswa->isAlumni != true)
                                                 <tr class="tw-bg-white tw-border">
                                                     <th scope="row"
                                                         class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-whitespace-nowrap">
@@ -732,6 +733,7 @@
                                                         {{ $lama_siswa_sekolah }} hari
                                                     </td>
                                                 </tr>
+                                                @endif
                                             </tbody>
                                         </table>
                                     </div>

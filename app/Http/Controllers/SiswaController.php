@@ -302,7 +302,7 @@ class SiswaController extends Controller
                 $updatedAt = Carbon::parse(json_decode($response)->result->updatedAt)->diffForHumans();
             }
 
-            if (json_decode($lama_siswa_sekolah)->results != []) {
+            if (json_decode($lama_siswa_sekolah)->status === 'success') {
 
                 return view('induk.show-detail', [
                     'title' => 'Data Siswa',

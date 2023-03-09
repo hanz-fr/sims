@@ -34,7 +34,6 @@ class HistoryController extends Controller
         $today_history = Http::get("{$this->api_url}/history/today");
         $older_history = Http::get("{$this->api_url}/history/older");
 
-
         /* History Error Handler */
         /* klo belum buat procedure nya, pake all history dulu */
         if (json_decode($today_history)->status === 'error' || json_decode($older_history)->status === 'error') {

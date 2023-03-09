@@ -212,7 +212,7 @@
                     <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
                         <div class="tw-w-full tw-px-3">
                             <label class="label-input" for="alamat_siswa">
-                                Alamat Peserta Didik
+                                Alamat Peserta Didik*
                             </label>
                             <textarea class="input-data-minimal" id="alamat_siswa" type="text" name="alamat_siswa" required>{{ old('alamat_siswa') }}</textarea>
                             @error('alamat_siswa')
