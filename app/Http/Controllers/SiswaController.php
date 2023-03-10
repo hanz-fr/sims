@@ -518,7 +518,6 @@ class SiswaController extends Controller
 
     public function updateSiswa(Request $request, $nis)
     {
-
         abort_if(Gate::denies('manage-induk'), 403);
 
         if ($request->file('foto')) {

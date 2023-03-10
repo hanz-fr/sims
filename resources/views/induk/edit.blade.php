@@ -387,7 +387,7 @@
                                 Nama Ayah
                             </label>
                             <input class="input-data-minimal" id="nama_ayah" type="text" name="nama_ayah"
-                                value="{{ $siswa->ortu->nama_ayah }}">
+                                value="@if($siswa->ortu != null){{ $siswa->ortu->nama_ayah }}@endif">
                         </div>
                     </div>
                     <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
@@ -396,7 +396,7 @@
                                 Nama Ibu
                             </label>
                             <input class="input-data-minimal" id="nama_ibu" type="text" name="nama_ibu"
-                                value="{{ $siswa->ortu->nama_ibu }}">
+                                value="@if($siswa->ortu != null){{ $siswa->ortu->nama_ibu }}@endif">
                         </div>
                     </div>
                     <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
@@ -404,7 +404,7 @@
                             <label class="label-input" for="alamat_ortu">
                                 Alamat
                             </label>
-                            <textarea class="input-data-minimal" id="alamat_ortu" name="alamat_ortu">{{ $siswa->ortu->alamat_ortu }}</textarea>
+                            <textarea class="input-data-minimal" id="alamat_ortu" name="alamat_ortu">@if($siswa->ortu != null){{ $siswa->ortu->alamat_ortu }}@endif</textarea>
                         </div>
                     </div>
                     <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
@@ -413,14 +413,14 @@
                                 No.Telp/HP
                             </label>
                             <input class="input-data-minimal" id="no_telp_ortu" type="text" name="no_telp_ortu"
-                                maxlength="20" value="{{ $siswa->ortu->no_telp_ortu }}">
+                                maxlength="20" value="@if($siswa->ortu != null){{ $siswa->ortu->no_telp_ortu }}@endif">
                         </div>
                         <div class="tw-w-full md:tw-w-1/2 tw-px-3">
                             <label class="label-input" for="email_ortu">
                                 Email
                             </label>
                             <input class="input-data-minimal" id="email_ortu" type="email_ortu" name="email_ortu"
-                                value="{{ $siswa->ortu->email_ortu }}">
+                                value="@if($siswa->ortu != null){{ $siswa->ortu->email_ortu }}@endif">
                         </div>
                     </div>
 
@@ -433,7 +433,7 @@
                                 Nama Wali
                             </label>
                             <input class="input-data-minimal" id="nama_wali" type="text" name="nama_wali"
-                                value="{{ $siswa->ortu->nama_wali }}">
+                                value="@if($siswa->ortu != null){{ $siswa->ortu->nama_wali }}@endif">
                         </div>
                     </div>
                     <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
@@ -441,7 +441,7 @@
                             <label class="label-input" for="alamat_wali">
                                 Alamat
                             </label>
-                            <textarea class="input-data-minimal" id="alamat_wali" type="text" name="alamat_wali">{{ $siswa->ortu->alamat_wali }}</textarea>
+                            <textarea class="input-data-minimal" id="alamat_wali" type="text" name="alamat_wali">@if($siswa->ortu != null){{ $siswa->ortu->alamat_wali }}@endif</textarea>
                         </div>
                     </div>
                     <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
@@ -450,7 +450,7 @@
                                 No. Telp/HP
                             </label>
                             <input class="input-data-minimal" id="no_telp_wali" type="text" name="no_telp_wali"
-                                maxlength="20" value="{{ $siswa->ortu->no_telp_wali }}">
+                                maxlength="20" value="@if($siswa->ortu != null){{ $siswa->ortu->no_telp_wali }}@endif">
                         </div>
                     </div>
                     <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
@@ -459,7 +459,7 @@
                                 Pekerjaan Wali
                             </label>
                             <input class="input-data-minimal" id="pekerjaan_wali_2" type="text" name="pekerjaan_wali"
-                                value="{{ $siswa->ortu->pekerjaan_wali }}">
+                                value="@if($siswa->ortu != null){{ $siswa->ortu->pekerjaan_wali }}@endif">
                         </div>
                     </div>
 
