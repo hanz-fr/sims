@@ -489,77 +489,75 @@
                                                         class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-whitespace-nowrap">
                                                         Nama Ayah
                                                     </th>
-                                                    @if($siswa->ortu != null)
                                                     <td class="tw-py-4 tw-px-6">
-                                                        {{ $siswa->ortu->nama_ayah }}
+                                                        @if($siswa->ortu != null){{ $siswa->ortu->nama_ayah }}@endif
                                                     </td>
-                                                    @endif
                                                 </tr>
                                                 <tr class="tw-bg-gray-100 tw-border">
                                                     <th scope="row"
                                                         class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-whitespace-nowrap">
                                                         Nama Ibu
                                                     </th>
-                                                    @if($siswa->ortu != null)
+                                                    
                                                     <td class="tw-py-4 tw-px-6">
-                                                        {{ $siswa->ortu->nama_ibu }}
+                                                        @if($siswa->ortu != null){{ $siswa->ortu->nama_ibu }}@endif
                                                     </td>
-                                                    @endif
+                                                    
                                                 </tr>
                                                 <tr class="tw-bg-white tw-border">
                                                     <th scope="row"
                                                         class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-whitespace-nowrap">
                                                         Alamat Orang Tua
                                                     </th>
-                                                    @if($siswa->ortu != null)
+                                                    
                                                     <td class="tw-py-4 tw-px-6">
-                                                        {{ $siswa->ortu->alamat_ortu }}
+                                                        @if($siswa->ortu != null){{ $siswa->ortu->alamat_ortu }}@endif
                                                     </td>
-                                                    @endif
+                                                    
                                                 </tr>
                                                 <tr class="tw-bg-gray-100 tw-border">
                                                     <th scope="row"
                                                         class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-whitespace-nowrap">
                                                         Nomor Telepon/HP Orang Tua
                                                     </th>
-                                                    @if($siswa->ortu != null)
+                                                    
                                                     <td class="tw-py-4 tw-px-6">
-                                                        {{ $siswa->ortu->no_telp_ortu }}
+                                                        @if($siswa->ortu != null){{ $siswa->ortu->no_telp_ortu }}@endif
                                                     </td>
-                                                    @endif
+                                                    
                                                 </tr>
                                                 <tr class="tw-bg-white tw-border">
                                                     <th scope="row"
                                                         class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-whitespace-nowrap">
                                                         Alamat e-mail Orang Tua
                                                     </th>
-                                                    @if($siswa->ortu != null)
+                                                    
                                                     <td class="tw-py-4 tw-px-6">
-                                                        {{ $siswa->ortu->email_ortu }}
+                                                        @if($siswa->ortu != null){{ $siswa->ortu->email_ortu }}@endif
                                                     </td>
-                                                    @endif
+                                                    
                                                 </tr>
                                                 <tr class="tw-border tw-bg-gray-100">
                                                     <th scope="row"
                                                         class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-whitespace-nowrap">
                                                         Nama Wali
                                                     </th>
-                                                    @if($siswa->ortu != null)
+                                                    
                                                     <td class="tw-py-4 tw-px-6">
-                                                        {{ $siswa->ortu->nama_wali }}
+                                                        @if($siswa->ortu != null){{ $siswa->ortu->nama_wali }}@endif
                                                     </td>
-                                                    @endif
+                                                    
                                                 </tr>
                                                 <tr class="tw-bg-white tw-border">
                                                     <th scope="row"
                                                         class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-whitespace-nowrap">
                                                         Alamat Wali
                                                     </th>
-                                                    @if($siswa->ortu != null)
+                                                    
                                                     <td class="tw-py-4 tw-px-6">
-                                                        {{ $siswa->ortu->alamat_wali }}
+                                                        @if($siswa->ortu != null){{ $siswa->ortu->alamat_wali }}@endif
                                                     </td>
-                                                    @endif
+                                                    
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -585,22 +583,22 @@
                                                         class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-whitespace-nowrap">
                                                         Nomor Telepon/HP Wali
                                                     </th>
-                                                    @if($siswa->ortu != null)
+                                                    
                                                     <td class="tw-py-4 tw-px-6">
-                                                        {{ $siswa->ortu->no_telp_wali }}
+                                                        @if($siswa->ortu != null){{ $siswa->ortu->no_telp_wali }}@endif
                                                     </td>
-                                                    @endif
+                                                    
                                                 </tr>
                                                 <tr class="tw-bg-gray-100 tw-border">
                                                     <th scope="row"
                                                         class="tw-py-4 tw-px-6 tw-border-r tw-font-medium tw-whitespace-nowrap">
                                                         Pekerjaan Wali
                                                     </th>
-                                                    @if($siswa->ortu != null)
+                                                    
                                                     <td class="tw-py-4 tw-px-6">
-                                                        {{ $siswa->ortu->pekerjaan_wali }}
+                                                        @if($siswa->ortu != null){{ $siswa->ortu->pekerjaan_wali }}@endif
                                                     </td>
-                                                    @endif
+                                                
                                                 </tr>
                                             </tbody>
                                         </table>
