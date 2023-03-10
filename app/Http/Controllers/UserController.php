@@ -100,8 +100,6 @@ class UserController extends Controller
 
         $user = User::where('id', $id)->first();
 
-        // dd($request);
-
         try {
 
             $user->update([
