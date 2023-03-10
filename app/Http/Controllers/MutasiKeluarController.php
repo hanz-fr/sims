@@ -146,6 +146,7 @@ class MutasiKeluarController extends Controller
             ]);
 
             $response2 = Http::put("{$this->api_url}/siswa/{$nis}", [
+                'nis_siswa' => $request->nis_siswa,
                 'tgl_meninggalkan_sekolah' => $request->tgl_mutasi,
                 'alasan_meninggalkan_sekolah' => $request->alasan_mutasi, 
             ]);
@@ -246,6 +247,7 @@ class MutasiKeluarController extends Controller
             ]);
 
             $response2 = Http::put("{$this->api_url}/siswa/{$nis}", [
+                'nis_siswa' => $request->nis_siswa,
                 'tgl_meninggalkan_sekolah' => $request->tgl_mutasi,
                 'alasan_meninggalkan_sekolah' => $request->alasan_mutasi, 
             ]);
