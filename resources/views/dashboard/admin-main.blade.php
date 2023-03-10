@@ -190,18 +190,19 @@
                     </select>
 
                     <div class="my-info-1">
-                        <div class="chart4"  style="position: relative; height:45vh;">
+                        <div class="chart4" style="position: relative; height:45vh;">
                             <canvas id="chart4" class="tw-mt-4"></canvas>
                         </div>
-                        <div class="chart2 hide"  style="position: relative; height:45vh;">
+                        <div class="chart2 hide" style="position: relative; height:45vh;">
                             <canvas id="chart1" class="tw-mt-4"></canvas>
                         </div>
-                        <div class="chart1 hide"  style="position: relative; height:45vh;">
+                        <div class="chart1 hide" style="position: relative; height:45vh;">
                             <canvas id="chart2" class="tw-mt-4"></canvas>
                         </div>
                     </div>
 
-                    <div data-show=".chart4" class="sims-heading-sm tw-flex tw-justify-center tw-mt-5">Tahun {{ $current_year }}</div>
+                    <div data-show=".chart4" class="sims-heading-sm tw-flex tw-justify-center tw-mt-5">Tahun
+                        {{ $current_year }}</div>
                 </div>
             </div>
 
@@ -228,7 +229,8 @@
                         </div>
                     </div>
 
-                    <div class="sims-card-1-noshadow tw-w-full tw-py-3 tw-px-7 tw-h-fit tw-border-l-4 hover:tw-shadow-md tw-transition-all tw-duration-200 tw-border-l-salmon-400">
+                    <div
+                        class="sims-card-1-noshadow tw-w-full tw-py-3 tw-px-7 tw-h-fit tw-border-l-4 hover:tw-shadow-md tw-transition-all tw-duration-200 tw-border-l-salmon-400">
                         <div class="tw-flex tw-gap-2">
                             <i class="fa-solid fa-user sims-icon-3xl tw-text-salmon-400"></i>
                             <div class="tw flex tw-flex-col">
@@ -238,7 +240,8 @@
                         </div>
                     </div>
 
-                    <div class="sims-card-1-noshadow tw-w-full tw-py-3 tw-px-7 tw-h-fit tw-border-l-4 hover:tw-shadow-md tw-transition-all tw-duration-200 tw-border-l-oren-400">
+                    <div
+                        class="sims-card-1-noshadow tw-w-full tw-py-3 tw-px-7 tw-h-fit tw-border-l-4 hover:tw-shadow-md tw-transition-all tw-duration-200 tw-border-l-oren-400">
                         <div class="tw-flex tw-gap-2">
                             <i class="fa-solid fa-user sims-icon-3xl tw-text-oren-400"></i>
                             <div class="tw flex tw-flex-col">
@@ -248,7 +251,8 @@
                         </div>
                     </div>
 
-                    <div class="sims-card-1-noshadow tw-w-full tw-py-3 tw-px-7 tw-h-fit tw-border-l-4 hover:tw-shadow-md tw-transition-all tw-duration-200 tw-border-l-[#B4B8BC]">
+                    <div
+                        class="sims-card-1-noshadow tw-w-full tw-py-3 tw-px-7 tw-h-fit tw-border-l-4 hover:tw-shadow-md tw-transition-all tw-duration-200 tw-border-l-[#B4B8BC]">
                         <div class="tw-flex tw-gap-2">
                             <i class="fa-solid fa-user sims-icon-3xl tw-text-[#B4B8BC]"></i>
                             <div class="tw flex tw-flex-col">
@@ -268,7 +272,9 @@
                     <!-- heading -->
                     <div class="tw-flex tw-justify-between tw-ml-7 tw-mr-7">
                         <div class="sims-heading-xl-black">User List</div>
-                        <a href="/admin/account" class="tw-bg-[#F1F1EF] hover:tw-bg-[#ebebeb] hover:tw-text-gray-600 tw-px-3 tw-py-1 tw-rounded-lg sims-heading-sm-black tw-text-[#979797]">Show All</a>
+                        <a href="/admin/account"
+                            class="tw-bg-[#F1F1EF] hover:tw-bg-[#ebebeb] hover:tw-text-gray-600 tw-px-3 tw-py-1 tw-rounded-lg sims-heading-sm-black tw-text-[#979797]">Show
+                            All</a>
                     </div>
 
                     <!-- spacing -->
@@ -276,62 +282,71 @@
 
                     <!-- content -->
                     {{-- SHOW 5 USERS ONLY --}}
-                    <div class="tw-flex tw-flex-col tw-gap-3 tw-pr-3 tw-mx-5 tw-overflow-y-scroll tw-h-[50vh] tw-scrollbar-thumb-gray-400 tw-scrollbar-thumb-rounded-lg tw-scrollbar-thin tw-scrollbar-track-gray-100">
+                    <div
+                        class="tw-flex tw-flex-col tw-gap-3 tw-pr-3 tw-mx-5 tw-overflow-y-scroll tw-h-[50vh] tw-scrollbar-thumb-gray-400 tw-scrollbar-thumb-rounded-lg tw-scrollbar-thin tw-scrollbar-track-gray-100">
 
-                        @foreach ($users as $u )
-                        
-                        <form action="/admin/account/{{ $u->id }}">
-                            <button type="submit" class="tw-flex tw-justify-between sims-card-2">
-                                <div class="tw-flex tw-gap-3">
-                                    @if ($u->role == 1)
-                                        <i class="fa-solid fa-circle-user sims-icon-3xl"></i>
-                                    @elseif ($u->role == 2)
-                                        <i class="fa-solid fa-circle-user tw-text-salmon-400 sims-icon-3xl"></i>
-                                    @elseif ($u->role == 3)
-                                        <i class="fa-solid fa-circle-user tw-text-[#979797]  sims-icon-3xl"></i>
-                                    @elseif ($u->role == 4)
-                                        <i class="fa-solid fa-circle-user tw-text-oren-400 sims-icon-3xl"></i>
-                                    @else
-                                        <i class="fa-solid fa-circle-user sims-icon-3xl"></i>
-                                    @endif
-                                    <div class="tw-flex tw-flex-col tw-text-start">
+                        @foreach ($users as $u)
+                            <form action="/admin/account/{{ $u->id }}">
+                                <button type="submit" class="tw-flex tw-justify-between sims-card-2">
+                                    <div class="tw-flex tw-gap-3">
                                         @if ($u->role == 1)
-                                            <div class="sims-heading-sm tw-truncate sm:tw-w-24 lg:tw-w-32">{{ $u->nama }}</div>
+                                            <i class="fa-solid fa-circle-user sims-icon-3xl"></i>
                                         @elseif ($u->role == 2)
-                                            <div class="tw-text-salmon-400 sims-heading-sm tw-truncate sm:tw-w-24 lg:tw-w-32">{{ $u->nama }}</div>
+                                            <i class="fa-solid fa-circle-user tw-text-salmon-400 sims-icon-3xl"></i>
                                         @elseif ($u->role == 3)
-                                            <div class=" tw-text-[#979797] sims-heading-sm tw-truncate sm:tw-w-24 lg:tw-w-32">{{ $u->nama }}</div>
+                                            <i class="fa-solid fa-circle-user tw-text-[#979797]  sims-icon-3xl"></i>
                                         @elseif ($u->role == 4)
-                                            <div class="tw-text-oren-400 sims-heading-sm tw-truncate sm:tw-w-24 lg:tw-w-32">{{ $u->nama }}</div>
+                                            <i class="fa-solid fa-circle-user tw-text-oren-400 sims-icon-3xl"></i>
                                         @else
-                                            <div class="sims-heading-sm tw-truncate sm:tw-w-24 lg:tw-w-32">{{ $u->nama }}</div>
+                                            <i class="fa-solid fa-circle-user sims-icon-3xl"></i>
                                         @endif
-                                        <div class="sims-text-gray-xs tw-flex tw-items-center">
+                                        <div class="tw-flex tw-flex-col tw-text-start">
                                             @if ($u->role == 1)
-                                                Tata Usaha
+                                                <div class="sims-heading-sm tw-truncate sm:tw-w-24 lg:tw-w-32">
+                                                    {{ $u->nama }}</div>
+                                            @elseif ($u->role == 2)
+                                                <div
+                                                    class="tw-text-salmon-400 sims-heading-sm tw-truncate sm:tw-w-24 lg:tw-w-32">
+                                                    {{ $u->nama }}</div>
+                                            @elseif ($u->role == 3)
+                                                <div
+                                                    class=" tw-text-[#979797] sims-heading-sm tw-truncate sm:tw-w-24 lg:tw-w-32">
+                                                    {{ $u->nama }}</div>
+                                            @elseif ($u->role == 4)
+                                                <div
+                                                    class="tw-text-oren-400 sims-heading-sm tw-truncate sm:tw-w-24 lg:tw-w-32">
+                                                    {{ $u->nama }}</div>
+                                            @else
+                                                <div class="sims-heading-sm tw-truncate sm:tw-w-24 lg:tw-w-32">
+                                                    {{ $u->nama }}</div>
                                             @endif
-                                            @if ($u->role == 2)
-                                                Kesiswaan
-                                            @endif
-                                            @if ($u->role == 3)
-                                                Kurikulum
-                                            @endif
-                                            @if ($u->role == 4)
-                                                Wali Kelas
-                                            @endif
-                                            @if ($u->is_admin == 1)
-                                                <i title="User ini merupakan Admin" class="fa-solid fa-shield-check tw-text-sims-500 tw-text-sm tw-ml-2"></i>
-                                            @endif
+                                            <div class="sims-text-gray-xs tw-flex tw-items-center">
+                                                @if ($u->role == 1)
+                                                    Tata Usaha
+                                                @endif
+                                                @if ($u->role == 2)
+                                                    Kesiswaan
+                                                @endif
+                                                @if ($u->role == 3)
+                                                    Kurikulum
+                                                @endif
+                                                @if ($u->role == 4)
+                                                    Wali Kelas
+                                                @endif
+                                                @if ($u->is_admin == 1)
+                                                    <i title="User ini merupakan Admin"
+                                                        class="fa-solid fa-shield-check tw-text-sims-500 tw-text-sm tw-ml-2"></i>
+                                                @endif
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                {{-- TEMPORARY COMMENT / TO BE FIXED LATER --}}
-                                {{-- <a href="/admin/account/{{ $u->id }}/edit" class="tw-text-[#979797] tw-my-auto tw-h-fit tw-z-50">
+                                    {{-- TEMPORARY COMMENT / TO BE FIXED LATER --}}
+                                    {{-- <a href="/admin/account/{{ $u->id }}/edit" class="tw-text-[#979797] tw-my-auto tw-h-fit tw-z-50">
                                     <i class="fa-solid fa-pen-to-square hover:tw-text-[#FBB845] tw-transition-all"></i>
                                 </a> --}}
-                            </button>
-                        </form>
+                                </button>
+                            </form>
                         @endforeach
 
                     </div>
@@ -350,7 +365,7 @@
 
             <!-- Overview - Column 1 -->
             <div class="tw-flex tw-flex-col">
-                <div class="tw-text-center sims-heading-xl-black tw-pt-10">Manajamen Data</div>
+                <div class="tw-text-center sims-heading-xl-black tw-pt-10"><i class="fa-solid fa-database tw-text-sims-new-500 tw-mr-2"></i>Manajamen Data</div>
 
                 <!-- spacing -->
                 <div class="tw-my-2"></div>
@@ -372,7 +387,8 @@
                                             </div>
 
                                             <div class="tw-flex tw-gap-2 tw-my-auto">
-                                                <div class="sims-text-black-xl tw-text-3xl tw-my-auto">{{ $siswa }}</div>
+                                                <div class="sims-text-black-xl tw-text-3xl tw-my-auto">{{ $siswa }}
+                                                </div>
                                                 <div class="sims-heading-sm-black tw-font-normal">total<br>data</div>
                                             </div>
                                         </div>
@@ -384,11 +400,12 @@
                                         <div class="tw-my-3"></div>
 
                                         <!-- button -->
-                                        <a href="/data-induk-siswa?page=1&perPage=10" class="tw-border-sims-new-500 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all tw-border sims-text-regular-sm tw-text-center tw-rounded-lg tw-py-2">Manage</a>
+                                        <a href="/data-induk-siswa?page=1&perPage=10"
+                                            class="tw-border-sims-new-500 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all tw-border sims-text-regular-sm tw-text-center tw-rounded-lg tw-py-2">Manage</a>
                                     </div>
                                 </div>
 
-                                
+
                                 <!-- card 2 -->
                                 <div class="sims-card-1 tw-px-5 swiper-slide">
                                     <div class="tw-flex tw-flex-col">
@@ -401,7 +418,8 @@
                                             </div>
 
                                             <div class="tw-flex tw-gap-2 tw-my-auto">
-                                                <div class="sims-text-black-xl tw-text-3xl tw-my-auto">{{ $jurusan }}</div>
+                                                <div class="sims-text-black-xl tw-text-3xl tw-my-auto">{{ $jurusan }}
+                                                </div>
                                                 <div class="sims-heading-sm-black tw-font-normal">total<br>data</div>
                                             </div>
                                         </div>
@@ -413,7 +431,8 @@
                                         <div class="tw-my-3"></div>
 
                                         <!-- button -->
-                                        <a href="/admin/jurusan?page=1&perPage=10" class="tw-border-sims-new-500 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all tw-border sims-text-regular-sm tw-text-center tw-rounded-lg tw-py-2">Manage</a>
+                                        <a href="/admin/jurusan?page=1&perPage=10"
+                                            class="tw-border-sims-new-500 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all tw-border sims-text-regular-sm tw-text-center tw-rounded-lg tw-py-2">Manage</a>
                                     </div>
                                 </div>
 
@@ -430,7 +449,8 @@
                                             </div>
 
                                             <div class="tw-flex tw-gap-2 tw-my-auto">
-                                                <div class="sims-text-black-xl tw-text-3xl tw-my-auto">{{ $total_mapel }}</div>
+                                                <div class="sims-text-black-xl tw-text-3xl tw-my-auto">{{ $total_mapel }}
+                                                </div>
                                                 <div class="sims-heading-sm-black tw-font-normal">total<br>data</div>
                                             </div>
                                         </div>
@@ -442,7 +462,8 @@
                                         <div class="tw-my-3"></div>
 
                                         <!-- button -->
-                                        <a href="/admin/mata-pelajaran?page=1&perPage=10" class="tw-border-sims-new-500 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all tw-border sims-text-regular-sm tw-text-center tw-rounded-lg tw-py-2">Manage</a>
+                                        <a href="/admin/mata-pelajaran?page=1&perPage=10"
+                                            class="tw-border-sims-new-500 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all tw-border sims-text-regular-sm tw-text-center tw-rounded-lg tw-py-2">Manage</a>
                                     </div>
                                 </div>
 
@@ -459,7 +480,8 @@
                                             </div>
 
                                             <div class="tw-flex tw-gap-2 tw-my-auto">
-                                                <div class="sims-text-black-xl tw-text-3xl tw-my-auto">{{ $total_mapel_jurusan }}</div>
+                                                <div class="sims-text-black-xl tw-text-3xl tw-my-auto">
+                                                    {{ $total_mapel_jurusan }}</div>
                                                 <div class="sims-heading-sm-black tw-font-normal">total<br>data</div>
                                             </div>
                                         </div>
@@ -471,7 +493,8 @@
                                         <div class="tw-my-3"></div>
 
                                         <!-- button -->
-                                        <a href="/admin/mapel-jurusan?page=1&perPage=10" class="tw-border-sims-new-500 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all tw-border sims-text-regular-sm tw-text-center tw-rounded-lg tw-py-2">Manage</a>
+                                        <a href="/admin/mapel-jurusan?page=1&perPage=10"
+                                            class="tw-border-sims-new-500 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all tw-border sims-text-regular-sm tw-text-center tw-rounded-lg tw-py-2">Manage</a>
                                     </div>
                                 </div>
 
@@ -488,7 +511,8 @@
                                             </div>
 
                                             <div class="tw-flex tw-gap-2 tw-my-auto">
-                                                <div class="sims-text-black-xl tw-text-3xl tw-my-auto">{{ $total_kelas }}</div>
+                                                <div class="sims-text-black-xl tw-text-3xl tw-my-auto">{{ $total_kelas }}
+                                                </div>
                                                 <div class="sims-heading-sm-black tw-font-normal">total<br>data</div>
                                             </div>
                                         </div>
@@ -500,7 +524,8 @@
                                         <div class="tw-my-3"></div>
 
                                         <!-- button -->
-                                        <a href="/admin/kelas?page=1&perPage=10" class="tw-border-sims-new-500 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all tw-border sims-text-regular-sm tw-text-center tw-rounded-lg tw-py-2">Manage</a>
+                                        <a href="/admin/kelas?page=1&perPage=10"
+                                            class="tw-border-sims-new-500 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all tw-border sims-text-regular-sm tw-text-center tw-rounded-lg tw-py-2">Manage</a>
                                     </div>
                                 </div>
 
@@ -510,26 +535,28 @@
 
                                         <!-- heading -->
                                         <div class="tw-flex tw-gap-5 tw-justify-center">
-                                           
-                                                <div class="tw-flex tw-my-auto tw-mx-auto">
-                                                    <i class="fa-solid fa-server sims-icon-2xl tw-mx-2"></i>
-                                                    <div class="sims-text-black-xl tw-text-xl tw-my-auto">Backup Data</div>
-                                                </div>
-                                            
+
+                                            <div class="tw-flex tw-my-auto tw-mx-auto">
+                                                <i class="fa-solid fa-server sims-icon-2xl tw-mx-2"></i>
+                                                <div class="sims-text-black-xl tw-text-xl tw-my-auto">Backup Data</div>
+                                            </div>
+
                                         </div>
 
                                         <!-- spacing -->
                                         <div class="tw-my-5"></div>
-                                        
+
                                         <div class="sims-heading-sm-black tw-font-normal tw-mx-5 tw-text-center">
-                                            Export database secara keseluruhan ataupun per tabel ke dalam file SQL. Data yang berharga harus dilindungi.
+                                            Export database secara keseluruhan ataupun per tabel ke dalam file SQL. Data
+                                            yang berharga harus dilindungi.
                                         </div>
 
                                         <!-- spacing -->
                                         <div class="tw-my-6"></div>
 
                                         <!-- button -->
-                                        <a href="/admin/db/backup" class="tw-border-sims-new-500 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all tw-border sims-text-regular-sm tw-text-center tw-rounded-lg tw-py-2">Manage</a>
+                                        <a href="/admin/db/backup"
+                                            class="tw-border-sims-new-500 hover:tw-bg-sims-new-500 hover:tw-text-white tw-transition-all tw-border sims-text-regular-sm tw-text-center tw-rounded-lg tw-py-2">Manage</a>
                                     </div>
                                 </div>
 
@@ -550,8 +577,10 @@
                 <!-- heading -->
                 <div class="tw-flex tw-justify-between tw-mx-10">
                     <div class="sims-heading-lg-black">Aktivitas Terbaru</div>
-                    <form action="/history" method="GET">    
-                        <button type="submit" class="tw-bg-[#F1F1EF] hover:tw-bg-[#ebebeb] tw-px-3 tw-py-1 tw-rounded-lg sims-heading-sm-black tw-text-[#979797]">Show All</button>
+                    <form action="/history" method="GET">
+                        <button type="submit"
+                            class="tw-bg-[#F1F1EF] hover:tw-bg-[#ebebeb] tw-px-3 tw-py-1 tw-rounded-lg sims-heading-sm-black tw-text-[#979797]">Show
+                            All</button>
                     </form>
                 </div>
 
@@ -559,27 +588,30 @@
                 <div class="tw-my-8"></div>
 
                 <!-- content -->
-                @if($allHistory === [])
+                @if ($allHistory === [])
                     <div class="tw-flex tw-flex-col tw-gap-5">
-                        <img src="{{ URL::asset('assets/img/nohistory.jpg') }}" alt="no_history" class="tw-w-3/6 tw-mx-auto">
+                        <img src="{{ URL::asset('assets/img/nohistory.jpg') }}" alt="no_history"
+                            class="tw-w-3/6 tw-mx-auto">
                         <div class="sims-heading-xl tw-mx-auto">Belum ada Aktivitas.</div>
                     </div>
                 @else
-                    @foreach($allHistory as $h)
-                    <div class="tw-flex tw-justify-between tw-mx-10">
-                        <div class="tw-flex tw-gap-3">
-                            <img src="{{ URL::asset('assets/img/activityline2.png') }}" alt="..." class="tw-h-20">
+                    @foreach ($allHistory as $h)
+                        <div class="tw-flex tw-justify-between tw-mx-10">
+                            <div class="tw-flex tw-gap-3">
+                                <img src="{{ URL::asset('assets/img/activityline2.png') }}" alt="..."
+                                    class="tw-h-20">
 
-                            <div class="tw-flex tw-flex-col tw-my-auto">
-                                <div class="sims-heading-md-black">{{ $h->activityAuthor }}</div>
-                                <div class="sims-text-regular-sm tw-font-normal tw-truncate lg:tw-w-64 sm:tw-w-48">{{ $h->activityName }}</div>
+                                <div class="tw-flex tw-flex-col tw-my-auto">
+                                    <div class="sims-heading-md-black">{{ $h->activityAuthor }}</div>
+                                    <div class="sims-text-regular-sm tw-font-normal tw-truncate lg:tw-w-64 sm:tw-w-48">
+                                        {{ $h->activityName }}</div>
+                                </div>
+
                             </div>
-
+                            <div class="sims-text-gray-sm tw-font-normal tw-my-auto">
+                                {{ \Carbon\Carbon::createFromTimeStamp(strtotime($h->createdAt))->diffForHumans() }}
+                            </div>
                         </div>
-                        <div class="sims-text-gray-sm tw-font-normal tw-my-auto">
-                            {{ \Carbon\Carbon::createFromTimeStamp(strtotime($h->createdAt))->diffForHumans() }}
-                        </div>
-                    </div>
                     @endforeach
                 @endif
             </div>
@@ -599,7 +631,7 @@
                 labels: ['Masuk', 'Keluar', 'Tidak Naik'],
                 datasets: [{
                     label: 'Jumlah ',
-                    data: [{{ $siswaMasuk }}, {{ $siswaKeluar }}, {{ $siswaTdkNaik }},],
+                    data: [{{ $siswaMasuk }}, {{ $siswaKeluar }}, {{ $siswaTdkNaik }}, ],
                     backgroundColor: [
                         'rgba(54, 162, 235, 0.2)',
                         'rgba(255, 99, 132, 0.2)',
@@ -638,7 +670,9 @@
                 ],
                 datasets: [{
                     label: 'Jumlah',
-                    data: [{{ $tatausaha }}, {{ $kesiswaan }}, {{ $walikelas }}, {{ $kurikulum }}],
+                    data: [{{ $tatausaha }}, {{ $kesiswaan }}, {{ $walikelas }},
+                        {{ $kurikulum }}
+                    ],
                     backgroundColor: [
                         'rgb(56, 148, 163)',
                         'rgb(255, 134, 156)',
@@ -661,31 +695,33 @@
 
         const ctx4 = document.getElementById('chart4');
         new Chart(ctx4, {
-          type: 'line',
-          data: {
-            labels: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'],
-            datasets: [{
-              label: 'Jumlah Aktivitas',
-              borderColor: '#3894a3',
-              backgroundColor: '#53b0bd',
-              data: [
-                {{ $totalActivityJanuary }},
-                {{ $totalActivityFebruary }}, 
-                {{ $totalActivityMarch }}, 
-                {{ $totalActivityApril }}, 
-                {{ $totalActivityMay }}, 
-                {{ $totalActivityJune }}, 
-                {{ $totalActivityJuly }}, 
-                {{ $totalActivityAugust }}, 
-                {{ $totalActivitySeptember }}, 
-                {{ $totalActivityOctober }}, 
-                {{ $totalActivityNovember }}, 
-                {{ $totalActivityDecember }}, 
-              ],
-              borderWidth: 1
-            }]
-          },
-          options: {
+            type: 'line',
+            data: {
+                labels: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September',
+                    'Oktober', 'November', 'Desember'
+                ],
+                datasets: [{
+                    label: 'Jumlah Aktivitas',
+                    borderColor: '#3894a3',
+                    backgroundColor: '#53b0bd',
+                    data: [
+                        {{ $totalActivityJanuary }},
+                        {{ $totalActivityFebruary }},
+                        {{ $totalActivityMarch }},
+                        {{ $totalActivityApril }},
+                        {{ $totalActivityMay }},
+                        {{ $totalActivityJune }},
+                        {{ $totalActivityJuly }},
+                        {{ $totalActivityAugust }},
+                        {{ $totalActivitySeptember }},
+                        {{ $totalActivityOctober }},
+                        {{ $totalActivityNovember }},
+                        {{ $totalActivityDecember }},
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
                 responsive: true,
                 maintainAspectRatio: false,
                 scale: {

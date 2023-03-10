@@ -72,7 +72,7 @@
             </ul>
             <div x-show="openTab === 1" class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl tw-mb-20">
                 <table class="tw-w-full tw-text-sm tw-text-center">
-                    <thead class="tw-text-md tw-bg-gray tw-text-basic-700 tw-border tw-font-satoshi">
+                    <thead class="tw-text-md tw-text-basic-700 tw-border tw-font-satoshi">
                         <tr>
                             <th scope="col" rowspan="2" class="tw-py-3 tw-px-6 tw-border">KELAS</th>
                             <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border">JUMLAH SISWA AWAL BULAN</th>
@@ -195,7 +195,7 @@
             </div>
             <div x-show="openTab === 2" class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl tw-mb-20">
                 <table class="tw-w-full tw-text-sm tw-text-center">
-                    <thead class="tw-text-md tw-bg-gray-100 tw-text-basic-700 tw-border tw-font-satoshi">
+                    <thead class="tw-text-md tw-text-basic-700 tw-border tw-font-satoshi">
                         <tr>
                             <th scope="col" rowspan="2" class="tw-py-3 tw-px-6 tw-border-r">KELAS</th>
                             <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border-r">JUMLAH SISWA AWAL BULAN
@@ -309,7 +309,7 @@
             </div>
             <div x-show="openTab === 3" class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl tw-mb-20">
                 <table class="tw-w-full tw-text-sm tw-text-center">
-                    <thead class="tw-text-md tw-bg-gray-100 tw-text-basic-700 tw-border tw-font-satoshi">
+                    <thead class="tw-text-md tw-text-basic-700 tw-border tw-font-satoshi">
                         <tr>
                             <th scope="col" rowspan="2" class="tw-py-3 tw-px-6 tw-border-r">KELAS</th>
                             <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border-r">JUMLAH SISWA AWAL BULAN
@@ -421,7 +421,7 @@
             </div>
             <div x-show="openTab === 4" class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl tw-mb-20">
                 <table class="tw-w-full tw-text-sm tw-text-center">
-                    <thead class="tw-text-md tw-bg-gray-100 tw-text-basic-700 tw-border tw-font-satoshi">
+                    <thead class="tw-text-md tw-text-basic-700 tw-border tw-font-satoshi">
                         <tr>
                             <th scope="col" rowspan="2" class="tw-py-3 tw-px-6 tw-border">KELAS</th>
                             <th scope="col" colspan="3" class="tw-py-3 tw-px-6 tw-border">JUMLAH SISWA AWAL BULAN

@@ -34,7 +34,6 @@ use App\Http\Controllers\RekapJumlahSiswaController;
 Route::middleware(['auth:web', 'revalidate'])->group(function () {
 
     /* MAIN DASHBOARD */
-
     Route::get('/', [DashboardController::class, 'mainDashboard']);
 
 
@@ -106,7 +105,6 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
 
 
      /* REKAP NILAI */
-
     Route::get('/rekap-nilai/{nis}', [RekapNilaiController::class, 'getRaportSiswa']);
     Route::get('/tambah-nilai/{nis}', [RekapNilaiController::class, 'viewTambahNilaiMapel']);
     Route::get('/edit-rekap-nilai/{RaportId}', [RekapNilaiController::class, 'editRekapNilai']);
@@ -120,7 +118,6 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
     
 
     /* REKAP DATA SISWA */
-
     Route::get('/rekap-jumlah-siswa', [RekapJumlahSiswaController::class, 'rekapJumlahSiswa']);
 
     Route::get('/rekap-jumlah-siswa-pdf', [RekapJumlahSiswaController::class, 'exportRekapJumlahPDF']);
@@ -129,17 +126,14 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
 
 
     /* JURUSAN SISWA*/
-
     Route::get('/jurusan', [SiswaController::class, 'getJurusan']);
 
     
     /* ANGKATAN SISWA */
-
     Route::get('/angkatan', [SiswaController::class, 'getAngkatan']);
 
 
     /* ALUMNI */
-
     Route::get('/data-alumni', [AlumniController::class, 'viewAlumni']);
     Route::get('/data-alumni/all', [AlumniController::class, 'viewAlumni']);
 
@@ -150,18 +144,15 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
     Route::get('/alumni-excel/all', [AlumniController::class, 'exportAlumniExcel']);
     Route::get('/alumni-excel', [AlumniController::class, 'exportAlumniExcel']);
 
-
     Route::get('/select-jurusan-alumni', [AlumniController::class, 'selectJurusanAlumni']);
     Route::get('/select-angkatan-alumni', [AlumniController::class, 'selectAngkatanAlumni']);
 
 
     /* REKAP SISWA */
-
     Route::get('/rekap-siswa', [DashboardController::class, 'rekapSiswaDashboard']);
 
 
     /* DATA TIDAK NAIK KELAS */
-
     Route::get('/data-tidak-naik', [SiswaTidakNaikController::class, 'siswaTidakNaik']);
 
     Route::get('/data-tidak-naik-excel', [SiswaTidakNaikController::class, 'exportDataTidakNaikExcel']);
@@ -170,32 +161,27 @@ Route::middleware(['auth:web', 'revalidate'])->group(function () {
 
 
     /* PROFILE */
-
     Route::get('/profile', [UserController::class, 'show'])->name('profile');
     Route::get('/profile/edit', [UserController::class, 'edit'])->name('profile.edit');
     Route::post('/profile/update/{id}', [UserController::class, 'update']);
 
 
     /* CHANGE PASSWORD */
-
     Route::post('/change-password', [UserController::class, 'changePassword']);
 
 
     /* EMAIL VERIFICATION */
-
     Route::get('/email/verify/{token}', [UserController::class, 'verifyAccount'])->name('user.verify');
     Route::post('/send-email/{id}', [UserController::class, 'sendVerifyAccount'])->name('user.resend');
 
 
     /* HISTORY PAGE */
-
     Route::get('/history', [HistoryController::class, 'viewHistory'])->name('history');   
     Route::get('/history/my', [HistoryController::class, 'viewMyHistory'])->name('myHistory');
     Route::get('/history/search', [HistoryController::class, 'viewHistoryNew'])->name('historyNew');
 
 
     /* HELP CENTER */
-
     Route::get('/help', [HelpCentreController::class, 'viewHelpCenter'])->name('help-center');
     Route::get('/help/general', [HelpCentreController::class, 'viewGeneralHelp']);
     Route::get('/help/account', [HelpCentreController::class, 'viewAccountHelp']);
@@ -214,12 +200,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:web', 'revalidate']], 
 
 
     /* DASHBOARD */
-
     Route::get('/', [DashboardController::class, 'adminDashboard']);
 
 
     /* KELAS */
-
     Route::get('/kelas', [KelasController::class, 'viewAllKelas']);
     Route::get('/kelas/create', [KelasController::class, 'createKelas']);
     Route::post('/kelas/store', [KelasController::class, 'storeKelas']);
@@ -230,12 +214,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:web', 'revalidate']], 
 
 
     /* ACCOUNT MANAGEMENT */
-
     Route::resource('/account', AccountController::class);
 
 
     /* JURUSAN */
-
     Route::get('/jurusan',[JurusanController::class, 'viewAllJurusan']);
     Route::get('/detail-jurusan/{id}', [JurusanController::class, 'viewJurusan']);
     Route::get('/jurusan/create', [JurusanController::class, 'createJurusan']);
@@ -246,7 +228,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:web', 'revalidate']], 
     Route::delete('/jurusan/delete/{id}', [JurusanController::class, 'deleteJurusan']);
     
     /* MAPEL */
-
     Route::get('/mata-pelajaran', [MapelController::class, 'viewAllMapel'])->name('view-all-mapel');
     Route::get('/detail-mata-pelajaran/{id}', [MapelController::class, 'viewDetailMapel']);
     Route::get('/mata-pelajaran/create', [MapelController::class, 'createMapel']);
@@ -274,18 +255,16 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:web', 'revalidate']], 
 });
 
 
-/* ROUTE USER SIMS (LOGIN & REGISTER) */
+/* ROUTE USER SIMS (LOGIN) */
 
-// Route::get('/register', [UserController::class, 'registration'])->name('register.form');
 Route::get('/login', [UserController::class, 'index'])->name('login')->middleware('guest');
-// Route::post('/registeruser', [UserController::class, 'register']);
 Route::post('/loginuser', [UserController::class, 'authenticate']);
 Route::get('/signout', [UserController::class, 'signOut']);
 
 
 /* FORGOT PASSWORD */
 
-Route::get('/forgot-password', [UserController::class, 'showForgetPasswordForm']);
+Route::get('/forgot-password', [UserController::class, 'showForgetPasswordForm'])->middleware('guest');
 Route::post('/forget-password', [UserController::class, 'submitForgetPasswordForm']);
 Route::get('/reset-password/{token}/edit', [UserController::class, 'showResetPasswordForm'])->name('reset.password');
 Route::patch('/reset-password', [UserController::class, 'submitResetPasswordForm'])->name('update.password');

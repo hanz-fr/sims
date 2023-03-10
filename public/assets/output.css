@@ -1795,6 +1795,10 @@ video {
   margin-left: 0.5rem;
 }
 
+.tw-mr-2 {
+  margin-right: 0.5rem;
+}
+
 .tw-mr-5 {
   margin-right: 1.25rem;
 }
@@ -1841,10 +1845,6 @@ video {
 
 .tw-mb-4 {
   margin-bottom: 1rem;
-}
-
-.tw-mr-2 {
-  margin-right: 0.5rem;
 }
 
 .tw--ml-6 {
