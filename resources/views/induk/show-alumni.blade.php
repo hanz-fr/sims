@@ -1214,7 +1214,7 @@
         @endif
 
         @if (isset($alumni))
-            <div class="tw-overflow-x-auto tw-relative tw-mt-7">
+            <div class="tw-overflow-x-auto tw-mt-7">
                 <table class="tw-w-full tw-text-lg tw-text-center tw-font-satoshi tw-text-bluewood-900">
                     <thead class="tw-border-y">
                         <tr>
