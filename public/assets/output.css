@@ -3622,6 +3622,16 @@ video {
   color: rgb(16 185 129 / var(--tw-text-opacity));
 }
 
+.tw-text-orange-400 {
+  --tw-text-opacity: 1;
+  color: rgb(251 146 60 / var(--tw-text-opacity));
+}
+
+.tw-text-orange-300 {
+  --tw-text-opacity: 1;
+  color: rgb(253 186 116 / var(--tw-text-opacity));
+}
+
 .tw-underline {
   text-decoration-line: underline;
 }

@@ -526,6 +526,8 @@
                             </select>
                         </div>
                     </div>
+
+                    <div class="sims-text-gray-sm tw-font-normal tw-text-gray-500">NOTE : Jika di submit tidak terjadi apa-apa, maka ada input yang salah atau tidak terisi.</div>
                 </div>
 
                 <div class="tw-mx-auto tw-text-center tw-mt-16">
@@ -543,6 +545,7 @@
                                 <button type="submit" x-show="step === 3"
                                     class="tw-bg-sims-new-500 tw-font-medium tw-text-white tw-py-3 tw-px-6 tw-rounded-lg">Upload
                                     Data</button>
+
                             </div>
                         </div>
                     </div>
