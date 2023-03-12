@@ -216,6 +216,8 @@ class MutasiKeluarController extends Controller
     /* Update Mutasi Keluar */
     public function updateMutasiKeluar(Request $request, $id) {
 
+        // return $request;
+
         abort_if(Gate::denies('manage-alumni'), 403);
 
         // validasi nis siswa jika sudah ada
