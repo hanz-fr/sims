@@ -97,30 +97,41 @@ class AccountController extends Controller
 
         abort_if(Gate::denies('admin-only'), 403);
 
-        $request->validate([
-            'nip'      => 'required|unique:users|min:9|max:18',
-            'nama'     => 'required',
-            'email'    => 'required|email|unique:users',
-            'no_telp'  => 'unique:users',
-            'role'     => 'required',
-            'is_admin' => 'required',
-            'password' => 'required|min:6',
-        ]);
-        
-        $user = new User([
-            'nip'      => $request->nip,
-            'nama'     => $request->nama,
-            'email'    => $request->email,
-            'no_telp'  => $request->no_telp,
-            'role'     => $request->role,
-            'is_admin' => $request->is_admin,
-            'password' => Hash::make($request->password),
-            'token'    => Str::random(40),
-        ]);
+        try {
 
-        $user->save();
-         
-        return redirect()->route('account.index')->with('success','Akun berhasil dibuat');
+            $request->validate([
+                'nip'      => 'required|unique:users|min:9|max:18',
+                'nama'     => 'required',
+                'email'    => 'required|email|unique:users',
+                'no_telp'  => 'unique:users',
+                'role'     => 'required',
+                'is_admin' => 'required',
+                'password' => 'required|min:6',
+            ]);
+            
+            $user = new User([
+                'nip'      => $request->nip,
+                'nama'     => $request->nama,
+                'email'    => $request->email,
+                'no_telp'  => $request->no_telp,
+                'role'     => $request->role,
+                'is_admin' => $request->is_admin,
+                'password' => Hash::make($request->password),
+                'token'    => Str::random(40),
+            ]);
+    
+            $user->save();
+             
+            return redirect()->route('account.index')->with('success','Akun berhasil dibuat');
+
+        } catch (ValidationException $e) {
+
+            return redirect()->back()->withErrors($e->errors())->withInput();
+
+        } catch (\Exception) {
+
+            return redirect()->back()->with('warning', 'Terjadi kesalahan, periksa kembali inputan anda atau coba lagi beberapa saat')->withInput();
+        }
 
     }
 
@@ -206,19 +217,29 @@ class AccountController extends Controller
 
         abort_if(Gate::denies('admin-only'), 403);
 
-        $this->validate($request,[
-            'nip'      => 'required|min:9|max:18',
-            'nama'     => 'required',
-            'email'    => 'required|email',
-            'is_admin' => 'required'
-        ]);
+        try {
 
-        $user = User::find($id);
+            $this->validate($request,[
+                'nip'      => 'required|min:9|max:18',
+                'nama'     => 'required',
+                'email'    => 'required|email',
+                'is_admin' => 'required'
+            ]);
 
-        $user->update($request->all());
+            $user = User::find($id);
 
-        return redirect()->route('account.index')->with('success','Akun berhasil diperbarui!');
+            $user->update($request->all());
 
+            return redirect()->route('account.index')->with('success','Akun berhasil diperbarui!');
+        
+        } catch (ValidationException $e) {
+
+            return redirect()->back()->withErrors($e->errors())->withInput();
+
+        } catch (\Exception) {
+
+            return redirect()->back()->with('warning', 'Terjadi kesalahan, periksa kembali inputan anda atau coba lagi beberapa saat')->withInput();
+        }
     }
 
     

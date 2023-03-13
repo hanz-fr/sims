@@ -934,7 +934,8 @@
                                                                             x-on:change="files = $event.target.files; console.log($event.target.files);"
                                                                             x-on:dragover="$el.classList.add('active')"
                                                                             x-on:dragleave="$el.classList.remove('active')"
-                                                                            x-on:drop="$el.classList.remove('active')">
+                                                                            x-on:drop="$el.classList.remove('active')" 
+                                                                            @error('uploaded_file') is-invalid @enderror>
 
                                                                         <template x-if="files !== null">
                                                                             <div class="tw-flex tw-flex-col tw-space-y-1">

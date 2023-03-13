@@ -106,19 +106,23 @@
                             <label class="label-input" for="nis">
                                 NIS *
                             </label>
-                            <input disabled class="input-data-minimal tw-bg-slate-100 tw-w-full" id="nis" name="nis" type="text"
-                                maxlength="10" value="{{ $siswa->nis_siswa }}" required>
+                            <input disabled class="input-data-minimal tw-bg-slate-100 tw-w-full" id="nis"
+                                name="nis" type="text" maxlength="10" value="{{ $siswa->nis_siswa }}">
                         </div>
                         <div class="tw-w-fit md:tw-w-1/2 tw-px-3">
                             <label class="label-input" for="nisn">
                                 NISN *
                             </label>
-                            <input disabled class="input-data-minimal tw-w-full tw-bg-slate-100" id="nisn" name="nisn" type="text"
-                                maxlength="10" value="{{ $siswa->nisn_siswa }}" required>
+                            <input disabled class="input-data-minimal tw-w-full tw-bg-slate-100" id="nisn"
+                                name="nisn" type="text" maxlength="10" value="{{ $siswa->nisn_siswa }}">
                         </div>
                         <input type="hidden" value="{{ $siswa->nisn_siswa }}" id="nisn" name="nisn">
                     </div>
-                    <div class="sims-text-black-sm tw-font-normal tw-text-gray-500">Anda tidak dapat mengubah NIS dan NISN karena atribut tersebut merupakan konstanta pada saat dan setelah dibuat. Jika terdapat kesalahan, anda harus menghapus data siswa ini lalu membuat yang baru.</div>
+                    <div class="sims-text-black-sm tw-font-normal tw-text-gray-500"><i
+                            class="fa-regular fa-circle-exclamation tw-mr-2"></i>Maaf, Anda tidak dapat mengubah NIS dan
+                        NISN karena atribut tersebut bersifat konstan dan tidak dapat diubah setelah data siswa dibuat. Jika
+                        terdapat kesalahan pada NIS dan NISN, solusinya adalah dengan menghapus data siswa ini lalu membuat
+                        data siswa yang baru.</div>
                     <div class="tw-my-10"></div>
                     <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
                         <div class="tw-w-full tw-px-3">
@@ -144,8 +148,11 @@
                             <label class="label-input" for="nama">
                                 Nama Peserta Didik *
                             </label>
-                            <input required class="input-data-minimal" id="nama" type="text" name="nama"
-                                value="{{ $siswa->nama_siswa }}">
+                            <input class="input-data-minimal" id="nama" type="text" name="nama"
+                                value="{{ $siswa->nama_siswa }}" @error('nama') is-invalid @enderror>
+                            @error('nama')
+                                <small class="tw-text-red-500">{{ $message }}</small>
+                            @enderror
                         </div>
                     </div>
                     <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
@@ -154,14 +161,21 @@
                                 Tempat Lahir *
                             </label>
                             <input class="input-data-minimal" id="tmp_lahir" name="tmp_lahir" type="text"
-                                value="{{ $siswa->tmp_lahir }}" required>
+                                value="{{ $siswa->tmp_lahir }}" @error('tmp_lahir') is-invalid @enderror>
+                            @error('tmp_lahir')
+                                <small class="tw-text-red-500">{{ $message }}</small>
+                            @enderror
                         </div>
                         <div class="tw-w-full md:tw-w-1/2 tw-px-3">
                             <label class="label-input" for="tgl_lahir">
                                 Tanggal Lahir *
                             </label>
-                            <input required class="input-data-minimal" id="tgl_lahir" name="tgl_lahir" type="date"
-                                placeholder="dd/mm/yyyy" value="{{ $siswa->tgl_lahir }}">
+                            <input class="input-data-minimal" id="tgl_lahir" name="tgl_lahir" type="date"
+                                placeholder="dd/mm/yyyy" value="{{ $siswa->tgl_lahir }}"
+                                @error('tgl_lahir') is-invalid @enderror>
+                            @error('tgl_lahir')
+                                <small class="tw-text-red-500">{{ $message }}</small>
+                            @enderror
                         </div>
                     </div>
                     <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
@@ -169,8 +183,11 @@
                             <label class="label-input" for="agama">
                                 Agama *
                             </label>
-                            <input required class="input-data-minimal" id="agama" type="text" name="agama"
-                                value="{{ $siswa->agama }}">
+                            <input class="input-data-minimal" id="agama" type="text" name="agama"
+                                value="{{ $siswa->agama }}" @error('agama') is-invalid @enderror>
+                            @error('agama')
+                                <small class="tw-text-red-500">{{ $message }}</small>
+                            @enderror
                         </div>
                     </div>
                     <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
@@ -178,15 +195,19 @@
                             <label class="label-input" for="anak_ke">
                                 Anak-Ke *
                             </label>
-                            <input required class="input-data-minimal" id="anak_ke" name="anak_ke" type="number"
-                                max="99" min="1" value="{{ $siswa->anak_ke }}">
+                            <input class="input-data-minimal" id="anak_ke" name="anak_ke" type="number"
+                                max="99" min="1" value="{{ $siswa->anak_ke }}"
+                                @error('anak_ke') is-invalid @enderror>
+                            @error('anak_ke')
+                                <small class="tw-text-red-500">{{ $message }}</small>
+                            @enderror
                         </div>
                         <div class="tw-w-full md:tw-w-1/2 tw-px-3">
                             <label class="label-input" for="jenis_kelamin">
                                 Jenis Kelamin *
                             </label>
-                            <select required class="input-data-minimal" id="jenis_kelamin" name="jenis_kelamin"
-                                value="{{ $siswa->jenis_kelamin }}">
+                            <select class="input-data-minimal" id="jenis_kelamin" name="jenis_kelamin"
+                                value="{{ $siswa->jenis_kelamin }}" @error('jenis_kelamin') is-invalid @enderror>
                                 @if ($siswa->jenis_kelamin == 'L')
                                     <option>Pilih</option>
                                     <option value="L" selected>Laki-laki</option>
@@ -199,6 +220,9 @@
                                     -
                                 @endif
                             </select>
+                            @error('jenis_kelamin')
+                                <small class="tw-text-red-500">{{ $message }}</small>
+                            @enderror
                         </div>
                     </div>
                     <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
@@ -236,7 +260,11 @@
                             <label class="label-input" for="alamat_siswa">
                                 Alamat Peserta Didik*
                             </label>
-                            <textarea required class="input-data-minimal" id="alamat_siswa" type="text" name="alamat_siswa">{{ $siswa->alamat_siswa }}</textarea>
+                            <textarea class="input-data-minimal" id="alamat_siswa" type="text" name="alamat_siswa"
+                                @error('alamat_siswa') is-invalid @enderror>{{ $siswa->alamat_siswa }}</textarea>
+                            @error('alamat_siswa')
+                                <small class="tw-text-red-500">{{ $message }}</small>
+                            @enderror
                         </div>
                     </div>
                     <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
@@ -244,8 +272,12 @@
                             <label class="label-input" for="no_telp">
                                 No. HP *
                             </label>
-                            <input required class="input-data-minimal" id="no_telp" type="text" name="no_telp"
-                                value="{{ $siswa->no_telp_siswa }}" maxlength="20">
+                            <input class="input-data-minimal" id="no_telp" type="text" name="no_telp"
+                                value="{{ $siswa->no_telp_siswa }}" maxlength="20"
+                                @error('no_telp') is-invalid @enderror>
+                            @error('no_telp')
+                                <small class="tw-text-red-500">{{ $message }}</small>
+                            @enderror
                         </div>
                         <div class="tw-w-full md:tw-w-1/2 tw-px-3">
                             <label class="label-input" for="email">
@@ -265,7 +297,7 @@
                             <label class="label-input" for="diterima_di_kelas">
                                 Di kelas *
                             </label>
-                            <select required class="input-data-minimal" id="diterima_di_kelas" name="diterima_di_kelas">
+                            <select class="input-data-minimal" id="diterima_di_kelas" name="diterima_di_kelas">
                                 <option selected value="{{ $siswa->KelasId }}">{{ $siswa->KelasId }}</option>
                                 @foreach ($kelas as $k)
                                     <option value="{{ $k->id }}">{{ $k->id }}</option>
@@ -306,7 +338,10 @@
                                 Angkatan
                             </label>
                             <input class="input-data-minimal" id="angkatan" type="number" name="angkatan"
-                                value="{{ $siswa->angkatan }}">
+                                value="{{ $siswa->angkatan }}" @error('angkatan') is-invalid @enderror>
+                            @error('angkatan')
+                                <small class="tw-text-red-500">{{ $message }}</small>
+                            @enderror
                         </div>
                     </div>
 
@@ -318,8 +353,12 @@
                             <label class="label-input" for="nama_sekolah_asal">
                                 Nama Sekolah *
                             </label>
-                            <input required class="input-data-minimal" id="nama_sekolah_asal" type="text"
-                                name="nama_sekolah_asal" value="{{ $siswa->sekolah_asal }}">
+                            <input class="input-data-minimal" id="nama_sekolah_asal" type="text"
+                                name="nama_sekolah_asal" value="{{ $siswa->sekolah_asal }}"
+                                @error('nama_sekolah_asal') is-invalid @enderror>
+                            @error('nama_sekolah_asal')
+                                <small class="tw-text-red-500">{{ $message }}</small>
+                            @enderror
                         </div>
                     </div>
                     <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
@@ -327,8 +366,12 @@
                             <label class="label-input" for="alamat_sekolah_asal">
                                 Alamat Sekolah *
                             </label>
-                            <input required class="input-data-minimal" id="alamat_sekolah_asal" type="text"
-                                name="alamat_sekolah_asal" value="{{ $siswa->alamat_sekolah_asal }}">
+                            <input class="input-data-minimal" id="alamat_sekolah_asal" type="text"
+                                name="alamat_sekolah_asal" value="{{ $siswa->alamat_sekolah_asal }}"
+                                @error('alamat_sekolah_asal') is-invalid @enderror>
+                            @error('alamat_sekolah_asal')
+                                <small class="tw-text-red-500">{{ $message }}</small>
+                            @enderror
                         </div>
                     </div>
 
@@ -390,7 +433,7 @@
                                 Nama Ayah
                             </label>
                             <input class="input-data-minimal" id="nama_ayah" type="text" name="nama_ayah"
-                                value="@if($siswa->ortu != null){{ $siswa->ortu->nama_ayah }}@endif">
+                                value="@if ($siswa->ortu != null) {{ $siswa->ortu->nama_ayah }} @endif">
                         </div>
                     </div>
                     <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
@@ -399,7 +442,7 @@
                                 Nama Ibu
                             </label>
                             <input class="input-data-minimal" id="nama_ibu" type="text" name="nama_ibu"
-                                value="@if($siswa->ortu != null){{ $siswa->ortu->nama_ibu }}@endif">
+                                value="@if ($siswa->ortu != null) {{ $siswa->ortu->nama_ibu }} @endif">
                         </div>
                     </div>
                     <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
@@ -407,7 +450,11 @@
                             <label class="label-input" for="alamat_ortu">
                                 Alamat
                             </label>
-                            <textarea class="input-data-minimal" id="alamat_ortu" name="alamat_ortu">@if($siswa->ortu != null){{ $siswa->ortu->alamat_ortu }}@endif</textarea>
+                            <textarea class="input-data-minimal" id="alamat_ortu" name="alamat_ortu">
+@if ($siswa->ortu != null)
+{{ $siswa->ortu->alamat_ortu }}
+@endif
+</textarea>
                         </div>
                     </div>
                     <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
@@ -416,14 +463,15 @@
                                 No.Telp/HP
                             </label>
                             <input class="input-data-minimal" id="no_telp_ortu" type="text" name="no_telp_ortu"
-                                maxlength="20" value="@if($siswa->ortu != null){{ $siswa->ortu->no_telp_ortu }}@endif">
+                                maxlength="20"
+                                value="@if ($siswa->ortu != null) {{ $siswa->ortu->no_telp_ortu }} @endif">
                         </div>
                         <div class="tw-w-full md:tw-w-1/2 tw-px-3">
                             <label class="label-input" for="email_ortu">
                                 Email
                             </label>
                             <input class="input-data-minimal" id="email_ortu" type="email_ortu" name="email_ortu"
-                                value="@if($siswa->ortu != null){{ $siswa->ortu->email_ortu }}@endif">
+                                value="@if ($siswa->ortu != null) {{ $siswa->ortu->email_ortu }} @endif">
                         </div>
                     </div>
 
@@ -436,7 +484,7 @@
                                 Nama Wali
                             </label>
                             <input class="input-data-minimal" id="nama_wali" type="text" name="nama_wali"
-                                value="@if($siswa->ortu != null){{ $siswa->ortu->nama_wali }}@endif">
+                                value="@if ($siswa->ortu != null) {{ $siswa->ortu->nama_wali }} @endif">
                         </div>
                     </div>
                     <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
@@ -444,7 +492,11 @@
                             <label class="label-input" for="alamat_wali">
                                 Alamat
                             </label>
-                            <textarea class="input-data-minimal" id="alamat_wali" type="text" name="alamat_wali">@if($siswa->ortu != null){{ $siswa->ortu->alamat_wali }}@endif</textarea>
+                            <textarea class="input-data-minimal" id="alamat_wali" type="text" name="alamat_wali">
+@if ($siswa->ortu != null)
+{{ $siswa->ortu->alamat_wali }}
+@endif
+</textarea>
                         </div>
                     </div>
                     <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
@@ -453,7 +505,8 @@
                                 No. Telp/HP
                             </label>
                             <input class="input-data-minimal" id="no_telp_wali" type="text" name="no_telp_wali"
-                                maxlength="20" value="@if($siswa->ortu != null){{ $siswa->ortu->no_telp_wali }}@endif">
+                                maxlength="20"
+                                value="@if ($siswa->ortu != null) {{ $siswa->ortu->no_telp_wali }} @endif">
                         </div>
                     </div>
                     <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
@@ -462,7 +515,7 @@
                                 Pekerjaan Wali
                             </label>
                             <input class="input-data-minimal" id="pekerjaan_wali_2" type="text" name="pekerjaan_wali"
-                                value="@if($siswa->ortu != null){{ $siswa->ortu->pekerjaan_wali }}@endif">
+                                value="@if ($siswa->ortu != null) {{ $siswa->ortu->pekerjaan_wali }} @endif">
                         </div>
                     </div>
 
@@ -504,7 +557,7 @@
                             </label>
                             <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-2">
                                 <div class="tw-w-full tw-px-3">
-                                    <select required class="input-data-minimal" id="isAlumni" name="isAlumni" required>
+                                    <select class="input-data-minimal" id="isAlumni" name="isAlumni">
                                         @if ($siswa->isAlumni === true)
                                             <option value="true" selected>Sudah</option>
                                             <option value="false">Belum</option>
@@ -619,7 +672,7 @@
                         </div>
                     </div>
 
-                    <div class="sims-text-gray-sm tw-font-normal tw-text-gray-500">NOTE : Jika di submit tidak terjadi apa-apa, maka ada input yang salah atau tidak terisi.</div>
+                    {{-- <div class="sims-text-gray-sm tw-font-normal tw-text-gray-500">NOTE : Jika di submit tidak terjadi apa-apa, maka ada input yang salah atau tidak terisi.</div> --}}
                 </div>
 
                 <div class="tw-mx-auto tw-text-center tw-mt-16">

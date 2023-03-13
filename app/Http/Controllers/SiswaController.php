@@ -7,13 +7,14 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Exports\DataIndukExport;
 use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Http;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\DetailDataIndukExport;
-use Illuminate\Support\Facades\Auth;
 use PhpOffice\PhpSpreadsheet\IOFactory;
+use Illuminate\Validation\ValidationException;
 
 class SiswaController extends Controller
 {
@@ -401,24 +402,188 @@ class SiswaController extends Controller
         
         } else {
 
+            try {
+                
+                $request->validate([
+                    'nis_siswa' => 'required|max:10',
+                    'nisn' => 'required|max:10',
+                    'nama' => 'required|max:100',
+                    'tmp_lahir' => 'required',
+                    'tgl_lahir' => 'required',
+                    'agama' => 'required',
+                    'anak_ke' => 'required',
+                    'jenis_kelamin' => 'required',
+                    'alamat_siswa' => 'required',
+                    'no_telp' => 'required',
+                    'angkatan' => 'required|max:4',
+                    'nama_sekolah_asal' => 'required',
+                    'alamat_sekolah_asal' => 'required',
+                ], [
+                    'required' => 'Field ini wajib diisi'
+                ]);
+    
+    
+                $fileName = '';
+    
+    
+                if ($file = $request->hasFile('foto')) {
+                    $file = $request->file('foto');
+                    $fileName = uniqid() . $file->getClientOriginalName();
+                    $destinationPath = public_path() . '/foto';
+                    $file->move($destinationPath, $fileName);
+                }
+    
+                $response = Http::post("{$this->api_url}/siswa", [
+                    'nis_siswa' => $request->nis,
+                    'nisn_siswa' => $request->nisn,
+                    'nama_siswa' => $request->nama,
+                    'KelasId' =>  $request->KelasId,
+                    'email_siswa' => $request->email,
+                    'tmp_lahir' => $request->tmp_lahir,
+                    'tgl_lahir' => $request->tgl_lahir,
+                    'jenis_kelamin' => $request->jenis_kelamin,
+                    'agama' => $request->agama,
+                    'no_ijazah_smk' => $request->nomor_ijazah_smk,
+                    'no_ijazah_smp' => $request->nomor_ijazah_smp,
+                    'tgl_ijazah_smk' => $request->tanggal_ijazah_smk,
+                    'no_skhun_smp' => $request->nomor_skhun,
+                    'thn_skhun_smp' => $request->tahun_skhun,
+                    'thn_ijazah_smp' => $request->tahun_ijazah_smp,
+                    'tgl_diterima' => $request->tgl_masuk,
+                    'semester_diterima' => (int)$request->semester,
+                    'diterima_di_kelas' => $request->diterima_di_kelas,
+                    'thn_ajaran' => $request->thn_ajaran,
+                    'angkatan' => (int)$request->angkatan,
+                    'status_siswa' => $request->status_siswa,
+                    'alamat_siswa' => $request->alamat_siswa,
+                    'sekolah_asal' => $request->nama_sekolah_asal,
+                    'alamat_sekolah_asal' => $request->alamat_sekolah_asal,
+                    'anak_ke' => (int)$request->anak_ke,
+                    'status' => $request->status,
+                    'keterangan_lain' => $request->keterangan_lain,
+                    'no_telp_siswa' => $request->no_telp,
+                    'nama_ayah' => $request->nama_ayah,
+                    'nama_ibu' => $request->nama_ibu,
+                    'alamat_ortu' => $request->alamat_ortu,
+                    'no_telp_ortu' => $request->no_telp_ortu,
+                    'email_ortu' =>  $request->email_ortu,
+                    'nama_wali' => $request->nama_wali,
+                    'alamat_wali' => $request->alamat_wali,
+                    'no_telp_wali' => $request->no_telp_wali,
+                    'pekerjaan_wali' => $request->pekerjaan_wali,
+                    'tgl_meninggalkan_sekolah' => $request->tgl_meninggalkan_sekolah,
+                    'alasan_meninggalkan_sekolah' => $request->alasan_meninggalkan_sekolah,
+                    'foto' => $fileName,
+                    'berat_badan' => (int)$request->berat_badan,
+                    'tinggi_badan' => (int)$request->tinggi_badan,
+                    'lingkar_kepala' => (int)$request->lingkar_kepala,
+                    'golongan_darah' => $request->golongan_darah,
+                    'tgl_masuk' => $request->tgl_masuk,
+                    'isAlumni' => $isAlumni,
+                ]);
+    
+    
+                $response->throw();
+    
+                $user = Auth::user();
+    
+                Http::post("{$this->api_url}/history", [
+                    'activityName' => 'Create Data Siswa',
+                    'activityAuthor' => "$user->nama",
+                    'activityDesc' => "$user->nama membuat data siswa baru dengan NIS : $request->nis"
+                ]);
+    
+                return redirect($request->prevURLwithParams)->with('success', 'Data berhasil ditambahkan.');
+
+            } catch (ValidationException $e) {
+
+                return redirect()->back()->withErrors($e->errors())->withInput();
+
+            } catch (\Exception) {
+
+                return redirect()->back()->with('warning', 'Terjadi kesalahan, periksa kembali inputan anda atau coba lagi beberapa saat')->withInput();
+            }
+        }
+    }
+
+
+    public function editSiswa($nis)
+    {
+
+        abort_if(Gate::denies('manage-induk'), 403);
+
+        $prevURL = parse_url(url()->previous(), PHP_URL_PATH);
+        $prevURLwithParams = URL::previous();
+
+        $response = Http::get("{$this->api_url}/siswa/{$nis}");
+
+        $kelas = Http::get("{$this->api_url}/kelas?perPage=1000");
+
+        if ($response->successful()) {
+            return view('induk.edit', [
+                'title' => 'Edit siswa',
+                'active' => 'data-induk',
+                'kelas' => json_decode($kelas)->data->rows,
+                'siswa' => json_decode($response)->result,
+                'status' => 'success',
+                'prevURL' => $prevURL,
+                'prevURLwithParams' => $prevURLwithParams
+            ]);
+        } else {
+            return view('induk.edit', [
+                'title' => 'Edit di',
+                'active' => 'data-induk',
+                'status' => 'error',
+                'message' => 'Halaman yang kamu cari tidak dapat ditemukan :('
+            ]);
+        }
+    }
+
+
+    public function updateSiswa(Request $request, $nis)
+    {
+        abort_if(Gate::denies('manage-induk'), 403);
+
+        try {
+
             $request->validate([
-                'nis' => 'required|max:10',
-                'nisn' => 'required|max:10',
                 'nama' => 'required|max:100',
+                'tmp_lahir' => 'required',
+                'tgl_lahir' => 'required',
+                'agama' => 'required',
+                'anak_ke' => 'required',
+                'jenis_kelamin' => 'required',
+                'alamat_siswa' => 'required',
+                'no_telp' => 'required',
+                'angkatan' => 'required|max:4',
+                'nama_sekolah_asal' => 'required',
+                'alamat_sekolah_asal' => 'required',
+            ], [
+                'required' => 'Field ini wajib diisi'
             ]);
 
+            if ($request->file('foto')) {
 
-            $fileName = '';
+                if ($file = $request->hasFile('foto')) {
 
+                    if ($request->oldImage) {
+                        File::delete('foto/' . $request->oldImage);
+                    }
 
-            if ($file = $request->hasFile('foto')) {
-                $file = $request->file('foto');
-                $fileName = uniqid() . $file->getClientOriginalName();
-                $destinationPath = public_path() . '/foto';
-                $file->move($destinationPath, $fileName);
+                    $file = $request->file('foto');
+                    $fileName = uniqid() . $file->getClientOriginalName();
+                    $destinationPath = public_path() . '/foto';
+                    $file->move($destinationPath, $fileName);
+
+                }
+                
+            } else {
+                $fileName = $request->oldImage;
             }
 
-            $response = Http::post("{$this->api_url}/siswa", [
+            $isAlumni = filter_var($request->isAlumni, FILTER_VALIDATE_BOOLEAN);
+
+            $response = Http::put("{$this->api_url}/siswa/{$nis}", [
                 'nis_siswa' => $request->nis,
                 'nisn_siswa' => $request->nisn,
                 'nama_siswa' => $request->nama,
@@ -463,148 +628,29 @@ class SiswaController extends Controller
                 'tinggi_badan' => (int)$request->tinggi_badan,
                 'lingkar_kepala' => (int)$request->lingkar_kepala,
                 'golongan_darah' => $request->golongan_darah,
-                'tgl_masuk' => $request->tgl_masuk,
                 'isAlumni' => $isAlumni,
             ]);
-
 
             $response->throw();
 
             $user = Auth::user();
 
             Http::post("{$this->api_url}/history", [
-                'activityName' => 'Create Data Siswa',
+                'activityName' => 'Update Data Siswa',
                 'activityAuthor' => "$user->nama",
-                'activityDesc' => "$user->nama membuat data siswa baru dengan NIS : $request->nis"
+                'activityDesc' => "$user->nama mengupdate data siswa dengan NIS : $request->nis"
             ]);
 
-            return redirect($request->prevURLwithParams)->with('success', 'Data berhasil ditambahkan.');
+            return redirect("{$request->prevURLwithParams}")->with('success', 'Data berhasil diubah.');
+
+        } catch (ValidationException $e) {
+
+            return redirect()->back()->withErrors($e->errors())->withInput();
+
+        } catch (\Exception) {
+
+            return redirect()->back()->with('warning', 'Terjadi kesalahan, periksa kembali inputan anda atau coba lagi beberapa saat')->withInput();
         }
-    }
-
-
-    public function editSiswa($nis)
-    {
-
-        abort_if(Gate::denies('manage-induk'), 403);
-
-        $prevURL = parse_url(url()->previous(), PHP_URL_PATH);
-        $prevURLwithParams = URL::previous();
-
-        $response = Http::get("{$this->api_url}/siswa/{$nis}");
-
-        $kelas = Http::get("{$this->api_url}/kelas?perPage=1000");
-
-        if ($response->successful()) {
-            return view('induk.edit', [
-                'title' => 'Edit siswa',
-                'active' => 'data-induk',
-                'kelas' => json_decode($kelas)->data->rows,
-                'siswa' => json_decode($response)->result,
-                'status' => 'success',
-                'prevURL' => $prevURL,
-                'prevURLwithParams' => $prevURLwithParams
-            ]);
-        } else {
-            return view('induk.edit', [
-                'title' => 'Edit di',
-                'active' => 'data-induk',
-                'status' => 'error',
-                'message' => 'Halaman yang kamu cari tidak dapat ditemukan :('
-            ]);
-        }
-    }
-
-
-    public function updateSiswa(Request $request, $nis)
-    {
-        abort_if(Gate::denies('manage-induk'), 403);
-
-        if ($request->file('foto')) {
-
-            if ($file = $request->hasFile('foto')) {
-
-                if ($request->oldImage) {
-                    File::delete('foto/' . $request->oldImage);
-                }
-
-                $file = $request->file('foto');
-                $fileName = uniqid() . $file->getClientOriginalName();
-                $destinationPath = public_path() . '/foto';
-                $file->move($destinationPath, $fileName);
-
-            }
-            
-        } else {
-            $fileName = $request->oldImage;
-        }
-
-        $isAlumni = filter_var($request->isAlumni, FILTER_VALIDATE_BOOLEAN);
-
-        $response = Http::put("{$this->api_url}/siswa/{$nis}", [
-            'nis_siswa' => $request->nis,
-            'nisn_siswa' => $request->nisn,
-            'nama_siswa' => $request->nama,
-            'KelasId' =>  $request->KelasId,
-            'email_siswa' => $request->email,
-            'tmp_lahir' => $request->tmp_lahir,
-            'tgl_lahir' => $request->tgl_lahir,
-            'jenis_kelamin' => $request->jenis_kelamin,
-            'agama' => $request->agama,
-            'no_ijazah_smk' => $request->nomor_ijazah_smk,
-            'no_ijazah_smp' => $request->nomor_ijazah_smp,
-            'tgl_ijazah_smk' => $request->tanggal_ijazah_smk,
-            'no_skhun_smp' => $request->nomor_skhun,
-            'thn_skhun_smp' => $request->tahun_skhun,
-            'thn_ijazah_smp' => $request->tahun_ijazah_smp,
-            'tgl_diterima' => $request->tgl_masuk,
-            'semester_diterima' => (int)$request->semester,
-            'diterima_di_kelas' => $request->diterima_di_kelas,
-            'thn_ajaran' => $request->thn_ajaran,
-            'angkatan' => (int)$request->angkatan,
-            'status_siswa' => $request->status_siswa,
-            'alamat_siswa' => $request->alamat_siswa,
-            'sekolah_asal' => $request->nama_sekolah_asal,
-            'alamat_sekolah_asal' => $request->alamat_sekolah_asal,
-            'anak_ke' => (int)$request->anak_ke,
-            'status' => $request->status,
-            'keterangan_lain' => $request->keterangan_lain,
-            'no_telp_siswa' => $request->no_telp,
-            'nama_ayah' => $request->nama_ayah,
-            'nama_ibu' => $request->nama_ibu,
-            'alamat_ortu' => $request->alamat_ortu,
-            'no_telp_ortu' => $request->no_telp_ortu,
-            'email_ortu' =>  $request->email_ortu,
-            'nama_wali' => $request->nama_wali,
-            'alamat_wali' => $request->alamat_wali,
-            'no_telp_wali' => $request->no_telp_wali,
-            'pekerjaan_wali' => $request->pekerjaan_wali,
-            'tgl_meninggalkan_sekolah' => $request->tgl_meninggalkan_sekolah,
-            'alasan_meninggalkan_sekolah' => $request->alasan_meninggalkan_sekolah,
-            'foto' => $fileName,
-            'berat_badan' => (int)$request->berat_badan,
-            'tinggi_badan' => (int)$request->tinggi_badan,
-            'lingkar_kepala' => (int)$request->lingkar_kepala,
-            'golongan_darah' => $request->golongan_darah,
-            'isAlumni' => $isAlumni,
-        ]);
-
-        $response->throw();
-
-        $user = Auth::user();
-
-        Http::post("{$this->api_url}/history", [
-            'activityName' => 'Update Data Siswa',
-            'activityAuthor' => "$user->nama",
-            'activityDesc' => "$user->nama mengupdate data siswa dengan NIS : $request->nis"
-        ]);
-
-        // DB::select(
-        //     'call PostHistory', 
-
-        // )
-
-        return redirect("{$request->prevURLwithParams}")->with('success', 'Data berhasil diubah.');
 
     }
 
@@ -654,14 +700,15 @@ class SiswaController extends Controller
 
         abort_if(Gate::denies('manage-induk'), 403);
         
-        /* Validasi file yang diupload */
-        $this->validate($request, [
-            'uploaded_file' => 'required|file|mimes:xls,xlsx'
-        ]);
-
-        $the_file = $request->file('uploaded_file');
-
         try {
+
+            /* Validasi file yang diupload */
+            $this->validate($request, [
+                'uploaded_file' => 'required|file|mimes:xls,xlsx'
+            ]);
+
+            $the_file = $request->file('uploaded_file');
+
 
             $spreadsheet  = IOFactory::load($the_file->getRealPath());
             $sheet        = $spreadsheet->getActiveSheet();
@@ -676,10 +723,10 @@ class SiswaController extends Controller
             $row_range    = range( 6, $row_limit );
             $column_range = range( 'B', $column_limit );
             $startcount   = 6;
-            
-            
+                
+                
             foreach ( $row_range as $row ) {
-    
+
                 $response = Http::post("{$this->api_url}/siswa", [
                     'nis_siswa'                   => $sheet->getCell( 'B' . $row )->getValue(),
                     'nisn_siswa'                  => $sheet->getCell( 'C' . $row )->getValue(),
@@ -725,16 +772,15 @@ class SiswaController extends Controller
                 ]);
 
                 $startcount++;
-    
-                // $response->throw();
+        
                 }
 
                 if (json_decode($response)->status === 'error') {
 
                     return back()->with('warning', 'Terdapat kesalahan, periksa kembali file anda');
-                            
+                                
                 } else {
-    
+        
                     $user = Auth::user();
         
                     Http::post("{$this->api_url}/history", [
@@ -744,16 +790,18 @@ class SiswaController extends Controller
                     ]);
 
                     return back()->with('success','Selamat! Data anda berhasil diimpor.');
-    
+        
                 }
-                            
+
+        } catch (ValidationException $e) {
+
+            return redirect()->back()->with('warning', 'Periksa kembali format file import anda');
+    
         } catch (\Exception) {
-
-            return back()->with('warning','Terjadi kesalahan, tidak dapat mengimpor data.');
-
-        }
-
-
+    
+            return redirect()->back()->with('warning', 'Terjadi kesalahan, periksa kembali inputan anda atau coba lagi beberapa saat')->withInput();
+        }     
+        
     }
 
 

@@ -34,8 +34,8 @@
             <div
                 class="tw-bg-white tw-rounded-[50px] tw-flex tw-flex-col tw-mx-auto tw-my-28 tw-px-20 tw-py-11 tw-top-1/2 tw-w-3/5 tw-h-3/5 tw-border tw-border-slate-200 tw-shadow-xl tw-justify-center tw-text-center">
                 <img class="tw-w-1/2 tw-mx-auto" src="assets/img/email-sent.svg" alt="" srcset="">
-                <div class="sims-heading-3xl md:tw-mt-3 sm:tw-text-center lg:tw-text-left">Email Terkirim</div>
-                <div class="tw-text-sm tw-font-sg tw-mt-2 tw-text-gray-400 sm:tw-text-center lg:tw-text-left">Cek inbox
+                <div class="sims-heading-3xl md:tw-mt-3 lg:tw-text-center tw-text-left">Email Terkirim</div>
+                <div class="tw-text-sm tw-font-sg tw-mt-2 tw-text-gray-400 lg:tw-text-center tw-text-left">Cek inbox
                     email anda</div>
                 <a href="/login">
                     <button
