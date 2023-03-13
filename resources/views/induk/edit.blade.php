@@ -106,17 +106,20 @@
                             <label class="label-input" for="nis">
                                 NIS *
                             </label>
-                            <input class="input-data-minimal tw-w-full" id="nis" name="nis" type="text"
+                            <input disabled class="input-data-minimal tw-bg-slate-100 tw-w-full" id="nis" name="nis" type="text"
                                 maxlength="10" value="{{ $siswa->nis_siswa }}" required>
                         </div>
                         <div class="tw-w-fit md:tw-w-1/2 tw-px-3">
                             <label class="label-input" for="nisn">
                                 NISN *
                             </label>
-                            <input class="input-data-minimal tw-w-full" id="nisn" name="nisn" type="text"
+                            <input disabled class="input-data-minimal tw-w-full tw-bg-slate-100" id="nisn" name="nisn" type="text"
                                 maxlength="10" value="{{ $siswa->nisn_siswa }}" required>
                         </div>
+                        <input type="hidden" value="{{ $siswa->nisn_siswa }}" id="nisn" name="nisn">
                     </div>
+                    <div class="sims-text-black-sm tw-font-normal tw-text-gray-500">Anda tidak dapat mengubah NIS dan NISN karena atribut tersebut merupakan konstanta pada saat dan setelah dibuat. Jika terdapat kesalahan, anda harus menghapus data siswa ini lalu membuat yang baru.</div>
+                    <div class="tw-my-10"></div>
                     <div class="tw-flex tw-flex-wrap tw--mx-3 tw-mb-6">
                         <div class="tw-w-full tw-px-3">
                             <label class="label-input" for="nama">
