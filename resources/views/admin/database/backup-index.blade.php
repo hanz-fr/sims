@@ -136,7 +136,7 @@
             <div class="tw-flex tw-flex-col tw-gap-1">
                 <div class="sims-text-gray-sm">Tabel</div>
                 <select name="table" id="table" class="tw-border-[1.5px] tw-transition-all tw-duration-500 tw-ease-out tw-font-satoshi tw-font-normal tw-text-gray-500 tw-border-gray-300 tw-py-1 tw-px-5 tw-rounded-xl focus:tw-outline-sims-new-500">
-                    <option value="">-- pilih tabel --</option>
+                    <option value="all">-- pilih tabel --</option>
                     <option value="all">Semua Tabel</option>
                     <option value="siswa">siswa</option>
                     <option value="mutasi">mutasi</option>
