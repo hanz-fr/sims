@@ -64,7 +64,11 @@
 
                         </div>
                     @endforeach
-                    <div class="tw-flex tw-mx-10 tw-border-b-2 tw-my-16 tw-border-slate-200"></div>
+                    <div class="tw-flex tw-justify-center">
+                        <div class="tw-flex tw-mx-10 tw-border-b-2 tw-my-16 tw-border-slate-200 tw-w-full"></div>
+                        <div class="sims-text-black-sm tw-text-slate-300 tw-whitespace-nowrap tw-my-auto">Kemarin dan sebelumnya</div>
+                        <div class="tw-flex tw-mx-10 tw-border-b-2 tw-my-16 tw-border-slate-200 tw-w-full"></div>
+                    </div>
                 @endif
 
                 {{-- kalau misal ada aktivitas di hari kemarin dan seterusnya --}}
