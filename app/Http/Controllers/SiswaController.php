@@ -405,7 +405,7 @@ class SiswaController extends Controller
             try {
                 
                 $request->validate([
-                    'nis_siswa' => 'required|max:10',
+                    'nis' => 'required|max:10',
                     'nisn' => 'required|max:10',
                     'nama' => 'required|max:100',
                     'tmp_lahir' => 'required',
