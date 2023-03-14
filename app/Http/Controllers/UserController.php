@@ -85,11 +85,11 @@ class UserController extends Controller
 
         } catch (AuthenticationException $e) {
 
-            return redirect('login')->with('warning', 'Detail login tidak valid');
+            return redirect('login')->with('warning', 'Detail login tidak valid')->withInput();
 
         } catch (\Exception $e) {
 
-            return redirect('login')->with('warning', 'Terjadi kesalahan, ulangi atau coba lagi beberapa saat');
+            return redirect('login')->with('warning', 'Terjadi kesalahan, ulangi atau coba lagi beberapa saat')->withInput();
         }
   
     }
