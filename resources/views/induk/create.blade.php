@@ -544,8 +544,8 @@
                     </div>
 
                     {{-- <div class="sims-text-gray-sm tw-font-normal tw-text-gray-500">NOTE : Jika di submit tidak terjadi
-                        apa-apa, maka ada input yang salah atau tidak terisi.</div>
-                </div> --}}
+                        apa-apa, maka ada input yang salah atau tidak terisi.</div> --}}
+                </div>
 
                 <div class="tw-mx-auto tw-text-center tw-mt-16">
                     <div class="tw-max-w-3xl tw-mx-auto tw-px-4">
