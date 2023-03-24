@@ -111,7 +111,7 @@ class UserController extends Controller
             Mail::to($user->email)->send(new EmailVerification($user));
     
             return back()->with('success', 'Link verifikasi sudah terkirim, cek inbox email anda');
-
+            
         } catch (QueryException $e) {
 
             // duplicate entry error
