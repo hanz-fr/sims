@@ -21,7 +21,7 @@ class DataIndukExport implements FromView, ShouldAutoSize, WithEvents, WithColum
     public function __construct()
     {
 
-        $this->url = '127.0.0.1:3000';
+        $this->url = 'https://sims-api.vercel.app';
     }
 
     /**
