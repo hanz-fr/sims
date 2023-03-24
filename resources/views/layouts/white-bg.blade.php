@@ -53,7 +53,7 @@
         AOS.init();
     </script>
 
-    {{-- chart js --}}
+    {{-- sweet alert --}}
     @include('sweetalert::alert')
 
     {{-- tw elements --}}

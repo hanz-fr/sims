@@ -209,7 +209,7 @@ class AlumniController extends Controller
                 
                 ]);
     
-            } catch (Exception) {
+            } catch (\Exception) {
     
                 return back()->with('warning', 'Terjadi kesalahan, tidak dapat mengekspor data');
             }
@@ -240,7 +240,7 @@ class AlumniController extends Controller
                 
                 ]);
     
-            } catch (Exception) {
+            } catch (\Exception) {
     
                 return back()->with('warning', 'Terjadi kesalahan, tidak dapat mengekspor data');
             }
@@ -342,7 +342,7 @@ class AlumniController extends Controller
             
             ]);
 
-        } catch (Exception) {
+        } catch (\Exception) {
 
             return back()->with('warning', 'Terjadi kesalahan, tidak dapat mengekspor data');
         }
