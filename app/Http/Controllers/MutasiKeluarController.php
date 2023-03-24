@@ -21,7 +21,7 @@ class MutasiKeluarController extends Controller
     public function __construct()
     {
 
-        $this->api_url = '127.0.0.1:3000'; // Ganti link NGROK disini
+        $this->api_url = 'https://sims-api.vercel.app'; // Ganti link NGROK disini
 
 
         $this->sims_url = 'http://127.0.0.1:8000'; // SIMS URL
@@ -146,6 +146,7 @@ class MutasiKeluarController extends Controller
             ]);
 
             $response2 = Http::put("{$this->api_url}/siswa/{$nis}", [
+                'nis_siswa' => $request->nis_siswa,
                 'tgl_meninggalkan_sekolah' => $request->tgl_mutasi,
                 'alasan_meninggalkan_sekolah' => $request->alasan_mutasi, 
             ]);
@@ -215,6 +216,8 @@ class MutasiKeluarController extends Controller
     /* Update Mutasi Keluar */
     public function updateMutasiKeluar(Request $request, $id) {
 
+        // return $request;
+
         abort_if(Gate::denies('manage-alumni'), 403);
 
         // validasi nis siswa jika sudah ada
@@ -246,6 +249,7 @@ class MutasiKeluarController extends Controller
             ]);
 
             $response2 = Http::put("{$this->api_url}/siswa/{$nis}", [
+                'nis_siswa' => $request->nis_siswa,
                 'tgl_meninggalkan_sekolah' => $request->tgl_mutasi,
                 'alasan_meninggalkan_sekolah' => $request->alasan_mutasi, 
             ]);

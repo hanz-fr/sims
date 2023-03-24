@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
-
     {{-- Alpine tooltip --}}
     <script src="https://cdn.jsdelivr.net/npm/@ryangjchandler/alpine-tooltip@1.x.x/dist/cdn.min.js" defer></script>
     <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css" />
@@ -44,7 +43,6 @@
 
     {{-- AJAX (DO NOT REMOVE) --}}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
 
     {{-- icon --}}
     <link rel="stylesheet" href="{{ URL::asset('font-awesome/css/all.min.css') }}">
@@ -91,9 +89,6 @@
 
 
     <script src="{{ URL::asset('assets/main.js') }}"></script>
-
-    {{-- ajax --}}
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
     {{-- flowbite --}}
     <script src="https://unpkg.com/flowbite@1.5.5/dist/flowbite.js"></script>

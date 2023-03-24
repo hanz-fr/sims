@@ -107,24 +107,6 @@ INSERT INTO
   )
 VALUES
   (
-    'BM-DM',
-    'BM',
-    'DM',
-    'Program keahlian Business Marketing dengan konsentrasi keahlian Digital Marketing',
-    '2023-03-02 07:54:21',
-    '2023-03-02 07:54:21'
-  );
-INSERT INTO
-  `jurusan` (
-    `id`,
-    `nama`,
-    `konsentrasi`,
-    `desc`,
-    `createdAt`,
-    `updatedAt`
-  )
-VALUES
-  (
     'DKV',
     'DKV',
     '',
@@ -329,24 +311,6 @@ VALUES
     'Program keahlian Rekayasa Perangkat Lunak dengan konsentrasi Rekayasa Perangkat Lunak',
     '0000-00-00 00:00:00',
     '0000-00-00 00:00:00'
-  );
-INSERT INTO
-  `jurusan` (
-    `id`,
-    `nama`,
-    `konsentrasi`,
-    `desc`,
-    `createdAt`,
-    `updatedAt`
-  )
-VALUES
-  (
-    'SI-K',
-    'SI',
-    'K',
-    'Sistem Informasi Komputer',
-    '2023-03-01 11:20:40',
-    '2023-03-01 11:20:40'
   );
 INSERT INTO
   `jurusan` (

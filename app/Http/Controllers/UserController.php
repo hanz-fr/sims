@@ -13,7 +13,10 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Auth\AuthenticationException;
+use Illuminate\Validation\ValidationException;
 
 class UserController extends Controller
 {
@@ -22,7 +25,7 @@ class UserController extends Controller
     public function __construct()
     {
 
-        $this->api_url = '127.0.0.1:3000'; // Ganti link NGROK disini
+        $this->api_url = 'https://sims-api.vercel.app'; // Ganti link NGROK disini
 
 
         $this->sims_url = 'http://127.0.0.1:8000'; // SIMS URL
@@ -30,103 +33,7 @@ class UserController extends Controller
     }
 
 
-    /* registrasi */
-    public function registration() {
-    
-        return view('auth.register', [
-            'title' => 'Registrasi Akun',
-            'status' => ''
-        ]);
-
-    }
-
-    /* registration form */
-    public function register(Request $request) {
-
-        $request->validate([
-            'nip'      => 'required|unique:users|min:9|max:18',
-            'nama'     => 'required',
-            'email'    => 'required|email|unique:users',
-            'no_telp'  => 'unique:users|min:10|max:16',
-            'role'     => 'required',
-            'password' => 'required|min:6',
-        ]);
-        
-        $user = User::create([
-            'nip'      => $request->nip,
-            'nama'     => $request->nama,
-            'email'    => $request->email,
-            'no_telp'  => $request->no_telp,
-            'role'     => $request->role,
-            'password' => Hash::make($request->password),
-            'token'    => Str::random(40),
-        ]);
-
-        Mail::to($request->email)->send(new EmailVerification($user));
-
-        return view('auth.register', [
-            'title'  => 'Verifikasi akun anda',
-            'status' => 'success',
-            'user'   => $user
-        ]);
-
-    }
-
-
-    /* send verify code */
-    public function sendVerifyAccount(Request $request, $id) {
-
-        $user = User::where('id', $id)->first();
-
-        $user->update([
-            'token' => Str::random(40),
-            'email' => $request->email
-        ]);
-
-        Mail::to($user->email)->send(new EmailVerification($user));
-
-        return view('auth.edit-profil', [
-            'title'   => 'Edit Profil',
-            'active'  => 'profile',
-            'status'  => 'success', 
-            'message' => 'Link baru sudah terkirim',
-            'user'    => $user
-        ]);
-
-    }
-
-
-    
-    public function verifyAccount($token) {
-        
-        $user = User::where('token', $token)->first();
-
-        if (!$user){
-            return redirect()->route('profile')->with('warning', 'Invalid URL');
-        } else {
-
-            if ($user->email_verified_at) {
-                return redirect()->route('profile')->with('warning', 'Email sudah terverifikasi');
-            } else {
-                $user->update([
-                    'email_verified_at' => Carbon::now()
-                ]);
-
-                return view('auth.profil-user', [
-                    'title'  => 'Verifikasi akun anda',
-                    'status' => 'success',
-                    'user'   => $user,
-                    'message'=> 'Verifikasi Akun Berhasil'
-                ]);
-
-            }
-
-        }
-
-    }
-
-    
-    // show login form
+    /* showing login form */
     public function index() {
 
         return view('auth.login', [
@@ -137,11 +44,15 @@ class UserController extends Controller
     }
 
 
+    /* Authentication for user */
     public function authenticate(Request $request) {
 
         $request->validate([
-            'nip'      => 'required|min:9|max:18',
+            'nip'      => 'required|min:9|max:18|exists:users',
             'password' => 'required|min:6',
+            
+        ], [
+            'nip.exists' => 'NIP anda belum terdaftar'
         ]);
 
         $remember_me = $request->has('remember') ? true : false;
@@ -150,7 +61,7 @@ class UserController extends Controller
 
         try {
 
-            if (Auth::attempt($credentials, $remember_me)) {
+            if(Auth::attempt($credentials, $remember_me)) {
             
                 $request->session()->regenerate();
     
@@ -161,7 +72,7 @@ class UserController extends Controller
     
                 } else {
     
-                    return redirect()->intended('/')->with('message', 'Successfully logged in');
+                    return redirect()->intended('/')->with('message', 'Berhasil log in');
     
                 }
             }
@@ -170,19 +81,84 @@ class UserController extends Controller
                 Auth::setRememberDuration(43200); // equivalent to 1 month
             endif;
 
-        } catch (\Exception) {
-    
-            return back()->with('warning', 'Detail login tidak valid!');
-        }
+            throw new AuthenticationException();
 
-        // throw ValidationException::withMessages([
-        //     'password' => ['Kata sandi salah!']
-        // ]);
+        } catch (AuthenticationException $e) {
+
+            return redirect('login')->with('warning', 'Detail login tidak valid')->withInput();
+
+        } catch (\Exception $e) {
+
+            return redirect('login')->with('warning', 'Terjadi kesalahan, ulangi atau coba lagi beberapa saat')->withInput();
+        }
   
     }
 
 
-    // logout
+    /* send verify code */
+    public function sendVerifyAccount(Request $request, $id) {
+
+        $user = User::where('id', $id)->first();
+
+        try {
+
+            $user->update([
+                'token' => Str::random(40),
+                'email' => $request->email,
+                'email_verified_at' => null
+            ]);
+    
+            Mail::to($user->email)->send(new EmailVerification($user));
+    
+            return back()->with('success', 'Link verifikasi sudah terkirim, cek inbox email anda');
+            
+        } catch (QueryException $e) {
+
+            // duplicate entry error
+            if ($e->getCode() === '23000') {
+
+                return back()->with('warning', 'Email sudah digunakan');
+            }
+
+        } catch (\Exception $e) {
+
+            return back()->with('warning', 'Terjadi kesalahan, gagal mengirim link');
+        }
+
+    }
+
+
+    /* verify the account */
+    public function verifyAccount($token) {
+        
+        $user = User::where('token', $token)->first();
+
+        if (!$user) {
+
+            return redirect()->route('profile')->with('warning', 'Invalid URL');
+
+        } else {
+
+            if ($user->email_verified_at) {
+
+                return redirect()->route('profile')->with('warning', 'Email sudah terverifikasi');
+
+            } else {
+
+                $user->update([
+                    'email_verified_at' => Carbon::now()
+                ]);
+
+                return redirect('login')->with('success', 'Sukses! Email berhasil diverifikasi!');
+
+            }
+
+        }
+
+    }
+
+    
+    /* log out */
     public function signOut() {
 
         Auth::logout();
@@ -194,7 +170,7 @@ class UserController extends Controller
     }
 
 
-    // show profile
+    /* show  profile */
     public function show() {
 
         $user = User::findOrFail(Auth::id());
@@ -231,7 +207,7 @@ class UserController extends Controller
     }
 
 
-    // edit profile
+    /* edit user profile */
     public function edit() {
 
         $user = User::findOrFail(Auth::id());
@@ -246,7 +222,7 @@ class UserController extends Controller
     }
 
 
-    // update profile
+    /* update user profile */
     public function update(Request $request, User $user, $id) {
 
         $this->validate($request,[
@@ -257,15 +233,13 @@ class UserController extends Controller
 
         $user = User::find($id);
 
-        if ($user->email_verified_at) {
-            $user->email_verified_at = null;
-        }
+        try {
 
-        if ($user->update($request->all())) {
+            $user->update($request->all());
 
             return redirect()->route('profile')->with('success','Profil anda berhasil diupdate');
 
-        } else {
+        } catch (\Exception) {
 
             return back()->with('warning', 'Profil anda gagal diupdate');
 
@@ -274,8 +248,7 @@ class UserController extends Controller
     }
 
     
-
-    // change password 
+    /* change password */
     public function changePassword(Request $request)  {
         
         $request->validate([
@@ -301,16 +274,19 @@ class UserController extends Controller
         $user->password = Hash::make($request->new_password);
 
         if ($user->save()) {
-            return back()->with('success', 'Kata Sandi berhasil diubah!');
-        } else {
-            return back()->with('warning', 'Kata Sandi gagal diubah!');
-        }
 
+            return back()->with('success', 'Kata Sandi berhasil diubah!');
+
+        } else {
+
+            return back()->with('warning', 'Kata Sandi gagal diubah!');
+
+        }
 
     }
 
 
-    // forget password
+    /* show forget password form */
       public function showForgetPasswordForm() {
 
          return view('auth.forgot-password', [
@@ -321,6 +297,7 @@ class UserController extends Controller
       }
   
 
+    /* request forget password */
     public function submitForgetPasswordForm(Request $request) {
 
         $request->validate([
@@ -329,6 +306,7 @@ class UserController extends Controller
 
         $user = User::where('email', $request->email)->first();
   
+        // kalau email user sudah terverif
         if ($user->email_verified_at) {
             $token = Str::random(64);
     
@@ -338,6 +316,7 @@ class UserController extends Controller
                 'created_at' => Carbon::now()
             ]);
     
+            // kirim email lupa password
             Mail::send('auth.email.forget-password', [
                 'token' => $token, 
                 'title' => 'Email',
@@ -350,8 +329,10 @@ class UserController extends Controller
                 'title'  => 'Email Sent',
                 'status' => 'message'
             ]);
+
         } else {
-            return redirect("login")->with('warning', 'Email anda belum terverifikasi!');
+
+            return redirect('login')->with('warning', 'Email anda belum terverifikasi!');
         }
 
       }
@@ -376,16 +357,23 @@ class UserController extends Controller
             'password_confirmation' => 'required|same:password'
         ]);
 
-        $user = User::where('email', $request->email)->first();
-        if ($user) {
+        try {
+
+            $user = User::where('email', $request->email)->first();
+
             $user['password'] = Hash::make($request->password);
+
             $user->save();
+            
             return redirect()->route('login')->with('success', 'Kata sandi berhasil diubah');
+
+        } catch (\Exception $e) {
+
+            return redirect()->route('update.password')->with('warning', 'Terjadi kesalahan, gagal mengubah kata sandi');
         }
 
-        return redirect()->route('update.password')->with('warning', 'Terjadi kesalahan, gagal mengubah kata sandi');
-
     }
+
 
 }
 

@@ -866,7 +866,7 @@
                 <div class="tw-flex tw-my-auto">
                     @can('manage-induk')
                         <button type="button" data-modal-toggle="popup-modal"
-                            class="tw-bg-sims-new-500 tw-text-white hover:tw-text-white hover:tw-bg-sims-new-700 tw-font-satoshi tw-rounded-lg tw-px-8 tw-py-2 tw-mr-7">
+                            class="tw-bg-sims-new-500 tw-text-white hover:tw-text-white hover:tw-bg-sims-new-700 tw-font-satoshi tw-transition-all tw-rounded-lg tw-px-8 tw-py-2 tw-mr-7">
                             Tambah Data +
                         </button>
 
@@ -934,7 +934,8 @@
                                                                             x-on:change="files = $event.target.files; console.log($event.target.files);"
                                                                             x-on:dragover="$el.classList.add('active')"
                                                                             x-on:dragleave="$el.classList.remove('active')"
-                                                                            x-on:drop="$el.classList.remove('active')">
+                                                                            x-on:drop="$el.classList.remove('active')" 
+                                                                            @error('uploaded_file') is-invalid @enderror>
 
                                                                         <template x-if="files !== null">
                                                                             <div class="tw-flex tw-flex-col tw-space-y-1">
@@ -1007,7 +1008,7 @@
             </section>
 
             @if (isset($siswa))
-                <section class="tw-overflow-x-auto tw-relative tw-mt-7">
+                <section class="tw-overflow-x-auto tw-mt-7">
                     <table class="tw-w-full tw-text-lg tw-text-center tw-font-satoshi tw-text-bluewood-900">
                         <thead class="tw-border-y">
                             <tr>

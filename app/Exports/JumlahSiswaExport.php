@@ -19,7 +19,7 @@ class JumlahSiswaExport implements FromView, ShouldAutoSize, WithEvents
 
     public function __construct() {
 
-        $this->api_url = '127.0.0.1:3000';
+        $this->api_url = 'https://sims-api.vercel.app';
     }
 
     /**

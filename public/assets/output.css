@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.2.4 | MIT License | https://tailwindcss.com
+! tailwindcss v3.1.8 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -30,7 +30,6 @@
 2. Prevent adjustments of font size after orientation changes in iOS.
 3. Use a more readable tab size.
 4. Use the user's configured `sans` font-family by default.
-5. Use the user's configured `sans` font-feature-settings by default.
 */
 
 html {
@@ -45,8 +44,6 @@ html {
   /* 3 */
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   /* 4 */
-  font-feature-settings: normal;
-  /* 5 */
 }
 
 /*
@@ -413,18 +410,59 @@ video {
   height: auto;
 }
 
-/* Make elements with the HTML hidden attribute stay hidden by default */
-
-[hidden] {
-  display: none;
-}
-
 * {
   scrollbar-color: initial;
   scrollbar-width: initial;
 }
 
 *, ::before, ::after {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+}
+
+::-webkit-backdrop {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
   --tw-translate-x: 0;
@@ -560,7 +598,7 @@ video {
   padding-right: 1rem;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
-  font-family: Space Grotesk;
+  font-family: Space Grotesk, Satoshi;
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 500;
@@ -662,7 +700,7 @@ video {
   padding-bottom: 0.75rem;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
-  font-family: Poppins, sans-serif;
+  font-family: Poppins, Satoshi;
   font-weight: 400;
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
@@ -705,7 +743,7 @@ video {
   padding-bottom: 0.75rem;
   padding-left: 2rem;
   padding-right: 2rem;
-  font-family: Poppins, sans-serif;
+  font-family: Poppins, Satoshi;
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
 }
@@ -737,11 +775,14 @@ video {
   line-height: 1.75rem;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 .btn-export:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(59 122 122 / var(--tw-bg-opacity));
+  background-color: rgb(45 98 113 / var(--tw-bg-opacity));
 }
 
 .nav-item-admin {
@@ -777,6 +818,7 @@ video {
 
 .card-dashboard {
   display: flex;
+  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   width: 14rem;
@@ -788,7 +830,7 @@ video {
   padding-left: 1rem;
   padding-right: 1rem;
   padding-bottom: 2rem;
-  font-family: Poppins, sans-serif;
+  font-family: Poppins, Satoshi;
 }
 
 .hc-text-xl {
@@ -819,7 +861,7 @@ video {
 }
 
 .hc-title-lg {
-  font-family: Poppins, sans-serif;
+  font-family: Poppins, Satoshi;
   font-size: 1.125rem;
   font-weight: 700;
   line-height: 1.75rem;
@@ -828,7 +870,7 @@ video {
 }
 
 .hc-title-xl {
-  font-family: Poppins, sans-serif;
+  font-family: Poppins, Satoshi;
   font-size: 1.25rem;
   font-weight: 700;
   line-height: 1.75rem;
@@ -837,7 +879,7 @@ video {
 }
 
 .hc-title-2xl {
-  font-family: Poppins, sans-serif;
+  font-family: Poppins, Satoshi;
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 1.75rem;
@@ -846,7 +888,7 @@ video {
 }
 
 .hc-title-3xl {
-  font-family: Poppins, sans-serif;
+  font-family: Poppins, Satoshi;
   font-size: 1.875rem;
   font-weight: 700;
   line-height: 1.75rem;
@@ -1104,7 +1146,7 @@ video {
 }
 
 .sims-text-gray-xl {
-  font-family: Space Grotesk;
+  font-family: Space Grotesk, Satoshi;
   font-size: 1.25rem;
   line-height: 1.75rem;
   font-weight: 600;
@@ -1113,7 +1155,7 @@ video {
 }
 
 .sims-text-gray-lg {
-  font-family: Space Grotesk;
+  font-family: Space Grotesk, Satoshi;
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-weight: 600;
@@ -1122,7 +1164,7 @@ video {
 }
 
 .sims-text-gray-md {
-  font-family: Space Grotesk;
+  font-family: Space Grotesk, Satoshi;
   font-size: 1rem;
   line-height: 1.5rem;
   font-weight: 600;
@@ -1131,7 +1173,7 @@ video {
 }
 
 .sims-text-gray-sm {
-  font-family: Space Grotesk;
+  font-family: Space Grotesk, Satoshi;
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 600;
@@ -1140,7 +1182,7 @@ video {
 }
 
 .sims-text-gray-xs {
-  font-family: Space Grotesk;
+  font-family: Space Grotesk, Satoshi;
   font-size: 0.75rem;
   line-height: 1rem;
   font-weight: 600;
@@ -1149,7 +1191,7 @@ video {
 }
 
 .sims-text-black-xl {
-  font-family: Space Grotesk;
+  font-family: Space Grotesk, Satoshi;
   font-size: 1.25rem;
   line-height: 1.75rem;
   font-weight: 600;
@@ -1158,7 +1200,7 @@ video {
 }
 
 .sims-text-black-sm {
-  font-family: Space Grotesk;
+  font-family: Space Grotesk, Satoshi;
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 600;
@@ -1167,7 +1209,7 @@ video {
 }
 
 .sims-text-regular-md {
-  font-family: Space Grotesk;
+  font-family: Space Grotesk, Satoshi;
   font-size: 1rem;
   line-height: 1.5rem;
   font-weight: 600;
@@ -1176,7 +1218,7 @@ video {
 }
 
 .sims-text-regular-sm {
-  font-family: Space Grotesk;
+  font-family: Space Grotesk, Satoshi;
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 600;
@@ -1189,6 +1231,7 @@ video {
 .sims-card-1 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   width: 100%;
@@ -1208,6 +1251,7 @@ video {
 .sims-card-1-noshadow {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   width: 100%;
@@ -1224,6 +1268,7 @@ video {
 .sims-card-2 {
   margin-top: 0px;
   margin-bottom: 0px;
+  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   width: 100%;
@@ -1511,14 +1556,19 @@ video {
   margin-bottom: 0.75rem;
 }
 
-.tw-my-8 {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-
 .tw-mx-2 {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
+}
+
+.tw-my-6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tw-my-8 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .tw-my-16 {
@@ -1539,11 +1589,6 @@ video {
 .-tw-mx-1 {
   margin-left: -0.25rem;
   margin-right: -0.25rem;
-}
-
-.tw-my-6 {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
 }
 
 .tw-my-32 {
@@ -1619,11 +1664,6 @@ video {
 .tw-my-24 {
   margin-top: 6rem;
   margin-bottom: 6rem;
-}
-
-.tw-my-4 {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
 }
 
 .tw-mt-8 {
@@ -1758,6 +1798,10 @@ video {
   margin-left: 0.5rem;
 }
 
+.tw-mr-2 {
+  margin-right: 0.5rem;
+}
+
 .tw-mr-5 {
   margin-right: 1.25rem;
 }
@@ -1798,16 +1842,16 @@ video {
   margin-top: 4rem;
 }
 
+.tw-mr-2 {
+  margin-right: 0.5rem;
+}
+
 .tw-mb-2 {
   margin-bottom: 0.5rem;
 }
 
 .tw-mb-4 {
   margin-bottom: 1rem;
-}
-
-.tw-mr-2 {
-  margin-right: 0.5rem;
 }
 
 .tw--ml-6 {
@@ -1935,6 +1979,7 @@ video {
 }
 
 .tw-h-fit {
+  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
 }
@@ -1996,6 +2041,7 @@ video {
 }
 
 .tw-h-min {
+  height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
 }
@@ -2093,6 +2139,7 @@ video {
 }
 
 .tw-w-fit {
+  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
@@ -2110,6 +2157,7 @@ video {
 }
 
 .tw-w-min {
+  width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
 }
@@ -2123,6 +2171,7 @@ video {
 }
 
 .tw-w-max {
+  width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
 }
@@ -2238,6 +2287,12 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+@-webkit-keyframes tw-pulse {
+  50% {
+    opacity: .5;
+  }
+}
+
 @keyframes tw-pulse {
   50% {
     opacity: .5;
@@ -2245,23 +2300,51 @@ video {
 }
 
 .tw-animate-pulse {
-  animation: tw-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  -webkit-animation: tw-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+          animation: tw-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@-webkit-keyframes tw-bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    -webkit-animation-timing-function: cubic-bezier(0.8,0,1,1);
+            animation-timing-function: cubic-bezier(0.8,0,1,1);
+  }
+
+  50% {
+    transform: none;
+    -webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
+            animation-timing-function: cubic-bezier(0,0,0.2,1);
+  }
 }
 
 @keyframes tw-bounce {
   0%, 100% {
     transform: translateY(-25%);
-    animation-timing-function: cubic-bezier(0.8,0,1,1);
+    -webkit-animation-timing-function: cubic-bezier(0.8,0,1,1);
+            animation-timing-function: cubic-bezier(0.8,0,1,1);
   }
 
   50% {
     transform: none;
-    animation-timing-function: cubic-bezier(0,0,0.2,1);
+    -webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
+            animation-timing-function: cubic-bezier(0,0,0.2,1);
   }
 }
 
 .tw-animate-bounce {
-  animation: tw-bounce 1s infinite;
+  -webkit-animation: tw-bounce 1s infinite;
+          animation: tw-bounce 1s infinite;
+}
+
+@keyframes tw-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.tw-animate-spin {
+  animation: tw-spin 1s linear infinite;
 }
 
 .tw-cursor-pointer {
@@ -2568,10 +2651,6 @@ video {
   border-radius: 1rem;
 }
 
-.tw-rounded-\[11px\] {
-  border-radius: 11px;
-}
-
 .tw-rounded-b-lg {
   border-bottom-right-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
@@ -2819,6 +2898,11 @@ video {
   background-color: rgb(209 213 219 / var(--tw-bg-opacity));
 }
 
+.tw-bg-slate-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+}
+
 .tw-bg-\[\#1096C2\] {
   --tw-bg-opacity: 1;
   background-color: rgb(16 150 194 / var(--tw-bg-opacity));
@@ -2939,17 +3023,16 @@ video {
   background-color: rgb(251 191 36 / var(--tw-bg-opacity));
 }
 
-.tw-bg-slate-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
-}
-
 .tw-bg-opacity-50 {
   --tw-bg-opacity: 0.5;
 }
 
 .tw-bg-no-repeat {
   background-repeat: no-repeat;
+}
+
+.tw-fill-white {
+  fill: #fff;
 }
 
 .tw-object-cover {
@@ -3296,11 +3379,11 @@ video {
 }
 
 .tw-font-pop {
-  font-family: Poppins, sans-serif;
+  font-family: Poppins, Satoshi;
 }
 
 .tw-font-sg {
-  font-family: Space Grotesk;
+  font-family: Space Grotesk, Satoshi;
 }
 
 .tw-font-satoshi {
@@ -3308,7 +3391,7 @@ video {
 }
 
 .tw-font-ubuntu {
-  font-family: Ubuntu;
+  font-family: Ubuntu, Satoshi;
 }
 
 .tw-text-2xl {
@@ -3544,6 +3627,11 @@ video {
   color: rgb(147 197 253 / var(--tw-text-opacity));
 }
 
+.tw-text-slate-300 {
+  --tw-text-opacity: 1;
+  color: rgb(203 213 225 / var(--tw-text-opacity));
+}
+
 .tw-text-red-700 {
   --tw-text-opacity: 1;
   color: rgb(185 28 28 / var(--tw-text-opacity));
@@ -3615,7 +3703,8 @@ video {
 }
 
 .tw-underline {
-  text-decoration-line: underline;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
 }
 
 .tw-antialiased {
@@ -3683,15 +3772,17 @@ video {
 }
 
 .tw-transition-colors {
+  transition-property: color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
 
 .tw-transition {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -3852,7 +3943,30 @@ a {
   border-radius: 7px;
   background: #3894a3;
   transition: 0.5s;
-  animation: loading1274 2s ease infinite;
+  -webkit-animation: loading1274 2s ease infinite;
+          animation: loading1274 2s ease infinite;
+}
+
+@-webkit-keyframes loading1274 {
+  0% {
+    width: 0%;
+  }
+
+  10% {
+    width: 10%;
+  }
+
+  50% {
+    width: 40%;
+  }
+
+  60% {
+    width: 60%;
+  }
+
+  100% {
+    width: 100%;
+  }
 }
 
 @keyframes loading1274 {
@@ -4514,11 +4628,6 @@ input[type="checkbox"]:checked {
   background-color: rgb(218 167 40 / var(--tw-bg-opacity));
 }
 
-.hover\:tw-bg-amber-500:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(245 158 11 / var(--tw-bg-opacity));
-}
-
 .hover\:tw-text-sims-600:hover {
   --tw-text-opacity: 1;
   color: rgb(45 114 116 / var(--tw-text-opacity));
@@ -4695,6 +4804,24 @@ input[type="checkbox"]:checked {
 }
 
 @media (min-width: 640px) {
+  .sm\:sims-heading-xl {
+    font-family: Satoshi;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 700;
+    --tw-text-opacity: 1;
+    color: rgb(56 148 163 / var(--tw-text-opacity));
+  }
+
+  .sm\:sims-text-gray-xs {
+    font-family: Space Grotesk;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 600;
+    --tw-text-opacity: 1;
+    color: rgb(156 163 175 / var(--tw-text-opacity));
+  }
+
   .sm\:tw-mx-5 {
     margin-left: 1.25rem;
     margin-right: 1.25rem;
@@ -4730,14 +4857,14 @@ input[type="checkbox"]:checked {
   }
 
   .sm\:sims-text-gray-xs {
-    font-family: Space Grotesk;
+    font-family: Space Grotesk, Satoshi;
     font-size: 0.75rem;
     line-height: 1rem;
     font-weight: 600;
     --tw-text-opacity: 1;
     color: rgb(156 163 175 / var(--tw-text-opacity));
   }
-
+  
   .sm\:tw-w-full {
     width: 100%;
   }
@@ -4924,6 +5051,24 @@ input[type="checkbox"]:checked {
 }
 
 @media (min-width: 1024px) {
+  .lg\:sims-heading-3xl {
+    font-family: Satoshi;
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-weight: 700;
+    --tw-text-opacity: 1;
+    color: rgb(56 148 163 / var(--tw-text-opacity));
+  }
+
+  .lg\:sims-text-gray-md {
+    font-family: Space Grotesk;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+    --tw-text-opacity: 1;
+    color: rgb(156 163 175 / var(--tw-text-opacity));
+  }
+
   .lg\:tw-mx-auto {
     margin-left: auto;
     margin-right: auto;
@@ -4942,28 +5087,19 @@ input[type="checkbox"]:checked {
     margin-right: 2rem;
   }
 
-  .lg\:sims-heading-3xl {
-    font-family: Satoshi;
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-    font-weight: 700;
-    --tw-text-opacity: 1;
-    color: rgb(56 148 163 / var(--tw-text-opacity));
-  }
-
   .lg\:tw-hidden {
     display: none;
   }
 
   .lg\:sims-text-gray-md {
-    font-family: Space Grotesk;
+    font-family: Space Grotesk, Satoshi;
     font-size: 1rem;
     line-height: 1.5rem;
     font-weight: 600;
     --tw-text-opacity: 1;
     color: rgb(156 163 175 / var(--tw-text-opacity));
   }
-
+  
   .lg\:tw-w-1\/2 {
     width: 50%;
   }
@@ -5039,5 +5175,9 @@ input[type="checkbox"]:checked {
 
   .lg\:tw-text-left {
     text-align: left;
+  }
+
+  .lg\:tw-text-center {
+    text-align: center;
   }
 }

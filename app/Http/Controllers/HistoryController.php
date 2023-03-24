@@ -16,7 +16,7 @@ class HistoryController extends Controller
     public function __construct()
     {
 
-        $this->api_url = '127.0.0.1:3000'; // Ganti link NGROK disini
+        $this->api_url = 'https://sims-api.vercel.app'; // Ganti link NGROK disini
 
 
         $this->sims_url = 'http://127.0.0.1:8000'; // SIMS URL
@@ -33,7 +33,6 @@ class HistoryController extends Controller
 
         $today_history = Http::get("{$this->api_url}/history/today");
         $older_history = Http::get("{$this->api_url}/history/older");
-
 
         /* History Error Handler */
         /* klo belum buat procedure nya, pake all history dulu */
