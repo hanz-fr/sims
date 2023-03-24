@@ -28,12 +28,12 @@
         <div class="sims-text-gray-lg">
             <p class="tw-mb-0">Created : <span class="tw-font-normal">@if(! empty($kelas->createdAt)){{ \Carbon\Carbon::parse(strtotime($kelas->createdAt))->translatedFormat('l d F Y'); }}@endif</span></p>
         </div>
-        <div class="tw-flex tw-font-ubuntu tw-text-white tw-font-medium tw-my-auto">
+        <div class="tw-flex tw-gap-3 tw-font-ubuntu tw-text-white tw-font-medium tw-my-auto">
             <form action="/admin/kelas/delete/{{ $kelas->id }}" method="POST">
                 @csrf
                 @method('DELETE')
 
-                <button type="button" data-modal-toggle="popup-modal" class="tw-bg-red-400 hover:tw-bg-red-500 tw-w-fit tw-px-8 tw-py-3 tw-rounded-[11px] tw-text-base tw-text-white tw-font-satoshi"><i class="fa-regular fa-trash-can tw-text-lg tw-mr-2"></i>Hapus Data</button>
+                <button type="button" data-modal-toggle="popup-modal" class="tw-px-8 tw-py-2 tw-bg-[#F87171] tw-text-white tw-font-normal sims-heading-sm tw-rounded-lg tw-shadow-sm hover:tw-shadow-lg hover:tw-bg-[#d45656] tw-transition-all tw-truncate"></i>Hapus Data</button>
 
                 <div id="popup-modal" tabindex="-1"
                     class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full">
@@ -73,7 +73,7 @@
                     </div>
                 </div>
             </form>
-            {{-- <a href="/admin/kelas/edit/{{ $kelas->id }}" class="tw-bg-amber-400 hover:tw-bg-amber-500 hover:tw-text-white tw-w-fit tw-px-10 tw-py-3 tw-rounded-[11px] tw-text-base tw-text-white tw-font-satoshi"><i class="fa-regular fa-edit tw-text-lg tw-mr-2"></i>Edit Data</a> --}}
+            <a style="color: inherit" href="/admin/kelas/edit/{{ $kelas->id }}" class="tw-px-8 tw-py-2 tw-bg-[#FBBF24] tw-text-white tw-font-normal sims-heading-sm tw-rounded-lg tw-shadow-sm hover:tw-shadow-lg hover:tw-bg-[#daa728] tw-transition-all tw-truncate"></i>Edit Data</a>
           </div>
     </div>
 </div>

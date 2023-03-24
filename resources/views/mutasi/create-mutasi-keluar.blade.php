@@ -82,17 +82,18 @@
                             <small class="tw-text-red-500">{{ $message }}</small>
                         @enderror
                     </div>
-                    <div class="tw-mx-auto md:tw-w-2/3 sm:tw-w-1/2">
+                    <!-- Temporary Comment -->
+                    {{-- <div class="tw-mx-auto md:tw-w-2/3 sm:tw-w-1/2">
                         <label class="label-input" for="nama_siswa">
-                            Nama Siswa *
+                            Nama Siswa
                         </label>
                         <input value="{{ old('nama_siswa') }}" @error('nama_siswa') is-invalid @enderror
-                            class="input-data-minimal tw-w-full" id="nama_siswa" name="nama_siswa" type="text" required>
+                            class="input-data-minimal tw-w-full" id="nama_siswa" name="nama_siswa" type="text">
                         @error('nama_siswa')
                             <small class="tw-text-red-500">{{ $message }}</small>
                         @enderror
-                    </div>
-                    <div class="tw-mx-auto md:tw-w-2/3 sm:tw-w-1/2">
+                    </div> --}}
+                    {{-- <div class="tw-mx-auto md:tw-w-2/3 sm:tw-w-1/2">
                         <label class="label-input" for="jenis_kelamin">
                             Jenis Kelamin *
                         </label>
@@ -109,7 +110,7 @@
                                 <option value="P">Perempuan</option>
                             @endif
                         </select>
-                    </div>
+                    </div> --}}
                     <div class="tw-mx-auto md:tw-w-2/3 sm:tw-w-1/2">
                         <label class="label-input" for="alasan_mutasi">
                             Alasan Mutasi

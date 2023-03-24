@@ -70,7 +70,7 @@
                     </button>
                 </li>
             </ul>
-            <div x-show="openTab === 1" class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl tw-mb-20">
+            <div x-show="openTab === 1" class="tw-overflow-x-auto tw-shadow-md sm:tw-rounded-xl tw-mb-20">
                 <table class="tw-w-full tw-text-sm tw-text-center">
                     <thead class="tw-text-md tw-text-basic-700 tw-border tw-font-satoshi">
                         <tr>
@@ -193,7 +193,7 @@
                     </tfoot>
                 </table>
             </div>
-            <div x-show="openTab === 2" class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl tw-mb-20">
+            <div x-show="openTab === 2" class="tw-overflow-x-auto tw-shadow-md sm:tw-rounded-xl tw-mb-20">
                 <table class="tw-w-full tw-text-sm tw-text-center">
                     <thead class="tw-text-md tw-text-basic-700 tw-border tw-font-satoshi">
                         <tr>
@@ -307,7 +307,7 @@
                     </tfoot>
                 </table>
             </div>
-            <div x-show="openTab === 3" class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl tw-mb-20">
+            <div x-show="openTab === 3" class="tw-overflow-x-auto tw-shadow-md sm:tw-rounded-xl tw-mb-20">
                 <table class="tw-w-full tw-text-sm tw-text-center">
                     <thead class="tw-text-md tw-text-basic-700 tw-border tw-font-satoshi">
                         <tr>
@@ -419,7 +419,7 @@
                     </tfoot>
                 </table>
             </div>
-            <div x-show="openTab === 4" class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl tw-mb-20">
+            <div x-show="openTab === 4" class="tw-overflow-x-auto tw-shadow-md sm:tw-rounded-xl tw-mb-20">
                 <table class="tw-w-full tw-text-sm tw-text-center">
                     <thead class="tw-text-md tw-text-basic-700 tw-border tw-font-satoshi">
                         <tr>

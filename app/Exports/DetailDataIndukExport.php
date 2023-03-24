@@ -22,7 +22,7 @@ class DetailDataIndukExport implements FromView, ShouldAutoSize
 
         $this->nis = $nis;
 
-        $this->api_url = '127.0.0.1:3000';
+        $this->api_url = 'https://sims-api.vercel.app';
 
         $this->siswa = Http::get("{$this->api_url}/siswa/{$nis}??page=1&perPage=100");
 

@@ -24,7 +24,7 @@ class MutasiMasukExport implements FromView, ShouldAutoSize, WithEvents, WithCol
     public function __construct()
     {
 
-        $this->url = '127.0.0.1:3000';
+        $this->url = 'https://sims-api.vercel.app';
         
     }
 

@@ -22,7 +22,7 @@
             @can('admin-only')
                 <div class="flex">
                     <a href="/admin/account/create"
-                        class="tw-bg-sims-new-500 tw-text-white hover:tw-text-white hover:tw-bg-sims-new-700 tw-font-satoshi tw-rounded-lg tw-px-8 tw-py-2 tw-mr-7">
+                        class="tw-bg-sims-new-500 tw-text-white hover:tw-text-white hover:tw-bg-sims-new-700 tw-font-satoshi tw-transition-all tw-rounded-lg tw-px-8 tw-py-2 tw-mr-7">
                         Tambah Akun +
                     </a>
                 </div>
@@ -30,7 +30,7 @@
         </div>
 
     {{-- account data table --}}
-    <section class="tw-overflow-x-auto tw-relative tw-mt-7">
+    <section class="tw-overflow-x-auto tw-mt-7">
         <table class="tw-w-full tw-text-lg tw-text-center tw-font-satoshi tw-text-bluewood-900">
           <thead class="tw-border-y">
               <tr>
@@ -78,10 +78,10 @@
                 <td class="tw-p-6">@if(!empty($u->created_at)) {{ \Carbon\Carbon::parse(strtotime($u->created_at))->translatedFormat('d F Y') }} @endif</td>
                 <td class="tw-flex tw-justify-center tw-gap-3 tw-p-6">
                     @can('admin-only')
-                    <a title="Edit Data" href="/admin/account/{{ $u->id }}/edit"
-                        class="tw-text-kuning-500 hover:tw-bg-kuning-500 hover:tw-text-white hover:tw-shadow-md tw-transition-all tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
-                        <i class="fa-solid fa-pen-to-square"></i></a>
-                    </a>
+                        <a title="Edit Data" @if (auth()->user()->is_admin == 1 && auth()->user()->id !== $u->id) href="/admin/account/{{ $u->id }}/edit" @else href="/profile/edit" @endif
+                            class="tw-text-kuning-500 hover:tw-bg-kuning-500 hover:tw-text-white hover:tw-shadow-md tw-transition-all tw-rounded-lg tw-text-xl tw-py-2 tw-px-3">
+                            <i class="fa-solid fa-pen-to-square"></i></a>
+                        </a>
                     <a href="/admin/account/{{ $u->id }}" class="tw-text-gray-400  hover:tw-text-white hover:tw-bg-gray-400 hover:tw-shadow-md tw-rounded-lg tw-text-xl tw-py-2 tw-px-3 tw-w-12 tw-transition-all" title="Detail Data">
                         <i class="fa-regular fa-eye"></i>
                     </a>

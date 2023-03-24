@@ -72,7 +72,7 @@
             activeClasses: 'tw-bg-sims-new-500 tw-text-white',
             inactiveClasses: 'tw-bg-white tw-text-sims-new-500'
         }">
-            <div x-show="selected === 1" class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
+            <div x-show="selected === 1" class="tw-overflow-x-auto tw-shadow-md sm:tw-rounded-xl">
                 <table class="tw-w-full tw-text-sm tw-text-center">
                     <thead class="tw-text-lg tw-bg-gray-100 tw-text-basic-700 tw-border-b tw-font-satoshi">
                         <tr class="tw-border">
@@ -215,7 +215,7 @@
                     </tbody>
                 </table>
             </div>
-            <div x-show="selected === 2" class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
+            <div x-show="selected === 2" class="tw-overflow-x-auto tw-shadow-md sm:tw-rounded-xl">
                 <table class="tw-w-full tw-text-sm tw-text-center">
                     <thead class="tw-text-lg tw-bg-gray-100 tw-text-basic-700 tw-border-b tw-font-satoshi">
                         <tr class="tw-border">
@@ -357,7 +357,7 @@
                     </tbody>
                 </table>
             </div>
-            <div x-show="selected === 3" class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
+            <div x-show="selected === 3" class="tw-overflow-x-auto tw-shadow-md sm:tw-rounded-xl">
                 <table class="tw-w-full tw-text-sm tw-text-center">
                     <thead class="tw-text-lg tw-bg-gray-100 tw-text-basic-700 tw-border-b tw-font-satoshi">
                         <tr class="tw-border">
@@ -499,7 +499,7 @@
                     </tbody>
                 </table>
             </div>
-            <div x-show="selected === 4" class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
+            <div x-show="selected === 4" class="tw-overflow-x-auto tw-shadow-md sm:tw-rounded-xl">
                 <table class="tw-w-full tw-text-sm tw-text-center">
                     <thead class="tw-text-lg tw-bg-gray-100 tw-text-basic-700 tw-border-b tw-font-satoshi">
                         <tr class="tw-border">
@@ -641,7 +641,7 @@
                     </tbody>
                 </table>
             </div>
-            <div x-show="selected === 5" class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
+            <div x-show="selected === 5" class="tw-overflow-x-auto tw-shadow-md sm:tw-rounded-xl">
                 <table class="tw-w-full tw-text-sm tw-text-center">
                     <thead class="tw-text-lg tw-bg-gray-100 tw-text-basic-700 tw-border-b tw-font-satoshi">
                         <tr class="tw-border">
@@ -783,7 +783,7 @@
                     </tbody>
                 </table>
             </div>
-            <div x-show="selected === 6" class="tw-overflow-x-auto tw-relative tw-shadow-md sm:tw-rounded-xl">
+            <div x-show="selected === 6" class="tw-overflow-x-auto tw-shadow-md sm:tw-rounded-xl">
                 <table class="tw-w-full tw-text-sm tw-text-center">
                     <thead class="tw-text-lg tw-bg-gray-100 tw-text-basic-700 tw-border-b tw-font-satoshi">
                         <tr class="tw-border">

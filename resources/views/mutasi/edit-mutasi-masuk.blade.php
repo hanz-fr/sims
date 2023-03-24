@@ -61,7 +61,7 @@
                             <label class="label-input" for="nis_siswa">
                                 NIS *
                             </label>
-                            <input value="{{ $mutasi->nis_siswa }}" @error('nis_siswa') is-invalid @enderror
+                            <input required value="{{ $mutasi->nis_siswa }}" @error('nis_siswa') is-invalid @enderror
                                 class="input-data-minimal tw-w-full" id="nis_siswa" name="nis_siswa" type="text"
                                 maxlength="10">
                             @error('nis_siswa')
@@ -72,7 +72,7 @@
                             <label class="label-input" for="nama_siswa">
                                 Nama Siswa *
                             </label>
-                            <input value="{{ $mutasi->nama_siswa }}" @error('nama_siswa') is-invalid @enderror
+                            <input required value="{{ $mutasi->nama_siswa }}" @error('nama_siswa') is-invalid @enderror
                                 class="input-data-minimal tw-w-full" id="nama_siswa" name="nama_siswa" type="text">
                             @error('nama_siswa')
                                 <small class="tw-text-red-500">{{ $message }}</small>
@@ -82,7 +82,7 @@
                             <label class="label-input" for="jenis_kelamin">
                                 Jenis Kelamin *
                             </label>
-                            <select class="input-data-minimal" id="jenis_kelamin" name="jenis_kelamin"
+                            <select required class="input-data-minimal" id="jenis_kelamin" name="jenis_kelamin"
                                 value="{{ $mutasi->jenis_kelamin }}">
                                 @if ($mutasi->jenis_kelamin == 'L')
                                     <option>Pilih</option>
@@ -101,7 +101,7 @@
                             <label class="label-input" for="pindah_dari">
                                 Pindah dari *
                             </label>
-                            <input value="{{ $mutasi->pindah_dari }}" @error('pindah_dari') is-invalid @enderror
+                            <input required value="{{ $mutasi->pindah_dari }}" @error('pindah_dari') is-invalid @enderror
                                 class="input-data-minimal tw-w-full" id="pindah_dari" name="pindah_dari" type="text">
                             @error('pindah_dari')
                                 <small class="tw-text-red-500">{{ $message }}</small>
@@ -133,7 +133,7 @@
                             <label class="label-input" for="tgl_mutasi">
                                 Tanggal Masuk *
                             </label>
-                            <input value="{{ $mutasi->tgl_mutasi }}" @error('tgl_mutasi') is-invalid @enderror
+                            <input required value="{{ $mutasi->tgl_mutasi }}" @error('tgl_mutasi') is-invalid @enderror
                                 class="input-data-minimal tw-w-full" id="tgl_mutasi" name="tgl_mutasi" type="date">
                             @error('tgl_mutasi')
                                 <small class="tw-text-red-500">{{ $message }}</small>

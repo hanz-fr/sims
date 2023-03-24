@@ -25,7 +25,7 @@ class UserController extends Controller
     public function __construct()
     {
 
-        $this->api_url = '127.0.0.1:3000'; // Ganti link NGROK disini
+        $this->api_url = 'https://sims-api.vercel.app'; // Ganti link NGROK disini
 
 
         $this->sims_url = 'http://127.0.0.1:8000'; // SIMS URL
@@ -85,11 +85,11 @@ class UserController extends Controller
 
         } catch (AuthenticationException $e) {
 
-            return redirect('login')->with('warning', 'Detail login tidak valid');
+            return redirect('login')->with('warning', 'Detail login tidak valid')->withInput();
 
         } catch (\Exception $e) {
 
-            return redirect('login')->with('warning', 'Terjadi kesalahan, ulangi atau coba lagi beberapa saat');
+            return redirect('login')->with('warning', 'Terjadi kesalahan, ulangi atau coba lagi beberapa saat')->withInput();
         }
   
     }
@@ -99,8 +99,6 @@ class UserController extends Controller
     public function sendVerifyAccount(Request $request, $id) {
 
         $user = User::where('id', $id)->first();
-
-        // dd($request);
 
         try {
 
@@ -113,7 +111,7 @@ class UserController extends Controller
             Mail::to($user->email)->send(new EmailVerification($user));
     
             return back()->with('success', 'Link verifikasi sudah terkirim, cek inbox email anda');
-
+            
         } catch (QueryException $e) {
 
             // duplicate entry error

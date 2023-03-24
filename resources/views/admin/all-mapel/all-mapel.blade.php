@@ -65,14 +65,14 @@
 
             <div class="tw-flex md:tw-justify-center tw-items-center tw-mr-7">
                 <form action="/admin/mata-pelajaran/create" method="GET">
-                    <button type="submit" data-modal-toggle="popup-modal" class="tw-bg-sims-new-500 tw-text-white hover:tw-text-white hover:tw-bg-sims-new-700 tw-font-satoshi tw-rounded-lg tw-px-8 tw-py-2 tw-mr-4">
+                    <button type="submit" data-modal-toggle="popup-modal" class="tw-bg-sims-new-500 tw-text-white hover:tw-text-white hover:tw-bg-sims-new-700 tw-font-satoshi tw-transition-all tw-rounded-lg tw-px-8 tw-py-2 tw-mr-4">
                         Tambah Data +
                     </button>
                 </form>
             </div>
         </div>
 
-        <div class="tw-overflow-x-auto tw-relative tw-mt-7">
+        <div class="tw-overflow-x-auto tw-mt-7">
             <table class="tw-w-full tw-text-lg tw-text-center tw-font-satoshi tw-text-bluewood-900">
                 <thead class="tw-border-y">
                     <tr>

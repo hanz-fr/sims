@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 
 class KelasController extends Controller
 {
@@ -16,7 +17,7 @@ class KelasController extends Controller
     public function __construct()
     {
 
-        $this->api_url = '127.0.0.1:3000'; // Ganti link NGROK disini
+        $this->api_url = 'https://sims-api.vercel.app'; // Ganti link NGROK disini
 
 
         $this->sims_url = 'http://127.0.0.1:8000'; // SIMS URL
@@ -109,15 +110,18 @@ class KelasController extends Controller
 
         $jurusan = json_decode(Http::get("{$this->api_url}/jurusan?perPage=500"))->data->rows;
 
-        $walikelas = User::where('role', 4)->get();
+        $all_walikelas = User::where('role', 4)->get();
 
         $response = Http::get("{$this->api_url}/kelas/{$id}");
+
+        $walikelas = DB::table('users')->where('nip', json_decode($response)->result->walikelas)->first();
 
         return view('admin.kelas.edit', [
             'title'   => 'Edit Data Kelas',
             'active'  => 'admin-dashboard',
             'kelas'   => json_decode($response)->result,
             'jurusan' => $jurusan,
+            'all_walikelas' => $all_walikelas,
             'walikelas' => $walikelas,
         ]);
 
@@ -136,7 +140,7 @@ class KelasController extends Controller
         // check if there is kelas with inputed walikelas nip.
         if($kelas_occupied->status == 'success') {
 
-            return redirect('/admin/kelas/create')->with('warning', 'Sudah ada kelas dengan walikelas tersebut');
+            return redirect('/admin/kelas/create')->with('warning', 'Sudah ada kelas yang diajar dengan walikelas tersebut.');
 
         }
 
@@ -180,11 +184,32 @@ class KelasController extends Controller
 
         abort_if(Gate::denies('admin-only'), 403);
 
+
+        // klo walikelas nya kosong, kasih null
+        if ($request->walikelas == null) {
+
+            $walikelas = null;
+
+        } else {
+
+            $kelas_occupied = json_decode(Http::get("{$this->api_url}/kelas/get-by-walkel/{$request->walikelas}"));
+    
+            // check if there is kelas with inputed walikelas nip.
+            if($kelas_occupied->status == 'success') {
+    
+                return redirect("/admin/kelas/edit/$id")->with('warning', 'Sudah ada kelas yang diajar dengan walikelas tersebut.');
+    
+            }
+
+            $walikelas = $request->walikelas;
+        }
+
         $response = Http::put("{$this->api_url}/kelas/{$id}", [
             'kelas' => $request->kelas,
             'rombel' => $request->rombel,
             'jurusan' => $request->jurusan,
             'JurusanId' => $request->JurusanId,
+            'walikelas' => $walikelas,
         ]);
 
         if (json_decode($response)->status === 'success') {
@@ -199,7 +224,7 @@ class KelasController extends Controller
 
             ]);
 
-            return redirect('/admin/kelas')->with('success', 'Data berhasil diperbarui!');
+            return redirect('/admin/kelas?page=1&perPage=10')->with('success', 'Data berhasil diperbarui!');
 
         } else {
 

@@ -22,7 +22,7 @@
                 </a>
             </div>
         </div>
-        <div class="tw-overflow-x-auto tw-mt-6 tw-relative tw-shadow-md sm:tw-rounded-xl tw-mb-20">
+        <div class="tw-overflow-x-auto tw-mt-6 tw-shadow-md sm:tw-rounded-xl tw-mb-20">
             <table class="tw-w-full tw-text-sm tw-text-center">
                 <thead class="tw-text-md tw-bg-[#454F58] tw-text-white tw-border tw-font-pop">
                     <tr>

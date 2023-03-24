@@ -598,7 +598,7 @@ video {
   padding-right: 1rem;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
-  font-family: Space Grotesk;
+  font-family: Space Grotesk, Satoshi;
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 500;
@@ -700,7 +700,7 @@ video {
   padding-bottom: 0.75rem;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
-  font-family: Poppins, sans-serif;
+  font-family: Poppins, Satoshi;
   font-weight: 400;
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
@@ -743,7 +743,7 @@ video {
   padding-bottom: 0.75rem;
   padding-left: 2rem;
   padding-right: 2rem;
-  font-family: Poppins, sans-serif;
+  font-family: Poppins, Satoshi;
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
 }
@@ -775,11 +775,14 @@ video {
   line-height: 1.75rem;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 .btn-export:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(59 122 122 / var(--tw-bg-opacity));
+  background-color: rgb(45 98 113 / var(--tw-bg-opacity));
 }
 
 .nav-item-admin {
@@ -827,7 +830,7 @@ video {
   padding-left: 1rem;
   padding-right: 1rem;
   padding-bottom: 2rem;
-  font-family: Poppins, sans-serif;
+  font-family: Poppins, Satoshi;
 }
 
 .hc-text-xl {
@@ -858,7 +861,7 @@ video {
 }
 
 .hc-title-lg {
-  font-family: Poppins, sans-serif;
+  font-family: Poppins, Satoshi;
   font-size: 1.125rem;
   font-weight: 700;
   line-height: 1.75rem;
@@ -867,7 +870,7 @@ video {
 }
 
 .hc-title-xl {
-  font-family: Poppins, sans-serif;
+  font-family: Poppins, Satoshi;
   font-size: 1.25rem;
   font-weight: 700;
   line-height: 1.75rem;
@@ -876,7 +879,7 @@ video {
 }
 
 .hc-title-2xl {
-  font-family: Poppins, sans-serif;
+  font-family: Poppins, Satoshi;
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 1.75rem;
@@ -885,7 +888,7 @@ video {
 }
 
 .hc-title-3xl {
-  font-family: Poppins, sans-serif;
+  font-family: Poppins, Satoshi;
   font-size: 1.875rem;
   font-weight: 700;
   line-height: 1.75rem;
@@ -1143,7 +1146,7 @@ video {
 }
 
 .sims-text-gray-xl {
-  font-family: Space Grotesk;
+  font-family: Space Grotesk, Satoshi;
   font-size: 1.25rem;
   line-height: 1.75rem;
   font-weight: 600;
@@ -1152,7 +1155,7 @@ video {
 }
 
 .sims-text-gray-lg {
-  font-family: Space Grotesk;
+  font-family: Space Grotesk, Satoshi;
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-weight: 600;
@@ -1161,7 +1164,7 @@ video {
 }
 
 .sims-text-gray-md {
-  font-family: Space Grotesk;
+  font-family: Space Grotesk, Satoshi;
   font-size: 1rem;
   line-height: 1.5rem;
   font-weight: 600;
@@ -1170,7 +1173,7 @@ video {
 }
 
 .sims-text-gray-sm {
-  font-family: Space Grotesk;
+  font-family: Space Grotesk, Satoshi;
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 600;
@@ -1179,7 +1182,7 @@ video {
 }
 
 .sims-text-gray-xs {
-  font-family: Space Grotesk;
+  font-family: Space Grotesk, Satoshi;
   font-size: 0.75rem;
   line-height: 1rem;
   font-weight: 600;
@@ -1188,7 +1191,7 @@ video {
 }
 
 .sims-text-black-xl {
-  font-family: Space Grotesk;
+  font-family: Space Grotesk, Satoshi;
   font-size: 1.25rem;
   line-height: 1.75rem;
   font-weight: 600;
@@ -1197,7 +1200,7 @@ video {
 }
 
 .sims-text-black-sm {
-  font-family: Space Grotesk;
+  font-family: Space Grotesk, Satoshi;
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 600;
@@ -1206,7 +1209,7 @@ video {
 }
 
 .sims-text-regular-md {
-  font-family: Space Grotesk;
+  font-family: Space Grotesk, Satoshi;
   font-size: 1rem;
   line-height: 1.5rem;
   font-weight: 600;
@@ -1215,7 +1218,7 @@ video {
 }
 
 .sims-text-regular-sm {
-  font-family: Space Grotesk;
+  font-family: Space Grotesk, Satoshi;
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 600;
@@ -1839,6 +1842,10 @@ video {
   margin-top: 4rem;
 }
 
+.tw-mr-2 {
+  margin-right: 0.5rem;
+}
+
 .tw-mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -2330,6 +2337,16 @@ video {
           animation: tw-bounce 1s infinite;
 }
 
+@keyframes tw-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.tw-animate-spin {
+  animation: tw-spin 1s linear infinite;
+}
+
 .tw-cursor-pointer {
   cursor: pointer;
 }
@@ -2634,10 +2651,6 @@ video {
   border-radius: 1rem;
 }
 
-.tw-rounded-\[11px\] {
-  border-radius: 11px;
-}
-
 .tw-rounded-b-lg {
   border-bottom-right-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
@@ -2885,6 +2898,11 @@ video {
   background-color: rgb(209 213 219 / var(--tw-bg-opacity));
 }
 
+.tw-bg-slate-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+}
+
 .tw-bg-\[\#1096C2\] {
   --tw-bg-opacity: 1;
   background-color: rgb(16 150 194 / var(--tw-bg-opacity));
@@ -3011,6 +3029,10 @@ video {
 
 .tw-bg-no-repeat {
   background-repeat: no-repeat;
+}
+
+.tw-fill-white {
+  fill: #fff;
 }
 
 .tw-object-cover {
@@ -3357,11 +3379,11 @@ video {
 }
 
 .tw-font-pop {
-  font-family: Poppins, sans-serif;
+  font-family: Poppins, Satoshi;
 }
 
 .tw-font-sg {
-  font-family: Space Grotesk;
+  font-family: Space Grotesk, Satoshi;
 }
 
 .tw-font-satoshi {
@@ -3369,7 +3391,7 @@ video {
 }
 
 .tw-font-ubuntu {
-  font-family: Ubuntu;
+  font-family: Ubuntu, Satoshi;
 }
 
 .tw-text-2xl {
@@ -3603,6 +3625,11 @@ video {
 .tw-text-blue-300 {
   --tw-text-opacity: 1;
   color: rgb(147 197 253 / var(--tw-text-opacity));
+}
+
+.tw-text-slate-300 {
+  --tw-text-opacity: 1;
+  color: rgb(203 213 225 / var(--tw-text-opacity));
 }
 
 .tw-text-red-700 {
@@ -4601,11 +4628,6 @@ input[type="checkbox"]:checked {
   background-color: rgb(218 167 40 / var(--tw-bg-opacity));
 }
 
-.hover\:tw-bg-amber-500:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(245 158 11 / var(--tw-bg-opacity));
-}
-
 .hover\:tw-text-sims-600:hover {
   --tw-text-opacity: 1;
   color: rgb(45 114 116 / var(--tw-text-opacity));
@@ -4825,6 +4847,24 @@ input[type="checkbox"]:checked {
     display: flex;
   }
 
+  .sm\:sims-heading-xl {
+    font-family: Satoshi;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 700;
+    --tw-text-opacity: 1;
+    color: rgb(56 148 163 / var(--tw-text-opacity));
+  }
+
+  .sm\:sims-text-gray-xs {
+    font-family: Space Grotesk, Satoshi;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 600;
+    --tw-text-opacity: 1;
+    color: rgb(156 163 175 / var(--tw-text-opacity));
+  }
+  
   .sm\:tw-w-full {
     width: 100%;
   }
@@ -5051,6 +5091,15 @@ input[type="checkbox"]:checked {
     display: none;
   }
 
+  .lg\:sims-text-gray-md {
+    font-family: Space Grotesk, Satoshi;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+    --tw-text-opacity: 1;
+    color: rgb(156 163 175 / var(--tw-text-opacity));
+  }
+  
   .lg\:tw-w-1\/2 {
     width: 50%;
   }
@@ -5126,5 +5175,9 @@ input[type="checkbox"]:checked {
 
   .lg\:tw-text-left {
     text-align: left;
+  }
+
+  .lg\:tw-text-center {
+    text-align: center;
   }
 }

@@ -528,7 +528,7 @@
                 <div class="flex">
                     @can('manage-mutasi')
                         <a href="/create-mutasi-keluar"
-                            class="tw-bg-sims-new-500 tw-text-white hover:tw-text-white hover:tw-bg-sims-new-700 tw-font-satoshi tw-rounded-lg tw-px-8 tw-py-2 tw-mr-7">
+                            class="tw-bg-sims-new-500 tw-text-white hover:tw-text-white hover:tw-bg-sims-new-700 tw-font-satoshi tw-transition-all tw-rounded-lg tw-px-8 tw-py-2 tw-mr-7">
                             Tambah Data +
                         </a>
                     @endcan
@@ -536,7 +536,7 @@
             </div>
 
             @if (isset($mutasi))
-                <div class="tw-overflow-x-auto tw-relative tw-mt-7">
+                <div class="tw-overflow-x-auto tw-mt-7">
                     <table class="tw-w-full tw-text-lg tw-text-center tw-font-satoshi tw-text-bluewood-900">
                         <thead class="tw-border-y">
                             <tr>
